@@ -20,9 +20,10 @@ strategy:
     让内容团队专注内容创作，平台团队专注技术打磨。
 
   scope:
-    - 教育类HARMONY OS APP开发（备考/思维工具/高考/语言学习）
+    - 教育类HARMONY OS APP开发（备考/思维工具/高考志愿）
     - 跨APP内容包加载机制（APP作为平台，内容包作为产品单元）
     - 多形态渲染管线（剧本杀→APP交互、电子书→阅读器、辨析卡→图文对照）
+    # 注意：rhythm-* 系列（习惯/冥想/营养/番茄钟）已移回 SPDT-001_Harmony（2026-07-29修正）
 
   relationship:
     infra_modules:
@@ -46,7 +47,7 @@ architecture:
       - gaokao-agent/            高考AI助手
       - gaokao-language/         高考语文专项
       - gaokao-volunteer/        高考志愿
-      # 思维工具系列
+      # 思维工具系列（学习辅助，非教育核心）
       - thinkkit-coach/          思维教练
       - thinkkit-flashcard/      闪卡记忆
       - thinkkit-flashcard2/     闪卡v2
@@ -56,12 +57,7 @@ architecture:
       - thinkkit-reader/          阅读器
       - thinkkit-rss/            RSS订阅
       - thinkkit-zknote/         知识笔记
-      # 节奏生活系列
-      - rhythm-habit/             习惯追踪
-      - rhythm-habit-game/        习惯游戏化
-      - rhythm-meditation/        冥想
-      - rhythm-nutrition/         营养管理
-      - rhythm-pomodoro/          番茄钟
+      # rhythm-* 系列已移回 SPDT-001_Harmony（2026-07-29修正）
     common/:                    跨APP共享模块
     ci/:                        构建流水线
     scripts/:                   开发脚本
@@ -94,6 +90,12 @@ dependencies:
 
 migration_history:
   - date: "2026-07-29"
-    from: D:/2_products/platform/SPDT-001_Harmony/apps/（教育类18个APP）
+    from: D:/2_products/platform/SPDT-001_Harmony/apps/（13个教育类APP）
     to: D:/2_products/education/SPDT-004_EduContent/platform/SPDT-014_EduApps/apps/
     reason: 专注教育类APP开发，与通用craftsman/harmonycoder工具分离
+    apps: rujing/gaokao-agent/gaokao-language/gaokao-volunteer/thinkkit-*/ (13个)
+  - date: "2026-07-29"
+    from: D:/2_products/education/SPDT-004_EduContent/platform/SPDT-014_EduApps/apps/（5个rhythm-*APP）
+    to: D:/2_products/platform/SPDT-001_Harmony/apps/
+    reason: rhythm-*系列与教育无关，移回通用平台
+    apps: rhythm-habit/rhythm-habit-game/rhythm-meditation/rhythm-nutrition/rhythm-pomodoro

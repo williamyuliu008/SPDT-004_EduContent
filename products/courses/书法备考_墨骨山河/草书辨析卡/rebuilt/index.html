@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>书法辨析卡 · PT-039</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:    #1A0E08;
+    --paper:  #F5EDD8;
+    --gold:   #D4B87A;
+    --dim:    #7A6A50;
+    --sepia:  #7A3B1E;
+    --navy:   #2E4A6B;
+  }
+
+  body {
+    font-family: "STSong", "SimSun", "宋体", serif;
+    background: var(--ink);
+    color: var(--paper);
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    touch-action: pan-y;
+  }
+
+  /* ── 顶部标题栏 ── */
+  header {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px 10px;
+    background: var(--ink);
+    border-bottom: 1px solid #3A2A18;
+  }
+  header h1 {
+    font-size: 15px;
+    font-weight: normal;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+  }
+  .badge {
+    font-size: 11px;
+    padding: 3px 8px;
+    border: 1px solid var(--gold);
+    border-radius: 20px;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── 轮播主体 ── */
+  .carousel {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+  }
+  .track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+  }
+  .slide {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 14px 8px;
+    gap: 8px;
+  }
+  .slide img {
+    max-width: 100%;
+    max-height: calc(100% - 52px);
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.6);
+  }
+  .card-label {
+    font-size: 12px;
+    color: var(--dim);
+    text-align: center;
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+  }
+
+  /* ── 左右箭头 ── */
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px; height: 36px;
+    background: rgba(26,14,8,0.7);
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    user-select: none;
+    font-size: 16px;
+    color: var(--gold);
+    transition: background 0.2s;
+  }
+  .arrow:active { background: rgba(212,184,122,0.2); }
+  .arrow.l { left: 8px; }
+  .arrow.r { right: 8px; }
+
+  /* ── 底部信息栏 ── */
+  footer {
+    flex-shrink: 0;
+    padding: 10px 20px 12px;
+    background: var(--ink);
+    border-top: 1px solid #3A2A18;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .dots {
+    display: flex;
+    gap: 7px;
+  }
+  .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #4A3A28;
+    cursor: pointer;
+    transition: background 0.25s, transform 0.25s;
+  }
+  .dot.active {
+    background: var(--gold);
+    transform: scale(1.3);
+  }
+  .footer-note {
+    font-size: 10px;
+    color: #5A4A38;
+    text-align: center;
+    letter-spacing: 0.04em;
+  }
+  .footer-note span {
+    color: var(--gold);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>书法辨析卡 · PT-039</h1>
+  <span class="badge">CC0</span>
+</header>
+
+<div class="carousel" id="carousel">
+  <div class="track" id="track">
+
+    <div class="slide">
+      <img src="rebuilt_card01.png" alt="草书辨析卡 01 — 王羲之 vs 王献之">
+      <div class="card-label">01 / 王羲之 vs 王献之 · 东晋二王</div>
+    </div>
+
+    <div class="slide">
+      <img src="rebuilt_card02.png" alt="草书辨析卡 02 — 张旭 vs 怀素">
+      <div class="card-label">02 / 张旭 vs 怀素 · 唐代草圣</div>
+    </div>
+
+    <div class="slide">
+      <img src="rebuilt_card03.png" alt="草书辨析卡 03 — 孙过庭 vs 赵孟頫">
+      <div class="card-label">03 / 孙过庭 vs 赵孟頫 · 书谱与复古</div>
+    </div>
+
+    <div class="slide">
+      <img src="rebuilt_card04.png" alt="楷书辨析卡 04 — 欧阳询 vs 颜真卿">
+      <div class="card-label">04 / 欧阳询 vs 颜真卿 · 唐楷双壁</div>
+    </div>
+
+    <div class="slide">
+      <img src="rebuilt_card05.png" alt="楷书辨析卡 05 — 柳公权 vs 欧阳询">
+      <div class="card-label">05 / 柳公权 vs 欧阳询 · 柳骨欧险</div>
+    </div>
+
+  </div>
+
+  <div class="arrow l" id="prev">&#8592;</div>
+  <div class="arrow r" id="next">&#8594;</div>
+</div>
+
+<footer>
+  <div class="dots" id="dots"></div>
+  <div class="footer-note">
+    <span>标准参照层</span>：克利夫兰艺术馆 CC0 &nbsp;|&nbsp;
+    书法视觉本体库 v0.1 &nbsp;|&nbsp;
+    <span>PT-039</span>
+  </div>
+</footer>
+
+<script>
+  const N = 5;
+  let cur = 0;
+
+  const track = document.getElementById('track');
+  const dotsEl = document.getElementById('dots');
+  const prevBtn = document.getElementById('prev');
+  const nextBtn = document.getElementById('next');
+  const carousel = document.getElementById('carousel');
+
+  // 构建 dot
+  for (let i = 0; i < N; i++) {
+    const d = document.createElement('div');
+    d.className = 'dot' + (i === 0 ? ' active' : '');
+    d.addEventListener('click', () => go(i));
+    dotsEl.appendChild(d);
+  }
+
+  function go(idx) {
+    cur = Math.max(0, Math.min(N - 1, idx));
+    track.style.transform = `translateX(${cur * -100}%)`;
+    document.querySelectorAll('.dot').forEach((d, i) => {
+      d.classList.toggle('active', i === cur);
+    });
+  }
+
+  prevBtn.addEventListener('click', () => go(cur - 1));
+  nextBtn.addEventListener('click', () => go(cur + 1));
+
+  // 触摸滑动
+  let startX = 0;
+  carousel.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+  }, { passive: true });
+  carousel.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 50) go(cur + (dx < 0 ? 1 : -1));
+  }, { passive: true });
+
+  // 键盘左右
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft') go(cur - 1);
+    if (e.key === 'ArrowRight') go(cur + 1);
+  });
+</script>
+</body>
+</html>

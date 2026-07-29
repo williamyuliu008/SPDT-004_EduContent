@@ -1,189 +1,184 @@
-﻿# SPDT-004: 教育内容制造 (Education Content Manufacturing)
+﻿# SPDT-004: 自适应备考智能体产品线 (Adaptive Prep Intelligence Platform)
+# 版本：v2.0（2026-07-29 重构）
 
 spdt_id: SPDT-004
-spdt_name: 教育内容制造
-spdt_name_en: Education Content Manufacturing
+spdt_name: 自适应备考智能体产品线
+spdt_name_en: Adaptive Prep Intelligence Platform
 owner_agent: agent-e926h
 created: 2026-07-10
-version: 1.0
+version: 2.0
+last_updated: 2026-07-29
 
 description: |
-  以 CGM 约束型生成方法论为理论内核，构建从知识摄取到成品视频/课件/试题的
-  全自动教育内容制造管线。从高考备考、通识教育到企业培训，覆盖体制教育和
-  职业教育的完整频谱，实现"知识 → 教学成品"的一键转化。
+  「平台 + 课程」双轨交付模式：
+  - 平台层（platform/）：自适应备考编排引擎（PT-037）+ APP交付终端（SPDT-014）+ 跨产品渲染管线（SPDT-KTE）
+  - 内容层（products/）：按课程系列组织（书法备考/历史备考），每门课程 = 知识链+剧本+卡片+音频+视频
+  定位：自适应备考平台 = 知识引擎 + 叙事引擎 + 多形态渲染器
 
+# =============================================================================
+# 架构分层
+# =============================================================================
+architecture:
+  layers:
+    - name: platform
+      zh: 平台层
+      description: 编排引擎 + 交付终端 + 渲染管线
+      components:
+        - PT-037_AdaptivePrepPlatform
+        - SPDT-014_EduApps
+        - SPDT-KTE
+
+    - name: products
+      zh: 内容层
+      description: 按课程系列组织的备考内容包
+      components:
+        - courses/书法备考_墨骨山河
+        - courses/历史备考_古史知识链
+        - PT-039_CalligraphyVision（书法视觉素材库）
+
+    - name: infrastructure
+      zh: 基础设施
+      description: 共享工具和资产
+      components:
+        - shared/video_factory（PT-VFX 视觉渲染）
+        - quality（质量门禁）
+        - templates（CGM模板）
+
+# =============================================================================
+# PDT / 内容包注册表
+# =============================================================================
 pdt_list:
+
+  # ── 平台层 ────────────────────────────────────────────────────────────────
+
+  - pdt_id: PT-037
+    name: AdaptivePrepPlatform
+    name_zh: 自适应备考编排平台
+    layer: platform
+    role: |
+      5 Agent 调度（Analyst/Architect/Visual/Coach/Conductor）
+      知识图谱 + 全局记忆 + 自适应训练编排
+    directory: platform/PT-037_AdaptivePrepPlatform
+    status: active
+    registered: 2026-07-13
+    maturity: 0.1
+    note: "BUILD-R+CGM融合；首发国美书法配置包；编排消费 products/courses/ 内容"
+
+  - pdt_id: SPDT-014
+    name: EduApps
+    name_zh: 教育类APP开发平台
+    layer: platform
+    role: HarmonyOS APP 交付终端（rujing/gaokao-*/thinkkit-*）
+    directory: platform/SPDT-014_EduApps
+    status: active
+    registered: 2026-07-29
+    app_count: 13
+    note: rhythm-* 5个移回 SPDT-001_Harmony（2026-07-29修正）
+
+  - pdt_id: SPDT-KTE
+    name: KTE
+    name_zh: 跨产品内容管线
+    layer: platform
+    role: 剧本->场景->视频/音频/卡片的渲染编排
+    directory: SPDT-KTE
+    status: active
+    registered: 2026-07-16
+    members:
+      - PT-038（内容工厂）
+      - PT-VFX（视觉渲染引擎）
+      - PT-RUJ（移动交付终端）
+
+  # ── 内容层 ────────────────────────────────────────────────────────────────
+
+  - pdt_id: PT-038
+    name: TextExperience
+    name_zh: 文本体验内容生产
+    layer: products
+    role: 墨骨山河剧本 + 古史知识链的生产流水线
+    directory: PT-038_TextExperience
+    git: https://github.com/williamyuliu008/PT-038_TextExperience
+    status: active
+    registered: 2026-07-14
+    maturity: 0.8
+    note: "Git仓库独立管理；内容分发至 courses/；⚠️ Ep01-08 剧本缺失"
+    content_packages:
+      - 书法备考_墨骨山河（Ep01-09剧本）
+      - 历史备考_古史知识链（v1-v4，4卷）
+
+  - pdt_id: PT-039
+    name: CalligraphyVision
+    name_zh: 书法视觉素材库
+    layer: products
+    role: 书法碑帖素材提取 + 草书辨析卡 + 视觉本体库
+    directory: products/PT-039_CalligraphyVision
+    status: active
+    registered: 2026-07-21
+    maturity: 0.8
+    note: 辨析卡v4（13张）存储于 products/courses/书法备考_墨骨山河/草书辨析卡/
+
+  # ── 独立产品线（不在 SPDT-004 内）──────────────────────────────
+
   - pdt_id: PT-030
     name: GaokaoPrep
     name_zh: 高考备考内容工厂
-    layer: L2 应用
-    role: 六科统一的高考 AI 辅导内容全自动生产
-    directory: PT-030_GaokaoPrep
+    layer: standalone
+    role: AI自学平台（smart_edu Agent集群），与 SPDT-004 流水线不同
+    directory: ../PT-030_GaokaoPrep
     status: active
     registered: 2026-07-10
-    source: D:\92_products\GaokaoPrep
-
-  - pdt_id: PT-031
-    name: GeneralEdu
-    name_zh: 通识教育内容工厂
-    layer: L2 应用
-    role: 历史/地理/科学等通识类教学视频全自动生产
-    directory: products/PT-031_GeneralEdu
-    status: active
-    registered: 2026-07-10
-    note: 历史通识 SOP 已验证 (2026-0708)
+    note: 独立产品线，已移出 SPDT-004_EduContent
 
   - pdt_id: PT-032
     name: CollegeCourseware
     name_zh: 高等课件工厂
-    layer: L2 应用
-    role: 大学数学/物理/化学等高等课程动画课件自动生产
-    directory: PT-032_CollegeCourseware
+    layer: standalone
+    role: VCC数学动画工厂（CGM+Audit），与 SPDT-004 流水线不同
+    directory: ../PT-032_CollegeCourseware
     status: active
     registered: 2026-07-10
-    source: D:\6_agent_project\projects\math_animation_factory
+    note: 独立产品线，已移出 SPDT-004_EduContent
 
-  - pdt_id: PT-033
-    name: CorpTraining
-    name_zh: 企业培训内容工厂
-    layer: L2 应用
-    role: 入职培训/合规培训/技能培训的 CGM+审计 自动生产
-    directory: products/PT-033_CorpTraining
-    status: active
-    registered: 2026-07-10
-    source: D:\6_agent_project\projects\cgm_training_factory
-
-  - pdt_id: PT-034
-    name: CareerEdu
-    name_zh: 职业教育内容工厂
-    layer: L2 应用
-    role: IT/设计/金融等职业技能培训内容自动生产
-    directory: products/PT-034_CareerEdu
-    status: planned
-    registered: 2026-07-10
-
-  - pdt_id: PT-035
-    name: LanguageLearning
-    name_zh: 语言学习内容工厂
-    layer: L2 应用
-    role: 多语种语言学习视频/课件/练习自动生产
-    directory: products/PT-035_LanguageLearning
-    status: planned
-    registered: 2026-07-10
-
-  - pdt_id: PT-036
-    name: ChildEdu
-    name_zh: 儿童教育内容工厂
-    layer: L2 应用
-    role: 学龄前/小学低年级动画教学内容自动生产
-    directory: products/PT-036_ChildEdu
-    status: planned
-    registered: 2026-07-10
-
-  - pdt_id: PT-037
-    name: AdaptivePrepPlatform
-    name_zh: 自适应备考智能体平台
-    layer: L2 应用
-    role: 通用备考操作系统，平台层（知识图谱+多Agent调度+自适应训练），通过配置包驱动多学科内容消费
-    directory: products/PT-037_AdaptivePrepPlatform
-    status: active
-    registered: 2026-07-13
-    note: BUILD-R+CGM融合，配置包模式，首发国美书法；与PT-030/031/032为上下游关系
-
-
-  - pdt_id: PT-038
-    name: TextExperience
-    name_zh: 文本体验引擎
-    layer: L2 应用
-    role: 剧本杀/电子书/广播剧/辨析卡多形态内容生产
-    directory: PT-038_TextExperience
-    status: active
-    registered: 2026-07-14
-    note: 墨骨山河系列（Ep01-09）+ 古史系列（v1-v4），Git仓库独立管理
-    github: https://github.com/williamyuliu008/PT-038_TextExperience
-
-  - pdt_id: PT-039
-    name: CalligraphyVision
-    name_zh: 书法视觉内容工厂
-    layer: L2 素材
-    role: 书法碑帖视觉素材提取 + 辨析卡生成 + 视觉本体库
-    directory: products/PT-039_CalligraphyVision
-    status: active
-    registered: 2026-07-21
-    note: 书法辨析卡v4存储于D:/4_data/content/calligraphy_cards/
-    migration: 2026-07-29 从 media/ 迁入 products/
-shared_infrastructure:
-  video_factory:
-    name: 教育视频生产引擎
-    role: SPDT-004 内部所有 PDT 共用的 Manim + TTS + ffmpeg 管线
-    directory: shared\video_factory
-    source:
-      - D:\6_agent_project\AI_video_edu
-      - D:\6_agent_project\projects\math_animation_factory\_tools
-
-  knowledge_engine:
-    name: 教育知识引擎
-    role: 知识图谱 / 标签体系 / 知识点依赖关系 / 认知脚手架
-    directory: knowledge
-
-  quality_gate:
-    name: 教育内容质量门禁
-    role: CGM 审计 + 教学效果评估 + Golden Test
-    directory: quality
-    source: D:\6_agent_project\projects\content_quality_gate
-
-  cgm_templates:
-    name: CGM 教育模板库
-    role: 动作模板 / 文风包 / 情绪语音模板 / 场景布局
-    directory: templates
-
+# =============================================================================
+# 跨 SPDT 链接
+# =============================================================================
 cross_spdt_links:
-  - from: SPDT-002 (专利情报)
-    to: PT-032 (高等课件)
-    data: 最新专利技术 → 自动转化为高等课件
-    status: planned
-
-  - from: SPDT-003 (论文情报)
-    to: PT-032 (高等课件)
-    data: 前沿论文 → 自动转化为大学课程内容
-    status: planned
-
   - from: SPDT-004
-    to: SPDT-014 (教育APP) / SPDT-001 (通用APP)
-    data: 教育视频/课件 → SPDT-014 EduApps (ThinkKit/GaokaoAgent) 内消费
-    status: planned
-
-  - from: SPDT-004
-    to: autopublish (共享基础设施)
-    data: 所有内容 PDT → 飞书/微信/网站 分发
+    to: SPDT-001（Harmony通用工具）
+    data: 共享 HarmonyOS 构建工具链
     status: active
 
+  - from: SPDT-004
+    to: autopublish
+    data: 课程内容 -> 飞书/微信/网站分发
+    status: active
+
+# =============================================================================
+# KPI
+# =============================================================================
 kpis:
-  - metric: 活跃 PDT 数
-    current: 4
-    target: 7
-  - metric: CGM 审计通过率
-    current: "—"
-    target: "≥95%"
-  - metric: 视频年产量
-    current: "~50 集 (验证)"
-    target: 1000 集
-  - metric: 覆盖学科/领域数
-    current: "~8"
-    target: 20
-  - metric: 全自动比例 (冷启动后)
-    current: "~60%"
-    target: "≥90%"
+  - metric: 活跃课程包数
+    current: 2
+    target: 4
+  - metric: 墨骨山河剧本完成度
+    current: "1/9 集（Ep09完整，Ep01-08缺失）"
+    target: "9/9 集"
+  - metric: PT-037 平台成熟度
+    current: "0.1"
+    target: "0.5"
+  - metric: 古史知识链覆盖率
+    current: "4/4 卷（440张卡）"
+    target: "6/6 卷"
 
-tech_stack:
-  animation_engine: Manim CE
-  tts: Azure TTS
-  video_compose: ffmpeg
-  knowledge_extract: LLM (GLM series)
-  quality_gate: content_quality_gate + CGM Audit
-  template_engine: YAML-driven + Python Jinja2
-  storage: SQLite (知识库) + JSON (场景/模板)
-
-omas:
-  spdt_registry: D:\6_agent_project\omas\spdt_registry\SPDT-004
-  pdt_registry: D:\6_agent_project\omas\pdt_registry
+# =============================================================================
+# 重大架构变更记录
+# =============================================================================
+architecture_changes:
+  - date: 2026-07-29
+    change: v2.0 重构
+    details:
+      - PT-030/PT-032 移出 SPDT-004_EduContent，恢复独立产品线
+      - PT-037 从 products/ 移入 platform/，明确平台/内容分层
+      - 内容按课程系列重组（书法备考/历史备考）
+      - 删除 products/ 中空占位符，补充实质 README
+      - 修正 SPDT-014 app_count 18->13（rhythm-* 回归 SPDT-001）
+      - 修复 pdt-registry.yaml YAML 语法错误
