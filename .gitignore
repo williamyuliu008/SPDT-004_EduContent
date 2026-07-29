@@ -9,14 +9,21 @@ PT-038_TextExperience/
 
 # ── 嵌套Git仓库（子模块，非本快照追踪范围）────────────────────────────────
 .git/
-**/.git/
+.gitmodules
 SPDT-KTE/PT-VFX/
+SPDT-KTE/PT-VFX/**
 SPDT-KTE/PT-038/
 SPDT-KTE/PT-RUJ/
 shared/video_factory/
+shared/video_factory/**
 
 # ── 平台子项目（各自独立管理）──────────────────────────────────────────────
 platform/SPDT-001_Harmony/**
+platform/SPDT-014_EduApps/signing/**
+platform/SPDT-014_EduApps/apps/*/entry/build/**
+platform/SPDT-014_EduApps/apps/*/.hvigor/**
+platform/SPDT-014_EduApps/apps/*/.idea/**
+platform/SPDT-014_EduApps/apps/*/AppScope/resources/base/media/
 
 # ── 构建产物与缓存────────────────────────────────────────────────────────────
 **/.hvigor/
@@ -48,6 +55,7 @@ desktop.ini
 **/*.doc
 
 # ── 大型二进制文件──────────────────────────────────────────────────────────
+**/*.png
 **/*.jpg
 **/*.jpeg
 **/*.cer
