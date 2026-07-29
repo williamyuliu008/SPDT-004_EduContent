@@ -1,0 +1,86 @@
+{
+  "scene_id": "墨骨山河_ep08_act1_01",
+  "scene_type": "concept",
+  "knowledge_type": "II",
+  "content": {
+    "title": "许慎放下文书，提笔在一…",
+    "body_lines": [
+      "许慎放下文书，提笔在一片竹简上写…",
+      "一个是隶书的'日'——方方正正",
+      "一个是小篆的'日'——圆圆满满"
+    ],
+    "keywords": [
+      "许慎",
+      "许慎放",
+      "许慎放下",
+      "许慎放下文"
+    ]
+  },
+  "page": {
+    "current": 2,
+    "total": 12,
+    "show": true
+  },
+  "scene_info": {
+    "idx": 1,
+    "total": 12,
+    "name": "隶书时代的难题·dialogue",
+    "dur": 0.0
+  },
+  "source_knowledge_nodes": [
+    "#古汉语/说文解字/写作动机",
+    "#考频/⭐️⭐⭐"
+  ],
+  "source_chain_id": "墨骨山河_ep08",
+  "five_skandha": {
+    "color_base": [
+      "许慎",
+      "许慎放",
+      "许慎放下",
+      "许慎放下文"
+    ],
+    "sensation": "none",
+    "sensation_trigger": "许慎放下文书，提笔在一片竹简上写下两个'日'字：\n\n一个是隶书的'日'——方方正……",
+    "discrimination": "学生能识别「许慎放下文书，提笔在一…」的核心含义",
+    "action_prompt": "口述/复述",
+    "recognition_marker": "#古汉语/说文解字/写作动机",
+    "bottleneck_warn": "受蕴"
+  },
+  "analogy_block": {
+    "applicable": true,
+    "knowledge_type": "II",
+    "source_domain": "历史场景/人生经验",
+    "target_domain": "#古汉语/说文解字/写作动机",
+    "mapping_table": [
+      {
+        "source": "历史情境",
+        "arrow": "→",
+        "target": "书法技法"
+      }
+    ],
+    "difference_annotations": [
+      "注意历史背景与技法的差异"
+    ],
+    "closure_definition": ""
+  },
+  "semantic_alignment": {
+    "audio_segment_ref": "ACT1-BEAT-01-DIALOGUE",
+    "visual_element_ref": "CONTENT-ZONE-2",
+    "alignment_note": "旁白「许慎放下文书，提笔在一片竹简上写…」对应视觉区显示",
+    "alignment_confirmed": false
+  },
+  "cognitive_load": {
+    "visual_points": 4,
+    "audio_chunks": 5,
+    "load_status": "WARN",
+    "bottleneck_cause": "受蕴",
+    "split_recommendation": "建议拆分为2个 scene"
+  },
+  "audio": {
+    "tts_template": "voice_explain",
+    "speed_wpm": 170,
+    "pause_after_s": 2.0
+  },
+  "energy_level": "medium",
+  "clip_friendly": true
+}

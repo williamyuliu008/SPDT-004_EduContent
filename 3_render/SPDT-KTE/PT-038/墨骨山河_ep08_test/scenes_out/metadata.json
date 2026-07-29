@@ -1,0 +1,123 @@
+{
+  "schema_version": "1.0.0",
+  "package_id": "墨骨山河_EP08",
+  "series_title": "墨骨山河",
+  "total_episodes": 1,
+  "produced_by": "PT-VFX",
+  "produced_at": "2026-07-16T18:19:45+08:00",
+  "source_episodes_dir": "D:\\92_products\\SPDT-004_EduContent\\SPDT-KTE\\PT-038\\墨骨山河_ep08_test\\scenes_out",
+  "episodes": [
+    {
+      "ep": 8,
+      "title": "碑学中兴",
+      "subtitle": "阮元·康有为与书法的版图重划",
+      "video_file": "ep08_碑学中兴.mp4",
+      "audio_file": "",
+      "duration_seconds": 64.0,
+      "resolution": "720p",
+      "bitrate_kbps": 2000,
+      "chains": [
+        "墨骨山河_ep08"
+      ],
+      "cards_file": "",
+      "scene_timeline": [
+        {
+          "idx": 0,
+          "time": 0.0,
+          "scene_name": "约1790年代，北京",
+          "scene_type": "concept",
+          "chain_ref": "墨骨山河_ep08",
+          "five_skandha": {
+            "color_base": "约1790年 / 北京 / 阮元 / 阮元坐",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "约1790年代，北京"
+          }
+        },
+        {
+          "idx": 1,
+          "time": 8.0,
+          "scene_name": "【基础题】以下关于碑学和…",
+          "scene_type": "steps",
+          "chain_ref": "墨骨山河_ep08",
+          "five_skandha": {
+            "color_base": "【基础 / 【基础题 / 【基础题】 / 【基础题】以",
+            "action_prompt": "判断/选择",
+            "recognition_marker": "【基础题】以下关于碑学和帖学的说法…"
+          }
+        },
+        {
+          "idx": 2,
+          "time": 16.0,
+          "scene_name": "阮元在《南北书派论》中写…",
+          "scene_type": "concept",
+          "chain_ref": "墨骨山河_ep08",
+          "five_skandha": {
+            "color_base": "阮元 / 阮元在 / 阮元在《 / 阮元在《南",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#书法/清/南北书派论"
+          }
+        },
+        {
+          "idx": 3,
+          "time": 24.0,
+          "scene_name": "阮元之后近一百年，1888年，广…",
+          "scene_type": "concept",
+          "chain_ref": "墨骨山河_ep08",
+          "five_skandha": {
+            "color_base": "阮元 / 阮元之 / 阮元之后 / 阮元之后近",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#书法/清/广艺舟双楫"
+          }
+        },
+        {
+          "idx": 4,
+          "time": 32.0,
+          "scene_name": "【连线题】请将以下人物与…",
+          "scene_type": "steps",
+          "chain_ref": "墨骨山河_ep08",
+          "five_skandha": {
+            "color_base": "【连线 / 【连线题 / 【连线题】 / 【连线题】请",
+            "action_prompt": "判断/选择",
+            "recognition_marker": "【连线题】请将以下人物与其理论贡献…"
+          }
+        },
+        {
+          "idx": 5,
+          "time": 40.0,
+          "scene_name": "【判断正误】\n① 南北书派论将…",
+          "scene_type": "steps",
+          "chain_ref": "墨骨山河_ep08",
+          "five_skandha": {
+            "color_base": "【判断 / 【判断正 / 【判断正误 / 【判断正误】",
+            "action_prompt": "判断/选择",
+            "recognition_marker": "【判断正误】\n① 南北书派论将书法分为南…"
+          }
+        },
+        {
+          "idx": 6,
+          "time": 48.0,
+          "scene_name": "【综合题】（20分）\n1. 什么是'碑学'？什…",
+          "scene_type": "steps",
+          "chain_ref": "墨骨山河_ep08",
+          "five_skandha": {
+            "color_base": "【综合 / 【综合题 / 【综合题】 / 【综合题】（",
+            "action_prompt": "判断/选择",
+            "recognition_marker": "【综合题】（20分）\n1. 什么是'碑学'？什么是'帖学'？两…"
+          }
+        },
+        {
+          "idx": 7,
+          "time": 56.0,
+          "scene_name": "峄山碑前，千年已逝",
+          "scene_type": "quote_highlight",
+          "chain_ref": "墨骨山河_ep08",
+          "five_skandha": {
+            "color_base": "峄山 / 峄山碑 / 峄山碑前 / 千年",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "峄山碑前，千年已逝"
+          }
+        }
+      ]
+    }
+  ]
+}

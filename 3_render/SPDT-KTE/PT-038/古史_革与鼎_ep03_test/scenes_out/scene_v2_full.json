@@ -1,0 +1,955 @@
+{
+  "metadata": {
+    "series_title": "革与鼎",
+    "ep_id": 3,
+    "ep_title": "天下一统",
+    "source_chain_id": "古史_革与鼎_ep03",
+    "source_pt": "PT-038",
+    "schema_version": "2.0.0",
+    "_generated_by": "PT038_to_VideoFactory.py v2.0.0",
+    "_generated_at": "2026-07-16T19:22:07+08:00",
+    "_total_scenes": 13
+  },
+  "scenes": [
+    {
+      "scene_id": "古史_革与鼎_ep03_act1_00",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "六国之中，最难打的是楚…",
+        "body_lines": [
+          "六国之中，最难打的是楚国和赵国",
+          "楚国地域辽阔，南方多山林湖泊，秦军…",
+          "前278年，白起攻破郢都，楚国被迫迁都，但…"
+        ],
+        "keywords": [
+          "六国",
+          "六国之",
+          "六国之中",
+          "最难"
+        ]
+      },
+      "page": {
+        "current": 1,
+        "total": 13,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 0,
+        "total": 13,
+        "name": "断裂时刻：六国的末日·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前221年",
+        "#历史/天下一统",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep03",
+      "five_skandha": {
+        "color_base": [
+          "六国",
+          "六国之",
+          "六国之中",
+          "最难"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "六国之中，最难打的是楚国和赵国。\n\n\n\n楚国地域辽阔，南方多山林湖泊，秦军不善水……",
+        "discrimination": "学生能识别「六国之中，最难打的是楚…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#革与鼎/前221年",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT1-BEAT-00-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「六国之中，最难打的是楚国和赵国。\n\n\n\n楚…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_革与鼎_ep03_act1_01",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "【灭楚之议】\n\n\n\n前225年，秦始皇问…",
+        "body_lines": [
+          "【灭楚之议】",
+          "前225年，秦始皇问李信：'我要打楚国，你给…",
+          "李信说：'二十万人足够了"
+        ],
+        "keywords": [
+          "【灭楚",
+          "【灭楚之",
+          "【灭楚之议",
+          "【灭楚之议】"
+        ]
+      },
+      "page": {
+        "current": 2,
+        "total": 13,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 1,
+        "total": 13,
+        "name": "断裂时刻：六国的末日·dialogue",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前221年",
+        "#历史/天下一统",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep03",
+      "five_skandha": {
+        "color_base": [
+          "【灭楚",
+          "【灭楚之",
+          "【灭楚之议",
+          "【灭楚之议】"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "【灭楚之议】\n\n\n\n前225年，秦始皇问李信：'我要打楚国，你给我多少人？'\n\n……",
+        "discrimination": "学生能识别「【灭楚之议】\n\n\n\n前225年，秦始皇问…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#革与鼎/前221年",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT1-BEAT-01-DIALOGUE",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「【灭楚之议】\n\n\n\n前225年，秦始皇问李信：'我要打…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_革与鼎_ep03_act1_02",
+      "scene_type": "action",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "秦始皇的用人之道：能认…",
+        "task_description": "秦始皇的用人之道：能认错，能放权，能承担代价。王翦要六十万…"
+      },
+      "page": {
+        "current": 3,
+        "total": 13,
+        "show": false
+      },
+      "scene_info": {
+        "idx": 2,
+        "total": 13,
+        "name": "断裂时刻：六国的末日·role_play",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前221年",
+        "#历史/天下一统",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep03",
+      "five_skandha": {
+        "color_base": [
+          "秦始",
+          "秦始皇",
+          "秦始皇的",
+          "秦始皇的用"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "秦始皇的用人之道：能认错，能放权，能承担代价。王翦要六十万军队——这几乎是秦国的……",
+        "discrimination": "秦始皇的用人之道：能认错，能放权，能承担代价。王翦要六十万军",
+        "action_prompt": "书写/口述",
+        "recognition_marker": "#革与鼎/前221年",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT1-BEAT-02-ROLE_PLAY",
+        "visual_element_ref": "CONTENT-ZONE-3",
+        "alignment_note": "旁白「秦始皇的用人之道：能认错，能放权，能…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 4,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_hook",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": false
+    },
+    {
+      "scene_id": "古史_革与鼎_ep03_act1_03",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "前221年，齐国不战而降",
+        "body_lines": [
+          "前221年，齐国不战而降",
+          "齐国是六国之中最富庶的，也是最腐…",
+          "齐王建在位四十三年，几乎没有任何…"
+        ],
+        "keywords": [
+          "前221年",
+          "齐国",
+          "齐国不",
+          "齐国不战"
+        ]
+      },
+      "page": {
+        "current": 4,
+        "total": 13,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 3,
+        "total": 13,
+        "name": "断裂时刻：六国的末日·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前221年",
+        "#历史/天下一统",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep03",
+      "five_skandha": {
+        "color_base": [
+          "前221年",
+          "齐国",
+          "齐国不",
+          "齐国不战"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "前221年，齐国不战而降。\n\n\n\n齐国是六国之中最富庶的，也是最腐败的。齐王建在……",
+        "discrimination": "学生能识别「前221年，齐国不战而降。\n\n\n\n齐国…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#革与鼎/前221年",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT1-BEAT-03-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「前221年，齐国不战而降。\n\n\n\n齐国是六国之中…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_革与鼎_ep03_act2_04",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "关于制度问题，丞相王绾…",
+        "body_lines": [
+          "关于制度问题，丞相王绾建议：燕、齐、楚…",
+          "建议分封秦始皇的儿子们去各地为…",
+          "群臣议论纷纷，多数人同意王绾的意…"
+        ],
+        "keywords": [
+          "关于",
+          "关于制",
+          "关于制度",
+          "关于制度问"
+        ]
+      },
+      "page": {
+        "current": 5,
+        "total": 13,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 4,
+        "total": 13,
+        "name": "统一之路：书同文与废分封·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前221年",
+        "#历史/天下一统",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep03",
+      "five_skandha": {
+        "color_base": [
+          "关于",
+          "关于制",
+          "关于制度",
+          "关于制度问"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "关于制度问题，丞相王绾建议：燕、齐、楚地离咸阳太远，不分封皇子去管理，恐怕难以控……",
+        "discrimination": "学生能识别「关于制度问题，丞相王绾…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#革与鼎/前221年",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-04-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「关于制度问题，丞相王绾建议：燕、齐、楚…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_革与鼎_ep03_act2_05",
+      "scene_type": "contrast",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "关于文字问题，秦始皇面…",
+        "wrong_text": "关于文字问题，秦始皇面临的更复杂。\n\n\n",
+        "right_text": "（见旁白详解）"
+      },
+      "page": {
+        "current": 6,
+        "total": 13,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 5,
+        "total": 13,
+        "name": "统一之路：书同文与废分封·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前221年",
+        "#历史/天下一统",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep03",
+      "five_skandha": {
+        "color_base": [
+          "关于",
+          "关于文",
+          "关于文字",
+          "关于文字问"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "关于文字问题，秦始皇面临的更复杂。\n\n\n\n六国的文字差异有多大？大到几乎不能互相……",
+        "discrimination": "学生能区分 X 与 Y 的核心差异",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#革与鼎/前221年",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-05-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-3",
+        "alignment_note": "旁白「关于文字问题，秦始皇面临的更复杂…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": false
+    },
+    {
+      "scene_id": "古史_革与鼎_ep03_act2_06",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "但书同文的意义，远不止…",
+        "body_lines": [
+          "但书同文的意义，远不止于'方便交流'",
+          "它更深层的意义是：它创造了一种'共…",
+          "文字是文化的载体"
+        ],
+        "keywords": [
+          "但书",
+          "但书同",
+          "但书同文",
+          "但书同文的"
+        ]
+      },
+      "page": {
+        "current": 7,
+        "total": 13,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 6,
+        "total": 13,
+        "name": "统一之路：书同文与废分封·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前221年",
+        "#历史/天下一统",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep03",
+      "five_skandha": {
+        "color_base": [
+          "但书",
+          "但书同",
+          "但书同文",
+          "但书同文的"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "但书同文的意义，远不止于'方便交流'。\n\n\n\n它更深层的意义是：它创造了一种'共……",
+        "discrimination": "学生能识别「但书同文的意义，远不止…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#革与鼎/前221年",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-06-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「但书同文的意义，远不止于'方便交流…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_革与鼎_ep03_act2_07",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "书同文和废分封的本质…",
+        "body_lines": [
+          "书同文和废分封的本质是同一件事…",
+          "工业时代的标准化是为了效率，农业…",
+          "这可能是中国历史上最早的'制度工…"
+        ],
+        "keywords": [
+          "书同",
+          "书同文",
+          "书同文和",
+          "书同文和废"
+        ]
+      },
+      "page": {
+        "current": 8,
+        "total": 13,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 7,
+        "total": 13,
+        "name": "统一之路：书同文与废分封·dialogue",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前221年",
+        "#历史/天下一统",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep03",
+      "five_skandha": {
+        "color_base": [
+          "书同",
+          "书同文",
+          "书同文和",
+          "书同文和废"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "书同文和废分封的本质是同一件事：标准化。工业时代的标准化是为了效率，农业时代的标……",
+        "discrimination": "学生能识别「书同文和废分封的本质…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#革与鼎/前221年",
+        "bottleneck_warn": "none"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-07-DIALOGUE",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「书同文和废分封的本质是同一件事…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 3,
+        "load_status": "ACCEPTABLE",
+        "bottleneck_cause": "none",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_革与鼎_ep03_act3_08",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "秦朝为什么二世而亡？\n\n\n\n原…",
+        "body_lines": [
+          "秦朝为什么二世而亡？",
+          "原因很多：",
+          "秦始皇在统一后没有调整政策——战争…"
+        ],
+        "keywords": [
+          "秦朝",
+          "秦朝为",
+          "秦朝为什",
+          "秦朝为什么"
+        ]
+      },
+      "page": {
+        "current": 9,
+        "total": 13,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 8,
+        "total": 13,
+        "name": "秦制遗产：两千年帝国制度的基础·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前221年",
+        "#历史/天下一统",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep03",
+      "five_skandha": {
+        "color_base": [
+          "秦朝",
+          "秦朝为",
+          "秦朝为什",
+          "秦朝为什么"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "秦朝为什么二世而亡？\n\n\n\n原因很多：\n\n\n\n秦始皇在统一后没有调整政策——战争……",
+        "discrimination": "学生能识别「秦朝为什么二世而亡？\n\n\n\n原…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#革与鼎/前221年",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT3-BEAT-08-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-3",
+        "alignment_note": "旁白「秦朝为什么二世而亡？\n\n\n\n原因很多：\n\n\n\n秦始…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_革与鼎_ep03_act3_09",
+      "scene_type": "timeline",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "但秦朝虽然短命，它的制…",
+        "header": "但秦朝虽然短命，它的制度遗产却",
+        "timeline_events": [
+          {
+            "year": "758年",
+            "event": "乾元元年",
+            "note": "蒲州",
+            "active": true
+          }
+        ]
+      },
+      "page": {
+        "current": 10,
+        "total": 13,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 9,
+        "total": 13,
+        "name": "秦制遗产：两千年帝国制度的基础·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前221年",
+        "#历史/天下一统",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep03",
+      "five_skandha": {
+        "color_base": [
+          "但秦",
+          "但秦朝",
+          "但秦朝虽",
+          "但秦朝虽然"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "但秦朝虽然短命，它的制度遗产却延续了两千年。\n\n\n\n郡县制成为此后中国政治制度的……",
+        "discrimination": "但秦朝虽然短命，它的制度遗产却延续了两千年。\n\n\n\n郡县制成",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#革与鼎/前221年",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT3-BEAT-09-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「但秦朝虽然短命，它的制度遗产却延…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_革与鼎_ep03_act3_10",
+      "scene_type": "dual_track",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "秦制遗产的两面：积极面…",
+        "track_a": {
+          "label": "A面",
+          "items": [
+            "秦制遗产的两面：积极面（郡县制、统一…"
+          ]
+        },
+        "track_b": {
+          "label": "B面",
+          "items": []
+        }
+      },
+      "page": {
+        "current": 11,
+        "total": 13,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 10,
+        "total": 13,
+        "name": "秦制遗产：两千年帝国制度的基础·role_play",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前221年",
+        "#历史/天下一统",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep03",
+      "five_skandha": {
+        "color_base": [
+          "秦制",
+          "秦制遗",
+          "秦制遗产",
+          "秦制遗产的"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "秦制遗产的两面：积极面（郡县制、统一文字、统一度量衡）和消极面（严刑峻法、高压动……",
+        "discrimination": "秦制遗产的两面：积极面（郡县制、统一文字、统一度量衡）和消极",
+        "action_prompt": "书写/口述",
+        "recognition_marker": "#革与鼎/前221年",
+        "bottleneck_warn": "none"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT3-BEAT-10-ROLE_PLAY",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「秦制遗产的两面：积极面（郡县制、统一…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 3,
+        "load_status": "ACCEPTABLE",
+        "bottleneck_cause": "none",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_hook",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": false
+    },
+    {
+      "scene_id": "古史_革与鼎_ep03_act4_11",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "秦始皇的'标准化思维'，在…",
+        "body_lines": [
+          "秦始皇的'标准化思维'，在今天有一个…",
+          "经济学里的规模经济说的是：当生产…",
+          "秦始皇的'书同文'和'郡县制'，本质上就…"
+        ],
+        "keywords": [
+          "秦始",
+          "秦始皇",
+          "秦始皇的",
+          "秦始皇的'"
+        ]
+      },
+      "page": {
+        "current": 12,
+        "total": 13,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 11,
+        "total": 13,
+        "name": "当代启示：统一标准的逻辑·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前221年",
+        "#历史/天下一统",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep03",
+      "five_skandha": {
+        "color_base": [
+          "秦始",
+          "秦始皇",
+          "秦始皇的",
+          "秦始皇的'"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "秦始皇的'标准化思维'，在今天有一个现代化的名字：规模经济。\n\n\n\n经济学里的规……",
+        "discrimination": "学生能识别「秦始皇的'标准化思维'，在…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#革与鼎/前221年",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT4-BEAT-11-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-3",
+        "alignment_note": "旁白「秦始皇的'标准化思维'，在今天有一个…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_革与鼎_ep03_act4_12",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "但秦始皇也留下了深刻…",
+        "body_lines": [
+          "但秦始皇也留下了深刻的教训：标准…",
+          "秦朝的问题，不是'统一'本身错了，而是…",
+          "它用严刑峻法，来压制而非疏导民众…"
+        ],
+        "keywords": [
+          "但秦",
+          "但秦始",
+          "但秦始皇",
+          "但秦始皇也"
+        ]
+      },
+      "page": {
+        "current": 13,
+        "total": 13,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 12,
+        "total": 13,
+        "name": "当代启示：统一标准的逻辑·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前221年",
+        "#历史/天下一统",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep03",
+      "five_skandha": {
+        "color_base": [
+          "但秦",
+          "但秦始",
+          "但秦始皇",
+          "但秦始皇也"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "但秦始皇也留下了深刻的教训：标准化不能只有效率，还要有公平。\n\n\n\n秦朝的问题，……",
+        "discrimination": "学生能识别「但秦始皇也留下了深刻…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#革与鼎/前221年",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT4-BEAT-12-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「但秦始皇也留下了深刻的教训：标准…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    }
+  ]
+}

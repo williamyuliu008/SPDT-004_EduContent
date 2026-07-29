@@ -1,0 +1,74 @@
+{
+  "scene_id": "古史_变与局_ep02_act2_05",
+  "scene_type": "concept",
+  "knowledge_type": "IV",
+  "content": {
+    "title": "地方官：\n（向上司汇报）大人…",
+    "body_lines": [
+      "地方官：",
+      "（向上司汇报）大人，今年青苗法的贷款…",
+      "上司："
+    ],
+    "keywords": [
+      "地方",
+      "地方官",
+      "地方官：",
+      "（向上"
+    ]
+  },
+  "page": {
+    "current": 6,
+    "total": 16,
+    "show": true
+  },
+  "scene_info": {
+    "idx": 5,
+    "total": 16,
+    "name": "新法的逻辑：青苗法/市易法/募役法的设计·dialogue",
+    "dur": 0.0
+  },
+  "source_knowledge_nodes": [
+    "#变与局/1069-1085年",
+    "#历史/王安石变法",
+    "#考频/⭐️⭐⭐"
+  ],
+  "source_chain_id": "古史_变与局_ep02",
+  "five_skandha": {
+    "color_base": [
+      "地方",
+      "地方官",
+      "地方官：",
+      "（向上"
+    ],
+    "sensation": "none",
+    "sensation_trigger": "地方官：\n（向上司汇报）大人，今年青苗法的贷款指标，完成了！\n\n上司：\n好！但上……",
+    "discrimination": "学生能识别「地方官：\n（向上司汇报）大人…」的核心含义",
+    "action_prompt": "口述/复述",
+    "recognition_marker": "#变与局/1069-1085年",
+    "bottleneck_warn": "受蕴"
+  },
+  "analogy_block": {
+    "applicable": false,
+    "knowledge_type": "IV"
+  },
+  "semantic_alignment": {
+    "audio_segment_ref": "ACT2-BEAT-05-DIALOGUE",
+    "visual_element_ref": "CONTENT-ZONE-3",
+    "alignment_note": "旁白「地方官：\n（向上司汇报）大人，今年青苗法…」对应视觉区显示",
+    "alignment_confirmed": false
+  },
+  "cognitive_load": {
+    "visual_points": 4,
+    "audio_chunks": 5,
+    "load_status": "WARN",
+    "bottleneck_cause": "受蕴",
+    "split_recommendation": "建议拆分为2个 scene"
+  },
+  "audio": {
+    "tts_template": "voice_explain",
+    "speed_wpm": 170,
+    "pause_after_s": 2.0
+  },
+  "energy_level": "medium",
+  "clip_friendly": true
+}

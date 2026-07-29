@@ -1,0 +1,64 @@
+{
+  "scene_id": "古史_变与局_ep06_act4_14",
+  "scene_type": "action",
+  "knowledge_type": "IV",
+  "content": {
+    "title": "辛亥革命的历史意义：终…",
+    "task_description": "辛亥革命的历史意义：终结两千年帝制——不是农民起义，不是改…"
+  },
+  "page": {
+    "current": 15,
+    "total": 16,
+    "show": false
+  },
+  "scene_info": {
+    "idx": 14,
+    "total": 16,
+    "name": "革命的来临·role_play",
+    "dur": 0.0
+  },
+  "source_knowledge_nodes": [
+    "#变与局/1840-1911年",
+    "#历史/晚清变局",
+    "#考频/⭐️⭐⭐"
+  ],
+  "source_chain_id": "古史_变与局_ep06",
+  "five_skandha": {
+    "color_base": [
+      "辛亥",
+      "辛亥革",
+      "辛亥革命",
+      "辛亥革命的"
+    ],
+    "sensation": "none",
+    "sensation_trigger": "辛亥革命的历史意义：终结两千年帝制——不是农民起义，不是改朝换代，而是现代革命，……",
+    "discrimination": "辛亥革命的历史意义：终结两千年帝制——不是农民起义，不是改朝",
+    "action_prompt": "书写/口述",
+    "recognition_marker": "#变与局/1840-1911年",
+    "bottleneck_warn": "none"
+  },
+  "analogy_block": {
+    "applicable": false,
+    "knowledge_type": "IV"
+  },
+  "semantic_alignment": {
+    "audio_segment_ref": "ACT4-BEAT-14-ROLE_PLAY",
+    "visual_element_ref": "CONTENT-ZONE-3",
+    "alignment_note": "旁白「辛亥革命的历史意义：终结两千年帝…」对应视觉区显示",
+    "alignment_confirmed": false
+  },
+  "cognitive_load": {
+    "visual_points": 4,
+    "audio_chunks": 1,
+    "load_status": "ACCEPTABLE",
+    "bottleneck_cause": "none",
+    "split_recommendation": "建议拆分为2个 scene"
+  },
+  "audio": {
+    "tts_template": "voice_hook",
+    "speed_wpm": 170,
+    "pause_after_s": 2.0
+  },
+  "energy_level": "medium",
+  "clip_friendly": false
+}

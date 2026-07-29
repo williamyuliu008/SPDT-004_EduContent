@@ -1,0 +1,1222 @@
+{
+  "metadata": {
+    "series_title": "革与鼎",
+    "ep_id": 4,
+    "ep_title": "汉武雄图",
+    "source_chain_id": "古史_革与鼎_ep04",
+    "source_pt": "PT-038",
+    "schema_version": "2.0.0",
+    "_generated_by": "PT038_to_VideoFactory.py v2.0.0",
+    "_generated_at": "2026-07-16T19:22:08+08:00",
+    "_total_scenes": 14
+  },
+  "scenes": [
+    {
+      "scene_id": "古史_革与鼎_ep04_act1_00",
+      "scene_type": "concept",
+      "knowledge_type": "II",
+      "content": {
+        "title": "前141年，刘彻登基",
+        "body_lines": [
+          "前141年，刘彻登基",
+          "他继承的帝国，经过文景之治四十年…",
+          "史书记载：'都鄙廪庾皆满，而府库余货…"
+        ],
+        "keywords": [
+          "前141年",
+          "刘彻",
+          "刘彻登",
+          "刘彻登基"
+        ]
+      },
+      "page": {
+        "current": 1,
+        "total": 14,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 0,
+        "total": 14,
+        "name": "断裂时刻：文景之治的遗产与代价·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "#历史/汉武雄图",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep04",
+      "five_skandha": {
+        "color_base": [
+          "前141年",
+          "刘彻",
+          "刘彻登",
+          "刘彻登基"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "前141年，刘彻登基。\n\n\n\n他继承的帝国，经过文景之治四十年的积累，国库充盈，……",
+        "discrimination": "学生能识别「前141年，刘彻登基。\n\n\n\n他继承的…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT1-BEAT-00-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「前141年，刘彻登基。\n\n\n\n他继承的帝国，经过文…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_革与鼎_ep04_act1_01",
+      "scene_type": "concept",
+      "knowledge_type": "II",
+      "content": {
+        "title": "【少年的志向】\n\n\n\n刘彻十六岁…",
+        "body_lines": [
+          "【少年的志向】",
+          "刘彻十六岁登基的时候，他就有一个…",
+          "他问身边的儒者：'我想攻打匈奴，可以…"
+        ],
+        "keywords": [
+          "【少年",
+          "【少年的",
+          "【少年的志",
+          "【少年的志向"
+        ]
+      },
+      "page": {
+        "current": 2,
+        "total": 14,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 1,
+        "total": 14,
+        "name": "断裂时刻：文景之治的遗产与代价·dialogue",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "#历史/汉武雄图",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep04",
+      "five_skandha": {
+        "color_base": [
+          "【少年",
+          "【少年的",
+          "【少年的志",
+          "【少年的志向"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "【少年的志向】\n\n\n\n刘彻十六岁登基的时候，他就有一个梦想：打败匈奴。\n\n\n\n他……",
+        "discrimination": "学生能识别「【少年的志向】\n\n\n\n刘彻十六岁…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT1-BEAT-01-DIALOGUE",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「【少年的志向】\n\n\n\n刘彻十六岁登基的时候…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_革与鼎_ep04_act1_02",
+      "scene_type": "concept",
+      "knowledge_type": "II",
+      "content": {
+        "title": "刘彻等了几年，等来了一…",
+        "body_lines": [
+          "刘彻等了几年，等来了一个时机：",
+          "前133年，他三十四岁",
+          "这一年，一个叫聂壹的边境商人向汉…"
+        ],
+        "keywords": [
+          "刘彻",
+          "刘彻等",
+          "刘彻等了",
+          "刘彻等了几"
+        ]
+      },
+      "page": {
+        "current": 3,
+        "total": 14,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 2,
+        "total": 14,
+        "name": "断裂时刻：文景之治的遗产与代价·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "#历史/汉武雄图",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep04",
+      "five_skandha": {
+        "color_base": [
+          "刘彻",
+          "刘彻等",
+          "刘彻等了",
+          "刘彻等了几"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "刘彻等了几年，等来了一个时机：\n\n\n\n前133年，他三十四岁。这一年，一个叫聂壹……",
+        "discrimination": "学生能识别「刘彻等了几年，等来了一…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT1-BEAT-02-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-3",
+        "alignment_note": "旁白「刘彻等了几年，等来了一个时机：\n\n\n\n前133年…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_革与鼎_ep04_act1_03",
+      "scene_type": "action",
+      "knowledge_type": "II",
+      "content": {
+        "title": "马邑之谋失败后，汉武帝…",
+        "task_description": "马邑之谋失败后，汉武帝没有退缩，而是决定长期与匈奴作战…"
+      },
+      "page": {
+        "current": 4,
+        "total": 14,
+        "show": false
+      },
+      "scene_info": {
+        "idx": 3,
+        "total": 14,
+        "name": "断裂时刻：文景之治的遗产与代价·role_play",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "#历史/汉武雄图",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep04",
+      "five_skandha": {
+        "color_base": [
+          "马邑",
+          "马邑之",
+          "马邑之谋",
+          "马邑之谋失"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "马邑之谋失败后，汉武帝没有退缩，而是决定长期与匈奴作战。这个决策的代价是巨大的：……",
+        "discrimination": "马邑之谋失败后，汉武帝没有退缩，而是决定长期与匈奴作战。这个",
+        "action_prompt": "书写/口述",
+        "recognition_marker": "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "bottleneck_warn": "none"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT1-BEAT-03-ROLE_PLAY",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「马邑之谋失败后，汉武帝没有退缩，而…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 2,
+        "load_status": "ACCEPTABLE",
+        "bottleneck_cause": "none",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_hook",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": false
+    },
+    {
+      "scene_id": "古史_革与鼎_ep04_act2_04",
+      "scene_type": "concept",
+      "knowledge_type": "II",
+      "content": {
+        "title": "汉武帝想了几个办法：\n\n\n\n第…",
+        "body_lines": [
+          "汉武帝想了几个办法：",
+          "第一招：加税",
+          "把农业税从十五税一提高到三税一…"
+        ],
+        "keywords": [
+          "汉武",
+          "汉武帝",
+          "汉武帝想",
+          "汉武帝想了"
+        ]
+      },
+      "page": {
+        "current": 5,
+        "total": 14,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 4,
+        "total": 14,
+        "name": "战争的钱：从哪里来？·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "#历史/汉武雄图",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep04",
+      "five_skandha": {
+        "color_base": [
+          "汉武",
+          "汉武帝",
+          "汉武帝想",
+          "汉武帝想了"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "汉武帝想了几个办法：\n\n\n\n第一招：加税。把农业税从十五税一提高到三税一——农民……",
+        "discrimination": "学生能识别「汉武帝想了几个办法：\n\n\n\n第…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-04-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「汉武帝想了几个办法：\n\n\n\n第一招：加税。把…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_革与鼎_ep04_act2_05",
+      "scene_type": "concept",
+      "knowledge_type": "II",
+      "content": {
+        "title": "前119年，漠北大战之后，国库…",
+        "body_lines": [
+          "前119年，漠北大战之后，国库彻底空了",
+          "汉武帝面临一个政治危机：如果不解…",
+          "但如果加税太狠，农民就会起义"
+        ],
+        "keywords": [
+          "前119年",
+          "漠北",
+          "漠北大",
+          "漠北大战"
+        ]
+      },
+      "page": {
+        "current": 6,
+        "total": 14,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 5,
+        "total": 14,
+        "name": "战争的钱：从哪里来？·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "#历史/汉武雄图",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep04",
+      "five_skandha": {
+        "color_base": [
+          "前119年",
+          "漠北",
+          "漠北大",
+          "漠北大战"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "前119年，漠北大战之后，国库彻底空了。\n\n\n\n汉武帝面临一个政治危机：如果不解……",
+        "discrimination": "学生能识别「前119年，漠北大战之后，国库…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-05-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-3",
+        "alignment_note": "旁白「前119年，漠北大战之后，国库彻底空了。\n\n\n\n汉…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_革与鼎_ep04_act2_06",
+      "scene_type": "concept",
+      "knowledge_type": "II",
+      "content": {
+        "title": "这就是中国历史上最早…",
+        "body_lines": [
+          "这就是中国历史上最早的'国家垄断…",
+          "它的本质是：政府不只收税，还直接做…",
+          "好处是：政府有了稳定的收入来源，可…"
+        ],
+        "keywords": [
+          "这就",
+          "这就是",
+          "这就是中",
+          "这就是中国"
+        ]
+      },
+      "page": {
+        "current": 7,
+        "total": 14,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 6,
+        "total": 14,
+        "name": "战争的钱：从哪里来？·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "#历史/汉武雄图",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep04",
+      "five_skandha": {
+        "color_base": [
+          "这就",
+          "这就是",
+          "这就是中",
+          "这就是中国"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "这就是中国历史上最早的'国家垄断资本主义'。\n\n\n\n它的本质是：政府不只收税，还……",
+        "discrimination": "学生能识别「这就是中国历史上最早…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-06-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「这就是中国历史上最早的'国家垄断…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_革与鼎_ep04_act2_07",
+      "scene_type": "action",
+      "knowledge_type": "II",
+      "content": {
+        "title": "盐铁专营的经济学逻辑…",
+        "task_description": "盐铁专营的经济学逻辑：政府垄断生活必需品和生产必需品…"
+      },
+      "page": {
+        "current": 8,
+        "total": 14,
+        "show": false
+      },
+      "scene_info": {
+        "idx": 7,
+        "total": 14,
+        "name": "战争的钱：从哪里来？·role_play",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "#历史/汉武雄图",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep04",
+      "five_skandha": {
+        "color_base": [
+          "盐铁",
+          "盐铁专",
+          "盐铁专营",
+          "盐铁专营的"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "盐铁专营的经济学逻辑：政府垄断生活必需品和生产必需品的经营，本质上是'寓税于价'……",
+        "discrimination": "盐铁专营的经济学逻辑：政府垄断生活必需品和生产必需品的经营，",
+        "action_prompt": "书写/口述",
+        "recognition_marker": "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "bottleneck_warn": "none"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-07-ROLE_PLAY",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「盐铁专营的经济学逻辑：政府垄断生…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 2,
+        "load_status": "ACCEPTABLE",
+        "bottleneck_cause": "none",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_hook",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": false
+    },
+    {
+      "scene_id": "古史_革与鼎_ep04_act3_08",
+      "scene_type": "concept",
+      "knowledge_type": "II",
+      "content": {
+        "title": "前138年，汉武帝派张骞出使…",
+        "body_lines": [
+          "前138年，汉武帝派张骞出使西域",
+          "他的目的是：联合月氏，共同夹击匈奴",
+          "张骞在路上被匈奴扣留了十三年，逃…"
+        ],
+        "keywords": [
+          "前138年",
+          "汉武",
+          "汉武帝",
+          "汉武帝派"
+        ]
+      },
+      "page": {
+        "current": 9,
+        "total": 14,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 8,
+        "total": 14,
+        "name": "丝绸之路：开放带来的意外收获·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "#历史/汉武雄图",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep04",
+      "five_skandha": {
+        "color_base": [
+          "前138年",
+          "汉武",
+          "汉武帝",
+          "汉武帝派"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "前138年，汉武帝派张骞出使西域。\n\n\n\n他的目的是：联合月氏，共同夹击匈奴。\n……",
+        "discrimination": "学生能识别「前138年，汉武帝派张骞出使…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT3-BEAT-08-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-3",
+        "alignment_note": "旁白「前138年，汉武帝派张骞出使西域。\n\n\n\n他的目…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_革与鼎_ep04_act3_09",
+      "scene_type": "concept",
+      "knowledge_type": "II",
+      "content": {
+        "title": "更重要的是：西域的商人…",
+        "body_lines": [
+          "更重要的是：西域的商人们，愿意用丝…",
+          "丝绸在汉朝不值钱——因为汉朝自己产",
+          "但在西域值钱——因为路途遥远，运输成…"
+        ],
+        "keywords": [
+          "更重",
+          "更重要",
+          "更重要的",
+          "更重要的是"
+        ]
+      },
+      "page": {
+        "current": 10,
+        "total": 14,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 9,
+        "total": 14,
+        "name": "丝绸之路：开放带来的意外收获·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "#历史/汉武雄图",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep04",
+      "five_skandha": {
+        "color_base": [
+          "更重",
+          "更重要",
+          "更重要的",
+          "更重要的是"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "更重要的是：西域的商人们，愿意用丝绸换取各种商品。\n\n\n\n丝绸在汉朝不值钱——因……",
+        "discrimination": "学生能识别「更重要的是：西域的商人…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT3-BEAT-09-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「更重要的是：西域的商人们，愿意用丝…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_革与鼎_ep04_act3_10",
+      "scene_type": "concept",
+      "knowledge_type": "II",
+      "content": {
+        "title": "丝绸之路的本质是：开放…",
+        "body_lines": [
+          "丝绸之路的本质是：开放带来的意外…",
+          "汉武帝最初的目的只是打仗、结盟，但…",
+          "这或许是'开放'最重要的价值：它能产…"
+        ],
+        "keywords": [
+          "丝绸",
+          "丝绸之",
+          "丝绸之路",
+          "丝绸之路的"
+        ]
+      },
+      "page": {
+        "current": 11,
+        "total": 14,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 10,
+        "total": 14,
+        "name": "丝绸之路：开放带来的意外收获·dialogue",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "#历史/汉武雄图",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep04",
+      "five_skandha": {
+        "color_base": [
+          "丝绸",
+          "丝绸之",
+          "丝绸之路",
+          "丝绸之路的"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "丝绸之路的本质是：开放带来的意外收获。汉武帝最初的目的只是打仗、结盟，但'开放'……",
+        "discrimination": "学生能识别「丝绸之路的本质是：开放…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "bottleneck_warn": "none"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT3-BEAT-10-DIALOGUE",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「丝绸之路的本质是：开放带来的意外…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 3,
+        "load_status": "ACCEPTABLE",
+        "bottleneck_cause": "none",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_革与鼎_ep04_act4_11",
+      "scene_type": "concept",
+      "knowledge_type": "II",
+      "content": {
+        "title": "汉武帝的盐铁专营，本质…",
+        "body_lines": [
+          "汉武帝的盐铁专营，本质上是回答了…",
+          "在西方经济学的框架里，这个问题的…",
+          "市场竞争会自动调节资源配置，政府…"
+        ],
+        "keywords": [
+          "汉武",
+          "汉武帝",
+          "汉武帝的",
+          "汉武帝的盐"
+        ]
+      },
+      "page": {
+        "current": 12,
+        "total": 14,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 11,
+        "total": 14,
+        "name": "当代启示：国家与经济的关系·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "#历史/汉武雄图",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep04",
+      "five_skandha": {
+        "color_base": [
+          "汉武",
+          "汉武帝",
+          "汉武帝的",
+          "汉武帝的盐"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "汉武帝的盐铁专营，本质上是回答了一个问题：政府，要不要做生意？\n\n\n\n在西方经济……",
+        "discrimination": "学生能识别「汉武帝的盐铁专营，本质…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT4-BEAT-11-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-3",
+        "alignment_note": "旁白「汉武帝的盐铁专营，本质上是回答了…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_革与鼎_ep04_act4_12",
+      "scene_type": "causal_chain",
+      "knowledge_type": "II",
+      "content": {
+        "title": "今天的我们，站在汉武帝…",
+        "header": "今天的我们，站在汉武帝的肩膀上",
+        "chains": [
+          {
+            "cause": "今天的我们",
+            "effect": "今天的我们",
+            "cause_active": false,
+            "effect_active": false
+          },
+          {
+            "cause": "站在汉武帝的肩膀…",
+            "effect": "站在汉武帝的肩膀…",
+            "cause_active": true,
+            "effect_active": true
+          },
+          {
+            "cause": "理解了这个问题的…",
+            "effect": "理解了这个问题的…",
+            "cause_active": false,
+            "effect_active": false
+          }
+        ]
+      },
+      "page": {
+        "current": 13,
+        "total": 14,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 12,
+        "total": 14,
+        "name": "当代启示：国家与经济的关系·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "#历史/汉武雄图",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep04",
+      "five_skandha": {
+        "color_base": [
+          "今天",
+          "今天的",
+          "今天的我",
+          "今天的我们"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "今天的我们，站在汉武帝的肩膀上，理解了这个问题的复杂性：\n\n\n\n政府经营企业，有……",
+        "discrimination": "今天的我们，站在汉武帝的肩膀上，理解了这个问题的复杂性：\n\n",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT4-BEAT-12-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「今天的我们，站在汉武帝的肩膀上，理…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": false
+    },
+    {
+      "scene_id": "古史_革与鼎_ep04_act4_13",
+      "scene_type": "dual_track",
+      "knowledge_type": "II",
+      "content": {
+        "title": "高考考点提示：汉武帝的…",
+        "track_a": {
+          "label": "A面",
+          "items": [
+            "高考考点提示：汉武帝的历史贡献，需…"
+          ]
+        },
+        "track_b": {
+          "label": "B面",
+          "items": []
+        }
+      },
+      "page": {
+        "current": 14,
+        "total": 14,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 13,
+        "total": 14,
+        "name": "当代启示：国家与经济的关系·role_play",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "#历史/汉武雄图",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep04",
+      "five_skandha": {
+        "color_base": [
+          "高考",
+          "高考考",
+          "高考考点",
+          "高考考点提"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "高考考点提示：汉武帝的历史贡献，需要从'积极'和'消极'两面辩证评价。积极面：打……",
+        "discrimination": "高考考点提示：汉武帝的历史贡献，需要从'积极'和'消极'两面",
+        "action_prompt": "书写/口述",
+        "recognition_marker": "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT4-BEAT-13-ROLE_PLAY",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「高考考点提示：汉武帝的历史贡献，需…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 4,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_hook",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": false
+    }
+  ]
+}

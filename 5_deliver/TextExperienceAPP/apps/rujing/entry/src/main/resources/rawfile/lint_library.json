@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.0",
+  "pack_id": "cafa_lint_library",
+  "total_items": 23,
+  "base_library": [
+    {
+      "char": "永",
+      "font": "小篆",
+      "example": "王羲之·兰亭序",
+      "description": "永字八法：侧勒弩趯策掠啄磔",
+      "difficulty": 1
+    },
+    {
+      "char": "書",
+      "font": "楷书",
+      "example": "孙过庭·书谱",
+      "description": "书者，散也",
+      "difficulty": 1
+    },
+    {
+      "char": "山",
+      "font": "小篆",
+      "example": "《说文解字》",
+      "description": "象形字，山峰之形",
+      "difficulty": 1
+    },
+    {
+      "char": "水",
+      "font": "小篆",
+      "example": "《说文解字》",
+      "description": "象形字，流水之形",
+      "difficulty": 1
+    },
+    {
+      "char": "日",
+      "font": "小篆",
+      "example": "《说文解字》",
+      "description": "象形字，太阳之形",
+      "difficulty": 1
+    },
+    {
+      "char": "月",
+      "font": "小篆",
+      "example": "《说文解字》",
+      "description": "象形字，月亮之形",
+      "difficulty": 1
+    },
+    {
+      "char": "道",
+      "font": "小篆",
+      "example": "《说文解字》",
+      "description": "道者，路也",
+      "difficulty": 2
+    },
+    {
+      "char": "法",
+      "font": "小篆",
+      "example": "唐人尚法",
+      "description": "法者，规矩也",
+      "difficulty": 2
+    },
+    {
+      "char": "意",
+      "font": "小篆",
+      "example": "宋人尚意",
+      "description": "意者，心之所向",
+      "difficulty": 2
+    },
+    {
+      "char": "龍",
+      "font": "小篆",
+      "example": "李斯·峄山碑",
+      "description": "秦篆典范",
+      "difficulty": 3
+    },
+    {
+      "char": "德",
+      "font": "小篆",
+      "example": "《说文解字》",
+      "description": "德者，得也",
+      "difficulty": 2
+    },
+    {
+      "char": "風",
+      "font": "小篆",
+      "example": "《说文解字》",
+      "description": "风动虫生",
+      "difficulty": 3
+    },
+    {
+      "char": "馬",
+      "font": "小篆",
+      "example": "秦汉碑刻",
+      "description": "马形多曲折",
+      "difficulty": 3
+    },
+    {
+      "char": "魚",
+      "font": "小篆",
+      "example": "《说文解字》",
+      "description": "象形字，鱼形",
+      "difficulty": 2
+    },
+    {
+      "char": "鳥",
+      "font": "小篆",
+      "example": "《说文解字》",
+      "description": "象形字，鸟形",
+      "difficulty": 2
+    },
+    {
+      "char": "言",
+      "font": "小篆",
+      "example": "《说文解字》",
+      "description": "言从口出",
+      "difficulty": 1
+    },
+    {
+      "char": "心",
+      "font": "小篆",
+      "example": "《说文解字》",
+      "description": "心字底草法",
+      "difficulty": 2
+    },
+    {
+      "char": "手",
+      "font": "小篆",
+      "example": "《说文解字》",
+      "description": "象形字，手形",
+      "difficulty": 1
+    },
+    {
+      "char": "止",
+      "font": "小篆",
+      "example": "《说文解字》",
+      "description": "足之停止",
+      "difficulty": 1
+    },
+    {
+      "char": "戈",
+      "font": "小篆",
+      "example": "戈字演变",
+      "description": "兵器之象形",
+      "difficulty": 3
+    }
+  ],
+  "kb_derived_chars": [
+    {
+      "char": "斗/鬥",
+      "simplified": "斗",
+      "font": "小篆",
+      "example": "说文解字",
+      "description": "篆作「鬥爭」，两人相对持械相斗，会意字",
+      "difficulty": 2,
+      "kb_id": "KB_CAFA_011",
+      "source": "kb_vocab"
+    },
+    {
+      "char": "发/髮",
+      "simplified": "發",
+      "font": "小篆",
+      "example": "说文解字",
+      "description": "",
+      "difficulty": 2,
+      "kb_id": "KB_CAFA_012",
+      "source": "kb_vocab"
+    },
+    {
+      "char": "复/複",
+      "simplified": "復",
+      "font": "小篆",
+      "example": "说文解字",
+      "description": "",
+      "difficulty": 2,
+      "kb_id": "KB_CAFA_013",
+      "source": "kb_vocab"
+    }
+  ],
+  "all_items": [
+    {
+      "char": "永",
+      "font": "小篆",
+      "example": "王羲之·兰亭序",
+      "description": "永字八法：侧勒弩趯策掠啄磔",
+      "difficulty": 1
+    },
+    {
+      "char": "書",
+      "font": "楷书",
+      "example": "孙过庭·书谱",
+      "description": "书者，散也",
+      "difficulty": 1
+    },
+    {
+      "char": "山",
+      "font": "小篆",
+      "example": "《说文解字》",
+      "description": "象形字，山峰之形",
+      "difficulty": 1
+    },
+    {
+      "char": "水",
+      "font": "小篆",
+      "example": "《说文解字》",
+      "description": "象形字，流水之形",
+      "difficulty": 1
+    },
+    {
+      "char": "日",
+      "font": "小篆",
+      "example": "《说文解字》",
+      "description": "象形字，太阳之形",
+      "difficulty": 1
+    },
+    {
+      "char": "月",
+      "font": "小篆",
+      "example": "《说文解字》",
+      "description": "象形字，月亮之形",
+      "difficulty": 1
+    },
+    {
+      "char": "道",
+      "font": "小篆",
+      "example": "《说文解字》",
+      "description": "道者，路也",
+      "difficulty": 2
+    },
+    {
+      "char": "法",
+      "font": "小篆",
+      "example": "唐人尚法",
+      "description": "法者，规矩也",
+      "difficulty": 2
+    },
+    {
+      "char": "意",
+      "font": "小篆",
+      "example": "宋人尚意",
+      "description": "意者，心之所向",
+      "difficulty": 2
+    },
+    {
+      "char": "龍",
+      "font": "小篆",
+      "example": "李斯·峄山碑",
+      "description": "秦篆典范",
+      "difficulty": 3
+    },
+    {
+      "char": "德",
+      "font": "小篆",
+      "example": "《说文解字》",
+      "description": "德者，得也",
+      "difficulty": 2
+    },
+    {
+      "char": "風",
+      "font": "小篆",
+      "example": "《说文解字》",
+      "description": "风动虫生",
+      "difficulty": 3
+    },
+    {
+      "char": "馬",
+      "font": "小篆",
+      "example": "秦汉碑刻",
+      "description": "马形多曲折",
+      "difficulty": 3
+    },
+    {
+      "char": "魚",
+      "font": "小篆",
+      "example": "《说文解字》",
+      "description": "象形字，鱼形",
+      "difficulty": 2
+    },
+    {
+      "char": "鳥",
+      "font": "小篆",
+      "example": "《说文解字》",
+      "description": "象形字，鸟形",
+      "difficulty": 2
+    },
+    {
+      "char": "言",
+      "font": "小篆",
+      "example": "《说文解字》",
+      "description": "言从口出",
+      "difficulty": 1
+    },
+    {
+      "char": "心",
+      "font": "小篆",
+      "example": "《说文解字》",
+      "description": "心字底草法",
+      "difficulty": 2
+    },
+    {
+      "char": "手",
+      "font": "小篆",
+      "example": "《说文解字》",
+      "description": "象形字，手形",
+      "difficulty": 1
+    },
+    {
+      "char": "止",
+      "font": "小篆",
+      "example": "《说文解字》",
+      "description": "足之停止",
+      "difficulty": 1
+    },
+    {
+      "char": "戈",
+      "font": "小篆",
+      "example": "戈字演变",
+      "description": "兵器之象形",
+      "difficulty": 3
+    },
+    {
+      "char": "斗/鬥",
+      "simplified": "斗",
+      "font": "小篆",
+      "example": "说文解字",
+      "description": "篆作「鬥爭」，两人相对持械相斗，会意字",
+      "difficulty": 2,
+      "kb_id": "KB_CAFA_011",
+      "source": "kb_vocab"
+    },
+    {
+      "char": "发/髮",
+      "simplified": "發",
+      "font": "小篆",
+      "example": "说文解字",
+      "description": "",
+      "difficulty": 2,
+      "kb_id": "KB_CAFA_012",
+      "source": "kb_vocab"
+    },
+    {
+      "char": "复/複",
+      "simplified": "復",
+      "font": "小篆",
+      "example": "说文解字",
+      "description": "",
+      "difficulty": 2,
+      "kb_id": "KB_CAFA_013",
+      "source": "kb_vocab"
+    }
+  ]
+}

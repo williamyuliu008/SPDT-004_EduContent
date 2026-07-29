@@ -1,142 +1,161 @@
-﻿# SPDT-004 PDT 详细注册表 v2.0
-# 2026-07-29 重构版（PT-030/032 移出，课程按系列重组）
+﻿# SPDT-004 PDT 详细注册表 v2.2
+# 2026-07-29 更新（流水线五阶段重构）
 
 pdt_list:
 
-  - pdt_id: PT-037
-    name: AdaptivePrepPlatform
-    name_zh: 自适应备考编排平台
-    type: 平台层
-    layer: platform
-    client: 高考/校考学生 / 教师 / 家长
-    content_types:
-      - 自适应训练引擎
-      - 知识图谱
-      - 5Agent调度
-    target_dir: D:\2_products\education\SPDT-004_EduContent\platform\PT-037_AdaptivePrepPlatform
-    source_project: C:\Users\willi\Desktop\我的视野\0713-基于知识库的高阶备考智能体
-    status: active
-    maturity: 0.1
-    cgm_audit_target: ">=85%"
-    registered: 2026-07-13
-    architecture_change: 2026-07-29 从 products/ 移入 platform/
+  # ── 流水线阶段（v2.3 新架构）───────────────────────────────────────────────
 
-  - pdt_id: PT-038
+  - pdt_id: TextExperience
     name: TextExperience
     name_zh: 文本体验内容生产
-    type: 内容层
-    layer: products
+    type: 内容生产引擎
+    layer: 2_structure
+    pipeline_stage: 2
     client: 国美书法校考学生 / 高考历史选考生
     content_types:
       - 墨骨山河剧本
       - 古史知识链
       - 电子书/广播剧/知识卡
-    target_dir: D:\2_products\education\SPDT-004_EduContent\PT-038_TextExperience
+    target_dir: D:\2_products\education\SPDT-004_EduContent\2_structure\TextExperience
     git: https://github.com/williamyuliu008/PT-038_TextExperience
     status: active
     maturity: 0.8
-    spdt_kte:
-      member: true
-      role: 内容工厂
-      junction_path: SPDT-KTE\PT-038
     registered: 2026-07-14
-    note: Git仓库独立管理；内容分发至 products/courses/
+    note: "主力生产模块；内容分发至 products/courses/；⚠️ Ep01-08 剧本缺失"
 
-  - pdt_id: PT-039
-    name: CalligraphyVision
-    name_zh: 书法视觉素材库
-    type: 素材层
-    layer: products
-    client: 国美书法校考学生 / 教育APP开发
-    content_types:
-      - 书法配图
-      - 草书辨析卡
-      - 视觉本体库
-    target_dir: D:\2_products\education\SPDT-004_EduContent\products\PT-039_CalligraphyVision
+  - pdt_id: SPDT-KTE
+    name: KTE
+    name_zh: 跨产品内容管线
+    type: 管线编排层
+    layer: 3_render
+    pipeline_stage: 3
+    target_dir: D:\2_products\education\SPDT-004_EduContent\3_render\SPDT-KTE
     status: active
-    maturity: 0.8
-    registered: 2026-07-21
-    note: 辨析卡v4（13张）存储于 products/courses/书法备考_墨骨山河/草书辨析卡/
+    maturity: 0.7
+    members:
+      - TextExperience（内容工厂）
+      - PT-VFX（视觉渲染引擎）
+      - PT-RUJ（移动交付终端）
+    registered: 2026-07-16
 
-  - pdt_id: SPDT-014
-    name: EduApps
-    name_zh: 教育类APP开发平台
+  - pdt_id: PT-VFX
+    name: VideoFactory
+    name_zh: 视觉渲染引擎
+    type: 渲染工具层
+    layer: 3_render
+    pipeline_stage: 3
+    target_dir: D:\2_products\education\SPDT-004_EduContent\3_render\video_factory
+    status: active
+    maturity: 0.7
+    registered: 2026-07-16
+
+  - pdt_id: AdaptivePrepPlatform
+    name: AdaptivePrepPlatform
+    name_zh: 自适应备考编排平台
+    type: 平台层
+    layer: 4_adapt
+    pipeline_stage: 4
+    client: 高考/校考学生 / 教师 / 家长
+    content_types:
+      - 自适应训练引擎
+      - 知识图谱
+      - 5Agent调度
+    target_dir: D:\2_products\education\SPDT-004_EduContent\4_adapt\AdaptivePrepPlatform
+    status: active
+    maturity: 0.1
+    registered: 2026-07-13
+    note: "编排消费 2_structure 和 products/courses/ 的内容；数据存储于 D:/4_data/education/AdaptivePrep/"
+
+  - pdt_id: TextExperienceAPP
+    name: TextExperienceAPP
+    name_zh: 文本体验APP开发平台
     type: 平台层 / 交付终端
-    layer: platform
+    layer: 5_deliver
+    pipeline_stage: 5
     client: 高考/校考学生 / 教育工具用户
     content_types:
       - HarmonyOS APP
       - HAP安装包
       - 内容包加载器
-    target_dir: D:\2_products\education\SPDT-004_EduContent\platform\SPDT-014_EduApps
+    target_dir: D:\2_products\education\SPDT-004_EduContent\5_deliver\TextExperienceAPP
     status: active
     maturity: 0.6
     app_count: 13
     infra_dependency:
       irc: D:/3_infra/IRC/
     registered: 2026-07-29
+    note: 新学习方式交付终端；rhythm-* 5个APP移回 SPDT-001
+
+  - pdt_id: PT-039
+    name: CalligraphyVision
+    name_zh: 书法视觉素材库
+    type: 素材资产
+    layer: products
+    client: 书法备考学生 / 视觉设计师
+    content_types:
+      - 书法碑帖素材
+      - 草书辨析卡
+      - 视觉本体库
+    target_dir: D:\2_products\education\SPDT-004_EduContent\products\PT-039_CalligraphyVision
+    status: active
+    maturity: 0.8
+    registered: 2026-07-21
+    note: 辨析卡v4（13张）存储于 products/courses/书法备考_墨骨山河/草书辨析卡/；为 2_structure 和 5_deliver 提供视觉素材
+
+# ── 共享资产（基础设施层）───────────────────────────────────────────────
 
 shared_assets:
 
-  - pdt_id: PT-VFX
-    name: VideoFactory
-    name_zh: 视觉渲染引擎
-    type: 渲染工具层
-    client: SPDT-KTE 管线内部工具
-    target_dir: D:\2_products\education\SPDT-004_EduContent\shared\video_factory
-    status: active
-    maturity: 0.7
-    spdt_kte:
-      member: true
-      role: 视觉渲染引擎
-      junction_path: SPDT-KTE\PT-VFX
-    registered: 2026-07-16
-
-  - pdt_id: PT-RUJ
+  - asset: PT-RUJ（入境移动终端）
     name: Rujing
     name_zh: 入境移动交付终端
     type: 移动应用 / 终端交付层
+    layer: 5_deliver（内嵌于 TextExperienceAPP）
     client: 国美书法校考学生 / 高考历史选考生（手机端）
-    target_dir: D:\2_products\education\SPDT-004_EduContent\platform\SPDT-014_EduApps\apps\rujing
+    target_dir: D:\2_products\education\SPDT-004_EduContent\5_deliver\TextExperienceAPP\apps\rujing
     status: active
     maturity: 0.6
-    spdt_kte:
-      member: true
-      role: 移动交付终端
-      junction_path: SPDT-KTE\PT-RUJ
     registered: 2026-07-16
 
   - asset: quality_gate
     path: D:\2_products\education\SPDT-004_EduContent\quality
-    description: CGM 审计规则 + Golden Test 用例
+    description: 渲染质量门禁（CGM方法论质量审计）
 
   - asset: agent_templates
     source: D:\6_agent_project\_templates
-    description: 8种Agent协作模式模板
 
-# 独立产品线（不在 SPDT-004_EduContent 内）
+  - asset: knowledge_base
+    path: D:\2_products\education\SPDT-004_EduContent\knowledge
+
+# ── 独立产品线（不在 SPDT-004_EduContent 内）────────────────────────────────
+
 standalone_products:
   - pdt_id: PT-030
     name: GaokaoPrep
     name_zh: 高考备考内容工厂
     target_dir: D:\2_products\education\PT-030_GaokaoPrep
-    pipeline: smart_edu Agent集群（独立流水线，与 SPDT-004 不同）
+    pipeline: smart_edu Agent集群（独立流水线）
     status: active
     registered: 2026-07-10
-    architecture_change: 2026-07-29 移出 SPDT-004_EduContent，恢复独立
 
   - pdt_id: PT-032
     name: CollegeCourseware
     name_zh: 高等课件工厂
     target_dir: D:\2_products\education\PT-032_CollegeCourseware
-    pipeline: VCC数学动画工厂（CGM+Audit，独立流水线，与 SPDT-004 不同）
+    pipeline: VCC数学动画工厂（CGM+Audit）
     git: https://github.com/williamyuliu008/math_animation_factory
     status: active
     registered: 2026-07-10
-    architecture_change: 2026-07-29 移出 SPDT-004_EduContent，恢复独立
+
+# ── Junction 映射（PT间依赖路径）───────────────────────────────────────────
+
+junction_map:
+  "SPDT-KTE\\TextExperience": "2_structure/TextExperience"
+  "SPDT-KTE\\PT-VFX": "3_render/video_factory"
+  "SPDT-KTE\\PT-RUJ": "5_deliver/TextExperienceAPP/apps/rujing"
+  "AdaptivePrep\\_input": "3_render/_output"
+  "TextExperience\\_source": "products/courses"
 
 metadata:
   last_updated: "2026-07-29"
-  version: "2.0"
-  spdt_kte_created: "2026-07-16"
-  spdt_kte_root: "D:\\2_products\\education\\SPDT-004_EduContent\\SPDT-KTE"
+  version: "2.2"

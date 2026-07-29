@@ -1,0 +1,77 @@
+{
+  "scene_id": "墨骨山河_ep04_act2_06",
+  "scene_type": "quote_highlight",
+  "knowledge_type": "II",
+  "content": {
+    "title": "孙过庭继续写",
+    "quote": "孙过庭继续写。他写到了他最重要的一个理论发现：\n\n'古质今妍'。\n\n他写道：\n\n'且右军之书，代咸称之，议者云…",
+    "attribution": "孙过庭·书谱"
+  },
+  "page": {
+    "current": 7,
+    "total": 11,
+    "show": true
+  },
+  "scene_info": {
+    "idx": 6,
+    "total": 11,
+    "name": "五乖五合·narrative",
+    "dur": 0.0
+  },
+  "source_knowledge_nodes": [
+    "#书法/唐/古质今妍",
+    "#考频/⭐️⭐⭐⭐"
+  ],
+  "source_chain_id": "墨骨山河_ep04",
+  "five_skandha": {
+    "color_base": [
+      "孙过",
+      "孙过庭",
+      "孙过庭继",
+      "孙过庭继续"
+    ],
+    "sensation": "none",
+    "sensation_trigger": "孙过庭继续写。他写到了他最重要的一个理论发现：\n\n'古质今妍'。\n\n他写道：\n\n……",
+    "discrimination": "学生能引用核心论述解释书法现象",
+    "action_prompt": "口述/复述",
+    "recognition_marker": "#书法/唐/古质今妍",
+    "bottleneck_warn": "none"
+  },
+  "analogy_block": {
+    "applicable": true,
+    "knowledge_type": "II",
+    "source_domain": "历史场景/人生经验",
+    "target_domain": "#书法/唐/古质今妍",
+    "mapping_table": [
+      {
+        "source": "历史情境",
+        "arrow": "→",
+        "target": "书法技法"
+      }
+    ],
+    "difference_annotations": [
+      "注意历史背景与技法的差异"
+    ],
+    "closure_definition": ""
+  },
+  "semantic_alignment": {
+    "audio_segment_ref": "ACT2-BEAT-06-NARRATIVE",
+    "visual_element_ref": "CONTENT-ZONE-1",
+    "alignment_note": "旁白「孙过庭继续写。他写到了他最重要的…」对应视觉区显示",
+    "alignment_confirmed": false
+  },
+  "cognitive_load": {
+    "visual_points": 4,
+    "audio_chunks": 3,
+    "load_status": "ACCEPTABLE",
+    "bottleneck_cause": "none",
+    "split_recommendation": "建议拆分为2个 scene"
+  },
+  "audio": {
+    "tts_template": "voice_explain",
+    "speed_wpm": 170,
+    "pause_after_s": 2.0
+  },
+  "energy_level": "medium",
+  "clip_friendly": true
+}

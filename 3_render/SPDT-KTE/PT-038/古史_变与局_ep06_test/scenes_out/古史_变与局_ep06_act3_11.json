@@ -1,0 +1,74 @@
+{
+  "scene_id": "古史_变与局_ep06_act3_11",
+  "scene_type": "concept",
+  "knowledge_type": "IV",
+  "content": {
+    "title": "戊戌六君子的血，告诉了…",
+    "body_lines": [
+      "戊戌六君子的血，告诉了中国人一个…",
+      "这是制度性失败，不是某个人或某个…",
+      "清朝到了这个地步，已经不是能不能…"
+    ],
+    "keywords": [
+      "戊戌",
+      "戊戌六",
+      "戊戌六君",
+      "戊戌六君子"
+    ]
+  },
+  "page": {
+    "current": 12,
+    "total": 16,
+    "show": true
+  },
+  "scene_info": {
+    "idx": 11,
+    "total": 16,
+    "name": "戊戌变法·dialogue",
+    "dur": 0.0
+  },
+  "source_knowledge_nodes": [
+    "#变与局/1840-1911年",
+    "#历史/晚清变局",
+    "#考频/⭐️⭐⭐"
+  ],
+  "source_chain_id": "古史_变与局_ep06",
+  "five_skandha": {
+    "color_base": [
+      "戊戌",
+      "戊戌六",
+      "戊戌六君",
+      "戊戌六君子"
+    ],
+    "sensation": "none",
+    "sensation_trigger": "戊戌六君子的血，告诉了中国人一个残酷的真理：在清朝的政治逻辑里，权力的自我保存，……",
+    "discrimination": "学生能识别「戊戌六君子的血，告诉了…」的核心含义",
+    "action_prompt": "口述/复述",
+    "recognition_marker": "#变与局/1840-1911年",
+    "bottleneck_warn": "none"
+  },
+  "analogy_block": {
+    "applicable": false,
+    "knowledge_type": "IV"
+  },
+  "semantic_alignment": {
+    "audio_segment_ref": "ACT3-BEAT-11-DIALOGUE",
+    "visual_element_ref": "CONTENT-ZONE-3",
+    "alignment_note": "旁白「戊戌六君子的血，告诉了中国人一个…」对应视觉区显示",
+    "alignment_confirmed": false
+  },
+  "cognitive_load": {
+    "visual_points": 4,
+    "audio_chunks": 3,
+    "load_status": "ACCEPTABLE",
+    "bottleneck_cause": "none",
+    "split_recommendation": "建议拆分为2个 scene"
+  },
+  "audio": {
+    "tts_template": "voice_explain",
+    "speed_wpm": 170,
+    "pause_after_s": 2.0
+  },
+  "energy_level": "medium",
+  "clip_friendly": true
+}

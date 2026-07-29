@@ -1,5 +1,7 @@
 # 历史备考_古史知识链
 
+> **数据目录**：D:/4_data/education/TextExperience/历史备考_古史知识链/
+
 > **课程**：高考历史备考
 > **内容来源**：PT-038_TextExperience
 
@@ -33,7 +35,7 @@
 ## 制作流水线
 
 ```
-古史_v*/knowledge_chain.json（知识链）
+TextExperience 古史_v*/knowledge_chain.json（知识链）
   ├── PT-037 自适应训练编排
   └── SPDT-KTE → 电子书/音频/卡片渲染
 ```

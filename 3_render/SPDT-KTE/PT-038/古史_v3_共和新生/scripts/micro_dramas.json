@@ -1,0 +1,101 @@
+{
+  "series": "共和新生",
+  "series_subtitle": "1840-1949：从天朝崩塌到人民共和国",
+  "volume": 3,
+  "description": "中国近现代史完整剧本，1840年鸦片战争至1949年新中国成立，109年苦难辉煌。",
+  "episodes": [
+    {
+      "ep": 1,
+      "filename": "古史_v3_ep01_天朝崩塌.py",
+      "title": "天朝崩塌",
+      "subtitle": "工业文明与农耕帝国的正面碰撞",
+      "time_period": "1840-1864",
+      "duration_years": 24,
+      "core_question": "为何GDP曾占全球三分之一的帝国，在工业化浪潮面前如此脆弱？洋务运动能否救亡？",
+      "knowledge_chain_count": 4,
+      "high_frequency_point_count": 8,
+      "concept_count": 5,
+      "art_figures": ["赵之谦", "吴昌硕", "居巢、居廉"]
+    },
+    {
+      "ep": 2,
+      "filename": "古史_v3_ep02_帝国挽歌.py",
+      "title": "帝国挽歌",
+      "subtitle": "甲午战败·戊戌喋血·共和肇始",
+      "time_period": "1864-1912",
+      "duration_years": 48,
+      "core_question": "为何器物变革（洋务）失败后，制度变革成为必然？共和为何在中国如此艰难？",
+      "knowledge_chain_count": 4,
+      "high_frequency_point_count": 8,
+      "concept_count": 5,
+      "art_figures": ["蒲华", "康有为", "梁启超"]
+    },
+    {
+      "ep": 3,
+      "filename": "古史_v3_ep03_觉醒年代.py",
+      "title": "觉醒年代",
+      "subtitle": "五四风雷·主义之争·建党大业",
+      "time_period": "1912-1935",
+      "duration_years": 23,
+      "core_question": "旧民主主义革命为何失败？中国需要什么样的新思想、新政党、新道路？",
+      "knowledge_chain_count": 4,
+      "high_frequency_point_count": 9,
+      "concept_count": 4,
+      "art_figures": ["陈独秀", "鲁迅", "于右任"]
+    },
+    {
+      "ep": 4,
+      "filename": "古史_v3_ep04_共和新生.py",
+      "title": "共和新生",
+      "subtitle": "十四年抗战·解放战争·新中国成立",
+      "time_period": "1931-1949",
+      "duration_years": 18,
+      "core_question": "中华民族如何在亡国灭种边缘实现绝地反击？人民共和国的成立为何是历史必然？",
+      "knowledge_chain_count": 4,
+      "high_frequency_point_count": 9,
+      "concept_count": 5,
+      "art_figures": ["徐悲鸿", "齐白石", "鲁迅（与左翼美术）"]
+    }
+  ],
+  "cross_volume_links": {
+    "volume_1": {
+      "series": "革与鼎",
+      "time_span": "先秦-安史之乱",
+      "connection": "制度奠基：卷一提供了中国古代政治制度的演变逻辑（分封→郡县→三省六部→科举→藩镇），这些制度遗产深刻影响了近代中国的政治选择"
+    },
+    "volume_2": {
+      "series": "变与局",
+      "time_span": "宋-晚清",
+      "connection": "制度困局：卷二写到鸦片战争（1840）和洋务运动，在本卷以更完整剧本展开；卷二Ep06「晚清变局」直接过渡到本卷"
+    },
+    "chain_links": {
+      "50_chain_reference": "本卷覆盖「高考历史必背50链」中的近代史全部10链 + 现代史全部5链，共15条核心链",
+      "chain_coverage": [
+        "CHAIN_近代危机_01（鸦片战争链）",
+        "CHAIN_近代危机_02（太平天国链）",
+        "CHAIN_近代危机_03（甲午战争链）",
+        "CHAIN_近代危机_04（抗日战争链）",
+        "CHAIN_近代探索_01（洋务运动链）",
+        "CHAIN_近代探索_02（戊戌变法链）",
+        "CHAIN_近代探索_03（辛亥革命链）",
+        "CHAIN_近代探索_04（近代思想启蒙链）",
+        "CHAIN_近代探索_05（民国乱局链）",
+        "CHAIN_近代探索_06（新文化运动链）",
+        "CHAIN_近代探索_07（五四运动链）",
+        "CHAIN_近代探索_08（中共建党建国链）",
+        "CHAIN_现代建国_01（新民主主义革命链）",
+        "CHAIN_现代建国_02（政权建设链）",
+        "CHAIN_现代外交_01（新中国外交链）"
+      ]
+    }
+  },
+  "stats": {
+    "total_episodes": 4,
+    "total_knowledge_chains": 16,
+    "total_high_frequency_points": 34,
+    "total_concepts": 19,
+    "art_figures": 10,
+    "total_duration_years": 113,
+    "time_coverage": "1840-1949（晚清+民国+建国初）"
+  }
+}

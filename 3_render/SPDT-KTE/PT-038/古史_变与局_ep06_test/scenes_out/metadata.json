@@ -1,0 +1,219 @@
+{
+  "schema_version": "1.0.0",
+  "package_id": "变与局_EP06",
+  "series_title": "变与局",
+  "total_episodes": 1,
+  "produced_by": "PT-VFX",
+  "produced_at": "2026-07-16T19:22:10+08:00",
+  "source_episodes_dir": "D:\\92_products\\SPDT-004_EduContent\\SPDT-KTE\\PT-038\\古史_变与局_ep06_test\\scenes_out",
+  "episodes": [
+    {
+      "ep": 6,
+      "title": "晚清变局",
+      "subtitle": "鸦片战争·自强运动·共和革命",
+      "video_file": "gushi_变与局_ep06_晚清变局.mp4",
+      "audio_file": "",
+      "duration_seconds": 128.0,
+      "resolution": "720p",
+      "bitrate_kbps": 2000,
+      "chains": [
+        "古史_变与局_ep06"
+      ],
+      "cards_file": "",
+      "scene_timeline": [
+        {
+          "idx": 0,
+          "time": 0.0,
+          "scene_name": "1839年6月3日，广东虎门海滩上…",
+          "scene_type": "concept",
+          "chain_ref": "古史_变与局_ep06",
+          "five_skandha": {
+            "color_base": "广东 / 广东虎 / 广东虎门 / 广东虎门海",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1840-1911年"
+          }
+        },
+        {
+          "idx": 1,
+          "time": 8.0,
+          "scene_name": "英军将领（站在甲板上）：清…",
+          "scene_type": "concept",
+          "chain_ref": "古史_变与局_ep06",
+          "five_skandha": {
+            "color_base": "英军 / 英军将 / 英军将领 / 英军将领（",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1840-1911年"
+          }
+        },
+        {
+          "idx": 2,
+          "time": 16.0,
+          "scene_name": "鸦片战争的根本原因不…",
+          "scene_type": "action",
+          "chain_ref": "古史_变与局_ep06",
+          "five_skandha": {
+            "color_base": "鸦片 / 鸦片战 / 鸦片战争 / 鸦片战争的",
+            "action_prompt": "书写/口述",
+            "recognition_marker": "#变与局/1840-1911年"
+          }
+        },
+        {
+          "idx": 3,
+          "time": 24.0,
+          "scene_name": "1842年《南京条约》：割让香港、开…",
+          "scene_type": "concept",
+          "chain_ref": "古史_变与局_ep06",
+          "five_skandha": {
+            "color_base": "这是 / 这是中 / 这是中国 / 这是中国近",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1840-1911年"
+          }
+        },
+        {
+          "idx": 4,
+          "time": 32.0,
+          "scene_name": "两次鸦片战争的惨败，终…",
+          "scene_type": "concept",
+          "chain_ref": "古史_变与局_ep06",
+          "five_skandha": {
+            "color_base": "两次 / 两次鸦 / 两次鸦片 / 两次鸦片战",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1840-1911年"
+          }
+        },
+        {
+          "idx": 5,
+          "time": 40.0,
+          "scene_name": "李鸿章：北洋水师已称雄…",
+          "scene_type": "concept",
+          "chain_ref": "古史_变与局_ep06",
+          "five_skandha": {
+            "color_base": "李鸿 / 李鸿章 / 李鸿章： / 李鸿章：北",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1840-1911年"
+          }
+        },
+        {
+          "idx": 6,
+          "time": 48.0,
+          "scene_name": "甲午战争的教训：GDP世界前…",
+          "scene_type": "action",
+          "chain_ref": "古史_变与局_ep06",
+          "five_skandha": {
+            "color_base": "甲午 / 甲午战 / 甲午战争 / 甲午战争的",
+            "action_prompt": "书写/口述",
+            "recognition_marker": "#变与局/1840-1911年"
+          }
+        },
+        {
+          "idx": 7,
+          "time": 56.0,
+          "scene_name": "洋务运动失败的根本原…",
+          "scene_type": "concept",
+          "chain_ref": "古史_变与局_ep06",
+          "five_skandha": {
+            "color_base": "洋务 / 洋务运 / 洋务运动 / 洋务运动失",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1840-1911年"
+          }
+        },
+        {
+          "idx": 8,
+          "time": 64.0,
+          "scene_name": "甲午战败的屈辱，终于让…",
+          "scene_type": "concept",
+          "chain_ref": "古史_变与局_ep06",
+          "five_skandha": {
+            "color_base": "甲午 / 甲午战 / 甲午战败 / 甲午战败的",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1840-1911年"
+          }
+        },
+        {
+          "idx": 9,
+          "time": 72.0,
+          "scene_name": "谭嗣同（在狱中）：改革之事…",
+          "scene_type": "concept",
+          "chain_ref": "古史_变与局_ep06",
+          "five_skandha": {
+            "color_base": "谭嗣 / 谭嗣同 / 谭嗣同（ / 谭嗣同（在",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1840-1911年"
+          }
+        },
+        {
+          "idx": 10,
+          "time": 80.0,
+          "scene_name": "戊戌变法失败的深层原…",
+          "scene_type": "action",
+          "chain_ref": "古史_变与局_ep06",
+          "five_skandha": {
+            "color_base": "戊戌 / 戊戌变 / 戊戌变法 / 戊戌变法失",
+            "action_prompt": "书写/口述",
+            "recognition_marker": "#变与局/1840-1911年"
+          }
+        },
+        {
+          "idx": 11,
+          "time": 88.0,
+          "scene_name": "戊戌六君子的血，告诉了…",
+          "scene_type": "concept",
+          "chain_ref": "古史_变与局_ep06",
+          "five_skandha": {
+            "color_base": "戊戌 / 戊戌六 / 戊戌六君 / 戊戌六君子",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1840-1911年"
+          }
+        },
+        {
+          "idx": 12,
+          "time": 96.0,
+          "scene_name": "1901年《辛丑条约》签订后，清朝…",
+          "scene_type": "concept",
+          "chain_ref": "古史_变与局_ep06",
+          "five_skandha": {
+            "color_base": "清朝 / 清朝实 / 清朝实际 / 清朝实际上",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1840-1911年"
+          }
+        },
+        {
+          "idx": 13,
+          "time": 104.0,
+          "scene_name": "同盟会会员：武昌首义成…",
+          "scene_type": "concept",
+          "chain_ref": "古史_变与局_ep06",
+          "five_skandha": {
+            "color_base": "同盟 / 同盟会 / 同盟会会 / 同盟会会员",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1840-1911年"
+          }
+        },
+        {
+          "idx": 14,
+          "time": 112.0,
+          "scene_name": "辛亥革命的历史意义：终…",
+          "scene_type": "action",
+          "chain_ref": "古史_变与局_ep06",
+          "five_skandha": {
+            "color_base": "辛亥 / 辛亥革 / 辛亥革命 / 辛亥革命的",
+            "action_prompt": "书写/口述",
+            "recognition_marker": "#变与局/1840-1911年"
+          }
+        },
+        {
+          "idx": 15,
+          "time": 120.0,
+          "scene_name": "回顾晚清七十年，从洋务…",
+          "scene_type": "concept",
+          "chain_ref": "古史_变与局_ep06",
+          "five_skandha": {
+            "color_base": "回顾 / 回顾晚 / 回顾晚清 / 回顾晚清七",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1840-1911年"
+          }
+        }
+      ]
+    }
+  ]
+}

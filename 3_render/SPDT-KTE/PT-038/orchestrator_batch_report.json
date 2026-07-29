@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-07-21T10:37:59.525769",
+  "mode": "orchestrator_v0.3_sequential_history",
+  "results": [
+    {
+      "ep_num": 1,
+      "title": "徙木立信",
+      "status": "ok",
+      "stages": {},
+      "video_mb": 3.51,
+      "duration_s": 229.5,
+      "scenes": 17
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "ok": 1,
+    "total_scenes": 17,
+    "total_duration_s": 229.5,
+    "total_size_mb": 3.51,
+    "total_duration_min": 3.8
+  }
+}

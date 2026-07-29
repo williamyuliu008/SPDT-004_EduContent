@@ -1,0 +1,86 @@
+{
+  "scene_id": "墨骨山河_ep06_act2_04",
+  "scene_type": "concept",
+  "knowledge_type": "II",
+  "content": {
+    "title": "他继续写：'贼臣不救，孤城…",
+    "body_lines": [
+      "他继续写：'贼臣不救，孤城围逼",
+      "父陷子死，巢倾卵覆",
+      "'"
+    ],
+    "keywords": [
+      "他继",
+      "他继续",
+      "他继续写",
+      "他继续写："
+    ]
+  },
+  "page": {
+    "current": 5,
+    "total": 10,
+    "show": true
+  },
+  "scene_info": {
+    "idx": 4,
+    "total": 10,
+    "name": "笔墨的重量·dialogue",
+    "dur": 0.0
+  },
+  "source_knowledge_nodes": [
+    "#书法/唐/祭侄文稿特征",
+    "#考频/⭐️⭐⭐⭐⭐"
+  ],
+  "source_chain_id": "墨骨山河_ep06",
+  "five_skandha": {
+    "color_base": [
+      "他继",
+      "他继续",
+      "他继续写",
+      "他继续写："
+    ],
+    "sensation": "none",
+    "sensation_trigger": "他继续写：'贼臣不救，孤城围逼。父陷子死，巢倾卵覆。'\n\n他写到这里，停住了。\n……",
+    "discrimination": "学生能识别「他继续写：'贼臣不救，孤城…」的核心含义",
+    "action_prompt": "口述/复述",
+    "recognition_marker": "#书法/唐/祭侄文稿特征",
+    "bottleneck_warn": "受蕴"
+  },
+  "analogy_block": {
+    "applicable": true,
+    "knowledge_type": "II",
+    "source_domain": "历史场景/人生经验",
+    "target_domain": "#书法/唐/祭侄文稿特征",
+    "mapping_table": [
+      {
+        "source": "历史情境",
+        "arrow": "→",
+        "target": "书法技法"
+      }
+    ],
+    "difference_annotations": [
+      "注意历史背景与技法的差异"
+    ],
+    "closure_definition": ""
+  },
+  "semantic_alignment": {
+    "audio_segment_ref": "ACT2-BEAT-04-DIALOGUE",
+    "visual_element_ref": "CONTENT-ZONE-2",
+    "alignment_note": "旁白「他继续写：'贼臣不救，孤城围逼。父陷子…」对应视觉区显示",
+    "alignment_confirmed": false
+  },
+  "cognitive_load": {
+    "visual_points": 4,
+    "audio_chunks": 5,
+    "load_status": "WARN",
+    "bottleneck_cause": "受蕴",
+    "split_recommendation": "建议拆分为2个 scene"
+  },
+  "audio": {
+    "tts_template": "voice_explain",
+    "speed_wpm": 170,
+    "pause_after_s": 2.0
+  },
+  "energy_level": "medium",
+  "clip_friendly": true
+}

@@ -1,0 +1,96 @@
+{
+  "scene_id": "墨骨山河_ep01_act3_11",
+  "scene_type": "causal_chain",
+  "knowledge_type": "II",
+  "content": {
+    "title": "【综合论述题】\n\n请结合秦代…",
+    "header": "【综合论述题】\n\n请结合秦代'",
+    "chains": [
+      {
+        "cause": "【综合论述题】\n\n请结合…",
+        "effect": "【综合论述题】\n\n请结合…",
+        "cause_active": false,
+        "effect_active": false
+      },
+      {
+        "cause": "分析小篆的形式特…",
+        "effect": "分析小篆的形式特…",
+        "cause_active": true,
+        "effect_active": true
+      },
+      {
+        "cause": "（15分）\n\n要求：\n1. 准确叙述'书…",
+        "effect": "（15分）\n\n要求：\n1. 准确叙述'书…",
+        "cause_active": false,
+        "effect_active": false
+      }
+    ]
+  },
+  "page": {
+    "current": 12,
+    "total": 13,
+    "show": true
+  },
+  "scene_info": {
+    "idx": 11,
+    "total": 13,
+    "name": "千年之后·knowledge_check",
+    "dur": 5
+  },
+  "source_knowledge_nodes": [
+    "#综合/秦+书法/书同文论述",
+    "#考频/⭐️⭐⭐⭐⭐"
+  ],
+  "source_chain_id": "墨骨山河_ep01",
+  "five_skandha": {
+    "color_base": [
+      "【综合",
+      "【综合论",
+      "【综合论述",
+      "【综合论述题"
+    ],
+    "sensation": "none",
+    "sensation_trigger": "【综合论述题】\n\n请结合秦代'书同文'的历史背景，分析小篆的形式特征及其对后世书……",
+    "discrimination": "【综合论述题】\n\n请结合秦代'书同文'的历史背景，分析小篆的",
+    "action_prompt": "判断/选择",
+    "recognition_marker": "#综合/秦+书法/书同文论述",
+    "bottleneck_warn": "none"
+  },
+  "analogy_block": {
+    "applicable": true,
+    "knowledge_type": "II",
+    "source_domain": "历史场景/人生经验",
+    "target_domain": "#综合/秦+书法/书同文论述",
+    "mapping_table": [
+      {
+        "source": "历史情境",
+        "arrow": "→",
+        "target": "书法技法"
+      }
+    ],
+    "difference_annotations": [
+      "注意历史背景与技法的差异"
+    ],
+    "closure_definition": ""
+  },
+  "semantic_alignment": {
+    "audio_segment_ref": "ACT3-BEAT-11-KNOWLEDGE_CHECK",
+    "visual_element_ref": "CONTENT-ZONE-3",
+    "alignment_note": "旁白「【综合论述题】\n\n请结合秦代'书同文'的历…」对应视觉区显示",
+    "alignment_confirmed": false
+  },
+  "cognitive_load": {
+    "visual_points": 4,
+    "audio_chunks": 2,
+    "load_status": "ACCEPTABLE",
+    "bottleneck_cause": "none",
+    "split_recommendation": "建议拆分为2个 scene"
+  },
+  "audio": {
+    "tts_template": "voice_question",
+    "speed_wpm": 170,
+    "pause_after_s": 2.0
+  },
+  "energy_level": "medium",
+  "clip_friendly": false
+}

@@ -1,0 +1,2 @@
+file 'D:/92_products/SPDT-004_EduContent/PT-038_TextExperience/墨骨山河_ep04_test/ep04_frames/_temp_compose/merged_audio.m4a'
+file 'D:/92_products/SPDT-004_EduContent/PT-038_TextExperience/墨骨山河_ep04_test/ep04_frames/_temp_compose/_tail_silence.wav'

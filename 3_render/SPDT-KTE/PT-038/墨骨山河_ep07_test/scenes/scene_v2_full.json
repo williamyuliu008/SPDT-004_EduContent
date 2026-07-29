@@ -1,0 +1,679 @@
+{
+  "metadata": {
+    "series_title": "墨骨山河",
+    "ep_id": 7,
+    "ep_title": "碑学中兴",
+    "source_chain_id": "墨骨山河_ep07",
+    "source_pt": "PT-038",
+    "schema_version": "2.0.0",
+    "_generated_by": "PT038_to_VideoFactory.py v2.0.0",
+    "_generated_at": "2026-07-20T00:26:32+08:00",
+    "_total_scenes": 8
+  },
+  "scenes": [
+    {
+      "scene_id": "墨骨山河_ep07_act1_00",
+      "scene_type": "concept",
+      "knowledge_type": "II",
+      "content": {
+        "title": "1790年代，杭州",
+        "body_lines": [
+          "1790年代，杭州",
+          "阮元坐在书房里，面前摊着一堆拓片",
+          "这些拓片，是近年来从各地出土的新…"
+        ],
+        "keywords": [
+          "1790年代",
+          "杭州",
+          "阮元",
+          "阮元坐"
+        ]
+      },
+      "page": {
+        "current": 1,
+        "total": 8,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 0,
+        "total": 8,
+        "name": "金石之声·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#书法/清/碑学背景",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "墨骨山河_ep07",
+      "five_skandha": {
+        "color_base": [
+          "1790年代",
+          "杭州",
+          "阮元",
+          "阮元坐"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "1790年代，杭州。\n\n阮元坐在书房里，面前摊着一堆拓片。\n\n这些拓片，是近年来……",
+        "discrimination": "学生能识别「1790年代，杭州。\n\n阮元坐在书房…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#书法/清/碑学背景",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#书法/清/碑学背景",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT1-BEAT-00-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「1790年代，杭州。\n\n阮元坐在书房里，面前摊着…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "墨骨山河_ep07_act1_01",
+      "scene_type": "concept",
+      "knowledge_type": "II",
+      "content": {
+        "title": "阮元站起来，走到书架前",
+        "body_lines": [
+          "阮元站起来，走到书架前",
+          "书架上全是历代法帖——《阁帖》《淳化阁帖…",
+          "他翻了翻，然后又放下了"
+        ],
+        "keywords": [
+          "阮元",
+          "阮元站",
+          "阮元站起",
+          "阮元站起来"
+        ]
+      },
+      "page": {
+        "current": 2,
+        "total": 8,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 1,
+        "total": 8,
+        "name": "金石之声·dialogue",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#书法/清/碑学兴起原因",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "墨骨山河_ep07",
+      "five_skandha": {
+        "color_base": [
+          "阮元",
+          "阮元站",
+          "阮元站起",
+          "阮元站起来"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "阮元站起来，走到书架前。\n\n书架上全是历代法帖——《阁帖》《淳化阁帖》《大观帖》……",
+        "discrimination": "学生能识别「阮元站起来，走到书架前…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#书法/清/碑学兴起原因",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#书法/清/碑学兴起原因",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT1-BEAT-01-DIALOGUE",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「阮元站起来，走到书架前。\n\n书架上全是…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "墨骨山河_ep07_act2_02",
+      "scene_type": "concept",
+      "knowledge_type": "II",
+      "content": {
+        "title": "阮元蘸墨，开始写《南北书…",
+        "body_lines": [
+          "阮元蘸墨，开始写《南北书派论》",
+          "他写道：",
+          "'书法之派，自分为二：北方之书，与南方…"
+        ],
+        "keywords": [
+          "阮元",
+          "阮元蘸",
+          "阮元蘸墨",
+          "开始"
+        ]
+      },
+      "page": {
+        "current": 3,
+        "total": 8,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 2,
+        "total": 8,
+        "name": "版图重划·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#书法/清/南北书派论",
+        "#考频/⭐️⭐⭐⭐"
+      ],
+      "source_chain_id": "墨骨山河_ep07",
+      "five_skandha": {
+        "color_base": [
+          "阮元",
+          "阮元蘸",
+          "阮元蘸墨",
+          "开始"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "阮元蘸墨，开始写《南北书派论》。\n\n他写道：\n\n'书法之派，自分为二：北方之书，……",
+        "discrimination": "学生能识别「阮元蘸墨，开始写《南北书…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#书法/清/南北书派论",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#书法/清/南北书派论",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-02-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-3",
+        "alignment_note": "旁白「阮元蘸墨，开始写《南北书派论》。\n\n他写道…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 4,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "墨骨山河_ep07_act2_03",
+      "scene_type": "concept",
+      "knowledge_type": "II",
+      "content": {
+        "title": "阮元继续写：\n\n'南派书法，源…",
+        "body_lines": [
+          "阮元继续写：",
+          "'南派书法，源自王羲之、王献之，经历代…",
+          "代表人物：虞世南、褚遂良、颜真卿、柳公…"
+        ],
+        "keywords": [
+          "阮元",
+          "阮元继",
+          "阮元继续",
+          "阮元继续写"
+        ]
+      },
+      "page": {
+        "current": 4,
+        "total": 8,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 3,
+        "total": 8,
+        "name": "版图重划·dialogue",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#书法/清/南北书派论内容",
+        "#考频/⭐️⭐⭐⭐"
+      ],
+      "source_chain_id": "墨骨山河_ep07",
+      "five_skandha": {
+        "color_base": [
+          "阮元",
+          "阮元继",
+          "阮元继续",
+          "阮元继续写"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "阮元继续写：\n\n'南派书法，源自王羲之、王献之，经历代递传，以流美为尚，宜于尺牍……",
+        "discrimination": "学生能识别「阮元继续写：\n\n'南派书法，源…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#书法/清/南北书派论内容",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#书法/清/南北书派论内容",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-03-DIALOGUE",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「阮元继续写：\n\n'南派书法，源自王羲之、王…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "墨骨山河_ep07_act2_04",
+      "scene_type": "steps",
+      "knowledge_type": "II",
+      "content": {
+        "title": "【南北书派论判断题】\n\n以下…",
+        "steps": [
+          "【南北书派论判断题】",
+          "以下关于南北书派论的说法，哪一项…",
+          "A. 南北书派论认为，书法只有南派，北派…",
+          "B. 南派书法以王羲之为代表，重帖学，流…",
+          "北派书法以钟繇为代表，重碑刻，方峻…",
+          "C. 南北书派论认为南北两派毫无关联"
+        ]
+      },
+      "page": {
+        "current": 5,
+        "total": 8,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 4,
+        "total": 8,
+        "name": "版图重划·knowledge_check",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#书法/清/南北书派论",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "墨骨山河_ep07",
+      "five_skandha": {
+        "color_base": [
+          "【南北",
+          "【南北书",
+          "【南北书派",
+          "【南北书派论"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "【南北书派论判断题】\n\n以下关于南北书派论的说法，哪一项是正确的？\n\nA. 南北……",
+        "discrimination": "【南北书派论判断题】\n\n以下关于南北书派论的说法，哪一项是正",
+        "action_prompt": "判断/选择",
+        "recognition_marker": "#书法/清/南北书派论",
+        "bottleneck_warn": "想蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#书法/清/南北书派论",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-04-KNOWLEDGE_CHECK",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「【南北书派论判断题】\n\n以下关于南北书…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 6,
+        "audio_chunks": 3,
+        "load_status": "WARN",
+        "bottleneck_cause": "想蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_question",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": false
+    },
+    {
+      "scene_id": "墨骨山河_ep07_act2_05",
+      "scene_type": "contrast",
+      "knowledge_type": "II",
+      "content": {
+        "title": "【碑帖比较题】\n\n请比较碑学…",
+        "wrong_text": "【碑帖比较题】\n\n请比较碑学与帖学的主要",
+        "right_text": "（见旁白详解）"
+      },
+      "page": {
+        "current": 6,
+        "total": 8,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 5,
+        "total": 8,
+        "name": "版图重划·knowledge_check",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#书法/清/碑帖比较",
+        "#考频/⭐️⭐⭐⭐"
+      ],
+      "source_chain_id": "墨骨山河_ep07",
+      "five_skandha": {
+        "color_base": [
+          "【碑帖",
+          "【碑帖比",
+          "【碑帖比较",
+          "【碑帖比较题"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "【碑帖比较题】\n\n请比较碑学与帖学的主要差异：\n\n| 比较维度 | 碑学 | 帖……",
+        "discrimination": "学生能区分 X 与 Y 的核心差异",
+        "action_prompt": "判断/选择",
+        "recognition_marker": "#书法/清/碑帖比较",
+        "bottleneck_warn": "none"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#书法/清/碑帖比较",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-05-KNOWLEDGE_CHECK",
+        "visual_element_ref": "CONTENT-ZONE-3",
+        "alignment_note": "旁白「【碑帖比较题】\n\n请比较碑学与帖学的主…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 1,
+        "load_status": "ACCEPTABLE",
+        "bottleneck_cause": "none",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_question",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": false
+    },
+    {
+      "scene_id": "墨骨山河_ep07_act3_06",
+      "scene_type": "contrast",
+      "knowledge_type": "II",
+      "content": {
+        "title": "【综合论述题】\n\n请结合阮元…",
+        "wrong_text": "【综合论述题】\n\n请结合阮元的书法实践，",
+        "right_text": "（见旁白详解）"
+      },
+      "page": {
+        "current": 7,
+        "total": 8,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 6,
+        "total": 8,
+        "name": "版图之外·knowledge_check",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#综合/清书法/南北书派论论述",
+        "#考频/⭐️⭐⭐⭐"
+      ],
+      "source_chain_id": "墨骨山河_ep07",
+      "five_skandha": {
+        "color_base": [
+          "【综合",
+          "【综合论",
+          "【综合论述",
+          "【综合论述题"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "【综合论述题】\n\n请结合阮元的书法实践，论述南北书派论的内容及其在书法史上的意义……",
+        "discrimination": "学生能区分 X 与 Y 的核心差异",
+        "action_prompt": "判断/选择",
+        "recognition_marker": "#综合/清书法/南北书派论论述",
+        "bottleneck_warn": "none"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#综合/清书法/南北书派论论述",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT3-BEAT-06-KNOWLEDGE_CHECK",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「【综合论述题】\n\n请结合阮元的书法实践…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 2,
+        "load_status": "ACCEPTABLE",
+        "bottleneck_cause": "none",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_question",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": false
+    },
+    {
+      "scene_id": "墨骨山河_ep07_act3_07",
+      "scene_type": "concept",
+      "knowledge_type": "II",
+      "content": {
+        "title": "你合上书，望着窗外",
+        "body_lines": [
+          "你合上书，望着窗外",
+          "阮元的南北书派论，已经过去了二百…",
+          "它开启了一个时代——碑学中兴的时代"
+        ],
+        "keywords": [
+          "你合",
+          "你合上",
+          "你合上书",
+          "望着"
+        ]
+      },
+      "page": {
+        "current": 8,
+        "total": 8,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 7,
+        "total": 8,
+        "name": "版图之外·series_hook",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [],
+      "source_chain_id": "墨骨山河_ep07",
+      "five_skandha": {
+        "color_base": [
+          "你合",
+          "你合上",
+          "你合上书",
+          "望着"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "你合上书，望着窗外。\n\n阮元的南北书派论，已经过去了二百多年。\n\n它开启了一个时……",
+        "discrimination": "学生能识别「你合上书，望着窗外。\n\n阮元…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "你合上书，望着窗外",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "你合上书，望着窗外。\n\n阮元的南北书派…",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT3-BEAT-07-SERIES_HOOK",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「你合上书，望着窗外。\n\n阮元的南北书派…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    }
+  ]
+}

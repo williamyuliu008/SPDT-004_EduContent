@@ -1,0 +1,55 @@
+{
+  "stages": {
+    "adapter": {
+      "status": "ok",
+      "at": "2026-07-20T18:39:37.578393"
+    },
+    "converter": {
+      "status": "ok",
+      "at": "2026-07-20T18:39:37.720600"
+    },
+    "tts": {
+      "status": "ok",
+      "scenes": {
+        "墨骨山河_ep09_act1_00": "skipped_existing",
+        "墨骨山河_ep09_act1_01": "skipped_existing",
+        "墨骨山河_ep09_act1_02": "skipped_existing",
+        "墨骨山河_ep09_act2_03": "skipped_existing",
+        "墨骨山河_ep09_act2_04": "skipped_existing",
+        "墨骨山河_ep09_act2_05": "skipped_existing",
+        "墨骨山河_ep09_act2_06": "skipped_existing",
+        "墨骨山河_ep09_act2_07": "skipped_existing",
+        "墨骨山河_ep09_act3_08": "skip_short_text",
+        "墨骨山河_ep09_act3_09": "skip_short_text",
+        "墨骨山河_ep09_act3_10": "skip_short_text",
+        "墨骨山河_ep09_act3_11": "skip_short_text",
+        "墨骨山河_ep09_act3_12": "skipped_existing",
+        "墨骨山河_ep09_act4_13": "skipped_existing",
+        "墨骨山河_ep09_act4_14": "skipped_existing",
+        "墨骨山河_ep09_act4_15": "skipped_existing",
+        "墨骨山河_ep09_act4_16": "skipped_existing"
+      },
+      "at": "2026-07-20T18:39:37.725309"
+    },
+    "render": {
+      "status": "ok",
+      "scenes": {},
+      "at": "2026-07-20T18:47:50.213438"
+    },
+    "compose": {
+      "status": "ok",
+      "size_mb": 3.5092411041259766,
+      "at": "2026-07-20T18:48:42.666759"
+    },
+    "metadata": {
+      "status": "ok",
+      "at": "2026-07-20T18:48:42.669879"
+    },
+    "done": {
+      "status": "ok",
+      "at": "2026-07-20T18:48:42.670298"
+    }
+  },
+  "started_at": "2026-07-20T18:39:37.491163",
+  "updated_at": "2026-07-20T18:48:42.670302"
+}

@@ -1,0 +1,80 @@
+{
+  "scene_id": "墨骨山河_ep01_act2_06",
+  "scene_type": "word_evolution",
+  "knowledge_type": "II",
+  "content": {
+    "title": "【小篆特征识别题】以下哪…",
+    "header": "【小篆特征识别题】以下哪一项描",
+    "evolution_stages": []
+  },
+  "page": {
+    "current": 7,
+    "total": 13,
+    "show": true
+  },
+  "scene_info": {
+    "idx": 6,
+    "total": 13,
+    "name": "峄山碑·knowledge_check",
+    "dur": 3.0
+  },
+  "source_knowledge_nodes": [
+    "#书法/秦/小篆特征辨析",
+    "#考频/⭐️⭐⭐⭐⭐"
+  ],
+  "source_chain_id": "墨骨山河_ep01",
+  "five_skandha": {
+    "color_base": [
+      "【小篆",
+      "【小篆特",
+      "【小篆特征",
+      "【小篆特征识"
+    ],
+    "sensation": "none",
+    "sensation_trigger": "【小篆特征识别题】以下哪一项描述最能体现小篆的形式美特征？\n\nA. 笔画有粗细变……",
+    "discrimination": "【小篆特征识别题】以下哪一项描述最能体现小篆的形式美特征？\n",
+    "action_prompt": "判断/选择",
+    "recognition_marker": "#书法/秦/小篆特征辨析",
+    "bottleneck_warn": "none"
+  },
+  "analogy_block": {
+    "applicable": true,
+    "knowledge_type": "II",
+    "source_domain": "历史场景/人生经验",
+    "target_domain": "#书法/秦/小篆特征辨析",
+    "mapping_table": [
+      {
+        "source": "历史情境",
+        "arrow": "→",
+        "target": "书法技法"
+      }
+    ],
+    "difference_annotations": [
+      "注意历史背景与技法的差异"
+    ],
+    "closure_definition": ""
+  },
+  "semantic_alignment": {
+    "audio_segment_ref": "ACT2-BEAT-06-KNOWLEDGE_CHECK",
+    "visual_element_ref": "CONTENT-ZONE-1",
+    "alignment_note": "旁白「【小篆特征识别题】以下哪一项描述最…」对应视觉区显示",
+    "alignment_confirmed": false
+  },
+  "cognitive_load": {
+    "visual_points": 4,
+    "audio_chunks": 2,
+    "load_status": "ACCEPTABLE",
+    "bottleneck_cause": "none",
+    "split_recommendation": "建议拆分为2个 scene"
+  },
+  "audio": {
+    "tts_template": "voice_question",
+    "speed_wpm": 170,
+    "pause_after_s": 2.0,
+    "actual_duration_s": 3.0,
+    "duration_s": 2.99,
+    "wait_time": 2.99
+  },
+  "energy_level": "medium",
+  "clip_friendly": false
+}

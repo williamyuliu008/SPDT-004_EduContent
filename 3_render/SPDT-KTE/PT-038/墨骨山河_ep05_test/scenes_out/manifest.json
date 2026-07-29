@@ -1,0 +1,133 @@
+{
+  "episode_id": "墨骨山河_ep05",
+  "series": "墨骨山河",
+  "title": "颠张醉素",
+  "total_scenes": 11,
+  "scenes": [
+    {
+      "scene_id": "墨骨山河_ep05_act1_00",
+      "scene_type": "concept",
+      "title": "天宝年间，长安，某贵人府…",
+      "source_knowledge_nodes": [
+        "#书法/唐/张旭",
+        "#考频/⭐️⭐⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "墨骨山河_ep05_act1_01",
+      "scene_type": "concept",
+      "title": "书童铺开一张大纸，高度…",
+      "source_knowledge_nodes": [
+        "#书法/唐/张旭学书路径",
+        "#考频/⭐️⭐⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "墨骨山河_ep05_act1_02",
+      "scene_type": "steps",
+      "title": "【张旭生平判断题】\n\n以下关…",
+      "source_knowledge_nodes": [
+        "#书法/唐/张旭外师造化",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "墨骨山河_ep05_act2_03",
+      "scene_type": "concept",
+      "title": "张旭落笔",
+      "source_knowledge_nodes": [
+        "#书法/唐/狂草特征",
+        "#考频/⭐️⭐⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "墨骨山河_ep05_act2_04",
+      "scene_type": "concept",
+      "title": "张旭的呼吸越来越快",
+      "source_knowledge_nodes": [
+        "#书法/唐/狂草艺术原理",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "墨骨山河_ep05_act2_05",
+      "scene_type": "steps",
+      "title": "【狂草特征判断题】\n\n以下关…",
+      "source_knowledge_nodes": [
+        "#书法/唐/狂草vs涂鸦",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "墨骨山河_ep05_act2_06",
+      "scene_type": "concept",
+      "title": "杜甫曾在诗中这样描写…",
+      "source_knowledge_nodes": [
+        "#书法/唐/变动犹鬼神",
+        "#考频/⭐️⭐⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "墨骨山河_ep05_act2_07",
+      "scene_type": "contrast",
+      "title": "【颠张醉素比较题】\n\n请比较…",
+      "source_knowledge_nodes": [
+        "#书法/唐/颠张醉素",
+        "#考频/⭐️⭐⭐⭐"
+      ],
+      "cognitive_load": "ACCEPTABLE"
+    },
+    {
+      "scene_id": "墨骨山河_ep05_act3_08",
+      "scene_type": "concept",
+      "title": "画面从长安收回，回到现…",
+      "source_knowledge_nodes": [],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "墨骨山河_ep05_act3_09",
+      "scene_type": "quote_highlight",
+      "title": "【综合论述题】\n\n请结合张旭…",
+      "source_knowledge_nodes": [
+        "#综合/唐书法/狂草论述",
+        "#考频/⭐️⭐⭐⭐"
+      ],
+      "cognitive_load": "ACCEPTABLE"
+    },
+    {
+      "scene_id": "墨骨山河_ep05_act3_10",
+      "scene_type": "concept",
+      "title": "你合上字帖，望着窗外",
+      "source_knowledge_nodes": [],
+      "cognitive_load": "WARN"
+    }
+  ],
+  "stats": {
+    "total_beats": 13,
+    "total_scenes": 11,
+    "by_scene_type": {
+      "concept": 7,
+      "steps": 2,
+      "contrast": 1,
+      "quote_highlight": 1
+    },
+    "by_knowledge_type": {
+      "I": 0,
+      "II": 11,
+      "III": 0,
+      "IV": 0
+    },
+    "cognitive_warnings": 9
+  },
+  "schema_version": "v2",
+  "if_a_path": "D:\\92_products\\SPDT-004_EduContent\\SPDT-KTE\\PT-038\\墨骨山河_ep05_test\\scenes_out\\scene_v2_full.json",
+  "validation_errors": 0,
+  "analogy_warnings": 0
+}

@@ -1,0 +1,916 @@
+{
+  "metadata": {
+    "series_title": "墨骨山河",
+    "ep_id": 4,
+    "ep_title": "书谱之道",
+    "source_chain_id": "墨骨山河_ep04",
+    "source_pt": "PT-038",
+    "schema_version": "2.0.0",
+    "_generated_by": "PT038_to_VideoFactory.py v2.0.0",
+    "_generated_at": "2026-07-16T18:19:43+08:00",
+    "_total_scenes": 11
+  },
+  "scenes": [
+    {
+      "scene_id": "墨骨山河_ep04_act1_00",
+      "scene_type": "concept",
+      "knowledge_type": "II",
+      "content": {
+        "title": "687年，垂拱三年",
+        "body_lines": [
+          "687年，垂拱三年",
+          "孙过庭坐在书案前，面前是一卷《兰亭…",
+          "他看着这两幅字，陷入了沉思"
+        ],
+        "keywords": [
+          "垂拱",
+          "垂拱三",
+          "垂拱三年",
+          "孙过"
+        ]
+      },
+      "page": {
+        "current": 1,
+        "total": 11,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 0,
+        "total": 11,
+        "name": "为什么需要理论·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#书法/唐/初唐书法"
+      ],
+      "source_chain_id": "墨骨山河_ep04",
+      "five_skandha": {
+        "color_base": [
+          "垂拱",
+          "垂拱三",
+          "垂拱三年",
+          "孙过"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "687年，垂拱三年。\n\n孙过庭坐在书案前，面前是一卷《兰亭序》的摹本，旁边是欧阳……",
+        "discrimination": "学生能识别「687年，垂拱三年。\n\n孙过庭坐在…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#书法/唐/初唐书法",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#书法/唐/初唐书法",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT1-BEAT-00-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「687年，垂拱三年。\n\n孙过庭坐在书案前，面前…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "墨骨山河_ep04_act1_01",
+      "scene_type": "concept",
+      "knowledge_type": "II",
+      "content": {
+        "title": "孙过庭放下笔，开始在竹…",
+        "body_lines": [
+          "孙过庭放下笔，开始在竹简上写下他…",
+          "'余志学之年，留心翰墨，味钟张之余烈…",
+          "'"
+        ],
+        "keywords": [
+          "孙过",
+          "孙过庭",
+          "孙过庭放",
+          "孙过庭放下"
+        ]
+      },
+      "page": {
+        "current": 2,
+        "total": 11,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 1,
+        "total": 11,
+        "name": "为什么需要理论·dialogue",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#书法/唐/书谱原文",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "墨骨山河_ep04",
+      "five_skandha": {
+        "color_base": [
+          "孙过",
+          "孙过庭",
+          "孙过庭放",
+          "孙过庭放下"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "孙过庭放下笔，开始在竹简上写下他思考了很久的问题：\n\n'余志学之年，留心翰墨，味……",
+        "discrimination": "学生能识别「孙过庭放下笔，开始在竹…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#书法/唐/书谱原文",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#书法/唐/书谱原文",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT1-BEAT-01-DIALOGUE",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「孙过庭放下笔，开始在竹简上写下他…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "墨骨山河_ep04_act1_02",
+      "scene_type": "steps",
+      "knowledge_type": "II",
+      "content": {
+        "title": "【历史知识题】以下关于《书…",
+        "steps": [
+          "【历史知识题】以下关于《书谱》的描述，哪…",
+          "A. 《书谱》是唐代第一部书法理论专著，作…",
+          "B. 《书谱》全文完整保存，共六千余字",
+          "C. 《书谱》提出了'五乖五合'的理论",
+          "D. 《书谱》成书于唐太宗贞观年间",
+          "请选择"
+        ]
+      },
+      "page": {
+        "current": 3,
+        "total": 11,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 2,
+        "total": 11,
+        "name": "为什么需要理论·knowledge_check",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#书法/唐/书谱基本常识",
+        "#考频/⭐️⭐⭐⭐"
+      ],
+      "source_chain_id": "墨骨山河_ep04",
+      "five_skandha": {
+        "color_base": [
+          "【历史",
+          "【历史知",
+          "【历史知识",
+          "【历史知识题"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "【历史知识题】以下关于《书谱》的描述，哪一项是正确的？\n\nA. 《书谱》是唐代第……",
+        "discrimination": "【历史知识题】以下关于《书谱》的描述，哪一项是正确的？\n\nA",
+        "action_prompt": "判断/选择",
+        "recognition_marker": "#书法/唐/书谱基本常识",
+        "bottleneck_warn": "想蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#书法/唐/书谱基本常识",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT1-BEAT-02-KNOWLEDGE_CHECK",
+        "visual_element_ref": "CONTENT-ZONE-3",
+        "alignment_note": "旁白「【历史知识题】以下关于《书谱》的描述，哪…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 6,
+        "audio_chunks": 2,
+        "load_status": "WARN",
+        "bottleneck_cause": "想蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_question",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": false
+    },
+    {
+      "scene_id": "墨骨山河_ep04_act2_03",
+      "scene_type": "concept",
+      "knowledge_type": "II",
+      "content": {
+        "title": "孙过庭在竹简上写道：\n\n'神…",
+        "body_lines": [
+          "孙过庭在竹简上写道：",
+          "'神怡务闲，一合也",
+          "感惠徇知，二合也"
+        ],
+        "keywords": [
+          "孙过",
+          "孙过庭",
+          "孙过庭在",
+          "孙过庭在竹"
+        ]
+      },
+      "page": {
+        "current": 4,
+        "total": 11,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 3,
+        "total": 11,
+        "name": "五乖五合·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#书法/唐/五乖五合",
+        "#考频/⭐️⭐⭐⭐⭐"
+      ],
+      "source_chain_id": "墨骨山河_ep04",
+      "five_skandha": {
+        "color_base": [
+          "孙过",
+          "孙过庭",
+          "孙过庭在",
+          "孙过庭在竹"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "孙过庭在竹简上写道：\n\n'神怡务闲，一合也；感惠徇知，二合也；时和气润，三合也；……",
+        "discrimination": "学生能识别「孙过庭在竹简上写道：\n\n'神…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#书法/唐/五乖五合",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#书法/唐/五乖五合",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-03-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「孙过庭在竹简上写道：\n\n'神怡务闲，一合…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "墨骨山河_ep04_act2_04",
+      "scene_type": "concept",
+      "knowledge_type": "II",
+      "content": {
+        "title": "学生：先生，什么叫'神怡务…",
+        "body_lines": [
+          "学生：先生，什么叫'神怡务闲'？",
+          "孙过庭：神，是精神",
+          "怡，是愉悦"
+        ],
+        "keywords": [
+          "学生",
+          "学生：",
+          "学生：先",
+          "学生：先生"
+        ]
+      },
+      "page": {
+        "current": 5,
+        "total": 11,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 4,
+        "total": 11,
+        "name": "五乖五合·dialogue",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#书法/唐/五乖五合内涵",
+        "#考频/⭐️⭐⭐⭐⭐"
+      ],
+      "source_chain_id": "墨骨山河_ep04",
+      "five_skandha": {
+        "color_base": [
+          "学生",
+          "学生：",
+          "学生：先",
+          "学生：先生"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "学生：先生，什么叫'神怡务闲'？\n\n孙过庭：神，是精神。怡，是愉悦。务，是必须。……",
+        "discrimination": "学生能识别「学生：先生，什么叫'神怡务…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#书法/唐/五乖五合内涵",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#书法/唐/五乖五合内涵",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-04-DIALOGUE",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「学生：先生，什么叫'神怡务闲'？\n\n孙过庭：神…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "墨骨山河_ep04_act2_05",
+      "scene_type": "steps",
+      "knowledge_type": "II",
+      "content": {
+        "title": "【五乖五合·连线匹配题】以…",
+        "steps": [
+          "【五乖五合·连线匹配题】以下左侧是五…",
+          "① 神怡务闲          a. 情绪怠惰，精力衰竭",
+          "② 感惠徇知          b. 风大日晒，燥热难耐",
+          "③ 时和气润          c. 精神愉悦，专心一志",
+          "④ 纸墨相发          d. 气候温和，笔墨润泽",
+          "⑤ 偶然欲书          e. 纸墨相宜，相互激发"
+        ]
+      },
+      "page": {
+        "current": 6,
+        "total": 11,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 5,
+        "total": 11,
+        "name": "五乖五合·knowledge_check",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#书法/唐/五乖五合细节",
+        "#考频/⭐️⭐⭐⭐⭐"
+      ],
+      "source_chain_id": "墨骨山河_ep04",
+      "five_skandha": {
+        "color_base": [
+          "【五乖",
+          "【五乖五",
+          "【五乖五合",
+          "【五乖五合·"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "【五乖五合·连线匹配题】以下左侧是五乖五合的十个条件，请将右侧的正确解释配对：\n……",
+        "discrimination": "【五乖五合·连线匹配题】以下左侧是五乖五合的十个条件，请将右",
+        "action_prompt": "判断/选择",
+        "recognition_marker": "#书法/唐/五乖五合细节",
+        "bottleneck_warn": "想蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#书法/唐/五乖五合细节",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-05-KNOWLEDGE_CHECK",
+        "visual_element_ref": "CONTENT-ZONE-3",
+        "alignment_note": "旁白「【五乖五合·连线匹配题】以下左侧是五…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 6,
+        "audio_chunks": 1,
+        "load_status": "WARN",
+        "bottleneck_cause": "想蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_question",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": false
+    },
+    {
+      "scene_id": "墨骨山河_ep04_act2_06",
+      "scene_type": "quote_highlight",
+      "knowledge_type": "II",
+      "content": {
+        "title": "孙过庭继续写",
+        "quote": "孙过庭继续写。他写到了他最重要的一个理论发现：\n\n'古质今妍'。\n\n他写道：\n\n'且右军之书，代咸称之，议者云…",
+        "attribution": "孙过庭·书谱"
+      },
+      "page": {
+        "current": 7,
+        "total": 11,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 6,
+        "total": 11,
+        "name": "五乖五合·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#书法/唐/古质今妍",
+        "#考频/⭐️⭐⭐⭐"
+      ],
+      "source_chain_id": "墨骨山河_ep04",
+      "five_skandha": {
+        "color_base": [
+          "孙过",
+          "孙过庭",
+          "孙过庭继",
+          "孙过庭继续"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "孙过庭继续写。他写到了他最重要的一个理论发现：\n\n'古质今妍'。\n\n他写道：\n\n……",
+        "discrimination": "学生能引用核心论述解释书法现象",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#书法/唐/古质今妍",
+        "bottleneck_warn": "none"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#书法/唐/古质今妍",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-06-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「孙过庭继续写。他写到了他最重要的…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 3,
+        "load_status": "ACCEPTABLE",
+        "bottleneck_cause": "none",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "墨骨山河_ep04_act2_07",
+      "scene_type": "steps",
+      "knowledge_type": "II",
+      "content": {
+        "title": "【书法史论综合题】以下关…",
+        "steps": [
+          "【书法史论综合题】以下关于孙过庭和…",
+          "① 孙过庭在《书谱》中提出'达其情性，形其…",
+          "② 《书谱》完整保存，全文六千余字，是研究…",
+          "③ '古质今妍'是孙过庭对书法审美史的…",
+          "④ 五乖五合是《书谱》提出的书法创作条…",
+          "⑤ 孙过庭的书法实践水平不高，主要以…"
+        ]
+      },
+      "page": {
+        "current": 8,
+        "total": 11,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 7,
+        "total": 11,
+        "name": "五乖五合·knowledge_check",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#书法/唐/书谱综合判断",
+        "#考频/⭐️⭐⭐⭐"
+      ],
+      "source_chain_id": "墨骨山河_ep04",
+      "five_skandha": {
+        "color_base": [
+          "【书法",
+          "【书法史",
+          "【书法史论",
+          "【书法史论综"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "【书法史论综合题】以下关于孙过庭和《书谱》的描述，请判断正误（正确打○，错误打✗……",
+        "discrimination": "【书法史论综合题】以下关于孙过庭和《书谱》的描述，请判断正误",
+        "action_prompt": "判断/选择",
+        "recognition_marker": "#书法/唐/书谱综合判断",
+        "bottleneck_warn": "想蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#书法/唐/书谱综合判断",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-07-KNOWLEDGE_CHECK",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「【书法史论综合题】以下关于孙过庭和…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 6,
+        "audio_chunks": 1,
+        "load_status": "WARN",
+        "bottleneck_cause": "想蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_question",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": false
+    },
+    {
+      "scene_id": "墨骨山河_ep04_act3_08",
+      "scene_type": "quote_highlight",
+      "knowledge_type": "II",
+      "content": {
+        "title": "画面从长安的书斋收回…",
+        "quote": "画面从长安的书斋收回，回到现代。\n\n你坐在书桌前，面前是《书谱》的原文，旁边是一叠五乖五合的练习…",
+        "attribution": "孙过庭·书谱"
+      },
+      "page": {
+        "current": 9,
+        "total": 11,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 8,
+        "total": 11,
+        "name": "说清之后·contemporary_reflection",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [],
+      "source_chain_id": "墨骨山河_ep04",
+      "five_skandha": {
+        "color_base": [
+          "画面",
+          "画面从",
+          "画面从长",
+          "画面从长安"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "画面从长安的书斋收回，回到现代。\n\n你坐在书桌前，面前是《书谱》的原文，旁边是一……",
+        "discrimination": "学生能引用核心论述解释书法现象",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "画面从长安的书斋收回，回到现代",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "画面从长安的书斋收回，回到现代。\n\n你…",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT3-BEAT-08-CONTEMPORARY_REFLECTION",
+        "visual_element_ref": "CONTENT-ZONE-3",
+        "alignment_note": "旁白「画面从长安的书斋收回，回到现代。\n\n你…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "墨骨山河_ep04_act3_09",
+      "scene_type": "timeline",
+      "knowledge_type": "II",
+      "content": {
+        "title": "【书法史论综合题】\n\n请结合…",
+        "header": "【书法史论综合题】\n\n请结合《",
+        "timeline_events": [
+          {
+            "year": "758年",
+            "event": "乾元元年",
+            "note": "蒲州",
+            "active": true
+          }
+        ]
+      },
+      "page": {
+        "current": 10,
+        "total": 11,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 9,
+        "total": 11,
+        "name": "说清之后·knowledge_check",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#书法/唐/书谱综合论述",
+        "#考频/⭐️⭐⭐⭐⭐"
+      ],
+      "source_chain_id": "墨骨山河_ep04",
+      "five_skandha": {
+        "color_base": [
+          "【书法",
+          "【书法史",
+          "【书法史论",
+          "【书法史论综"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "【书法史论综合题】\n\n请结合《书谱》的成书背景，分析孙过庭的书法理论贡献，并论述……",
+        "discrimination": "【书法史论综合题】\n\n请结合《书谱》的成书背景，分析孙过庭的",
+        "action_prompt": "判断/选择",
+        "recognition_marker": "#书法/唐/书谱综合论述",
+        "bottleneck_warn": "none"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#书法/唐/书谱综合论述",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT3-BEAT-09-KNOWLEDGE_CHECK",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「【书法史论综合题】\n\n请结合《书谱》的成书…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 2,
+        "load_status": "ACCEPTABLE",
+        "bottleneck_cause": "none",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_question",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "墨骨山河_ep04_act3_10",
+      "scene_type": "quote_highlight",
+      "knowledge_type": "II",
+      "content": {
+        "title": "你合上《书谱》，望向窗外",
+        "quote": "你合上《书谱》，望向窗外。\n\n孙过庭用文字解释书法的尝试，是一次勇敢的冒险——他把'不可说'的东西，说出…",
+        "attribution": "孙过庭·书谱"
+      },
+      "page": {
+        "current": 11,
+        "total": 11,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 10,
+        "total": 11,
+        "name": "说清之后·series_hook",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [],
+      "source_chain_id": "墨骨山河_ep04",
+      "five_skandha": {
+        "color_base": [
+          "你合",
+          "你合上",
+          "你合上《",
+          "你合上《书"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "你合上《书谱》，望向窗外。\n\n孙过庭用文字解释书法的尝试，是一次勇敢的冒险——他……",
+        "discrimination": "学生能引用核心论述解释书法现象",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "你合上《书谱》，望向窗外",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "你合上《书谱》，望向窗外。\n\n孙过庭用文字…",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT3-BEAT-10-SERIES_HOOK",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「你合上《书谱》，望向窗外。\n\n孙过庭用文字…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    }
+  ]
+}

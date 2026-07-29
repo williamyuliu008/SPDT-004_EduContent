@@ -1,0 +1,183 @@
+{
+  "schema_version": "1.0.0",
+  "package_id": "革与鼎_EP05",
+  "series_title": "革与鼎",
+  "total_episodes": 1,
+  "produced_by": "PT-VFX",
+  "produced_at": "2026-07-16T19:22:08+08:00",
+  "source_episodes_dir": "D:\\92_products\\SPDT-004_EduContent\\SPDT-KTE\\PT-038\\古史_革与鼎_ep05_test\\scenes_out",
+  "episodes": [
+    {
+      "ep": 5,
+      "title": "胡汉之间",
+      "subtitle": "孝文帝·北魏汉化",
+      "video_file": "gushi_革与鼎_ep05_胡汉之间.mp4",
+      "audio_file": "",
+      "duration_seconds": 104.0,
+      "resolution": "720p",
+      "bitrate_kbps": 2000,
+      "chains": [
+        "古史_革与鼎_ep05"
+      ],
+      "cards_file": "",
+      "scene_timeline": [
+        {
+          "idx": 0,
+          "time": 0.0,
+          "scene_name": "五胡乱华，是中国历史上…",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep05",
+          "five_skandha": {
+            "color_base": "五胡 / 五胡乱 / 五胡乱华 / 是中",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/494年（孝文帝迁都洛阳）"
+          }
+        },
+        {
+          "idx": 1,
+          "time": 8.0,
+          "scene_name": "【冯太后的教育】\n\n\n\n拓跋宏五…",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep05",
+          "five_skandha": {
+            "color_base": "【冯太 / 【冯太后 / 【冯太后的 / 【冯太后的教",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/494年（孝文帝迁都洛阳）"
+          }
+        },
+        {
+          "idx": 2,
+          "time": 16.0,
+          "scene_name": "冯太后的回答，揭示了北…",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep05",
+          "five_skandha": {
+            "color_base": "冯太 / 冯太后 / 冯太后的 / 冯太后的回",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/494年（孝文帝迁都洛阳）"
+          }
+        },
+        {
+          "idx": 3,
+          "time": 24.0,
+          "scene_name": "北魏的政治困境：政权由…",
+          "scene_type": "action",
+          "chain_ref": "古史_革与鼎_ep05",
+          "five_skandha": {
+            "color_base": "北魏 / 北魏的 / 北魏的政 / 北魏的政治",
+            "action_prompt": "书写/口述",
+            "recognition_marker": "#革与鼎/494年（孝文帝迁都洛阳）"
+          }
+        },
+        {
+          "idx": 4,
+          "time": 32.0,
+          "scene_name": "孝文帝的第一项改革：迁…",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep05",
+          "five_skandha": {
+            "color_base": "孝文 / 孝文帝 / 孝文帝的 / 孝文帝的第",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/494年（孝文帝迁都洛阳）"
+          }
+        },
+        {
+          "idx": 5,
+          "time": 40.0,
+          "scene_name": "迁都之后，孝文帝开始了…",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep05",
+          "five_skandha": {
+            "color_base": "迁都 / 迁都之 / 迁都之后 / 孝文",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/494年（孝文帝迁都洛阳）"
+          }
+        },
+        {
+          "idx": 6,
+          "time": 48.0,
+          "scene_name": "北魏汉化改革，本质上是…",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep05",
+          "five_skandha": {
+            "color_base": "北魏 / 北魏汉 / 北魏汉化 / 北魏汉化改",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/494年（孝文帝迁都洛阳）"
+          }
+        },
+        {
+          "idx": 7,
+          "time": 56.0,
+          "scene_name": "北魏汉化的遗产，比孝文…",
+          "scene_type": "causal_chain",
+          "chain_ref": "古史_革与鼎_ep05",
+          "five_skandha": {
+            "color_base": "北魏 / 北魏汉 / 北魏汉化 / 北魏汉化的",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/494年（孝文帝迁都洛阳）"
+          }
+        },
+        {
+          "idx": 8,
+          "time": 64.0,
+          "scene_name": "更重要的是：这种'胡汉融…",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep05",
+          "five_skandha": {
+            "color_base": "更重 / 更重要 / 更重要的 / 更重要的是",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/494年（孝文帝迁都洛阳）"
+          }
+        },
+        {
+          "idx": 9,
+          "time": 72.0,
+          "scene_name": "还有一个被忽视的维度…",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep05",
+          "five_skandha": {
+            "color_base": "还有 / 还有一 / 还有一个 / 还有一个被",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/494年（孝文帝迁都洛阳）"
+          }
+        },
+        {
+          "idx": 10,
+          "time": 80.0,
+          "scene_name": "北魏汉化的历史意义：它…",
+          "scene_type": "action",
+          "chain_ref": "古史_革与鼎_ep05",
+          "five_skandha": {
+            "color_base": "北魏 / 北魏汉 / 北魏汉化 / 北魏汉化的",
+            "action_prompt": "书写/口述",
+            "recognition_marker": "#革与鼎/494年（孝文帝迁都洛阳）"
+          }
+        },
+        {
+          "idx": 11,
+          "time": 88.0,
+          "scene_name": "孝文帝的选择，揭示了一…",
+          "scene_type": "contrast",
+          "chain_ref": "古史_革与鼎_ep05",
+          "five_skandha": {
+            "color_base": "孝文 / 孝文帝 / 孝文帝的 / 孝文帝的选",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/494年（孝文帝迁都洛阳）"
+          }
+        },
+        {
+          "idx": 12,
+          "time": 96.0,
+          "scene_name": "高考考点提示：北魏孝文…",
+          "scene_type": "causal_chain",
+          "chain_ref": "古史_革与鼎_ep05",
+          "five_skandha": {
+            "color_base": "高考 / 高考考 / 高考考点 / 高考考点提",
+            "action_prompt": "书写/口述",
+            "recognition_marker": "#革与鼎/494年（孝文帝迁都洛阳）"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "episode_id": "古史_革与鼎_ep04",
+  "series": "革与鼎",
+  "title": "汉武雄图",
+  "total_scenes": 14,
+  "scenes": [
+    {
+      "scene_id": "古史_革与鼎_ep04_act1_00",
+      "scene_type": "concept",
+      "title": "前141年，刘彻登基",
+      "source_knowledge_nodes": [
+        "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "#历史/汉武雄图",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_革与鼎_ep04_act1_01",
+      "scene_type": "concept",
+      "title": "【少年的志向】\n\n\n\n刘彻十六岁…",
+      "source_knowledge_nodes": [
+        "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "#历史/汉武雄图",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_革与鼎_ep04_act1_02",
+      "scene_type": "concept",
+      "title": "刘彻等了几年，等来了一…",
+      "source_knowledge_nodes": [
+        "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "#历史/汉武雄图",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_革与鼎_ep04_act1_03",
+      "scene_type": "action",
+      "title": "马邑之谋失败后，汉武帝…",
+      "source_knowledge_nodes": [
+        "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "#历史/汉武雄图",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "ACCEPTABLE"
+    },
+    {
+      "scene_id": "古史_革与鼎_ep04_act2_04",
+      "scene_type": "concept",
+      "title": "汉武帝想了几个办法：\n\n\n\n第…",
+      "source_knowledge_nodes": [
+        "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "#历史/汉武雄图",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_革与鼎_ep04_act2_05",
+      "scene_type": "concept",
+      "title": "前119年，漠北大战之后，国库…",
+      "source_knowledge_nodes": [
+        "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "#历史/汉武雄图",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_革与鼎_ep04_act2_06",
+      "scene_type": "concept",
+      "title": "这就是中国历史上最早…",
+      "source_knowledge_nodes": [
+        "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "#历史/汉武雄图",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_革与鼎_ep04_act2_07",
+      "scene_type": "action",
+      "title": "盐铁专营的经济学逻辑…",
+      "source_knowledge_nodes": [
+        "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "#历史/汉武雄图",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "ACCEPTABLE"
+    },
+    {
+      "scene_id": "古史_革与鼎_ep04_act3_08",
+      "scene_type": "concept",
+      "title": "前138年，汉武帝派张骞出使…",
+      "source_knowledge_nodes": [
+        "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "#历史/汉武雄图",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_革与鼎_ep04_act3_09",
+      "scene_type": "concept",
+      "title": "更重要的是：西域的商人…",
+      "source_knowledge_nodes": [
+        "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "#历史/汉武雄图",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_革与鼎_ep04_act3_10",
+      "scene_type": "concept",
+      "title": "丝绸之路的本质是：开放…",
+      "source_knowledge_nodes": [
+        "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "#历史/汉武雄图",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "ACCEPTABLE"
+    },
+    {
+      "scene_id": "古史_革与鼎_ep04_act4_11",
+      "scene_type": "concept",
+      "title": "汉武帝的盐铁专营，本质…",
+      "source_knowledge_nodes": [
+        "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "#历史/汉武雄图",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_革与鼎_ep04_act4_12",
+      "scene_type": "causal_chain",
+      "title": "今天的我们，站在汉武帝…",
+      "source_knowledge_nodes": [
+        "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "#历史/汉武雄图",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_革与鼎_ep04_act4_13",
+      "scene_type": "dual_track",
+      "title": "高考考点提示：汉武帝的…",
+      "source_knowledge_nodes": [
+        "#革与鼎/前141-前87年（汉武帝执政54年）",
+        "#历史/汉武雄图",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    }
+  ],
+  "stats": {
+    "total_beats": 14,
+    "total_scenes": 14,
+    "by_scene_type": {
+      "concept": 10,
+      "action": 2,
+      "causal_chain": 1,
+      "dual_track": 1
+    },
+    "by_knowledge_type": {
+      "I": 0,
+      "II": 14,
+      "III": 0,
+      "IV": 0
+    },
+    "cognitive_warnings": 11
+  },
+  "schema_version": "v2",
+  "if_a_path": "D:\\92_products\\SPDT-004_EduContent\\SPDT-KTE\\PT-038\\古史_革与鼎_ep04_test\\scenes_out\\scene_v2_full.json",
+  "validation_errors": 0,
+  "analogy_warnings": 0
+}

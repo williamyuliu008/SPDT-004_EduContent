@@ -1,5 +1,7 @@
 # 书法备考_墨骨山河
 
+> **数据目录**：D:/4_data/education/TextExperience/书法备考_墨骨山河/
+
 > **课程**：国美书法校考备考
 > **内容来源**：PT-038_TextExperience / PT-039_CalligraphyVision
 
@@ -28,10 +30,16 @@
 ## 制作流水线
 
 ```
-墨骨山河_ep*.json（剧本）
-  ├── SPDT-KTE/PT-VFX → scene_v2 → MP4 视频
-  ├── SPDT-KTE/TTS → audio/ 广播剧
-  └── platform/PT-037 → 自适应训练编排
+platform/TextExperience/（生成脚本）
+  ↓ 生成
+D:/4_data/education/TextExperience/书法备考_墨骨山河/_source/（源脚本+meta）
+  ↓ SPDT-KTE/PT-VFX
+D:/4_data/education/TextExperience/书法备考_墨骨山河/_intermediate/（scene JSONs）
+  ↓ PT-VFX渲染
+D:/4_data/education/TextExperience/书法备考_墨骨山河/_output/
+  ├── audio/       → TextExperienceAPP 消费
+  ├── ebooks/     → TextExperienceAPP 消费
+  └── cards/      → AdaptivePrepPlatform 消费
 ```
 
 ## ⚠️ 待完成

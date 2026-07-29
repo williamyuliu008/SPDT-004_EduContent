@@ -1,0 +1,167 @@
+# SPDT-KTE · Knowledge Transmission Engine
+# ============================
+# 管线版本：v1.1
+# 创建日期：2026-07-16
+# 更新日期：2026-07-29
+# 定位：认知科学驱动的多格式知识传递管线
+
+spdt_id: SPDT-KTE
+name: Knowledge Transmission Engine
+name_zh: 知识传递引擎
+tagline: "用认知规律设计内容，用内容服务认知"
+version: "1.1"
+status: active
+
+# ── 所属 SPDT ──────────────────────────────────
+# 本管线整合自 SPDT-004（TextExperience/PT-VFX/PT-RUJ）
+# 纳入 SPDT-004 治理体系，作为其第一个跨 PDT 管线试点
+# 2026-07-29 v2.3: SPDT-KTE 降级为 3_render/ 子模块
+#   - PT-038 → 2_structure/TextExperience
+#   - PT-VFX → 3_render/video_factory
+#   - PT-RUJ → 5_deliver/TextExperienceAPP/apps/rujing
+
+# ── Pipeline Stages ─────────────────────────────
+pipeline_stages:
+  - stage_id: P0
+    name: 知识输入
+    description: 从 AdaptivePrepPlatform 知识库输入结构化知识节点
+    owner_pt: AdaptivePrepPlatform
+  - stage_id: P1
+    name: 内容工厂
+    description: TextExperience 生成微剧本/Flashcard/电子书/广播剧音频
+    owner_pt: TextExperience
+  - stage_id: P2
+    name: 视觉渲染
+    description: PT-VFX 将叙事文本转化为 Pillow 渲染帧 + MP4 视频
+    owner_pt: PT-VFX
+  - stage_id: P3
+    name: 终端交付
+    description: PT-RUJ (rujing) 提供移动端链阅读 + Flashcard + 视频播放
+    owner_pt: PT-RUJ
+
+# ── PT Members ──────────────────────────────────
+pt_members:
+  - pdt_id: TextExperience
+    role: 内容工厂（Content Factory）
+    tagline: 六尘·五蕴驱动的微剧本与卡片生成
+    physical_path: D:\2_products\education\SPDT-004_EduContent\2_structure\TextExperience
+    logical_path: 2_structure/TextExperience
+    git: https://github.com/williamyuliu008/PT-038_TextExperience
+    status: active
+    primary_output: [micro_dramas_json, flashcard_json, ebook_docx, audio_mp3]
+    ref_docs:
+      - SPDT-KTE/docs/PT-038_integration.md
+      - 2_structure/TextExperience/docs/TextExperience_SOP.md
+
+  - pdt_id: PT-VFX
+    role: 视觉渲染引擎（Visual Rendering Engine）
+    tagline: 把叙事文本变成 Pillow 帧，把帧合成 MP4
+    physical_path: D:\2_products\education\SPDT-004_EduContent\3_render\video_factory
+    logical_path: 3_render/video_factory
+    status: active
+    primary_output: [scene_json_v2, pillow_frames, mp4_video]
+    ref_docs:
+      - SPDT-KTE/docs/PT-VFX_integration.md
+      - 3_render/video_factory/tools/工具链配置指南.md
+
+  - pdt_id: PT-RUJ
+    role: 移动交付终端（Mobile Delivery Terminal）
+    tagline: 入境——专注学习的鸿蒙 App
+    physical_path: D:\2_products\education\SPDT-004_EduContent\5_deliver\TextExperienceAPP\apps\rujing
+    logical_path: 5_deliver/TextExperienceAPP/apps/rujing
+    status: active
+    primary_output: [audio_playback, video_playback, flashcard_review, learning_log]
+    ref_docs:
+      - SPDT-KTE/docs/PT-RUJ_integration.md
+      - 5_deliver/TextExperienceAPP/apps/rujing/README.md
+
+# ── Interface Protocols（接口协议·不可变）─────────────
+# 以下接口为管线内部 API，任何改动必须经过 SPDT-KTE 治理委员会
+# 版本约定：semver，破坏性变更 major+1 并保留旧版本兼容
+interface_protocols:
+  - protocol_id: IF-A
+    name: scene_json_v2
+    description: TextExperience → PT-VFX 的场景 JSON 协议
+    file: interface_protocols/scene_json_v2_schema.json
+    version: "2.0.0"
+    producer: TextExperience
+    consumer: PT-VFX
+    immutability: strict   # 破坏性变更需 major+1
+
+  - protocol_id: IF-B
+    name: video_package_metadata
+    description: PT-VFX → PT-RUJ 的视频包元数据协议
+    file: interface_protocols/video_package_metadata.json
+    version: "1.0.0"
+    producer: PT-VFX
+    consumer: PT-RUJ
+    immutability: strict
+
+  - protocol_id: IF-C
+    name: card_package_json
+    description: TextExperience → PT-RUJ 的卡片包 JSON 协议
+    file: interface_protocols/card_package_schema.json
+    version: "3.0.0"
+    producer: TextExperience
+    consumer: PT-RUJ
+    immutability: strict
+
+  - protocol_id: IF-D
+    name: learning_feedback
+    description: PT-RUJ → TextExperience 的学习行为反馈协议（Phase C）
+    file: interface_protocols/learning_feedback.json
+    version: "0.1.0"
+    producer: PT-RUJ
+    consumer: TextExperience
+    immutability: provisional   # v0.x 可小幅迭代
+
+# ── 治理 ────────────────────────────────────────
+governance:
+  owner: Mavis Agent (by user delegation)
+  decision_threshold: SPDT-004 治理体系（Major changes require user confirmation）
+  interface_change_process: |
+    1. 提出方在 SPDT-KTE/docs/DRC/ 提交接口变更提案
+    2. 所有 consumer PT 评估影响
+    3. 用户确认后更新 interface_protocols/ 下的 schema 文件
+    4. 新旧版本并行期 ≥ 2 周，再删除旧版本
+  reference_docs:
+    - docs/SPDT-KTE_项目总览与任务规划.md
+    - docs/SPDT-KTE_中长期规划_v1.0.md
+    - docs/SPDT-KTE_cognitive_model.md
+  quality_gates:
+    - gate_id: G-AUDIT-A
+      name: 历史准确性审计
+      scope: TextExperience 所有 episode
+      standard: CGM Audit A（三项目协同方案§4）
+    - gate_id: G-COGNITION
+      name: 认知合规性检查
+      scope: scene JSON v2（含 five_skandha 字段）
+      standard: scene_quality_gate G06-G08
+    - gate_id: G-INTERFACE
+      name: 接口协议完整性
+      scope: IF-A/B/C 的 schema 校验
+      standard: JSON Schema draft-07 validation
+
+# ── 核心认知模型 ─────────────────────────────────
+cognitive_model:
+  framework: 六根六尘 × 五蕴 × 脑科学约束 × 类比专属通道
+  reference_doc: SPDT-KTE/docs/SPDT-KTE_cognitive_model.md
+  pt_responsibility_map:
+    TextExperience:
+      - 声尘生成（微剧本旁白）
+      - 色尘原料（电子书文本结构）
+      - 行蕴工具（Flashcard front/back）
+      - 五蕴色蕴/受蕴/想蕴/行蕴字段设计
+      - 类比通道 knowledge_type 分类
+      - 脑科学约束（工作记忆4±1、双重编码、情绪触发）
+    PT-VFX:
+      - 色尘精加工（Pillow 渲染帧）
+      - 语义对齐（声尘-视觉帧对齐）
+      - 认知负荷校验（G06 工作记忆）
+      - 五蕴字段完整性校验（G07）
+      - 双重编码对齐校验（G08）
+    PT-RUJ:
+      - 识蕴落地（生/熟二态标记）
+      - 色蕴接收（链阅读器）
+      - 行蕴激活（Flashcard 间隔重复）
+      - 学习行为日志（IF-D，Phase C）

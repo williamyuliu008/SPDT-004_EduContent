@@ -1,0 +1,931 @@
+{
+  "metadata": {
+    "series_title": "墨骨山河",
+    "ep_id": 5,
+    "ep_title": "颠张醉素",
+    "source_chain_id": "墨骨山河_ep05",
+    "source_pt": "PT-038",
+    "schema_version": "2.0.0",
+    "_generated_by": "PT038_to_VideoFactory.py v2.0.0",
+    "_generated_at": "2026-07-16T18:19:44+08:00",
+    "_total_scenes": 11
+  },
+  "scenes": [
+    {
+      "scene_id": "墨骨山河_ep05_act1_00",
+      "scene_type": "concept",
+      "knowledge_type": "II",
+      "content": {
+        "title": "天宝年间，长安，某贵人府…",
+        "body_lines": [
+          "天宝年间，长安，某贵人府邸",
+          "酒宴正酣",
+          "酒过三巡，主人突然站起来，对张旭说…"
+        ],
+        "keywords": [
+          "天宝",
+          "天宝年",
+          "天宝年间",
+          "长安"
+        ]
+      },
+      "page": {
+        "current": 1,
+        "total": 11,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 0,
+        "total": 11,
+        "name": "草圣之名·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#书法/唐/张旭",
+        "#考频/⭐️⭐⭐⭐"
+      ],
+      "source_chain_id": "墨骨山河_ep05",
+      "five_skandha": {
+        "color_base": [
+          "天宝",
+          "天宝年",
+          "天宝年间",
+          "长安"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "天宝年间，长安，某贵人府邸。\n\n酒宴正酣。\n\n酒过三巡，主人突然站起来，对张旭说……",
+        "discrimination": "学生能识别「天宝年间，长安，某贵人府…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#书法/唐/张旭",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#书法/唐/张旭",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT1-BEAT-00-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「天宝年间，长安，某贵人府邸。\n\n酒宴正酣…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "墨骨山河_ep05_act1_01",
+      "scene_type": "concept",
+      "knowledge_type": "II",
+      "content": {
+        "title": "书童铺开一张大纸，高度…",
+        "body_lines": [
+          "书童铺开一张大纸，高度几乎与张旭…",
+          "张旭走到纸前，没有立刻动笔",
+          "他盯着这张白纸，看了很久"
+        ],
+        "keywords": [
+          "书童",
+          "书童铺",
+          "书童铺开",
+          "书童铺开一"
+        ]
+      },
+      "page": {
+        "current": 2,
+        "total": 11,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 1,
+        "total": 11,
+        "name": "草圣之名·dialogue",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#书法/唐/张旭学书路径",
+        "#考频/⭐️⭐⭐⭐"
+      ],
+      "source_chain_id": "墨骨山河_ep05",
+      "five_skandha": {
+        "color_base": [
+          "书童",
+          "书童铺",
+          "书童铺开",
+          "书童铺开一"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "书童铺开一张大纸，高度几乎与张旭身高相当。\n\n张旭走到纸前，没有立刻动笔。他盯着……",
+        "discrimination": "学生能识别「书童铺开一张大纸，高度…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#书法/唐/张旭学书路径",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#书法/唐/张旭学书路径",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT1-BEAT-01-DIALOGUE",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「书童铺开一张大纸，高度几乎与张旭…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "墨骨山河_ep05_act1_02",
+      "scene_type": "steps",
+      "knowledge_type": "II",
+      "content": {
+        "title": "【张旭生平判断题】\n\n以下关…",
+        "steps": [
+          "【张旭生平判断题】",
+          "以下关于张旭的说法，哪一项是正确…",
+          "A. 张旭是唐代最著名的楷书家，与欧阳…",
+          "B. 张旭的草书是从观看公孙大娘的剑…",
+          "C. 张旭和怀素并称'颠张醉素'，两人风格…",
+          "D. 张旭的草书没有楷书功底，是直接自…"
+        ]
+      },
+      "page": {
+        "current": 3,
+        "total": 11,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 2,
+        "total": 11,
+        "name": "草圣之名·knowledge_check",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#书法/唐/张旭外师造化",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "墨骨山河_ep05",
+      "five_skandha": {
+        "color_base": [
+          "【张旭",
+          "【张旭生",
+          "【张旭生平",
+          "【张旭生平判"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "【张旭生平判断题】\n\n以下关于张旭的说法，哪一项是正确的？\n\nA. 张旭是唐代最……",
+        "discrimination": "【张旭生平判断题】\n\n以下关于张旭的说法，哪一项是正确的？\n",
+        "action_prompt": "判断/选择",
+        "recognition_marker": "#书法/唐/张旭外师造化",
+        "bottleneck_warn": "想蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#书法/唐/张旭外师造化",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT1-BEAT-02-KNOWLEDGE_CHECK",
+        "visual_element_ref": "CONTENT-ZONE-3",
+        "alignment_note": "旁白「【张旭生平判断题】\n\n以下关于张旭的说…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 6,
+        "audio_chunks": 2,
+        "load_status": "WARN",
+        "bottleneck_cause": "想蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_question",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": false
+    },
+    {
+      "scene_id": "墨骨山河_ep05_act2_03",
+      "scene_type": "concept",
+      "knowledge_type": "II",
+      "content": {
+        "title": "张旭落笔",
+        "body_lines": [
+          "张旭落笔",
+          "第一笔——他让笔尖在纸上停了一瞬，然…",
+          "第二笔——他没有换气，直接跟上——这笔是…"
+        ],
+        "keywords": [
+          "张旭",
+          "张旭落",
+          "张旭落笔",
+          "第一"
+        ]
+      },
+      "page": {
+        "current": 4,
+        "total": 11,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 3,
+        "total": 11,
+        "name": "笔墨的极限·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#书法/唐/狂草特征",
+        "#考频/⭐️⭐⭐⭐"
+      ],
+      "source_chain_id": "墨骨山河_ep05",
+      "five_skandha": {
+        "color_base": [
+          "张旭",
+          "张旭落",
+          "张旭落笔",
+          "第一"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "张旭落笔。\n\n第一笔——他让笔尖在纸上停了一瞬，然后猛地一拖——一道长长的墨线，……",
+        "discrimination": "学生能识别「张旭落笔。\n\n第一笔——他让笔…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#书法/唐/狂草特征",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#书法/唐/狂草特征",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-03-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「张旭落笔。\n\n第一笔——他让笔尖在纸上停…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "墨骨山河_ep05_act2_04",
+      "scene_type": "concept",
+      "knowledge_type": "II",
+      "content": {
+        "title": "张旭的呼吸越来越快",
+        "body_lines": [
+          "张旭的呼吸越来越快",
+          "他在写字吗？看起来不像",
+          "他更像是在和纸搏斗——笔是他的武器…"
+        ],
+        "keywords": [
+          "张旭",
+          "张旭的",
+          "张旭的呼",
+          "张旭的呼吸"
+        ]
+      },
+      "page": {
+        "current": 5,
+        "total": 11,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 4,
+        "total": 11,
+        "name": "笔墨的极限·dialogue",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#书法/唐/狂草艺术原理",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "墨骨山河_ep05",
+      "five_skandha": {
+        "color_base": [
+          "张旭",
+          "张旭的",
+          "张旭的呼",
+          "张旭的呼吸"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "张旭的呼吸越来越快。\n\n他在写字吗？看起来不像。\n\n他更像是在和纸搏斗——笔是他……",
+        "discrimination": "学生能识别「张旭的呼吸越来越快。\n\n他…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#书法/唐/狂草艺术原理",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#书法/唐/狂草艺术原理",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-04-DIALOGUE",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「张旭的呼吸越来越快。\n\n他在写字吗？看…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "墨骨山河_ep05_act2_05",
+      "scene_type": "steps",
+      "knowledge_type": "II",
+      "content": {
+        "title": "【狂草特征判断题】\n\n以下关…",
+        "steps": [
+          "【狂草特征判断题】",
+          "以下关于狂草的说法，哪一项是错误…",
+          "A. 狂草是草书中最极端的形态，笔画极…",
+          "B. 狂草完全放弃了可读性，因此不是书…",
+          "C. 狂草需要以扎实的楷书功底为基础",
+          "D. 狂草的代表人物是张旭和怀素，人称…"
+        ]
+      },
+      "page": {
+        "current": 6,
+        "total": 11,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 5,
+        "total": 11,
+        "name": "笔墨的极限·knowledge_check",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#书法/唐/狂草vs涂鸦",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "墨骨山河_ep05",
+      "five_skandha": {
+        "color_base": [
+          "【狂草",
+          "【狂草特",
+          "【狂草特征",
+          "【狂草特征判"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "【狂草特征判断题】\n\n以下关于狂草的说法，哪一项是错误的？\n\nA. 狂草是草书中……",
+        "discrimination": "【狂草特征判断题】\n\n以下关于狂草的说法，哪一项是错误的？\n",
+        "action_prompt": "判断/选择",
+        "recognition_marker": "#书法/唐/狂草vs涂鸦",
+        "bottleneck_warn": "想蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#书法/唐/狂草vs涂鸦",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-05-KNOWLEDGE_CHECK",
+        "visual_element_ref": "CONTENT-ZONE-3",
+        "alignment_note": "旁白「【狂草特征判断题】\n\n以下关于狂草的说…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 6,
+        "audio_chunks": 2,
+        "load_status": "WARN",
+        "bottleneck_cause": "想蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_question",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": false
+    },
+    {
+      "scene_id": "墨骨山河_ep05_act2_06",
+      "scene_type": "concept",
+      "knowledge_type": "II",
+      "content": {
+        "title": "杜甫曾在诗中这样描写…",
+        "body_lines": [
+          "杜甫曾在诗中这样描写张旭：",
+          "'张旭草书时，字字意连，愈不可测，所谓…",
+          "'"
+        ],
+        "keywords": [
+          "杜甫",
+          "杜甫曾",
+          "杜甫曾在",
+          "杜甫曾在诗"
+        ]
+      },
+      "page": {
+        "current": 7,
+        "total": 11,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 6,
+        "total": 11,
+        "name": "笔墨的极限·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#书法/唐/变动犹鬼神",
+        "#考频/⭐️⭐⭐⭐"
+      ],
+      "source_chain_id": "墨骨山河_ep05",
+      "five_skandha": {
+        "color_base": [
+          "杜甫",
+          "杜甫曾",
+          "杜甫曾在",
+          "杜甫曾在诗"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "杜甫曾在诗中这样描写张旭：\n\n'张旭草书时，字字意连，愈不可测，所谓变动犹鬼神，……",
+        "discrimination": "学生能识别「杜甫曾在诗中这样描写…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#书法/唐/变动犹鬼神",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#书法/唐/变动犹鬼神",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-06-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「杜甫曾在诗中这样描写张旭：\n\n'张旭草…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "墨骨山河_ep05_act2_07",
+      "scene_type": "contrast",
+      "knowledge_type": "II",
+      "content": {
+        "title": "【颠张醉素比较题】\n\n请比较…",
+        "wrong_text": "【颠张醉素比较题】\n\n请比较张旭和怀素的",
+        "right_text": "（见旁白详解）"
+      },
+      "page": {
+        "current": 8,
+        "total": 11,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 7,
+        "total": 11,
+        "name": "笔墨的极限·knowledge_check",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#书法/唐/颠张醉素",
+        "#考频/⭐️⭐⭐⭐"
+      ],
+      "source_chain_id": "墨骨山河_ep05",
+      "five_skandha": {
+        "color_base": [
+          "【颠张",
+          "【颠张醉",
+          "【颠张醉素",
+          "【颠张醉素比"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "【颠张醉素比较题】\n\n请比较张旭和怀素的狂草风格：\n\n| 比较维度 | 张旭（颠……",
+        "discrimination": "学生能区分 X 与 Y 的核心差异",
+        "action_prompt": "判断/选择",
+        "recognition_marker": "#书法/唐/颠张醉素",
+        "bottleneck_warn": "none"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#书法/唐/颠张醉素",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-07-KNOWLEDGE_CHECK",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「【颠张醉素比较题】\n\n请比较张旭和怀素…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 1,
+        "load_status": "ACCEPTABLE",
+        "bottleneck_cause": "none",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_question",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": false
+    },
+    {
+      "scene_id": "墨骨山河_ep05_act3_08",
+      "scene_type": "concept",
+      "knowledge_type": "II",
+      "content": {
+        "title": "画面从长安收回，回到现…",
+        "body_lines": [
+          "画面从长安收回，回到现代",
+          "你坐在书桌前，面前摊开着张旭狂草…",
+          "一千二百年了"
+        ],
+        "keywords": [
+          "画面",
+          "画面从",
+          "画面从长",
+          "画面从长安"
+        ]
+      },
+      "page": {
+        "current": 9,
+        "total": 11,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 8,
+        "total": 11,
+        "name": "狂草之后·contemporary_reflection",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [],
+      "source_chain_id": "墨骨山河_ep05",
+      "five_skandha": {
+        "color_base": [
+          "画面",
+          "画面从",
+          "画面从长",
+          "画面从长安"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "画面从长安收回，回到现代。\n\n你坐在书桌前，面前摊开着张旭狂草的字帖。\n\n一千二……",
+        "discrimination": "学生能识别「画面从长安收回，回到现…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "画面从长安收回，回到现代",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "画面从长安收回，回到现代。\n\n你坐在书…",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT3-BEAT-08-CONTEMPORARY_REFLECTION",
+        "visual_element_ref": "CONTENT-ZONE-3",
+        "alignment_note": "旁白「画面从长安收回，回到现代。\n\n你坐在书…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "墨骨山河_ep05_act3_09",
+      "scene_type": "quote_highlight",
+      "knowledge_type": "II",
+      "content": {
+        "title": "【综合论述题】\n\n请结合张旭…",
+        "quote": "【综合论述题】\n\n请结合张旭的书法实践和艺术特征，论述唐代狂草的艺术价值及其在书法史上的意…",
+        "attribution": "孙过庭·书谱"
+      },
+      "page": {
+        "current": 10,
+        "total": 11,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 9,
+        "total": 11,
+        "name": "狂草之后·knowledge_check",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#综合/唐书法/狂草论述",
+        "#考频/⭐️⭐⭐⭐"
+      ],
+      "source_chain_id": "墨骨山河_ep05",
+      "five_skandha": {
+        "color_base": [
+          "【综合",
+          "【综合论",
+          "【综合论述",
+          "【综合论述题"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "【综合论述题】\n\n请结合张旭的书法实践和艺术特征，论述唐代狂草的艺术价值及其在书……",
+        "discrimination": "学生能引用核心论述解释书法现象",
+        "action_prompt": "判断/选择",
+        "recognition_marker": "#综合/唐书法/狂草论述",
+        "bottleneck_warn": "none"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#综合/唐书法/狂草论述",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT3-BEAT-09-KNOWLEDGE_CHECK",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「【综合论述题】\n\n请结合张旭的书法实践…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 2,
+        "load_status": "ACCEPTABLE",
+        "bottleneck_cause": "none",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_question",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "墨骨山河_ep05_act3_10",
+      "scene_type": "concept",
+      "knowledge_type": "II",
+      "content": {
+        "title": "你合上字帖，望着窗外",
+        "body_lines": [
+          "你合上字帖，望着窗外",
+          "张旭已经离开了一千二百年",
+          "但他的狂草还在"
+        ],
+        "keywords": [
+          "你合",
+          "你合上",
+          "你合上字",
+          "你合上字帖"
+        ]
+      },
+      "page": {
+        "current": 11,
+        "total": 11,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 10,
+        "total": 11,
+        "name": "狂草之后·series_hook",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [],
+      "source_chain_id": "墨骨山河_ep05",
+      "five_skandha": {
+        "color_base": [
+          "你合",
+          "你合上",
+          "你合上字",
+          "你合上字帖"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "你合上字帖，望着窗外。\n\n张旭已经离开了一千二百年。但他的狂草还在。\n\n'变动犹……",
+        "discrimination": "学生能识别「你合上字帖，望着窗外。\n\n张…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "你合上字帖，望着窗外",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "你合上字帖，望着窗外。\n\n张旭已经离开…",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT3-BEAT-10-SERIES_HOOK",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「你合上字帖，望着窗外。\n\n张旭已经离开…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    }
+  ]
+}

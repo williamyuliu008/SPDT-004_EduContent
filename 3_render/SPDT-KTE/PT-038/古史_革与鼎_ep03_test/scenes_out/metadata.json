@@ -1,0 +1,183 @@
+{
+  "schema_version": "1.0.0",
+  "package_id": "革与鼎_EP03",
+  "series_title": "革与鼎",
+  "total_episodes": 1,
+  "produced_by": "PT-VFX",
+  "produced_at": "2026-07-16T19:22:08+08:00",
+  "source_episodes_dir": "D:\\92_products\\SPDT-004_EduContent\\SPDT-KTE\\PT-038\\古史_革与鼎_ep03_test\\scenes_out",
+  "episodes": [
+    {
+      "ep": 3,
+      "title": "天下一统",
+      "subtitle": "秦始皇·书同文·废分封",
+      "video_file": "gushi_革与鼎_ep03_天下一统.mp4",
+      "audio_file": "",
+      "duration_seconds": 104.0,
+      "resolution": "720p",
+      "bitrate_kbps": 2000,
+      "chains": [
+        "古史_革与鼎_ep03"
+      ],
+      "cards_file": "",
+      "scene_timeline": [
+        {
+          "idx": 0,
+          "time": 0.0,
+          "scene_name": "六国之中，最难打的是楚…",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep03",
+          "five_skandha": {
+            "color_base": "六国 / 六国之 / 六国之中 / 最难",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/前221年"
+          }
+        },
+        {
+          "idx": 1,
+          "time": 8.0,
+          "scene_name": "【灭楚之议】\n\n\n\n前225年，秦始皇问…",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep03",
+          "five_skandha": {
+            "color_base": "【灭楚 / 【灭楚之 / 【灭楚之议 / 【灭楚之议】",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/前221年"
+          }
+        },
+        {
+          "idx": 2,
+          "time": 16.0,
+          "scene_name": "秦始皇的用人之道：能认…",
+          "scene_type": "action",
+          "chain_ref": "古史_革与鼎_ep03",
+          "five_skandha": {
+            "color_base": "秦始 / 秦始皇 / 秦始皇的 / 秦始皇的用",
+            "action_prompt": "书写/口述",
+            "recognition_marker": "#革与鼎/前221年"
+          }
+        },
+        {
+          "idx": 3,
+          "time": 24.0,
+          "scene_name": "前221年，齐国不战而降",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep03",
+          "five_skandha": {
+            "color_base": "前221年 / 齐国 / 齐国不 / 齐国不战",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/前221年"
+          }
+        },
+        {
+          "idx": 4,
+          "time": 32.0,
+          "scene_name": "关于制度问题，丞相王绾…",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep03",
+          "five_skandha": {
+            "color_base": "关于 / 关于制 / 关于制度 / 关于制度问",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/前221年"
+          }
+        },
+        {
+          "idx": 5,
+          "time": 40.0,
+          "scene_name": "关于文字问题，秦始皇面…",
+          "scene_type": "contrast",
+          "chain_ref": "古史_革与鼎_ep03",
+          "five_skandha": {
+            "color_base": "关于 / 关于文 / 关于文字 / 关于文字问",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/前221年"
+          }
+        },
+        {
+          "idx": 6,
+          "time": 48.0,
+          "scene_name": "但书同文的意义，远不止…",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep03",
+          "five_skandha": {
+            "color_base": "但书 / 但书同 / 但书同文 / 但书同文的",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/前221年"
+          }
+        },
+        {
+          "idx": 7,
+          "time": 56.0,
+          "scene_name": "书同文和废分封的本质…",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep03",
+          "five_skandha": {
+            "color_base": "书同 / 书同文 / 书同文和 / 书同文和废",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/前221年"
+          }
+        },
+        {
+          "idx": 8,
+          "time": 64.0,
+          "scene_name": "秦朝为什么二世而亡？\n\n\n\n原…",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep03",
+          "five_skandha": {
+            "color_base": "秦朝 / 秦朝为 / 秦朝为什 / 秦朝为什么",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/前221年"
+          }
+        },
+        {
+          "idx": 9,
+          "time": 72.0,
+          "scene_name": "但秦朝虽然短命，它的制…",
+          "scene_type": "timeline",
+          "chain_ref": "古史_革与鼎_ep03",
+          "five_skandha": {
+            "color_base": "但秦 / 但秦朝 / 但秦朝虽 / 但秦朝虽然",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/前221年"
+          }
+        },
+        {
+          "idx": 10,
+          "time": 80.0,
+          "scene_name": "秦制遗产的两面：积极面…",
+          "scene_type": "dual_track",
+          "chain_ref": "古史_革与鼎_ep03",
+          "five_skandha": {
+            "color_base": "秦制 / 秦制遗 / 秦制遗产 / 秦制遗产的",
+            "action_prompt": "书写/口述",
+            "recognition_marker": "#革与鼎/前221年"
+          }
+        },
+        {
+          "idx": 11,
+          "time": 88.0,
+          "scene_name": "秦始皇的'标准化思维'，在…",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep03",
+          "five_skandha": {
+            "color_base": "秦始 / 秦始皇 / 秦始皇的 / 秦始皇的'",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/前221年"
+          }
+        },
+        {
+          "idx": 12,
+          "time": 96.0,
+          "scene_name": "但秦始皇也留下了深刻…",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep03",
+          "five_skandha": {
+            "color_base": "但秦 / 但秦始 / 但秦始皇 / 但秦始皇也",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/前221年"
+          }
+        }
+      ]
+    }
+  ]
+}

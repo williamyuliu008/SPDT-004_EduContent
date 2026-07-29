@@ -1,0 +1,83 @@
+{
+  "scene_id": "墨骨山河_ep05_act1_02",
+  "scene_type": "steps",
+  "knowledge_type": "II",
+  "content": {
+    "title": "【张旭生平判断题】\n\n以下关…",
+    "steps": [
+      "【张旭生平判断题】",
+      "以下关于张旭的说法，哪一项是正确…",
+      "A. 张旭是唐代最著名的楷书家，与欧阳…",
+      "B. 张旭的草书是从观看公孙大娘的剑…",
+      "C. 张旭和怀素并称'颠张醉素'，两人风格…",
+      "D. 张旭的草书没有楷书功底，是直接自…"
+    ]
+  },
+  "page": {
+    "current": 3,
+    "total": 11,
+    "show": true
+  },
+  "scene_info": {
+    "idx": 2,
+    "total": 11,
+    "name": "草圣之名·knowledge_check",
+    "dur": 0.0
+  },
+  "source_knowledge_nodes": [
+    "#书法/唐/张旭外师造化",
+    "#考频/⭐️⭐⭐"
+  ],
+  "source_chain_id": "墨骨山河_ep05",
+  "five_skandha": {
+    "color_base": [
+      "【张旭",
+      "【张旭生",
+      "【张旭生平",
+      "【张旭生平判"
+    ],
+    "sensation": "none",
+    "sensation_trigger": "【张旭生平判断题】\n\n以下关于张旭的说法，哪一项是正确的？\n\nA. 张旭是唐代最……",
+    "discrimination": "【张旭生平判断题】\n\n以下关于张旭的说法，哪一项是正确的？\n",
+    "action_prompt": "判断/选择",
+    "recognition_marker": "#书法/唐/张旭外师造化",
+    "bottleneck_warn": "想蕴"
+  },
+  "analogy_block": {
+    "applicable": true,
+    "knowledge_type": "II",
+    "source_domain": "历史场景/人生经验",
+    "target_domain": "#书法/唐/张旭外师造化",
+    "mapping_table": [
+      {
+        "source": "历史情境",
+        "arrow": "→",
+        "target": "书法技法"
+      }
+    ],
+    "difference_annotations": [
+      "注意历史背景与技法的差异"
+    ],
+    "closure_definition": ""
+  },
+  "semantic_alignment": {
+    "audio_segment_ref": "ACT1-BEAT-02-KNOWLEDGE_CHECK",
+    "visual_element_ref": "CONTENT-ZONE-3",
+    "alignment_note": "旁白「【张旭生平判断题】\n\n以下关于张旭的说…」对应视觉区显示",
+    "alignment_confirmed": false
+  },
+  "cognitive_load": {
+    "visual_points": 6,
+    "audio_chunks": 2,
+    "load_status": "WARN",
+    "bottleneck_cause": "想蕴",
+    "split_recommendation": "建议拆分为2个 scene"
+  },
+  "audio": {
+    "tts_template": "voice_question",
+    "speed_wpm": 170,
+    "pause_after_s": 2.0
+  },
+  "energy_level": "medium",
+  "clip_friendly": false
+}

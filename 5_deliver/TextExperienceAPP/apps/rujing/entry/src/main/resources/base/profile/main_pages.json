@@ -1,0 +1,12 @@
+{
+  "src": [
+    "pages/Index",
+    "pages/ChainListPage",
+    "pages/ChainReaderPage",
+    "pages/AIPanelPage",
+    "pages/ImportPage",
+    "pages/LintingPage",
+    "pages/CalligraphyComparePage",
+    "pages/HistoryGalleryPage"
+  ]
+}

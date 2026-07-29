@@ -1,0 +1,70 @@
+{
+  "scene_id": "墨骨山河_ep01_act2_09",
+  "scene_type": "steps",
+  "knowledge_type": "I",
+  "content": {
+    "title": "【六书分类判断】请判断以…",
+    "steps": [
+      "【六书分类判断】请判断以下字属于'六…",
+      "1. '日'（象太阳之形）        ___",
+      "2. '上'（指事符号，有一横在上）___",
+      "3. '休'（人倚木旁，表示休息）___",
+      "4. '江'（水+工，表示江河）   ___",
+      "请填写：象形 / 指事 / 会意 / 形声"
+    ]
+  },
+  "page": {
+    "current": 10,
+    "total": 13,
+    "show": true
+  },
+  "scene_info": {
+    "idx": 9,
+    "total": 13,
+    "name": "峄山碑·knowledge_check",
+    "dur": 35.6
+  },
+  "source_knowledge_nodes": [
+    "#古汉语/六书/分类判断",
+    "#考频/⭐️⭐⭐⭐"
+  ],
+  "source_chain_id": "墨骨山河_ep01",
+  "five_skandha": {
+    "color_base": [
+      "【六书",
+      "【六书分",
+      "【六书分类",
+      "【六书分类判"
+    ],
+    "sensation": "none",
+    "sensation_trigger": "【六书分类判断】请判断以下字属于'六书'中的哪一类：\n\n1. '日'（象太阳之形……",
+    "discrimination": "【六书分类判断】请判断以下字属于'六书'中的哪一类：\n\n1.",
+    "action_prompt": "判断/选择",
+    "recognition_marker": "#古汉语/六书/分类判断",
+    "bottleneck_warn": "想蕴"
+  },
+  "analogy_block": {
+    "applicable": false,
+    "knowledge_type": "I"
+  },
+  "semantic_alignment": {
+    "audio_segment_ref": "ACT2-BEAT-09-KNOWLEDGE_CHECK",
+    "visual_element_ref": "CONTENT-ZONE-1",
+    "alignment_note": "旁白「【六书分类判断】请判断以下字属于'六…」对应视觉区显示",
+    "alignment_confirmed": false
+  },
+  "cognitive_load": {
+    "visual_points": 6,
+    "audio_chunks": 1,
+    "load_status": "WARN",
+    "bottleneck_cause": "想蕴",
+    "split_recommendation": "建议拆分为2个 scene"
+  },
+  "audio": {
+    "tts_template": "voice_question",
+    "speed_wpm": 170,
+    "pause_after_s": 2.0
+  },
+  "energy_level": "medium",
+  "clip_friendly": false
+}

@@ -1,0 +1,747 @@
+{
+  "metadata": {
+    "series_title": "墨骨山河",
+    "ep_id": 7,
+    "ep_title": "寒食突围",
+    "source_chain_id": "墨骨山河_ep07",
+    "source_pt": "PT-038",
+    "schema_version": "2.0.0",
+    "_generated_by": "PT038_to_VideoFactory.py v2.0.0",
+    "_generated_at": "2026-07-16T18:19:44+08:00",
+    "_total_scenes": 9
+  },
+  "scenes": [
+    {
+      "scene_id": "墨骨山河_ep07_act1_00",
+      "scene_type": "concept",
+      "knowledge_type": "II",
+      "content": {
+        "title": "元丰五年，黄州，寒食节",
+        "body_lines": [
+          "元丰五年，黄州，寒食节",
+          "苏轼已经在这里住了三年",
+          "三年前，他因为几首诗差点丢了性命…"
+        ],
+        "keywords": [
+          "元丰",
+          "元丰五",
+          "元丰五年",
+          "黄州"
+        ]
+      },
+      "page": {
+        "current": 1,
+        "total": 9,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 0,
+        "total": 9,
+        "name": "黄州的苏轼·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [],
+      "source_chain_id": "墨骨山河_ep07",
+      "five_skandha": {
+        "color_base": [
+          "元丰",
+          "元丰五",
+          "元丰五年",
+          "黄州"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "元丰五年，黄州，寒食节。\n\n苏轼已经在这里住了三年。\n\n三年前，他因为几首诗差点……",
+        "discrimination": "学生能识别「元丰五年，黄州，寒食节。\n\n苏…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "元丰五年，黄州，寒食节",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "元丰五年，黄州，寒食节。\n\n苏轼已经在这…",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT1-BEAT-00-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「元丰五年，黄州，寒食节。\n\n苏轼已经在这…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "墨骨山河_ep07_act1_01",
+      "scene_type": "concept",
+      "knowledge_type": "II",
+      "content": {
+        "title": "苏轼放下笔，看着窗外的…",
+        "body_lines": [
+          "苏轼放下笔，看着窗外的雨",
+          "他想：三年了",
+          "三年前他还以为自己会死"
+        ],
+        "keywords": [
+          "苏轼",
+          "苏轼放",
+          "苏轼放下",
+          "苏轼放下笔"
+        ]
+      },
+      "page": {
+        "current": 2,
+        "total": 9,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 1,
+        "total": 9,
+        "name": "黄州的苏轼·dialogue",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [],
+      "source_chain_id": "墨骨山河_ep07",
+      "five_skandha": {
+        "color_base": [
+          "苏轼",
+          "苏轼放",
+          "苏轼放下",
+          "苏轼放下笔"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "苏轼放下笔，看着窗外的雨。\n\n他想：三年了。\n\n三年前他还以为自己会死。\n\n现在……",
+        "discrimination": "学生能识别「苏轼放下笔，看着窗外的…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "苏轼放下笔，看着窗外的雨",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "苏轼放下笔，看着窗外的雨。\n\n他想：三年…",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT1-BEAT-01-DIALOGUE",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「苏轼放下笔，看着窗外的雨。\n\n他想：三年…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "墨骨山河_ep07_act1_02",
+      "scene_type": "dual_track",
+      "knowledge_type": "II",
+      "content": {
+        "title": "【历史知识题】以下关于苏…",
+        "track_a": {
+          "label": "A面",
+          "items": [
+            "【历史知识题】以下关于苏轼被贬黄州…",
+            "A. 苏轼因贪污被贬",
+            "B. 乌台诗案发生在1079年，因写诗批评新法…"
+          ]
+        },
+        "track_b": {
+          "label": "B面",
+          "items": []
+        }
+      },
+      "page": {
+        "current": 3,
+        "total": 9,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 2,
+        "total": 9,
+        "name": "黄州的苏轼·knowledge_check",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [],
+      "source_chain_id": "墨骨山河_ep07",
+      "five_skandha": {
+        "color_base": [
+          "【历史",
+          "【历史知",
+          "【历史知识",
+          "【历史知识题"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "【历史知识题】以下关于苏轼被贬黄州的背景，哪项正确？\n\nA. 苏轼因贪污被贬\nB……",
+        "discrimination": "【历史知识题】以下关于苏轼被贬黄州的背景，哪项正确？\n\nA.",
+        "action_prompt": "判断/选择",
+        "recognition_marker": "【历史知识题】以下关于苏轼被贬黄州…",
+        "bottleneck_warn": "none"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "【历史知识题】以下关于苏轼被贬黄州…",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT1-BEAT-02-KNOWLEDGE_CHECK",
+        "visual_element_ref": "CONTENT-ZONE-3",
+        "alignment_note": "旁白「【历史知识题】以下关于苏轼被贬黄州…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 2,
+        "load_status": "ACCEPTABLE",
+        "bottleneck_cause": "none",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_question",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": false
+    },
+    {
+      "scene_id": "墨骨山河_ep07_act2_03",
+      "scene_type": "word_evolution",
+      "knowledge_type": "II",
+      "content": {
+        "title": "苏轼写完《黄州寒食诗帖…",
+        "header": "苏轼写完《黄州寒食诗帖》，看着",
+        "evolution_stages": []
+      },
+      "page": {
+        "current": 4,
+        "total": 9,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 3,
+        "total": 9,
+        "name": "意造本无法·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#书法/宋/我书意造本无法"
+      ],
+      "source_chain_id": "墨骨山河_ep07",
+      "five_skandha": {
+        "color_base": [
+          "苏轼",
+          "苏轼写",
+          "苏轼写完",
+          "苏轼写完《"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "苏轼写完《黄州寒食诗帖》，看着那些字。\n\n说实话，这些字不符合任何'标准'。\n\n……",
+        "discrimination": "苏轼写完《黄州寒食诗帖》，看着那些字。\n\n说实话，这些字不符",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#书法/宋/我书意造本无法",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "#书法/宋/我书意造本无法",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-03-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「苏轼写完《黄州寒食诗帖》，看着那些字…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": false
+    },
+    {
+      "scene_id": "墨骨山河_ep07_act2_04",
+      "scene_type": "concept",
+      "knowledge_type": "II",
+      "content": {
+        "title": "苏轼对自己说：\n\n'你们说我…",
+        "body_lines": [
+          "苏轼对自己说：",
+          "'你们说我的字不合法度——我同意",
+          "'"
+        ],
+        "keywords": [
+          "苏轼",
+          "苏轼对",
+          "苏轼对自",
+          "苏轼对自己"
+        ]
+      },
+      "page": {
+        "current": 5,
+        "total": 9,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 4,
+        "total": 9,
+        "name": "意造本无法·dialogue",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [],
+      "source_chain_id": "墨骨山河_ep07",
+      "five_skandha": {
+        "color_base": [
+          "苏轼",
+          "苏轼对",
+          "苏轼对自",
+          "苏轼对自己"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "苏轼对自己说：\n\n'你们说我的字不合法度——我同意。'\n\n'但你们说我的字不好—……",
+        "discrimination": "学生能识别「苏轼对自己说：\n\n'你们说我…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "苏轼对自己说：\n\n'你们说我的字不合法…",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "苏轼对自己说：\n\n'你们说我的字不合法…",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-04-DIALOGUE",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「苏轼对自己说：\n\n'你们说我的字不合法…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "墨骨山河_ep07_act2_05",
+      "scene_type": "steps",
+      "knowledge_type": "II",
+      "content": {
+        "title": "【三大行书综合题】请将三…",
+        "steps": [
+          "【三大行书综合题】请将三件'天下行书…",
+          "作品              作者      创作背景                        情感特征",
+          "①兰亭序        A.颜真卿  a.安史之乱中痛失侄子…",
+          "②祭侄文稿      B.王羲之  b.被贬黄州寒食节赋…",
+          "③黄州寒食诗帖  C.苏轼    c.永和九年兰亭雅…",
+          "配对："
+        ]
+      },
+      "page": {
+        "current": 6,
+        "total": 9,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 5,
+        "total": 9,
+        "name": "意造本无法·knowledge_check",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [],
+      "source_chain_id": "墨骨山河_ep07",
+      "five_skandha": {
+        "color_base": [
+          "【三大",
+          "【三大行",
+          "【三大行书",
+          "【三大行书综"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "【三大行书综合题】请将三件'天下行书'的作者、创作背景和情感特征连线：\n\n作品 ……",
+        "discrimination": "【三大行书综合题】请将三件'天下行书'的作者、创作背景和情感",
+        "action_prompt": "判断/选择",
+        "recognition_marker": "【三大行书综合题】请将三件'天下行书…",
+        "bottleneck_warn": "想蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "【三大行书综合题】请将三件'天下行书…",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-05-KNOWLEDGE_CHECK",
+        "visual_element_ref": "CONTENT-ZONE-3",
+        "alignment_note": "旁白「【三大行书综合题】请将三件'天下行书…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 6,
+        "audio_chunks": 1,
+        "load_status": "WARN",
+        "bottleneck_cause": "想蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_question",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": false
+    },
+    {
+      "scene_id": "墨骨山河_ep07_act2_06",
+      "scene_type": "steps",
+      "knowledge_type": "II",
+      "content": {
+        "title": "【判断正误】\n① '尚意书风'是宋…",
+        "steps": [
+          "【判断正误】",
+          "① '尚意书风'是宋代书法的核心特征，以…",
+          "② '我书意造本无法'说明苏轼不重视技…",
+          "③ 苏轼与黄庭坚、米芾、蔡襄并称'宋四家'",
+          "④ '石压蛤蟆体'是对苏轼书法的戏称，指…",
+          "①~④："
+        ]
+      },
+      "page": {
+        "current": 7,
+        "total": 9,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 6,
+        "total": 9,
+        "name": "意造本无法·knowledge_check",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [],
+      "source_chain_id": "墨骨山河_ep07",
+      "five_skandha": {
+        "color_base": [
+          "【判断",
+          "【判断正",
+          "【判断正误",
+          "【判断正误】"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "【判断正误】\n① '尚意书风'是宋代书法的核心特征，以苏轼为代表\n② '我书意造……",
+        "discrimination": "【判断正误】\n① '尚意书风'是宋代书法的核心特征，以苏轼为",
+        "action_prompt": "判断/选择",
+        "recognition_marker": "【判断正误】\n① '尚意书风'是宋代书法的核…",
+        "bottleneck_warn": "想蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "【判断正误】\n① '尚意书风'是宋代书法的核…",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-06-KNOWLEDGE_CHECK",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「【判断正误】\n① '尚意书风'是宋代书法的核…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 6,
+        "audio_chunks": 1,
+        "load_status": "WARN",
+        "bottleneck_cause": "想蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_question",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": false
+    },
+    {
+      "scene_id": "墨骨山河_ep07_act3_07",
+      "scene_type": "steps",
+      "knowledge_type": "II",
+      "content": {
+        "title": "【综合题】（15分）\n1. '天下第三行书…",
+        "steps": [
+          "【综合题】（15分）",
+          "1. '天下第三行书'是什么？作者是谁？（3分）",
+          "2. '尚意书风'的核心主张是什么？请举出…",
+          "（4分）",
+          "3. '我书意造本无法'这句诗的含义是什…",
+          "4. 简述'宋四家'的成员"
+        ]
+      },
+      "page": {
+        "current": 8,
+        "total": 9,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 7,
+        "total": 9,
+        "name": "尚意的意义·knowledge_check",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [],
+      "source_chain_id": "墨骨山河_ep07",
+      "five_skandha": {
+        "color_base": [
+          "【综合",
+          "【综合题",
+          "【综合题】",
+          "【综合题】（"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "【综合题】（15分）\n1. '天下第三行书'是什么？作者是谁？（3分）\n2. '……",
+        "discrimination": "【综合题】（15分）\n1. '天下第三行书'是什么？作者是谁",
+        "action_prompt": "判断/选择",
+        "recognition_marker": "【综合题】（15分）\n1. '天下第三行书'是什么？作者…",
+        "bottleneck_warn": "想蕴"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "【综合题】（15分）\n1. '天下第三行书'是什么？作者…",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT3-BEAT-07-KNOWLEDGE_CHECK",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「【综合题】（15分）\n1. '天下第三行书'是什么？作者…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 6,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "想蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_question",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": false
+    },
+    {
+      "scene_id": "墨骨山河_ep07_act3_08",
+      "scene_type": "concept",
+      "knowledge_type": "II",
+      "content": {
+        "title": "苏轼的'尚意'在宋代走到…",
+        "body_lines": [
+          "苏轼的'尚意'在宋代走到了极致",
+          "但书法还有另一条路——不是从'意'的角…",
+          "清代的阮元和康有为，要用'碑学'，重新…"
+        ],
+        "keywords": [
+          "苏轼",
+          "苏轼的",
+          "苏轼的'",
+          "苏轼的'尚"
+        ]
+      },
+      "page": {
+        "current": 9,
+        "total": 9,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 8,
+        "total": 9,
+        "name": "尚意的意义·series_hook",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [],
+      "source_chain_id": "墨骨山河_ep07",
+      "five_skandha": {
+        "color_base": [
+          "苏轼",
+          "苏轼的",
+          "苏轼的'",
+          "苏轼的'尚"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "苏轼的'尚意'在宋代走到了极致。\n\n但书法还有另一条路——不是从'意'的角度扩展……",
+        "discrimination": "学生能识别「苏轼的'尚意'在宋代走到…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "苏轼的'尚意'在宋代走到了极致",
+        "bottleneck_warn": "none"
+      },
+      "analogy_block": {
+        "applicable": true,
+        "knowledge_type": "II",
+        "source_domain": "历史场景/人生经验",
+        "target_domain": "苏轼的'尚意'在宋代走到了极致。\n\n但书…",
+        "mapping_table": [
+          {
+            "source": "历史情境",
+            "arrow": "→",
+            "target": "书法技法"
+          }
+        ],
+        "difference_annotations": [
+          "注意历史背景与技法的差异"
+        ],
+        "closure_definition": ""
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT3-BEAT-08-SERIES_HOOK",
+        "visual_element_ref": "CONTENT-ZONE-3",
+        "alignment_note": "旁白「苏轼的'尚意'在宋代走到了极致。\n\n但书…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 3,
+        "load_status": "ACCEPTABLE",
+        "bottleneck_cause": "none",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    }
+  ]
+}
