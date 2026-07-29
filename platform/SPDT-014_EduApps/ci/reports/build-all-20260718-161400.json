@@ -1,0 +1,30 @@
+{
+  "timestamp": "20260718-161400",
+  "elapsed_s": 14.000585317611694,
+  "total": 2,
+  "pass": 2,
+  "fail": 0,
+  "skip": 0,
+  "apps": [
+    {
+      "name": "gaokao-language",
+      "brand": "gaokao",
+      "status": "pass",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 0.05555152893066406,
+      "error": "",
+      "duration_s": 7.089068412780762
+    },
+    {
+      "name": "gaokao-volunteer",
+      "brand": "gaokao",
+      "status": "pass",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 0.05555152893066406,
+      "error": "",
+      "duration_s": 6.910815000534058
+    }
+  ]
+}

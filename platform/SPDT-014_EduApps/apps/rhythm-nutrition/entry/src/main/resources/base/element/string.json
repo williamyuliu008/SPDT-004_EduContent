@@ -1,0 +1,8 @@
+{
+  "string": [
+    { "name": "app_name", "value": "rhythm nutrition" },
+    { "name": "module_desc", "value": "RhythmHabit rhythm nutrition" },
+    { "name": "EntryAbility_desc", "value": "RhythmHabit rhythm nutrition" },
+    { "name": "EntryAbility_label", "value": "rhythm nutrition" }
+  ]
+}

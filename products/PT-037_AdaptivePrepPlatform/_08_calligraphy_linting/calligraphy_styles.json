@@ -1,0 +1,181 @@
+{
+  "styles": [
+    {
+      "id": "zhuan",
+      "name": "篆书",
+      "name_en": "Seal Script",
+      "era": "先秦—秦",
+      "era_order": 1,
+      "era_approx": "公元前221年前后",
+      "period": "上古",
+      "masters": [
+        {"name": "李斯", "era": "秦", "note": "小篆创始人，统一文字"},
+        {"name": "李斯", "era": "秦", "note": "代表作《峄山碑》《泰山刻石》"}
+      ],
+      "representative": "峄山碑 / 泰山刻石",
+      "characteristics": ["笔画圆转均匀", "结构左右对称", "古朴典雅", "节奏感强"],
+      "stroke_pattern": "中锋圆转",
+      "famous_pieces": [
+        {"name": "泰山刻石", "calligrapher": "李斯", "location": "山东泰安", "era": "秦"},
+        {"name": "峄山碑", "calligrapher": "李斯", "location": "陕西西安碑林", "era": "秦"},
+        {"name": "石鼓文", "calligrapher": "不详", "location": "故宫博物院", "era": "周（秦系文字）"},
+        {"name": "袁安碑", "calligrapher": "不详", "location": "河南博物院", "era": "东汉"},
+        {"name": "天发神谶碑", "calligrapher": "皇象", "location": "南京博物院", "era": "三国·吴"}
+      ],
+      "exam_relevance": {
+        "guomao_kao": "小篆统一文字的历史意义",
+        "guashi": "古汉语句读（篆字识别）",
+        "futi": "掌握篆书基本笔顺与结构规律"
+      }
+    },
+    {
+      "id": "li",
+      "name": "隶书",
+      "name_en": "Clerical Script",
+      "era": "汉",
+      "era_order": 2,
+      "era_approx": "公元前206年—公元220年",
+      "period": "两汉",
+      "masters": [
+        {"name": "程邈", "era": "秦", "note": "隶书创始人（传说）"},
+        {"name": "蔡邕", "era": "东汉", "note": "《熹平石经》"}
+      ],
+      "representative": "张迁碑 / 曹全碑 / 礼器碑",
+      "characteristics": ["波磔分明", "蚕头雁尾", "左右舒展", "横平竖直"],
+      "stroke_pattern": "逆入平出，波磔显著",
+      "famous_pieces": [
+        {"name": "张迁碑", "calligrapher": "不详", "location": "山东平阴", "era": "东汉"},
+        {"name": "曹全碑", "calligrapher": "不详", "location": "西安碑林", "era": "东汉"},
+        {"name": "礼器碑", "calligrapher": "不详", "location": "山东曲阜", "era": "东汉"},
+        {"name": "乙瑛碑", "calligrapher": "不详", "location": "山东济宁", "era": "东汉"},
+        {"name": "熹平石经", "calligrapher": "蔡邕", "location": "洛阳博物馆", "era": "东汉"}
+      ],
+      "exam_relevance": {
+        "guomao_kao": "汉代经学与隶书的关系",
+        "guashi": "汉碑隶书风格辨析",
+        "futi": "隶书为五体过渡，掌握波磔笔法"
+      }
+    },
+    {
+      "id": "kai",
+      "name": "楷书",
+      "name_en": "Regular Script",
+      "era": "魏晋—唐",
+      "era_order": 3,
+      "era_approx": "公元3世纪—公元9世纪",
+      "period": "魏晋/南北朝/唐",
+      "masters": [
+        {"name": "钟繇", "era": "三国·魏", "note": "楷书之祖"},
+        {"name": "王羲之", "era": "东晋", "note": "书圣，楷书代表《乐毅论》"},
+        {"name": "欧阳询", "era": "唐", "note": "险峻刚健，代表作《九成宫醴泉铭》"},
+        {"name": "颜真卿", "era": "唐", "note": "雄壮敦厚，代表作《多宝塔碑》《颜勤礼碑》"},
+        {"name": "柳公权", "era": "唐", "note": "清劲峻拔，代表作《玄秘塔碑》"}
+      ],
+      "representative": "九成宫醴泉铭 / 多宝塔碑 / 玄秘塔碑",
+      "characteristics": ["笔画规范", "结构方正", "横平竖直", "端庄雄健"],
+      "stroke_pattern": "起收分明，提按丰富",
+      "famous_pieces": [
+        {"name": "宣示表", "calligrapher": "钟繇", "location": "故宫博物院（临本）", "era": "三国·魏"},
+        {"name": "黄庭经", "calligrapher": "王羲之", "location": "故宫博物院（摹本）", "era": "东晋"},
+        {"name": "九成宫醴泉铭", "calligrapher": "欧阳询", "location": "西安碑林", "era": "唐"},
+        {"name": "多宝塔碑", "calligrapher": "颜真卿", "location": "西安碑林", "era": "唐"},
+        {"name": "颜勤礼碑", "calligrapher": "颜真卿", "location": "西安碑林", "era": "唐"},
+        {"name": "玄秘塔碑", "calligrapher": "柳公权", "location": "西安碑林", "era": "唐"},
+        {"name": "祭侄文稿", "calligrapher": "颜真卿", "location": "台北故宫博物院", "era": "唐", "note": "行书，颜体行书最高代表"}
+      ],
+      "exam_relevance": {
+        "guomao_kao": "唐代楷书与科举（书判取士）",
+        "guashi": "颜柳欧赵四大家风格辨析",
+        "futi": "楷书是书法基础，需重点掌握唐楷三家"
+      }
+    },
+    {
+      "id": "xing",
+      "name": "行书",
+      "name_en": "Running Script",
+      "era": "晋—宋",
+      "era_order": 4,
+      "era_approx": "公元4世纪—公元12世纪",
+      "period": "东晋/唐/宋",
+      "masters": [
+        {"name": "王羲之", "era": "东晋", "note": "书圣，行书代表《兰亭序》"},
+        {"name": "王献之", "era": "东晋", "note": "小圣，行书《鸭头丸帖》"},
+        {"name": "王羲之", "era": "东晋", "note": "代表《兰亭序》（天下第一行书）"},
+        {"name": "颜真卿", "era": "唐", "note": "行书《祭侄文稿》（天下第二行书）"},
+        {"name": "苏轼", "era": "宋", "note": "代表《黄州寒食诗帖》（天下第三行书）"},
+        {"name": "米芾", "era": "宋", "note": "代表《蜀素帖》《苕溪诗帖》"},
+        {"name": "黄庭坚", "era": "宋", "note": "代表《松风阁诗帖》"}
+      ],
+      "representative": "兰亭序（冯摹本）/ 黄州寒食诗帖 / 苕溪诗帖",
+      "characteristics": ["介于楷草之间", "流畅灵动", "牵丝引带", "气韵生动"],
+      "stroke_pattern": "中侧并用，连绵不断",
+      "famous_pieces": [
+        {"name": "兰亭序", "calligrapher": "王羲之", "location": "故宫博物院（冯承素摹本）", "era": "东晋"},
+        {"name": "祭侄文稿", "calligrapher": "颜真卿", "location": "台北故宫博物院", "era": "唐"},
+        {"name": "争座位帖", "calligrapher": "颜真卿", "location": "西安碑林", "era": "唐"},
+        {"name": "黄州寒食诗帖", "calligrapher": "苏轼", "location": "台北故宫博物院", "era": "宋"},
+        {"name": "前赤壁赋", "calligrapher": "苏轼", "location": "台北故宫博物院", "era": "宋"},
+        {"name": "苕溪诗帖", "calligrapher": "米芾", "location": "故宫博物院", "era": "宋"},
+        {"name": "松风阁诗帖", "calligrapher": "黄庭坚", "location": "台北故宫博物院", "era": "宋"}
+      ],
+      "exam_relevance": {
+        "guomao_kao": "王羲之与兰亭雅集的历史背景",
+        "guashi": "三大行书创作背景与艺术特色",
+        "futi": "行书笔势连贯，是古汉语书写实践的重要书体"
+      }
+    },
+    {
+      "id": "cao",
+      "name": "草书",
+      "name_en": "Cursive Script",
+      "era": "汉—唐",
+      "era_order": 5,
+      "era_approx": "公元前1世纪—公元9世纪",
+      "period": "汉/晋/唐",
+      "masters": [
+        {"name": "张芝", "era": "东汉", "note": "草圣，章草代表"},
+        {"name": "王羲之", "era": "东晋", "note": "今草创始人之一"},
+        {"name": "王献之", "era": "东晋", "note": "今草创新者"},
+        {"name": "孙过庭", "era": "唐", "note": "代表《书谱》"},
+        {"name": "张旭", "era": "唐", "note": "草圣，代表《古诗四帖》"},
+        {"name": "怀素", "era": "唐", "note": "狂草代表，《自叙帖》"}
+      ],
+      "representative": "古诗四帖 / 自叙帖 / 书谱",
+      "characteristics": ["笔画连绵", "结构简省", "气韵奔放", "情感强烈"],
+      "stroke_pattern": "一笔书，连绵不断",
+      "famous_pieces": [
+        {"name": "书谱", "calligrapher": "孙过庭", "location": "故宫博物院", "era": "唐"},
+        {"name": "古诗四帖", "calligrapher": "张旭", "location": "辽宁省博物馆", "era": "唐"},
+        {"name": "自叙帖", "calligrapher": "怀素", "location": "台北故宫博物院", "era": "唐"},
+        {"name": "肚痛帖", "calligrapher": "张旭", "location": "西安碑林", "era": "唐"},
+        {"name": "论书帖", "calligrapher": "怀素", "location": "辽宁省博物馆", "era": "唐"}
+      ],
+      "exam_relevance": {
+        "guomao_kao": "狂草与唐代文化氛围",
+        "guashi": "章草与今草、狂草的区分",
+        "futi": "草书为最高阶，了解即可，重点掌握行楷"
+      }
+    }
+  ],
+  "_timeline": {
+    "总览": "五体书法演变沿革",
+    "线条": [
+      {"era": "先秦-秦", "style": "篆书", "note": "汉字象形→符号化，小篆统一"},
+      {"era": "汉", "style": "隶书", "note": "汉字笔画化，横势展开"},
+      {"era": "魏晋", "style": "楷书/行书/草书", "note": "楷书成型，二王书风确立"},
+      {"era": "南北朝", "style": "楷书（魏碑）", "note": "北碑古拙，南帖秀逸"},
+      {"era": "唐", "style": "楷书/行书/草书", "note": "楷书鼎盛，颜柳欧大家"},
+      {"era": "宋", "style": "行书", "note": "文人书法，苏黄米蔡"},
+      {"era": "元", "style": "楷书/行书", "note": "复古主义，赵孟頫"},
+      {"era": "明", "style": "行草", "note": "吴门书派，晚明浪漫主义"},
+      {"era": "清", "style": "篆隶/碑学", "note": "碑学复兴，金石学兴盛"}
+    ]
+  },
+  "_metadata": {
+    "version": "0.1",
+    "generated": "2026-07-20",
+    "source": "书法史论整理",
+    "exam_scope": "国美书法校考：古汉语+书法史论",
+    "note": "注意：王羲之各体皆擅，但以行书《兰亭序》为最；颜真卿以楷书和行书著称"
+  }
+}

@@ -1,0 +1,344 @@
+{
+  "schema": "https://mavis.ai/skill-config/calligraphy/scripts/micro_dramas.schema.json",
+  "meta": {
+    "pack_id": "cafa_calligraphy_2026",
+    "module": "scripts",
+    "last_updated": "2026-07-14",
+    "framework": "三层结构_v2",
+    "status": "全部完成",
+    "note": "v2框架：时间线（秦→汉→魏晋→唐→宋→清）+ 艺术问题（形式可能性→规则体系→书写自觉→理论自觉→表现极限→技法与情感→意对法的突围→取法视野的拓展）+ 当代回响。总计约211KB。"
+  },
+  "series_index": [
+    {
+      "series_id": "墨骨山河",
+      "series_name": "墨骨山河系列",
+      "series_description": "以书法家跌宕人生为经，以王朝兴衰为纬，缝合历史地理政治书法四大学科内核的沉浸式备考微剧本系列。",
+      "total_episodes_planned": 8,
+      "episodes": [
+        {
+          "episode_id": "墨骨山河_ep01",
+          "episode_number": 1,
+          "title": "峄山碑",
+          "subtitle": "李斯·小篆与书同文",
+          "period": "秦始皇二十八年（前219年）",
+          "status": "completed",
+          "file": "墨骨山河_ep01_李斯.json",
+          "target_knowledge_nodes_count": 11,
+          "acts": 3,
+          "difficulty": "Lv2",
+          "primary_exam": "国美书法校考",
+          "subjects_fused": [
+            "书法史/秦",
+            "古代史/秦",
+            "古汉语/六书"
+          ],
+          "core_exam_points": [
+            "秦统一六国(前221年)",
+            "书同文政策",
+            "小篆三大特征(均匀对称圆转)",
+            "六书分类",
+            "小篆字形译篆"
+          ]
+        },
+        {
+          "episode_id": "墨骨山河_ep02",
+          "episode_number": 2,
+          "title": "说文解字",
+          "subtitle": "许慎·六书之学",
+          "period": "东汉永元十二年至建光元年（100年—121年）",
+          "status": "completed",
+          "file": "墨骨山河_ep02_许慎.json",
+          "target_knowledge_nodes_count": 13,
+          "acts": 3,
+          "difficulty": "Lv2-Lv3",
+          "primary_exam": "国美书法校考",
+          "subjects_fused": [
+            "书法史/汉",
+            "古汉语/六书",
+            "说文解字"
+          ],
+          "core_exam_points": [
+            "《说文解字》成书时间(100-121年)",
+            "六书名称与基本定义",
+            "转注vs假借辨析",
+            "六书综合分类判断",
+            "9353字540部"
+          ]
+        },
+        {
+          "episode_id": "墨骨山河_ep03",
+          "episode_number": 3,
+          "title": "兰亭序",
+          "subtitle": "王羲之·永和九年",
+          "period": "东晋穆帝永和九年（353年）",
+          "status": "completed",
+          "file": "墨骨山河_ep02_王羲之_兰亭序.json",
+          "target_knowledge_nodes_count": 15,
+          "acts": 3,
+          "difficulty": "Lv2-Lv3",
+          "primary_exam": "国美书法校考",
+          "subjects_fused": [
+            "书法史/魏晋",
+            "古代史/魏晋门阀",
+            "古汉语/永字八法"
+          ],
+          "core_exam_points": [
+            "兰亭序天下第一行书(353年)",
+            "魏晋风度与门阀政治",
+            "永字八法(侧勒努趯策掠啄磔)",
+            "之字七变",
+            "行书成熟标志"
+          ]
+        },
+        {
+          "episode_id": "墨骨山河_ep04",
+          "episode_number": 4,
+          "title": "书谱之道",
+          "subtitle": "孙过庭·书法的自我言说",
+          "period": "唐武则天垂拱三年（687年）",
+          "status": "completed",
+          "file": "墨骨山河_ep04_孙过庭_书谱之道.json",
+          "target_knowledge_nodes_count": 12,
+          "acts": 3,
+          "difficulty": "Lv2-Lv3",
+          "primary_exam": "国美书法校考",
+          "subjects_fused": [
+            "书法史/唐",
+            "书法理论"
+          ],
+          "core_exam_points": [
+            "五乖五合",
+            "古质今妍",
+            "达其情性形其哀乐",
+            "书谱",
+            "中国第一部书法理论专著"
+          ]
+        },
+        {
+          "episode_id": "墨骨山河_ep05",
+          "episode_number": 5,
+          "title": "颠张醉素",
+          "subtitle": "张旭怀素与狂草的诞生",
+          "period": "唐玄宗开元天宝年间（约725-755年）",
+          "status": "completed",
+          "file": "墨骨山河_ep05_张旭怀素_颠张醉素.json",
+          "target_knowledge_nodes_count": 13,
+          "acts": 3,
+          "difficulty": "Lv2-Lv3",
+          "primary_exam": "国美书法校考",
+          "subjects_fused": [
+            "书法史/唐",
+            "唐代文化史",
+            "草书技法"
+          ],
+          "core_exam_points": [
+            "颠张醉素",
+            "狂草",
+            "外师造化",
+            "变动犹鬼神",
+            "唐代三绝"
+          ]
+        },
+        {
+          "episode_id": "墨骨山河_ep06",
+          "episode_number": 6,
+          "title": "安史之乱",
+          "subtitle": "颜真卿与祭侄文稿",
+          "period": "唐肃宗乾元元年（758年）",
+          "status": "completed",
+          "file": "墨骨山河_ep06_颜真卿_安史之乱.json",
+          "target_knowledge_nodes_count": 15,
+          "acts": 3,
+          "difficulty": "Lv2-Lv3",
+          "primary_exam": "国美书法校考",
+          "subjects_fused": [
+            "书法史/唐",
+            "唐代历史/安史之乱"
+          ],
+          "core_exam_points": [
+            "天下第二行书",
+            "篆籀气",
+            "颜筋柳骨",
+            "安史之乱",
+            "三大行书"
+          ]
+        },
+        {
+          "episode_id": "墨骨山河_ep07",
+          "episode_number": 7,
+          "title": "寒食突围",
+          "subtitle": "苏轼与寒食帖",
+          "period": "北宋神宗元丰五年（1082年）",
+          "status": "completed",
+          "file": "墨骨山河_ep07_苏轼.json",
+          "target_knowledge_nodes_count": 15,
+          "acts": 3,
+          "difficulty": "Lv2-Lv3",
+          "primary_exam": "国美书法校考",
+          "subjects_fused": [
+            "书法史/宋",
+            "宋代历史",
+            "尚意理论"
+          ],
+          "core_exam_points": [
+            "天下第三行书",
+            "尚意书风",
+            "我书意造本无法",
+            "石压蛤蟆体",
+            "宋四家"
+          ]
+        },
+        {
+          "episode_id": "墨骨山河_ep08",
+          "episode_number": 8,
+          "title": "碑学中兴",
+          "subtitle": "阮元·康有为与书法的版图重划",
+          "period": "清嘉庆至光绪年间（1790年代—1888年）",
+          "status": "completed",
+          "file": "墨骨山河_ep08_碑学中兴.json",
+          "target_knowledge_nodes_count": 14,
+          "acts": 3,
+          "difficulty": "Lv3",
+          "primary_exam": "国美书法校考",
+          "subjects_fused": [
+            "书法史/清",
+            "清代学术史",
+            "金石学"
+          ],
+          "core_exam_points": [
+            "南北书派论(阮元)",
+            "碑学与帖学",
+            "金石气",
+            "尊碑卑唐",
+            "广艺舟双楫(康有为)"
+          ]
+        }
+      ]
+    }
+  ],
+  "quick_play_index": [
+    {
+      "script_id": "flash_颜真卿_篆籀气",
+      "title": "3分钟速通：篆籀气是什么？",
+      "based_on": "墨骨山河_ep06_颜真卿_安史之乱",
+      "duration_minutes": 3,
+      "type": "知识速通",
+      "summary": "从祭侄文稿的一个笔画切入，1分钟讲透篆籀气技法内核，1分钟关联颜体风格，1分钟布置变式题",
+      "learning_outcomes": [
+        "能用中锋行笔藏而不露圆厚凝重三词概括篆籀气",
+        "能在祭侄文稿中识别篆籀气的视觉特征（涨墨绞转迟涩）"
+      ]
+    },
+    {
+      "script_id": "flash_孙过庭_五乖五合",
+      "title": "5分钟陪读：五乖五合速记法",
+      "based_on": "墨骨山河_ep01_颜真卿",
+      "duration_minutes": 5,
+      "type": "陪读陪练",
+      "summary": "以颜真卿写祭侄文稿时的身心状态为案例，逐条检验五乖五合的五个合与五个乖",
+      "learning_outcomes": [
+        "完整背诵五乖（神怡务闲感惠徇知时和气润纸墨相发偶然欲书）",
+        "能用祭侄文稿解释其中至少两条合的内涵"
+      ]
+    },
+    {
+      "script_id": "flash_王羲之_天下第一行书",
+      "title": "3分钟速通：为什么兰亭是天下第一行书？",
+      "based_on": "墨骨山河_ep02_王羲之",
+      "duration_minutes": 3,
+      "type": "知识速通",
+      "summary": "用三个为什么拆解天下第一：为什么是王羲之？为什么是永和九年？为什么是行书？",
+      "learning_outcomes": [
+        "能说出天下第一行书的作者年代代表作三个基本信息",
+        "能引用后之视今亦犹今之视昔说明兰亭序的哲思内核"
+      ]
+    },
+    {
+      "script_id": "flash_苏轼_尚意三连",
+      "title": "4分钟速通：苏轼尚意三连击",
+      "based_on": "墨骨山河_ep03_苏轼",
+      "duration_minutes": 4,
+      "type": "知识速通",
+      "summary": "我书意造本无法→石压蛤蟆体→天下第三行书，三个名场面一次打通",
+      "learning_outcomes": [
+        "能背诵苏轼三句名言并解释其与尚意书风的关系",
+        "能区分尚法（唐楷）与尚意（宋行）的核心差异"
+      ]
+    }
+  ],
+  "season_structure": {
+    "series_id": "墨骨山河",
+    "total_episodes": 8,
+    "coverage": {
+      "书法史时代轴": {
+        "先秦": [
+          "ep06_峄山碑"
+        ],
+        "汉": [
+          "ep08_说文解字"
+        ],
+        "魏晋": [
+          "ep02_兰亭序"
+        ],
+        "隋唐": [
+          "ep01_祭侄稿",
+          "ep05_颠张醉素"
+        ],
+        "宋": [
+          "ep03_寒食帖"
+        ],
+        "清": [
+          "ep04_南北书派论",
+          "ep07_广艺舟双楫"
+        ]
+      },
+      "考频覆盖": {
+        "五星考点": [
+          "祭侄文稿",
+          "兰亭序",
+          "篆籀气",
+          "五乖五合",
+          "宋四家",
+          "南北书派论"
+        ],
+        "四星考点": [
+          "书谱",
+          "颠张醉素",
+          "广艺舟双楫",
+          "碑帖之争",
+          "小篆书同文"
+        ],
+        "三星考点": [
+          "六书",
+          "说文解字",
+          "永字八法",
+          "乾嘉朴学"
+        ]
+      },
+      "古汉语能力覆盖": {
+        "译篆": [
+          "ep01_颜氏家藏印",
+          "ep06_峄山碑铭文",
+          "ep08_六书字形"
+        ],
+        "句读": [
+          "ep01_祭侄文稿",
+          "ep02_兰亭序文",
+          "ep05_张旭草书论"
+        ],
+        "纪年": [
+          "ep01_干支纪年",
+          "ep02_年号纪年",
+          "ep06_先秦纪年"
+        ]
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "墨骨山河_ep01_颜真卿.json",
+      "status": "created",
+      "created_date": "2026-07-13"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "pack_id": "cafa_calligraphy_2026",
+  "cross_pack_links": [
+    {
+      "trigger_type": "bidirectional",
+      "source_kb": "KB_CAFA_颜真卿",
+      "target_pack": "history_gaokao",
+      "target_kb": "KB_HIST_TANG_安史之乱",
+      "relation": "历史背景：安史之乱是理解颜体书法「篆籀气」形成的关键背景",
+      "trigger_condition": "用户书法史答题中「颜真卿」相关题目得分 < 14/20",
+      "bidirectional_note": "同时，当用户在历史包中学习「安史之乱」时，也应推荐书法包中的「颜真卿」内容",
+      "agent5_instruction": "出一道结合安史之乱历史背景与颜体书法风格的综合分析题（L2），帮助用户理解「人-事-艺」三者关系"
+    },
+    {
+      "trigger_type": "bidirectional",
+      "source_kb": "KB_CAFA_书谱",
+      "target_pack": "chinese_gaokao",
+      "target_kb": "KB_CHI_文言虚词系统",
+      "relation": "《书谱》原文是高质量文言文阅读材料，虚词和句式是理解书论的基础",
+      "trigger_condition": "用户名词解释「《书谱》」得分 < 12/20 OR 用户文言虚词题得分 < 60%",
+      "bidirectional_note": "同时，当用户在语文包中学习文言虚词时，推荐书法包中《书谱》原文作为练习材料",
+      "agent5_instruction": "出一道结合《书谱》原文与文言文语法分析的综合题（L2），要求释读并分析其中关键虚词的语法功能"
+    },
+    {
+      "trigger_type": "unidirectional",
+      "source_kb": "KB_CAFA_宋四家",
+      "target_pack": "history_gaokao",
+      "target_kb": "KB_HIST_SONG_POLICY",
+      "relation": "宋代重文轻武国策是文人书法繁荣的政治基础",
+      "trigger_condition": "用户书法史「宋四家」相关题目得分 < 14/20，且历史包中「重文轻武」知识点掌握度 > 70%",
+      "bidirectional_note": "单向触发：学书法时联系历史背景，但学历史时不强制触发书法内容",
+      "agent5_instruction": "生成一道跨学科综合题（L3）：「分析宋代重文轻武国策如何推动文人书法（尤其是尚意书风）的发展」，引导用户从政治制度角度理解书法现象"
+    }
+  ],
+  "related_packs_status": {
+    "history_gaokao": {
+      "priority": "P1",
+      "status": "待开发",
+      "key_link_nodes": ["安史之乱", "唐代藩镇", "宋代重文轻武", "科举制度"]
+    },
+    "chinese_gaokao": {
+      "priority": "P2",
+      "status": "待开发",
+      "key_link_nodes": ["文言虚词", "固定句式", "古代文化常识"]
+    },
+    "geography_gaokao": {
+      "priority": "P2",
+      "status": "待开发",
+      "key_link_nodes": ["蒲州地理", "唐代主要城市", "黄河流域"]
+    }
+  },
+  "integration_principles": [
+    "跨包联动触发条件必须具体可量化（不能是「用户感兴趣时」）",
+    "每次只推送一个跨包任务，避免认知过载",
+    "跨包任务应在用户完成当前包核心内容后触发",
+    "Agent 5 调度时应告知用户：「你正在学习的内容与另一个领域有关联」
+  ]
+}

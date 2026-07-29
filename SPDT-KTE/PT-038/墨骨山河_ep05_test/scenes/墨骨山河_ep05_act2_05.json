@@ -1,0 +1,83 @@
+{
+  "scene_id": "墨骨山河_ep05_act2_05",
+  "scene_type": "steps",
+  "knowledge_type": "II",
+  "content": {
+    "title": "【狂草特征判断题】\n\n以下关…",
+    "steps": [
+      "【狂草特征判断题】",
+      "以下关于狂草的说法，哪一项是错误…",
+      "A. 狂草是草书中最极端的形态，笔画极…",
+      "B. 狂草完全放弃了可读性，因此不是书…",
+      "C. 狂草需要以扎实的楷书功底为基础",
+      "D. 狂草的代表人物是张旭和怀素，人称…"
+    ]
+  },
+  "page": {
+    "current": 6,
+    "total": 11,
+    "show": true
+  },
+  "scene_info": {
+    "idx": 5,
+    "total": 11,
+    "name": "笔墨的极限·knowledge_check",
+    "dur": 0.0
+  },
+  "source_knowledge_nodes": [
+    "#书法/唐/狂草vs涂鸦",
+    "#考频/⭐️⭐⭐"
+  ],
+  "source_chain_id": "墨骨山河_ep05",
+  "five_skandha": {
+    "color_base": [
+      "【狂草",
+      "【狂草特",
+      "【狂草特征",
+      "【狂草特征判"
+    ],
+    "sensation": "none",
+    "sensation_trigger": "【狂草特征判断题】\n\n以下关于狂草的说法，哪一项是错误的？\n\nA. 狂草是草书中……",
+    "discrimination": "【狂草特征判断题】\n\n以下关于狂草的说法，哪一项是错误的？\n",
+    "action_prompt": "判断/选择",
+    "recognition_marker": "#书法/唐/狂草vs涂鸦",
+    "bottleneck_warn": "想蕴"
+  },
+  "analogy_block": {
+    "applicable": true,
+    "knowledge_type": "II",
+    "source_domain": "历史场景/人生经验",
+    "target_domain": "#书法/唐/狂草vs涂鸦",
+    "mapping_table": [
+      {
+        "source": "历史情境",
+        "arrow": "→",
+        "target": "书法技法"
+      }
+    ],
+    "difference_annotations": [
+      "注意历史背景与技法的差异"
+    ],
+    "closure_definition": ""
+  },
+  "semantic_alignment": {
+    "audio_segment_ref": "ACT2-BEAT-05-KNOWLEDGE_CHECK",
+    "visual_element_ref": "CONTENT-ZONE-3",
+    "alignment_note": "旁白「【狂草特征判断题】\n\n以下关于狂草的说…」对应视觉区显示",
+    "alignment_confirmed": false
+  },
+  "cognitive_load": {
+    "visual_points": 6,
+    "audio_chunks": 2,
+    "load_status": "WARN",
+    "bottleneck_cause": "想蕴",
+    "split_recommendation": "建议拆分为2个 scene"
+  },
+  "audio": {
+    "tts_template": "voice_question",
+    "speed_wpm": 170,
+    "pause_after_s": 2.0
+  },
+  "energy_level": "medium",
+  "clip_friendly": false
+}

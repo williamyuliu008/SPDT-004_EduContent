@@ -1,0 +1,147 @@
+{
+  "summary": {
+    "ok": 8,
+    "partial": 0,
+    "skipped": 0,
+    "failed": 0,
+    "total_scenes": 91
+  },
+  "results": [
+    {
+      "ep": 1,
+      "title": "峄山碑",
+      "subtitle": "李斯·小篆与书同文",
+      "file": "墨骨山河_ep01_李斯.json",
+      "chains": "墨骨山河_ep01",
+      "status": "ok",
+      "scenes": 13,
+      "kt_dist": {
+        "I": 2,
+        "II": 11,
+        "III": 0,
+        "IV": 0
+      },
+      "ifb_size": 6652,
+      "output_dir": "墨骨山河_ep01_test\\scenes_out"
+    },
+    {
+      "ep": 2,
+      "title": "说文解字",
+      "subtitle": "许慎·六书之学",
+      "file": "墨骨山河_ep02_许慎.json",
+      "chains": "墨骨山河_ep02",
+      "status": "ok",
+      "scenes": 13,
+      "kt_dist": {
+        "I": 7,
+        "II": 6,
+        "III": 0,
+        "IV": 0
+      },
+      "ifb_size": 6749,
+      "output_dir": "墨骨山河_ep02_test\\scenes_out"
+    },
+    {
+      "ep": 3,
+      "title": "兰亭序",
+      "subtitle": "王羲之·永和九年",
+      "file": "墨骨山河_ep02_王羲之_兰亭序.json",
+      "chains": "墨骨山河_ep03",
+      "status": "ok",
+      "scenes": 16,
+      "kt_dist": {
+        "I": 0,
+        "II": 16,
+        "III": 0,
+        "IV": 0
+      },
+      "ifb_size": 8049,
+      "output_dir": "墨骨山河_ep03_test\\scenes_out"
+    },
+    {
+      "ep": 4,
+      "title": "书谱之道",
+      "subtitle": "孙过庭·书法的自我言说",
+      "file": "墨骨山河_ep04_孙过庭_书谱之道.json",
+      "chains": "墨骨山河_ep04",
+      "status": "ok",
+      "scenes": 11,
+      "kt_dist": {
+        "I": 0,
+        "II": 11,
+        "III": 0,
+        "IV": 0
+      },
+      "ifb_size": 5786,
+      "output_dir": "墨骨山河_ep04_test\\scenes_out"
+    },
+    {
+      "ep": 5,
+      "title": "颠张醉素",
+      "subtitle": "张旭怀素与狂草的诞生",
+      "file": "墨骨山河_ep05_张旭怀素_颠张醉素.json",
+      "chains": "墨骨山河_ep05",
+      "status": "ok",
+      "scenes": 11,
+      "kt_dist": {
+        "I": 0,
+        "II": 11,
+        "III": 0,
+        "IV": 0
+      },
+      "ifb_size": 5735,
+      "output_dir": "墨骨山河_ep05_test\\scenes_out"
+    },
+    {
+      "ep": 6,
+      "title": "安史之乱",
+      "subtitle": "颜真卿与祭侄文稿",
+      "file": "墨骨山河_ep06_颜真卿_安史之乱.json",
+      "chains": "墨骨山河_ep06",
+      "status": "ok",
+      "scenes": 10,
+      "kt_dist": {
+        "I": 0,
+        "II": 10,
+        "III": 0,
+        "IV": 0
+      },
+      "ifb_size": 5276,
+      "output_dir": "墨骨山河_ep06_test\\scenes_out"
+    },
+    {
+      "ep": 7,
+      "title": "寒食突围",
+      "subtitle": "苏轼与寒食帖",
+      "file": "墨骨山河_ep07_苏轼.json",
+      "chains": "墨骨山河_ep07",
+      "status": "ok",
+      "scenes": 9,
+      "kt_dist": {
+        "I": 0,
+        "II": 9,
+        "III": 0,
+        "IV": 0
+      },
+      "ifb_size": 5061,
+      "output_dir": "墨骨山河_ep07_test\\scenes_out"
+    },
+    {
+      "ep": 8,
+      "title": "碑学中兴",
+      "subtitle": "阮元·康有为与书法的版图重划",
+      "file": "墨骨山河_ep08_碑学中兴.json",
+      "chains": "墨骨山河_ep08",
+      "status": "ok",
+      "scenes": 8,
+      "kt_dist": {
+        "I": 0,
+        "II": 8,
+        "III": 0,
+        "IV": 0
+      },
+      "ifb_size": 4543,
+      "output_dir": "墨骨山河_ep08_test\\scenes_out"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "20260719-204122",
+  "elapsed_s": 15.774648189544678,
+  "total": 1,
+  "pass": 1,
+  "fail": 0,
+  "skip": 0,
+  "apps": [
+    {
+      "name": "rujing",
+      "brand": "unknown",
+      "status": "pass",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 7.947379112243652,
+      "error": "",
+      "duration_s": 15.774327754974365
+    }
+  ]
+}

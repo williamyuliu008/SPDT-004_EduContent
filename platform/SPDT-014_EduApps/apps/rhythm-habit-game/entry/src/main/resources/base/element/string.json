@@ -1,0 +1,8 @@
+{
+  "string": [
+    { "name": "app_name", "value": "rhythm habit game" },
+    { "name": "module_desc", "value": "RhythmHabit rhythm habit game" },
+    { "name": "EntryAbility_desc", "value": "RhythmHabit rhythm habit game" },
+    { "name": "EntryAbility_label", "value": "rhythm habit game" }
+  ]
+}

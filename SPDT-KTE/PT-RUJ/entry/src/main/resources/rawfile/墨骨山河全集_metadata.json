@@ -1,0 +1,114 @@
+{
+  "schema_version": "2.0.0",
+  "package_id": "墨骨山河_全集",
+  "series_title": "墨骨山河",
+  "total_episodes": 8,
+  "produced_by": "PT-VFX",
+  "produced_at": "2026-07-20T12:38:24.010166",
+  "episodes": [
+    {
+      "ep": 1,
+      "title": "峄山碑前",
+      "subtitle": "李斯·小篆的秩序与第一道名字",
+      "video_file": "墨骨山河_ep01.mp4",
+      "duration_seconds": 162.4,
+      "resolution": "1080p",
+      "bitrate_kbps": 2000,
+      "chains": [
+        "墨骨山河_ep01"
+      ],
+      "scene_timeline": []
+    },
+    {
+      "ep": 2,
+      "title": "永和九年那场雨",
+      "subtitle": "王羲之·兰亭序与书法的觉醒",
+      "video_file": "墨骨山河_ep02.mp4",
+      "duration_seconds": 190.1,
+      "resolution": "1080p",
+      "bitrate_kbps": 2000,
+      "chains": [
+        "墨骨山河_ep02"
+      ],
+      "scene_timeline": []
+    },
+    {
+      "ep": 3,
+      "title": "黄州突围",
+      "subtitle": "苏轼·寒食帖与书法的生命维度",
+      "video_file": "墨骨山河_ep03.mp4",
+      "duration_seconds": 85.1,
+      "resolution": "1080p",
+      "bitrate_kbps": 2000,
+      "chains": [
+        "墨骨山河_ep03"
+      ],
+      "scene_timeline": []
+    },
+    {
+      "ep": 4,
+      "title": "孙过庭·书谱之道",
+      "subtitle": "孙过庭·书谱之道",
+      "video_file": "墨骨山河_ep04.mp4",
+      "duration_seconds": 143.6,
+      "resolution": "1080p",
+      "bitrate_kbps": 2000,
+      "chains": [
+        "墨骨山河_ep04"
+      ],
+      "scene_timeline": []
+    },
+    {
+      "ep": 5,
+      "title": "颠张醉素",
+      "subtitle": "张旭怀素·草书的极限与癫狂",
+      "video_file": "墨骨山河_ep05.mp4",
+      "duration_seconds": 116.2,
+      "resolution": "1080p",
+      "bitrate_kbps": 2000,
+      "chains": [
+        "墨骨山河_ep05"
+      ],
+      "scene_timeline": []
+    },
+    {
+      "ep": 6,
+      "title": "安史之乱",
+      "subtitle": "颜真卿·忠烈之书与大唐的至暗时刻",
+      "video_file": "墨骨山河_ep06.mp4",
+      "duration_seconds": 131.7,
+      "resolution": "1080p",
+      "bitrate_kbps": 2000,
+      "chains": [
+        "墨骨山河_ep06"
+      ],
+      "scene_timeline": []
+    },
+    {
+      "ep": 7,
+      "title": "碑学中兴",
+      "subtitle": "阮元与书法的版图重划",
+      "video_file": "墨骨山河_ep07.mp4",
+      "duration_seconds": 240.0,
+      "resolution": "1080p",
+      "bitrate_kbps": 2000,
+      "chains": [
+        "墨骨山河_ep07"
+      ],
+      "scene_timeline": []
+    },
+    {
+      "ep": 8,
+      "title": "说文解字",
+      "subtitle": "许慎·六书之学与汉字的终极命名",
+      "video_file": "墨骨山河_ep08.mp4",
+      "duration_seconds": 360.0,
+      "resolution": "1080p",
+      "bitrate_kbps": 2000,
+      "chains": [
+        "墨骨山河_ep08"
+      ],
+      "scene_timeline": []
+    }
+  ]
+}

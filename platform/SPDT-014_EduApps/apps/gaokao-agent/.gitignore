@@ -1,0 +1,9 @@
+﻿.build/
+.hvigor/
+oh_modules/
+*.hap
+*.p12
+*.p7b
+*.csr
+.DS_Store
+Thumbs.db

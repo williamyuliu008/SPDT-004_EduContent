@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<user_config>
+    <environment>
+        <device type="usb-hdc">
+            <!-- ip/port: 远端设备，空=本地 -->
+            <info ip="" port="" sn="7GL0226313016118" />
+        </device>
+    </environment>
+    <testcases>
+        <dir></dir>
+    </testcases>
+    <resource>
+        <dir></dir>
+    </resource>
+    <loglevel>DEBUG</loglevel>
+    <devicelog>
+        <!-- 拉取应用日志目录 -->
+        <dir>/data/log/tee;/data/log/applog</dir>
+        <loglevel>DEBUG</loglevel>
+        <clear></clear>
+        <enable>ON</enable>
+    </devicelog>
+    <!-- 每个 Step 自动截图，方便定位问题 -->
+    <taskargs>
+        <screenshot>true</screenshot>
+        <screenrecorder>false</screenrecorder>
+    </taskargs>
+</user_config>

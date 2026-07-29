@@ -1,0 +1,256 @@
+# ep09 商鞅变法 · NarrativeSpec.yaml
+# MAS-RUN R1 新增交付件（叙事架构设计）
+# 生成日期：2026-07-27 · 考点知识库_4_协调
+# 版本：1.0
+# 说明：NarrativeSpec 是"长文本架构设计的输入"，
+#       将模糊的创作直觉翻译成可校验的结构化蓝图，
+#       作为 M2-M5 的架构锚点。
+
+narrative_spec:
+  version: "1.0"
+  episode_id: "ep09"
+  episode_title: "南门之木"
+  subtitle: "商鞅变法·战国秩序的诞生"
+
+  # ─────────────────────────────────────────
+  # 一、叙事类型（对应 SOP 改进方向：M1 新增交付件）
+  # ─────────────────────────────────────────
+  narrative_type: "变革叙事"
+  narrative_type_definition: >
+    变革叙事的核心结构：正常世界 → 激励事件 → 上升动作 → 中点转折
+    → 终极冲突 → 新正常世界。
+    变革叙事的特点：主角必须付出代价，但制度或思想得以延续。
+    与"成长叙事"的区别：成长叙事的主角改变了自己；变革叙事的主角改变了世界。
+
+  # ─────────────────────────────────────────
+  # 二、核心主题（1-3个，定义内容边界）
+  # ─────────────────────────────────────────
+  themes:
+    - id: "theme_代价"
+      description: >
+        每一次制度变革都伴随着个人牺牲。
+        商鞅以自己的生命为代价，证明了一个悖论：
+        真正伟大的制度，不依赖创立者的生命，而依赖制度本身的生命力。
+        他被自己制定的法律困住，最终死于自己建立的制度——这是变革者最深沉的悲剧。
+      polarity: "个人牺牲 ↔ 历史进步"
+      exam_relevance: >
+        高考考点：商鞅变法的历史意义
+        核心答案：商鞅虽死，变法未废——说明变法顺应了历史潮流
+      visual_anchor_scene: "scene_09_3_3"  # 书同文·小篆
+      visual_description: "渭水河畔，刑车缓缓前行（或：卫鞅著《商君书》，小篆字形庄严方正）"
+
+    - id: "theme_信法"
+      description: >
+        南门立木建立了"法律是可信赖的"这一信念；
+        渭水之刑证明了"法律面前人人平等"这一原则。
+        但信与法之间存在张力：
+        信是柔性的（人心），法是刚性的（制度）。
+        商鞅用"信"开局，用"法"收尾——两者缺一，变革不可成。
+      polarity: "信任（柔性） ↔ 强制（刚性）"
+      exam_relevance: >
+        高考考点：商鞅变法成功的原因
+        核心答案：取信于民 + 法令严明
+      visual_anchor_scene: "scene_09_2_2"  # 五十金之信
+      visual_description: "左：南门立木，众人围观；右：渭水之刑，太子傅受刑——信与法的两面"
+
+    - id: "theme_书同文"
+      description: >
+        小篆是法家美学在文字上的投影：
+        圆转均匀——笔画没有个人情绪，只有普遍规则；
+        对称平衡——结构不偏不倚，秩序至高无上；
+        去个性化——牺牲书写者的个人风格，换取信息的普遍可读性。
+        这与商鞅"一刑赏于法"的法治精神完全一致。
+        书法与法律，在这个意义上是同构的：它们都是用秩序创造自由。
+      polarity: "秩序（普遍性） ↔ 表达（个体性）"
+      exam_relevance: >
+        书法考点：小篆的书写特征
+        历史考点：书同文的历史意义
+      visual_anchor_scene: "scene_09_3_3"  # 书同文·小篆
+      visual_description: "小篆字形特写：圆转均匀，对称平衡，庄严方正——法家美学在笔墨间的投影"
+
+  # ─────────────────────────────────────────
+  # 三、叙事弧线（内容结构的骨架）
+  # ─────────────────────────────────────────
+  narrative_arc:
+    type: "三幕式"
+    total_beats: 6
+
+    beats:
+      - beat: "正常世界"
+        arc_position: "第一幕开头"
+        dramatic_function: "建立变革前的社会背景——秦国的'弱'与六国的'卑'"
+        scenes: ["scene_09_1_1", "scene_09_1_2"]
+        content_summary: >
+          公元前361年，秦孝公即位，发求贤令。
+          六国使节从不来秦，秦国被视为蛮夷。
+          卫鞅入秦，以帝道说君，孝公睡着。
+        exam_connection: "战国形势 + 秦孝公求贤令的背景"
+        emotional_tone: "压抑、期待"
+
+      - beat: "激励事件"
+        arc_position: "第一幕结尾"
+        dramatic_function: "卫鞅登场，变法正式开始——从'帝道'到'王道'到'霸道'的论证过程"
+        scenes: ["scene_09_1_3", "scene_09_1_4"]
+        content_summary: >
+          卫鞅三论：帝道（黄帝之道）→ 王道（尧舜之道）→ 霸道（富国强兵）。
+          孝公猛然站起：正合我意！
+          公元前359年，卫鞅被任命为左庶长，变法开始。
+        exam_connection: "商鞅变法的理论基础：'治世不一道，便国不法古'"
+        emotional_tone: "震动、决心"
+
+      - beat: "上升动作"
+        arc_position: "第二幕（全幕）"
+        dramatic_function: "商鞅变法的具体内容——用南门立木取信，用刑及太子立威"
+        scenes: ["scene_09_2_1", "scene_09_2_2", "scene_09_2_3", "scene_09_2_4"]
+        content_summary: >
+          ① 南门立木：赏金从十金→五十金，当场兑现，买到政府信用。
+          ② 变法五纲：废井田、建县制、奖励军功、燔诗书、连坐制。
+          ③ 渭水之刑：太子犯法，刑其傅公子虔（劓刑）、师公孙贾（黥刑）。
+          "法之不行，自上犯之。"
+        exam_connection: >
+          商鞅变法的主要内容（必背五大纲领）
+          南门立木的政治智慧
+          "王子犯法与庶民同罪"的法律精神
+        emotional_tone: "紧张、秩序感、建立信任"
+
+      - beat: "中点转折"
+        arc_position: "第三幕开头"
+        dramatic_function: "变法成效 + 孝公去世，卫鞅失去保护伞"
+        scenes: ["scene_09_3_1", "scene_09_3_2"]
+        content_summary: >
+          变法十年后，秦国大治：道不拾遗，山无盗贼，家给人足。
+          公元前338年，孝公去世。
+          公子虔等人诬陷卫鞅谋反，卫鞅逃亡。
+          住店被拒："商君之法，舍人无验者坐之。"
+        exam_connection: "商鞅变法的历史成效（十年大治）"
+        emotional_tone: "欣慰、悲剧预感"
+
+      - beat: "终极冲突"
+        arc_position: "第三幕中段"
+        dramatic_function: "卫鞅之死——被车裂，但变法未废"
+        scenes: ["scene_09_3_3"]
+        content_summary: >
+          卫鞅被车裂（五马分尸）。
+          但新法没有废除。
+          商鞅死了，商鞅之法活了。
+        exam_connection: "商鞅变法最重要的历史意义：变法顺应历史潮流"
+        emotional_tone: "悲壮、高潮"
+
+      - beat: "新正常世界"
+        arc_position: "第三幕结尾"
+        dramatic_function: "商鞅变法的历史遗产——制度比人更持久"
+        scenes: ["scene_09_3_3"]
+        content_summary: >
+          商鞅死后130余年，他的后继者秦始皇用他奠定的制度统一了六国。
+          商鞅之法，成为中国两千年帝制的基本框架。
+          而"书同文"让汉字在秦朝之后就不再断裂——世界上唯一一个文字不因朝代更替而断裂的文明。
+        exam_connection: >
+          商鞅变法的历史意义：为中国统一奠定基础
+          书同文的历史意义：中华文明连续性的制度保障
+        emotional_tone: "庄严、余韵"
+
+  # ─────────────────────────────────────────
+  # 四、人物弧线
+  # ─────────────────────────────────────────
+  character_arcs:
+    - character: "商鞅/卫鞅"
+      role: "变革者"
+      start:
+        belief: "法治可以重塑一切——只要有严明的法律和坚定的执行"
+        state: "怀抱理想，以霸道之术游说诸侯"
+      change:
+        trigger: "渭水之刑——他意识到，法治需要暴力背书"
+        description: "从相信'纯法治'到接受'法治+强制'的辩证"
+      end:
+        belief: "制度比人更持久——他愿意用自己的死证明这一点"
+        state: "被自己制定的法律困住，从容赴死"
+      arc_theme: "theme_代价"
+
+  # ─────────────────────────────────────────
+  # 五、视觉叙事锚点（B5 视觉叙事内容专属）
+  # ─────────────────────────────────────────
+  visual_anchors:
+    # 已有配图（6张）
+    - scene_id: "scene_09_1_1"
+      scene_name: "求贤令"
+      illustration_file: "pt039_ep09_01_求贤令.png"
+      theme_binding: "theme_代价（背景铺垫）"
+      visual_type: "场景图"
+      visual_description: "秦国宫殿高台，秦孝公远望荒原，颁布求贤令"
+
+    - scene_id: "scene_09_1_4"
+      scene_name: "霸道定策"
+      illustration_file: "pt039_ep09_02_霸道定策.png"
+      theme_binding: "theme_代价（激励事件）"
+      visual_type: "场景图"
+      visual_description: "卫鞅舌战三天三夜，孝公猛然站起"
+
+    - scene_id: "scene_09_2_1"
+      scene_name: "南门立木"
+      illustration_file: "pt039_ep09_03_南门立木.png"
+      theme_binding: "theme_信法"
+      visual_type: "场景图"
+      visual_description: "栎阳南门，三丈高的木头，告示高悬，众人围观"
+
+    - scene_id: "scene_09_2_2"
+      scene_name: "五十金之信"
+      illustration_file: "pt039_ep09_04_五十金兑现.png"
+      theme_binding: "theme_信法"
+      visual_type: "场景图"
+      visual_description: "卫鞅当场兑现五十金，百姓震动"
+
+    - scene_id: "scene_09_2_4"
+      scene_name: "渭水之刑"
+      illustration_file: "pt039_ep09_05_渭水之刑.png"
+      theme_binding: "theme_信法"
+      visual_type: "场景图"
+      visual_description: "渭水河滩，太子傅受刑，秦人震恐"
+
+    - scene_id: "scene_09_3_3"
+      scene_name: "书同文·小篆"
+      illustration_file: "pt039_ep09_06_书同文.png"
+      theme_binding: "theme_书同文 + theme_代价"
+      visual_type: "书法特写"
+      visual_description: "小篆字形：圆转均匀，对称平衡，庄严方正——法家美学在笔墨间的投影"
+
+  # ─────────────────────────────────────────
+  # 六、禁止出现的主题（防御性约束）
+  # ─────────────────────────────────────────
+  excluded_themes:
+    - id: "EX-01"
+      reason: "无史料支撑的戏剧化演绎"
+      example: "虚构卫鞅的感情生活/家庭细节"
+    - id: "EX-02"
+      reason: "超出本集时间范围"
+      example: "详细描述秦始皇统一六国的战争过程（本集止于商鞅之死）"
+    - id: "EX-03"
+      reason: "混淆不同历史时期"
+      example: "将汉代儒学思想套用于战国法家"
+    - id: "EX-04"
+      reason: "书法知识错误"
+      example: "用隶书/楷书字形表示秦朝标准字体（必须是篆书）"
+
+  # ─────────────────────────────────────────
+  # 七、系列内一致性约束
+  # ─────────────────────────────────────────
+  series_consistency:
+    series: "墨骨山河"
+    consistency_rules:
+      - rule: "每集必须有历史考点绑定"
+        enforcement: "每scene的knowledge_injection必须有tag含'#历史'"
+      - rule: "第三幕必须有书法关联"
+        enforcement: "act3每个scene必须有art_layer定义"
+      - rule: "视觉风格统一（水墨/写意）"
+        enforcement: "AI配图prompt中统一注入风格关键词"
+      - rule: "narrative_type统一为'变革叙事'"
+        enforcement: "墨骨山河全系列统一使用本NarrativeSpec模板"
+
+  # ─────────────────────────────────────────
+  # 追溯信息
+  # ─────────────────────────────────────────
+  provenance:
+    source_document: "scripts/墨骨山河_ep09_商鞅变法.json"
+    created_by: "考点知识库_4_协调"
+    creation_date: "2026-07-27"
+    sop_reference: "MAS-RUN R1 新增交付件 · 内容制造型SOP_v4.0 M1扩展"
+    related_content_spec: "scripts/ep09/ContentSpec.yaml"

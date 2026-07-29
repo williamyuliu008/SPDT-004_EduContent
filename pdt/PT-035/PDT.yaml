@@ -1,0 +1,9 @@
+pdt_id: PT-035
+name: LanguageLearning
+name_zh: 语言学习内容工厂
+spdt: SPDT-004
+domain: 语言教育
+subjects: [英语, 日语, 韩语, 法语]
+content_types: [单词视频, 语法动画, 听力素材, 口语练习]
+status: planned
+created: 2026-07-10

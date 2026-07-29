@@ -1,0 +1,20 @@
+{
+  "timestamp": "20260719-161430",
+  "elapsed_s": 11.014373064041138,
+  "total": 1,
+  "pass": 0,
+  "fail": 1,
+  "skip": 0,
+  "apps": [
+    {
+      "name": "rujing",
+      "brand": "unknown",
+      "status": "fail",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 4.855568885803223,
+      "error": "\u001b[31m3 ERROR: \u001b[31m10505001 ArkTS Compiler Error\n\u001b[31m4 ERROR: \u001b[31mArkTS:ERROR File: D:/92_products/SPDT-001_Harmony/apps/rujing/entry/src/main/ets/pages/ChainListPage.ets:8:10\n ERROR Code: 10311006 ArkTS: ERROR\n\u001b[31mCOMPILE RESULT:FAIL {ERROR:5 WARN:124}\u001b[39m\n> hvigor \u001b[91mERROR: BUILD FAILED in 9 s 690 ms \u001b[39m",
+      "duration_s": 11.014345645904541
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+concept: 奇偶性
+passed_v1: true
+sample_id: func_010
+source: VCC v1.0 math animation factory
+tags:
+  D1_process: static
+  D2_spatial: spatial_2d
+  D3_complexity: simple
+  D4_presentation: definition
+  D5_concept_type: relationship
+  D6_subject: algebra

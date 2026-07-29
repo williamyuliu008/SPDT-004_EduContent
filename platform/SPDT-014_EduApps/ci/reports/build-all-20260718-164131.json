@@ -1,0 +1,310 @@
+{
+  "timestamp": "20260718-164131",
+  "elapsed_s": 52.82535243034363,
+  "total": 30,
+  "pass": 11,
+  "fail": 2,
+  "skip": 17,
+  "apps": [
+    {
+      "name": "craftsman-api-tester",
+      "brand": "craftsman",
+      "status": "skip",
+      "signed": false,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "No signingConfigs (need DevEco Sync)",
+      "duration_s": 0.0
+    },
+    {
+      "name": "craftsman-arkui",
+      "brand": "craftsman",
+      "status": "pass",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 0.15642356872558594,
+      "error": "",
+      "duration_s": 16.21973204612732
+    },
+    {
+      "name": "craftsman-clipboard",
+      "brand": "craftsman",
+      "status": "pass",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 0.055558204650878906,
+      "error": "",
+      "duration_s": 15.487385988235474
+    },
+    {
+      "name": "craftsman-code-editor",
+      "brand": "craftsman",
+      "status": "skip",
+      "signed": false,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "No signingConfigs (need DevEco Sync)",
+      "duration_s": 0.0
+    },
+    {
+      "name": "craftsman-image-tool",
+      "brand": "craftsman",
+      "status": "pass",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 0.05555534362792969,
+      "error": "",
+      "duration_s": 15.398266077041626
+    },
+    {
+      "name": "craftsman-ohpm",
+      "brand": "craftsman",
+      "status": "skip",
+      "signed": false,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "No signingConfigs (need DevEco Sync)",
+      "duration_s": 0.0
+    },
+    {
+      "name": "craftsman-scanner",
+      "brand": "craftsman",
+      "status": "skip",
+      "signed": false,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "No signingConfigs (need DevEco Sync)",
+      "duration_s": 0.0
+    },
+    {
+      "name": "craftsman-translate",
+      "brand": "craftsman",
+      "status": "fail",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 0.05555248260498047,
+      "error": "Exit code: 1",
+      "duration_s": 2.4139180183410645
+    },
+    {
+      "name": "craftsman-utils",
+      "brand": "craftsman",
+      "status": "skip",
+      "signed": false,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "No signingConfigs (need DevEco Sync)",
+      "duration_s": 0.0
+    },
+    {
+      "name": "craftsman-utils-v2",
+      "brand": "craftsman",
+      "status": "skip",
+      "signed": false,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "No signingConfigs (need DevEco Sync)",
+      "duration_s": 0.0
+    },
+    {
+      "name": "gaokao-agent",
+      "brand": "gaokao",
+      "status": "pass",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 0.48279762268066406,
+      "error": "",
+      "duration_s": 20.01546883583069
+    },
+    {
+      "name": "gaokao-language",
+      "brand": "gaokao",
+      "status": "pass",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 0.05554962158203125,
+      "error": "",
+      "duration_s": 30.533424854278564
+    },
+    {
+      "name": "gaokao-volunteer",
+      "brand": "gaokao",
+      "status": "pass",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 0.05555534362792969,
+      "error": "",
+      "duration_s": 31.411340713500977
+    },
+    {
+      "name": "harmonycoder",
+      "brand": "harmonycoder",
+      "status": "skip",
+      "signed": false,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "No signingConfigs (need DevEco Sync)",
+      "duration_s": 0.0
+    },
+    {
+      "name": "harmonycoder-snippets",
+      "brand": "harmonycoder",
+      "status": "skip",
+      "signed": false,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "No signingConfigs (need DevEco Sync)",
+      "duration_s": 0.0
+    },
+    {
+      "name": "rhythm-habit",
+      "brand": "rhythm",
+      "status": "skip",
+      "signed": false,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "No signingConfigs (need DevEco Sync)",
+      "duration_s": 0.0
+    },
+    {
+      "name": "rhythm-habit-game",
+      "brand": "rhythm",
+      "status": "skip",
+      "signed": false,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "No signingConfigs (need DevEco Sync)",
+      "duration_s": 0.0
+    },
+    {
+      "name": "rhythm-meditation",
+      "brand": "rhythm",
+      "status": "skip",
+      "signed": false,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "No signingConfigs (need DevEco Sync)",
+      "duration_s": 0.0
+    },
+    {
+      "name": "rhythm-nutrition",
+      "brand": "rhythm",
+      "status": "skip",
+      "signed": false,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "No signingConfigs (need DevEco Sync)",
+      "duration_s": 0.0
+    },
+    {
+      "name": "rhythm-pomodoro",
+      "brand": "rhythm",
+      "status": "skip",
+      "signed": false,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "No signingConfigs (need DevEco Sync)",
+      "duration_s": 0.0
+    },
+    {
+      "name": "thinkkit-coach",
+      "brand": "thinkkit",
+      "status": "pass",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 0.37500667572021484,
+      "error": "",
+      "duration_s": 36.21316885948181
+    },
+    {
+      "name": "thinkkit-flashcard",
+      "brand": "thinkkit",
+      "status": "skip",
+      "signed": false,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "No signingConfigs (need DevEco Sync)",
+      "duration_s": 0.0
+    },
+    {
+      "name": "thinkkit-flashcard2",
+      "brand": "thinkkit",
+      "status": "skip",
+      "signed": false,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "No signingConfigs (need DevEco Sync)",
+      "duration_s": 0.0
+    },
+    {
+      "name": "thinkkit-mindmap",
+      "brand": "thinkkit",
+      "status": "pass",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 0.2207775115966797,
+      "error": "",
+      "duration_s": 37.24152636528015
+    },
+    {
+      "name": "thinkkit-note",
+      "brand": "thinkkit",
+      "status": "pass",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 0.05555152893066406,
+      "error": "",
+      "duration_s": 45.729504346847534
+    },
+    {
+      "name": "thinkkit-quiz",
+      "brand": "thinkkit",
+      "status": "pass",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 0.16448688507080078,
+      "error": "",
+      "duration_s": 47.00603652000427
+    },
+    {
+      "name": "thinkkit-reader",
+      "brand": "thinkkit",
+      "status": "pass",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 0.14180946350097656,
+      "error": "",
+      "duration_s": 50.298059940338135
+    },
+    {
+      "name": "thinkkit-rss",
+      "brand": "thinkkit",
+      "status": "skip",
+      "signed": false,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "No signingConfigs (need DevEco Sync)",
+      "duration_s": 0.0
+    },
+    {
+      "name": "thinkkit-zknote",
+      "brand": "thinkkit",
+      "status": "skip",
+      "signed": false,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "No signingConfigs (need DevEco Sync)",
+      "duration_s": 0.0
+    },
+    {
+      "name": "rujing",
+      "brand": "unknown",
+      "status": "fail",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 4.51201057434082,
+      "error": "\u001b[31m2 ERROR: \u001b[31m10505001 ArkTS Compiler Error\n\u001b[31m3 ERROR: \u001b[31m10505001 ArkTS Compiler Error\n\u001b[31m4 ERROR: \u001b[31m10505001 ArkTS Compiler Error\n\u001b[31mCOMPILE RESULT:FAIL {ERROR:5 WARN:110}\u001b[39m\n> hvigor \u001b[91mERROR: BUILD FAILED in 13 s 251 ms \u001b[39m",
+      "duration_s": 52.825111627578735
+    }
+  ]
+}

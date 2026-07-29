@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>考点卡片APP · 设计需求 v2.0</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#f5f5f5;color:#1a1a1a;line-height:1.7;padding:2rem}
+.c{max-width:960px;margin:0 auto}
+
+.header{background:linear-gradient(135deg,#2c3e50 0%,#1a252f 100%);color:#fff;padding:2.5rem 2rem;border-radius:16px;margin-bottom:2rem}
+.header h1{font-size:28px;font-weight:700;margin-bottom:.5rem}
+.header .sub{opacity:.85;font-size:13px;display:flex;gap:1rem;flex-wrap:wrap}
+.header .badge{display:inline-block;padding:2px 10px;border-radius:10px;font-size:11px;background:rgba(255,255,255,.15)}
+
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.75rem;margin-bottom:2rem}
+.mc{background:#fff;border-radius:10px;padding:1rem 1.25rem;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.mc .v{font-size:26px;font-weight:700;color:#2c3e50}
+.mc .l{font-size:12px;color:#999;margin-top:.25rem}
+
+.sec{background:#fff;border-radius:12px;padding:1.5rem 2rem;margin-bottom:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.sec h2{font-size:18px;color:#2c3e50;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:2px solid #3498db;display:flex;align-items:center;gap:.5rem}
+.sec h3{font-size:15px;color:#444;margin:1.25rem 0 .5rem}
+.tb{width:100%;border-collapse:collapse;margin:.75rem 0}
+.tb th{text-align:left;padding:8px 12px;font-size:12px;background:#f0f4f8;color:#555;font-weight:600}
+.tb th:first-child{border-radius:6px 0 0 0}
+.tb th:last-child{border-radius:0 6px 0 0}
+.tb td{padding:8px 12px;font-size:13px;border-bottom:1px solid #eee;vertical-align:top}
+.tb td:first-child{font-weight:600;color:#444;width:160px}
+
+.pipeline{display:flex;align-items:center;gap:.5rem;margin:1rem 0;flex-wrap:wrap;padding:1rem;background:#f8fafb;border-radius:10px}
+.pl-step{border:1px solid #e0e0e0;border-radius:8px;padding:.5rem .75rem;font-size:12px;text-align:center;flex:1;min-width:80px;background:#fff}
+.pl-step .sn{font-size:16px;font-weight:700;color:#3498db}
+.pl-arr{color:#bbb;font-size:14px;min-width:20px;text-align:center}
+
+.token-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin:.75rem 0}
+.token-card{border:1px solid #e0e0e0;border-radius:10px;padding:1rem}
+.token-card .tc-title{font-size:14px;font-weight:600;margin-bottom:.5rem}
+.token-card .tc-num{font-size:24px;font-weight:700;color:#2c3e50}
+.token-card .tc-desc{font-size:12px;color:#888;margin-top:.25rem}
+.token-card.light{border-left:3px solid #27ae60}
+.token-card.standard{border-left:3px solid #f39c12}
+.token-card.full{border-left:3px solid #e74c3c}
+
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.75rem;margin:.75rem 0}
+.fc{border:1px solid #e8e8e8;border-radius:10px;padding:1rem}
+.fc .ft{font-size:14px;font-weight:600;margin-bottom:.5rem;display:flex;align-items:center;gap:.5rem}
+.fc .fd{font-size:12px;color:#666;line-height:1.6}
+.fp{display:inline-block;font-size:10px;padding:2px 7px;border-radius:8px;margin-left:auto;font-weight:600}
+.fp-p0{background:#ffeaea;color:#c0392b}
+.fp-p1{background:#fff3e0;color:#e67e22}
+.fp-p2{background:#e8f5e9;color:#2e7d32}
+
+.badge-sm{display:inline-block;padding:2px 8px;border-radius:8px;font-size:11px;margin:2px}
+.bs-green{background:#e8f5e9;color:#2e7d32}
+.bs-red{background:#ffebee;color:#c62828}
+.bs-orange{background:#fff3e0;color:#e65100}
+.bs-blue{background:#e3f2fd;color:#1565c0}
+
+.divider{display:flex;gap:1rem;align-items:stretch;margin:1rem 0}
+.divider .div-left,.divider .div-right{flex:1;padding:1rem;border-radius:10px}
+.div-left{background:#fff;border:2px solid #e0e0e0}
+.div-right{background:#fff;border:2px solid #e0e0e0}
+.div-left .div-label{font-size:11px;text-transform:uppercase;color:#999;margin-bottom:.5rem}
+.div-right .div-label{font-size:11px;text-transform:uppercase;color:#999;margin-bottom:.5rem}
+.div-left .div-item,.div-right .div-item{padding:.3rem 0;font-size:13px;border-bottom:1px solid #f0f0f0}
+.div-left .div-item::before{content:"✅ ";font-size:11px}
+.div-right .div-item::before{content:"❌ ";font-size:11px}
+
+.arch{background:#1a1a2e;color:#d0d0d0;border-radius:10px;padding:1.25rem;font-family:"SF Mono","Cascadia Code","Consolas",monospace;font-size:11px;line-height:1.8;margin:.75rem 0;overflow-x:auto}
+.arch .hl{color:#7ec699}
+.arch .dim{color:#666}
+.arch .or{color:#e6a23c}
+
+@media(max-width:640px){body{padding:.75rem}.token-grid{grid-template-columns:1fr}.divider{flex-direction:column}.feat-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body><div class="c">
+
+<div class="header">
+  <h1>📋 考点卡片APP · 设计需求 v2.0</h1>
+  <div class="sub">
+    <span>SPDT-001_Harmony</span>
+    <span class="badge">独立新品牌</span>
+    <span class="badge">SPDT-004 配套</span>
+    <span class="badge">2026-07-15</span>
+  </div>
+</div>
+
+<div class="metrics">
+  <div class="mc"><div class="v">3 科</div><div class="l">首版学科范围（史地政）</div></div>
+  <div class="mc"><div class="v">129</div><div class="l">历史 v3 已有卡片（81+32+16）</div></div>
+  <div class="mc"><div class="v">3 级</div><div class="l">AI 上下文策略（轻量/标准/完整）</div></div>
+  <div class="mc"><div class="v">5 项</div><div class="l">AI 能力（问答/制卡/转卡/链生成/出题）</div></div>
+  <div class="mc"><div class="v">2 态</div><div class="l">记忆标记（仅生/熟）</div></div>
+  <div class="mc"><div class="v">多后端</div><div class="l">AI Service 抽象层</div></div>
+</div>
+
+<div class="sec">
+  <h2>🔄 SPDT 体系中的位置</h2>
+  <div class="pipeline">
+    <div class="pl-step"><div class="sn">①</div>全部考点</div>
+    <div class="pl-arr">→</div>
+    <div class="pl-step"><div class="sn">②</div>系列长文<br>(eBook)</div>
+    <div class="pl-arr">→</div>
+    <div class="pl-step"><div class="sn">③</div>知识链<br>+卡片自动生成</div>
+    <div class="pl-arr">→</div>
+    <div class="pl-step"><div class="sn">④</div>配套音频<br>(MP3+BGM)</div>
+    <div class="pl-arr">→</div>
+    <div class="pl-step" style="border:2px solid #3498db;background:#eaf2fd"><div class="sn">⑤</div><strong>导入APP</strong><br>速记卡+音频</div>
+  </div>
+  <p style="font-size:12px;color:#888;margin-top:.5rem">
+    ④⑤ 并行：APP 导入卡片包后本地浏览，音频文件可独立播放
+  </p>
+</div>
+
+<div class="sec">
+  <h2>✅ 8 项设计决策</h2>
+  <table class="tb">
+    <tr><th>#</th><th>决策项</th><th>结论</th><th>说明</th></tr>
+    <tr><td>1</td><td>AI 后端</td><td><span class="badge-sm bs-blue">多后端</span></td><td>AIService 抽象层，支持智谱GLM/OpenAI/本地模型切换</td></tr>
+    <tr><td>2</td><td>品牌归属</td><td><span class="badge-sm bs-green">独立新品牌</span></td><td>非 ThinkKit、非 GaokaoAgent，品牌名待定</td></tr>
+    <tr><td>3</td><td>初始内容</td><td><span class="badge-sm bs-green">历史 v3 预装</span></td><td>129卡+16链+4电子书，来源 PT-038</td></tr>
+    <tr><td>4</td><td>记忆标记</td><td><span class="badge-sm bs-orange">仅生/熟</span></td><td>用户手动标记，无 SRS 自动调度</td></tr>
+    <tr><td>5</td><td>Prompt</td><td><span class="badge-sm bs-green">分科优化</span></td><td>史地政三科独立 Prompt 模板</td></tr>
+    <tr><td>6</td><td>Token 消耗</td><td><span class="badge-sm bs-blue">可控</span></td><td>标准上下文 ~600-1200 tokens/次</td></tr>
+    <tr><td>7</td><td>学科范围</td><td><span class="badge-sm bs-green">首版史地政</span></td><td>后续扩展数理化/考研/法考</td></tr>
+    <tr><td>8</td><td>提醒功能</td><td><span class="badge-sm bs-red">暂不做</span></td><td>聚焦卡片浏览和 AI 能力</td></tr>
+  </table>
+</div>
+
+<div class="sec">
+  <h2>📊 Token 消耗评估（问题 #6）</h2>
+  <div class="token-grid">
+    <div class="token-card light">
+      <div class="tc-title">轻量 · 默认问答</div>
+      <div class="tc-num">~150-250</div>
+      <div class="tc-desc">卡片 front/back + chain 标题<br>适用：快速答疑</div>
+    </div>
+    <div class="token-card standard">
+      <div class="tc-title">标准 · 制卡/转卡</div>
+      <div class="tc-num">~600-1200</div>
+      <div class="tc-desc">+chain 叙事全文 + 同链卡片列表<br><strong>推荐默认策略</strong></div>
+    </div>
+    <div class="token-card full">
+      <div class="tc-title">完整 · 写链/出题</div>
+      <div class="tc-num">~2000-4000</div>
+      <div class="tc-desc">+同链全部卡片 + 关联链摘要<br>适用：AI 链生成、模拟出题</div>
+    </div>
+    <div class="token-card" style="border-left:3px solid #9b59b6">
+      <div class="tc-title">多轮对话上限</div>
+      <div class="tc-num">~4000-5000</div>
+      <div class="tc-desc">3轮完整上下文累积<br>保留最近 5 轮</div>
+    </div>
+  </div>
+  <p style="font-size:12px;color:#888;margin-top:.5rem">
+    基于 PT-038 历史 v3 实际数据测算：单卡 ~40-90 tokens，单链叙事 ~150-300 tokens。主流 LLM（GLM-4 128K / GPT-4o 128K / Claude 200K）完全可控。
+  </p>
+</div>
+
+<div class="sec">
+  <h2>🗂️ 数据模型 &amp; PT-038 交接协议</h2>
+  <div class="divider">
+    <div class="div-left">
+      <div class="div-label">APP 保留字段</div>
+      <div class="div-item">card_id — 唯一标识</div>
+      <div class="div-item">chain_id — 所属链</div>
+      <div class="div-item">chain_title — 链标题</div>
+      <div class="div-item">card_type — 节点/心法/链卡</div>
+      <div class="div-item">front / back_core / back_detail</div>
+      <div class="div-item">maturity — 仅 生/熟 二态</div>
+      <div class="div-item">tags</div>
+      <div class="div-item">is_new / last_marked（新增）</div>
+    </div>
+    <div class="div-right">
+      <div class="div-label">明确不做</div>
+      <div class="div-item">SRS 调度字段（interval/ease/factor）</div>
+      <div class="div-item">错误计数</div>
+      <div class="div-item">难度星级</div>
+      <div class="div-item">复习提醒</div>
+      <div class="div-item">复杂元数据（30+字段）</div>
+      <div class="div-item">自动难度评估</div>
+    </div>
+  </div>
+  <h3>导入格式</h3>
+  <table class="tb">
+    <tr><th>格式</th><th>来源</th><th>内容</th></tr>
+    <tr><td><strong>A · 卡片包 JSON</strong>（推荐）</td><td>PT-038 自动生成</td><td>node_cards + strategy_cards + chain_cards 三型卡片</td></tr>
+    <tr><td><strong>B · Anki CSV</strong>（兼容）</td><td>PT-038 导出</td><td>card_id,chain_id,front,back_core,maturity,tags 列</td></tr>
+    <tr><td><strong>C · 链元数据 JSON</strong></td><td>PT-038 meta.json</td><td>chain 叙事文本、关联关系（用于链阅读器）</td></tr>
+  </table>
+</div>
+
+<div class="sec">
+  <h2>🧩 功能矩阵</h2>
+  <div class="feat-grid">
+    <div class="fc"><div class="ft">📥 导入卡片包 <span class="fp fp-p0">P0</span></div><div class="fd">从 PT-038 产出的 JSON/CSV 导入，含链元数据，按 chain_id 去重</div></div>
+    <div class="fc"><div class="ft">📖 学科浏览 <span class="fp fp-p0">P0</span></div><div class="fd">学科 → 链 两级目录（不做模块层级）</div></div>
+    <div class="fc"><div class="ft">📜 链阅读器 <span class="fp fp-p0">P0</span></div><div class="fd">逐段叙事呈现，"阅读态"和"抽卡态"切换</div></div>
+    <div class="fc"><div class="ft">🃏 卡片翻阅 <span class="fp fp-p0">P0</span></div><div class="fd">极简翻转交互，底部生/熟按钮</div></div>
+    <div class="fc"><div class="ft">🤖 AI 问答 <span class="fp fp-p0">P0</span></div><div class="fd">呼出 AI 面板，自动注入当前卡+链上下文，流式回答</div></div>
+    <div class="fc"><div class="ft">📝 AI 制卡 <span class="fp fp-p1">P1</span></div><div class="fd">粘贴文本 → AI 提取 → 生成卡片 → 挂到链下</div></div>
+    <div class="fc"><div class="ft">💬 答案转卡片 <span class="fp fp-p1">P1</span></div><div class="fd">AI 回答 → "转卡片" → 提取关键点 → 保存</div></div>
+    <div class="fc"><div class="ft">📖 AI 链生成 <span class="fp fp-p2">P2</span></div><div class="fd">指定范围 → AI 生成链叙事 → 标注记忆点</div></div>
+    <div class="fc"><div class="ft">✍️ AI 模拟出题 <span class="fp fp-p2">P2</span></div><div class="fd">基于链出题，难度 Ⅰ/Ⅱ/Ⅲ，命题者视角</div></div>
+    <div class="fc"><div class="ft">🔍 搜索 <span class="fp fp-p1">P1</span></div><div class="fd">全文搜索卡片 front/back</div></div>
+    <div class="fc"><div class="ft">🏷️ 生/熟筛选 <span class="fp fp-p1">P1</span></div><div class="fd">筛选生卡/熟卡/全部</div></div>
+  </div>
+</div>
+
+<div class="sec">
+  <h2>🏛️ 技术架构</h2>
+  <div class="arch">
+<span class="dim">┌──────────────────────────────────────────────────┐</span>
+<span class="dim">│</span>  <span class="hl">ArkUI 层</span>                                        <span class="dim">│</span>
+<span class="dim">│</span>  ChainReader · CardFlip · AIPanel · ImportPage   <span class="dim">│</span>
+<span class="dim">├──────────────────────────────────────────────────┤</span>
+<span class="dim">│</span>  <span class="hl">Service 层</span>                                     <span class="dim">│</span>
+<span class="dim">│</span>  ChainService · CardService · <span class="hl">AIService</span>          <span class="dim">│</span>
+<span class="dim">│</span>  <span class="or">多后端适配器</span>: ZhipuAdapter · OpenAIAdapter       <span class="dim">│</span>
+<span class="dim">├──────────────────────────────────────────────────┤</span>
+<span class="dim">│</span>  <span class="hl">Data 层</span>                                         <span class="dim">│</span>
+<span class="dim">│</span>  RDB (卡片元数据) + FileSystem (链叙事文本)      <span class="dim">│</span>
+<span class="dim">├──────────────────────────────────────────────────┤</span>
+<span class="dim">│</span>  <span class="hl">External</span>                                        <span class="dim">│</span>
+<span class="dim">│</span>  PT-038 JSON/CSV 导入 · LLM API · 本地模型        <span class="dim">│</span>
+<span class="dim">└──────────────────────────────────────────────────┘</span>
+  </div>
+</div>
+
+<div class="sec">
+  <h2>🏷️ 品牌命名建议</h2>
+  <div class="feat-grid">
+    <div class="fc" style="border-color:#3498db"><div class="ft">策论 (CeLun)</div><div class="fd">古代殿试策论，文科血脉最正。适合史地政应试定位。</div></div>
+    <div class="fc"><div class="ft">通鉴 (TongJian)</div><div class="fd">以史为鉴，贯通文理。扩展性最好。</div></div>
+    <div class="fc"><div class="ft">章法 (ZhangFa)</div><div class="fd">结构/方法论，呼应"链"的体系化学习方式。</div></div>
+    <div class="fc"><div class="ft">知行 (ZhiXing)</div><div class="fd">知行合一，学习本质。但较通用。</div></div>
+    <div class="fc"><div class="ft">墨点 (MoDian)</div><div class="fd">知识如墨，点滴积累。文艺感强。</div></div>
+  </div>
+</div>
+
+</div></body>
+</html>

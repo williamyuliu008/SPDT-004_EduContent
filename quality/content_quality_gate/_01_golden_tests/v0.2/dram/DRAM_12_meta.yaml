@@ -1,0 +1,9 @@
+date: '2026-07-04'
+expected_result:
+  G-05A: PASS
+  G-05B: PASS
+  G-05C: PASS
+sample_id: DRAM_12
+scene_type: summary
+source: DRAM战略视频 V5 — scene_12
+version: v0.2

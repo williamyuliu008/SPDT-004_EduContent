@@ -1,0 +1,40 @@
+{
+  "timestamp": "20260718-154012",
+  "elapsed_s": 8.797754049301147,
+  "total": 3,
+  "pass": 2,
+  "fail": 1,
+  "skip": 0,
+  "apps": [
+    {
+      "name": "gaokao-agent",
+      "brand": "gaokao",
+      "status": "fail",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 0.3197307586669922,
+      "error": "\u001b[31m22 ERROR: \u001b[31m10505001 ArkTS Compiler Error\n  Overload 1 of 4, '(context: BaseContext, name: string): Promise<Preferences>', gave the following error.\n  Overload 2 of 4, '(context: BaseContext, options: Options): Promise<Preferences>', gave the following error.\n\u001b[31mCOMPILE RESULT:FAIL {ERROR:23 WARN:5}\u001b[39m\n> hvigor \u001b[91mERROR: BUILD FAILED in 1 s 417 ms \u001b[39m",
+      "duration_s": 2.4067132472991943
+    },
+    {
+      "name": "gaokao-language",
+      "brand": "gaokao",
+      "status": "pass",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 0.055550575256347656,
+      "error": "",
+      "duration_s": 3.146853446960449
+    },
+    {
+      "name": "gaokao-volunteer",
+      "brand": "gaokao",
+      "status": "pass",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 0.05555534362792969,
+      "error": "",
+      "duration_s": 3.2435059547424316
+    }
+  ]
+}

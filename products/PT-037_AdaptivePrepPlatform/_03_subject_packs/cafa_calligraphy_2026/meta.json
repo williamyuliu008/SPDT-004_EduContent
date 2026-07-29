@@ -1,0 +1,69 @@
+{
+  "pack_id": "cafa_calligraphy_2026",
+  "pack_name": "中国美术学院书法校考备考包",
+  "version": "1.0.0",
+  "subject": "书法与篆刻 / 书法学与教育",
+  "exam_type": "校考",
+  "target": "中国美术学院书法学本科专业复试",
+  "platform_version_required": ">=1.0.0",
+  "author": "Mavis AI Team",
+  "created": "2026-07-13",
+  "dependencies": [],
+  "config": {
+    "total_duration_minutes": 60,
+    "question_types": ["译篆", "释文", "名词解释", "句读翻译", "简答论述"],
+    "scoring_weights": {
+      "译篆": 0.25,
+      "句读翻译": 0.35,
+      "名词解释": 0.40
+    },
+    "cognitive_levels": {
+      "Lv1": "记忆 / 简单理解（字形辨识）",
+      "Lv2": "应用 / 分析（背景分析）",
+      "Lv3": "评价 / 创造（跨学科缝合）"
+    }
+  },
+  "activation": {
+    "default_active": false,
+    "requires_exam_code": "CAFA_书法"
+  },
+  "modules": [
+    {
+      "module_id": "M1",
+      "name": "译篆与文字学",
+      "weight": 0.25,
+      "sub_modules": ["说文解字基础", "一简对多篆", "书体字形辨识"]
+    },
+    {
+      "module_id": "M2",
+      "name": "古文标点与翻译",
+      "weight": 0.35,
+      "sub_modules": ["句读基础", "文本来源", "翻译技法"]
+    },
+    {
+      "module_id": "M3",
+      "name": "书法史与书论",
+      "weight": 0.40,
+      "sub_modules": ["历代书家", "经典碑帖", "书体演变", "流派与思潮", "核心概念"]
+    }
+  ],
+  "cross_pack_links": {
+    "history_gaokao": {
+      "relation": "历史背景联动",
+      "trigger_kb_ids": ["KB_CAFA_颜真卿", "KB_CAFA_宋四家"]
+    },
+    "chinese_gaokao": {
+      "relation": "文言文语法联动",
+      "trigger_kb_ids": ["KB_CAFA_书谱", "KB_CAFA_句读"]
+    }
+  },
+  "agent_prompt_patch_files": {
+    "agent1": null,
+    "agent2": "prompts/agent2_override.json",
+    "agent3": null,
+    "agent4": "prompts/agent4_override.json",
+    "agent5": "prompts/agent5_triggers.json"
+  },
+  "status": "v1.0_P0_stable",
+  "last_updated": "2026-07-13"
+}

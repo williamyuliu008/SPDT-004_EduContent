@@ -1,0 +1,155 @@
+{
+  "pack_id": "cafa_calligraphy_2026",
+  "version": "1.0.0",
+  "abilities": [
+    {
+      "ability_id": "A1",
+      "name": "译篆类推力",
+      "name_en": "Seal Script Translation & Inference",
+      "question_types": ["译篆"],
+      "破题心法": "以义定形，以部推字",
+      "答题手法": "拆部首 → 查《说文》 → 组字",
+      "scaffolding": {
+        "Lv1": "给定简体字，写出对应篆书（单一部首，无陷阱）",
+        "Lv2": "给定简体字，含2个以上一简对多篆陷阱词",
+        "Lv3": "给定语境，推断应取哪个篆形"
+      },
+      "scoring": {
+        "满分": "每个篆字5分，字形结构完全正确",
+        "部分得分": "部首正确但位置错误=3分；部首错误=1分；简体字=0分"
+      },
+      "priority": 5,
+      "status": "P0_template_done"
+    },
+    {
+      "ability_id": "A2",
+      "name": "书体辨识力",
+      "name_en": "Script Style Recognition",
+      "question_types": ["释文"],
+      "破题心法": "先认部首，再看结构",
+      "答题手法": "草书找转折规律，篆书找对称，隶书找波磔",
+      "scaffolding": {
+        "Lv1": "给定草书/篆书/隶书单字，识别书体",
+        "Lv2": "给定草书段落，写出释文（80字以内）",
+        "Lv3": "给定混合书体文本，完成全篇释文并标注书体转换"
+      },
+      "scoring": {
+        "满分": "字形辨识+释文完全正确",
+        "部分得分": "书体判断正确但释文有误=60%；书体判断错误=0%"
+      },
+      "priority": 4,
+      "status": "P0_template_done"
+    },
+    {
+      "ability_id": "A3",
+      "name": "句读捕捉力",
+      "name_en": "Ancient Chinese Punctuation",
+      "question_types": ["句读", "句读翻译"],
+      "破题心法": "先标人名/曰云/也矣，再切排比",
+      "答题手法": "固定结构标志词逐层切分，找主谓宾结构",
+      "scaffolding": {
+        "Lv1": "给定文言段落，标注句读位置（10句以内）",
+        "Lv2": "给定文言段落，完成句读并翻译（80-150字）",
+        "Lv3": "给定无标点文本，完成句读+翻译+评析（跨文本对比）"
+      },
+      "scoring": {
+        "满分": "句读完全正确+关键词逐句对应翻译",
+        "部分得分": "句读错1处扣2分；关键词漏译扣3分/处"
+      },
+      "priority": 5,
+      "status": "P0_template_done"
+    },
+    {
+      "ability_id": "A4",
+      "name": "古文翻译力",
+      "name_en": "Classical Chinese Translation",
+      "question_types": ["翻译"],
+      "破题心法": "直译采分词，意译补语境",
+      "答题手法": "关键词 → 语法结构 → 通顺表达",
+      "scaffolding": {
+        "Lv1": "给定文言句子，翻译为现代汉语",
+        "Lv2": "给定文言段落，完成翻译并标注关键词",
+        "Lv3": "给定语境材料，完成翻译并评析"
+      },
+      "scoring": {
+        "满分": "关键词准确+语法结构正确+表达通顺",
+        "部分得分": "关键词正确但语法错误=70%；通假字处理错误=0%"
+      },
+      "priority": 4,
+      "status": "P0_template_done"
+    },
+    {
+      "ability_id": "A5",
+      "name": "名词解释构建力",
+      "name_en": "Term Definition Construction",
+      "question_types": ["名词解释"],
+      "破题心法": "定性 → 展开 → 采分 → 评价",
+      "答题手法": "四句公式，150–200字，史论结合",
+      "answer_template": "名词解释_四句公式",
+      "scaffolding": {
+        "Lv1": "给定名词，列出四要素（定性+内容+代表+影响）",
+        "Lv2": "给定名词，按四句公式完成150-200字解释",
+        "Lv3": "给定一组相关名词，完成比较性名词解释"
+      },
+      "scoring": {
+        "满分": "定性准确(4分) + 四要素齐全(8分) + 代表作/特征准确(6分) + 影响评价(2分)",
+        "部分得分": "定性错误=0分；人物名称缺失每人扣2分；代表作名称错误扣1分/处"
+      },
+      "priority": 5,
+      "status": "P0_template_done"
+    },
+    {
+      "ability_id": "A6",
+      "name": "史论综合力",
+      "name_en": "Historical Analysis & Argumentation",
+      "question_types": ["简答", "论述"],
+      "破题心法": "破题 → 背景 → 特征 → 总结",
+      "答题手法": "四段骨架，史实+评价，逻辑清晰",
+      "scaffolding": {
+        "Lv1": "给定简答题，提炼四段骨架",
+        "Lv2": "完成简答/小论述（300-500字）",
+        "Lv3": "完成大论述（800字以上），含史料支撑和多元视角"
+      },
+      "scoring": {
+        "满分": "破题精准+史实准确+逻辑清晰+评价有深度",
+        "部分得分": "史实错误每处扣5分；逻辑混乱降一档"
+      },
+      "priority": 3,
+      "status": "P0_template_done"
+    },
+    {
+      "ability_id": "A7",
+      "name": "跨学科缝合力",
+      "name_en": "Cross-disciplinary Integration",
+      "question_types": ["综合题"],
+      "破题心法": "定空间 → 析时间 → 看人物",
+      "答题手法": "书法+历史+地理三线并行，综合分析",
+      "scaffolding": {
+        "Lv1": "给定书法+历史联动题，分析单一关系",
+        "Lv2": "给定书法+历史+地理三联动题，完成综合分析",
+        "Lv3": "自主发现跨包联动点，完成开放性研究"
+      },
+      "scoring": {
+        "满分": "多学科视角齐全+逻辑贯通+结论有深度",
+        "部分得分": "缺少任一学科视角扣30%"
+      },
+      "priority": 3,
+      "status": "P1_pending"
+    },
+    {
+      "ability_id": "A8",
+      "name": "应试时间管理",
+      "name_en": "Exam Time Management",
+      "question_types": ["全卷"],
+      "破题心法": "遇难先跳，回头补漏",
+      "答题手法": "译篆15分/名解20分/句读25分，严格卡时",
+      "scaffolding": {
+        "Lv1": "单题计时练习",
+        "Lv2": "全卷模拟，严格计时",
+        "Lv3": "动态时间分配优化"
+      },
+      "priority": 4,
+      "status": "P2_pending"
+    }
+  ]
+}

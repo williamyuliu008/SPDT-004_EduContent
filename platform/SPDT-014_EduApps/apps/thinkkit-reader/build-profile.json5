@@ -1,0 +1,56 @@
+﻿{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "C:\\Users\\willi\\.ohos\\config\\default_thinkkit-reader_wDtW7LO4fU3PJfyXGgpZwJQuYbXcmtav8NzP4N0Nkgc=.cer",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001A778A8101A58DCA110DA2E4566A0B94D7F6E8FB12FAE3844015DEB4E7D1BBCDDB5AEDD364219F",
+          "profile": "C:\\Users\\willi\\.ohos\\config\\default_thinkkit-reader_wDtW7LO4fU3PJfyXGgpZwJQuYbXcmtav8NzP4N0Nkgc=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:\\Users\\willi\\.ohos\\config\\default_thinkkit-reader_wDtW7LO4fU3PJfyXGgpZwJQuYbXcmtav8NzP4N0Nkgc=.p12",
+          "storePassword": "0000001A37DA8D0147B4DF8C43264B3255B492B4E0F47573CB0BC920427F022359F5A4360DF213FA82A8"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "targetSdkVersion": "6.1.1(24)",
+        "compatibleSdkVersion": "6.1.1(24)",
+        "runtimeOS": "HarmonyOS",
+        "buildOption": {
+          "strictMode": {
+            "caseSensitiveCheck": true,
+            "useNormalizedOHMUrl": true
+          }
+        }
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug",
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}

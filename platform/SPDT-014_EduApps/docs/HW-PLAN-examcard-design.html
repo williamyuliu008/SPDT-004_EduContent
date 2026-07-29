@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>考点卡片APP — 设计需求 v1.0</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  background: #f5f5f5; color: #1a1a1a; line-height: 1.7;
+  padding: 2rem;
+}
+.container { max-width: 960px; margin: 0 auto; }
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #5B8C5A 0%, #3d6b3c 100%);
+  color: #fff; padding: 2.5rem 2rem; border-radius: 16px; margin-bottom: 2rem;
+}
+.header h1 { font-size: 28px; font-weight: 700; margin-bottom: 0.5rem; }
+.header p { opacity: 0.9; font-size: 14px; }
+
+/* Metric cards */
+.metrics {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem; margin-bottom: 2rem;
+}
+.metric-card {
+  background: #fff; border-radius: 12px; padding: 1.25rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.metric-card .value { font-size: 28px; font-weight: 700; color: #5B8C5A; }
+.metric-card .label { font-size: 13px; color: #888; margin-top: 0.25rem; }
+
+/* Sections */
+.section {
+  background: #fff; border-radius: 12px; padding: 1.5rem 2rem;
+  margin-bottom: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.section h2 {
+  font-size: 20px; color: #2d2d2d; margin-bottom: 1rem;
+  padding-bottom: 0.5rem; border-bottom: 2px solid #5B8C5A;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.section h3 { font-size: 16px; color: #444; margin: 1.25rem 0 0.75rem; }
+.section h3:first-child { margin-top: 0; }
+
+/* Comparison table */
+.compare-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+.compare-table th {
+  text-align: left; padding: 10px 14px; font-size: 13px;
+  background: #f0f0f0; color: #555; font-weight: 600;
+}
+.compare-table th:first-child { border-radius: 8px 0 0 0; }
+.compare-table th:last-child { border-radius: 0 8px 0 0; }
+.compare-table td {
+  padding: 10px 14px; font-size: 14px; border-bottom: 1px solid #eee;
+  vertical-align: top;
+}
+.compare-table tr:last-child td:first-child { border-radius: 0 0 0 8px; }
+.compare-table tr:last-child td:last-child { border-radius: 0 0 8px 0; }
+.compare-table td:first-child { font-weight: 600; color: #444; width: 150px; }
+
+/* Feature cards */
+.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1rem 0; }
+.feature-card {
+  border: 1px solid #e8e8e8; border-radius: 10px; padding: 1.25rem;
+  transition: border-color 0.2s;
+}
+.feature-card:hover { border-color: #5B8C5A; }
+.feature-card .feat-title { font-size: 15px; font-weight: 600; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+.feature-card .feat-desc { font-size: 13px; color: #666; line-height: 1.6; }
+.feature-card .feat-prio {
+  display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 10px;
+  margin-left: auto; font-weight: 600;
+}
+.prio-p0 { background: #ffe5e5; color: #c0392b; }
+.prio-p1 { background: #fff3e0; color: #e67e22; }
+.prio-p2 { background: #e8f5e9; color: #2e7d32; }
+
+/* AI flow */
+.ai-flow {
+  display: flex; align-items: center; gap: 0.75rem; margin: 1rem 0;
+  flex-wrap: wrap; padding: 1rem; background: #f9fafb; border-radius: 10px;
+}
+.ai-step {
+  background: #fff; border: 1px solid #ddd; border-radius: 8px;
+  padding: 0.75rem 1rem; font-size: 13px; text-align: center;
+  flex: 1; min-width: 100px;
+}
+.ai-step .step-num { font-size: 18px; font-weight: 700; color: #5B8C5A; }
+.ai-step .step-label { color: #555; margin-top: 0.25rem; }
+.ai-arrow { color: #aaa; font-size: 18px; }
+
+/* Data model */
+.model-block {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;
+}
+.model-card {
+  border: 2px solid #e8e8e8; border-radius: 12px; padding: 1.25rem;
+}
+.model-card.chain { border-color: #5B8C5A; background: #f8fcf7; }
+.model-card.card { border-color: #3B82B0; background: #f7fafc; }
+.model-card .model-name { font-size: 17px; font-weight: 700; margin-bottom: 0.75rem; }
+.model-card.chain .model-name { color: #5B8C5A; }
+.model-card.card .model-name { color: #3B82B0; }
+.model-card .field-list { list-style: none; }
+.model-card .field-list li {
+  padding: 0.35rem 0; font-size: 13px; border-bottom: 1px solid rgba(0,0,0,0.04);
+  display: flex; justify-content: space-between;
+}
+.model-card .field-list li .fname { color: #555; }
+.model-card .field-list li .ftype { color: #aaa; font-size: 11px; }
+
+/* Tag badges */
+.badge { display: inline-block; padding: 3px 10px; border-radius: 10px; font-size: 12px; margin: 2px; }
+.badge-green { background: #e8f5e9; color: #2e7d32; }
+.badge-blue { background: #e3f2fd; color: #1565c0; }
+.badge-red { background: #ffebee; color: #c62828; }
+.badge-orange { background: #fff3e0; color: #e65100; }
+
+/* Q cards */
+.q-card {
+  border-left: 3px solid #5B8C5A; padding: 0.5rem 1rem; margin: 1rem 0;
+  background: #f8fcf7; border-radius: 0 8px 8px 0;
+}
+.q-card .q { font-weight: 600; font-size: 14px; margin-bottom: 0.25rem; }
+.q-card .a { font-size: 13px; color: #555; }
+
+/* Architecture */
+.arch-block {
+  background: #1a1a2e; color: #e0e0e0; border-radius: 12px; padding: 1.5rem;
+  font-family: "SF Mono", "Cascadia Code", "Consolas", monospace; font-size: 12px;
+  line-height: 1.8; margin: 1rem 0; overflow-x: auto;
+}
+.arch-block .hl { color: #7ec699; }
+.arch-block .dim { color: #888; }
+
+@media (max-width: 640px) {
+  body { padding: 0.75rem; }
+  .metrics { grid-template-columns: 1fr 1fr; }
+  .model-block { grid-template-columns: 1fr; }
+  .feature-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- Header -->
+<div class="header">
+  <h1>🏗️ 考点卡片APP — 产品设计需求 v1.0</h1>
+  <p>SPDT-001_Harmony · ThinkKit品牌 · 对标Anki · 简化管理 · 强化AI · 2026-07-15</p>
+</div>
+
+<!-- Metrics -->
+<div class="metrics">
+  <div class="metric-card">
+    <div class="value">2 → 1</div>
+    <div class="label">数据模型简化（牌组+笔记+卡片 → 链+卡）</div>
+  </div>
+  <div class="metric-card">
+    <div class="value">5</div>
+    <div class="label">AI 能力（答疑/制卡/转卡/出题/链生成）</div>
+  </div>
+  <div class="metric-card">
+    <div class="value">6</div>
+    <div class="label">卡片字段（vs Anki 20+字段）</div>
+  </div>
+  <div class="metric-card">
+    <div class="value">50</div>
+    <div class="label">历史链样例（预装内容）</div>
+  </div>
+</div>
+
+<!-- Section: vs Anki -->
+<div class="section">
+  <h2>📊 与 Anki 的差异矩阵</h2>
+  <table class="compare-table">
+    <tr><th>维度</th><th>Anki</th><th>考点卡片APP</th></tr>
+    <tr><td>数据模型</td><td>牌组 → 笔记 → 卡片（三层）</td><td>学科 → 模块 → 链 → 节点卡（四层，链为核心）</td></tr>
+    <tr><td>管理复杂度</td><td>高：21种笔记类型、过滤牌组、复杂选项</td><td>低：3级目录 + 生熟标记</td></tr>
+    <tr><td>复习机制</td><td>SRS 统一驱动所有卡片</td><td>SRS（知识卡）+ 周期精练（能力卡）+ 链级复盘</td></tr>
+    <tr><td>AI 能力</td><td>无内置 AI</td><td>制卡、答疑、出题、链生成、答案转卡片</td></tr>
+    <tr><td>连接感</td><td>弱：翻卡不呈现前后上下文</td><td>强：翻任意卡可一键展开整条因果链</td></tr>
+    <tr><td>内容组织</td><td>牌组/标签</td><td>链叙事 + 双向链接 + 脉络浏览</td></tr>
+    <tr><td>插件系统</td><td>丰富</td><td>无插件体系，AI 替代插件生态</td></tr>
+    <tr><td>字段膨胀</td><td>20+ 元数据字段</td><td>仅 6 字段（card_id/chain_id/front/back_core/maturity/card_type）</td></tr>
+  </table>
+</div>
+
+<!-- Section: Data Model -->
+<div class="section">
+  <h2>🗂️ 核心数据模型：双轨制</h2>
+  <div class="model-block">
+    <div class="model-card chain">
+      <div class="model-name">📖 Chain（逻辑链 / 剧本）</div>
+      <div style="font-size:13px;color:#666;margin-bottom:0.75rem;">知识的上层结构 · 理解用 · 复盘用</div>
+      <ul class="field-list">
+        <li><span class="fname">chain_id</span><span class="ftype">text</span></li>
+        <li><span class="fname">title</span><span class="ftype">text</span></li>
+        <li><span class="fname">subject</span><span class="ftype">enum</span></li>
+        <li><span class="fname">module</span><span class="ftype">text</span></li>
+        <li><span class="fname">chain_type</span><span class="ftype">enum</span></li>
+        <li><span class="fname">narrative</span><span class="ftype">rich text</span></li>
+        <li><span class="fname">child_cards</span><span class="ftype">array</span></li>
+        <li><span class="fname">related_chains</span><span class="ftype">array</span></li>
+        <li><span class="fname">tags</span><span class="ftype">array</span></li>
+        <li><span class="fname">last_review</span><span class="ftype">date</span></li>
+      </ul>
+      <div style="margin-top:0.75rem;font-size:12px;color:#5B8C5A;font-weight:600;">
+        四段叙事：逻辑主线 → 时空舞台 → 关键人事 → 去向今启
+      </div>
+    </div>
+    <div class="model-card card">
+      <div class="model-name">🃏 Card（节点卡）</div>
+      <div style="font-size:13px;color:#666;margin-bottom:0.75rem;">最小可回忆单元 · 抽查用 · SRS 调度</div>
+      <ul class="field-list">
+        <li><span class="fname">card_id</span><span class="ftype">text ✅</span></li>
+        <li><span class="fname">chain_id</span><span class="ftype">text ✅</span></li>
+        <li><span class="fname">chain_role</span><span class="ftype">enum ✅</span></li>
+        <li><span class="fname">front</span><span class="ftype">rich text ✅</span></li>
+        <li><span class="fname">back_core</span><span class="ftype">rich text ✅</span></li>
+        <li><span class="fname">maturity</span><span class="ftype">enum ✅</span></li>
+        <li><span class="fname">card_type</span><span class="ftype">enum ✅</span></li>
+        <li><span class="fname">note</span><span class="ftype">text ❌</span></li>
+      </ul>
+      <div style="margin-top:0.75rem;">
+        <span class="badge badge-red">🔴 未熟</span>
+        <span class="badge badge-orange">🟡 模糊</span>
+        <span class="badge badge-green">🟢 熟了</span>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:13px;color:#888;margin-top:0.5rem;">
+    明确不做：难度星级、错误计数、复杂标签体系。复杂逻辑不放卡里，而在链的叙事中。
+  </p>
+</div>
+
+<!-- Section: AI Capabilities -->
+<div class="section">
+  <h2>🤖 AI 能力矩阵（核心差异化）</h2>
+
+  <h3>1. AI 问答（基于卡片/链上下文）</h3>
+  <div class="ai-flow">
+    <div class="ai-step"><div class="step-num">①</div><div class="step-label">翻卡/读链</div></div>
+    <div class="ai-arrow">→</div>
+    <div class="ai-step"><div class="step-num">②</div><div class="step-label">呼出AI面板</div></div>
+    <div class="ai-arrow">→</div>
+    <div class="ai-step"><div class="step-num">③</div><div class="step-label">自动注入上下文</div></div>
+    <div class="ai-arrow">→</div>
+    <div class="ai-step"><div class="step-num">④</div><div class="step-label">流式回答</div></div>
+    <div class="ai-arrow">→</div>
+    <div class="ai-step"><div class="step-num">⑤</div><div class="step-label">对话保留</div></div>
+  </div>
+
+  <h3>2. AI 辅助制卡</h3>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="feat-title">📝 文本转卡片 <span class="feat-prio prio-p0">P0</span></div>
+      <div class="feat-desc">粘贴文本 → AI 提取关键点 → 生成 front/back 建议 → 用户确认保存</div>
+    </div>
+    <div class="feature-card">
+      <div class="feat-title">📸 OCR 转卡片 <span class="feat-prio prio-p1">P1</span></div>
+      <div class="feat-desc">拍照教材/笔记 → OCR 识别 → AI 提取知识点 → 生成卡片</div>
+    </div>
+    <div class="feature-card">
+      <div class="feat-title">📖 AI 写链 <span class="feat-prio prio-p1">P1</span></div>
+      <div class="feat-desc">指定知识点范围 → AI 生成四段式叙事 → 标注记忆点 → 自动生成节点卡</div>
+    </div>
+    <div class="feature-card">
+      <div class="feat-title">🔗 链→卡批量生成 <span class="feat-prio prio-p0">P0</span></div>
+      <div class="feat-desc">已有链叙事 → 规则引擎/AI 从叙事中提取关键记忆点 → 批量生成节点卡</div>
+    </div>
+  </div>
+
+  <h3>3. AI 回答转卡片</h3>
+  <div class="ai-flow">
+    <div class="ai-step"><div class="step-num">①</div><div class="step-label">AI 给出回答</div></div>
+    <div class="ai-arrow">→</div>
+    <div class="ai-step"><div class="step-num">②</div><div class="step-label">用户点击"转卡片"</div></div>
+    <div class="ai-arrow">→</div>
+    <div class="ai-step"><div class="step-num">③</div><div class="step-label">AI 提取关键点</div></div>
+    <div class="ai-arrow">→</div>
+    <div class="ai-step"><div class="step-num">④</div><div class="step-label">生成 front/back</div></div>
+    <div class="ai-arrow">→</div>
+    <div class="ai-step"><div class="step-num">⑤</div><div class="step-label">用户确认保存</div></div>
+  </div>
+
+  <h3>4. AI 模拟出题 <span class="badge badge-blue" style="margin-left:0.5rem;">P2</span></h3>
+  <p style="font-size:13px;color:#666;">选择一条链 → AI 生成不同难度模拟题（Ⅰ直问直答 / Ⅱ单材料综合 / Ⅲ跨章节开放）→ 从答题者→命题者视角的反向训练</p>
+
+  <h3>AI 交互设计要点</h3>
+  <table class="compare-table">
+    <tr><th>设计点</th><th>方案</th></tr>
+    <tr><td>呼出方式</td><td>右下角浮动 AI 按钮 → 半屏面板</td></tr>
+    <tr><td>上下文注入</td><td>当前卡片内容+所在链完整叙事 → system prompt</td></tr>
+    <tr><td>对话持久化</td><td>每条链/卡片关联的对话历史保存</td></tr>
+    <tr><td>流式输出</td><td>SSE 流式渲染，非阻塞</td></tr>
+    <tr><td>API 层</td><td>AI Service 抽象接口，支持切换后端</td></tr>
+    <tr><td>离线降级</td><td>无网络时 AI 功能灰色不可用，本地学习正常</td></tr>
+  </table>
+</div>
+
+<!-- Section: Feature modules -->
+<div class="section">
+  <h2>🧩 功能模块全景</h2>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="feat-title">📖 脉络阅读 <span class="feat-prio prio-p0">P0</span></div>
+      <div class="feat-desc">按链逐段叙事呈现，"阅读态"和"抽卡态"切换</div>
+    </div>
+    <div class="feature-card">
+      <div class="feat-title">🃏 节点抽查 <span class="feat-prio prio-p0">P0</span></div>
+      <div class="feat-desc">基于生熟标记的 SRS 抽查，🔴🟡 优先，🟢 低频</div>
+    </div>
+    <div class="feature-card">
+      <div class="feat-title">🏷️ 生熟标记 <span class="feat-prio prio-p0">P0</span></div>
+      <div class="feat-desc">翻卡后三态按钮：不熟/模糊/熟了</div>
+    </div>
+    <div class="feature-card">
+      <div class="feat-title">🔍 看剧本按钮 <span class="feat-prio prio-p1">P1</span></div>
+      <div class="feat-desc">翻任意卡 → 底部一键展开所在因果链</div>
+    </div>
+    <div class="feature-card">
+      <div class="feat-title">⏰ 链级复盘提醒 <span class="feat-prio prio-p1">P1</span></div>
+      <div class="feat-desc">按链设定复盘周期，到期提醒通读整链</div>
+    </div>
+    <div class="feature-card">
+      <div class="feat-title">🧠 场景判断训练 <span class="feat-prio prio-p2">P2</span></div>
+      <div class="feat-desc">能力型卡不以"记背面"为目标，而是思路框架对照</div>
+    </div>
+    <div class="feature-card">
+      <div class="feat-title">📂 学科浏览 <span class="feat-prio prio-p0">P0</span></div>
+      <div class="feat-desc">学科 → 模块 → 链 三级目录树</div>
+    </div>
+    <div class="feature-card">
+      <div class="feat-title">✏️ 链/卡编辑 <span class="feat-prio prio-p0">P0</span></div>
+      <div class="feat-desc">Markdown 链编辑器 + 极简卡片表单</div>
+    </div>
+    <div class="feature-card">
+      <div class="feat-title">📥 批量导入 <span class="feat-prio prio-p1">P1</span></div>
+      <div class="feat-desc">Markdown/JSON/CSV 导入链和卡片</div>
+    </div>
+    <div class="feature-card">
+      <div class="feat-title">📊 学习仪表盘 <span class="feat-prio prio-p1">P1</span></div>
+      <div class="feat-desc">今日待复习/总卡/掌握率/连续天数</div>
+    </div>
+    <div class="feature-card">
+      <div class="feat-title">🔎 全文搜索 <span class="feat-prio prio-p1">P1</span></div>
+      <div class="feat-desc">搜索链标题+叙事+卡片内容</div>
+    </div>
+    <div class="feature-card">
+      <div class="feat-title">📤 数据导出 <span class="feat-prio prio-p2">P2</span></div>
+      <div class="feat-desc">导出 Anki .apkg / CSV / Markdown</div>
+    </div>
+  </div>
+</div>
+
+<!-- Section: Tech Architecture -->
+<div class="section">
+  <h2>🏛️ 技术架构建议</h2>
+  <div class="arch-block">
+<span class="dim">┌──────────────────────────────────────────────────┐</span>
+<span class="dim">│</span>  <span class="hl">ArkUI 层</span>                                        <span class="dim">│</span>
+<span class="dim">│</span>  Index · ChainReader · CardFlip · AIPanel ...   <span class="dim">│</span>
+<span class="dim">├──────────────────────────────────────────────────┤</span>
+<span class="dim">│</span>  <span class="hl">Service 层</span>                                     <span class="dim">│</span>
+<span class="dim">│</span>  ChainService · CardService · SRSService        <span class="dim">│</span>
+<span class="dim">│</span>  <span class="hl">AIService</span> (抽象层)  · ImportService               <span class="dim">│</span>
+<span class="dim">├──────────────────────────────────────────────────┤</span>
+<span class="dim">│</span>  <span class="hl">Data 层</span>                                         <span class="dim">│</span>
+<span class="dim">│</span>  RDB (元数据) + FileSystem (链叙事)             <span class="dim">│</span>
+<span class="dim">├──────────────────────────────────────────────────┤</span>
+<span class="dim">│</span>  <span class="hl">External</span>                                        <span class="dim">│</span>
+<span class="dim">│</span>  LLM API (智谱GLM / 可替换)                     <span class="dim">│</span>
+<span class="dim">└──────────────────────────────────────────────────┘</span>
+  </div>
+  <table class="compare-table" style="margin-top:1rem;">
+    <tr><th>模块</th><th>方案</th></tr>
+    <tr><td>平台</td><td>HarmonyOS NEXT (API 14+)</td></tr>
+    <tr><td>UI 框架</td><td>ArkUI + ArkTS</td></tr>
+    <tr><td>持久化</td><td>RDB (卡片元数据) + 文件系统 (链叙事) 混合方案</td></tr>
+    <tr><td>SRS 引擎</td><td>本地 SM-2 / FSRS（复用现有 thinkkit-flashcard 的 sm2.ts）</td></tr>
+    <tr><td>AI 后端</td><td>智谱 GLM（复用现有 AutoGLM 基础设施）</td></tr>
+    <tr><td>项目目录</td><td><code>D:\92_products\SPDT-001_Harmony\apps\thinkkit-examcard\</code></td></tr>
+  </table>
+</div>
+
+<!-- Section: Open Questions -->
+<div class="section">
+  <h2>❓ 待讨论 / 待决策</h2>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="feat-title">🤖 AI 后端选型</div>
+      <div class="feat-desc">智谱 GLM（已有基础设施）还是支持多后端切换？</div>
+    </div>
+    <div class="feature-card">
+      <div class="feat-title">💸 AI 成本控制</div>
+      <div class="feat-desc">是否需要端侧推理（MindSpore Lite）作为离线降级？</div>
+    </div>
+    <div class="feature-card">
+      <div class="feat-title">🏷️ APP 命名</div>
+      <div class="feat-desc">thinkkit-examcard？独立品牌？还是调用 GaokaoAgent 品牌？</div>
+    </div>
+    <div class="feature-card">
+      <div class="feat-title">📦 初始内容</div>
+      <div class="feat-desc">预装历史50链作为示例数据？数据导入格式？</div>
+    </div>
+    <div class="feature-card">
+      <div class="feat-title">🧮 SRS 算法</div>
+      <div class="feat-desc">SM-2 vs FSRS？文科记忆的适配性评估？</div>
+    </div>
+    <div class="feature-card">
+      <div class="feat-title">🎯 场景判断卡交互</div>
+      <div class="feat-desc">这类卡片没有对/错，如何设计评价 UI？自评还是 AI 对比？</div>
+    </div>
+    <div class="feature-card">
+      <div class="feat-title">📝 Prompt 工程</div>
+      <div class="feat-desc">制卡/出题/链生成的 prompt 是否需按史地政三科分别优化？</div>
+    </div>
+    <div class="feature-card">
+      <div class="feat-title">📏 上下文长度</div>
+      <div class="feat-desc">链叙事 300-600字，拼接后 prompt token 消耗评估？</div>
+    </div>
+  </div>
+</div>
+
+</div>
+</body>
+</html>

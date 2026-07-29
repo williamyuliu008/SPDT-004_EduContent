@@ -1,0 +1,3 @@
+defect: punct_mix
+rule: normalize_fullwidth
+sample_id: D11

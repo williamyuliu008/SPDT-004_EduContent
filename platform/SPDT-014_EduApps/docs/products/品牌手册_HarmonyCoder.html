@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HarmonyCoder 品牌手册 — SPDT-001</title>
+<style>
+  :root {
+    --brand: #7B2D8E;
+    --brand-light: #E8D5F0;
+    --brand-bg: #FAF5FC;
+    --text: #2E0A3E;
+    --text-sec: #7A5A8A;
+    --text-ter: #AA8AB8;
+    --card: #FFFFFF;
+    --border: #E8D5F0;
+    --accent: #A855F7;
+    --warn: #FF9800;
+    --error: #F44336;
+    --radius: 10px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #F2F5F2; color: var(--text); line-height: 1.7;
+    max-width: 960px; margin: 0 auto; padding: 0 24px 80px;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #4f1d5c 100%);
+    color: #fff; border-radius: 0 0 20px 20px;
+    margin: 0 -24px 32px; padding: 48px 32px 40px;
+  }
+  .hero h1 { font-size: 2em; font-weight: 700; margin-bottom: 4px; }
+  .hero .subtitle { opacity: .85; font-size: 1.05em; margin-bottom: 16px; }
+  .hero .meta { display: flex; gap: 16px; flex-wrap: wrap; font-size: .88em; opacity: .75; }
+  .hero .meta span { background: rgba(255,255,255,.15); padding: 3px 12px; border-radius: 20px; }
+  .hero .badges { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+  .hero .badge {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: rgba(255,255,255,.2); padding: 5px 14px; border-radius: 20px; font-size: .85em;
+  }
+  .hero .badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #4CAF50; }
+
+  section { margin-bottom: 36px; }
+  h2 {
+    font-size: 1.35em; color: var(--brand); border-bottom: 2px solid var(--brand-light);
+    padding-bottom: 6px; margin-bottom: 16px;
+  }
+  h3 {
+    font-size: 1.1em; color: var(--text); margin: 16px 0 11px;
+    padding-left: 10px; border-left: 3px solid var(--brand);
+  }
+
+  table {
+    width: 100%; border-collapse: collapse; margin: 10px 0 18px;
+    font-size: .88em; border-radius: var(--radius); overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  }
+  th {
+    background: var(--brand); color: #fff; padding: 8px 12px;
+    text-align: left; font-weight: 600; white-space: nowrap;
+  }
+  td {
+    padding: 8px 12px; border-bottom: 1px solid var(--border);
+    background: var(--card); vertical-align: top;
+  }
+  tr:last-child td { border-bottom: none; }
+
+  code {
+    background: var(--brand-bg); color: var(--brand);
+    padding: 2px 6px; border-radius: 4px; font-size: .88em;
+    font-family: "Fira Code", "Cascadia Code", "Source Code Pro", monospace;
+  }
+  pre {
+    background: #1E1E1E; color: #D4D4D4; padding: 14px 18px;
+    border-radius: var(--radius); overflow-x: auto; margin: 8px 0 16px;
+    font-size: .82em; line-height: 1.5;
+  }
+  pre code { background: none; color: inherit; padding: 0; }
+
+  blockquote {
+    border-left: 4px solid var(--brand); background: var(--brand-bg);
+    padding: 10px 16px; margin: 6px 0 12px;
+    border-radius: 0 8px 8px 0; color: var(--text-sec); font-size: .93em;
+  }
+  a { color: var(--brand); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  ul, ol { padding-left: 24px; margin: 4px 0 10px; }
+  li { margin-bottom: 3px; }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+
+  .footer {
+    text-align: center; color: var(--text-ter); font-size: .85em;
+    padding: 20px 0 0; border-top: 1px solid var(--border); margin-top: 32px;
+  }
+
+  img { max-width: 100%; border-radius: var(--radius); }
+
+  @media (max-width: 600px) {
+    body { padding: 0 12px 60px; }
+    .hero { margin: 0 -12px 24px; padding: 32px 20px 28px; }
+    .hero h1 { font-size: 1.5em; }
+    table { font-size: .78em; }
+    th, td { padding: 6px 8px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>HarmonyCoder 品牌手册</h1>
+  <div class="subtitle">AI编程伙伴（旗舰）· 说需求，出代码</div>
+  <div class="meta">
+    <span>SPDT-001</span>
+    <span>鸿蒙生态开发</span>
+    <span>v1.1 · 2026-07-17</span>
+  </div>
+  <div class="badges">
+    <div class="badge"><span class="dot"></span> 已部署真机验证（DevEco 6.1 + devecocli）</div>
+    <div class="badge"><span class="dot"></span> CLI 全自动流水线</div>
+  </div>
+</div>
+
+<section>
+<h1>HarmonyCoder 品牌手册 — SPDT-001</h1>
+<blockquote>
+<p><strong>说需求，出代码</strong> · AI编程伙伴（旗舰） · HDT-001-HC · v1.1 · 2026-07-17</p>
+</blockquote>
+<hr />
+<h2>一、品牌定位</h2>
+<h3>品牌标识</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>品牌名</td>
+<td>HarmonyCoder</td>
+</tr>
+<tr>
+<td>品牌色</td>
+<td><code>#7B2D8E</code> 紫</td>
+</tr>
+<tr>
+<td>OMAS 编号</td>
+<td>HDT-001-HC</td>
+</tr>
+<tr>
+<td>品类</td>
+<td>AI编程伙伴（旗舰）</td>
+</tr>
+<tr>
+<td>Slogan</td>
+<td>说需求，出代码</td>
+</tr>
+<tr>
+<td>定位</td>
+<td>鸿蒙开发者首选 AI 编程伙伴</td>
+</tr>
+</tbody>
+</table>
+<h3>目标用户</h3>
+<p><strong>鸿蒙开发者</strong>：从入门到进阶的 HarmonyOS NEXT 应用开发者，需要 AI 辅助完成代码生成、项目搭建、三方库选型、DevEco 集成等日常开发任务。</p>
+<ul>
+<li>开发者画像：独立开发者 / 企业鸿蒙开发团队 / 鸿蒙初学者</li>
+<li>核心场景：快速原型开发 / 学习 HarmonyOS API / 查三方库 / 导出到 DevEco Studio</li>
+</ul>
+<h3>定价模式</h3>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>价格</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HarmonyCoder（旗舰）</td>
+<td>¥68 买断制</td>
+</tr>
+<tr>
+<td>免费试用</td>
+<td>基础代码生成可用</td>
+</tr>
+</tbody>
+</table>
+<h3>差异化对比</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>HarmonyCoder</th>
+<th>传统 IDE 插件</th>
+<th>通用 AI 编程助手</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>鸿蒙专属</td>
+<td>✅ 深度适配</td>
+<td>❌ 通用</td>
+<td>❌ 通用</td>
+</tr>
+<tr>
+<td>零警告</td>
+<td>✅ warnings_policy: zero</td>
+<td>❌ 不保证</td>
+<td>❌ 不保证</td>
+</tr>
+<tr>
+<td>OHPM 推荐</td>
+<td>✅ 内置 10+ 库推荐引擎</td>
+<td>❌ 需手动查找</td>
+<td>❌ 不涵盖</td>
+</tr>
+<tr>
+<td>DevEco 导出</td>
+<td>✅ 一键导出</td>
+<td>❌ 需手动迁移</td>
+<td>❌ 不支持</td>
+</tr>
+<tr>
+<td>买断制</td>
+<td>✅ ¥68 终身</td>
+<td>—</td>
+<td>按月订阅</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>二、产品矩阵</h2>
+<h3>APP 清单</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>APP</th>
+<th>中文名</th>
+<th>功能</th>
+<th>编译</th>
+<th>签名</th>
+<th>HAP</th>
+<th>特色能力</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>harmonycoder</td>
+<td>AI编程伙伴</td>
+<td>AI编程伙伴，说需求即出代码</td>
+<td>✅</td>
+<td>✅</td>
+<td>392 KB</td>
+<td>代码生成 / 项目导引 / DevEco导出 / OHPM推荐</td>
+</tr>
+<tr>
+<td>2</td>
+<td>harmonycoder-snippets</td>
+<td>代码片段库</td>
+<td>常用鸿蒙组件模板一键插入</td>
+<td>✅</td>
+<td>✅</td>
+<td>156 KB</td>
+<td>分类管理 / 代码预览 / 一键复制</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>总计</strong>: 2 款 APP，总 HAP 体积 548 KB，编译 + 签名 100% 通过。</p>
+</blockquote>
+<h3>核心能力</h3>
+<ul>
+<li><strong>代码生成 (enableCodeGen)</strong>：自然语言 → ArkTS 代码，零 deprecated 警告</li>
+<li><strong>项目导引 (enableProjectGuide)</strong>：从零搭建鸿蒙项目骨架，最佳实践自动注入</li>
+<li><strong>DevEco导出 (enableDevecoExport)</strong>：生成的代码一键导出到 DevEco Studio 工程</li>
+<li><strong>OHPM推荐 (enableOhpmRecommend)</strong>：内置 10 个三方库推荐引擎</li>
+</ul>
+<h3>OHPM 三方库推荐引擎</h3>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>库名</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>axios</td>
+<td>HTTP 网络请求</td>
+</tr>
+<tr>
+<td>2</td>
+<td>pulltorefresh</td>
+<td>下拉刷新</td>
+</tr>
+<tr>
+<td>3</td>
+<td>lottie</td>
+<td>动画渲染</td>
+</tr>
+<tr>
+<td>4</td>
+<td>imageknife</td>
+<td>图片加载与缓存</td>
+</tr>
+<tr>
+<td>5</td>
+<td>mp4parser</td>
+<td>视频解析</td>
+</tr>
+<tr>
+<td>6</td>
+<td>crypto-js</td>
+<td>加密算法</td>
+</tr>
+<tr>
+<td>7</td>
+<td>hamock</td>
+<td>Mock 数据</td>
+</tr>
+<tr>
+<td>8</td>
+<td>hypium</td>
+<td>测试框架</td>
+</tr>
+<tr>
+<td>9</td>
+<td>aki</td>
+<td>ArkTS ↔ Native 交互</td>
+</tr>
+<tr>
+<td>10</td>
+<td>MMKV</td>
+<td>高性能 KV 存储</td>
+</tr>
+</tbody>
+</table>
+<h3>产品架构 — AI编程四层引擎</h3>
+<div class="codehilite"><pre><span></span><code>┌──────────────────────────────────────────┐
+│  输入层：自然语言需求解析                   │
+│  说需求，出代码 — 中英文混合输入理解          │
+├──────────────────────────────────────────┤
+│  生成层：AI 代码生成引擎                    │
+│  需求 → ArkTS 代码 / 项目骨架 / 组件模板     │
+├──────────────────────────────────────────┤
+│  增强层：三方库推荐 + DevEco 集成            │
+│  OHPM 引擎 + 一键导出 DevEco Studio 工程     │
+├──────────────────────────────────────────┤
+│  质量层：零警告编译保障                      │
+│  warnings_policy: zero + Navigation API     │
+└──────────────────────────────────────────┘
+</code></pre></div>
+
+<h3>Feature Flag 矩阵</h3>
+<table>
+<thead>
+<tr>
+<th>APP</th>
+<th style="text-align: center;">enableCodeGen</th>
+<th style="text-align: center;">enableProjectGuide</th>
+<th style="text-align: center;">enableDevecoExport</th>
+<th style="text-align: center;">enableOhpmRecommend</th>
+<th style="text-align: center;">NavPathStack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>harmonycoder</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>harmonycoder-snippets</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✅</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>三、智能体定位</h2>
+<blockquote>
+<p>依据《智能体APP设计指南》，HarmonyCoder 旗舰版嵌入<strong>对话式智能体</strong>，以全屏 IDE 风格提供流程自动化与问答辅助，详见产品蓝图 v2.0。</p>
+</blockquote>
+<h3>3.1 智能体矩阵</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">APP</th>
+<th style="text-align: left;">Agent 优先级</th>
+<th style="text-align: left;">智能体类型</th>
+<th style="text-align: left;">核心能力</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">harmonycoder</td>
+<td style="text-align: left;"><strong>P0</strong></td>
+<td style="text-align: left;">对话式 · 流程自动化 + 问答 Agent</td>
+<td style="text-align: left;">自然语言 → ArkTS 代码生成 → 项目骨架搭建 → DevEco 一键导出 → OHPM 三方库推荐 → 编译错误诊断</td>
+</tr>
+</tbody>
+</table>
+<h3>3.2 Agent 交互入口</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">属性</th>
+<th style="text-align: left;">规范</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>入口形态</strong></td>
+<td style="text-align: left;"><strong>对话式 · 全屏 IDE 风</strong>——Agent 面板占据主体视图区，代码与对话同屏展示</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>设计风格</strong></td>
+<td style="text-align: left;">深色 IDE 风格（#1E1E1E 底色），代码高亮 + 行号 + 分屏布局</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>触发方式</strong></td>
+<td style="text-align: left;">APP 启动即进入对话模式；支持 @ 指令快捷操作（@generate / @project / @debug）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>可见性规则</strong></td>
+<td style="text-align: left;">旗舰 harmonycoder 全时启用；snippets 为纯工具模式，不加载 Agent</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>设计原则</strong></td>
+<td style="text-align: left;">对话即界面、代码即产物、全流程闭环</td>
+</tr>
+</tbody>
+</table>
+<h3>3.3 智能体设计原则</h3>
+<ol>
+<li><strong>对话驱动</strong>: 用户通过自然语言描述需求，Agent 直接生成可编译的 ArkTS 代码</li>
+<li><strong>IDE 体验</strong>: 代码区支持语法高亮、行号、一键复制，与 DevEco Studio 体验衔接</li>
+<li><strong>质量保障</strong>: 所有生成代码通过 warnings_policy: zero 校验，零 deprecated 警告</li>
+<li><strong>全流程闭环</strong>: 需求 → 代码生成 → OHPM 依赖推荐 → DevEco 导出，一步到位</li>
+</ol>
+<hr />
+<h2>四、技术规格</h2>
+<h3>4.1 编译环境（CLI 全自动流水线）</h3>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>语言与框架</td>
+<td>ArkTS strict mode · ArkUI Stage 模型</td>
+</tr>
+<tr>
+<td>路由方案</td>
+<td>Navigation + NavPathStack（已迁移，零 deprecated 警告）</td>
+</tr>
+<tr>
+<td>compileSdkVersion</td>
+<td>26.0.0</td>
+</tr>
+<tr>
+<td>compatibleSdkVersion</td>
+<td>6.1.1(24)</td>
+</tr>
+<tr>
+<td>编译工具</td>
+<td>hvigorw.bat v6.26.1 · DevEco Studio 26.0</td>
+</tr>
+<tr>
+<td>PREFLIGHT</td>
+<td>8 项自动检查 · 品牌级 -BrandPrefix 过滤</td>
+</tr>
+</tbody>
+</table>
+<h3>4.2 公共内核 (common/) — 22 个源文件</h3>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>文件数</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>组件库</td>
+<td>12</td>
+<td>HButton, HCard, HConfirmDialog, HEmptyState, HFAB, HFormItem, HNavBar, HProgressBar, HSearchBar, HTag, HTagGroup, HToast</td>
+</tr>
+<tr>
+<td>工具</td>
+<td>5</td>
+<td>date.ts, debounce.ts, format.ts, id.ts, validate.ts</td>
+</tr>
+<tr>
+<td>存储层</td>
+<td>2</td>
+<td>storageService.ts (泛型 CRUD), keys.ts</td>
+</tr>
+<tr>
+<td>主题</td>
+<td>1</td>
+<td>tokens.ts (Design Token)</td>
+</tr>
+<tr>
+<td>算法</td>
+<td>2</td>
+<td>代码质量分析 / 依赖检测</td>
+</tr>
+</tbody>
+</table>
+<h3>4.3 Navigation API 迁移（里程碑）</h3>
+<table>
+<thead>
+<tr>
+<th>页面</th>
+<th>旧路由 (router)</th>
+<th>新路由 (NavPathStack)</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主页</td>
+<td>router.pushUrl</td>
+<td>NavPathStack.pushPathByName</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>代码生成</td>
+<td>router.pushUrl</td>
+<td>NavPathStack.pushPathByName</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>项目导引</td>
+<td>router.pushUrl</td>
+<td>NavPathStack.pushPathByName</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>OHPM 推荐</td>
+<td>router.pushUrl</td>
+<td>NavPathStack.pushPathByName</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>DevEco 导出</td>
+<td>router.pushUrl</td>
+<td>NavPathStack.pushPathByName</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<h3>4.4 常见编译问题速查</h3>
+<table>
+<thead>
+<tr>
+<th>错误码</th>
+<th>症状</th>
+<th>修复</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00303096</td>
+<td>mock 无效路径</td>
+<td>重命名 mock → mock_disabled</td>
+</tr>
+<tr>
+<td>00303038</td>
+<td>main_pages schema 失败</td>
+<td><code>"pages" → "src"</code></td>
+</tr>
+<tr>
+<td>00303027</td>
+<td>modelVersion 不一致</td>
+<td>统一 26.0.0</td>
+</tr>
+<tr>
+<td>11203005</td>
+<td>float.json 空节点</td>
+<td>补占位项</td>
+</tr>
+<tr>
+<td>11211120</td>
+<td>$media 缺失</td>
+<td>创建图标资源</td>
+</tr>
+<tr>
+<td>10605071/29/01</td>
+<td>bracket notation</td>
+<td>class + dot notation</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>五、运营数据（占位）</h2>
+<blockquote>
+<p>HarmonyCoder 尚未上架鸿蒙应用商店。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>当前</th>
+<th>Q3 目标</th>
+<th>Q4 目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上架数</td>
+<td>0/2</td>
+<td>2/2</td>
+<td>2/2</td>
+</tr>
+<tr>
+<td>下载量</td>
+<td>—</td>
+<td>5,000+</td>
+<td>20,000+</td>
+</tr>
+<tr>
+<td>日活 (DAU)</td>
+<td>—</td>
+<td>500+</td>
+<td>2,000+</td>
+</tr>
+<tr>
+<td>评分</td>
+<td>—</td>
+<td>4.5+ ★</td>
+<td>4.7+ ★</td>
+</tr>
+<tr>
+<td>月收入</td>
+<td>—</td>
+<td>¥10,000+</td>
+<td>¥30,000+</td>
+</tr>
+<tr>
+<td>崩溃率</td>
+<td>—</td>
+<td>&lt; 0.3%</td>
+<td>&lt; 0.1%</td>
+</tr>
+<tr>
+<td>代码生成准确率</td>
+<td>—</td>
+<td>90%+</td>
+<td>95%+</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>六、发展规划</h2>
+<h3>6.1 里程碑时间线</h3>
+<table>
+<thead>
+<tr>
+<th>里程碑</th>
+<th>内容</th>
+<th>时间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M1 ✅</td>
+<td>旗舰版 + 代码片段库 编译+签名+CI 首跑 · 零警告达标</td>
+<td>2026-07-08</td>
+</tr>
+<tr>
+<td>M2 ✅</td>
+<td>真机部署验证 · 冷启动 &lt;1.5s（DevEco 6.1 + devecocli 全自动流水线）</td>
+<td>2026-07-15</td>
+</tr>
+<tr>
+<td>M3</td>
+<td>鸿蒙应用商店上架审核</td>
+<td>2026-08-01</td>
+</tr>
+<tr>
+<td>M4</td>
+<td>多语言支持（英文 → 日文 / 韩文）</td>
+<td>2026-09-01</td>
+</tr>
+<tr>
+<td>M5</td>
+<td>模板市场上线 · 社区贡献版</td>
+<td>2026-10-01</td>
+</tr>
+<tr>
+<td>M6</td>
+<td>云端同步 + 团队协作版</td>
+<td>2026-12-01</td>
+</tr>
+</tbody>
+</table>
+<h3>6.2 1→N 扩展路径</h3>
+<h4>📦 第一阶段：旗舰打磨（Q3 2026）</h4>
+<ul>
+<li>用户反馈闭环：收集首批开发者反馈，迭代代码生成质量</li>
+<li>ASO 优化：关键词覆盖鸿蒙开发者搜索场景</li>
+<li>崩溃率优化：目标 &lt; 0.1%</li>
+</ul>
+<h4>📦 第二阶段：能力扩展（Q4 2026）</h4>
+<ul>
+<li><strong>多语言支持</strong>：ArkTS 代码注释英文化 → 日文 / 韩文生成</li>
+<li><strong>模板市场</strong>：社区贡献的项目模板（电商 / 社交 / 工具类）</li>
+<li><strong>代码片段库</strong>：常用鸿蒙组件模板一键插入</li>
+</ul>
+<h4>📦 第三阶段：生态构建（2027 H1）</h4>
+<ul>
+<li><strong>云端同步</strong>：跨设备代码片段同步（手机 ↔ 平板 ↔ PC）</li>
+<li><strong>团队协作</strong>：项目共享、Code Review 辅助</li>
+<li><strong>插件系统</strong>：第三方开发者可扩展 OHPM 推荐引擎</li>
+<li><strong>多端适配</strong>：平板 / 折叠屏专属布局</li>
+</ul>
+<h3>6.3 新能力立项评审 (5 维)</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>评审问题</th>
+<th>权重</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>开发者价值</td>
+<td>是否解决鸿蒙开发者的具体痛点？</td>
+<td><strong>高</strong></td>
+</tr>
+<tr>
+<td>技术深度</td>
+<td>能否发挥 AI 代码生成的核心优势？</td>
+<td><strong>高</strong></td>
+</tr>
+<tr>
+<td>内核复用</td>
+<td>能否复用 common/ 22 个文件？</td>
+<td><strong>高</strong></td>
+</tr>
+<tr>
+<td>竞品差异</td>
+<td>鸿蒙生态是否有同类方案？</td>
+<td>中</td>
+</tr>
+<tr>
+<td>商业化</td>
+<td>能否产生收入或用户增长？</td>
+<td>中</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>七、营销素材</h2>
+<h3>品牌口号</h3>
+<blockquote>
+<p><strong>HarmonyCoder — 说需求，出代码。鸿蒙开发者的AI编程伙伴。</strong></p>
+</blockquote>
+<h3>视觉规范</h3>
+<table>
+<thead>
+<tr>
+<th>元素</th>
+<th>规范</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>应用图标</td>
+<td>1024×1024 px · 紫色基调 (#7B2D8E) · 代码符号</td>
+</tr>
+<tr>
+<td>商店截图</td>
+<td>鸿蒙框架 × 5 张 · AI对话/代码生成/项目导引/OHPM推荐/DevEco导出</td>
+</tr>
+<tr>
+<td>宣传横幅</td>
+<td>1242×2688 px 竖版 · 紫色科技风</td>
+</tr>
+<tr>
+<td>品牌 Logo</td>
+<td>中英文组合 · #7B2D8E 紫 · HC 字母标识</td>
+</tr>
+</tbody>
+</table>
+<h3>ASO 关键词</h3>
+<table>
+<thead>
+<tr>
+<th>APP</th>
+<th>核心词</th>
+<th>长尾词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>harmonycoder</td>
+<td>AI编程, 鸿蒙开发</td>
+<td>AI写代码, DevEco, ArkTS代码生成, OHPM, 鸿蒙AI, 代码助手, 编程伙伴, 鸿蒙APP开发</td>
+</tr>
+</tbody>
+</table>
+<h3>竞品对比</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th style="text-align: center;">HarmonyCoder</th>
+<th style="text-align: center;">GitHub Copilot</th>
+<th style="text-align: center;">Cursor</th>
+<th style="text-align: center;">通义灵码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>鸿蒙专属</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>ArkTS 原生</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">部分</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>DevEco 集成</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>OHPM 推荐</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>买断制</td>
+<td style="text-align: center;">✅ ¥68</td>
+<td style="text-align: center;">❌ 订阅</td>
+<td style="text-align: center;">❌ 订阅</td>
+<td style="text-align: center;">❌ 免费</td>
+</tr>
+<tr>
+<td>离线可用</td>
+<td style="text-align: center;">计划中</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>八、附录</h2>
+<h3>8.1 关键路径</h3>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>路径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>项目根</td>
+<td><code>D:\92_products\SPDT-001_Harmony\</code></td>
+</tr>
+<tr>
+<td>APP 目录</td>
+<td><code>apps\harmonycoder\</code></td>
+</tr>
+<tr>
+<td>公共内核</td>
+<td><code>common\</code></td>
+</tr>
+<tr>
+<td>CI 流水线</td>
+<td><code>ci\pipeline.yaml</code></td>
+</tr>
+<tr>
+<td>品牌手册</td>
+<td><code>docs\品牌手册_HarmonyCoder.md</code></td>
+</tr>
+</tbody>
+</table>
+<h3>8.2 OMAS 治理</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SPDT</td>
+<td>SPDT-001</td>
+</tr>
+<tr>
+<td>HDT</td>
+<td>HDT-001-HC</td>
+</tr>
+<tr>
+<td>品类</td>
+<td>AI编程伙伴（旗舰）</td>
+</tr>
+<tr>
+<td>质量策略</td>
+<td>warnings_policy: zero</td>
+</tr>
+<tr>
+<td>品牌色</td>
+<td>#7B2D8E 紫</td>
+</tr>
+<tr>
+<td>管理模型</td>
+<td>1→1（质量优先）</td>
+</tr>
+</tbody>
+</table>
+<h3>8.3 关联文档</h3>
+<ul>
+<li>README.md · 项目总览</li>
+<li>PREFLIGHT 检查清单</li>
+<li>编译问题手册 v2</li>
+<li>CI 流水线配置</li>
+<li>OMAS 治理体系文档</li>
+</ul>
+<h3>8.4 环境变量</h3>
+<table>
+<thead>
+<tr>
+<th>变量</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OHOS_SDK_HOME</td>
+<td><code>DevEco Studio\sdk</code></td>
+</tr>
+<tr>
+<td>PATH</td>
+<td><code>+= tools\node</code></td>
+</tr>
+</tbody>
+</table>
+<h3>8.5 更新记录</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">日期</th>
+<th style="text-align: left;">版本</th>
+<th style="text-align: left;">变更</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">2026-07-17</td>
+<td style="text-align: left;">v1.1</td>
+<td style="text-align: left;">扩展至 2 款 APP（新增 harmonycoder-snippets 代码片段库）；真机部署验证通过（DevEco 6.1 + devecocli）；新增智能体定位章节</td>
+</tr>
+<tr>
+<td style="text-align: left;">2026-07-07</td>
+<td style="text-align: left;">v1.0</td>
+<td style="text-align: left;">初始版本，旗舰版编译+签名+CI 首跑</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>🏗️ 鸿蒙特使 · SPDT-001 | HarmonyCoder 品牌手册 v1.1 | 2026-07-17</p>
+</section>
+<div class="footer">
+  <p>🏗️ 鸿蒙特使 · SPDT-001 | HarmonyCoder 品牌手册 v1.1 | 2026-07-17</p>
+</div>
+
+</body>
+</html>

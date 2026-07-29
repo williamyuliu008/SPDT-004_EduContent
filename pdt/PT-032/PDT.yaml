@@ -1,0 +1,11 @@
+pdt_id: PT-032
+name: CollegeCourseware
+name_zh: 高等课件工厂
+spdt: SPDT-004
+domain: 高等教育
+subjects: [数学, 物理, 化学]
+content_types: [数学动画课件, 物理仿真, 化学结构]
+source_project: D:\6_agent_project\projects\math_animation_factory
+status: active
+maturity: 0.7
+created: 2026-07-10

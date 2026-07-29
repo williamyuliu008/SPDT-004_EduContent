@@ -1,0 +1,30 @@
+{
+  "timestamp": "20260718-155207",
+  "elapsed_s": 21.675095558166504,
+  "total": 2,
+  "pass": 2,
+  "fail": 0,
+  "skip": 0,
+  "apps": [
+    {
+      "name": "thinkkit-coach",
+      "brand": "thinkkit",
+      "status": "pass",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 0.26986122131347656,
+      "error": "",
+      "duration_s": 10.776627779006958
+    },
+    {
+      "name": "thinkkit-quiz",
+      "brand": "thinkkit",
+      "status": "pass",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 0.16448688507080078,
+      "error": "",
+      "duration_s": 10.89783787727356
+    }
+  ]
+}

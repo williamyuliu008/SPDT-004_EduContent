@@ -1,0 +1,74 @@
+{
+  "scene_id": "古史_变与局_ep06_act4_15",
+  "scene_type": "concept",
+  "knowledge_type": "IV",
+  "content": {
+    "title": "回顾晚清七十年，从洋务…",
+    "body_lines": [
+      "回顾晚清七十年，从洋务运动到戊戌…",
+      "1911年辛亥革命不是历史的偶然，而是历…",
+      "这部晚清改革失败史，是一个帝国在…"
+    ],
+    "keywords": [
+      "回顾",
+      "回顾晚",
+      "回顾晚清",
+      "回顾晚清七"
+    ]
+  },
+  "page": {
+    "current": 16,
+    "total": 16,
+    "show": true
+  },
+  "scene_info": {
+    "idx": 15,
+    "total": 16,
+    "name": "革命的来临·dialogue",
+    "dur": 0.0
+  },
+  "source_knowledge_nodes": [
+    "#变与局/1840-1911年",
+    "#历史/晚清变局",
+    "#考频/⭐️⭐⭐"
+  ],
+  "source_chain_id": "古史_变与局_ep06",
+  "five_skandha": {
+    "color_base": [
+      "回顾",
+      "回顾晚",
+      "回顾晚清",
+      "回顾晚清七"
+    ],
+    "sensation": "none",
+    "sensation_trigger": "回顾晚清七十年，从洋务运动到戊戌变法，从义和团到清末新政，中国尝试了技术救国、制……",
+    "discrimination": "学生能识别「回顾晚清七十年，从洋务…」的核心含义",
+    "action_prompt": "口述/复述",
+    "recognition_marker": "#变与局/1840-1911年",
+    "bottleneck_warn": "none"
+  },
+  "analogy_block": {
+    "applicable": false,
+    "knowledge_type": "IV"
+  },
+  "semantic_alignment": {
+    "audio_segment_ref": "ACT4-BEAT-15-DIALOGUE",
+    "visual_element_ref": "CONTENT-ZONE-1",
+    "alignment_note": "旁白「回顾晚清七十年，从洋务运动到戊戌…」对应视觉区显示",
+    "alignment_confirmed": false
+  },
+  "cognitive_load": {
+    "visual_points": 4,
+    "audio_chunks": 3,
+    "load_status": "ACCEPTABLE",
+    "bottleneck_cause": "none",
+    "split_recommendation": "建议拆分为2个 scene"
+  },
+  "audio": {
+    "tts_template": "voice_explain",
+    "speed_wpm": 170,
+    "pause_after_s": 2.0
+  },
+  "energy_level": "medium",
+  "clip_friendly": true
+}

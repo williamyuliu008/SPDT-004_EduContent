@@ -1,0 +1,71 @@
+{
+  "scene_id": "墨骨山河_ep09_act1_02",
+  "scene_type": "timeline",
+  "knowledge_type": "IV",
+  "content": {
+    "title": "商鞅来到秦国后，花了三…",
+    "header": "商鞅来到秦国后，花了三年时间了",
+    "timeline_events": [
+      {
+        "year": "758年",
+        "event": "乾元元年",
+        "note": "蒲州",
+        "active": true
+      }
+    ]
+  },
+  "page": {
+    "current": 3,
+    "total": 17,
+    "show": true
+  },
+  "scene_info": {
+    "idx": 2,
+    "total": 17,
+    "name": "秦国的耻辱·dialogue",
+    "dur": 0.0
+  },
+  "source_knowledge_nodes": [
+    "#历史/战国/商鞅变法",
+    "#考频/⭐️⭐⭐⭐"
+  ],
+  "source_chain_id": "墨骨山河_ep09",
+  "five_skandha": {
+    "color_base": [
+      "商鞅",
+      "商鞅来",
+      "商鞅来到",
+      "商鞅来到秦"
+    ],
+    "sensation": "none",
+    "sensation_trigger": "商鞅来到秦国后，花了三年时间了解国情。他走遍关中大地，看农民如何耕作，看士兵如何……",
+    "discrimination": "商鞅来到秦国后，花了三年时间了解国情。他走遍关中大地，看农民",
+    "action_prompt": "口述/复述",
+    "recognition_marker": "#历史/战国/商鞅变法",
+    "bottleneck_warn": "受蕴"
+  },
+  "analogy_block": {
+    "applicable": false,
+    "knowledge_type": "IV"
+  },
+  "semantic_alignment": {
+    "audio_segment_ref": "ACT1-BEAT-02-DIALOGUE",
+    "visual_element_ref": "CONTENT-ZONE-3",
+    "alignment_note": "旁白「商鞅来到秦国后，花了三年时间了解…」对应视觉区显示",
+    "alignment_confirmed": false
+  },
+  "cognitive_load": {
+    "visual_points": 4,
+    "audio_chunks": 5,
+    "load_status": "WARN",
+    "bottleneck_cause": "受蕴",
+    "split_recommendation": "建议拆分为2个 scene"
+  },
+  "audio": {
+    "tts_template": "voice_explain",
+    "speed_wpm": 170,
+    "pause_after_s": 2.0
+  },
+  "energy_level": "medium",
+  "clip_friendly": true
+}

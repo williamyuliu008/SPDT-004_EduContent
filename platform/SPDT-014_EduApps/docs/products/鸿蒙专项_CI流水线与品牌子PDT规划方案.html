@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>鸿蒙专项 SPDT-001 · CI流水线 &amp; 品牌子PDT 规划方案</title>
+<style>
+:root {
+  --thinkkit: #5B8C5A;
+  --craftsman: #E87A2A;
+  --harmonycoder: #7B2D8E;
+  --bg: #0f1117;
+  --card: #1a1d27;
+  --border: #2a2d3a;
+  --text: #e1e4eb;
+  --muted: #7d8292;
+  --accent: #4a90d9;
+  --pass: #2da44e;
+  --fail: #cf222e;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { 
+  background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6; padding: 2rem; max-width: 1100px; margin: 0 auto;
+}
+h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
+h2 { font-size: 1.3rem; margin: 2rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+h3 { font-size: 1.1rem; margin: 1.5rem 0 0.75rem; }
+.muted { color: var(--muted); font-size: 0.9rem; }
+.badge { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 0.75rem; font-weight: 600; }
+.badge-active { background: #1a3a1f; color: var(--pass); }
+.badge-planned { background: #2a2a1a; color: #d4a017; }
+.badge-pending { background: #3a1a1a; color: var(--fail); }
+.tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.78rem; margin-right: 4px; }
+
+/* Architecture diagram */
+.arch-diagram {
+  display: flex; flex-direction: column; gap: 0; margin: 1.5rem 0;
+  font-family: "Cascadia Code", "Fira Code", monospace; font-size: 0.82rem;
+  background: var(--card); border: 1px solid var(--border); border-radius: 8px; 
+  padding: 1.5rem; overflow-x: auto;
+}
+.arch-line { display: flex; align-items: flex-start; white-space: pre; }
+.arch-spdt { color: #ffd700; font-weight: bold; }
+.arch-pdt { color: #4ec9b0; }
+.arch-app { color: var(--muted); }
+.arch-tree { color: #555; }
+
+/* Cards */
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin: 1rem 0; }
+.card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+  padding: 1.25rem;
+}
+.card-title { font-weight: 700; margin-bottom: 0.5rem; font-size: 1rem; }
+.card-brand { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; }
+
+/* Timeline */
+.timeline { margin: 1.5rem 0; position: relative; padding-left: 2rem; }
+.timeline::before {
+  content: ""; position: absolute; left: 7px; top: 0; bottom: 0;
+  width: 2px; background: var(--border);
+}
+.timeline-step { margin-bottom: 1.25rem; position: relative; }
+.timeline-step::before {
+  content: ""; position: absolute; left: -1.65rem; top: 5px;
+  width: 12px; height: 12px; border-radius: 50%; background: var(--accent);
+  border: 2px solid var(--bg);
+}
+.timeline-title { font-weight: 700; }
+.timeline-text { color: var(--muted); font-size: 0.9rem; margin-top: 0.25rem; }
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--border); }
+th { color: var(--muted); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; }
+tr:hover { background: rgba(255,255,255,0.02); }
+.pass { color: var(--pass); font-weight: 600; }
+.fail { color: var(--fail); font-weight: 600; }
+
+/* Compare */
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+.compare-col { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; }
+.compare-col h4 { margin-bottom: 0.5rem; }
+
+/* Metrics */
+.metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; margin: 1rem 0; }
+.metric { 
+  background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+  padding: 1rem; text-align: center;
+}
+.metric-value { font-size: 1.6rem; font-weight: 700; }
+.metric-label { font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; }
+
+/* Pipeline stages */
+.stages-row { display: flex; gap: 0; margin: 1rem 0; }
+.stage { 
+  flex: 1; padding: 1rem 0.75rem; text-align: center; border: 1px solid var(--border);
+  background: var(--card); position: relative;
+}
+.stage:first-child { border-radius: 8px 0 0 8px; }
+.stage:last-child { border-radius: 0 8px 8px 0; }
+.stage-num { font-size: 1.1rem; font-weight: 700; color: var(--accent); }
+.stage-name { font-size: 0.85rem; margin-top: 0.25rem; }
+.stage-time { font-size: 0.7rem; color: var(--muted); margin-top: 0.25rem; }
+.stage-gate { font-size: 0.65rem; margin-top: 4px; padding: 1px 6px; border-radius: 8px; display: inline-block; }
+.gate-block { background: #3a1a1a; color: #e57373; }
+.gate-soft { background: #2a2a1a; color: #d4a017; }
+.gate-none { background: #1a2a1a; color: #81c784; }
+
+/* Checklist */
+.checklist { list-style: none; }
+.checklist li { padding: 4px 0; }
+.checklist li::before { margin-right: 8px; }
+.check { color: var(--pass); }
+.xmark { color: var(--fail); }
+
+footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.8rem; }
+</style>
+</head>
+<body>
+
+<h1>鸿蒙专项 SPDT-001</h1>
+<p class="muted">CI 流水线 + 按品牌独立子 PDT · 规划方案 v1.0 · 2026-07-06</p>
+
+<div class="metrics">
+  <div class="metric">
+    <div class="metric-value">3</div><div class="metric-label">活跃品牌子PDT</div>
+  </div>
+  <div class="metric">
+    <div class="metric-value">12</div><div class="metric-label">APP 总数</div>
+  </div>
+  <div class="metric">
+    <div class="metric-value">10/12</div><div class="metric-label">编译+签名通过</div>
+  </div>
+  <div class="metric">
+    <div class="metric-value">5</div><div class="metric-label">CI 阶段</div>
+  </div>
+  <div class="metric">
+    <div class="metric-value">&lt;30s</div><div class="metric-label">单品牌CI耗时</div>
+  </div>
+</div>
+
+<h2>1. SPDT → 品牌子PDT 两级架构</h2>
+
+<div class="arch-diagram">
+<div class="arch-line"><span class="arch-spdt">SPDT-001 鸿蒙生态开发</span>  <span class="arch-tree">│</span>  战略层: 资源调度 · CI基础设施 · 品牌协调</div>
+<div class="arch-line"><span class="arch-tree">├─</span> <span class="arch-pdt">HDT-001-TK ThinkKit</span>  <span class="arch-tree">│</span>  知识学习工具 · 6款APP · 森绿 #5B8C5A</div>
+<div class="arch-line"><span class="arch-tree">├─</span> <span class="arch-pdt">HDT-001-CM Craftsman</span> <span class="arch-tree">│</span>  开发者工具 · 4款APP · 工匠橙 #E87A2A</div>
+<div class="arch-line"><span class="arch-tree">├─</span> <span class="arch-pdt">HDT-001-HC HarmonyCoder</span><span class="arch-tree">│</span> AI编程伙伴 · 1款旗舰 · 紫 #7B2D8E</div>
+<div class="arch-line"><span class="arch-tree">└─</span> <span class="arch-pdt">HDT-001-XX (新品牌)  </span>  <span class="arch-tree">│</span>  从模板注册 → CI自动接入</div>
+</div>
+
+<p>SPDT 管<strong>基础设施和资源调度</strong>，品牌子 PDT 管<strong>APP 全生命周期</strong>。新品牌从 <code>_template_harmony</code> 注册，CI 自动接入。</p>
+
+<h2>2. 五阶段 CI 流水线</h2>
+
+<div class="stages-row">
+  <div class="stage">
+    <div class="stage-num">1</div>
+    <div class="stage-name">PREFLIGHT</div>
+    <div class="stage-time">≤30s</div>
+    <div class="stage-gate gate-block">阻塞</div>
+  </div>
+  <div class="stage">
+    <div class="stage-num">2</div>
+    <div class="stage-name">BUILD</div>
+    <div class="stage-time">≤5min</div>
+    <div class="stage-gate gate-soft">软性</div>
+  </div>
+  <div class="stage">
+    <div class="stage-num">3</div>
+    <div class="stage-name">SIGN</div>
+    <div class="stage-time">≤1min</div>
+    <div class="stage-gate gate-soft">软性</div>
+  </div>
+  <div class="stage">
+    <div class="stage-num">4</div>
+    <div class="stage-name">DEPLOY</div>
+    <div class="stage-time">≤2min</div>
+    <div class="stage-gate gate-none">可选</div>
+  </div>
+  <div class="stage">
+    <div class="stage-num">5</div>
+    <div class="stage-name">REPORT</div>
+    <div class="stage-time">≤30s</div>
+    <div class="stage-gate gate-none">始终</div>
+  </div>
+</div>
+
+<h3>各阶段检查项</h3>
+
+<table>
+<tr><th>阶段</th><th>核心检查</th><th>失败对策</th></tr>
+<tr>
+  <td><span class="tag" style="background:#1a2a3a;color:#4a90d9">PREFLIGHT</span></td>
+  <td>8 项检查: build-profile API24、oh-package modelVersion、hvigor-config、app.json5 bundleName、module.json5、pages/*.ets 非空、品牌色一致性、跨品牌代码污染</td>
+  <td>阻塞后续，修复后重跑</td>
+</tr>
+<tr>
+  <td><span class="tag" style="background:#1a2a3a;color:#4a90d9">BUILD</span></td>
+  <td>hvigorw assembleHap 并行编译，每 APP 独立进程，提取 ERROR/WARN 计数</td>
+  <td>人工介入修复 → 重跑</td>
+</tr>
+<tr>
+  <td><span class="tag" style="background:#1a2a3a;color:#4a90d9">SIGN</span></td>
+  <td>hap-sign-tool.jar 自动签名，复用已有 debug profile</td>
+  <td>人工介入修复 → 重跑</td>
+</tr>
+<tr>
+  <td><span class="tag" style="background:#1a2a3a;color:#4a90d9">DEPLOY</span></td>
+  <td>hdc install + hdc shell aa start 冷启动验证（仅当设备连接时）</td>
+  <td>可选阶段，无设备不阻塞</td>
+</tr>
+<tr>
+  <td><span class="tag" style="background:#1a2a3a;color:#4a90d9">REPORT</span></td>
+  <td>通过/失败/跳过统计，HAP 大小对比，警告趋势，品牌 JSON + MD 报告</td>
+  <td>始终生成，不阻塞</td>
+</tr>
+</table>
+
+<h2>3. CI 触发机制</h2>
+
+<table>
+<tr><th>触发条件</th><th>范围</th><th>阶段</th></tr>
+<tr><td>品牌子PDT激活</td><td>该品牌全流水线</td><td>PREFLIGHT → BUILD → SIGN → REPORT</td></tr>
+<tr><td>代码变更 (apps/{brand}-*/entry/src/**)</td><td>变更品牌</td><td>PREFLIGHT → BUILD → SIGN → REPORT</td></tr>
+<tr><td>配置变更 (build-profile / oh-package / hvigor)</td><td>变更品牌</td><td>PREFLIGHT → BUILD</td></tr>
+<tr><td>每日定时 (08:00)</td><td>全部活跃品牌</td><td>PREFLIGHT → BUILD → SIGN → REPORT</td></tr>
+<tr><td>手动触发 (CLI)</td><td>指定品牌</td><td>可选阶段范围</td></tr>
+</table>
+
+<h2>4. 三个品牌子PDT 状态</h2>
+
+<div class="card-grid">
+  <div class="card">
+    <div class="card-title"><span class="card-brand" style="background:var(--thinkkit)"></span>ThinkKit <span class="badge badge-active">ACTIVE</span></div>
+    <p><strong>赛道:</strong> 知识学习工具<br>
+    <strong>APP:</strong> 6款 (Coach/FlashCard/ZKNote/MindMap/Reader/Quiz)<br>
+    <strong>通过:</strong> <span class="pass">5/6</span> 编译+签名 (quiz 待同步)<br>
+    <strong>目标:</strong> 50款<br>
+    <strong>质量:</strong> no_new 警告策略<br>
+    <strong>M1:</strong> 6/6全通 (07-08) | <strong>M2:</strong> 真机部署 (07-12) | <strong>M3:</strong> 教育系列15款启动 (07-20)</p>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="card-brand" style="background:var(--craftsman)"></span>Craftsman <span class="badge badge-active">ACTIVE</span></div>
+    <p><strong>赛道:</strong> 开发者工具<br>
+    <strong>APP:</strong> 4款 (ArkUI/OHPM/Utils v1+2)<br>
+    <strong>通过:</strong> <span class="pass">3/4</span> 编译+签名 (utils-v2 待修复)<br>
+    <strong>目标:</strong> 20款<br>
+    <strong>质量:</strong> no_new + 无 ThinkKit 污染检查<br>
+    <strong>M1:</strong> 4/4全通 (07-08) | <strong>M2:</strong> 真机部署 (07-12) | <strong>M3:</strong> 扩展至10款 (07-25)</p>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="card-brand" style="background:var(--harmonycoder)"></span>HarmonyCoder <span class="badge badge-active">ACTIVE</span></div>
+    <p><strong>赛道:</strong> AI编程伙伴<br>
+    <strong>APP:</strong> 1款旗舰<br>
+    <strong>通过:</strong> <span class="fail">0/1</span> (00303096配置错误)<br>
+    <strong>目标:</strong> 1款旗舰<br>
+    <strong>质量:</strong> zero 警告策略（旗舰标准）<br>
+    <strong>M1:</strong> 编译通过 (07-09) | <strong>M2:</strong> 真机+核心功能 (07-13) | <strong>M3:</strong> 旗舰品质达标 (07-20)</p>
+  </div>
+</div>
+
+<h2>5. 新增品牌操作清单</h2>
+
+<div class="timeline">
+  <div class="timeline-step">
+    <div class="timeline-title">Step 1 · 复制模板</div>
+    <div class="timeline-text">复制 pdt_registry/_template_harmony/ → pdt_registry/HDT-001-XX/，修改品牌名/色/赛道</div>
+  </div>
+  <div class="timeline-step">
+    <div class="timeline-title">Step 2 · 品牌声明</div>
+    <div class="timeline-text">在 SPDT-001 spdt.yaml 的 sub_pdts 中注册新品牌</div>
+  </div>
+  <div class="timeline-step">
+    <div class="timeline-title">Step 3 · CI 品牌配置</div>
+    <div class="timeline-text">在 ci/pipeline.yaml 的 brands 下添加新品牌（prefix + 质量策略）</div>
+  </div>
+  <div class="timeline-step">
+    <div class="timeline-title">Step 4 · 首个 APP 生成</div>
+    <div class="timeline-text">从 templates/base fork → SDC 批量生成品牌 APP 骨架 → PREFLIGHT 校验</div>
+  </div>
+  <div class="timeline-step">
+    <div class="timeline-title">Step 5 · CI 自动接管</div>
+    <div class="timeline-text">子PDT激活 → CI 自动触发 PREFLIGHT → BUILD → SIGN → REPORT</div>
+  </div>
+</div>
+
+<p class="muted">新增一个品牌，从模板到首个 APP 编译通过 ≤ 30 分钟，其中 CI 自动化部分 ≤ 5 分钟。</p>
+
+<h2>6. 父 SPDT vs 品牌子PDT 职责矩阵</h2>
+
+<table>
+<tr><th>职责</th><th>SPDT-001 (父)</th><th>HDT-001-TK/CM/HC (子)</th></tr>
+<tr><td>CI 流水线定义</td><td><span class="tag" style="background:#1a3a1f;color:#81c784">ci/pipeline.yaml + stages/</span></td><td>品牌级 ci_overrides.yaml (可选)</td></tr>
+<tr><td>构建脚本</td><td><span class="tag" style="background:#1a3a1f;color:#81c784">build-all.ps1 + sign-all.ps1</span></td><td>使用 SPDT 脚本</td></tr>
+<tr><td>项目模板</td><td><span class="tag" style="background:#1a3a1f;color:#81c784">templates/base + 维护升级</span></td><td>从模板 fork</td></tr>
+<tr><td>Cell 资源调度</td><td><span class="tag" style="background:#1a3a1f;color:#81c784">跨品牌优先级仲裁</span></td><td>按里程碑申请额度</td></tr>
+<tr><td>APP 生成</td><td>SDK 兼容性保障</td><td><span class="tag" style="background:#1a3a1f;color:#81c784">SDC 调用 + 代码实现</span></td></tr>
+<tr><td>编译修复</td><td>问题手册维护</td><td><span class="tag" style="background:#1a3a1f;color:#81c784">品牌 APP 专属修复</span></td></tr>
+<tr><td>质量门禁</td><td>跨品牌审计</td><td><span class="tag" style="background:#1a3a1f;color:#81c784">品牌级门禁（PREFLIGHT）</span></td></tr>
+<tr><td>部署验证</td><td>hdc 工具链维护</td><td><span class="tag" style="background:#1a3a1f;color:#81c784">品牌 APP 真机验证</span></td></tr>
+<tr><td>里程碑</td><td>跨品牌对齐</td><td><span class="tag" style="background:#1a3a1f;color:#81c784">品牌级 M1/M2/M3</span></td></tr>
+<tr><td>归档</td><td>跨品牌索引</td><td><span class="tag" style="background:#1a3a1f;color:#81c784">品牌报告+数据</span></td></tr>
+</table>
+
+<h2>7. 文件结构总览</h2>
+
+<div class="arch-diagram">
+<div class="arch-line"><span class="arch-spdt">harmony_workshop/</span></div>
+<div class="arch-line"><span class="arch-tree">├──</span> ci/</div>
+<div class="arch-line"><span class="arch-tree">│</span>   <span class="arch-tree">├──</span> pipeline.yaml           <span class="arch-app"># CI 流水线定义（新增）</span></div>
+<div class="arch-line"><span class="arch-tree">│</span>   <span class="arch-tree">└──</span> stages/</div>
+<div class="arch-line"><span class="arch-tree">│</span>       <span class="arch-tree">└──</span> preflight.ps1         <span class="arch-app"># 项目完整性校验（新增）</span></div>
+<div class="arch-line"><span class="arch-tree">├──</span> apps/                       <span class="arch-app"># 12个APP，按品牌前缀组织</span></div>
+<div class="arch-line"><span class="arch-tree">├──</span> templates/base/             <span class="arch-app"># 标准化项目模板</span></div>
+<div class="arch-line"><span class="arch-tree">├──</span> build-all.ps1               <span class="arch-app"># 批量编译脚本</span></div>
+<div class="arch-line"><span class="arch-tree">├──</span> sign-all.ps1                <span class="arch-app"># 批量签名脚本</span></div>
+<div class="arch-line"><span class="arch-tree">└──</span> 编译问题修复手册 v2.md      <span class="arch-app"># 24类问题速查</span></div>
+<div class="arch-line" style="margin-top:0.75rem;"><span class="arch-spdt">omas/pdt_registry/</span></div>
+<div class="arch-line"><span class="arch-tree">├──</span> HDT-001-TK/pdt.yaml        <span class="arch-app"># ThinkKit 品牌子PDT（新增）</span></div>
+<div class="arch-line"><span class="arch-tree">├──</span> HDT-001-CM/pdt.yaml        <span class="arch-app"># Craftsman 品牌子PDT（新增）</span></div>
+<div class="arch-line"><span class="arch-tree">├──</span> HDT-001-HC/pdt.yaml        <span class="arch-app"># HarmonyCoder 品牌子PDT（新增）</span></div>
+<div class="arch-line"><span class="arch-tree">└──</span> _template_harmony/pdt.yaml  <span class="arch-app"># 鸿蒙品牌子PDT注册模板（新增）</span></div>
+<div class="arch-line" style="margin-top:0.75rem;"><span class="arch-spdt">omas/spdt_registry/</span></div>
+<div class="arch-line"><span class="arch-tree">└──</span> SPDT-001/spdt.yaml          <span class="arch-app"># 更新: 品牌子PDT引用 + CI + 治理规则</span></div>
+</div>
+
+<h2>8. 风险与对策</h2>
+
+<table>
+<tr><th>风险</th><th>对策</th></tr>
+<tr><td>品牌间代码污染（已验证发生: craftsman-arkui 含 ThinkKit mock）</td><td>PREFLIGHT 阶段自动检测跨品牌 import；Craftsman 品牌 CI 强制 extra check</td></tr>
+<tr><td>SDK 版本漂移（真机 API 24 vs DevEco API 26）</td><td>PREFLIGHT 校验 compatibleSdkVersion 必须包含 24；SDK 版本变更需 SPDT 级审批</td></tr>
+<tr><td>多品牌并行编译争抢 hvigor daemon</td><td>CI 品牌级排队（max_parallel_brands=1，串行不同品牌）；同品牌 APP 并行编译</td></tr>
+<tr><td>签名证书过期</td><td>sign-all.ps1 中的自建 CA 有效期 3650 天；每年更新一次</td></tr>
+<tr><td>品牌数量增长后资源碎片化</td><td>SPDT 统一资源池 + 品牌按里程碑申请额度 + OGC 审计使用效率</td></tr>
+</table>
+
+<h2>9. 即时下一步</h2>
+
+<table>
+<tr><th>优先级</th><th>事项</th><th>负责</th></tr>
+<tr><td><span class="badge badge-pending">P0</span></td><td>修复 harmonycoder + craftsman-utils-v2 编译错误（DevEco 中打开查看完整错误）</td><td>交付内阁 + DevEco</td></tr>
+<tr><td><span class="badge badge-pending">P0</span></td><td>thinkkit-quiz 从 workspace 副本同步到 workshop（或从模板重建）</td><td>交付内阁</td></tr>
+<tr><td><span class="badge badge-pending">P0</span></td><td>PREFLIGHT 脚本对 3 个品牌首跑验证</td><td>交付内阁</td></tr>
+<tr><td><span class="badge badge-active">P1</span></td><td>thinkkit-quiz API 弃用警告清零（32 个 substr 等 deprecated API）</td><td>交付内阁</td></tr>
+<tr><td><span class="badge badge-active">P1</span></td><td>真机连接 → 批量部署验证</td><td>用户</td></tr>
+<tr><td><span class="badge badge-planned">P2</span></td><td>BUILD / SIGN / DEPLOY / REPORT 阶段脚本补全</td><td>交付内阁</td></tr>
+<tr><td><span class="badge badge-planned">P2</span></td><td>每日定时构建 cron 接入 (08:00 daily)</td><td>交付内阁</td></tr>
+</table>
+
+<footer>
+  鸿蒙专项 SPDT-001 · CI 流水线 &amp; 品牌子PDT 规划方案 v1.0 · 2026-07-06 · 交付内阁
+</footer>
+
+</body>
+</html>

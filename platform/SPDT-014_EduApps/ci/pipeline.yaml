@@ -1,0 +1,162 @@
+﻿# HarmonyPDT CI Pipeline 鈥?楦胯挋涓撻」鍝佺墝绾ф瀯寤烘祦姘寸嚎
+# 闅跺睘 SPDT-001锛屾寜鍝佺墝瑙﹀彂
+
+pipeline:
+  name: "HarmonyPDT-CI"
+  version: "0.1.0"
+  workspace: "D:/92_products/SPDT-001_Harmony"
+
+# 鈹€鈹€鈹€ 闃舵瀹氫箟 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+stages:
+  - id: "preflight"
+    name: "椤圭洰瀹屾暣鎬ф牎楠?
+    order: 1
+    script: "stages/preflight.ps1"
+    gate: "blocking"
+    max_duration_s: 30
+    checks:
+      - "build-profile.json5 瀛樺湪涓旀牸寮忔纭?
+      - "oh-package.json5 modelVersion 涓?hvigor-config 涓€鑷?(26.0.0)"
+      - "AppScope/app.json5 bundleName 鏍煎紡姝ｇ‘ (com.{brand}.{app})"
+      - "entry/src/main/module.json5 瀛樺湪涓旀牸寮忔纭?
+      - "entry/src/main/ets/pages/ 鑷冲皯鍚?1 涓?.ets 鏂囦欢"
+      - "鏃?ThinkKit/Craftsman/HarmonyCoder 浠ｇ爜浜ゅ弶姹℃煋"
+      - "brandColor 涓庢墍灞炲搧鐗屼竴鑷?
+
+  - id: "build"
+    name: "鎵归噺缂栬瘧"
+    order: 2
+    script: "stages/build.ps1"
+    gate: "soft"
+    max_duration_s: 300         # 5 鍒嗛挓
+    depends_on: ["preflight"]
+    tasks:
+      - "鎵弿 apps/{brand}-* 鐩綍锛屽彂鐜版墍鏈?APP"
+      - "骞惰 hvigorw assembleHap锛堟瘡 APP 鐙珛杩涚▼锛?
+      - "鎹曡幏缂栬瘧杈撳嚭锛屾彁鍙?ERROR / WARN 璁℃暟"
+      - "浜у嚭: 姣忎釜 APP 鐨?{pass|fail} + HAP 璺緞"
+    success_criteria:
+      - "鍝佺墝涓嬫墍鏈?APP 缂栬瘧閫氳繃"
+      - "鏃犳柊澧炵紪璇戣鍛婏紙warnings_policy=no_new 鏃讹級"
+
+  - id: "sign"
+    name: "鑷姩绛惧悕"
+    order: 3
+    script: "stages/sign.ps1"
+    gate: "soft"
+    max_duration_s: 60
+    depends_on: ["build"]
+    tasks:
+      - "閬嶅巻缂栬瘧浜у嚭鐨勬墍鏈?unsigned HAP"
+      - "hap-sign-tool.jar 鑷姩绛惧悕锛堝鐢?sign-all.ps1 閫昏緫锛?
+      - "浜у嚭: 姣忎釜 APP 鐨勫凡绛惧悕 HAP 璺緞 + 澶у皬"
+    success_criteria:
+      - "鎵€鏈夌紪璇戦€氳繃鐨?APP 绛惧悕鎴愬姛"
+
+  - id: "deploy"
+    name: "璁惧閮ㄧ讲锛堝彲閫夛級"
+    order: 4
+    script: "stages/deploy.ps1"
+    gate: "none"                # 鏃犺澶囨椂涓嶉樆濉?    max_duration_s: 120
+    depends_on: ["sign"]
+    optional: true
+    tasks:
+      - "hdc list targets 妫€娴嬪凡杩炴帴璁惧"
+      - "hdc install 閫?APP 瀹夎"
+      - "hdc shell aa start 鍐峰惎鍔ㄩ獙璇?
+    success_criteria:
+      - "鏈夎澶囨椂: 鎵€鏈?APP 瀹夎鎴愬姛"
+
+  - id: "report"
+    name: "鍝佺墝鏋勫缓鎶ュ憡"
+    order: 5
+    script: "stages/report.ps1"
+    gate: "none"
+    max_duration_s: 30
+    depends_on: ["sign"]
+    tasks:
+      - "姹囨€? 閫氳繃/澶辫触/璺宠繃 缁熻"
+      - "HAP 澶у皬瀵规瘮锛堜笌涓婃鏋勫缓宸紓锛?
+      - "缂栬瘧璀﹀憡瓒嬪娍"
+      - "浜у嚭: per-brand JSON + Markdown 鎶ュ憡"
+
+# 鈹€鈹€鈹€ 瑙﹀彂瑙勫垯 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+triggers:
+  on_brand_pdt_activate:
+    scope: "single_brand"
+    stages: ["preflight", "build", "sign", "report"]
+    auto: true
+
+  on_app_code_change:
+    watch_paths:
+      - "apps/{brand}-*/entry/src/**"
+      - "apps/{brand}-*/AppScope/**"
+    scope: "changed_brand"
+    stages: ["preflight", "build", "sign", "report"]
+    auto: true
+
+  on_config_change:
+    watch_paths:
+      - "apps/{brand}-*/build-profile.json5"
+      - "apps/{brand}-*/oh-package.json5"
+      - "apps/{brand}-*/hvigor/**"
+    scope: "changed_brand"
+    stages: ["preflight", "build"]
+    auto: true
+
+  on_schedule:
+    cron: "0 8 * * *"             # 姣忔棩鏃?8 鐐癸紝鍏ㄥ搧鐗?    scope: "all_active_brands"
+    stages: ["preflight", "build", "sign", "report"]
+    auto: true
+
+  on_manual:
+    scope: "specified_brand"
+    stages: "user_specified"
+    auto: false
+
+# 鈹€鈹€鈹€ 鍝佺墝闅旂 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+brands:
+  thinkkit:
+    prefix: "thinkkit-"
+    apps: ["coach", "flashcard", "zknote", "mindmap", "reader", "quiz"]
+    color: "#5B8C5A"
+    quality: { warnings_policy: "no_new" }
+
+  craftsman:
+    prefix: "craftsman-"
+    apps: ["arkui", "ohpm", "utils", "utils-v2"]
+    color: "#E87A2A"
+    quality: { warnings_policy: "no_new", extra: ["no_thinkkit_imports"] }
+
+  harmonycoder:
+    prefix: "harmonycoder"
+    apps: ["harmonycoder"]
+    color: "#7B2D8E"
+    quality: { warnings_policy: "zero" }
+
+  rhythm:
+    prefix: "rhythm-"
+    apps: ["habit"]
+    color: "#3B82B0"
+    quality: { warnings_policy: "no_new" }
+
+  gaokao:
+    prefix: "gaokao-"
+    apps: ["agent"]
+    color: "#C44536"
+    quality: { warnings_policy: "no_new" }
+
+# 鈹€鈹€鈹€ 杩愯鏃堕厤缃?鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+runtime:
+  sdk_home: "D:/9_infra/DevEco/6.1/sdk"
+  hvigorw: "D:/9_infra/DevEco/6.1/tools/hvigor/bin/hvigorw.bat"
+  node_home: "D:/9_infra/DevEco/6.1/tools/node"
+  hap_sign_jar: "D:/9_infra/DevEco/6.1/sdk/default/openharmony/toolchains/lib/hap-sign-tool.jar"
+  hdc: "D:/9_infra/DevEco/6.1/sdk/default/openharmony/toolchains/hdc.exe"
+  java: "D:/9_infra/DevEco/6.1/jbr/bin/java.exe"
+
+# 鈹€鈹€鈹€ 閫氱煡 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
+notifications:
+  on_stage_fail: "console + log file"
+  on_build_broken: "console + log file"       # 涓婃閫氳繃銆佹湰娆″け璐ョ殑 APP 楂樹寒
+  on_pipeline_complete: "console + report_path"

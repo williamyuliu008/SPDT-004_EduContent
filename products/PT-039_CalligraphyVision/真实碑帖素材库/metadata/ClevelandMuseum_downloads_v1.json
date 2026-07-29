@@ -1,0 +1,126 @@
+{
+  "metadata_version": "1.0",
+  "source": "Cleveland Museum of Art Open Access API",
+  "source_url": "https://openaccess-api.clevelandart.org",
+  "license": "CC0 (No Rights Reserved)",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "downloaded_date": "2026-07-21",
+  "total_items": 3,
+  "artworks": [
+    {
+      "accession_number": "1961.421.2",
+      "title_en": "Poem by Wang Wei in the Cursive Script Style",
+      "title_cn": "宋理宗书王维诗（行到水穷处·坐看云起时）",
+      "artist_en": "Song Lizong",
+      "artist_cn": "宋理宗",
+      "artist_dates": "1205-1264",
+      "dynasty": "Southern Song",
+      "year": "1256",
+      "technique": "Album leaf; ink on silk",
+      "format": "扇面 (Fan face)",
+      "content": "王维诗：行到水穷处，坐看云起时",
+      "storage_dir": "10_SouthernSong_SongLizong",
+      "files": [
+        {
+          "filename": "1961.421.2_web.jpg",
+          "resolution": "900px",
+          "size_mb": 0.2,
+          "use": "预览/网页"
+        },
+        {
+          "filename": "1961.421.2_print.jpg",
+          "resolution": "3400px",
+          "size_mb": 3.72,
+          "use": "临帖标准参照"
+        }
+      ],
+      "image_url": "https://clevelandart.org/art/1961.421.2",
+      "api_url": "https://openaccess-api.clevelandart.org/api/artworks/?q=1961.421.2",
+      "status": "downloaded",
+      "pt039_use": "标准参照层 · 草书/行书对比",
+      "label_for_product": "Source: Cleveland Museum of Art, CC0 (Public Domain)"
+    },
+    {
+      "accession_number": "2025.192",
+      "title_en": "Retreat on an Autumn Day, in Cursive Script",
+      "title_cn": "祝枝山草书《闲居秋日》",
+      "artist_en": "Zhu Yunming",
+      "artist_cn": "祝枝山",
+      "artist_dates": "1460-1527",
+      "dynasty": "Ming",
+      "year": "1523",
+      "technique": "Handscroll; ink on paper",
+      "storage_dir": "11_Ming_ZhuYunming",
+      "files": [
+        {
+          "filename": "2025.192_web.jpg",
+          "resolution": "900px",
+          "size_mb": 0.04,
+          "use": "预览"
+        },
+        {
+          "filename": "2025.192_print.jpg",
+          "resolution": "3400px",
+          "size_mb": 0.3,
+          "use": "临帖参照"
+        }
+      ],
+      "image_url": "https://clevelandart.org/art/2025.192",
+      "api_url": "https://openaccess-api.clevelandart.org/api/artworks/?q=2025.192",
+      "status": "downloaded",
+      "pt039_use": "标准参照层 · 明代草书",
+      "label_for_product": "Source: Cleveland Museum of Art, CC0 (Public Domain)"
+    },
+    {
+      "accession_number": "2001.42",
+      "title_en": "Calligraphy in Running Style based on Wang Bo's Essay on Tengwang Pavilion",
+      "title_cn": "铁保行书《滕王阁序》",
+      "artist_en": "Tiebao",
+      "artist_cn": "铁保",
+      "artist_dates": "1752-1824",
+      "dynasty": "Qing",
+      "year": "1811",
+      "technique": "Handscroll; ink on paper",
+      "scroll_length_cm": 647.9,
+      "content": "王勃《滕王阁序》节选",
+      "storage_dir": "12_Qing_Tiebao",
+      "files": [
+        {
+          "filename": "2001.42_web.jpg",
+          "resolution": "900px",
+          "size_mb": 0.44,
+          "use": "预览"
+        },
+        {
+          "filename": "2001.42_print.jpg",
+          "resolution": "3400px",
+          "size_mb": 2.65,
+          "use": "临帖标准参照 · 行书学习"
+        }
+      ],
+      "image_url": "https://clevelandart.org/art/2001.42",
+      "api_url": "https://openaccess-api.clevelandart.org/api/artworks/?q=2001.42",
+      "status": "downloaded",
+      "pt039_use": "标准参照层 · 清代行书 · 滕王阁序文学融合",
+      "label_for_product": "Source: Cleveland Museum of Art, CC0 (Public Domain)"
+    }
+  ],
+  "next_steps": [
+    "1. 用AI图像标注工具在print原图上叠加笔画注释（阶段3预备）",
+    "2. 重建辨析卡：真实扫描替换AI生成图像",
+    "3. 补充下载：Chen Jiru (2004.65)、Yueshan Daozong (2003.353) 等CC0藏品",
+    "4. 台北故宫手动下载：怀素自叙帖、颜真卿祭侄文稿（CC0）",
+    "5. 故宫数字库手动下载：兰亭序神龙本、九成宫醴泉铭"
+  ],
+  "api_capability_notes": {
+    "endpoint": "https://openaccess-api.clevelandart.org/api/artworks/",
+    "params": "department=Chinese+Art&type=Calligraphy&cc0&has_image=1",
+    "total_chinese_calligraphy_cc0": 11,
+    "image_tiers": {
+      "web": "900px, 300dpi (网页预览)",
+      "print": "3400px, 300dpi (临帖参照) ← 推荐",
+      "full": "原始TIFF (~6000-12000px, 商业出版级)"
+    },
+    "alternate_images": "多数藏品有多个alternate images（局部/细节图），可作为风格示意层"
+  }
+}

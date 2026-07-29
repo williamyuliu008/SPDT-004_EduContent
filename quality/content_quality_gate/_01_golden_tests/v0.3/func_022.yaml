@@ -1,0 +1,11 @@
+concept: 函数模型应用
+passed_v1: true
+sample_id: func_022
+source: VCC v1.0 math animation factory
+tags:
+  D1_process: static
+  D2_spatial: non_spatial
+  D3_complexity: complex
+  D4_presentation: process
+  D5_concept_type: processing
+  D6_subject: algebra

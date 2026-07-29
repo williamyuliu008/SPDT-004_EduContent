@@ -1,0 +1,195 @@
+{
+  "schema_version": "1.0.0",
+  "package_id": "革与鼎_EP04",
+  "series_title": "革与鼎",
+  "total_episodes": 1,
+  "produced_by": "PT-VFX",
+  "produced_at": "2026-07-16T19:22:08+08:00",
+  "source_episodes_dir": "D:\\92_products\\SPDT-004_EduContent\\SPDT-KTE\\PT-038\\古史_革与鼎_ep04_test\\scenes_out",
+  "episodes": [
+    {
+      "ep": 4,
+      "title": "汉武雄图",
+      "subtitle": "刘彻·盐铁专营·丝绸之路",
+      "video_file": "gushi_革与鼎_ep04_汉武雄图.mp4",
+      "audio_file": "",
+      "duration_seconds": 112.0,
+      "resolution": "720p",
+      "bitrate_kbps": 2000,
+      "chains": [
+        "古史_革与鼎_ep04"
+      ],
+      "cards_file": "",
+      "scene_timeline": [
+        {
+          "idx": 0,
+          "time": 0.0,
+          "scene_name": "前141年，刘彻登基",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep04",
+          "five_skandha": {
+            "color_base": "前141年 / 刘彻 / 刘彻登 / 刘彻登基",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/前141-前87年（汉武帝执政54年）"
+          }
+        },
+        {
+          "idx": 1,
+          "time": 8.0,
+          "scene_name": "【少年的志向】\n\n\n\n刘彻十六岁…",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep04",
+          "five_skandha": {
+            "color_base": "【少年 / 【少年的 / 【少年的志 / 【少年的志向",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/前141-前87年（汉武帝执政54年）"
+          }
+        },
+        {
+          "idx": 2,
+          "time": 16.0,
+          "scene_name": "刘彻等了几年，等来了一…",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep04",
+          "five_skandha": {
+            "color_base": "刘彻 / 刘彻等 / 刘彻等了 / 刘彻等了几",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/前141-前87年（汉武帝执政54年）"
+          }
+        },
+        {
+          "idx": 3,
+          "time": 24.0,
+          "scene_name": "马邑之谋失败后，汉武帝…",
+          "scene_type": "action",
+          "chain_ref": "古史_革与鼎_ep04",
+          "five_skandha": {
+            "color_base": "马邑 / 马邑之 / 马邑之谋 / 马邑之谋失",
+            "action_prompt": "书写/口述",
+            "recognition_marker": "#革与鼎/前141-前87年（汉武帝执政54年）"
+          }
+        },
+        {
+          "idx": 4,
+          "time": 32.0,
+          "scene_name": "汉武帝想了几个办法：\n\n\n\n第…",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep04",
+          "five_skandha": {
+            "color_base": "汉武 / 汉武帝 / 汉武帝想 / 汉武帝想了",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/前141-前87年（汉武帝执政54年）"
+          }
+        },
+        {
+          "idx": 5,
+          "time": 40.0,
+          "scene_name": "前119年，漠北大战之后，国库…",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep04",
+          "five_skandha": {
+            "color_base": "前119年 / 漠北 / 漠北大 / 漠北大战",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/前141-前87年（汉武帝执政54年）"
+          }
+        },
+        {
+          "idx": 6,
+          "time": 48.0,
+          "scene_name": "这就是中国历史上最早…",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep04",
+          "five_skandha": {
+            "color_base": "这就 / 这就是 / 这就是中 / 这就是中国",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/前141-前87年（汉武帝执政54年）"
+          }
+        },
+        {
+          "idx": 7,
+          "time": 56.0,
+          "scene_name": "盐铁专营的经济学逻辑…",
+          "scene_type": "action",
+          "chain_ref": "古史_革与鼎_ep04",
+          "five_skandha": {
+            "color_base": "盐铁 / 盐铁专 / 盐铁专营 / 盐铁专营的",
+            "action_prompt": "书写/口述",
+            "recognition_marker": "#革与鼎/前141-前87年（汉武帝执政54年）"
+          }
+        },
+        {
+          "idx": 8,
+          "time": 64.0,
+          "scene_name": "前138年，汉武帝派张骞出使…",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep04",
+          "five_skandha": {
+            "color_base": "前138年 / 汉武 / 汉武帝 / 汉武帝派",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/前141-前87年（汉武帝执政54年）"
+          }
+        },
+        {
+          "idx": 9,
+          "time": 72.0,
+          "scene_name": "更重要的是：西域的商人…",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep04",
+          "five_skandha": {
+            "color_base": "更重 / 更重要 / 更重要的 / 更重要的是",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/前141-前87年（汉武帝执政54年）"
+          }
+        },
+        {
+          "idx": 10,
+          "time": 80.0,
+          "scene_name": "丝绸之路的本质是：开放…",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep04",
+          "five_skandha": {
+            "color_base": "丝绸 / 丝绸之 / 丝绸之路 / 丝绸之路的",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/前141-前87年（汉武帝执政54年）"
+          }
+        },
+        {
+          "idx": 11,
+          "time": 88.0,
+          "scene_name": "汉武帝的盐铁专营，本质…",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep04",
+          "five_skandha": {
+            "color_base": "汉武 / 汉武帝 / 汉武帝的 / 汉武帝的盐",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/前141-前87年（汉武帝执政54年）"
+          }
+        },
+        {
+          "idx": 12,
+          "time": 96.0,
+          "scene_name": "今天的我们，站在汉武帝…",
+          "scene_type": "causal_chain",
+          "chain_ref": "古史_革与鼎_ep04",
+          "five_skandha": {
+            "color_base": "今天 / 今天的 / 今天的我 / 今天的我们",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/前141-前87年（汉武帝执政54年）"
+          }
+        },
+        {
+          "idx": 13,
+          "time": 104.0,
+          "scene_name": "高考考点提示：汉武帝的…",
+          "scene_type": "dual_track",
+          "chain_ref": "古史_革与鼎_ep04",
+          "five_skandha": {
+            "color_base": "高考 / 高考考 / 高考考点 / 高考考点提",
+            "action_prompt": "书写/口述",
+            "recognition_marker": "#革与鼎/前141-前87年（汉武帝执政54年）"
+          }
+        }
+      ]
+    }
+  ]
+}

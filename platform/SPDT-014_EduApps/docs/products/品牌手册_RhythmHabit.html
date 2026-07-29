@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RhythmHabit 品牌手册 — SPDT-001</title>
+<style>
+  :root {
+    --brand: #3B82B0;
+    --brand-light: #D0E8F5;
+    --brand-bg: #F5F9FC;
+    --text: #0A2E4E;
+    --text-sec: #5A7A9A;
+    --text-ter: #8AAAB8;
+    --card: #FFFFFF;
+    --border: #D0E8F5;
+    --accent: #60A5FA;
+    --warn: #FF9800;
+    --error: #F44336;
+    --radius: 10px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #F2F5F2; color: var(--text); line-height: 1.7;
+    max-width: 960px; margin: 0 auto; padding: 0 24px 80px;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #265472 100%);
+    color: #fff; border-radius: 0 0 20px 20px;
+    margin: 0 -24px 32px; padding: 48px 32px 40px;
+  }
+  .hero h1 { font-size: 2em; font-weight: 700; margin-bottom: 4px; }
+  .hero .subtitle { opacity: .85; font-size: 1.05em; margin-bottom: 16px; }
+  .hero .meta { display: flex; gap: 16px; flex-wrap: wrap; font-size: .88em; opacity: .75; }
+  .hero .meta span { background: rgba(255,255,255,.15); padding: 3px 12px; border-radius: 20px; }
+  .hero .badges { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+  .hero .badge {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: rgba(255,255,255,.2); padding: 5px 14px; border-radius: 20px; font-size: .85em;
+  }
+  .hero .badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #4CAF50; }
+
+  section { margin-bottom: 36px; }
+  h2 {
+    font-size: 1.35em; color: var(--brand); border-bottom: 2px solid var(--brand-light);
+    padding-bottom: 6px; margin-bottom: 16px;
+  }
+  h3 {
+    font-size: 1.1em; color: var(--text); margin: 16px 0 11px;
+    padding-left: 10px; border-left: 3px solid var(--brand);
+  }
+
+  table {
+    width: 100%; border-collapse: collapse; margin: 10px 0 18px;
+    font-size: .88em; border-radius: var(--radius); overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  }
+  th {
+    background: var(--brand); color: #fff; padding: 8px 12px;
+    text-align: left; font-weight: 600; white-space: nowrap;
+  }
+  td {
+    padding: 8px 12px; border-bottom: 1px solid var(--border);
+    background: var(--card); vertical-align: top;
+  }
+  tr:last-child td { border-bottom: none; }
+
+  code {
+    background: var(--brand-bg); color: var(--brand);
+    padding: 2px 6px; border-radius: 4px; font-size: .88em;
+    font-family: "Fira Code", "Cascadia Code", "Source Code Pro", monospace;
+  }
+  pre {
+    background: #1E1E1E; color: #D4D4D4; padding: 14px 18px;
+    border-radius: var(--radius); overflow-x: auto; margin: 8px 0 16px;
+    font-size: .82em; line-height: 1.5;
+  }
+  pre code { background: none; color: inherit; padding: 0; }
+
+  blockquote {
+    border-left: 4px solid var(--brand); background: var(--brand-bg);
+    padding: 10px 16px; margin: 6px 0 12px;
+    border-radius: 0 8px 8px 0; color: var(--text-sec); font-size: .93em;
+  }
+  a { color: var(--brand); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  ul, ol { padding-left: 24px; margin: 4px 0 10px; }
+  li { margin-bottom: 3px; }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+
+  .footer {
+    text-align: center; color: var(--text-ter); font-size: .85em;
+    padding: 20px 0 0; border-top: 1px solid var(--border); margin-top: 32px;
+  }
+
+  img { max-width: 100%; border-radius: var(--radius); }
+
+  @media (max-width: 600px) {
+    body { padding: 0 12px 60px; }
+    .hero { margin: 0 -12px 24px; padding: 32px 20px 28px; }
+    .hero h1 { font-size: 1.5em; }
+    table { font-size: .78em; }
+    th, td { padding: 6px 8px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>RhythmHabit 品牌手册</h1>
+  <div class="subtitle">律动习惯 · 习惯与生活方式</div>
+  <div class="meta">
+    <span>SPDT-001</span>
+    <span>鸿蒙生态开发</span>
+    <span>v1.1 · 2026-07-17</span>
+  </div>
+  <div class="badges">
+    <div class="badge"><span class="dot"></span> 已部署真机验证（DevEco 6.1 + devecocli）</div>
+    <div class="badge"><span class="dot"></span> CLI 全自动流水线</div>
+  </div>
+</div>
+
+<section>
+<h1>RhythmHabit 品牌手册</h1>
+<blockquote>
+<p><strong>品牌色 #3B82B0 蓝</strong> · OMAS: HDT-001-RH · v1.1 · 2026-07-17</p>
+</blockquote>
+<hr />
+<h2>一、品牌定位</h2>
+<h3>品牌标识</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>品牌名</td>
+<td>RhythmHabit（律动习惯）</td>
+</tr>
+<tr>
+<td>品牌色</td>
+<td><code>#3B82B0</code> 蓝</td>
+</tr>
+<tr>
+<td>OMAS 编号</td>
+<td>HDT-001-RH</td>
+</tr>
+<tr>
+<td>品类</td>
+<td>习惯与生活方式</td>
+</tr>
+<tr>
+<td>Slogan</td>
+<td><strong>让好习惯成为节奏</strong></td>
+</tr>
+<tr>
+<td>目标用户</td>
+<td>18-35 岁注重自律和习惯养成的用户</td>
+</tr>
+<tr>
+<td>定价策略</td>
+<td>订阅制（基础免费 + 高级 ¥8/月）</td>
+</tr>
+<tr>
+<td>质量策略</td>
+<td>warnings_policy: no_new</td>
+</tr>
+</tbody>
+</table>
+<h3>品牌理念</h3>
+<blockquote>
+<p>用户不需要在「功能臃肿的大而全」和「功能残缺的极简」之间妥协——习惯追踪应如呼吸般自然，打卡节奏融入生活肌理。RhythmHabit 用极简界面承载深层习惯科学，让自律变得可持续。</p>
+</blockquote>
+<h3>核心指标</h3>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>当前值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>品牌色</td>
+<td><code>#3B82B0</code></td>
+</tr>
+<tr>
+<td>已交付 APP</td>
+<td>1</td>
+</tr>
+<tr>
+<td>目标 APP 数</td>
+<td>20</td>
+</tr>
+<tr>
+<td>AI 代码生成率</td>
+<td>85%+</td>
+</tr>
+</tbody>
+</table>
+<h3>差异化对比</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>RhythmHabit</th>
+<th>传统习惯 APP</th>
+<th>健康超级 APP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>产品形态</td>
+<td>独立习惯工具矩阵</td>
+<td>单一打卡 APP</td>
+<td>多合一</td>
+</tr>
+<tr>
+<td>学习曲线</td>
+<td>零学习成本</td>
+<td>中</td>
+<td>高</td>
+</tr>
+<tr>
+<td>内核复用</td>
+<td>common/ 22 文件共享</td>
+<td>无</td>
+<td>内部复用但臃肿</td>
+</tr>
+<tr>
+<td>AI 生成率</td>
+<td>85%+</td>
+<td>0%</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>数据主权</td>
+<td>本地优先</td>
+<td>云端为主</td>
+<td>混合</td>
+</tr>
+<tr>
+<td>习惯科学</td>
+<td>Streak 算法 + 进度分段</td>
+<td>简单计数</td>
+<td>分散功能</td>
+</tr>
+<tr>
+<td>订阅价格</td>
+<td>¥8/月</td>
+<td>¥12-30/月</td>
+<td>¥30+/月</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>二、产品矩阵</h2>
+<h3>APP 清单</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>APP</th>
+<th>中文名</th>
+<th>功能</th>
+<th>编译</th>
+<th>签名</th>
+<th>HAP</th>
+<th>特色能力</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>rhythm-habit</td>
+<td>律动习惯</td>
+<td>极简习惯追踪与打卡</td>
+<td>✅</td>
+<td>✅</td>
+<td>412.6 KB</td>
+<td>segments 进度 + Streak 连续天数</td>
+</tr>
+<tr>
+<td>2</td>
+<td>rhythm-meditation</td>
+<td>律动冥想</td>
+<td>AI 个性化冥想引导与放松</td>
+<td>✅</td>
+<td>✅</td>
+<td>285.3 KB</td>
+<td>场景推荐 / 呼吸引导 / 时长定制</td>
+</tr>
+<tr>
+<td>3</td>
+<td>rhythm-nutrition</td>
+<td>律动营养</td>
+<td>饮食记录与营养追踪</td>
+<td>✅</td>
+<td>✅</td>
+<td>198.7 KB</td>
+<td>食物库 / 热量计算 / 营养素分析</td>
+</tr>
+<tr>
+<td>4</td>
+<td>rhythm-pomodoro</td>
+<td>律动专注</td>
+<td>番茄钟专注计时器</td>
+<td>✅</td>
+<td>✅</td>
+<td>176.2 KB</td>
+<td>工作/休息循环 / 统计报表 / 白噪音</td>
+</tr>
+<tr>
+<td>5</td>
+<td>rhythm-habit-game</td>
+<td>习惯游戏</td>
+<td>游戏化习惯养成</td>
+<td>✅</td>
+<td>✅</td>
+<td>310.5 KB</td>
+<td>成就系统 / 等级机制 / 社交挑战</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>总计</strong>: 5 款 APP，总 HAP 体积 1,383 KB，编译 + 签名 100% 通过。目标扩展至 20 款。</p>
+</blockquote>
+<h3>Feature Flag 矩阵</h3>
+<table>
+<thead>
+<tr>
+<th>APP</th>
+<th style="text-align: center;">HabitTracking</th>
+<th style="text-align: center;">Segments</th>
+<th style="text-align: center;">Streak</th>
+<th style="text-align: center;">Community</th>
+<th style="text-align: center;">AIAssist</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rhythm-habit</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>rhythm-meditation</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>rhythm-nutrition</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>rhythm-pomodoro</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>rhythm-habit-game</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">—</td>
+</tr>
+</tbody>
+</table>
+<h3>产品架构 — 五层习惯闭环</h3>
+<table>
+<thead>
+<tr>
+<th>层级</th>
+<th>说明</th>
+<th>对应 APP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>📝 <strong>习惯跟踪</strong></td>
+<td>记录每日习惯完成状态，极简交互</td>
+<td>rhythm-habit</td>
+</tr>
+<tr>
+<td>🧘 <strong>身心修养</strong></td>
+<td>冥想引导、放松训练、呼吸练习</td>
+<td>rhythm-meditation</td>
+</tr>
+<tr>
+<td>🍎 <strong>饮食管理</strong></td>
+<td>饮食记录、热量计算、营养追踪</td>
+<td>rhythm-nutrition</td>
+</tr>
+<tr>
+<td>⏱️ <strong>专注计时</strong></td>
+<td>番茄钟工作法、专注时间统计</td>
+<td>rhythm-pomodoro</td>
+</tr>
+<tr>
+<td>🎮 <strong>游戏激励</strong></td>
+<td>成就系统、等级机制、社交挑战</td>
+<td>rhythm-habit-game</td>
+</tr>
+</tbody>
+</table>
+<div class="codehilite"><pre><span></span><code>习惯跟踪 → 身心修养 → 饮食管理 → 专注计时 → 游戏激励
+  (输入)      (调节)      (营养)      (效率)       (强化)
+</code></pre></div>
+
+<hr />
+<h2>三、智能体定位</h2>
+<blockquote>
+<p>依据《智能体APP设计指南》，RhythmHabit 在核心习惯工具中嵌入<strong>陪伴型智能体</strong>，以温暖圆润的交互风格提供个性化习惯分析与方案调整。</p>
+</blockquote>
+<h3>3.1 智能体矩阵</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">APP</th>
+<th style="text-align: left;">Agent 优先级</th>
+<th style="text-align: left;">智能体类型</th>
+<th style="text-align: left;">核心能力</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">rhythm-habit</td>
+<td style="text-align: left;"><strong>P1</strong></td>
+<td style="text-align: left;">陪伴型 · AI 习惯分析 Agent</td>
+<td style="text-align: left;">习惯数据分析 → 方案调整建议 → 断链预警 → 个性化激励策略</td>
+</tr>
+<tr>
+<td style="text-align: left;">rhythm-meditation</td>
+<td style="text-align: left;"><strong>P1</strong></td>
+<td style="text-align: left;">陪伴型 · 个性化推荐 Agent</td>
+<td style="text-align: left;">情绪感知 → 冥想场景推荐 → 时长自适应 → 呼吸节奏引导</td>
+</tr>
+</tbody>
+</table>
+<h3>3.2 Agent 交互入口</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">属性</th>
+<th style="text-align: left;">规范</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>入口形态</strong></td>
+<td style="text-align: left;">页面底部<strong>圆润卡片面板</strong>，以<strong>微动画</strong>滑入，传递温暖陪伴感</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>品牌色</strong></td>
+<td style="text-align: left;">宁静蓝 <code>#3B82B0</code>，与品牌 Design Token 统一，搭配柔和的圆角与阴影</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>触发方式</strong></td>
+<td style="text-align: left;">连续打卡 3 天后自动弹出分析报告；也可点击首页 Agent 图标手动唤起</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>可见性规则</strong></td>
+<td style="text-align: left;">仅在 habit 和 meditation 中启用；nutrition/pomodoro/habit-game 保持纯工具体验</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>设计原则</strong></td>
+<td style="text-align: left;">圆润 · 温暖 · 微动画——让 AI 习惯教练像朋友一样陪伴</td>
+</tr>
+</tbody>
+</table>
+<h3>3.3 智能体设计原则</h3>
+<ol>
+<li><strong>陪伴优先</strong>: Agent 以「习惯教练」身份出现，使用第二人称亲和对话（"你今天比昨天早起了 10 分钟！"）</li>
+<li><strong>微动画叙事</strong>: 面板滑入/滑出、打卡成功粒子效果、Streak 火焰动画——用细节强化正向反馈</li>
+<li><strong>感知介入</strong>: 仅在关键节点主动出现（连续打卡 / 即将断链 / 新纪录），避免过度打扰</li>
+<li><strong>一致性</strong>: 所有 Agent 交互统一使用 #3B82B0 蓝色系，圆角 12px，为整个品牌的「温暖圆润」语言定调</li>
+</ol>
+<hr />
+<h2>四、技术规格</h2>
+<h3>4.1 技术栈（CLI 全自动流水线）</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>规格</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>语言与框架</td>
+<td>ArkTS strict mode · ArkUI Stage 模型 · Navigation + NavPathStack 路由</td>
+</tr>
+<tr>
+<td>SDK 版本</td>
+<td>compileSdkVersion <strong>26.0.0</strong> · compatibleSdkVersion <strong>6.1.1(24)</strong></td>
+</tr>
+<tr>
+<td>编译工具</td>
+<td>hvigorw.bat v6.26.1 · DevEco Studio 26.0</td>
+</tr>
+<tr>
+<td>PREFLIGHT</td>
+<td>8 项自动检查 · 品牌级 <code>-RH</code> 过滤</td>
+</tr>
+</tbody>
+</table>
+<h3>4.2 公共内核 (common/) — 22 个源文件</h3>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>文件数</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>组件库</td>
+<td>12</td>
+<td>HButton, HCard, HConfirmDialog, HEmptyState, HFAB, HFormItem, HNavBar, HProgressBar, HSearchBar, HTag, HTagGroup, HToast</td>
+</tr>
+<tr>
+<td>存储层</td>
+<td>2</td>
+<td>storageService.ts (泛型 CRUD), keys.ts</td>
+</tr>
+<tr>
+<td>主题</td>
+<td>1</td>
+<td>tokens.ts (Design Token)</td>
+</tr>
+<tr>
+<td>工具</td>
+<td>5</td>
+<td>date.ts, debounce.ts, format.ts, id.ts, validate.ts</td>
+</tr>
+<tr>
+<td>算法</td>
+<td>2</td>
+<td>streak.ts (连续打卡), sm2.ts (SM-2 间隔重复)</td>
+</tr>
+</tbody>
+</table>
+<h3>4.3 关键算法：streak.ts</h3>
+<div class="codehilite"><pre><span></span><code>streak.ts — 连续打卡算法
+├── 计算当前连续打卡天数
+├── 最长连续记录追踪
+├── 断链检测与恢复提示
+└── 周/月/季度维度统计
+</code></pre></div>
+
+<h3>4.4 常见编译问题速查</h3>
+<table>
+<thead>
+<tr>
+<th>错误码</th>
+<th>症状</th>
+<th>修复</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00303096</td>
+<td>mock 无效路径</td>
+<td>重命名 mock → mock_disabled</td>
+</tr>
+<tr>
+<td>00303038</td>
+<td>main_pages schema 失败</td>
+<td><code>"pages" → "src"</code></td>
+</tr>
+<tr>
+<td>00303027</td>
+<td>modelVersion 不一致</td>
+<td>统一 26.0.0</td>
+</tr>
+<tr>
+<td>11203005</td>
+<td>float.json 空节点</td>
+<td>补占位项</td>
+</tr>
+<tr>
+<td>11211120</td>
+<td>$media 缺失</td>
+<td>创建图标资源</td>
+</tr>
+<tr>
+<td>10605071/29/01</td>
+<td>bracket notation</td>
+<td>class + dot notation</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>五、运营数据（占位）</h2>
+<blockquote>
+<p>RhythmHabit 尚未上架鸿蒙应用商店。以下为 Q3 目标：</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>当前</th>
+<th>Q3 目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上架数</td>
+<td>0/5</td>
+<td>5/5</td>
+</tr>
+<tr>
+<td>下载量</td>
+<td>—</td>
+<td>5,000+</td>
+</tr>
+<tr>
+<td>日活 (DAU)</td>
+<td>—</td>
+<td>500+</td>
+</tr>
+<tr>
+<td>评分</td>
+<td>—</td>
+<td>4.5+ ★</td>
+</tr>
+<tr>
+<td>月收入</td>
+<td>—</td>
+<td>¥2,000+</td>
+</tr>
+<tr>
+<td>崩溃率</td>
+<td>—</td>
+<td>&lt; 0.5%</td>
+</tr>
+<tr>
+<td>Streak 完成率</td>
+<td>—</td>
+<td>60%+</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>六、发展规划</h2>
+<h3>6.1 里程碑时间线</h3>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>时间</th>
+<th>目标</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M1</td>
+<td>2026-07-08</td>
+<td>首批 5 款全通：编译+签名+CI</td>
+<td>✅ 已完成</td>
+</tr>
+<tr>
+<td>M2</td>
+<td>2026-07-12</td>
+<td>真机部署验证 + 冷启动 &lt; 2s（DevEco 6.1 + devecocli 全自动流水线）</td>
+<td>✅ 已完成</td>
+</tr>
+<tr>
+<td>M3</td>
+<td>2026-07-20</td>
+<td>品牌模板完善 + 首批 5 款新 APP 编译</td>
+<td>📋 规划中</td>
+</tr>
+<tr>
+<td>M4</td>
+<td>2026-08-01</td>
+<td>应用商店上架（第 1 款）</td>
+<td>📋 规划中</td>
+</tr>
+<tr>
+<td>M5</td>
+<td>2026-09-15</td>
+<td>10 款全部交付</td>
+<td>📋 规划中</td>
+</tr>
+<tr>
+<td>M6</td>
+<td>2026-10-30</td>
+<td>20 款全部交付 + 社区挑战上线</td>
+<td>📋 规划中</td>
+</tr>
+</tbody>
+</table>
+<h3>6.2 20 款扩展路线图</h3>
+<h4>📦 第 1 批 — 核心习惯 (7 月)</h4>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>APP</th>
+<th>中文名</th>
+<th>品类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>rhythm-meditation</td>
+<td>律动冥想</td>
+<td>冥想引导</td>
+</tr>
+<tr>
+<td>3</td>
+<td>rhythm-reading</td>
+<td>律动阅读</td>
+<td>阅读打卡</td>
+</tr>
+<tr>
+<td>4</td>
+<td>rhythm-focus</td>
+<td>律动专注</td>
+<td>番茄钟</td>
+</tr>
+<tr>
+<td>5</td>
+<td>rhythm-sleep</td>
+<td>律动作息</td>
+<td>睡眠追踪</td>
+</tr>
+<tr>
+<td>6</td>
+<td>rhythm-water</td>
+<td>律动饮水</td>
+<td>饮水提醒</td>
+</tr>
+</tbody>
+</table>
+<h4>📦 第 2 批 — 身体管理 (8 月)</h4>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>APP</th>
+<th>中文名</th>
+<th>品类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7</td>
+<td>rhythm-fitness</td>
+<td>律动健身</td>
+<td>运动打卡</td>
+</tr>
+<tr>
+<td>8</td>
+<td>rhythm-diet</td>
+<td>律动饮食</td>
+<td>饮食记录</td>
+</tr>
+<tr>
+<td>9</td>
+<td>rhythm-running</td>
+<td>律动跑步</td>
+<td>跑步计划</td>
+</tr>
+<tr>
+<td>10</td>
+<td>rhythm-weight</td>
+<td>律动体重</td>
+<td>体重追踪</td>
+</tr>
+<tr>
+<td>11</td>
+<td>rhythm-posture</td>
+<td>律动姿态</td>
+<td>体态矫正</td>
+</tr>
+</tbody>
+</table>
+<h4>📦 第 3 批 — 心智成长 (9 月)</h4>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>APP</th>
+<th>中文名</th>
+<th>品类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>12</td>
+<td>rhythm-journal</td>
+<td>律动日记</td>
+<td>每日反思</td>
+</tr>
+<tr>
+<td>13</td>
+<td>rhythm-gratitude</td>
+<td>律动感恩</td>
+<td>感恩日记</td>
+</tr>
+<tr>
+<td>14</td>
+<td>rhythm-mood</td>
+<td>律动心情</td>
+<td>情绪追踪</td>
+</tr>
+<tr>
+<td>15</td>
+<td>rhythm-learning</td>
+<td>律动学习</td>
+<td>学习打卡</td>
+</tr>
+<tr>
+<td>16</td>
+<td>rhythm-goals</td>
+<td>律动目标</td>
+<td>目标管理</td>
+</tr>
+</tbody>
+</table>
+<h4>📦 第 4 批 — 社交与高级 (10 月)</h4>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>APP</th>
+<th>中文名</th>
+<th>品类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>17</td>
+<td>rhythm-challenge</td>
+<td>律动挑战</td>
+<td>社区挑战</td>
+</tr>
+<tr>
+<td>18</td>
+<td>rhythm-habit-stats</td>
+<td>律动统计</td>
+<td>数据分析</td>
+</tr>
+<tr>
+<td>19</td>
+<td>rhythm-routine</td>
+<td>律动日常</td>
+<td>晨间/夜间流程</td>
+</tr>
+<tr>
+<td>20</td>
+<td>rhythm-budget</td>
+<td>律动理财</td>
+<td>消费习惯</td>
+</tr>
+</tbody>
+</table>
+<h3>6.3 新 APP 立项评审 (5 维)</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>评审问题</th>
+<th>权重</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>场景匹配</td>
+<td>是否填补习惯养成链路中的空白？</td>
+<td><strong>高</strong></td>
+</tr>
+<tr>
+<td>内核复用</td>
+<td>能否用 common/ 现有组件覆盖 80%+ UI？</td>
+<td><strong>高</strong></td>
+</tr>
+<tr>
+<td>竞品缺口</td>
+<td>鸿蒙生态中是否有同类产品？</td>
+<td>中</td>
+</tr>
+<tr>
+<td>AI 可达</td>
+<td>代码生成率能否达到 85%+？</td>
+<td>中</td>
+</tr>
+<tr>
+<td>用户痛点</td>
+<td>是否解决真实习惯养成场景中的具体痛点？</td>
+<td><strong>高</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>七、营销素材</h2>
+<h3>品牌口号</h3>
+<blockquote>
+<p><strong>RhythmHabit — 让好习惯成为节奏。</strong> 极简追踪 + 数据激励 + 社区共振，用科学方法养成终身习惯。</p>
+</blockquote>
+<h3>素材规格</h3>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>规格</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>应用图标</td>
+<td>1024×1024 px</td>
+<td>蓝色基调 · 律动波形元素</td>
+</tr>
+<tr>
+<td>商店截图</td>
+<td>鸿蒙框架 × 5 张</td>
+<td>首页/打卡/进度/统计/设置</td>
+</tr>
+<tr>
+<td>宣传横幅</td>
+<td>1242×2688 px 竖版</td>
+<td>品牌色 #3B82B0</td>
+</tr>
+<tr>
+<td>品牌 Logo</td>
+<td>中英文组合</td>
+<td>"RhythmHabit 律动习惯"</td>
+</tr>
+</tbody>
+</table>
+<h3>ASO 关键词</h3>
+<table>
+<thead>
+<tr>
+<th>APP</th>
+<th>核心词</th>
+<th>长尾词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rhythm-habit</td>
+<td>习惯打卡, 习惯追踪</td>
+<td>极简打卡, Streak 连续天, 自律养成</td>
+</tr>
+<tr>
+<td>rhythm-meditation</td>
+<td>冥想, 放松</td>
+<td>个性化冥想, 呼吸引导, 减压</td>
+</tr>
+<tr>
+<td>rhythm-nutrition</td>
+<td>饮食记录, 营养</td>
+<td>热量计算, 食物库, 营养素分析</td>
+</tr>
+<tr>
+<td>rhythm-pomodoro</td>
+<td>番茄钟, 专注</td>
+<td>工作计时, 白噪音, 效率工具</td>
+</tr>
+<tr>
+<td>rhythm-habit-game</td>
+<td>习惯游戏, 成就</td>
+<td>游戏化养成, 等级系统, 社交挑战</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>八、附录</h2>
+<h3>8.1 关键路径</h3>
+<table>
+<thead>
+<tr>
+<th>路径</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>项目根</td>
+<td><code>D:\92_products\SPDT-001_Harmony\</code></td>
+</tr>
+<tr>
+<td>APP 目录</td>
+<td><code>apps\rhythm-habit\</code></td>
+</tr>
+<tr>
+<td>公共内核</td>
+<td><code>common\</code></td>
+</tr>
+<tr>
+<td>CI 配置</td>
+<td><code>ci\pipeline.yaml</code></td>
+</tr>
+<tr>
+<td>文档</td>
+<td><code>docs\</code></td>
+</tr>
+</tbody>
+</table>
+<h3>8.2 OMAS 治理信息</h3>
+<div class="codehilite"><pre><span></span><code>SPDT-001 · HDT-001-RH
+品类: 习惯与生活方式
+团队: 鸿蒙特使
+质量: warnings_policy = no_new
+签名: 自动签名已配置
+</code></pre></div>
+
+<h3>8.3 关联文档</h3>
+<ul>
+<li>README.md — 项目总览</li>
+<li>编译问题手册 v2</li>
+<li>运营 SOP v1</li>
+<li>CI 流水线配置</li>
+</ul>
+<h3>8.4 环境变量</h3>
+<div class="codehilite"><pre><span></span><code><span class="n">OHOS_SDK_HOME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DevEco</span><span class="w"> </span><span class="n">Studio</span>\<span class="n">sdk</span>
+<span class="n">PATH</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">tools</span>\<span class="n">node</span>
+</code></pre></div>
+
+<hr />
+<h3>8.5 更新记录</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">日期</th>
+<th style="text-align: left;">版本</th>
+<th style="text-align: left;">变更</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">2026-07-17</td>
+<td style="text-align: left;">v1.1</td>
+<td style="text-align: left;">扩展至 5 款 APP（新增 meditation/nutrition/pomodoro/habit-game）；真机部署验证通过（DevEco 6.1 + devecocli）；新增智能体定位章节</td>
+</tr>
+<tr>
+<td style="text-align: left;">2026-07-07</td>
+<td style="text-align: left;">v1.0</td>
+<td style="text-align: left;">初始版本，首批 1 款编译+签名+CI 首跑</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<blockquote>
+<p>🏗️ 鸿蒙特使 · SPDT-001 | RhythmHabit 品牌手册 v1.1 | 2026-07-17</p>
+</blockquote>
+</section>
+<div class="footer">
+  <p>🏗️ 鸿蒙特使 · SPDT-001 | RhythmHabit 品牌手册 v1.1 | 2026-07-17</p>
+</div>
+
+</body>
+</html>

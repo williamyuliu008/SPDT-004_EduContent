@@ -1,0 +1,13 @@
+# HarmonyOS Build
+/build/
+/entry/build/
+/.preview/
+
+# IDE
+.idea/
+*.iml
+local.properties
+
+# OS
+.DS_Store
+Thumbs.db

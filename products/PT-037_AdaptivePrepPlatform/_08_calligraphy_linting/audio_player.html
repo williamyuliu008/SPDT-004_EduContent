@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>书法临帖 · 墨骨山河音频版</title>
+  <style>
+    /* ─────────────────────────────────────────
+       字体 & 变量
+    ───────────────────────────────────────── */
+    :root {
+      --ink: #1a1208;
+      --paper: #f5f0e8;
+      --paper-dark: #e8dfd0;
+      --accent: #8b1a1a;
+      --accent-light: #c0392b;
+      --gold: #c9a84c;
+      --gold-light: #e8c870;
+      --muted: #7a6a52;
+      --shadow: rgba(26,18,8,0.12);
+      --border: #d4c9b0;
+      --player-bg: #2d2010;
+      --player-text: #f0e8d0;
+      --radius: 8px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Georgia', 'Noto Serif SC', 'Source Han Serif CN', '宋体', serif;
+      background: var(--ink);
+      color: var(--ink);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* 宣纸纹理背景 */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 30%, rgba(201,168,76,0.04) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(139,26,26,0.06) 0%, transparent 50%),
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 3px,
+          rgba(139,26,26,0.015) 3px,
+          rgba(139,26,26,0.015) 4px
+        );
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ─────────────────────────────────────────
+       顶部导航
+    ───────────────────────────────────────── */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--ink);
+      border-bottom: 1px solid rgba(201,168,76,0.3);
+      padding: 12px 24px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .logo {
+      font-size: 18px; font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 2px;
+    }
+    .logo span { color: var(--accent-light); }
+    .header-nav {
+      margin-left: auto;
+      display: flex; gap: 8px;
+    }
+    .nav-btn {
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.3);
+      color: var(--gold);
+      padding: 6px 14px; border-radius: 20px;
+      font-size: 13px; cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    .nav-btn:hover, .nav-btn.active {
+      background: rgba(201,168,76,0.2);
+      border-color: var(--gold);
+    }
+
+    /* ─────────────────────────────────────────
+       主布局
+    ───────────────────────────────────────── */
+    .main {
+      position: relative; z-index: 1;
+      max-width: 1400px; margin: 0 auto;
+      padding: 24px 16px;
+    }
+
+    /* 集数选择器 */
+    .ep-selector {
+      display: flex; gap: 12px; flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .ep-card {
+      background: var(--paper);
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 18px;
+      cursor: pointer;
+      transition: all 0.2s;
+      min-width: 160px;
+      flex: 1;
+    }
+    .ep-card:hover { border-color: var(--gold); box-shadow: 0 4px 16px var(--shadow); }
+    .ep-card.active {
+      border-color: var(--accent);
+      background: linear-gradient(135deg, var(--paper) 60%, #f8f0e4);
+      box-shadow: 0 4px 20px rgba(139,26,26,0.15);
+    }
+    .ep-card-num {
+      font-size: 11px; color: var(--muted); letter-spacing: 1px;
+      text-transform: uppercase; margin-bottom: 4px;
+    }
+    .ep-card-title { font-size: 14px; font-weight: 700; color: var(--ink); line-height: 1.3; }
+    .ep-card-theme { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+    /* 三栏布局 */
+    .layout {
+      display: grid;
+      grid-template-columns: 320px 1fr 320px;
+      grid-template-rows: auto 1fr;
+      gap: 20px;
+      min-height: calc(100vh - 160px);
+    }
+
+    /* ─────────────────────────────────────────
+       左侧：碑帖展示
+    ───────────────────────────────────────── */
+    .calligraphy-panel {
+      grid-row: 1 / 3;
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .calligraphy-image {
+      background: var(--paper-dark);
+      border: 3px solid var(--border);
+      border-radius: var(--radius);
+      aspect-ratio: 3/4;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+      padding: 16px;
+    }
+    .calligraphy-image::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(
+        45deg,
+        rgba(139,26,26,0.02) 0px,
+        rgba(139,26,26,0.02) 2px,
+        transparent 2px,
+        transparent 8px
+      );
+    }
+    .calligraphy-img-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      position: relative; z-index: 1;
+    }
+    .calligraphy-img-placeholder svg {
+      width: 64px; height: 64px;
+      opacity: 0.3; margin-bottom: 12px;
+    }
+    .calligraphy-img-label {
+      font-size: 13px; color: var(--muted);
+      text-align: center;
+    }
+    .calligraphy-img-sublabel {
+      font-size: 11px; color: #b0a080;
+      margin-top: 4px;
+    }
+    .calligraphy-title {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px;
+    }
+    .calligraphy-title h3 {
+      font-size: 15px; font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+    .calligraphy-title p {
+      font-size: 12px; color: var(--muted);
+      line-height: 1.6;
+    }
+    .practice-box {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px;
+    }
+    .practice-box h4 {
+      font-size: 13px; font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 10px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .practice-box h4::before {
+      content: '◆'; color: var(--accent);
+      font-size: 10px;
+    }
+    .practice-item {
+      font-size: 12px; color: var(--muted);
+      padding: 5px 0;
+      border-bottom: 1px dashed var(--border);
+      line-height: 1.5;
+    }
+    .practice-item:last-child { border-bottom: none; }
+
+    /* 五体风格小卡片 */
+    .styles-panel {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px;
+    }
+    .styles-panel h4 {
+      font-size: 13px; font-weight: 700;
+      color: var(--ink); margin-bottom: 10px;
+    }
+    .style-tag {
+      display: inline-flex; align-items: center; gap: 4px;
+      background: var(--paper-dark);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 3px 10px;
+      font-size: 11px; color: var(--muted);
+      margin: 2px;
+      cursor: default;
+      transition: all 0.2s;
+    }
+    .style-tag:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .style-tag.era-tag { color: var(--gold); border-color: rgba(201,168,76,0.4); }
+
+    /* ─────────────────────────────────────────
+       中间：播放器 + 字幕
+    ───────────────────────────────────────── */
+    .center-panel {
+      grid-row: 1 / 3;
+      display: flex; flex-direction: column; gap: 16px;
+    }
+
+    /* 播放器主体 */
+    .player-card {
+      background: var(--player-bg);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+    .player-episode-title {
+      font-size: 13px; color: var(--gold);
+      letter-spacing: 1px; margin-bottom: 14px;
+    }
+    .player-episode-title strong {
+      font-size: 16px; color: var(--player-text);
+      display: block; margin-top: 2px;
+    }
+
+    /* 波形装饰 */
+    .waveform {
+      height: 48px; margin-bottom: 14px;
+      display: flex; align-items: center; gap: 2px;
+    }
+    .wave-bar {
+      flex: 1;
+      background: linear-gradient(to top, var(--gold) 0%, var(--accent-light) 100%);
+      border-radius: 2px;
+      min-width: 3px; max-width: 8px;
+      transition: height 0.3s;
+      opacity: 0.5;
+    }
+    .wave-bar.active {
+      opacity: 1;
+      animation: wave-pulse 0.8s ease-in-out infinite alternate;
+    }
+    @keyframes wave-pulse {
+      from { transform: scaleY(0.5); }
+      to { transform: scaleY(1); }
+    }
+
+    /* 进度条 */
+    .progress-wrap {
+      margin-bottom: 14px;
+    }
+    .progress-bar {
+      height: 6px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 3px;
+      cursor: pointer;
+      position: relative;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
+      border-radius: 3px;
+      position: relative;
+      transition: width 0.1s;
+    }
+    .progress-fill::after {
+      content: '';
+      position: absolute; right: -6px; top: -5px;
+      width: 16px; height: 16px;
+      background: var(--gold-light);
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(201,168,76,0.5);
+    }
+    .time-display {
+      display: flex; justify-content: space-between;
+      font-size: 11px; color: rgba(240,232,208,0.5);
+      margin-top: 6px;
+      font-family: 'Courier New', monospace;
+    }
+
+    /* 控制按钮 */
+    .controls {
+      display: flex; align-items: center;
+      justify-content: center; gap: 16px;
+      margin-bottom: 14px;
+    }
+    .ctrl-btn {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--player-text);
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: all 0.2s;
+      font-size: 16px;
+    }
+    .ctrl-btn:hover {
+      background: rgba(255,255,255,0.15);
+      border-color: rgba(201,168,76,0.4);
+      color: var(--gold);
+    }
+    .ctrl-btn.play-btn {
+      width: 60px; height: 60px;
+      background: var(--accent);
+      border-color: var(--accent-light);
+      font-size: 22px;
+    }
+    .ctrl-btn.play-btn:hover {
+      background: var(--accent-light);
+      color: #fff;
+    }
+    .speed-btn {
+      width: 44px; height: 44px;
+      border-radius: 22px;
+      font-size: 12px; font-weight: 700;
+      font-family: inherit;
+    }
+
+    /* 倍速选择器 */
+    .speed-options {
+      display: flex; justify-content: center;
+      gap: 6px; margin-bottom: 14px;
+    }
+    .speed-opt {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: rgba(240,232,208,0.5);
+      padding: 4px 12px; border-radius: 12px;
+      font-size: 12px; cursor: pointer;
+      transition: all 0.2s; font-family: inherit;
+    }
+    .speed-opt.active {
+      background: rgba(201,168,76,0.2);
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* 字幕区 */
+    .script-panel {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      flex: 1;
+      overflow: hidden;
+    }
+    .script-header {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .script-header h4 {
+      font-size: 13px; color: var(--ink);
+    }
+    .script-mode-toggle {
+      display: flex; gap: 4px;
+    }
+    .script-mode-btn {
+      background: var(--paper-dark);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 3px 10px; border-radius: 12px;
+      font-size: 11px; cursor: pointer;
+      transition: all 0.2s; font-family: inherit;
+    }
+    .script-mode-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+    .script-scroll {
+      height: 320px; overflow-y: auto;
+      padding: 16px;
+      scroll-behavior: smooth;
+    }
+    .script-scroll::-webkit-scrollbar { width: 4px; }
+    .script-scroll::-webkit-scrollbar-track { background: var(--paper-dark); }
+    .script-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+    .script-line {
+      font-size: 14px; line-height: 2; color: var(--muted);
+      padding: 6px 10px; border-radius: 6px;
+      cursor: pointer; transition: all 0.2s;
+      margin-bottom: 4px;
+      border-left: 3px solid transparent;
+    }
+    .script-line:hover {
+      background: var(--paper-dark);
+      color: var(--ink);
+    }
+    .script-line.active {
+      background: linear-gradient(90deg, rgba(139,26,26,0.08) 0%, transparent 100%);
+      color: var(--accent);
+      border-left-color: var(--accent);
+      font-weight: 600;
+    }
+    .script-line .scene-tag {
+      font-size: 11px; color: var(--gold);
+      background: rgba(201,168,76,0.1);
+      padding: 1px 6px; border-radius: 8px;
+      margin-right: 8px; font-family: monospace;
+    }
+    .script-time {
+      font-size: 10px; color: #c0b090;
+      margin-right: 8px;
+      font-family: 'Courier New', monospace;
+      vertical-align: middle;
+    }
+
+    /* ─────────────────────────────────────────
+       右侧：计时器 + 讲稿全文
+    ───────────────────────────────────────── */
+    .right-panel {
+      grid-row: 1 / 3;
+      display: flex; flex-direction: column; gap: 16px;
+    }
+
+    /* 计时器 */
+    .timer-card {
+      background: var(--paper);
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+    }
+    .timer-card h4 {
+      font-size: 13px; font-weight: 700;
+      color: var(--ink); margin-bottom: 14px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .timer-display {
+      text-align: center; margin-bottom: 14px;
+    }
+    .timer-clock {
+      font-family: 'Courier New', monospace;
+      font-size: 48px; font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 2px;
+      line-height: 1;
+    }
+    .timer-label {
+      font-size: 11px; color: var(--muted);
+      margin-top: 6px; letter-spacing: 1px;
+    }
+    .timer-presets {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 8px; margin-bottom: 12px;
+    }
+    .timer-preset {
+      background: var(--paper-dark);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 8px; border-radius: var(--radius);
+      font-size: 14px; font-weight: 700;
+      cursor: pointer; transition: all 0.2s;
+      text-align: center; font-family: inherit;
+    }
+    .timer-preset:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+    .timer-preset.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+    .timer-custom {
+      display: flex; gap: 6px; margin-bottom: 12px;
+    }
+    .timer-custom input {
+      flex: 1;
+      background: var(--paper-dark);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 7px 10px;
+      font-size: 13px; color: var(--ink);
+      font-family: inherit;
+      outline: none;
+    }
+    .timer-custom input:focus {
+      border-color: var(--gold);
+    }
+    .timer-custom span {
+      font-size: 12px; color: var(--muted);
+      display: flex; align-items: center;
+    }
+    .timer-actions {
+      display: flex; gap: 8px;
+    }
+    .timer-btn {
+      flex: 1;
+      padding: 10px; border-radius: var(--radius);
+      font-size: 13px; font-weight: 700;
+      cursor: pointer; transition: all 0.2s;
+      border: none; font-family: inherit;
+    }
+    .timer-btn.start {
+      background: var(--accent);
+      color: #fff;
+    }
+    .timer-btn.start:hover { background: var(--accent-light); }
+    .timer-btn.pause {
+      background: var(--gold);
+      color: var(--ink);
+    }
+    .timer-btn.pause:hover { background: var(--gold-light); }
+    .timer-btn.reset {
+      background: var(--paper-dark);
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+    .timer-btn.reset:hover { border-color: var(--muted); color: var(--ink); }
+    .timer-finish-msg {
+      display: none;
+      text-align: center; margin-top: 12px;
+      background: rgba(139,26,26,0.08);
+      border: 1px solid rgba(139,26,26,0.2);
+      border-radius: var(--radius);
+      padding: 12px;
+      font-size: 13px; color: var(--accent);
+    }
+    .timer-finish-msg.show { display: block; }
+
+    /* 讲稿全文 */
+    .full-script-panel {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      flex: 1;
+      overflow: hidden;
+      display: flex; flex-direction: column;
+    }
+    .full-script-panel h4 {
+      font-size: 13px; font-weight: 700;
+      color: var(--ink); padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .full-script-content {
+      padding: 14px 16px;
+      font-size: 13px; line-height: 2;
+      color: var(--muted);
+      overflow-y: auto;
+      flex: 1;
+    }
+    .full-script-content p { margin-bottom: 12px; }
+
+    /* 相关碑帖 */
+    .related-panel {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px;
+    }
+    .related-panel h4 {
+      font-size: 13px; font-weight: 700;
+      color: var(--ink); margin-bottom: 10px;
+    }
+    .related-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px dashed var(--border);
+    }
+    .related-item:last-child { border-bottom: none; }
+    .related-dot {
+      width: 8px; height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .related-info { flex: 1; }
+    .related-name { font-size: 13px; font-weight: 600; color: var(--ink); }
+    .related-meta { font-size: 11px; color: var(--muted); }
+
+    /* ─────────────────────────────────────────
+       提醒弹窗
+    ───────────────────────────────────────── */
+    .timer-alert-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 1000;
+      align-items: center; justify-content: center;
+    }
+    .timer-alert-overlay.show { display: flex; }
+    .timer-alert-box {
+      background: var(--paper);
+      border: 3px solid var(--accent);
+      border-radius: 16px;
+      padding: 32px 40px;
+      text-align: center;
+      max-width: 360px;
+    }
+    .timer-alert-icon {
+      font-size: 48px; margin-bottom: 12px;
+    }
+    .timer-alert-title {
+      font-size: 22px; font-weight: 700;
+      color: var(--accent); margin-bottom: 8px;
+    }
+    .timer-alert-text {
+      font-size: 14px; color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .timer-alert-btn {
+      background: var(--accent);
+      color: #fff; border: none;
+      padding: 12px 32px; border-radius: 24px;
+      font-size: 15px; font-weight: 700;
+      cursor: pointer; font-family: inherit;
+      transition: all 0.2s;
+    }
+    .timer-alert-btn:hover { background: var(--accent-light); }
+
+    /* ─────────────────────────────────────────
+       响应式
+    ───────────────────────────────────────── */
+    @media (max-width: 1100px) {
+      .layout {
+        grid-template-columns: 280px 1fr 280px;
+      }
+    }
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+      }
+      .calligraphy-panel { grid-row: auto; }
+      .center-panel { grid-column: 1 / -1; grid-row: auto; }
+      .right-panel { grid-column: 1 / -1; grid-row: auto; }
+      .script-scroll { height: 240px; }
+      .calligraphy-image { aspect-ratio: 4/3; }
+    }
+    @media (max-width: 600px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+      header { padding: 10px 14px; }
+      .logo { font-size: 15px; }
+      .header-nav { display: none; }
+      .ep-selector { gap: 8px; }
+      .ep-card { min-width: 140px; }
+      .calligraphy-image { aspect-ratio: 3/2; }
+      .timer-clock { font-size: 36px; }
+      .timer-presets { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── 顶部导航 ── -->
+<header>
+  <div class="logo">墨<span>骨</span>山河 · 临帖音频版</div>
+  <div class="header-nav">
+    <button class="nav-btn active" onclick="switchView('player')" id="nav-player">播放器</button>
+    <button class="nav-btn" onclick="switchView('styles')" id="nav-styles">五体概览</button>
+  </div>
+</header>
+
+<!-- ── 主内容 ── -->
+<div class="main">
+
+  <!-- 集数选择器 -->
+  <div class="ep-selector" id="ep-selector"></div>
+
+  <!-- 三栏布局 -->
+  <div class="layout" id="layout-main">
+
+    <!-- 左栏：碑帖展示 -->
+    <div class="calligraphy-panel">
+      <div class="calligraphy-image" id="calligraphy-image">
+        <div class="calligraphy-img-placeholder">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="4" width="48" height="56" rx="2" stroke="currentColor" stroke-width="2"/>
+            <line x1="16" y1="16" x2="48" y2="16" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="16" y1="24" x2="48" y2="24" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="16" y1="32" x2="40" y2="32" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="16" y1="40" x2="44" y2="40" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="16" y1="48" x2="36" y2="48" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          <div class="calligraphy-img-label" id="img-label">颜真卿</div>
+          <div class="calligraphy-img-sublabel" id="img-sublabel">祭侄文稿</div>
+        </div>
+      </div>
+      <div class="calligraphy-title" id="calligraphy-title">
+        <h3 id="ct-title">乾元元年·蒲州的墨与血</h3>
+        <p id="ct-subtitle">颜真卿 · 安史之乱 · 乾元元年(758)</p>
+      </div>
+      <div class="practice-box">
+        <h4>临帖要点</h4>
+        <div id="practice-list"></div>
+      </div>
+      <div class="styles-panel">
+        <h4>书法五体</h4>
+        <div>
+          <span class="style-tag era-tag">篆书·先秦</span>
+          <span class="style-tag era-tag">隶书·汉</span>
+          <span class="style-tag era-tag">楷书·唐</span>
+          <span class="style-tag era-tag">行书·晋宋</span>
+          <span class="style-tag era-tag">草书·唐</span>
+        </div>
+        <div style="margin-top:8px;">
+          <span class="style-tag">李斯</span>
+          <span class="style-tag">程邈</span>
+          <span class="style-tag">王羲之</span>
+          <span class="style-tag">颜真卿</span>
+          <span class="style-tag">柳公权</span>
+          <span class="style-tag">苏轼</span>
+          <span class="style-tag">张旭</span>
+          <span class="style-tag">怀素</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 中栏：播放器 + 字幕 -->
+    <div class="center-panel">
+      <div class="player-card">
+        <div class="player-episode-title">
+          <span id="ep-badge">EP01</span>
+          <strong id="ep-full-title">乾元元年·蒲州的墨与血</strong>
+        </div>
+        <!-- 波形 -->
+        <div class="waveform" id="waveform"></div>
+        <!-- 进度条 -->
+        <div class="progress-wrap">
+          <div class="progress-bar" id="progress-bar">
+            <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+          </div>
+          <div class="time-display">
+            <span id="time-current">0:00</span>
+            <span id="time-total">0:00</span>
+          </div>
+        </div>
+        <!-- 倍速 -->
+        <div class="speed-options">
+          <button class="speed-opt" data-speed="0.75" onclick="setSpeed(0.75)">0.75x</button>
+          <button class="speed-opt active" data-speed="1" onclick="setSpeed(1)">1x</button>
+          <button class="speed-opt" data-speed="1.25" onclick="setSpeed(1.25)">1.25x</button>
+          <button class="speed-opt" data-speed="1.5" onclick="setSpeed(1.5)">1.5x</button>
+        </div>
+        <!-- 控制按钮 -->
+        <div class="controls">
+          <button class="ctrl-btn" onclick="skip(-15)" title="倒退15秒">−15</button>
+          <button class="ctrl-btn play-btn" id="play-btn" onclick="togglePlay()">
+            <svg id="play-icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="5,3 19,12 5,21"/>
+            </svg>
+          </button>
+          <button class="ctrl-btn" onclick="skip(15)" title="快进15秒">+15</button>
+          <button class="ctrl-btn speed-btn" id="speed-display" onclick="cycleSpeed()">1x</button>
+        </div>
+      </div>
+
+      <!-- 字幕区 -->
+      <div class="script-panel">
+        <div class="script-header">
+          <h4>📜 同步字幕</h4>
+          <div class="script-mode-toggle">
+            <button class="script-mode-btn active" id="mode-sync" onclick="setScriptMode('sync')">同步</button>
+            <button class="script-mode-btn" id="mode-full" onclick="setScriptMode('full')">全文</button>
+          </div>
+        </div>
+        <div class="script-scroll" id="script-scroll">
+          <div id="script-lines"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 右栏：计时器 + 讲稿 -->
+    <div class="right-panel">
+      <!-- 临帖计时器 -->
+      <div class="timer-card">
+        <h4>⏱ 临帖计时器</h4>
+        <div class="timer-display">
+          <div class="timer-clock" id="timer-clock">00:00</div>
+          <div class="timer-label">练习时长 · 专注临帖</div>
+        </div>
+        <div class="timer-presets">
+          <button class="timer-preset" onclick="setTimerPreset(5)">5分钟</button>
+          <button class="timer-preset" onclick="setTimerPreset(10)">10分钟</button>
+          <button class="timer-preset" onclick="setTimerPreset(15)">15分钟</button>
+          <button class="timer-preset active" onclick="setTimerPreset(30)">30分钟</button>
+        </div>
+        <div class="timer-custom">
+          <input type="number" id="custom-minutes" placeholder="自定义" min="1" max="120">
+          <span>分钟</span>
+          <button class="timer-btn start" onclick="startCustomTimer()" style="flex:0;padding:7px 12px;">设定</button>
+        </div>
+        <div class="timer-actions">
+          <button class="timer-btn start" id="timer-start-btn" onclick="startTimer()">▶ 开始</button>
+          <button class="timer-btn pause" id="timer-pause-btn" onclick="pauseTimer()" style="display:none;">⏸ 暂停</button>
+          <button class="timer-btn reset" onclick="resetTimer()">↺ 重置</button>
+        </div>
+        <div class="timer-finish-msg" id="timer-finish-msg">
+          ✦ 练习完成！休息一下，起身舒展 ✦
+        </div>
+      </div>
+
+      <!-- 讲稿全文 -->
+      <div class="full-script-panel">
+        <h4>📖 讲稿全文</h4>
+        <div class="full-script-content" id="full-script"></div>
+      </div>
+
+      <!-- 相关碑帖 -->
+      <div class="related-panel">
+        <h4>📚 相关碑帖</h4>
+        <div id="related-list"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── 计时器提醒弹窗 ── -->
+<div class="timer-alert-overlay" id="timer-alert-overlay">
+  <div class="timer-alert-box">
+    <div class="timer-alert-icon">⏰</div>
+    <div class="timer-alert-title">临帖时间到！</div>
+    <div class="timer-alert-text">已完成设定时长的练习，休息一下吧～</div>
+    <button class="timer-alert-btn" onclick="dismissAlert()">好的，休息一下</button>
+  </div>
+</div>
+
+<!-- ── 音频元素 ── -->
+<audio id="audio-player" preload="metadata"></audio>
+
+<script>
+/* ═══════════════════════════════════════════
+   核心数据（内嵌，避免跨域）
+   ═══════════════════════════════════════════ */
+const EPISODES = [
+  {
+    id: "ep01", title: "乾元元年·蒲州的墨与血",
+    theme: "颜真卿与安史之乱", subtitle: "盛唐的背影：一位忠臣的笔下山河",
+    audio_file: "Ep01_天朝崩塌.mp3",
+    audio_path: "D:\\92_products\\SPDT-004_EduContent\\PT-038_TextExperience\\audio\\Ep01_天朝崩塌.mp3",
+    practice_duration: 15,
+    img_label: "颜真卿", img_sublabel: "祭侄文稿",
+    practice_points: ["执笔：正锋为主，腕力沉稳","用墨：浓墨为主，枯润相生","结构：中宫收紧，四肢开展","气韵：庄重雄浑，忠义满纸"],
+    timestamps: [
+      {time:0,text:"【卷首语】",scene:"引子"},
+      {time:12,text:"乾元元年，公元758年。",scene:"时间标记"},
+      {time:25,text:"蒲州城头的风，带着黄河的潮湿与战火的焦味。",scene:"场景描写"},
+      {time:42,text:"唐代书法家颜真卿站在城垛上，望着远方安禄山叛军压境的狼烟。",scene:"人物出场"},
+      {time:62,text:"这一年，他四十九岁，官居蒲州刺史。",scene:"人物介绍"},
+      {time:78,text:"距离那场改变大唐命运的安史之乱，已经过去了整整五年。",scene:"历史背景"},
+      {time:95,text:"天宝十四载，公元755年冬天，安禄山在范阳起兵。",scene:"安史之乱爆发"},
+      {time:115,text:"渔阳鼙鼓动地来，惊破霓裳羽衣曲。",scene:"诗歌引用"},
+      {time:135,text:"洛阳、长安相继沦陷，唐玄宗仓皇西逃。",scene:"长安沦陷"},
+      {time:155,text:"颜氏一门，在这场浩劫中遭受了灭顶之灾。",scene:"颜氏家族"},
+      {time:175,text:"颜真卿的兄长颜杲卿，时任常山太守，率先起兵反抗。",scene:"颜杲卿起义"},
+      {time:198,text:"常山城破之日，颜杲卿被俘，骂贼不屈，被割舌而死。",scene:"颜杲卿殉国"},
+      {time:220,text:"他的侄子颜季明，也在这场战乱中被杀害，头颅被悬于城门。",scene:"颜季明遇难"},
+      {time:245,text:"直到战后，颜真卿才派人寻访，仅找回侄子的头骨。",scene:"战后寻访"},
+      {time:270,text:"乾元元年，颜真卿命人前往洛阳，终于迎回了兄长的灵柩。",scene:"迎回灵柩"},
+      {time:295,text:"悲愤交加之下，他提笔写下了那篇流传千古的《祭侄文稿》。",scene:"书写契机"},
+      {time:318,text:"这篇文稿，被后世誉为「天下第二行书」。",scene:"书法地位"},
+      {time:338,text:"全篇涂改之处甚多，笔锋时而急促、时而凝重，",scene:"文稿特点（一）"},
+      {time:360,text:"字里行间，是一个侄子对兄长一家的无尽哀思。",scene:"文稿特点（二）"},
+      {time:385,text:"颜真卿的楷书端庄雄伟，骨力遒劲；",scene:"书法风格（一）"},
+      {time:408,text:"而他的行草书，则是在这乱世中磨砺出的另一面——",scene:"书法风格（二）"},
+      {time:430,text:"悲壮、沉郁、忠义满腔。",scene:"书法风格（三）"},
+      {time:452,text:"建中四年，公元783年，淮西节度使李希烈叛乱。",scene:"晚年遭遇"},
+      {time:475,text:"年过七旬的颜真卿，奉命前往劝谕，被李希烈扣押。",scene:"被扣留"},
+      {time:498,text:"他宁死不屈，最终被缢杀于狱中，享年七十六岁。",scene:"英勇就义"},
+      {time:522,text:"一个人，在盛唐的背影里，以笔为刀，以墨为血。",scene:"结语（一）"},
+      {time:545,text:"他写的不仅是字，更是一个时代最后的脊梁。",scene:"结语（二）"},
+      {time:568,text:"【临帖要点】执笔宜正锋，行笔宜沉稳，",scene:"临帖指导（一）"},
+      {time:590,text:"学颜体，须先学其人，再学其字。",scene:"临帖指导（二）"},
+      {time:615,text:"忠义之气，贯于笔端，此为颜体之魂。",scene:"临帖指导（三）"}
+    ],
+    related_calligraphy: [
+      {name:"祭侄文稿",era:"唐",location:"台北故宫博物院"},
+      {name:"争座位帖",era:"唐",location:"西安碑林博物馆"},
+      {name:"多宝塔碑",era:"唐",location:"西安碑林博物馆"},
+      {name:"颜勤礼碑",era:"唐",location:"西安碑林博物馆"}
+    ]
+  },
+  {
+    id: "ep02", title: "帝国挽歌",
+    theme: "苏轼与北宋文人书风",
+    subtitle: "乌台诗案后，一蓑烟雨任平生",
+    audio_file: "Ep02_帝国挽歌.mp3",
+    audio_path: "D:\\92_products\\SPDT-004_EduContent\\PT-038_TextExperience\\audio\\Ep02_帝国挽歌.mp3",
+    practice_duration: 15,
+    img_label: "苏轼", img_sublabel: "黄州寒食诗帖",
+    practice_points: ["用笔：提按分明，轻重交替","墨色：浓淡枯润，层次丰富","结构：错落有致，自然天成","气韵：文人风骨，随性而不逾矩"],
+    timestamps: [
+      {time:0,text:"【卷首语】",scene:"引子"},
+      {time:15,text:"元丰三年，公元1080年。",scene:"时间标记"},
+      {time:30,text:"苏轼因乌台诗案被贬黄州，名为团练副使，实为阶下囚。",scene:"背景"},
+      {time:55,text:"这一年的寒食节，大雨倾盆，黄州城一片萧瑟。",scene:"寒食节"},
+      {time:80,text:"苏轼挥笔写下了《黄州寒食诗帖》。",scene:"书写"},
+      {time:105,text:"全帖笔画厚重，墨色由浓渐枯，跌宕起伏。",scene:"艺术特点"},
+      {time:130,text:"这一作品被誉为「天下第三行书」，与颜真卿《祭侄文稿》并称。",scene:"书法地位"},
+      {time:155,text:"临帖要点：体会笔势的轻重变化，理解文人与笔墨的深情。",scene:"临帖指导"}
+    ],
+    related_calligraphy: [
+      {name:"黄州寒食诗帖",era:"宋",location:"台北故宫博物院"},
+      {name:"前赤壁赋",era:"宋",location:"台北故宫博物院"},
+      {name:"东武帖",era:"宋",location:"台北故宫博物院"}
+    ]
+  },
+  {
+    id: "ep03", title: "觉醒年代",
+    theme: "阮元与清代碑学复兴",
+    subtitle: "金石学的光芒：碑学崛起的时代",
+    audio_file: "Ep03_觉醒年代.mp3",
+    audio_path: "D:\\92_products\\SPDT-004_EduContent\\PT-038_TextExperience\\audio\\Ep03_觉醒年代.mp3",
+    practice_duration: 15,
+    img_label: "阮元", img_sublabel: "碑学书法",
+    practice_points: ["笔力：雄健刚劲，力透纸背","结体：开阔疏朗，不拘小节","气韵：古拙朴茂，金石味道","格调：返璞归真，不慕时风"],
+    timestamps: [
+      {time:0,text:"【卷首语】",scene:"引子"},
+      {time:15,text:"清代乾隆年间，帖学已走向末路。",scene:"背景"},
+      {time:35,text:"科举取士导致馆阁体盛行，书法千人一面。",scene:"问题"},
+      {time:55,text:"阮元，字伯元，号云台居士，江苏扬州人。",scene:"人物介绍"},
+      {time:80,text:"他著《南北书派论》《北碑南帖论》，力倡碑学。",scene:"理论贡献"},
+      {time:110,text:"碑学强调金石气、古拙美，笔力雄健，结体开阔。",scene:"碑学特点"},
+      {time:140,text:"临帖要点：注重笔画的金石味，追求古朴雄健之美。",scene:"临帖指导"}
+    ],
+    related_calligraphy: [
+      {name:"南北书派论",era:"清",location:"文献"},
+      {name:"郑文公碑",era:"北魏",location:"山东莱州"},
+      {name:"张猛龙碑",era:"北魏",location:"山东曲阜"}
+    ]
+  },
+  {
+    id: "ep04", title: "共和新生",
+    theme: "张裕钊与晚清碑学",
+    subtitle: "新旧交替中的书法抉择",
+    audio_file: "Ep04_共和新生.mp3",
+    audio_path: "D:\\92_products\\SPDT-004_EduContent\\PT-038_TextExperience\\audio\\Ep04_共和新生.mp3",
+    practice_duration: 15,
+    img_label: "张裕钊", img_sublabel: "碑楷书法",
+    practice_points: ["笔画：刚健果断，内圆外方","结构：严谨端庄，碑味十足","气韵：清刚典雅，力透纸背","格调：守正出新，中体西用"],
+    timestamps: [
+      {time:0,text:"【卷首语】",scene:"引子"},
+      {time:15,text:"晚清，中国面临数千年未有之大变局。",scene:"时代背景"},
+      {time:38,text:"西学东渐，科举废除，知识分子在传统与变革之间挣扎。",scene:"社会背景"},
+      {time:60,text:"张裕钊，字方谷，号濂亭，湖北武昌人。",scene:"人物介绍"},
+      {time:85,text:"他熔铸北碑与唐楷，自成一家，创造了独特的「张裕钊体」。",scene:"书法成就"},
+      {time:115,text:"其书结构严谨，笔画刚健，内圆外方，独具风骨。",scene:"艺术特点"},
+      {time:145,text:"临帖要点：体会碑楷结合的独特美感，练习内擫外拓的变化。",scene:"临帖指导"}
+    ],
+    related_calligraphy: [
+      {name:"南宫县学记",era:"清",location:"河北南宫"},
+      {name:"张裕钊楷书四种",era:"清",location:"中国国家图书馆"},
+      {name:"赵之谦篆书",era:"清",location:"故宫博物院"}
+    ]
+  }
+];
+
+/* ═══════════════════════════════════════════
+   状态
+   ═══════════════════════════════════════════ */
+let currentEp = 0;
+let isPlaying = false;
+let currentSpeed = 1;
+let scriptMode = 'sync';
+let timerSeconds = 30 * 60;
+let timerInterval = null;
+let timerRunning = false;
+let timerTarget = 30 * 60;
+let currentScriptIndex = -1;
+
+/* ═══════════════════════════════════════════
+   初始化
+   ═══════════════════════════════════════════ */
+function init() {
+  renderEpSelector();
+  selectEpisode(0);
+  buildWaveform();
+  bindAudioEvents();
+}
+
+/* ── 集数选择器 ── */
+function renderEpSelector() {
+  const container = document.getElementById('ep-selector');
+  container.innerHTML = EPISODES.map((ep, i) => `
+    <div class="ep-card${i === 0 ? ' active' : ''}" onclick="selectEpisode(${i})" id="ep-card-${i}">
+      <div class="ep-card-num">EP 0${i+1}</div>
+      <div class="ep-card-title">${ep.title}</div>
+      <div class="ep-card-theme">${ep.theme}</div>
+    </div>
+  `).join('');
+}
+
+/* ── 选中集数 ── */
+function selectEpisode(index) {
+  currentEp = index;
+  const ep = EPISODES[index];
+
+  // 更新选择器高亮
+  document.querySelectorAll('.ep-card').forEach((el, i) => {
+    el.classList.toggle('active', i === index);
+  });
+
+  // 更新标题区
+  document.getElementById('ep-badge').textContent = 'EP 0' + (index+1);
+  document.getElementById('ep-full-title').textContent = ep.title;
+  document.getElementById('ct-title').textContent = ep.title;
+  document.getElementById('ct-subtitle').textContent = ep.theme + ' · ' + ep.subtitle;
+
+  // 更新碑帖图片区
+  document.getElementById('img-label').textContent = ep.img_label;
+  document.getElementById('img-sublabel').textContent = ep.img_sublabel;
+
+  // 更新临帖要点
+  document.getElementById('practice-list').innerHTML = ep.practice_points.map(p =>
+    `<div class="practice-item">${p}</div>`
+  ).join('');
+
+  // 更新相关碑帖
+  document.getElementById('related-list').innerHTML = ep.related_calligraphy.map(r => `
+    <div class="related-item">
+      <div class="related-dot"></div>
+      <div class="related-info">
+        <div class="related-name">${r.name}</div>
+        <div class="related-meta">${r.era} · ${r.location}</div>
+      </div>
+    </div>
+  `).join('');
+
+  // 更新字幕
+  renderScriptLines(ep);
+
+  // 更新讲稿全文
+  document.getElementById('full-script').innerHTML = '<p>' +
+    ep.timestamps.map(t => t.text).join('</p><p>') + '</p>';
+
+  // 重置音频
+  const audio = document.getElementById('audio-player');
+  audio.pause();
+  audio.currentTime = 0;
+  audio.src = '';
+  isPlaying = false;
+  updatePlayButton();
+  updateProgress(0, 0);
+  currentScriptIndex = -1;
+
+  // 保存当前集数
+  localStorage.setItem('cafa_current_ep', index);
+}
+
+/* ── 渲染字幕行 ── */
+function renderScriptLines(ep) {
+  const container = document.getElementById('script-lines');
+  container.innerHTML = ep.timestamps.map((t, i) => {
+    const mins = Math.floor(t.time / 60);
+    const secs = String(t.time % 60).padStart(2, '0');
+    return `<div class="script-line" id="script-line-${i}" onclick="seekTo(${t.time})">
+      <span class="script-time">${mins}:${secs}</span>
+      <span class="scene-tag">${t.scene}</span>
+      ${t.text}
+    </div>`;
+  }).join('');
+}
+
+/* ── 构建波形 ── */
+function buildWaveform() {
+  const container = document.getElementById('waveform');
+  const bars = 60;
+  container.innerHTML = '';
+  for (let i = 0; i < bars; i++) {
+    const bar = document.createElement('div');
+    bar.className = 'wave-bar';
+    const h = 8 + Math.random() * 36;
+    bar.style.height = h + 'px';
+    bar.id = 'wave-' + i;
+    container.appendChild(bar);
+  }
+}
+
+/* ── 绑定音频事件 ── */
+function bindAudioEvents() {
+  const audio = document.getElementById('audio-player');
+
+  audio.addEventListener('timeupdate', () => {
+    if (!audio.duration) return;
+    const pct = (audio.currentTime / audio.duration) * 100;
+    updateProgress(audio.currentTime, audio.duration);
+    highlightScript(audio.currentTime);
+    animateWave(audio.currentTime / audio.duration);
+  });
+
+  audio.addEventListener('loadedmetadata', () => {
+    document.getElementById('time-total').textContent = fmtTime(audio.duration);
+  });
+
+  audio.addEventListener('ended', () => {
+    isPlaying = false;
+    updatePlayButton();
+  });
+
+  audio.addEventListener('error', (e) => {
+    // 音频文件不存在时静默处理，原型继续可用
+    console.warn('音频加载失败（原型阶段正常）:', audio.src);
+  });
+
+  // 进度条点击跳转
+  const progressBar = document.getElementById('progress-bar');
+  progressBar.addEventListener('click', (e) => {
+    if (!audio.duration) return;
+    const rect = progressBar.getBoundingClientRect();
+    const pct = (e.clientX - rect.left) / rect.width;
+    audio.currentTime = pct * audio.duration;
+  });
+}
+
+/* ── 播放控制 ── */
+function togglePlay() {
+  const audio = document.getElementById('audio-player');
+  if (isPlaying) {
+    audio.pause();
+    isPlaying = false;
+  } else {
+    // 尝试加载音频（本地路径可能无效，原型阶段静默失败）
+    if (!audio.src || audio.src === window.location.href) {
+      audio.src = EPISODES[currentEp].audio_path;
+    }
+    audio.playbackRate = currentSpeed;
+    audio.play().catch(() => {});
+    isPlaying = true;
+  }
+  updatePlayButton();
+}
+
+function updatePlayButton() {
+  const btn = document.getElementById('play-btn');
+  if (isPlaying) {
+    btn.innerHTML = `<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+      <rect x="6" y="4" width="4" height="16"/>
+      <rect x="14" y="4" width="4" height="16"/>
+    </svg>`;
+  } else {
+    btn.innerHTML = `<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+      <polygon points="5,3 19,12 5,21"/>
+    </svg>`;
+  }
+}
+
+function skip(seconds) {
+  const audio = document.getElementById('audio-player');
+  if (!audio.src) {
+    audio.src = EPISODES[currentEp].audio_path;
+  }
+  audio.currentTime = Math.max(0, Math.min(audio.duration || 0, audio.currentTime + seconds));
+}
+
+/* ── 倍速 ── */
+function setSpeed(speed) {
+  currentSpeed = speed;
+  const audio = document.getElementById('audio-player');
+  audio.playbackRate = speed;
+  document.getElementById('speed-display').textContent = speed + 'x';
+  document.querySelectorAll('.speed-opt').forEach(el => {
+    el.classList.toggle('active', parseFloat(el.dataset.speed) === speed);
+  });
+}
+
+function cycleSpeed() {
+  const speeds = [0.75, 1, 1.25, 1.5];
+  const idx = speeds.indexOf(currentSpeed);
+  setSpeed(speeds[(idx + 1) % speeds.length]);
+}
+
+/* ── 进度更新 ── */
+function updateProgress(current, total) {
+  const pct = total > 0 ? (current / total) * 100 : 0;
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('time-current').textContent = fmtTime(current);
+  document.getElementById('time-total').textContent = fmtTime(total);
+}
+
+function fmtTime(s) {
+  if (!s || isNaN(s)) return '0:00';
+  const m = Math.floor(s / 60);
+  const sec = Math.floor(s % 60);
+  return m + ':' + String(sec).padStart(2, '0');
+}
+
+/* ── 字幕同步 ── */
+function highlightScript(currentTime) {
+  const ep = EPISODES[currentEp];
+  const timestamps = ep.timestamps;
+
+  // 找到当前时间对应的字幕索引
+  let activeIndex = -1;
+  for (let i = timestamps.length - 1; i >= 0; i--) {
+    if (currentTime >= timestamps[i].time) {
+      activeIndex = i;
+      break;
+    }
+  }
+
+  if (activeIndex !== currentScriptIndex) {
+    currentScriptIndex = activeIndex;
+
+    // 取消之前的激活
+    document.querySelectorAll('.script-line').forEach(el => el.classList.remove('active'));
+
+    // 激活当前
+    if (activeIndex >= 0) {
+      const el = document.getElementById('script-line-' + activeIndex);
+      if (el) {
+        el.classList.add('active');
+        // 自动滚动到可见区域
+        const scroll = document.getElementById('script-scroll');
+        const elTop = el.offsetTop;
+        const elH = el.offsetHeight;
+        const scrollH = scroll.clientHeight;
+        if (elTop < scroll.scrollTop + 40 || elTop + elH > scroll.scrollTop + scrollH - 40) {
+          scroll.scrollTo({ top: elTop - scrollH / 2 + elH / 2, behavior: 'smooth' });
+        }
+      }
+    }
+  }
+}
+
+function seekTo(seconds) {
+  const audio = document.getElementById('audio-player');
+  if (!audio.src || audio.src === window.location.href) {
+    audio.src = EPISODES[currentEp].audio_path;
+  }
+  audio.currentTime = seconds;
+  audio.playbackRate = currentSpeed;
+  if (!isPlaying) {
+    audio.play().catch(() => {});
+    isPlaying = true;
+    updatePlayButton();
+  }
+}
+
+/* ── 字幕模式切换 ── */
+function setScriptMode(mode) {
+  scriptMode = mode;
+  document.getElementById('mode-sync').classList.toggle('active', mode === 'sync');
+  document.getElementById('mode-full').classList.toggle('active', mode === 'full');
+
+  const linesEl = document.getElementById('script-lines');
+  if (mode === 'full') {
+    linesEl.style.overflow = 'auto';
+    linesEl.style.maxHeight = 'none';
+  } else {
+    linesEl.style.overflow = 'hidden';
+    linesEl.style.maxHeight = 'none';
+  }
+}
+
+/* ── 波形动画 ── */
+function animateWave(progress) {
+  if (!isPlaying) {
+    document.querySelectorAll('.wave-bar').forEach(b => b.classList.remove('active'));
+    return;
+  }
+  const bars = document.querySelectorAll('.wave-bar');
+  bars.forEach((bar, i) => {
+    const dist = Math.abs((i / bars.length) - progress);
+    if (dist < 0.06) {
+      bar.classList.add('active');
+    } else {
+      bar.classList.remove('active');
+    }
+  });
+}
+
+/* ═══════════════════════════════════════════
+   计时器
+   ═══════════════════════════════════════════ */
+function setTimerPreset(minutes) {
+  timerTarget = minutes * 60;
+  timerSeconds = timerTarget;
+  timerRunning = false;
+  if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
+  document.querySelectorAll('.timer-preset').forEach((el, i) => {
+    el.classList.toggle('active', [5,10,15,30][i] === minutes);
+  });
+  updateTimerDisplay();
+  document.getElementById('timer-finish-msg').classList.remove('show');
+  showTimerBtns('start');
+}
+
+function startCustomTimer() {
+  const val = parseInt(document.getElementById('custom-minutes').value);
+  if (val > 0 && val <= 120) {
+    setTimerPreset(val);
+  }
+}
+
+function startTimer() {
+  if (timerSeconds <= 0) timerSeconds = timerTarget;
+  timerRunning = true;
+  showTimerBtns('pause');
+  timerInterval = setInterval(() => {
+    if (!timerRunning) return;
+    timerSeconds--;
+    updateTimerDisplay();
+    if (timerSeconds <= 0) {
+      timerComplete();
+    }
+  }, 1000);
+}
+
+function pauseTimer() {
+  timerRunning = false;
+  showTimerBtns('start');
+}
+
+function resetTimer() {
+  timerRunning = false;
+  if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
+  timerSeconds = timerTarget;
+  updateTimerDisplay();
+  document.getElementById('timer-finish-msg').classList.remove('show');
+  showTimerBtns('start');
+}
+
+function updateTimerDisplay() {
+  const m = Math.floor(timerSeconds / 60);
+  const s = timerSeconds % 60;
+  document.getElementById('timer-clock').textContent =
+    String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+}
+
+function showTimerBtns(state) {
+  document.getElementById('timer-start-btn').style.display = state === 'start' ? '' : 'none';
+  document.getElementById('timer-pause-btn').style.display = state === 'pause' ? '' : 'none';
+}
+
+function timerComplete() {
+  timerRunning = false;
+  clearInterval(timerInterval);
+  timerInterval = null;
+  document.getElementById('timer-finish-msg').classList.add('show');
+  showTimerBtns('start');
+
+  // 震动
+  if ('vibrate' in navigator) navigator.vibrate([400, 100, 400]);
+
+  // 显示弹窗
+  document.getElementById('timer-alert-overlay').classList.add('show');
+}
+
+function dismissAlert() {
+  document.getElementById('timer-alert-overlay').classList.remove('show');
+  if ('vibrate' in navigator) navigator.vibrate(0);
+}
+
+/* ═══════════════════════════════════════════
+   键盘快捷键
+   ═══════════════════════════════════════════ */
+document.addEventListener('keydown', (e) => {
+  if (e.target.tagName === 'INPUT') return;
+  switch(e.key) {
+    case ' ':
+      e.preventDefault();
+      togglePlay();
+      break;
+    case 'ArrowLeft':
+      skip(-15);
+      break;
+    case 'ArrowRight':
+      skip(15);
+      break;
+    case 'ArrowUp':
+      setSpeed(Math.min(2, currentSpeed + 0.25));
+      break;
+    case 'ArrowDown':
+      setSpeed(Math.max(0.5, currentSpeed - 0.25));
+      break;
+  }
+});
+
+/* ── 视图切换（导航按钮）── */
+function switchView(view) {
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('nav-' + view)?.classList.add('active');
+  // 当前原型仅支持 player 视图，其他视图预留
+}
+
+/* ── 启动 ── */
+init();
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+﻿{
+    "summary":  {
+                    "total_unsigned_kb":  0,
+                    "total_signed_kb":  0,
+                    "compiled":  3,
+                    "total":  3,
+                    "signed":  3
+                },
+    "brand":  "gaokao",
+    "timestamp":  "2026-07-19 18:40:43",
+    "apps":  [
+                 {
+                     "unsigned_kb":  456.2,
+                     "app":  "gaokao-agent",
+                     "signed_kb":  494.4,
+                     "compiled":  true,
+                     "signed":  true
+                 },
+                 {
+                     "unsigned_kb":  20.8,
+                     "app":  "gaokao-language",
+                     "signed_kb":  56.9,
+                     "compiled":  true,
+                     "signed":  true
+                 },
+                 {
+                     "unsigned_kb":  20.8,
+                     "app":  "gaokao-volunteer",
+                     "signed_kb":  56.9,
+                     "compiled":  true,
+                     "signed":  true
+                 }
+             ]
+}

@@ -1,0 +1,12 @@
+{
+  "description": "TC_001: 入境APP 视频播放按钮功能验证",
+  "environment": [
+    {
+      "type": "device",
+      "label": "phone"
+    }
+  ],
+  "driver": {
+    "type": "DeviceTest"
+  }
+}

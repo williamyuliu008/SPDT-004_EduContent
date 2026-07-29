@@ -1,0 +1,219 @@
+{
+  "schema_version": "1.0.0",
+  "package_id": "变与局_EP02",
+  "series_title": "变与局",
+  "total_episodes": 1,
+  "produced_by": "PT-VFX",
+  "produced_at": "2026-07-16T19:22:09+08:00",
+  "source_episodes_dir": "D:\\92_products\\SPDT-004_EduContent\\SPDT-KTE\\PT-038\\古史_变与局_ep02_test\\scenes_out",
+  "episodes": [
+    {
+      "ep": 2,
+      "title": "王安石变法",
+      "subtitle": "宋神宗·变法与反变法",
+      "video_file": "gushi_变与局_ep02_王安石变法.mp4",
+      "audio_file": "",
+      "duration_seconds": 128.0,
+      "resolution": "720p",
+      "bitrate_kbps": 2000,
+      "chains": [
+        "古史_变与局_ep02"
+      ],
+      "cards_file": "",
+      "scene_timeline": [
+        {
+          "idx": 0,
+          "time": 0.0,
+          "scene_name": "宋神宗即位之初，摆在他…",
+          "scene_type": "concept",
+          "chain_ref": "古史_变与局_ep02",
+          "five_skandha": {
+            "color_base": "宋神 / 宋神宗 / 宋神宗即 / 宋神宗即位",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1069-1085年"
+          }
+        },
+        {
+          "idx": 1,
+          "time": 8.0,
+          "scene_name": "宋神宗：\n王卿，自真宗以来…",
+          "scene_type": "concept",
+          "chain_ref": "古史_变与局_ep02",
+          "five_skandha": {
+            "color_base": "宋神 / 宋神宗 / 宋神宗： / 王卿",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1069-1085年"
+          }
+        },
+        {
+          "idx": 2,
+          "time": 16.0,
+          "scene_name": "王安石变法的出发点是…",
+          "scene_type": "action",
+          "chain_ref": "古史_变与局_ep02",
+          "five_skandha": {
+            "color_base": "王安 / 王安石 / 王安石变 / 王安石变法",
+            "action_prompt": "书写/口述",
+            "recognition_marker": "#变与局/1069-1085年"
+          }
+        },
+        {
+          "idx": 3,
+          "time": 24.0,
+          "scene_name": "《临川先生文集·上仁宗皇…",
+          "scene_type": "concept",
+          "chain_ref": "古史_变与局_ep02",
+          "five_skandha": {
+            "color_base": "《临川 / 《临川先 / 《临川先生 / 《临川先生文",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1069-1085年"
+          }
+        },
+        {
+          "idx": 4,
+          "time": 32.0,
+          "scene_name": "青苗法是王安石变法的…",
+          "scene_type": "concept",
+          "chain_ref": "古史_变与局_ep02",
+          "five_skandha": {
+            "color_base": "青苗 / 青苗法 / 青苗法是 / 青苗法是王",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1069-1085年"
+          }
+        },
+        {
+          "idx": 5,
+          "time": 40.0,
+          "scene_name": "地方官：\n（向上司汇报）大人…",
+          "scene_type": "concept",
+          "chain_ref": "古史_变与局_ep02",
+          "five_skandha": {
+            "color_base": "地方 / 地方官 / 地方官： / （向上",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1069-1085年"
+          }
+        },
+        {
+          "idx": 6,
+          "time": 48.0,
+          "scene_name": "青苗法在设计上出发点…",
+          "scene_type": "causal_chain",
+          "chain_ref": "古史_变与局_ep02",
+          "five_skandha": {
+            "color_base": "青苗 / 青苗法 / 青苗法在 / 青苗法在设",
+            "action_prompt": "书写/口述",
+            "recognition_marker": "#变与局/1069-1085年"
+          }
+        },
+        {
+          "idx": 7,
+          "time": 56.0,
+          "scene_name": "郑侠《流民图》上疏：\"窃见南…",
+          "scene_type": "concept",
+          "chain_ref": "古史_变与局_ep02",
+          "five_skandha": {
+            "color_base": "郑侠 / 郑侠《 / 郑侠《流 / 郑侠《流民",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1069-1085年"
+          }
+        },
+        {
+          "idx": 8,
+          "time": 64.0,
+          "scene_name": "司马光与王安石曾是朋…",
+          "scene_type": "concept",
+          "chain_ref": "古史_变与局_ep02",
+          "five_skandha": {
+            "color_base": "司马 / 司马光 / 司马光与 / 司马光与王",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1069-1085年"
+          }
+        },
+        {
+          "idx": 9,
+          "time": 72.0,
+          "scene_name": "司马光（书信致王安石）：\n介…",
+          "scene_type": "concept",
+          "chain_ref": "古史_变与局_ep02",
+          "five_skandha": {
+            "color_base": "司马 / 司马光 / 司马光（ / 司马光（书",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1069-1085年"
+          }
+        },
+        {
+          "idx": 10,
+          "time": 80.0,
+          "scene_name": "王安石 vs 司马光的争论，实…",
+          "scene_type": "action",
+          "chain_ref": "古史_变与局_ep02",
+          "five_skandha": {
+            "color_base": "王安 / 王安石 / 王安石  / 王安石 v",
+            "action_prompt": "书写/口述",
+            "recognition_marker": "#变与局/1069-1085年"
+          }
+        },
+        {
+          "idx": 11,
+          "time": 88.0,
+          "scene_name": "《司马光奏议》卷八：\"天地所…",
+          "scene_type": "concept",
+          "chain_ref": "古史_变与局_ep02",
+          "five_skandha": {
+            "color_base": "《司马 / 《司马光 / 《司马光奏 / 《司马光奏议",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1069-1085年"
+          }
+        },
+        {
+          "idx": 12,
+          "time": 96.0,
+          "scene_name": "1085年，宋神宗驾崩，高太后听…",
+          "scene_type": "timeline",
+          "chain_ref": "古史_变与局_ep02",
+          "five_skandha": {
+            "color_base": "宋神 / 宋神宗 / 宋神宗驾 / 宋神宗驾崩",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1069-1085年"
+          }
+        },
+        {
+          "idx": 13,
+          "time": 104.0,
+          "scene_name": "（后世评说）\n\n梁启超：\n王安石…",
+          "scene_type": "concept",
+          "chain_ref": "古史_变与局_ep02",
+          "five_skandha": {
+            "color_base": "（后世 / （后世评 / （后世评说 / （后世评说）",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1069-1085年"
+          }
+        },
+        {
+          "idx": 14,
+          "time": 112.0,
+          "scene_name": "王安石变法失败的根本…",
+          "scene_type": "action",
+          "chain_ref": "古史_变与局_ep02",
+          "five_skandha": {
+            "color_base": "王安 / 王安石 / 王安石变 / 王安石变法",
+            "action_prompt": "书写/口述",
+            "recognition_marker": "#变与局/1069-1085年"
+          }
+        },
+        {
+          "idx": 15,
+          "time": 120.0,
+          "scene_name": "《宋史·王安石传》论曰：\"安石…",
+          "scene_type": "quote_highlight",
+          "chain_ref": "古史_变与局_ep02",
+          "five_skandha": {
+            "color_base": "《宋史 / 《宋史· / 《宋史·王 / 《宋史·王安",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1069-1085年"
+          }
+        }
+      ]
+    }
+  ]
+}

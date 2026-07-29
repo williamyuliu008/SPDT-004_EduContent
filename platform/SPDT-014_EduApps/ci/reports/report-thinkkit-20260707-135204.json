@@ -1,0 +1,55 @@
+﻿{
+    "summary":  {
+                    "total_unsigned_kb":  0,
+                    "total_signed_kb":  0,
+                    "compiled":  6,
+                    "total":  6,
+                    "signed":  6
+                },
+    "brand":  "thinkkit",
+    "timestamp":  "2026-07-07 13:52:04",
+    "apps":  [
+                 {
+                     "unsigned_kb":  228.8,
+                     "app":  "thinkkit-coach",
+                     "signed_kb":  228.8,
+                     "compiled":  true,
+                     "signed":  true
+                 },
+                 {
+                     "unsigned_kb":  427.2,
+                     "app":  "thinkkit-flashcard",
+                     "signed_kb":  427.2,
+                     "compiled":  true,
+                     "signed":  true
+                 },
+                 {
+                     "unsigned_kb":  187.7,
+                     "app":  "thinkkit-mindmap",
+                     "signed_kb":  187.7,
+                     "compiled":  true,
+                     "signed":  true
+                 },
+                 {
+                     "unsigned_kb":  134.9,
+                     "app":  "thinkkit-quiz",
+                     "signed_kb":  134.9,
+                     "compiled":  true,
+                     "signed":  true
+                 },
+                 {
+                     "unsigned_kb":  110.8,
+                     "app":  "thinkkit-reader",
+                     "signed_kb":  110.8,
+                     "compiled":  true,
+                     "signed":  true
+                 },
+                 {
+                     "unsigned_kb":  418.6,
+                     "app":  "thinkkit-zknote",
+                     "signed_kb":  418.6,
+                     "compiled":  true,
+                     "signed":  true
+                 }
+             ]
+}

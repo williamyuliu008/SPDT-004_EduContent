@@ -1,0 +1,35 @@
+{
+  "tool": "check_audio_video_alignment.py",
+  "version": "1.0.0",
+  "metadata_path": "D:\\92_products\\SPDT-004_EduContent\\PT-038_TextExperience\\墨骨山河_ep04_test\\metadata.json",
+  "video_path": "D:\\92_products\\SPDT-004_EduContent\\PT-038_TextExperience\\墨骨山河_ep04_test\\video.mp4",
+  "checks": {
+    "L1_metadata_completeness": {
+      "status": "PASS",
+      "errors": []
+    },
+    "L2_timeline_logic": {
+      "status": "PASS",
+      "errors": []
+    },
+    "L3_keyword_matching": {
+      "status": "PASS",
+      "errors": []
+    },
+    "L4_audio_existence": {
+      "status": "PASS",
+      "errors": []
+    },
+    "L5_human_review": {
+      "status": "PASS (advisory)",
+      "notes": [
+        "  No semantic misalignment flags detected — proceed with caution.",
+        "  L5 human review still recommended for first episode of new series."
+      ],
+      "human_required": false
+    }
+  },
+  "package_id": "unknown",
+  "overall_status": "PASS",
+  "overall_reason": "All automated checks passed; L5 advisory review still recommended"
+}

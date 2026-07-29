@@ -1,0 +1,74 @@
+{
+  "scene_id": "古史_革与鼎_ep02_act2_04",
+  "scene_type": "concept",
+  "knowledge_type": "IV",
+  "content": {
+    "title": "为什么百家争鸣发生在…",
+    "body_lines": [
+      "为什么百家争鸣发生在春秋战国，而…",
+      "有一个深刻的结构性原因：周朝的政…",
+      "而礼乐秩序的维系，需要两个条件——"
+    ],
+    "keywords": [
+      "为什",
+      "为什么百",
+      "为什么百家",
+      "为什么百家争"
+    ]
+  },
+  "page": {
+    "current": 5,
+    "total": 11,
+    "show": true
+  },
+  "scene_info": {
+    "idx": 4,
+    "total": 11,
+    "name": "百家图谱：从儒道墨到法名阴阳·narrative",
+    "dur": 0.0
+  },
+  "source_knowledge_nodes": [
+    "#革与鼎/前551-前479年（孔子生平）",
+    "#历史/百家争鸣",
+    "#考频/⭐️⭐⭐"
+  ],
+  "source_chain_id": "古史_革与鼎_ep02",
+  "five_skandha": {
+    "color_base": [
+      "为什",
+      "为什么百",
+      "为什么百家",
+      "为什么百家争"
+    ],
+    "sensation": "none",
+    "sensation_trigger": "为什么百家争鸣发生在春秋战国，而不是别的时代？\n\n\n\n有一个深刻的结构性原因：周……",
+    "discrimination": "学生能识别「为什么百家争鸣发生在…」的核心含义",
+    "action_prompt": "口述/复述",
+    "recognition_marker": "#革与鼎/前551-前479年（孔子生平）",
+    "bottleneck_warn": "受蕴"
+  },
+  "analogy_block": {
+    "applicable": false,
+    "knowledge_type": "IV"
+  },
+  "semantic_alignment": {
+    "audio_segment_ref": "ACT2-BEAT-04-NARRATIVE",
+    "visual_element_ref": "CONTENT-ZONE-2",
+    "alignment_note": "旁白「为什么百家争鸣发生在春秋战国，而…」对应视觉区显示",
+    "alignment_confirmed": false
+  },
+  "cognitive_load": {
+    "visual_points": 4,
+    "audio_chunks": 5,
+    "load_status": "WARN",
+    "bottleneck_cause": "受蕴",
+    "split_recommendation": "建议拆分为2个 scene"
+  },
+  "audio": {
+    "tts_template": "voice_explain",
+    "speed_wpm": 170,
+    "pause_after_s": 2.0
+  },
+  "energy_level": "medium",
+  "clip_friendly": true
+}

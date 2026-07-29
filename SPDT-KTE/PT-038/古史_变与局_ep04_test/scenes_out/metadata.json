@@ -1,0 +1,219 @@
+{
+  "schema_version": "1.0.0",
+  "package_id": "变与局_EP04",
+  "series_title": "变与局",
+  "total_episodes": 1,
+  "produced_by": "PT-VFX",
+  "produced_at": "2026-07-16T19:22:10+08:00",
+  "source_episodes_dir": "D:\\92_products\\SPDT-004_EduContent\\SPDT-KTE\\PT-038\\古史_变与局_ep04_test\\scenes_out",
+  "episodes": [
+    {
+      "ep": 4,
+      "title": "蒙古帝国",
+      "subtitle": "成吉思汗·世界历史上最大的帝国",
+      "video_file": "gushi_变与局_ep04_蒙古帝国.mp4",
+      "audio_file": "",
+      "duration_seconds": 128.0,
+      "resolution": "720p",
+      "bitrate_kbps": 2000,
+      "chains": [
+        "古史_变与局_ep04"
+      ],
+      "cards_file": "",
+      "scene_timeline": [
+        {
+          "idx": 0,
+          "time": 0.0,
+          "scene_name": "1162年，蒙古草原上传来一声…",
+          "scene_type": "concept",
+          "chain_ref": "古史_变与局_ep04",
+          "five_skandha": {
+            "color_base": "蒙古 / 蒙古草 / 蒙古草原 / 蒙古草原上",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1206-1279年"
+          }
+        },
+        {
+          "idx": 1,
+          "time": 8.0,
+          "scene_name": "将领：成吉思汗陛下，我们…",
+          "scene_type": "concept",
+          "chain_ref": "古史_变与局_ep04",
+          "five_skandha": {
+            "color_base": "将领 / 将领： / 将领：成 / 将领：成吉",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1206-1279年"
+          }
+        },
+        {
+          "idx": 2,
+          "time": 16.0,
+          "scene_name": "蒙古骑兵的核心优势不…",
+          "scene_type": "action",
+          "chain_ref": "古史_变与局_ep04",
+          "five_skandha": {
+            "color_base": "蒙古 / 蒙古骑 / 蒙古骑兵 / 蒙古骑兵的",
+            "action_prompt": "书写/口述",
+            "recognition_marker": "#变与局/1206-1279年"
+          }
+        },
+        {
+          "idx": 3,
+          "time": 24.0,
+          "scene_name": "蒙古军队的战术原则：敌…",
+          "scene_type": "concept",
+          "chain_ref": "古史_变与局_ep04",
+          "five_skandha": {
+            "color_base": "蒙古 / 蒙古军 / 蒙古军队 / 蒙古军队的",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1206-1279年"
+          }
+        },
+        {
+          "idx": 4,
+          "time": 32.0,
+          "scene_name": "1221年，蒙古军队攻占花剌子…",
+          "scene_type": "concept",
+          "chain_ref": "古史_变与局_ep04",
+          "five_skandha": {
+            "color_base": "蒙古 / 蒙古军 / 蒙古军队 / 蒙古军队攻",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1206-1279年"
+          }
+        },
+        {
+          "idx": 5,
+          "time": 40.0,
+          "scene_name": "使者（站在城墙上喊话）：城…",
+          "scene_type": "concept",
+          "chain_ref": "古史_变与局_ep04",
+          "five_skandha": {
+            "color_base": "使者 / 使者（ / 使者（站 / 使者（站在",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1206-1279年"
+          }
+        },
+        {
+          "idx": 6,
+          "time": 48.0,
+          "scene_name": "屠城不是野蛮，而是一种…",
+          "scene_type": "action",
+          "chain_ref": "古史_变与局_ep04",
+          "five_skandha": {
+            "color_base": "屠城 / 屠城不 / 屠城不是 / 屠城不是野",
+            "action_prompt": "书写/口述",
+            "recognition_marker": "#变与局/1206-1279年"
+          }
+        },
+        {
+          "idx": 7,
+          "time": 56.0,
+          "scene_name": "成吉思汗的战争哲学：最…",
+          "scene_type": "concept",
+          "chain_ref": "古史_变与局_ep04",
+          "five_skandha": {
+            "color_base": "成吉 / 成吉思 / 成吉思汗 / 成吉思汗的",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1206-1279年"
+          }
+        },
+        {
+          "idx": 8,
+          "time": 64.0,
+          "scene_name": "成吉思汗死于1227年，留下了…",
+          "scene_type": "concept",
+          "chain_ref": "古史_变与局_ep04",
+          "five_skandha": {
+            "color_base": "成吉 / 成吉思 / 成吉思汗 / 成吉思汗死",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1206-1279年"
+          }
+        },
+        {
+          "idx": 9,
+          "time": 72.0,
+          "scene_name": "蒙古贵族（面带不满）：大汗…",
+          "scene_type": "concept",
+          "chain_ref": "古史_变与局_ep04",
+          "five_skandha": {
+            "color_base": "蒙古 / 蒙古贵 / 蒙古贵族 / 蒙古贵族（",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1206-1279年"
+          }
+        },
+        {
+          "idx": 10,
+          "time": 80.0,
+          "scene_name": "元朝的统治困境：文化身…",
+          "scene_type": "action",
+          "chain_ref": "古史_变与局_ep04",
+          "five_skandha": {
+            "color_base": "元朝 / 元朝的 / 元朝的统 / 元朝的统治",
+            "action_prompt": "书写/口述",
+            "recognition_marker": "#变与局/1206-1279年"
+          }
+        },
+        {
+          "idx": 11,
+          "time": 88.0,
+          "scene_name": "元朝的四等人制度：蒙古…",
+          "scene_type": "concept",
+          "chain_ref": "古史_变与局_ep04",
+          "five_skandha": {
+            "color_base": "元朝 / 元朝的 / 元朝的四 / 元朝的四等",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1206-1279年"
+          }
+        },
+        {
+          "idx": 12,
+          "time": 96.0,
+          "scene_name": "1279年崖山之战，南宋最后的…",
+          "scene_type": "concept",
+          "chain_ref": "古史_变与局_ep04",
+          "five_skandha": {
+            "color_base": "1279年崖 / 南宋 / 南宋最 / 南宋最后",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1206-1279年"
+          }
+        },
+        {
+          "idx": 13,
+          "time": 104.0,
+          "scene_name": "元顺帝（看着眼前的奏折…",
+          "scene_type": "quote_highlight",
+          "chain_ref": "古史_变与局_ep04",
+          "five_skandha": {
+            "color_base": "元顺 / 元顺帝 / 元顺帝（ / 元顺帝（看",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1206-1279年"
+          }
+        },
+        {
+          "idx": 14,
+          "time": 112.0,
+          "scene_name": "元朝速亡的三大根源：民…",
+          "scene_type": "action",
+          "chain_ref": "古史_变与局_ep04",
+          "five_skandha": {
+            "color_base": "元朝 / 元朝速 / 元朝速亡 / 元朝速亡的",
+            "action_prompt": "书写/口述",
+            "recognition_marker": "#变与局/1206-1279年"
+          }
+        },
+        {
+          "idx": 15,
+          "time": 120.0,
+          "scene_name": "忽必烈建立元朝时，满怀…",
+          "scene_type": "timeline",
+          "chain_ref": "古史_变与局_ep04",
+          "five_skandha": {
+            "color_base": "忽必 / 忽必烈 / 忽必烈建 / 忽必烈建立",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#变与局/1206-1279年"
+          }
+        }
+      ]
+    }
+  ]
+}

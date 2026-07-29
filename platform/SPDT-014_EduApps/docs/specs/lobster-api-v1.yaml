@@ -1,0 +1,629 @@
+openapi: "3.0.3"
+info:
+  title: 小龙虾统一API v1.0
+  description: |
+    PC侧小龙虾作为所有 SPDT-001 鸿蒙APP的共同计算服务器。
+    每个APP通过此接口请求内容生成、知识查询、状态同步。
+
+    核心原则：
+    - APP只做消费和交互，所有"重"的计算/生成/分析交给小龙虾
+    - app_id + task_type 构成路由键
+    - 所有响应带 trace_id，支持异步长任务
+    - Phase 1 使用 mock 实现，Phase 2+ 逐步替换为真实后端
+  version: "1.0.0"
+  contact:
+    name: 鸿蒙特使 · SPDT-001
+    agent: agent-e926h
+
+servers:
+  - url: http://localhost:8848/api/v1
+    description: 小龙虾本地服务 (PC侧)
+
+tags:
+  - name: Health
+    description: 服务健康检查
+  - name: Task
+    description: 通用任务调度 — 核心端点
+  - name: Knowledge
+    description: 知识库管理 (考纲/知识点/公式)
+  - name: Content
+    description: 内容管道 (题库/闪卡/讲义)
+  - name: State
+    description: 状态同步 (APP↔PC双向)
+  - name: App
+    description: APP注册与发现
+
+paths:
+  # ============================================================
+  # Health
+  # ============================================================
+  /health:
+    get:
+      tags: [Health]
+      summary: 健康检查
+      description: APP启动时调用，确认小龙虾服务可用
+      responses:
+        "200":
+          description: 服务正常
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [status, version]
+                properties:
+                  status:
+                    type: string
+                    enum: [ok, degraded, down]
+                    example: ok
+                  version:
+                    type: string
+                    example: "1.0.0"
+                  ready:
+                    type: boolean
+                    example: true
+                    description: 各后端引擎是否就绪 (LLM/RAG/知识库)
+
+  # ============================================================
+  # Task — 核心端点
+  # ============================================================
+  /task:
+    post:
+      tags: [Task]
+      summary: 通用任务调度
+      description: |
+        APP提交任务，小龙虾根据 app_id + task_type 路由到对应处理引擎。
+        同步任务立即返回result；异步任务返回status=pending，APP通过 /task/{trace_id} 轮询。
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TaskRequest"
+            examples:
+              generate_questions:
+                summary: GaokaoAgent 请求出题
+                value:
+                  app_id: "gaokao-agent"
+                  task_type: "generate_questions"
+                  payload:
+                    domain: "math"
+                    board: "解析几何"
+                    difficulty: 2
+                    count: 5
+                    exclude_ids: ["q_001", "q_045"]
+                  user_context:
+                    learning_style: "visual"
+                    error_attribution:
+                      conceptual: 0.6
+                      calculative: 0.3
+                      time_pressure: 0.1
+                    weaknesses: ["圆锥曲线", "参数方程"]
+                  intent:
+                    current_tab: "practice"
+                    recent_actions: ["answered_q_042", "answered_q_043", "answered_q_044"]
+              recommend_plan:
+                summary: ThinkKit-Coach 请求学习计划
+                value:
+                  app_id: "thinkkit-coach"
+                  task_type: "recommend_plan"
+                  payload:
+                    target: "高考数学"
+                    weeks_remaining: 12
+                    hours_per_day: 2
+                  user_context:
+                    target_score: 130
+                    strengths: ["代数"]
+                    weaknesses: ["解析几何", "概率"]
+      responses:
+        "200":
+          description: 任务完成 (同步)
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TaskResponse"
+        "202":
+          description: 任务已接收，处理中 (异步)
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TaskResponse"
+              example:
+                status: "pending"
+                trace_id: "task_20260718_a1b2c3"
+                estimated_ms: 5000
+        "400":
+          description: 请求参数错误
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /task/{trace_id}:
+    get:
+      tags: [Task]
+      summary: 查询异步任务结果
+      parameters:
+        - name: trace_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: 任务完成
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TaskResponse"
+        "202":
+          description: 仍在处理中
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TaskResponse"
+              example:
+                status: "pending"
+                trace_id: "task_20260718_a1b2c3"
+        "404":
+          description: trace_id 不存在
+
+  # ============================================================
+  # Knowledge
+  # ============================================================
+  /knowledge/query:
+    post:
+      tags: [Knowledge]
+      summary: 知识库查询
+      description: 查询知识点、考纲、公式等结构化知识
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [app_id, query]
+              properties:
+                app_id:
+                  type: string
+                  example: "gaokao-agent"
+                domain:
+                  type: string
+                  example: "math"
+                  description: 学科域
+                board:
+                  type: string
+                  example: "代数"
+                query:
+                  type: string
+                  example: "一元二次方程"
+                max_results:
+                  type: integer
+                  default: 10
+      responses:
+        "200":
+          description: 查询结果
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  nodes:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/KnowledgeNode"
+
+  /knowledge/import:
+    post:
+      tags: [Knowledge]
+      summary: 知识库批量导入
+      description: PC侧向小龙虾导入知识点数据
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [app_id, nodes]
+              properties:
+                app_id:
+                  type: string
+                nodes:
+                  type: array
+                  items:
+                    $ref: "#/components/schemas/KnowledgeNode"
+      responses:
+        "200":
+          description: 导入完成
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  imported_count:
+                    type: integer
+                  errors:
+                    type: array
+                    items:
+                      type: object
+
+  # ============================================================
+  # Content
+  # ============================================================
+  /content/import:
+    post:
+      tags: [Content]
+      summary: 内容批量导入
+      description: 小龙虾向APP推送题目、闪卡、讲义等内容。APP定期拉取或小龙虾主动推送。
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [app_id, content_type, data]
+              properties:
+                app_id:
+                  type: string
+                content_type:
+                  type: string
+                  enum: [questions, flashcards, notes, handouts, quiz_sets]
+                data:
+                  type: array
+                  items:
+                    type: object
+                  description: content_type对应的结构化数据
+                version:
+                  type: string
+                  description: 内容版本号，用于增量更新
+      responses:
+        "200":
+          description: 导入完成
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  imported_count:
+                    type: integer
+                  errors:
+                    type: array
+                    items:
+                      type: object
+
+  /content/export:
+    post:
+      tags: [Content]
+      summary: APP内容导出到PC
+      description: APP将用户数据（答题记录、学习统计等）导出到PC供小龙虾分析
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [app_id, content_type]
+              properties:
+                app_id:
+                  type: string
+                content_type:
+                  type: string
+                  enum: [answer_history, learning_stats, error_log, user_profile]
+                since:
+                  type: string
+                  format: date-time
+                  description: 增量导出起始时间
+      responses:
+        "200":
+          description: 数据已接收
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  received_count:
+                    type: integer
+                  storage_path:
+                    type: string
+
+  # ============================================================
+  # State
+  # ============================================================
+  /state/write-back:
+    post:
+      tags: [State]
+      summary: APP状态写回PC
+      description: |
+        APP将用户操作后的状态变化回写小龙虾。
+        常用场景：做完一道题后更新知识点掌握度、修改学习计划后同步。
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [app_id, updates]
+              properties:
+                app_id:
+                  type: string
+                updates:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      node_id:
+                        type: string
+                        description: 知识点/题目/计划的唯一ID
+                      field:
+                        type: string
+                        description: 被更新的字段名
+                      value:
+                        description: 新值
+                      timestamp:
+                        type: string
+                        format: date-time
+                  example:
+                    - node_id: "alg_001"
+                      field: "mastery"
+                      value: 0.72
+                      timestamp: "2026-07-18T15:30:00+08:00"
+      responses:
+        "200":
+          description: 写入确认
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  acknowledged:
+                    type: boolean
+                    example: true
+                  updated_count:
+                    type: integer
+
+  /state/query:
+    post:
+      tags: [State]
+      summary: PC查询APP状态
+      description: 小龙虾主动查询某个APP的当前状态，用于跨APP关联分析
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [app_id]
+              properties:
+                app_id:
+                  type: string
+                fields:
+                  type: array
+                  items:
+                    type: string
+                  description: 要查询的字段列表，空=返回全部
+      responses:
+        "200":
+          description: 当前状态快照
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  app_id:
+                    type: string
+                  snapshot:
+                    type: object
+                    description: 字段名→值的映射
+                  updated_at:
+                    type: string
+                    format: date-time
+
+  # ============================================================
+  # App
+  # ============================================================
+  /app/register:
+    post:
+      tags: [App]
+      summary: APP注册
+      description: |
+        APP首次接入时声明身份和能力的task_type。
+        小龙虾据此配置路由规则和内容模板。
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [app_id, app_name, task_types]
+              properties:
+                app_id:
+                  type: string
+                  example: "thinkkit-flashcard"
+                app_name:
+                  type: string
+                  example: "ThinkKit FlashCard"
+                task_types:
+                  type: array
+                  items:
+                    type: string
+                  example: ["generate_cards", "knowledge_query"]
+                content_schemas:
+                  type: array
+                  items:
+                    type: string
+                  description: 支持的内容类型
+                  example: ["flashcards"]
+      responses:
+        "200":
+          description: 注册成功
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  app_id:
+                    type: string
+                  registered_at:
+                    type: string
+                    format: date-time
+                  routing:
+                    type: object
+                    description: 分配的路由配置
+
+# ============================================================
+# Components
+# ============================================================
+components:
+  schemas:
+    TaskRequest:
+      type: object
+      required: [app_id, task_type, payload]
+      properties:
+        app_id:
+          type: string
+          description: APP标识符，如 "gaokao-agent"
+          example: "gaokao-agent"
+        task_type:
+          type: string
+          description: 任务类型枚举，小龙虾据此路由
+          example: "generate_questions"
+        payload:
+          type: object
+          description: 任务特定参数，格式由task_type定义
+        user_context:
+          $ref: "#/components/schemas/UserContext"
+          description: 可选，APP侧用户画像快照
+        intent:
+          $ref: "#/components/schemas/IntentSnapshot"
+          description: 可选，APP侧短期上下文快照
+        timeout_ms:
+          type: integer
+          default: 30000
+          description: 超时时间(毫秒)，超时后降级到规则引擎
+
+    TaskResponse:
+      type: object
+      required: [status, trace_id]
+      properties:
+        status:
+          type: string
+          enum: [ok, error, pending]
+        result:
+          type: object
+          description: 任务结果 (status=ok时)
+        error:
+          $ref: "#/components/schemas/ErrorDetail"
+        trace_id:
+          type: string
+          description: 追踪ID，用于异步查询
+          example: "task_20260718_a1b2c3"
+        estimated_ms:
+          type: integer
+          description: 异步任务预计耗时 (status=pending时)
+
+    UserContext:
+      type: object
+      description: APP侧用户画像快照，每次请求可选携带
+      properties:
+        learning_style:
+          type: string
+          enum: [visual, auditory, kinesthetic]
+        target_score:
+          type: number
+        patience_level:
+          type: integer
+          minimum: 1
+          maximum: 5
+        error_attribution:
+          type: object
+          properties:
+            conceptual:
+              type: number
+            calculative:
+              type: number
+            time_pressure:
+              type: number
+        strengths:
+          type: array
+          items:
+            type: string
+        weaknesses:
+          type: array
+          items:
+            type: string
+        updated_at:
+          type: string
+          format: date-time
+
+    IntentSnapshot:
+      type: object
+      description: APP侧短期上下文
+      properties:
+        current_tab:
+          type: string
+        current_view:
+          type: string
+        recent_actions:
+          type: array
+          items:
+            type: string
+          maxItems: 10
+        session_start:
+          type: string
+          format: date-time
+
+    KnowledgeNode:
+      type: object
+      required: [id, name]
+      properties:
+        id:
+          type: string
+          example: "alg_001"
+        name:
+          type: string
+          example: "一元二次方程"
+        domain:
+          type: string
+          example: "math"
+        board:
+          type: string
+          example: "代数"
+        exam_frequency:
+          type: string
+          enum: [high, medium, low]
+        prerequisites:
+          type: array
+          items:
+            type: string
+          example: ["alg_000"]
+        description:
+          type: string
+        formulas:
+          type: array
+          items:
+            type: string
+        common_mistakes:
+          type: array
+          items:
+            type: string
+
+    ErrorDetail:
+      type: object
+      properties:
+        code:
+          type: string
+          example: "UNSUPPORTED_TASK_TYPE"
+        message:
+          type: string
+          example: "task_type 'unknown_task' is not supported for app 'test-app'"
+
+    ErrorResponse:
+      type: object
+      required: [status, error, trace_id]
+      properties:
+        status:
+          type: string
+          enum: [error]
+        error:
+          $ref: "#/components/schemas/ErrorDetail"
+        trace_id:
+          type: string

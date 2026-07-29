@@ -1,0 +1,197 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://spdt-kte/schemas/video_package_metadata.schema.json",
+  "title": "SPDT-KTE Interface B · video_package_metadata",
+  "description": "PT-VFX → PT-RUJ 视频包元数据协议 v1.0.0。PT-VFX series_builder.py 输出的视频包目录中包含 metadata.json，PT-RUJ ImportService 消费此 JSON 导入视频和场景时间轴。",
+  "version": "1.0.0",
+  "interface_id": "IF-B",
+  "producer": "PT-VFX",
+  "consumer": "PT-RUJ",
+  "frozen": true,
+  "breaking_change_requires": "major version increment + 2-week compatibility window",
+
+  "type": "object",
+  "required": ["package_id", "total_episodes", "episodes", "schema_version"],
+
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "package_id": {
+      "type": "string",
+      "description": "视频包唯一标识符",
+      "example": "墨骨山河_EP01"
+    },
+    "series_title": {
+      "type": "string",
+      "example": "墨骨山河"
+    },
+    "total_episodes": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "produced_by": {
+      "type": "string",
+      "const": "PT-VFX"
+    },
+    "produced_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 格式，PT-VFX 产出时间"
+    },
+    "source_episodes_dir": {
+      "type": "string",
+      "description": "PT-VFX 源 scene JSON 目录路径（用于调试溯源）"
+    },
+
+    "episodes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["ep", "title", "video_file", "duration_seconds", "chains"],
+        "properties": {
+          "ep": {
+            "type": "integer",
+            "description": "集数编号，1-based"
+          },
+          "title": {
+            "type": "string",
+            "description": "集标题"
+          },
+          "subtitle": {
+            "type": "string",
+            "description": "副标题（可选）"
+          },
+          "video_file": {
+            "type": "string",
+            "description": "视频文件名（含扩展名 .mp4），与 metadata.json 同目录",
+            "pattern": "^ep[0-9]{2}_.+\\.mp4$"
+          },
+          "audio_file": {
+            "type": "string",
+            "description": "纯净旁白音频（可选，用于后台播放）",
+            "pattern": "^ep[0-9]{2}_.+\\.wav$"
+          },
+          "duration_seconds": {
+            "type": "number",
+            "minimum": 0,
+            "description": "视频总时长（秒）"
+          },
+          "resolution": {
+            "type": "string",
+            "enum": ["480p", "720p", "1080p"],
+            "default": "720p"
+          },
+          "bitrate_kbps": {
+            "type": "integer",
+            "description": "视频码率（kbps），PT-RUJ 据此判断是否需要降级播放"
+          },
+          "chains": {
+            "type": "array",
+            "description": "本集覆盖的知识链 ID 列表，对应 PT-038 的 chain_id",
+            "items": { "type": "string" },
+            "example": ["墨骨山河_ep01_主链", "CHAIN_颜真卿_生平"]
+          },
+          "cards_file": {
+            "type": "string",
+            "description": "关联的 Flashcard 包文件名（可选）",
+            "pattern": "^ep[0-9]{2}_.+\\.json$"
+          },
+          "scene_timeline": {
+            "type": "array",
+            "description": "场景时间轴。PT-RUJ 播放器使用此数组实现"跳转到特定 scene"功能。",
+            "items": {
+              "type": "object",
+              "required": ["idx", "time", "scene_name"],
+              "properties": {
+                "idx": {
+                  "type": "integer",
+                  "description": "scene 编号，与 scene_json_v2 中的 scene_id 对应"
+                },
+                "time": {
+                  "type": "number",
+                  "description": "本 scene 在视频中的起始时间（秒）"
+                },
+                "scene_name": {
+                  "type": "string",
+                  "description": "场景名称（人类可读）"
+                },
+                "scene_type": {
+                  "type": "string",
+                  "enum": ["title", "concept", "contrast", "steps", "action", "summary", "quote_highlight", "timeline", "analogy_scene", "dual_track"]
+                },
+                "chain_ref": {
+                  "type": ["string", "null"],
+                  "description": "关联的知识链 ID（无则 null）"
+                },
+                "five_skandha": {
+                  "type": "object",
+                  "description": "五蕴数据快照（从 source scene JSON 透传），PT-RUJ 用于"跳转后显示本 scene 学习提示"",
+                  "properties": {
+                    "color_base": { "type": "string" },
+                    "action_prompt": { "type": "string" },
+                    "recognition_marker": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "examples": [
+    {
+      "schema_version": "1.0.0",
+      "package_id": "墨骨山河_EP01",
+      "series_title": "墨骨山河",
+      "total_episodes": 1,
+      "produced_by": "PT-VFX",
+      "produced_at": "2026-07-16T12:00:00+08:00",
+      "source_episodes_dir": "PT-VFX/episodes/墨骨山河_ep01/scenes/",
+      "episodes": [
+        {
+          "ep": 1,
+          "title": "乾元元年·蒲州的墨与血",
+          "subtitle": "颜真卿与安史之乱",
+          "video_file": "ep01_乾元元年.mp4",
+          "audio_file": "ep01_乾元元年.wav",
+          "duration_seconds": 216.0,
+          "resolution": "720p",
+          "bitrate_kbps": 2500,
+          "chains": ["墨骨山河_ep01_主链"],
+          "cards_file": "ep01_cards.json",
+          "scene_timeline": [
+            {
+              "idx": 0,
+              "time": 0.0,
+              "scene_name": "卷首标题",
+              "scene_type": "title",
+              "chain_ref": null,
+              "five_skandha": { "color_base": "乾元元年 · 蒲州", "action_prompt": "默写：安史之乱爆发年份", "recognition_marker": "蒲州" }
+            },
+            {
+              "idx": 1,
+              "time": 6.3,
+              "scene_name": "乾元元年蒲州",
+              "scene_type": "timeline",
+              "chain_ref": "墨骨山河_ep01_主链",
+              "five_skandha": { "color_base": "乾元 · 元年 · 蒲州", "action_prompt": null, "recognition_marker": "乾元" }
+            },
+            {
+              "idx": 3,
+              "time": 42.5,
+              "scene_name": "刀锋入纸：书法的战场基因",
+              "scene_type": "analogy_scene",
+              "chain_ref": "墨骨山河_ep01_主链",
+              "five_skandha": { "color_base": "杀伐气 · 筋骨 · 蒲州军旅", "action_prompt": "判断：以下哪句描述的是颜体特征？", "recognition_marker": "蒲州" }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

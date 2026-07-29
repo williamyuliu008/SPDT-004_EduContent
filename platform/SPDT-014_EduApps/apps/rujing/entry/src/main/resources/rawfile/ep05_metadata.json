@@ -1,0 +1,214 @@
+{
+  "schema_version": "1.0.0",
+  "package_id": "墨骨山河_EP05",
+  "series_title": "墨骨山河",
+  "total_episodes": 1,
+  "produced_by": "PT-VFX",
+  "produced_at": "2026-07-20T01:58:16+08:00",
+  "episodes": [
+    {
+      "ep": 5,
+      "title": "颠张醉素",
+      "subtitle": "张旭怀素·草书的极限与癫狂",
+      "video_file": "墨骨山河_ep05.mp4",
+      "duration_seconds": 116.2,
+      "resolution": "1080p",
+      "bitrate_kbps": 2000,
+      "chains": [
+        "墨骨山河_ep05"
+      ],
+      "scene_timeline": [
+        {
+          "idx": 0,
+          "time": 0.0,
+          "scene_name": "天宝年间，长安，某贵人府…",
+          "scene_type": "concept",
+          "chain_ref": "墨骨山河_ep05",
+          "five_skandha": {
+            "color_base": [
+              "天宝",
+              "天宝年",
+              "天宝年间",
+              "长安"
+            ],
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#书法/唐/张旭"
+          }
+        },
+        {
+          "idx": 1,
+          "time": 30.0,
+          "scene_name": "书童铺开一张大纸，高度…",
+          "scene_type": "concept",
+          "chain_ref": "墨骨山河_ep05",
+          "five_skandha": {
+            "color_base": [
+              "书童",
+              "书童铺",
+              "书童铺开",
+              "书童铺开一"
+            ],
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#书法/唐/张旭学书路径"
+          }
+        },
+        {
+          "idx": 2,
+          "time": 60.0,
+          "scene_name": "【张旭生平判断题】\n\n以下关…",
+          "scene_type": "steps",
+          "chain_ref": "墨骨山河_ep05",
+          "five_skandha": {
+            "color_base": [
+              "【张旭",
+              "【张旭生",
+              "【张旭生平",
+              "【张旭生平判"
+            ],
+            "action_prompt": "判断/选择",
+            "recognition_marker": "#书法/唐/张旭外师造化"
+          }
+        },
+        {
+          "idx": 3,
+          "time": 90.0,
+          "scene_name": "张旭落笔",
+          "scene_type": "concept",
+          "chain_ref": "墨骨山河_ep05",
+          "five_skandha": {
+            "color_base": [
+              "张旭",
+              "张旭落",
+              "张旭落笔",
+              "第一"
+            ],
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#书法/唐/狂草特征"
+          }
+        },
+        {
+          "idx": 4,
+          "time": 120.0,
+          "scene_name": "张旭的呼吸越来越快",
+          "scene_type": "concept",
+          "chain_ref": "墨骨山河_ep05",
+          "five_skandha": {
+            "color_base": [
+              "张旭",
+              "张旭的",
+              "张旭的呼",
+              "张旭的呼吸"
+            ],
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#书法/唐/狂草艺术原理"
+          }
+        },
+        {
+          "idx": 5,
+          "time": 150.0,
+          "scene_name": "【狂草特征判断题】\n\n以下关…",
+          "scene_type": "steps",
+          "chain_ref": "墨骨山河_ep05",
+          "five_skandha": {
+            "color_base": [
+              "【狂草",
+              "【狂草特",
+              "【狂草特征",
+              "【狂草特征判"
+            ],
+            "action_prompt": "判断/选择",
+            "recognition_marker": "#书法/唐/狂草vs涂鸦"
+          }
+        },
+        {
+          "idx": 6,
+          "time": 180.0,
+          "scene_name": "杜甫曾在诗中这样描写…",
+          "scene_type": "concept",
+          "chain_ref": "墨骨山河_ep05",
+          "five_skandha": {
+            "color_base": [
+              "杜甫",
+              "杜甫曾",
+              "杜甫曾在",
+              "杜甫曾在诗"
+            ],
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#书法/唐/变动犹鬼神"
+          }
+        },
+        {
+          "idx": 7,
+          "time": 210.0,
+          "scene_name": "【颠张醉素比较题】\n\n请比较…",
+          "scene_type": "contrast",
+          "chain_ref": "墨骨山河_ep05",
+          "five_skandha": {
+            "color_base": [
+              "【颠张",
+              "【颠张醉",
+              "【颠张醉素",
+              "【颠张醉素比"
+            ],
+            "action_prompt": "判断/选择",
+            "recognition_marker": "#书法/唐/颠张醉素"
+          }
+        },
+        {
+          "idx": 8,
+          "time": 240.0,
+          "scene_name": "画面从长安收回，回到现…",
+          "scene_type": "word_evolution",
+          "chain_ref": "墨骨山河_ep05",
+          "five_skandha": {
+            "color_base": [
+              "画面",
+              "画面从",
+              "画面从长",
+              "画面从长安"
+            ],
+            "action_prompt": "口述/复述",
+            "recognition_marker": "画面从长安收回，回到现代"
+          }
+        },
+        {
+          "idx": 9,
+          "time": 270.0,
+          "scene_name": "【综合论述题】\n\n请结合张旭…",
+          "scene_type": "quote_highlight",
+          "chain_ref": "墨骨山河_ep05",
+          "five_skandha": {
+            "color_base": [
+              "【综合",
+              "【综合论",
+              "【综合论述",
+              "【综合论述题"
+            ],
+            "action_prompt": "判断/选择",
+            "recognition_marker": "#综合/唐书法/狂草论述"
+          }
+        },
+        {
+          "idx": 10,
+          "time": 116.2,
+          "scene_name": "你合上字帖，望着窗外",
+          "scene_type": "word_evolution",
+          "chain_ref": "墨骨山河_ep05",
+          "five_skandha": {
+            "color_base": [
+              "你合",
+              "你合上",
+              "你合上字",
+              "你合上字帖"
+            ],
+            "action_prompt": "口述/复述",
+            "recognition_marker": "你合上字帖，望着窗外"
+          }
+        }
+      ],
+      "video_size_mb": 2.85
+    }
+  ],
+  "duration_seconds": 116.2,
+  "video_size_mb": 2.85
+}

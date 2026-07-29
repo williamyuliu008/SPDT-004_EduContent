@@ -1,0 +1,94 @@
+{
+  "episode_id": "墨骨山河_ep07",
+  "series": "墨骨山河",
+  "title": "寒食突围",
+  "total_scenes": 9,
+  "scenes": [
+    {
+      "scene_id": "墨骨山河_ep07_act1_00",
+      "scene_type": "concept",
+      "title": "元丰五年，黄州，寒食节",
+      "source_knowledge_nodes": [],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "墨骨山河_ep07_act1_01",
+      "scene_type": "concept",
+      "title": "苏轼放下笔，看着窗外的…",
+      "source_knowledge_nodes": [],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "墨骨山河_ep07_act1_02",
+      "scene_type": "dual_track",
+      "title": "【历史知识题】以下关于苏…",
+      "source_knowledge_nodes": [],
+      "cognitive_load": "ACCEPTABLE"
+    },
+    {
+      "scene_id": "墨骨山河_ep07_act2_03",
+      "scene_type": "word_evolution",
+      "title": "苏轼写完《黄州寒食诗帖…",
+      "source_knowledge_nodes": [
+        "#书法/宋/我书意造本无法"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "墨骨山河_ep07_act2_04",
+      "scene_type": "concept",
+      "title": "苏轼对自己说：\n\n'你们说我…",
+      "source_knowledge_nodes": [],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "墨骨山河_ep07_act2_05",
+      "scene_type": "steps",
+      "title": "【三大行书综合题】请将三…",
+      "source_knowledge_nodes": [],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "墨骨山河_ep07_act2_06",
+      "scene_type": "steps",
+      "title": "【判断正误】\n① '尚意书风'是宋…",
+      "source_knowledge_nodes": [],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "墨骨山河_ep07_act3_07",
+      "scene_type": "steps",
+      "title": "【综合题】（15分）\n1. '天下第三行书…",
+      "source_knowledge_nodes": [],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "墨骨山河_ep07_act3_08",
+      "scene_type": "concept",
+      "title": "苏轼的'尚意'在宋代走到…",
+      "source_knowledge_nodes": [],
+      "cognitive_load": "ACCEPTABLE"
+    }
+  ],
+  "stats": {
+    "total_beats": 11,
+    "total_scenes": 9,
+    "by_scene_type": {
+      "concept": 4,
+      "dual_track": 1,
+      "word_evolution": 1,
+      "steps": 3
+    },
+    "by_knowledge_type": {
+      "I": 0,
+      "II": 9,
+      "III": 0,
+      "IV": 0
+    },
+    "cognitive_warnings": 7
+  },
+  "schema_version": "v2",
+  "if_a_path": "D:\\92_products\\SPDT-004_EduContent\\SPDT-KTE\\PT-038\\墨骨山河_ep07_test\\scenes_out\\scene_v2_full.json",
+  "validation_errors": 0,
+  "analogy_warnings": 0
+}

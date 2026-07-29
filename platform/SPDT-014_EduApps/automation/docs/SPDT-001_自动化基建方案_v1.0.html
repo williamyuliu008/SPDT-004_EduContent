@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPDT-001 自动化基建方案 v1.0</title>
+<style>
+  :root {
+    --bg: #0f172a; --card: #1e293b; --border: #334155;
+    --text: #e2e8f0; --muted: #94a3b8; --accent: #38bdf8;
+    --green: #22c55e; --red: #ef4444; --orange: #f59e0b; --purple: #a855f7;
+    --tk: #5B8C5A; --cm: #E87A2A; --hc: #7B2D8E; --rh: #3B82B0; --gk: #C44536;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); padding: 24px; max-width: 1100px; margin: 0 auto; }
+  h1 { font-size: 1.8em; margin-bottom: 4px; }
+  h2 { font-size: 1.3em; margin: 32px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+  h3 { font-size: 1.05em; margin: 20px 0 8px; color: var(--accent); }
+  .subtitle { color: var(--muted); font-size: 0.9em; margin-bottom: 24px; }
+  .metrics { display: flex; gap: 16px; flex-wrap: wrap; margin: 20px 0; }
+  .metric { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px 20px; min-width: 130px; flex: 1; }
+  .metric .value { font-size: 2em; font-weight: 700; }
+  .metric .label { font-size: 0.8em; color: var(--muted); margin-top: 2px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin: 16px 0; }
+  .card-title { font-weight: 700; font-size: 1.05em; margin-bottom: 10px; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.9em; }
+  th { text-align: left; padding: 8px 12px; background: var(--card); color: var(--muted); font-weight: 600; border-bottom: 1px solid var(--border); }
+  td { padding: 8px 12px; border-bottom: 1px solid var(--border); }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.8em; font-weight: 600; }
+  .badge-done { background: #166534; color: var(--green); }
+  .badge-new { background: #1e3a5f; color: var(--accent); }
+  .badge-todo { background: #422006; color: var(--orange); }
+  .badge-plan { background: #3b0764; color: var(--purple); }
+  .check { color: var(--green); } .warn { color: var(--orange); } .err { color: var(--red); }
+  .timeline { position: relative; padding-left: 32px; margin: 16px 0; }
+  .timeline::before { content:''; position: absolute; left: 12px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+  .tl-item { position: relative; margin-bottom: 24px; }
+  .tl-marker { position: absolute; left: -28px; top: 2px; width: 20px; height: 20px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 0.7em; font-weight: 700; color: var(--bg); }
+  .tl-marker.done { background: var(--green); }
+  .tl-title { font-weight: 700; margin-bottom: 4px; }
+  .tl-text { color: var(--muted); font-size: 0.9em; }
+  .code-block { background: #0f172a; border: 1px solid var(--border); border-radius: 6px; padding: 12px 16px; font-family: "Cascadia Code", "Fira Code", monospace; font-size: 0.83em; overflow-x: auto; white-space: pre; margin: 8px 0; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  @media (max-width: 768px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+  .progress-bar { height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; margin: 4px 0 8px; }
+  .progress-fill { height: 100%; border-radius: 4px; }
+</style>
+</head>
+<body>
+
+<h1>🏗️ SPDT-001 自动化基建方案 v1.0</h1>
+<p class="subtitle">鸿蒙特使 · agent-e926h · 2026-07-18 · 30 APP / 5 品牌 / DevEco 6.1</p>
+
+<!-- Current State -->
+<div class="metrics">
+  <div class="metric"><div class="value">30</div><div class="label">APP 总数</div></div>
+  <div class="metric"><div class="value">13</div><div class="label" style="color:#22c55e">已签名 (43%)</div></div>
+  <div class="metric"><div class="value">17</div><div class="label" style="color:#f59e0b">缺证书 (57%)</div></div>
+  <div class="metric"><div class="value">5</div><div class="label">品牌</div></div>
+  <div class="metric"><div class="value">6</div><div class="label">本次新增脚本</div></div>
+</div>
+
+<!-- Brand Status Table -->
+<h2>一、品牌签名现状</h2>
+<table>
+  <tr><th>品牌</th><th>APP 数</th><th>已签名</th><th>缺证书</th><th>签名率</th></tr>
+  <tr><td><span class="badge" style="background:#5B8C5A33;color:#5B8C5A">ThinkKit</span></td><td>9</td><td>5</td><td>4</td><td>55%</td></tr>
+  <tr><td><span class="badge" style="background:#E87A2A33;color:#E87A2A">Craftsman</span></td><td>10</td><td>4</td><td>6</td><td>40%</td></tr>
+  <tr><td><span class="badge" style="background:#7B2D8E33;color:#7B2D8E">HarmonyCoder</span></td><td>2</td><td>0</td><td>2</td><td>0%</td></tr>
+  <tr><td><span class="badge" style="background:#3B82B033;color:#3B82B0">RhythmHabit</span></td><td>5</td><td>0</td><td>5</td><td>0%</td></tr>
+  <tr><td><span class="badge" style="background:#C4453633;color:#C44536">GaokaoAgent</span></td><td>3</td><td>3</td><td>0</td><td>100%</td></tr>
+  <tr style="background:var(--card)"><td><strong>合计</strong></td><td><strong>30</strong></td><td><strong>13</strong></td><td><strong>17</strong></td><td><strong>43%</strong></td></tr>
+</table>
+
+<div class="card">
+  <div class="card-title">缺证书 APP 清单 (17个)</div>
+  <div class="grid-2" style="font-size:0.85em">
+    <div><span class="warn">●</span> craftsman-api-tester</div>
+    <div><span class="warn">●</span> craftsman-code-editor</div>
+    <div><span class="warn">●</span> craftsman-ohpm</div>
+    <div><span class="warn">●</span> craftsman-scanner</div>
+    <div><span class="warn">●</span> craftsman-utils</div>
+    <div><span class="warn">●</span> craftsman-utils-v2</div>
+    <div><span class="warn">●</span> harmonycoder</div>
+    <div><span class="warn">●</span> harmonycoder-snippets</div>
+    <div><span class="warn">●</span> rhythm-habit</div>
+    <div><span class="warn">●</span> rhythm-habit-game</div>
+    <div><span class="warn">●</span> rhythm-meditation</div>
+    <div><span class="warn">●</span> rhythm-nutrition</div>
+    <div><span class="warn">●</span> rhythm-pomodoro</div>
+    <div><span class="warn">●</span> thinkkit-flashcard</div>
+    <div><span class="warn">●</span> thinkkit-flashcard2</div>
+    <div><span class="warn">●</span> thinkkit-rss</div>
+    <div><span class="warn">●</span> thinkkit-zknote</div>
+  </div>
+</div>
+
+<!-- Deliverables -->
+<h2>二、本次交付：6 件自动化工具</h2>
+
+<div class="grid-2">
+<div class="card">
+  <div class="card-title"><span class="badge badge-done">新增</span> build-all.py</div>
+  <p style="color:var(--muted);font-size:0.9em">批量编译 + 签名 + 部署 30 APP</p>
+  <div style="font-size:0.85em;margin-top:8px">
+    <span class="check">✓</span> 品牌过滤 <code>--brand thinkkit</code><br>
+    <span class="check">✓</span> 并行构建 <code>--parallel 4</code><br>
+    <span class="check">✓</span> 状态扫描 <code>--report-only</code><br>
+    <span class="check">✓</span> 一键部署 <code>--deploy</code><br>
+    <span class="check">✓</span> JSON + MD 报告<br>
+    <span class="check">✓</span> 自动跳过未签名APP
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title"><span class="badge badge-done">增强</span> smoke-test.ps1 v2</div>
+  <p style="color:var(--muted);font-size:0.9em">真机冒烟测试 + 智能体维度断言</p>
+  <div style="font-size:0.85em;margin-top:8px">
+    <span class="check">✓</span> Preferences 存储检测<br>
+    <span class="check">✓</span> HTTP 权限断言<br>
+    <span class="check">✓</span> batteryInfo 系统探测<br>
+    <span class="check">✓</span> 小龙虾端点连通性检查<br>
+    <span class="check">✓</span> <code>-AgentMode</code> 开关<br>
+    <span class="check">✓</span> JSON + MD 双报告
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title"><span class="badge badge-done">增强</span> init-app.ps1 v2</div>
+  <p style="color:var(--muted);font-size:0.9em">一键创建 APP + 签名注入 + 品牌参数</p>
+  <div style="font-size:0.85em;margin-top:8px">
+    <span class="check">✓</span> 自动注入 signingConfigs<br>
+    <span class="check">✓</span> 品牌化 app.config.ts<br>
+    <span class="check">✓</span> 小龙虾端点预配置<br>
+    <span class="check">✓</span> AgentMode 自动生成 agent-*.ets<br>
+    <span class="check">✓</span> <code>-Compile</code> + <code>-Deploy</code> 一键
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title"><span class="badge badge-done">新增</span> inject-signing.ps1</div>
+  <p style="color:var(--muted);font-size:0.9em">批量 DevEco 签名配置注入 (17 APP)</p>
+  <div style="font-size:0.85em;margin-top:8px">
+    <span class="check">✓</span> 自动发现未签名APP<br>
+    <span class="check">✓</span> devecocli build 触发自动签名<br>
+    <span class="check">✓</span> devecocli run 兜底方案<br>
+    <span class="check">✓</span> 失败清单 + 手动Sync指引
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title"><span class="badge badge-done">新增</span> ci-daily.ps1</div>
+  <p style="color:var(--muted);font-size:0.9em">每日 CI 全流程 (5 阶段)</p>
+  <div style="font-size:0.85em;margin-top:8px">
+    <span class="check">✓</span> PREFLIGHT → BUILD → SIGN → DEPLOY → OMAS<br>
+    <span class="check">✓</span> 品牌过滤 <code>-Brand thinkkit</code><br>
+    <span class="check">✓</span> 可选部署 <code>-Deploy</code><br>
+    <span class="check">✓</span> JSON 报告输出
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title"><span class="badge badge-plan">方案</span> 自动化路线图 & 风险矩阵</div>
+  <p style="color:var(--muted);font-size:0.9em">7-8月分阶段推进 + 风险识别</p>
+  <div style="font-size:0.85em;margin-top:8px">
+    <span class="check">✓</span> 4 个自动化成熟度阶段<br>
+    <span class="check">✓</span> 6 项风险评估 + 缓解策略<br>
+    <span class="check">✓</span> 下周行动清单
+  </div>
+</div>
+</div>
+
+<!-- Automation Maturity -->
+<h2>三、自动化成熟度路线图</h2>
+
+<div class="timeline">
+  <div class="tl-item">
+    <div class="tl-marker done">✔</div>
+    <div class="tl-title">L1: 半自动 <span class="badge badge-done">当前</span></div>
+    <div class="tl-text">CLI 单 APP 编译+部署 (build_any.py) · 模板 APP 生成 (init-app.ps1) · PREFLIGHT 8 项检查 · 5 品牌 30 APP 编译通过</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-marker">2</div>
+    <div class="tl-title">L2: 全自动 <span class="badge badge-new">本次交付</span></div>
+    <div class="tl-text">批量编译签名部署 (build-all.py) · 代码生成→编译→部署一键 (init-app v2) · 智能体维度冒烟测试 (smoke-test v2) · 签名配置批量注入 (inject-signing) · CI cron 每日自动</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-marker">3</div>
+    <div class="tl-title">L3: 智能自动化 <span class="badge badge-todo">8月</span></div>
+    <div class="tl-text">Hypium UI 自动化测试接入 · 自研调试工具原型 (日志采集/崩溃分析/UI快照) · 全链条无人值守 CI/CD</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-marker">4</div>
+    <div class="tl-title">L4: 自治 <span class="badge badge-plan">远期</span></div>
+    <div class="tl-text">市场反馈 → 自动需求 → 自动开发 → 自动发布</div>
+  </div>
+</div>
+
+<!-- File Map -->
+<h2>四、脚本矩阵</h2>
+<table>
+  <tr><th>脚本</th><th>路径</th><th>用途</th><th>状态</th></tr>
+  <tr>
+    <td><strong>build_any.py</strong></td>
+    <td style="font-family:monospace;font-size:0.83em">apps\build_any.py</td>
+    <td>单 APP 编译+部署 (已验证)</td>
+    <td><span class="badge badge-done">保留</span></td>
+  </tr>
+  <tr>
+    <td><strong>build-all.py</strong></td>
+    <td style="font-family:monospace;font-size:0.83em">apps\build-all.py</td>
+    <td>批量 30 APP 编译+签名+部署</td>
+    <td><span class="badge badge-new">新增</span></td>
+  </tr>
+  <tr>
+    <td><strong>init-app.ps1</strong></td>
+    <td style="font-family:monospace;font-size:0.83em">scripts\init-app.ps1</td>
+    <td>一键创建 APP + 签名注入 + 品牌参数</td>
+    <td><span class="badge badge-new">v2 增强</span></td>
+  </tr>
+  <tr>
+    <td><strong>smoke-test.ps1</strong></td>
+    <td style="font-family:monospace;font-size:0.83em">scripts\smoke-test.ps1</td>
+    <td>真机冒烟 + 智能体维度断言</td>
+    <td><span class="badge badge-new">v2 增强</span></td>
+  </tr>
+  <tr>
+    <td><strong>inject-signing.ps1</strong></td>
+    <td style="font-family:monospace;font-size:0.83em">scripts\inject-signing.ps1</td>
+    <td>批量 DevEco 签名配置注入</td>
+    <td><span class="badge badge-new">新增</span></td>
+  </tr>
+  <tr>
+    <td><strong>ci-daily.ps1</strong></td>
+    <td style="font-family:monospace;font-size:0.83em">scripts\ci-daily.ps1</td>
+    <td>每日 5 阶段 CI 全流程</td>
+    <td><span class="badge badge-new">新增</span></td>
+  </tr>
+  <tr>
+    <td><strong>deploy-all.ps1</strong></td>
+    <td style="font-family:monospace;font-size:0.83em">scripts\deploy-all.ps1</td>
+    <td>devecocli 批量部署</td>
+    <td><span class="badge badge-done">保留</span></td>
+  </tr>
+  <tr>
+    <td><strong>preflight.ps1</strong></td>
+    <td style="font-family:monospace;font-size:0.83em">ci\stages\preflight.ps1</td>
+    <td>8 项项目完整性检查</td>
+    <td><span class="badge badge-done">保留</span></td>
+  </tr>
+</table>
+
+<!-- Usage Quick Reference -->
+<h2>五、快速命令参考</h2>
+
+<h3>日常开发</h3>
+<div class="code-block"># 批量编译全部已签名 APP (并行4)
+python apps\build-all.py --parallel 4
+
+# 仅编译 ThinkKit 品牌 + 部署到真机
+python apps\build-all.py --brand thinkkit --deploy
+
+# 扫描状态 (不编译)
+python apps\build-all.py --report-only
+
+# 创建新 APP (带 Agent 模块)
+.\scripts\init-app.ps1 -Name "thinkkit-vocab" -Brand "ThinkKit" -Color "5B8C5A" -AgentMode -InjectSigning -Compile</div>
+
+<h3>真机测试</h3>
+<div class="code-block"># 旗舰冒烟测试 (1 per brand)
+.\scripts\smoke-test.ps1
+
+# 全量冒烟 + 智能体维度断言
+.\scripts\smoke-test.ps1 -All -AgentMode
+
+# 单品牌冒烟
+.\scripts\smoke-test.ps1 -Brand tk -AgentMode</div>
+
+<h3>签名管理</h3>
+<div class="code-block"># 扫描未签名 APP
+.\scripts\inject-signing.ps1 -DryRun
+
+# 批量注入签名配置
+.\scripts\inject-signing.ps1</div>
+
+<h3>CI 运维</h3>
+<div class="code-block"># 每日 CI (全品牌 5 阶段)
+.\scripts\ci-daily.ps1
+
+# 每日 CI + 真机部署
+.\scripts\ci-daily.ps1 -Deploy
+
+# 单品牌 CI
+.\scripts\ci-daily.ps1 -Brand gaokao</div>
+
+<!-- Risk Matrix -->
+<h2>六、关键风险 & 缓解</h2>
+<table>
+  <tr><th>风险</th><th>影响</th><th>等级</th><th>当前缓解</th></tr>
+  <tr>
+    <td>17 APP 缺 DevEco 签名证书</td>
+    <td>无法批量编译+部署</td>
+    <td><span class="err">高</span></td>
+    <td>inject-signing.ps1 批量注入 · DevEco Studio GUI Sync 兜底</td>
+  </tr>
+  <tr>
+    <td>DevEco 6.1 hvigor daemon 缓存旧 JDK</td>
+    <td>编译失败 00303168</td>
+    <td><span class="err">高</span></td>
+    <td>build-all.py --clean · 清理 %USERPROFILE%\.hvigor\daemon</td>
+  </tr>
+  <tr>
+    <td>devecocli CLI 签名自动注入不稳定</td>
+    <td>signingConfigs 仍为空</td>
+    <td><span class="warn">中</span></td>
+    <td>inject-signing.ps1 双重策略 (build+run) · GUI Sync 手动兜底</td>
+  </tr>
+  <tr>
+    <td>30 APP 并行编译资源竞争</td>
+    <td>编译超时 / 内存不足</td>
+    <td><span class="warn">中</span></td>
+    <td>--parallel 4 限制并发 · 单品牌分批构建</td>
+  </tr>
+  <tr>
+    <td>真机无法连接 (USB)</td>
+    <td>部署/测试阻塞</td>
+    <td><span class="warn">中</span></td>
+    <td>hdc list targets 自动检测 · 无设备时跳过部署</td>
+  </tr>
+  <tr>
+    <td>HarmonyCoder + RhythmHabit 全品牌 0% 签名</td>
+    <td>这 7 个 APP 无法自动化</td>
+    <td><span class="err">高</span></td>
+    <td>优先处理 GaokaoAgent (100% 签名) · 次优先 ThinkKit</td>
+  </tr>
+</table>
+
+<!-- Next Actions -->
+<h2>七、下周行动清单 (7/19-7/26)</h2>
+
+<div class="card">
+  <div class="card-title">🔴 P0 — 立即执行</div>
+  <table>
+    <tr><td style="width:24px"><span class="check">☐</span></td><td>运行 <code>inject-signing.ps1</code> 注入 17 APP 签名配置</td><td>→ 签名率 43%→100%</td></tr>
+    <tr><td><span class="check">☐</span></td><td>验证 <code>build-all.py --brand gaokao --deploy</code> 端到端通过</td><td>→ GaokaoAgent 批量部署</td></tr>
+    <tr><td><span class="check">☐</span></td><td>运行 <code>smoke-test.ps1 -All -AgentMode</code> 真机验证 5 旗舰</td><td>→ 智能体维度基线数据</td></tr>
+    <tr><td><span class="check">☐</span></td><td>未通过自动注入的 APP → DevEco Studio 手动 Sync</td><td>→ 兜底完成签名</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <div class="card-title">🟡 P1 — 本周执行</div>
+  <table>
+    <tr><td style="width:24px"><span class="check">☐</span></td><td>设置 OpenClaw cron: 每日 8:00 CST 执行 <code>ci-daily.ps1</code></td><td>→ 无人值守 CI</td></tr>
+    <tr><td><span class="check">☐</span></td><td>全品牌 <code>build-all.py --parallel 4 --deploy</code> 端到端验证</td><td>→ 30 APP 批量部署</td></tr>
+    <tr><td><span class="check">☐</span></td><td>HarmonyCoder + RhythmHabit 品牌签名补全 (GUI Sync)</td><td>→ 覆盖率 100%</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <div class="card-title">🟢 P2 — 持续跟进</div>
+  <table>
+    <tr><td style="width:24px"><span class="check">☐</span></td><td>Hypium UI 自动化测试框架调研</td><td>→ 测试 SOP 草案</td></tr>
+    <tr><td><span class="check">☐</span></td><td>自研调试工具概念设计 (日志采集/崩溃分析/UI快照)</td><td>→ 原型 TAPD</td></tr>
+    <tr><td><span class="check">☐</span></td><td>发布 SOP 草稿 (Git tag → 编译 → 商店提交)</td><td>→ 鸿蒙商店上架准备</td></tr>
+  </table>
+</div>
+
+<!-- CI Cron Setup -->
+<h2>八、CI Cron 设置指南</h2>
+
+<div class="card">
+  <div class="card-title">OpenClaw cron 配置</div>
+  <p style="color:var(--muted);font-size:0.9em">通过 OpenClaw 内置 cron 调度每日 CI</p>
+  <div class="code-block"># 在鸿蒙特使会话中执行：
+# 每日 8:00 CST 执行 ci-daily.ps1
+# cron job: isolated agentTurn, 8:00 AM 亚洲/上海</div>
+  <p style="margin-top:8px;font-size:0.9em">
+    也可手动创建 Windows Task Scheduler 任务：
+  </p>
+  <div class="code-block"># PowerShell (管理员权限):
+$action = New-ScheduledTaskAction -Execute "powershell.exe" `
+  -Argument "-File D:\92_products\SPDT-001_Harmony\scripts\ci-daily.ps1"
+$trigger = New-ScheduledTaskTrigger -Daily -At 8:00AM
+Register-ScheduledTask -TaskName "SPDT-001-DailyCI" `
+  -Action $action -Trigger $trigger -RunLevel Highest</div>
+</div>
+
+<p style="text-align:center;color:var(--muted);margin-top:40px;font-size:0.85em">
+  🏗️ 鸿蒙特使 · SPDT-001 · agent-e926h · 自动化基建方案 v1.0 · 2026-07-18
+</p>
+
+</body>
+</html>

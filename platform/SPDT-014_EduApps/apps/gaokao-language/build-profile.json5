@@ -1,0 +1,56 @@
+﻿{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "C:\\Users\\willi\\.ohos\\config\\default_gaokao-language_PRAZmEUwwhq1DjsG8uEBvgZsMsFB8C7qcmY774rnNYM=.cer",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001A2DD0005337B75C1EB5CE3DC8E475401EFC0E6F769BB8DF3381526CEF2FC11E04713B04F2FA37",
+          "profile": "C:\\Users\\willi\\.ohos\\config\\default_gaokao-language_PRAZmEUwwhq1DjsG8uEBvgZsMsFB8C7qcmY774rnNYM=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:\\Users\\willi\\.ohos\\config\\default_gaokao-language_PRAZmEUwwhq1DjsG8uEBvgZsMsFB8C7qcmY774rnNYM=.p12",
+          "storePassword": "0000001AF2AC53A3853915501ADF8DF6EE99C1D08FE4F968913A39FFB67D8DB4678EC8BC5B57FA8BA192"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "targetSdkVersion": "6.1.1(24)",
+        "compatibleSdkVersion": "6.1.1(24)",
+        "runtimeOS": "HarmonyOS",
+        "buildOption": {
+          "strictMode": {
+            "caseSensitiveCheck": true,
+            "useNormalizedOHMUrl": true
+          }
+        }
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug"
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}

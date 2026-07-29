@@ -1,0 +1,310 @@
+{
+  "schema": "https://mavis.ai/skill-config/calligraphy/scripts/micro_drama.schema.json",
+  "meta": {
+    "pack_id": "cafa_calligraphy_2026",
+    "module": "scripts",
+    "version": "1.0",
+    "last_updated": "2026-07-21",
+    "framework": "三层结构_v2（历史情境+书法维度+高考考点）"
+  },
+  "series_meta": {
+    "series_id": "墨骨山河",
+    "series_name": "墨骨山河·历史书法微剧本系列",
+    "series_theme": "以书法为锚点，解码中国历史的关键时刻——每一集都是一个改变中国走向的历史事件，每一幅字都是那个时代的精神刻痕",
+    "total_episodes": 8,
+    "episode_number": 9
+  },
+  "episode": {
+    "episode_id": "墨骨山河_ep09",
+    "title": "南门之木",
+    "subtitle": "商鞅变法·战国秩序的诞生",
+    "period": "公元前359年 · 战国·秦",
+    "location": "秦国都城·栎阳",
+    "difficulty": "Lv4",
+    "estimated_duration": "15-20分钟",
+    "player_role": "秦孝公近侍（由玩家第一人称扮演）",
+    "time_layer": {
+      "time_context": "公元前359年，秦孝公即位第三年",
+      "location_keywords": [
+        "栎阳",
+        "秦王宫",
+        "南门",
+        "渭水河滩"
+      ],
+      "historical_background": "战国中期，诸侯争霸，秦国积弱，被山东六国视为蛮夷。秦孝公下求贤令，卫鞅入秦，以霸道之术说君，历经三次舌战，终获信任，于公元前359年开始变法。商鞅变法是中国历史上最彻底的一次变法，也是秦统一六国的制度基础。"
+    },
+    "art_layer": {
+      "core_question": "法家的'法'与书法的'法'有何内在联系？统一文字为何是国家秩序的象征？",
+      "art_dimension": "书法秩序与政治秩序的同构关系",
+      "art_insight": "商鞅变法的终极目标是将整个国家变成一部精密运转的机器——每个人、每件事都有法可依、有令必行。书法的本质也是如此：一套严格的笔法体系（永字八法），在规范的约束下产生无限的变化。一年后，秦国'书同文'，小篆成为帝国的标准字体。法与书法，在这个意义上，是同构的：它们都是用秩序创造自由。",
+      "key_concepts": [
+        {
+          "concept": "小篆：统一帝国的话语秩序",
+          "definition": "秦始皇统一六国后，以小篆为标准字体颁行天下，结束了'言语异声、文字异形'的混乱",
+          "calligraphy_features": [
+            "圆转均匀：笔画首尾藏锋，线条粗细一致",
+            "对称平衡：结构追求左右对称之美",
+            "去个性化：牺牲书写者的个人风格，换取信息的普遍可读性"
+          ],
+          "artistic_value": "小篆是法家美学在文字上的投影：它追求的是'所有人都能读懂'的普遍秩序，而非'只有高手才能欣赏'的个人表现。这与商鞅'一刑赏于法'的法治精神完全一致。"
+        },
+        {
+          "concept": "秦权量诏书：书法作为国家权力的铭刻",
+          "definition": "秦始皇统一度量衡，将标准刻在权、量（秤砣和量器）上，命李斯作小篆，成为中国最早的标准化文件",
+          "calligraphy_features": [
+            "刻石体：笔画瘦硬，转折果断",
+            "金石气：刀刻质感，坚硬不可篡改",
+            "公文美学：清晰、准确、不可更改"
+          ],
+          "artistic_value": "这些刻在金属和石头上的文字，是最早的'法律文书'。它们的书法风格——瘦硬、均匀、不可更改——完美传达了法家'法不阿贵'的精神。"
+        }
+      ]
+    },
+    "contemporary_layer": {
+      "core_question": "商鞅变法的'以法治国'与当代法治社会有何异同？统一标准（度量衡/文字/法律）为何是文明的基础？",
+      "cultural_genome": "商鞅变法确立了中国两千年帝制的基本框架：郡县制（中央集权）、法律面前人人平等（王子犯法与庶民同罪）、以功劳定赏罚（打破世袭）。这些思想至今仍是中国国家治理体系的底层逻辑。而'书同文'则让中国在秦朝之后就实现了文化统一——世界上唯一一个文字不因朝代更替而断裂的文明。",
+      "reflection_prompts": [
+        {
+          "prompt": "商鞅说'治世不一道，便国不法古'——这与王安石'天变不足畏，祖宗不足法，人言不足恤'一脉相承。为什么中国历史上的改革者总是要'不法古'？这反映了什么民族性格？",
+          "exam_connection": "商鞅变法是上海高考历史高频考点，重点：变法内容（废井田/建县制/军功制）、历史意义"
+        },
+        {
+          "prompt": "书法的'法'与法律的'法'都强调规范与秩序。书法学习中的'永字八法'与商鞅的'令制'，在'通过约束达到自由'这一点上是否相通？",
+          "exam_connection": "书法史中'唐楷尚法'与商鞅变法的内在联系"
+        }
+      ]
+    },
+    "acts": [
+      {
+        "act_number": 1,
+        "act_title": "栎阳求贤",
+        "scene_type": "历史情境导入",
+        "scene_setting": {
+          "时间": "公元前359年春 · 秦国栎阳",
+          "地点": "秦王宫大殿",
+          "心境": "你作为秦孝公的近侍，亲历这场改变秦国命运的三天舌战",
+          "dramatic_context": "公元前361年，秦孝公即位，发求贤令：'宾客群臣有能出奇计强秦者，吾且尊官，与之分土。'卫鞅入秦，先见景监太监，再三试探秦孝公的心意，终于在这场三天三夜的历史性舌战中，说出了两个字：霸道。"
+        },
+        "dramatic_arc": "建立变法前的社会背景，理解'为什么要变'",
+        "dramatic_beats": [
+          {
+            "beat_id": "墨骨山河_09_1_1",
+            "type": "narrative",
+            "speaker": "旁白",
+            "content": "【公元前359年 · 栎阳城】\n\n秦国的春天来得迟。\n\n栎阳城外，荒草连天。六国的使节从不来秦——这个被山海关拒于中原文明之外的边陲之国，是诸侯眼中的蛮夷。秦孝公站在宫殿的高台上，望着这片土地，眉头紧锁。\n\n'秦与戎狄同俗，有虎狼之心。'\n\n这是六国对秦国的评价。\n\n孝公继位那年，颁布了一道求贤令。这道令震惊天下：'宾客群臣有能出奇计强秦者，吾且尊官，与之分土。'\n\n你站在大殿之下，作为近侍，亲眼看着一个又一个说客从六国来到栎阳，又失望而去。直到那一天——\n\n一个叫卫鞅的魏国士子，第三次求见秦孝公。",
+            "knowledge_injection": {
+              "考点": "战国形势 + 秦孝公求贤令的背景",
+              "tags": ["#历史/古代史/商鞅变法", "#考频/⭐⭐⭐⭐⭐"],
+              "note": "商鞅入秦的背景：秦孝公求贤令'与之分土'——这是极不寻常的承诺，说明孝公改革决心极大"
+            },
+            "scene_type": "narrative",
+            "scene_name": "求贤令"
+          },
+          {
+            "beat_id": "墨骨山河_09_1_2",
+            "type": "dialogue",
+            "speaker": "卫鞅",
+            "content": "【卫鞅舌战秦孝公·第一论：帝道】\n\n卫鞅第一次进言，谈的是黄帝之道。\n\n'黄帝曰：上下一日百战。臣故曰：黄帝之制天下也，刑政洁矣，然民俗靡焉。'\n\n孝公听着听着，睡着了。\n\n卫鞅出来后，对景监说：'吾以帝道说君，不得入。观君之意，其于帝道犹乘坚策驽 to 逐逸 mag（追赶奔跑的骏马）。吾再试之。'",
+            "knowledge_injection": {
+              "考点": "卫鞅三试秦孝公的历史事实",
+              "tags": ["#历史/古代史/诸子百家", "#考频/⭐⭐"],
+              "note": "卫鞅试探孝公的过程：帝道（黄帝之道）→王道（尧舜之道）→霸道（富国强兵）"
+            },
+            "scene_type": "dialogue",
+            "scene_name": "帝道之论"
+          },
+          {
+            "beat_id": "墨骨山河_09_1_3",
+            "type": "concept",
+            "speaker": "旁白",
+            "content": "【卫鞅舌战秦孝公·第二论：王道】\n\n第二次，卫鞅谈王道。\n\n孝公依然不悦，对景监说：'你推荐的这个客人，话说得太大，我不能接受。'\n\n卫鞅说：'吾以王道说君，不得入。今以霸道说君，愿竭愚忠，唯君用之。'\n\n这一次，孝公没有睡着——他的眼睛里燃起了光。",
+            "knowledge_injection": {
+              "考点": "王道与霸道的本质区别：王道以德服人，霸道以力服人",
+              "tags": ["#历史/古代史/诸子百家/法家", "#考频/⭐⭐⭐"],
+              "note": "商鞅属于法家，主张以法治国——霸道是法家的政治主张"
+            },
+            "scene_type": "concept",
+            "scene_name": "霸道之论"
+          },
+          {
+            "beat_id": "墨骨山河_09_1_4",
+            "type": "dialogue",
+            "speaker": "卫鞅",
+            "content": "【卫鞅舌战秦孝公·第三论：霸道】\n\n第三次，卫鞅说了三天三夜。\n\n'论至德者不和于俗，成大功者不谋于众。'\n\n'普通人只知道守成，圣人才知道变法。当今之世，诸侯力政，并争于强兵。'\n\n'夫论至德者不和于俗，成大功者不谋于众。故圣人苟可以强国，不法其故；苟可以利民，不循其礼。'\n\n孝公猛然站起：'先生所言，正是寡人心中所想！'\n\n——公元前359年，卫鞅被任命为左庶长，变法正式开始。",
+            "knowledge_injection": {
+              "考点": "商鞅变法的理论基础：'治世不一道，便国不法古'——变法革新的理论依据",
+              "tags": ["#历史/古代史/商鞅变法", "#考频/⭐⭐⭐⭐⭐"],
+              "note": "这句话是理解商鞅变法精神的核心，也是高考历史最常考的名言"
+            },
+            "scene_type": "dialogue",
+            "scene_name": "霸道定策"
+          }
+        ]
+      },
+      {
+        "act_number": 2,
+        "act_title": "南门立木",
+        "scene_type": "历史高潮",
+        "scene_setting": {
+          "时间": "公元前359年夏 · 栎阳城南门",
+          "地点": "栎阳城南门",
+          "心境": "这是变法的第一仗——不是战场，而是人心。你亲眼看见，一个简单的木头，如何撬动整个秦国的信用体系",
+          "dramatic_context": "变法要推行，必须先取信于民。商鞅用了一个最简单也最震撼的方法：南门立木。他下令在都城栎阳的南门立一根三丈高的木头，宣布：谁能把它搬到北门，赏十金。没有人动。然后他将赏金提高到五十金。终于有一个人把木头搬走了。五十金，一分不少，当场兑现。"
+        },
+        "dramatic_arc": "理解商鞅的治国逻辑：立法→示信→必行",
+        "dramatic_beats": [
+          {
+            "beat_id": "墨骨山河_09_2_1",
+            "type": "narrative",
+            "speaker": "旁白",
+            "content": "【公元前359年夏 · 栎阳南门】\n\n栎阳的夏天，燥热难当。\n\n南门外，人群聚集。一根三丈高的木头，孤零零地立在那里。\n\n木头旁边，挂着一张告示：\n\n'将此木移至北门者，赏十金。'\n\n十金——足够一个普通人家吃三年。\n\n可是没有人动。\n\n'这一定是搞错了。'人们窃窃私语，'谁会花这么大力气搬一根木头？一定有诈。'\n\n你站在人群中，看着这根木头，心里想：这是左庶长卫鞅新颁布的第一道命令——'令既具，未布，恐民之不信己'，所以他先要立威。\n\n但这威，要怎么立？",
+            "knowledge_injection": {
+              "考点": "南门立木的历史事实：商鞅取信于民的政治智慧",
+              "tags": ["#历史/古代史/商鞅变法", "#考频/⭐⭐⭐⭐⭐"],
+              "note": "'恐民之不信己'——商鞅深刻理解：法律的生命在于执行，执行的前提在于信任"
+            },
+            "scene_type": "narrative",
+            "scene_name": "立木之令"
+          },
+          {
+            "beat_id": "墨骨山河_09_2_2",
+            "type": "dialogue",
+            "speaker": "旁白",
+            "content": "【赏金从十金提高到五十金】\n\n第一天，没有人动。\n\n第二天，赏金提高到了五十金。\n\n五十金——足够一个普通人一辈子吃穿不愁。\n\n人群哗然。\n\n终于，一个穷汉站了出来。他把木头从南门搬到了北门。\n\n商鞅当场兑现：五十金，一分不少。\n\n——这件事迅速传遍了栎阳，传遍了秦国，传遍了天下。\n\n卫鞅用五十金买了一样东西：无价之宝——政府的信用。",
+            "knowledge_injection": {
+              "考点": "商鞅立木取信的政治意义：法律必须被信仰，否则形同虚设",
+              "tags": ["#历史/古代史/商鞅变法", "#考频/⭐⭐⭐⭐⭐"],
+              "note": "这道题的考点往往与'商鞅变法成功的原因'联系在一起：取信于民是变法成功的第一步"
+            },
+            "scene_type": "dialogue",
+            "scene_name": "五十金之信"
+          },
+          {
+            "beat_id": "墨骨山河_09_2_3",
+            "type": "concept",
+            "speaker": "旁白",
+            "content": "【商鞅变法五大纲领】\n\n南门立木之后，卫鞅颁布了变法的核心法令，史称'垦草令'和第一次变法（公元前359年）：\n\n第一，废井田，开阡陌\n——废除井田制（公田），允许土地自由买卖。\n井田制是西周的土地国有制度：土地分为公田和私田，公田收获归贵族，私田不能买卖。商鞅废井田，打破了贵族对土地的垄断，激发了农民的生产积极性。\n\n第二，建县制\n——把秦国划分为31个县，国君直接任免县令。\n从此，秦国不再有世袭的封君，官员的任免权完全在国君手中。\n\n第三，奖励军功\n——论军功授予爵位，没有军功的贵族不再受封。\n'有功者显荣，无功者虽富无所芬华'。\n\n第四，燔诗书\n——焚烧《诗》《书》等儒家典籍，禁止游说求官。\n\n第五，令民为什伍\n——建立连坐制度，五家为伍，十家为什，相互监督。",
+            "knowledge_injection": {
+              "考点": "商鞅变法的主要内容（必背）：废井田、建县制、奖励军功、燔诗书、连坐制",
+              "tags": ["#历史/古代史/商鞅变法", "#考频/⭐⭐⭐⭐⭐"],
+              "note": "高考必考：商鞅变法的每一条内容都要记住，特别是'废井田'和'奖励军功'——这两条从根本上改变了秦国的社会结构"
+            },
+            "scene_type": "concept",
+            "scene_name": "变法五纲"
+          },
+          {
+            "beat_id": "墨骨山河_09_2_4",
+            "type": "concept",
+            "speaker": "旁白",
+            "content": "【渭水刑徒·太子的老师】\n\n变法刚刚推行，太子驷犯了法。\n\n商鞅面临了一个几乎无解的难题：太子是国君的继承人，不能用刑。\n\n但法律面前必须人人平等，否则变法就成了一句空话。\n\n商鞅做出了一个震惊秦国的决定：\n\n'法之不行，自上犯之。太子之嗣，不能施刑。刑其傅公子虔，黥其师公孙贾。'\n\n——给太子傅公子虔施加了劓刑（割鼻），给太子师公孙贾施加了黥刑（在脸上刻字）。\n\n渭水河滩上，太子的两位老师当着全国人民的面受刑。\n\n从此，秦国上下，没有人敢再犯法。",
+            "knowledge_injection": {
+              "考点": "商鞅的法治精神：'王子犯法与庶民同罪'——法律面前人人平等（法的普遍性）",
+              "tags": ["#历史/古代史/商鞅变法", "#考频/⭐⭐⭐⭐⭐"],
+              "note": "这一条是商鞅变法精神的核心体现，也是与后世封建社会'刑不上大夫'的本质区别"
+            },
+            "scene_type": "concept",
+            "scene_name": "渭水之刑"
+          }
+        ]
+      },
+      {
+        "act_number": 3,
+        "act_title": "法度山河",
+        "scene_type": "历史检验与文化延伸",
+        "scene_setting": {
+          "时间": "变法十年后 · 公元前349年",
+          "地点": "栎阳城内外",
+          "心境": "十年之后，你再次站在栎阳城下。当年那个弱小的秦国，如今是什么模样？",
+          "dramatic_context": "商鞅变法持续了约二十年（公元前359年-公元前338年）。变法期间，秦国从被山东六国轻视的边陲之国，一跃成为天下最强的国家。'秦民大说（悦）''道不拾遗''山无盗贼''家给人足'——这是《史记》中对变法十年后秦国的描述。"
+        },
+        "dramatic_arc": "理解商鞅变法的历史影响，以及书法维度的延伸",
+        "dramatic_beats": [
+          {
+            "beat_id": "墨骨山河_09_3_1",
+            "type": "narrative",
+            "speaker": "旁白",
+            "content": "【变法十年·秦国民生的改变】\n\n公元前349年，你再次来到栎阳。\n\n十年之间，秦国的田野里没有了闲人——每一个劳动力都在开垦荒地。\n\n那些在战场上立功的士兵，穿上了绣有爵位标志的服装，走在街上，接受人们的尊敬。\n\n那些旧贵族，不再因为出身而享有特权。他们中有的变成了普通的农户，有的投身军旅，靠军功重新赢得了地位。\n\n栎阳的街道上，道不拾遗，夜不闭户。\n\n《史记》记载：'行之十年，秦民大说（悦），道不拾遗，山无盗贼，家给人足。民勇于公战，怯于私斗，乡邑大治。'",
+            "knowledge_injection": {
+              "考点": "商鞅变法的历史成效：十年之后，秦国大治，为后来统一六国奠定基础",
+              "tags": ["#历史/古代史/商鞅变法", "#考频/⭐⭐⭐⭐⭐"],
+              "note": "这是商鞅变法最重要的历史意义：秦国从弱变强，直接后果是秦始皇最终统一六国"
+            },
+            "scene_type": "narrative",
+            "scene_name": "十年大治"
+          },
+          {
+            "beat_id": "墨骨山河_09_3_2",
+            "type": "concept",
+            "speaker": "旁白",
+            "content": "【商鞅之死与变法的遗产】\n\n公元前338年，秦孝公去世。\n\n商鞅失去保护伞，被公子虔等人诬陷谋反，逃亡至边关。\n\n他的最后时刻是这样的：\n\n他试图住店，但店主说：'商君之法，舍人无验者坐之。'——根据商鞅自己制定的法律，没有凭证的人不能住宿。\n\n商鞅仰天长叹：'嗟乎！为法之敝，一至此哉！'\n\n——他制定的法律，最终困住了他自己。\n\n商鞅被车裂（五马分尸），但变法没有废止。\n\n'商君虽死，秦法未败。'\n\n商鞅死后一百三十余年，他的后继者秦始皇，用商鞅奠定的制度，最终统一了六国。",
+            "knowledge_injection": {
+              "考点": "商鞅变法的历史意义 + 商鞅之死的历史教训",
+              "tags": ["#历史/古代史/商鞅变法", "#考频/⭐⭐⭐⭐⭐"],
+              "note": "高考综合题常考：'为什么商鞅虽死，变法仍然成功？'——因为变法符合时代需要，已经深入秦国社会结构"
+            },
+            "scene_type": "concept",
+            "scene_name": "身后山河"
+          },
+          {
+            "beat_id": "墨骨山河_09_3_3",
+            "type": "concept",
+            "speaker": "旁白",
+            "content": "【书同文·法度之美】\n\n商鞅死后七十余年，秦始皇统一六国。\n\n他接受了丞相李斯的建议，以商鞅变法的精神，推行'书同文'——用统一的小篆字体，结束战国时期'言语异声、文字异形'的混乱。\n\n李斯小篆的美学特征，正是法家精神的视觉化：\n\n线条：粗细一致，均匀对称\n结构：左右平衡，去除个性的夸张\n精神：可读性高于表现力，普遍性高于独特性\n\n这是世界上最早的'标准化书写'——它让不同地区的人都能读懂同一份法律文书，让帝国的政令畅通无阻。\n\n法家的'法'与书法的'法'，在这一刻合二为一：\n\n'法'，是秩序，也是自由。",
+            "knowledge_injection": {
+              "考点": "书同文的历史意义：结束'言语异声、文字异形'，小篆成为中国历史上第一个统一的标准字体",
+              "tags": ["#历史/古代史/书同文", "#书法史/小篆", "#考频/⭐⭐⭐⭐"],
+              "note": "书同文是商鞅变法精神的延伸：商鞅统一了度量衡，秦始皇统一了文字——两者都是建立统一国家的基础设施"
+            },
+            "scene_type": "concept",
+            "scene_name": "书同文"
+          },
+          {
+            "beat_id": "墨骨山河_09_3_4",
+            "type": "reflection",
+            "speaker": "旁白",
+            "content": "【结语·法与秩序】\n\n商鞅用二十年的时间，把秦国从'蛮夷'变成了'虎狼之国'。\n\n他的方法简单而残酷：一切以法为准绳，赏罚必行，令行禁止。\n\n他得罪了所有人——贵族、旧官僚、儒生——但他服务了秦国，服务了历史。\n\n如果用书法的语言来描述商鞅：\n\n他是一个用最严格笔法写字的人。\n\n每一笔，都有来历；\n每一条线，都有去处；\n每一个结构，都精确到分毫不差。\n\n他的字，叫做'秦法'。\n\n两千二百年后，我们在每一张秦权量诏书上，在每一块刻石上，看到的正是这种精神：\n\n秩序即美。\n法度即骨。\n\n——墨骨山河，第九集完。",
+            "knowledge_injection": {
+              "考点": "商鞅变法的历史地位 + 书法史中'秦篆'的审美特征",
+              "tags": ["#历史/古代史/商鞅变法", "#书法史/小篆", "#考频/⭐⭐⭐⭐"],
+              "note": "本集核心知识图谱：HIS-AS-004（春秋战国社会变革）+ HIS-AS-005（诸子百家/法家）+ HIS-AS-006（商鞅变法）+ HIS-AS-007（秦统一）+ HIS-AS-010（书同文）"
+            },
+            "scene_type": "reflection",
+            "scene_name": "结语"
+          }
+        ]
+      }
+    ],
+    "illustration_prompts": [
+      {
+        "scene_id": "墨骨山河_09_1_1",
+        "scene_name": "求贤令",
+        "ai_prompt": "Ancient Chinese palace at dawn, dramatic scene. Qin Xiaogong stands on a high platform looking out over desolate fields. A proclamation scroll is posted on a palace pillar. Snow-dusted mountains in the distance. Cinematic lighting, oil painting style, rich earth tones, historically accurate Warring States period architecture and clothing. Inspired by classical Chinese historical paintings. Caption at bottom: '求贤令'."
+      },
+      {
+        "scene_id": "墨骨山河_09_1_4",
+        "scene_name": "霸道定策",
+        "ai_prompt": "Dramatic dialogue scene in a grand palace hall. Lord Shang Yang stands before Qin Xiaogong, gesturing emphatically. The king leans forward with intense interest. Torchlight flickers, casting dramatic shadows. Advisors in background watching intently. Oil painting style, rich warm tones, historically accurate Warring States period court costumes. Inspired by Rembrandt's chiaroscuro. Caption at bottom: '霸道定策 · 公元前359年'."
+      },
+      {
+        "scene_id": "墨骨山河_09_2_1",
+        "scene_name": "立木之令",
+        "ai_prompt": "A tall wooden pole stands at the South Gate of Leiyang City, Warring States period. An imperial decree hangs beside it. Townspeople gather in confusion, whispering. Dusty streets, warm summer sunlight. Rich atmospheric detail, oil painting style, historically accurate ancient Chinese city architecture. Caption at bottom: '南门立木 · 赏五十金'."
+      },
+      {
+        "scene_id": "墨骨山河_09_2_2",
+        "scene_name": "五十金之信",
+        "ai_prompt": "A poor laborer carrying a heavy wooden beam through the streets of ancient Leiyang, heading north toward the city gate. Crowds watching in amazement. Lord Shang Yang overseeing the transaction, coins being counted. Afternoon sun, dusty road, warm earth tones. Oil painting style, Warring States period architecture and costumes. Caption at bottom: '五十金 · 当场兑现'."
+      },
+      {
+        "beat_id": "墨骨山河_09_2_4",
+        "scene_name": "渭水之刑",
+        "ai_prompt": "Wei River riverbank, public punishment scene. Prince Quliang's two teachers — Lord Gong (nose cut off) and Sima Gongsun (face branded) — being punished publicly before the assembled Qin court and citizens. Lord Shang Yang stands sternly to one side, a law book in hand. Historical accuracy, dramatic tension, somber lighting. Oil painting style, muted earth tones with red accents. Caption at bottom: '法之不行，自上犯之'."
+      },
+      {
+        "scene_id": "墨骨山河_09_3_3",
+        "scene_name": "书同文",
+        "ai_prompt": "Close-up of a stone inscription with Xiao Zhuan (Small Seal Script) calligraphy. The characters are precisely carved, with uniform stroke width, perfect symmetry, and rounded terminals. A craftsman using a hammer and chisel to carve characters. Background shows Qin empire landscape with unified architecture. Macro detail photography style showing the texture of carved stone and the beauty of seal script. Caption at bottom: '书同文 · 小篆 · 李斯'."
+      }
+    ]
+  }
+}

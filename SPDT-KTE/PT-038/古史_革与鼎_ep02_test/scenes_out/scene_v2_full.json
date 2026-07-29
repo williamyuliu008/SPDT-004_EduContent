@@ -1,0 +1,816 @@
+{
+  "metadata": {
+    "series_title": "革与鼎",
+    "ep_id": 2,
+    "ep_title": "百家争鸣",
+    "source_chain_id": "古史_革与鼎_ep02",
+    "source_pt": "PT-038",
+    "schema_version": "2.0.0",
+    "_generated_by": "PT038_to_VideoFactory.py v2.0.0",
+    "_generated_at": "2026-07-16T19:22:07+08:00",
+    "_total_scenes": 11
+  },
+  "scenes": [
+    {
+      "scene_id": "古史_革与鼎_ep02_act1_00",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "这个故事出自《左传》，它的…",
+        "body_lines": [
+          "这个故事出自《左传》，它的意义在于：季…",
+          "而他所在的那个时代——春秋中期——懂得…",
+          "公元前518年，孔子三十三岁"
+        ],
+        "keywords": [
+          "这个",
+          "这个故",
+          "这个故事",
+          "这个故事出"
+        ]
+      },
+      "page": {
+        "current": 1,
+        "total": 11,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 0,
+        "total": 11,
+        "name": "断裂时刻：礼崩乐坏之后·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前551-前479年（孔子生平）",
+        "#历史/百家争鸣",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep02",
+      "five_skandha": {
+        "color_base": [
+          "这个",
+          "这个故",
+          "这个故事",
+          "这个故事出"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "这个故事出自《左传》，它的意义在于：季札是一个真正懂得礼乐的人。\n\n\n\n而他所在……",
+        "discrimination": "学生能识别「这个故事出自《左传》，它的…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#革与鼎/前551-前479年（孔子生平）",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT1-BEAT-00-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「这个故事出自《左传》，它的意义在于：季…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_革与鼎_ep02_act1_01",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "【孔子的困惑】\n\n\n\n孔子对学生…",
+        "body_lines": [
+          "【孔子的困惑】",
+          "孔子对学生说：'夏礼，吾能言之，杞不足…",
+          "殷礼，吾能言之，宋不足征也"
+        ],
+        "keywords": [
+          "【孔子",
+          "【孔子的",
+          "【孔子的困",
+          "【孔子的困惑"
+        ]
+      },
+      "page": {
+        "current": 2,
+        "total": 11,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 1,
+        "total": 11,
+        "name": "断裂时刻：礼崩乐坏之后·dialogue",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前551-前479年（孔子生平）",
+        "#历史/百家争鸣",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep02",
+      "five_skandha": {
+        "color_base": [
+          "【孔子",
+          "【孔子的",
+          "【孔子的困",
+          "【孔子的困惑"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "【孔子的困惑】\n\n\n\n孔子对学生说：'夏礼，吾能言之，杞不足征也；殷礼，吾能言之……",
+        "discrimination": "学生能识别「【孔子的困惑】\n\n\n\n孔子对学生…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#革与鼎/前551-前479年（孔子生平）",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT1-BEAT-01-DIALOGUE",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「【孔子的困惑】\n\n\n\n孔子对学生说：'夏礼，吾能…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_革与鼎_ep02_act1_02",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "但孔子不只是在'考古'——他…",
+        "body_lines": [
+          "但孔子不只是在'考古'——他在为乱世开…",
+          "前497年，孔子五十五岁，离开了鲁国，开始…",
+          "他要找的，是愿意实行他的政治主张…"
+        ],
+        "keywords": [
+          "但孔",
+          "但孔子",
+          "但孔子不",
+          "但孔子不只"
+        ]
+      },
+      "page": {
+        "current": 3,
+        "total": 11,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 2,
+        "total": 11,
+        "name": "断裂时刻：礼崩乐坏之后·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前551-前479年（孔子生平）",
+        "#历史/百家争鸣",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep02",
+      "five_skandha": {
+        "color_base": [
+          "但孔",
+          "但孔子",
+          "但孔子不",
+          "但孔子不只"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "但孔子不只是在'考古'——他在为乱世开出药方。\n\n\n\n前497年，孔子五十五岁，……",
+        "discrimination": "学生能识别「但孔子不只是在'考古'——他…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#革与鼎/前551-前479年（孔子生平）",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT1-BEAT-02-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-3",
+        "alignment_note": "旁白「但孔子不只是在'考古'——他在为乱世开…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_革与鼎_ep02_act1_03",
+      "scene_type": "timeline",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "孔子周游列国失败的深…",
+        "header": "孔子周游列国失败的深层原因：乱",
+        "timeline_events": [
+          {
+            "year": "758年",
+            "event": "乾元元年",
+            "note": "蒲州",
+            "active": true
+          }
+        ]
+      },
+      "page": {
+        "current": 4,
+        "total": 11,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 3,
+        "total": 11,
+        "name": "断裂时刻：礼崩乐坏之后·role_play",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前551-前479年（孔子生平）",
+        "#历史/百家争鸣",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep02",
+      "five_skandha": {
+        "color_base": [
+          "孔子",
+          "孔子周",
+          "孔子周游",
+          "孔子周游列"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "孔子周游列国失败的深层原因：乱世君主需要'立即见效'的策略，孔子提供的是'长期育……",
+        "discrimination": "孔子周游列国失败的深层原因：乱世君主需要'立即见效'的策略，",
+        "action_prompt": "书写/口述",
+        "recognition_marker": "#革与鼎/前551-前479年（孔子生平）",
+        "bottleneck_warn": "none"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT1-BEAT-03-ROLE_PLAY",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「孔子周游列国失败的深层原因：乱世…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 2,
+        "load_status": "ACCEPTABLE",
+        "bottleneck_cause": "none",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_hook",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_革与鼎_ep02_act2_04",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "为什么百家争鸣发生在…",
+        "body_lines": [
+          "为什么百家争鸣发生在春秋战国，而…",
+          "有一个深刻的结构性原因：周朝的政…",
+          "而礼乐秩序的维系，需要两个条件——"
+        ],
+        "keywords": [
+          "为什",
+          "为什么百",
+          "为什么百家",
+          "为什么百家争"
+        ]
+      },
+      "page": {
+        "current": 5,
+        "total": 11,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 4,
+        "total": 11,
+        "name": "百家图谱：从儒道墨到法名阴阳·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前551-前479年（孔子生平）",
+        "#历史/百家争鸣",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep02",
+      "five_skandha": {
+        "color_base": [
+          "为什",
+          "为什么百",
+          "为什么百家",
+          "为什么百家争"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "为什么百家争鸣发生在春秋战国，而不是别的时代？\n\n\n\n有一个深刻的结构性原因：周……",
+        "discrimination": "学生能识别「为什么百家争鸣发生在…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#革与鼎/前551-前479年（孔子生平）",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-04-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「为什么百家争鸣发生在春秋战国，而…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_革与鼎_ep02_act2_05",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "儒家的答案是：重建礼乐",
+        "body_lines": [
+          "儒家的答案是：重建礼乐",
+          "孔子说：克己复礼为仁",
+          "——约束自己，回归礼制，这就是仁"
+        ],
+        "keywords": [
+          "儒家",
+          "儒家的",
+          "儒家的答",
+          "儒家的答案"
+        ]
+      },
+      "page": {
+        "current": 6,
+        "total": 11,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 5,
+        "total": 11,
+        "name": "百家图谱：从儒道墨到法名阴阳·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前551-前479年（孔子生平）",
+        "#历史/百家争鸣",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep02",
+      "five_skandha": {
+        "color_base": [
+          "儒家",
+          "儒家的",
+          "儒家的答",
+          "儒家的答案"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "儒家的答案是：重建礼乐。\n\n\n\n孔子说：克己复礼为仁。——约束自己，回归礼制，这……",
+        "discrimination": "学生能识别「儒家的答案是：重建礼乐…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#革与鼎/前551-前479年（孔子生平）",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-05-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-3",
+        "alignment_note": "旁白「儒家的答案是：重建礼乐。\n\n\n\n孔子说：克己…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_革与鼎_ep02_act2_06",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "道家的答案是：无为",
+        "body_lines": [
+          "道家的答案是：无为",
+          "老子说：失道而后德，失德而后仁，失仁…",
+          "——礼，是秩序崩溃后最末端的补救手段…"
+        ],
+        "keywords": [
+          "道家",
+          "道家的",
+          "道家的答",
+          "道家的答案"
+        ]
+      },
+      "page": {
+        "current": 7,
+        "total": 11,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 6,
+        "total": 11,
+        "name": "百家图谱：从儒道墨到法名阴阳·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前551-前479年（孔子生平）",
+        "#历史/百家争鸣",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep02",
+      "five_skandha": {
+        "color_base": [
+          "道家",
+          "道家的",
+          "道家的答",
+          "道家的答案"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "道家的答案是：无为。\n\n\n\n老子说：失道而后德，失德而后仁，失仁而后义，失义而后……",
+        "discrimination": "学生能识别「道家的答案是：无为。\n\n\n\n老子…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#革与鼎/前551-前479年（孔子生平）",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-06-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「道家的答案是：无为。\n\n\n\n老子说：失道而后…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_革与鼎_ep02_act2_07",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "百家争鸣的各家，本质上…",
+        "body_lines": [
+          "百家争鸣的各家，本质上都在回答同…",
+          "百家争鸣不是思想的空想，是乱世中…"
+        ],
+        "keywords": [
+          "百家",
+          "百家争",
+          "百家争鸣",
+          "百家争鸣的"
+        ]
+      },
+      "page": {
+        "current": 8,
+        "total": 11,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 7,
+        "total": 11,
+        "name": "百家图谱：从儒道墨到法名阴阳·dialogue",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前551-前479年（孔子生平）",
+        "#历史/百家争鸣",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep02",
+      "five_skandha": {
+        "color_base": [
+          "百家",
+          "百家争",
+          "百家争鸣",
+          "百家争鸣的"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "百家争鸣的各家，本质上都在回答同一个问题：礼乐秩序崩溃后，什么才是好的秩序？儒家……",
+        "discrimination": "学生能识别「百家争鸣的各家，本质上…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#革与鼎/前551-前479年（孔子生平）",
+        "bottleneck_warn": "none"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-07-DIALOGUE",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「百家争鸣的各家，本质上都在回答同…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 3,
+        "load_status": "ACCEPTABLE",
+        "bottleneck_cause": "none",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_革与鼎_ep02_act3_08",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "道家的'无为而治'，在今天…",
+        "body_lines": [
+          "道家的'无为而治'，在今天对应的是'自…",
+          "儒家的'仁政'和'礼制'，在今天对应的是…",
+          "光有制度不够，还要有文化认同"
+        ],
+        "keywords": [
+          "道家",
+          "道家的",
+          "道家的'",
+          "道家的'无"
+        ]
+      },
+      "page": {
+        "current": 9,
+        "total": 11,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 8,
+        "total": 11,
+        "name": "当代启示：秩序焦虑与制度选择·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前551-前479年（孔子生平）",
+        "#历史/百家争鸣",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep02",
+      "five_skandha": {
+        "color_base": [
+          "道家",
+          "道家的",
+          "道家的'",
+          "道家的'无"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "道家的'无为而治'，在今天对应的是'自由市场'的逻辑：政府少干预，市场自己会形成……",
+        "discrimination": "学生能识别「道家的'无为而治'，在今天…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#革与鼎/前551-前479年（孔子生平）",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT3-BEAT-08-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-3",
+        "alignment_note": "旁白「道家的'无为而治'，在今天对应的是'自…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_革与鼎_ep02_act3_09",
+      "scene_type": "action",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "高考考点提示：百家争鸣…",
+        "task_description": "高考考点提示：百家争鸣的核心在于理解各家主张的'核心关…"
+      },
+      "page": {
+        "current": 10,
+        "total": 11,
+        "show": false
+      },
+      "scene_info": {
+        "idx": 9,
+        "total": 11,
+        "name": "当代启示：秩序焦虑与制度选择·role_play",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前551-前479年（孔子生平）",
+        "#历史/百家争鸣",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep02",
+      "five_skandha": {
+        "color_base": [
+          "高考",
+          "高考考",
+          "高考考点",
+          "高考考点提"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "高考考点提示：百家争鸣的核心在于理解各家主张的'核心关切'和'解决方案'，以及各……",
+        "discrimination": "高考考点提示：百家争鸣的核心在于理解各家主张的'核心关切'和",
+        "action_prompt": "书写/口述",
+        "recognition_marker": "#革与鼎/前551-前479年（孔子生平）",
+        "bottleneck_warn": "none"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT3-BEAT-09-ROLE_PLAY",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「高考考点提示：百家争鸣的核心在于…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 2,
+        "load_status": "ACCEPTABLE",
+        "bottleneck_cause": "none",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_hook",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": false
+    },
+    {
+      "scene_id": "古史_革与鼎_ep02_act3_10",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "最后，说一个可能被忽视…",
+        "body_lines": [
+          "最后，说一个可能被忽视的问题：百家…",
+          "因为汉武帝'罢黜百家，独尊儒术'——这是…",
+          "但'独尊儒术'不是消灭百家——而是把儒…"
+        ],
+        "keywords": [
+          "最后",
+          "说一",
+          "说一个",
+          "说一个可"
+        ]
+      },
+      "page": {
+        "current": 11,
+        "total": 11,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 10,
+        "total": 11,
+        "name": "当代启示：秩序焦虑与制度选择·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#革与鼎/前551-前479年（孔子生平）",
+        "#历史/百家争鸣",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_革与鼎_ep02",
+      "five_skandha": {
+        "color_base": [
+          "最后",
+          "说一",
+          "说一个",
+          "说一个可"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "最后，说一个可能被忽视的问题：百家争鸣为什么在秦朝之后就'终结'了？\n\n\n\n因为……",
+        "discrimination": "学生能识别「最后，说一个可能被忽视…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#革与鼎/前551-前479年（孔子生平）",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT3-BEAT-10-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「最后，说一个可能被忽视的问题：百家…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    }
+  ]
+}

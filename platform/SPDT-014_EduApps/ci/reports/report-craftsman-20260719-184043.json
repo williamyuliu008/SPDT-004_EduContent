@@ -1,0 +1,83 @@
+﻿{
+    "summary":  {
+                    "total_unsigned_kb":  0,
+                    "total_signed_kb":  0,
+                    "compiled":  10,
+                    "total":  10,
+                    "signed":  10
+                },
+    "brand":  "craftsman",
+    "timestamp":  "2026-07-19 18:40:43",
+    "apps":  [
+                 {
+                     "unsigned_kb":  20.8,
+                     "app":  "craftsman-api-tester",
+                     "signed_kb":  54.4,
+                     "compiled":  true,
+                     "signed":  true
+                 },
+                 {
+                     "unsigned_kb":  119.9,
+                     "app":  "craftsman-arkui",
+                     "signed_kb":  157.7,
+                     "compiled":  true,
+                     "signed":  true
+                 },
+                 {
+                     "unsigned_kb":  20.8,
+                     "app":  "craftsman-clipboard",
+                     "signed_kb":  54.4,
+                     "compiled":  true,
+                     "signed":  true
+                 },
+                 {
+                     "unsigned_kb":  20.8,
+                     "app":  "craftsman-code-editor",
+                     "signed_kb":  54.4,
+                     "compiled":  true,
+                     "signed":  true
+                 },
+                 {
+                     "unsigned_kb":  20.8,
+                     "app":  "craftsman-image-tool",
+                     "signed_kb":  54.4,
+                     "compiled":  true,
+                     "signed":  true
+                 },
+                 {
+                     "unsigned_kb":  114.9,
+                     "app":  "craftsman-ohpm",
+                     "signed_kb":  152.8,
+                     "compiled":  true,
+                     "signed":  true
+                 },
+                 {
+                     "unsigned_kb":  20.8,
+                     "app":  "craftsman-scanner",
+                     "signed_kb":  54.4,
+                     "compiled":  true,
+                     "signed":  true
+                 },
+                 {
+                     "unsigned_kb":  20.8,
+                     "app":  "craftsman-translate",
+                     "signed_kb":  54.4,
+                     "compiled":  true,
+                     "signed":  true
+                 },
+                 {
+                     "unsigned_kb":  21.9,
+                     "app":  "craftsman-utils",
+                     "signed_kb":  61.2,
+                     "compiled":  true,
+                     "signed":  true
+                 },
+                 {
+                     "unsigned_kb":  96.2,
+                     "app":  "craftsman-utils-v2",
+                     "signed_kb":  141.7,
+                     "compiled":  true,
+                     "signed":  true
+                 }
+             ]
+}

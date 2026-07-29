@@ -1,0 +1,11 @@
+concept: 基本初等函数分类
+passed_v1: true
+sample_id: func_014
+source: VCC v1.0 math animation factory
+tags:
+  D1_process: static
+  D2_spatial: non_spatial
+  D3_complexity: simple
+  D4_presentation: comparison
+  D5_concept_type: storage
+  D6_subject: algebra

@@ -1,0 +1,102 @@
+{
+  "generated_at": "2026-07-20T09:35:00+08:00",
+  "mode": "full_pipeline_completed",
+  "results": [
+    {
+      "ep_num": 1,
+      "title": "峄山碑前",
+      "subtitle": "李斯·小篆的秩序与第一道名字",
+      "status": "ok",
+      "scenes": 13,
+      "video_mb": 3.81,
+      "duration_s": 149.5,
+      "gate_l1_l3": "PASS"
+    },
+    {
+      "ep_num": 2,
+      "title": "永和九年那场雨",
+      "subtitle": "王羲之·兰亭序与书法的觉醒",
+      "status": "ok",
+      "scenes": 16,
+      "video_mb": 5.0,
+      "duration_s": 187.2,
+      "gate_l1_l3": "PASS"
+    },
+    {
+      "ep_num": 3,
+      "title": "黄州突围",
+      "subtitle": "苏轼·寒食帖与书法的生命维度",
+      "status": "ok",
+      "scenes": 15,
+      "video_mb": 2.2,
+      "duration_s": 85.1,
+      "gate_l1_l3": "PASS (L1-L4)"
+    },
+    {
+      "ep_num": 4,
+      "title": "孙过庭·书谱之道",
+      "subtitle": "孙过庭·书谱之道",
+      "status": "ok",
+      "scenes": 11,
+      "video_mb": 3.77,
+      "duration_s": 143.6,
+      "gate_l1_l3": "PASS"
+    },
+    {
+      "ep_num": 5,
+      "title": "颠张醉素",
+      "subtitle": "张旭怀素·草书的极限与癫狂",
+      "status": "ok",
+      "scenes": 13,
+      "video_mb": 2.85,
+      "duration_s": 116.2,
+      "gate_l1_l3": "PASS (L1-L4)"
+    },
+    {
+      "ep_num": 6,
+      "title": "安史之乱",
+      "subtitle": "颜真卿·忠烈之书与大唐的至暗时刻",
+      "status": "ok",
+      "scenes": 10,
+      "video_mb": 3.25,
+      "duration_s": 131.7,
+      "gate_l1_l3": "PASS (L1-L4)"
+    },
+    {
+      "ep_num": 7,
+      "title": "阮元·碑学中兴",
+      "subtitle": "阮元与书法的版图重划",
+      "status": "ok",
+      "scenes": 8,
+      "video_mb": 2.29,
+      "duration_s": 94.4,
+      "gate_l1_l3": "PASS"
+    },
+    {
+      "ep_num": 8,
+      "title": "许慎·说文解字",
+      "subtitle": "许慎·六书之学与汉字的终极命名",
+      "status": "ok",
+      "scenes": 12,
+      "video_mb": 4.22,
+      "duration_s": 171.8,
+      "gate_l1_l3": "PASS"
+    }
+  ],
+  "summary": {
+    "total": 8,
+    "ok": 8,
+    "partial": 0,
+    "skipped": 0,
+    "total_duration_min": 18.0,
+    "total_size_mb": 27.39
+  },
+  "notes": [
+    "ep01-ep08 全部完成（ep04 JSON修复后重新生产）",
+    "ep01/ep02/ep04/ep07/ep08: G-03.3 L1-L3 PASS（严格模式）",
+    "ep03/ep05/ep06: G-03.3 L1-L4 PASS（duration修复后）；L5为设计限制（嵌入音频需人工复查）",
+    "ep04修复：JSON语法错误（beat提前关闭导致knowledge_injection成为独立对象）",
+    "compose_video.py修复：subprocess text=True GBK编码崩溃 → errors='replace'",
+    "video.mp4命名统一：旧集重命名为video.mp4供G-03.3使用"
+  ]
+}

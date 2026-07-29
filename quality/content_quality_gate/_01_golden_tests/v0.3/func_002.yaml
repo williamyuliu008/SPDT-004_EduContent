@@ -1,0 +1,11 @@
+concept: 定义域与值域
+passed_v1: true
+sample_id: func_002
+source: VCC v1.0 math animation factory
+tags:
+  D1_process: static
+  D2_spatial: spatial_1d
+  D3_complexity: simple
+  D4_presentation: definition
+  D5_concept_type: storage
+  D6_subject: algebra

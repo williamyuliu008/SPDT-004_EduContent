@@ -1,0 +1,10 @@
+pdt_id: PT-036
+name: ChildEdu
+name_zh: 儿童教育内容工厂
+spdt: SPDT-004
+domain: 早教/低龄
+subjects: [识字, 数学启蒙, 科学启蒙, 故事]
+content_types: [动画故事, 识字课件, 数学启蒙, 科学启蒙]
+age_range: 3-8
+status: planned
+created: 2026-07-10

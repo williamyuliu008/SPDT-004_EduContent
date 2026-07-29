@@ -1,0 +1,11 @@
+concept: 弧度制
+passed_v1: true
+sample_id: func_025
+source: VCC v1.0 math animation factory
+tags:
+  D1_process: animated
+  D2_spatial: spatial_2d
+  D3_complexity: simple
+  D4_presentation: definition
+  D5_concept_type: storage
+  D6_subject: geometry

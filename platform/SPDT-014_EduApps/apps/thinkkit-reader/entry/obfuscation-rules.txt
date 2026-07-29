@@ -1,0 +1,2 @@
+# Obfuscation rules for release build
+# This file is empty by default - add rules as needed

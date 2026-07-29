@@ -1,0 +1,48 @@
+﻿{
+    "summary":  {
+                    "total_unsigned_kb":  0,
+                    "total_signed_kb":  0,
+                    "compiled":  5,
+                    "total":  5,
+                    "signed":  5
+                },
+    "brand":  "rhythm",
+    "timestamp":  "2026-07-20 00:25:32",
+    "apps":  [
+                 {
+                     "unsigned_kb":  412.9,
+                     "app":  "rhythm-habit",
+                     "signed_kb":  412.9,
+                     "compiled":  true,
+                     "signed":  true
+                 },
+                 {
+                     "unsigned_kb":  20.8,
+                     "app":  "rhythm-habit-game",
+                     "signed_kb":  20.8,
+                     "compiled":  true,
+                     "signed":  true
+                 },
+                 {
+                     "unsigned_kb":  20.8,
+                     "app":  "rhythm-meditation",
+                     "signed_kb":  20.8,
+                     "compiled":  true,
+                     "signed":  true
+                 },
+                 {
+                     "unsigned_kb":  20.8,
+                     "app":  "rhythm-nutrition",
+                     "signed_kb":  20.8,
+                     "compiled":  true,
+                     "signed":  true
+                 },
+                 {
+                     "unsigned_kb":  20.8,
+                     "app":  "rhythm-pomodoro",
+                     "signed_kb":  20.8,
+                     "compiled":  true,
+                     "signed":  true
+                 }
+             ]
+}

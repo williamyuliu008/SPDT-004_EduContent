@@ -1,0 +1,982 @@
+[
+  {
+    "id": "10001",
+    "name": "北京大学",
+    "province": "北京",
+    "city": "北京",
+    "type": "综合",
+    "tags": ["985", "211", "双一流", "公办"],
+    "rank_national": 1,
+    "description": "中国最顶尖的综合性大学，文理医工兼备，录取分数线常年全国第一。",
+    "majorCategories": [
+      {"category": "经济学", "majors": ["金融学", "经济学", "国际经济与贸易"]},
+      {"category": "法学", "majors": ["法学", "政治学与行政学", "社会学"]},
+      {"category": "文学", "majors": ["汉语言文学", "英语", "新闻学", "哲学"]},
+      {"category": "理学", "majors": ["数学与应用数学", "物理学", "化学", "生物科学"]},
+      {"category": "工学", "majors": ["计算机科学与技术", "电子信息工程", "自动化", "力学"]},
+      {"category": "管理学", "majors": ["工商管理", "公共管理", "信息管理与信息系统"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 669, "science_admit_min": 687},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 662, "science_admit_min": 681}
+    ],
+    "minScore": 669
+  },
+  {
+    "id": "10002",
+    "name": "清华大学",
+    "province": "北京",
+    "city": "北京",
+    "type": "综合",
+    "tags": ["985", "211", "双一流", "公办"],
+    "rank_national": 2,
+    "description": "中国工科最强校，理工结合，文理渗透，录取分数线与北大并驾齐驱。",
+    "majorCategories": [
+      {"category": "理学", "majors": ["数学与应用数学", "物理学", "化学", "生物科学"]},
+      {"category": "工学", "majors": ["计算机科学与技术", "电子信息工程", "自动化", "机械工程", "土木工程", "电气工程"]},
+      {"category": "经济学", "majors": ["金融学", "经济学"]},
+      {"category": "管理学", "majors": ["工商管理", "信息管理与信息系统"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 668, "science_admit_min": 686},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 661, "science_admit_min": 680}
+    ],
+    "minScore": 668
+  },
+  {
+    "id": "10246",
+    "name": "复旦大学",
+    "province": "上海",
+    "city": "上海",
+    "type": "综合",
+    "tags": ["985", "211", "双一流", "公办"],
+    "rank_national": 3,
+    "description": "上海顶尖综合大学，人文社科与医学见长，"985"核心成员。",
+    "majorCategories": [
+      {"category": "经济学", "majors": ["金融学", "经济学", "财政学"]},
+      {"category": "法学", "majors": ["法学", "社会学", "政治学"]},
+      {"category": "文学", "majors": ["汉语言文学", "新闻学", "广播电视学"]},
+      {"category": "理学", "majors": ["数学", "物理学", "化学", "生物"]},
+      {"category": "医学", "majors": ["临床医学", "预防医学", "药学"]},
+      {"category": "管理学", "majors": ["工商管理", "公共管理"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 650, "science_admit_min": 671},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 645, "science_admit_min": 665}
+    ],
+    "minScore": 650
+  },
+  {
+    "id": "10248",
+    "name": "上海交通大学",
+    "province": "上海",
+    "city": "上海",
+    "type": "综合",
+    "tags": ["985", "211", "双一流", "公办"],
+    "rank_national": 4,
+    "description": "工科强校，医学、商学全国领先，船海、核科学特色鲜明。",
+    "majorCategories": [
+      {"category": "工学", "majors": ["机械工程", "电子信息工程", "计算机科学与技术", "船舶与海洋工程", "核工程与核技术"]},
+      {"category": "经济学", "majors": ["金融学", "经济学", "国际商务"]},
+      {"category": "理学", "majors": ["数学", "物理学"]},
+      {"category": "医学", "majors": ["临床医学", "口腔医学"]},
+      {"category": "管理学", "majors": ["工商管理", "工业工程"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 648, "science_admit_min": 670},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 643, "science_admit_min": 663}
+    ],
+    "minScore": 648
+  },
+  {
+    "id": "10358",
+    "name": "中国科学技术大学",
+    "province": "安徽",
+    "city": "合肥",
+    "type": "理工",
+    "tags": ["985", "211", "双一流", "公办"],
+    "rank_national": 5,
+    "description": "理工科顶尖学府，量子通信、高温超导等前沿领域世界领先。",
+    "majorCategories": [
+      {"category": "理学", "majors": ["数学与应用数学", "物理学", "化学", "生物科学", "统计学"]},
+      {"category": "工学", "majors": ["计算机科学与技术", "电子信息工程", "机械设计制造", "安全工程"]},
+      {"category": "管理学", "majors": ["工商管理", "金融学"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 655, "science_admit_min": 674},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 648, "science_admit_min": 669}
+    ],
+    "minScore": 655
+  },
+  {
+    "id": "10384",
+    "name": "南京大学",
+    "province": "江苏",
+    "city": "南京",
+    "type": "综合",
+    "tags": ["985", "211", "双一流", "公办"],
+    "rank_national": 6,
+    "description": "历史悠久的文理强校，天文、地质、中文全国第一。",
+    "majorCategories": [
+      {"category": "文学", "majors": ["汉语言文学", "英语", "新闻学", "历史学"]},
+      {"category": "理学", "majors": ["数学", "物理学", "化学", "天文学", "地质学"]},
+      {"category": "工学", "majors": ["计算机科学与技术", "电子信息工程"]},
+      {"category": "经济学", "majors": ["金融学", "经济学"]},
+      {"category": "管理学", "majors": ["工商管理", "图书情报与档案管理"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 645, "science_admit_min": 665},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 638, "science_admit_min": 658}
+    ],
+    "minScore": 645
+  },
+  {
+    "id": "10422",
+    "name": "浙江大学",
+    "province": "浙江",
+    "city": "杭州",
+    "type": "综合",
+    "tags": ["985", "211", "双一流", "公办"],
+    "rank_national": 7,
+    "description": "规模最大的顶尖大学，农学、工学、管理学全国领先，竺可桢学院闻名。",
+    "majorCategories": [
+      {"category": "工学", "majors": ["计算机科学与技术", "电气工程", "机械工程", "化学工程", "软件工程"]},
+      {"category": "农学", "majors": ["农学", "园艺学", "植物保护", "动物科学"]},
+      {"category": "经济学", "majors": ["金融学", "经济学", "国际经济与贸易"]},
+      {"category": "理学", "majors": ["数学", "物理学", "化学"]},
+      {"category": "医学", "majors": ["临床医学", "药学"]},
+      {"category": "管理学", "majors": ["工商管理", "农林经济管理", "公共管理"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 646, "science_admit_min": 663},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 640, "science_admit_min": 657}
+    ],
+    "minScore": 646
+  },
+  {
+    "id": "10486",
+    "name": "中国人民大学",
+    "province": "北京",
+    "city": "北京",
+    "type": "综合",
+    "tags": ["985", "211", "双一流", "公办"],
+    "rank_national": 8,
+    "description": "人文社科顶尖，法学、经济学、新闻传播全国第一。",
+    "majorCategories": [
+      {"category": "经济学", "majors": ["金融学", "经济学", "财政学", "国际经济与贸易"]},
+      {"category": "法学", "majors": ["法学", "社会学", "政治学"]},
+      {"category": "文学", "majors": ["汉语言文学", "新闻学", "广播电视学"]},
+      {"category": "管理学", "majors": ["工商管理", "公共管理", "人力资源管理"]},
+      {"category": "历史学", "majors": ["历史学", "考古学"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 655, "science_admit_min": 660},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 648, "science_admit_min": 653}
+    ],
+    "minScore": 655
+  },
+  {
+    "id": "10511",
+    "name": "中山大学",
+    "province": "广东",
+    "city": "广州",
+    "type": "综合",
+    "tags": ["985", "211", "双一流", "公办"],
+    "rank_national": 9,
+    "description": "华南第一学府，医学、管理学见长，文理医工均衡发展。",
+    "majorCategories": [
+      {"category": "医学", "majors": ["临床医学", "口腔医学", "基础医学", "预防医学"]},
+      {"category": "管理学", "majors": ["工商管理", "公共管理", "会计学"]},
+      {"category": "理学", "majors": ["数学", "物理学", "化学", "生物科学"]},
+      {"category": "工学", "majors": ["计算机科学与技术", "电子信息工程", "材料科学"]},
+      {"category": "经济学", "majors": ["金融学", "经济学"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 627, "science_admit_min": 638},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 620, "science_admit_min": 631}
+    ],
+    "minScore": 627
+  },
+  {
+    "id": "10520",
+    "name": "华中科技大学",
+    "province": "湖北",
+    "city": "武汉",
+    "type": "理工",
+    "tags": ["985", "211", "双一流", "公办"],
+    "rank_national": 10,
+    "description": "工科强校，机械、光电、人工智能见长，与武汉大学并称武汉双子星。",
+    "majorCategories": [
+      {"category": "工学", "majors": ["机械工程", "电气工程", "计算机科学与技术", "光电信息工程", "人工智能"]},
+      {"category": "理学", "majors": ["数学", "物理学"]},
+      {"category": "医学", "majors": ["临床医学", "公共卫生"]},
+      {"category": "管理学", "majors": ["工商管理", "公共管理"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 618, "science_admit_min": 631},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 612, "science_admit_min": 625}
+    ],
+    "minScore": 618
+  },
+  {
+    "id": "10200",
+    "name": "同济大学",
+    "province": "上海",
+    "city": "上海",
+    "type": "理工",
+    "tags": ["985", "211", "双一流", "公办"],
+    "rank_national": 15,
+    "description": "建筑老八校之首，土建、交通、环境见长，德国合作特色鲜明。",
+    "majorCategories": [
+      {"category": "工学", "majors": ["建筑学", "城乡规划", "土木工程", "交通运输", "环境工程", "计算机科学与技术"]},
+      {"category": "理学", "majors": ["数学", "物理学"]},
+      {"category": "管理学", "majors": ["工程管理", "工商管理"]},
+      {"category": "艺术学", "majors": ["设计学类", "产品设计"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 628, "science_admit_min": 648},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 622, "science_admit_min": 641}
+    ],
+    "minScore": 628
+  },
+  {
+    "id": "10055",
+    "name": "南开大学",
+    "province": "天津",
+    "city": "天津",
+    "type": "综合",
+    "tags": ["985", "211", "双一流", "公办"],
+    "rank_national": 12,
+    "description": "周恩来总理母校，文理兼备，化学、数学、历史见长。",
+    "majorCategories": [
+      {"category": "经济学", "majors": ["金融学", "保险学", "经济学"]},
+      {"category": "理学", "majors": ["数学", "化学", "物理学", "生物科学"]},
+      {"category": "历史学", "majors": ["历史学", "世界史", "考古学"]},
+      {"category": "文学", "majors": ["汉语言文学", "英语"]},
+      {"category": "管理学", "majors": ["工商管理", "公共管理"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 630, "science_admit_min": 640},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 625, "science_admit_min": 634}
+    ],
+    "minScore": 630
+  },
+  {
+    "id": "10141",
+    "name": "西安交通大学",
+    "province": "陕西",
+    "city": "西安",
+    "type": "综合",
+    "tags": ["985", "211", "双一流", "公办"],
+    "rank_national": 13,
+    "description": "老交大血脉，工科底蕴深厚，管理工程全国第一。",
+    "majorCategories": [
+      {"category": "工学", "majors": ["电气工程", "机械工程", "能源动力", "计算机科学与技术", "电子信息"]},
+      {"category": "理学", "majors": ["数学", "物理学"]},
+      {"category": "经济学", "majors": ["金融学", "经济学"]},
+      {"category": "管理学", "majors": ["工商管理", "管理科学与工程", "会计学"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 615, "science_admit_min": 635},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 609, "science_admit_min": 628}
+    ],
+    "minScore": 615
+  },
+  {
+    "id": "10698",
+    "name": "哈尔滨工业大学",
+    "province": "黑龙江",
+    "city": "哈尔滨",
+    "type": "理工",
+    "tags": ["985", "211", "双一流", "公办"],
+    "rank_national": 11,
+    "description": "航天强国，工科顶尖，焊接、飞行器设计特色鲜明。",
+    "majorCategories": [
+      {"category": "工学", "majors": ["计算机科学与技术", "机械工程", "电气工程", "航天航空", "材料科学", "焊接技术"]},
+      {"category": "理学", "majors": ["数学", "物理学"]},
+      {"category": "管理学", "majors": ["工商管理", "工程管理"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 622, "science_admit_min": 642},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 616, "science_admit_min": 635}
+    ],
+    "minScore": 622
+  },
+  {
+    "id": "10183",
+    "name": "吉林大学",
+    "province": "吉林",
+    "city": "长春",
+    "type": "综合",
+    "tags": ["985", "211", "双一流", "公办"],
+    "rank_national": 18,
+    "description": "中国办学规模最大院校之一，汽车工程、法学、化学著称。",
+    "majorCategories": [
+      {"category": "工学", "majors": ["车辆工程", "计算机科学与技术", "机械工程", "电子信息"]},
+      {"category": "理学", "majors": ["化学", "数学", "物理学"]},
+      {"category": "法学", "majors": ["法学"]},
+      {"category": "文学", "majors": ["汉语言文学", "新闻学"]},
+      {"category": "医学", "majors": ["临床医学"]},
+      {"category": "管理学", "majors": ["工商管理", "档案学"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 590, "science_admit_min": 598},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 583, "science_admit_min": 592}
+    ],
+    "minScore": 590
+  },
+  {
+    "id": "10286",
+    "name": "东南大学",
+    "province": "江苏",
+    "city": "南京",
+    "type": "综合",
+    "tags": ["985", "211", "双一流", "公办"],
+    "rank_national": 16,
+    "description": "建筑老八校之一，土建、交通、信息工程见长，5G技术先驱。",
+    "majorCategories": [
+      {"category": "工学", "majors": ["建筑学", "土木工程", "交通运输", "电子信息工程", "计算机科学与技术", "生物医学工程"]},
+      {"category": "理学", "majors": ["数学", "物理学"]},
+      {"category": "管理学", "majors": ["工商管理", "管理科学与工程"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 616, "science_admit_min": 635},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 610, "science_admit_min": 628}
+    ],
+    "minScore": 616
+  },
+  {
+    "id": "10611",
+    "name": "四川大学",
+    "province": "四川",
+    "city": "成都",
+    "type": "综合",
+    "tags": ["985", "211", "双一流", "公办"],
+    "rank_national": 14,
+    "description": "西南第一学府，华西医学中心，历史悠久，文理工医均衡。",
+    "majorCategories": [
+      {"category": "医学", "majors": ["临床医学", "口腔医学", "药学", "基础医学"]},
+      {"category": "工学", "majors": ["计算机科学与技术", "电子信息", "高分子材料"]},
+      {"category": "文学", "majors": ["汉语言文学", "新闻学", "广播电视学"]},
+      {"category": "历史学", "majors": ["历史学", "考古学"]},
+      {"category": "理学", "majors": ["数学", "化学", "生物科学"]},
+      {"category": "管理学", "majors": ["工商管理", "公共管理"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 606, "science_admit_min": 618},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 600, "science_admit_min": 611}
+    ],
+    "minScore": 606
+  },
+  {
+    "id": "10558",
+    "name": "中山大学（深圳）",
+    "province": "广东",
+    "city": "深圳",
+    "type": "综合",
+    "tags": ["985", "211", "双一流", "公办"],
+    "rank_national": 17,
+    "description": "中山大学深圳校区，计算机、医学、金融见长，依托深圳创新资源。",
+    "majorCategories": [
+      {"category": "工学", "majors": ["计算机科学与技术", "电子信息工程", "人工智能", "软件工程"]},
+      {"category": "医学", "majors": ["临床医学", "公共卫生"]},
+      {"category": "经济学", "majors": ["金融学", "经济学"]},
+      {"category": "管理学", "majors": ["工商管理", "会计学"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 625, "science_admit_min": 636},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 618, "science_admit_min": 629}
+    ],
+    "minScore": 625
+  },
+  {
+    "id": "10003",
+    "name": "北京航空航天大学",
+    "province": "北京",
+    "city": "北京",
+    "type": "理工",
+    "tags": ["985", "211", "双一流", "公办"],
+    "rank_national": 19,
+    "description": "航空航天顶尖学府，计算机、自动化、航空宇航全国领先。",
+    "majorCategories": [
+      {"category": "工学", "majors": ["航空航天工程", "飞行器设计", "计算机科学与技术", "电子信息工程", "自动化", "机械工程"]},
+      {"category": "理学", "majors": ["数学", "物理学"]},
+      {"category": "管理学", "majors": ["工商管理", "工程管理"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 630, "science_admit_min": 650},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 624, "science_admit_min": 643}
+    ],
+    "minScore": 630
+  },
+  {
+    "id": "10247",
+    "name": "华东师范大学",
+    "province": "上海",
+    "city": "上海",
+    "type": "师范",
+    "tags": ["985", "211", "双一流", "公办"],
+    "rank_national": 25,
+    "description": "上海顶尖师范大学，教育学、心理学见长，文理综合发展。",
+    "majorCategories": [
+      {"category": "教育学", "majors": ["教育学", "学前教育", "特殊教育", "教育技术学"]},
+      {"category": "文学", "majors": ["汉语言文学", "英语", "历史学", "新闻学"]},
+      {"category": "理学", "majors": ["数学", "物理学", "化学", "地理科学"]},
+      {"category": "管理学", "majors": ["公共事业管理", "人力资源管理"]},
+      {"category": "艺术学", "majors": ["美术学", "音乐学"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 605, "science_admit_min": 615},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 598, "science_admit_min": 608}
+    ],
+    "minScore": 605
+  },
+  {
+    "id": "10027",
+    "name": "北京师范大学",
+    "province": "北京",
+    "city": "北京",
+    "type": "师范",
+    "tags": ["985", "211", "双一流", "公办"],
+    "rank_national": 20,
+    "description": "中国师范第一学府，教育学、心理学、中文、历史全国第一。",
+    "majorCategories": [
+      {"category": "教育学", "majors": ["教育学", "教育技术学", "学前教育"]},
+      {"category": "文学", "majors": ["汉语言文学", "英语", "日语"]},
+      {"category": "历史学", "majors": ["历史学", "世界史"]},
+      {"category": "理学", "majors": ["数学", "物理学", "化学", "生物科学"]},
+      {"category": "管理学", "majors": ["公共事业管理", "工商管理"]},
+      {"category": "艺术学", "majors": ["美术学", "舞蹈学"]}
+    ],
+    "scoreLines": [
+      {"year": 2022024, "arts_score": 560, "science_score": 525, "arts_admit_min": 632, "science_admit_min": 635},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 626, "science_admit_min": 628}
+    ],
+    "minScore": 632
+  },
+  {
+    "id": "10532",
+    "name": "湖南大学",
+    "province": "湖南",
+    "city": "长沙",
+    "type": "综合",
+    "tags": ["985", "211", "双一流", "公办"],
+    "rank_national": 30,
+    "description": "千年学府，机械、土木、化学工程见长，经管有传统优势。",
+    "majorCategories": [
+      {"category": "工学", "majors": ["机械工程", "土木工程", "化学工程", "计算机科学与技术"]},
+      {"category": "经济学", "majors": ["金融学", "经济学", "国际经济与贸易"]},
+      {"category": "文学", "majors": ["新闻学", "英语"]},
+      {"category": "管理学", "majors": ["工商管理", "会计学", "工程管理"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 598, "science_admit_min": 605},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 591, "science_admit_min": 598}
+    ],
+    "minScore": 598
+  },
+  {
+    "id": "10335",
+    "name": "厦门大学",
+    "province": "福建",
+    "city": "厦门",
+    "type": "综合",
+    "tags": ["985", "211", "双一流", "公办"],
+    "rank_national": 22,
+    "description": "最美滨海校园，会计、金融全国第一，海洋科学见长。",
+    "majorCategories": [
+      {"category": "经济学", "majors": ["金融学", "经济学", "国际经济与贸易", "财政学"]},
+      {"category": "管理学", "majors": ["会计学", "工商管理", "旅游管理"]},
+      {"category": "文学", "majors": ["汉语言文学", "新闻学", "英语"]},
+      {"category": "理学", "majors": ["数学", "化学", "海洋科学"]},
+      {"category": "工学", "majors": ["计算机科学与技术", "电子信息工程"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 613, "science_admit_min": 623},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 606, "science_admit_min": 616}
+    ],
+    "minScore": 613
+  },
+  {
+    "id": "10004",
+    "name": "北京理工大学",
+    "province": "北京",
+    "city": "北京",
+    "type": "理工",
+    "tags": ["985", "211", "双一流", "公办"],
+    "rank_national": 23,
+    "description": "工信部直属，兵器科技顶尖，宇航、计算机、光电并重。",
+    "majorCategories": [
+      {"category": "工学", "majors": ["武器系统与工程", "计算机科学与技术", "电子信息工程", "自动化", "机械工程", "光电信息工程"]},
+      {"category": "理学", "majors": ["数学", "物理学"]},
+      {"category": "管理学", "majors": ["工商管理", "信息管理与信息系统"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 618, "science_admit_min": 637},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 612, "science_admit_min": 630}
+    ],
+    "minScore": 618
+  },
+  {
+    "id": "10145",
+    "name": "大连理工大学",
+    "province": "辽宁",
+    "city": "大连",
+    "type": "理工",
+    "tags": ["985", "211", "双一流", "公办"],
+    "rank_national": 28,
+    "description": "化工、力学、水利顶尖，海岸工程、软件工程特色鲜明。",
+    "majorCategories": [
+      {"category": "工学", "majors": ["化学工程", "水利工程", "土木工程", "计算机科学与技术", "软件工程", "机械工程"]},
+      {"category": "理学", "majors": ["数学", "物理学"]},
+      {"category": "管理学", "majors": ["工商管理", "工程管理"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 600, "science_admit_min": 616},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 594, "science_admit_min": 609}
+    ],
+    "minScore": 600
+  },
+  {
+    "id": "10359",
+    "name": "合肥工业大学",
+    "province": "安徽",
+    "city": "合肥",
+    "type": "理工",
+    "tags": ["211", "双一流", "公办"],
+    "rank_national": 45,
+    "description": "机械、电气、管理见长，汽车工程有传统优势。",
+    "majorCategories": [
+      {"category": "工学", "majors": ["机械工程", "电气工程", "计算机科学与技术", "车辆工程", "软件工程"]},
+      {"category": "管理学", "majors": ["工商管理", "信息管理与信息系统"]},
+      {"category": "经济学", "majors": ["金融学", "经济学"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 580, "science_admit_min": 595},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 573, "science_admit_min": 588}
+    ],
+    "minScore": 580
+  },
+  {
+    "id": "10213",
+    "name": "哈尔滨工程大学",
+    "province": "黑龙江",
+    "city": "哈尔滨",
+    "type": "理工",
+    "tags": ["211", "双一流", "公办"],
+    "rank_national": 48,
+    "description": "三海一核（船舶、海军、核工业）特色，海洋工程顶尖。",
+    "majorCategories": [
+      {"category": "工学", "majors": ["船舶与海洋工程", "核工程与核技术", "自动化", "计算机科学与技术", "电子信息工程"]},
+      {"category": "理学", "majors": ["数学", "物理学"]},
+      {"category": "管理学", "majors": ["工商管理", "工程管理"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 572, "science_admit_min": 583},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 566, "science_admit_min": 577}
+    ],
+    "minScore": 572
+  },
+  {
+    "id": "10110",
+    "name": "北京邮电大学",
+    "province": "北京",
+    "city": "北京",
+    "type": "理工",
+    "tags": ["211", "双一流", "公办"],
+    "rank_national": 35,
+    "description": "信息与通信工程全国第一，互联网、人工智能、5G领域顶尖。",
+    "majorCategories": [
+      {"category": "工学", "majors": ["通信工程", "电子信息工程", "计算机科学与技术", "网络工程", "人工智能", "软件工程"]},
+      {"category": "理学", "majors": ["数学"]},
+      {"category": "管理学", "majors": ["工商管理", "信息管理与信息系统"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 610, "science_admit_min": 632},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 604, "science_admit_min": 625}
+    ],
+    "minScore": 610
+  },
+  {
+    "id": "10013",
+    "name": "北京协和医学院",
+    "province": "北京",
+    "city": "北京",
+    "type": "医药",
+    "tags": ["双一流", "公办"],
+    "rank_national": 32,
+    "description": "中国医学最高殿堂，临床医学、基础医学全国第一。",
+    "majorCategories": [
+      {"category": "医学", "majors": ["临床医学", "基础医学", "药学", "护理学"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 660, "science_admit_min": 675},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 654, "science_admit_min": 668}
+    ],
+    "minScore": 660
+  },
+  {
+    "id": "10251",
+    "name": "华东理工大学",
+    "province": "上海",
+    "city": "上海",
+    "type": "理工",
+    "tags": ["211", "双一流", "公办"],
+    "rank_national": 40,
+    "description": "化工、材料、生物工程顶尖，国际化程度高。",
+    "majorCategories": [
+      {"category": "工学", "majors": ["化学工程与工艺", "高分子材料", "生物工程", "制药工程", "机械工程", "计算机科学与技术"]},
+      {"category": "理学", "majors": ["化学", "应用化学"]},
+      {"category": "管理学", "majors": ["工商管理", "工程管理"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 585, "science_admit_min": 596},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 578, "science_admit_min": 590}
+    ],
+    "minScore": 585
+  },
+  {
+    "id": "10007",
+    "name": "中国政法大学",
+    "province": "北京",
+    "city": "北京",
+    "type": "文科",
+    "tags": ["211", "双一流", "公办"],
+    "rank_national": 38,
+    "description": "法学教育最高学府，法学、政治学、社会学全国第一。",
+    "majorCategories": [
+      {"category": "法学", "majors": ["法学", "知识产权", "社会学", "政治学与行政学"]},
+      {"category": "管理学", "majors": ["公共事业管理", "工商管理"]},
+      {"category": "文学", "majors": ["英语", "汉语言文学"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 630, "science_admit_min": 608},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 624, "science_admit_min": 602}
+    ],
+    "minScore": 608
+  },
+  {
+    "id": "10272",
+    "name": "上海财经大学",
+    "province": "上海",
+    "city": "上海",
+    "type": "文科",
+    "tags": ["211", "双一流", "公办"],
+    "rank_national": 33,
+    "description": "财经类顶尖院校，会计、金融、经济学全国领先。",
+    "majorCategories": [
+      {"category": "经济学", "majors": ["金融学", "保险学", "经济学", "财政学", "国际经济与贸易"]},
+      {"category": "管理学", "majors": ["会计学", "财务管理", "工商管理", "审计学"]},
+      {"category": "法学", "majors": ["法学", "经济法学"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 625, "science_admit_min": 635},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 618, "science_admit_min": 628}
+    ],
+    "minScore": 625
+  },
+  {
+    "id": "10386",
+    "name": "南京审计大学",
+    "province": "江苏",
+    "city": "南京",
+    "type": "文科",
+    "tags": ["双一流", "公办"],
+    "rank_national": 55,
+    "description": "审计学全国第一，财经审计特色鲜明，就业质量高。",
+    "majorCategories": [
+      {"category": "管理学", "majors": ["审计学", "会计学", "财务管理", "工商管理", "工程造价"]},
+      {"category": "经济学", "majors": ["金融学", "经济学", "财政学"]},
+      {"category": "法学", "majors": ["法学", "经济法学"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 585, "science_admit_min": 578},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 578, "science_admit_min": 572}
+    ],
+    "minScore": 578
+  },
+  {
+    "id": "10141",
+    "name": "西安电子科技大学",
+    "province": "陕西",
+    "city": "西安",
+    "type": "理工",
+    "tags": ["211", "双一流", "公办"],
+    "rank_national": 36,
+    "description": "电子信息顶尖高校，雷达、通信、计算机特色鲜明。",
+    "majorCategories": [
+      {"category": "工学", "majors": ["电子信息工程", "通信工程", "计算机科学与技术", "电子科学与技术", "微电子科学与工程", "人工智能"]},
+      {"category": "理学", "majors": ["数学", "应用物理学"]},
+      {"category": "管理学", "majors": ["工商管理", "信息管理与信息系统"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 600, "science_admit_min": 620},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 594, "science_admit_min": 613}
+    ],
+    "minScore": 600
+  },
+  {
+    "id": "10613",
+    "name": "西南财经大学",
+    "province": "四川",
+    "city": "成都",
+    "type": "文科",
+    "tags": ["211", "双一流", "公办"],
+    "rank_national": 44,
+    "description": "西部财经第一高校，金融、会计、保险学见长。",
+    "majorCategories": [
+      {"category": "经济学", "majors": ["金融学", "保险学", "经济学", "财政学", "国际经济与贸易"]},
+      {"category": "管理学", "majors": ["会计学", "财务管理", "工商管理", "审计学"]},
+      {"category": "法学", "majors": ["法学"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 590, "science_admit_min": 580},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 583, "science_admit_min": 573}
+    ],
+    "minScore": 580
+  },
+  {
+    "id": "10056",
+    "name": "西安交通大学（医学部）",
+    "province": "陕西",
+    "city": "西安",
+    "type": "医药",
+    "tags": ["985", "211", "双一流", "公办"],
+    "rank_national": 42,
+    "description": "医学教育传统深厚，临床医学、基础医学见长。",
+    "majorCategories": [
+      {"category": "医学", "majors": ["临床医学", "口腔医学", "药学", "基础医学", "护理学"]},
+      {"category": "理学", "majors": ["生物科学"]},
+      {"category": "管理学", "majors": ["公共事业管理"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 595, "science_admit_min": 608},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 589, "science_admit_min": 601}
+    ],
+    "minScore": 595
+  },
+  {
+    "id": "10561",
+    "name": "华南理工大学",
+    "province": "广东",
+    "city": "广州",
+    "type": "理工",
+    "tags": ["985", "211", "双一流", "公办"],
+    "rank_national": 24,
+    "description": "华南工科第一校，轻工、食品、建筑设计见长。",
+    "majorCategories": [
+      {"category": "工学", "majors": ["建筑学", "城乡规划", "计算机科学与技术", "软件工程", "轻工技术与工程", "食品科学与工程"]},
+      {"category": "理学", "majors": ["数学", "化学"]},
+      {"category": "管理学", "majors": ["工商管理", "会计学"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 608, "science_admit_min": 622},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 602, "science_admit_min": 615}
+    ],
+    "minScore": 608
+  },
+  {
+    "id": "10217",
+    "name": "东北大学",
+    "province": "辽宁",
+    "city": "沈阳",
+    "type": "理工",
+    "tags": ["985", "211", "双一流", "公办"],
+    "rank_national": 31,
+    "description": "冶金、自动化、计算机见长，计算机近年进步显著。",
+    "majorCategories": [
+      {"category": "工学", "majors": ["计算机科学与技术", "软件工程", "自动化", "冶金工程", "机械工程", "电子信息工程"]},
+      {"category": "理学", "majors": ["数学", "物理学"]},
+      {"category": "管理学", "majors": ["工商管理", "工程管理"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 590, "science_admit_min": 602},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 584, "science_admit_min": 595}
+    ],
+    "minScore": 590
+  },
+  {
+    "id": "10284",
+    "name": "南京师范大学",
+    "province": "江苏",
+    "city": "南京",
+    "type": "师范",
+    "tags": ["211", "双一流", "公办"],
+    "rank_national": 46,
+    "description": "江苏师范第一，教育学、心理学、中文见长。",
+    "majorCategories": [
+      {"category": "教育学", "majors": ["教育学", "学前教育", "教育技术学"]},
+      {"category": "文学", "majors": ["汉语言文学", "英语", "新闻学"]},
+      {"category": "理学", "majors": ["数学", "物理学", "化学"]},
+      {"category": "历史学", "majors": ["历史学"]},
+      {"category": "艺术学", "majors": ["美术学", "音乐学"]},
+      {"category": "管理学", "majors": ["公共事业管理"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 588, "science_admit_min": 575},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 581, "science_admit_min": 568}
+    ],
+    "minScore": 575
+  },
+  {
+    "id": "10269",
+    "name": "华东政法大学",
+    "province": "上海",
+    "city": "上海",
+    "type": "文科",
+    "tags": ["公办"],
+    "rank_national": 52,
+    "description": "上海法学重镇，法学专业享誉华东，民商法、国际法见长。",
+    "majorCategories": [
+      {"category": "法学", "majors": ["法学", "知识产权", "社会学", "政治学与行政学"]},
+      {"category": "管理学", "majors": ["公共事业管理", "劳动与社会保障"]},
+      {"category": "文学", "majors": ["英语", "汉语言文学"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 590, "science_admit_min": 565},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 583, "science_admit_min": 558}
+    ],
+    "minScore": 565
+  },
+  {
+    "id": "10357",
+    "name": "杭州电子科技大学",
+    "province": "浙江",
+    "city": "杭州",
+    "type": "理工",
+    "tags": ["公办"],
+    "rank_national": 58,
+    "description": "浙江电子信息特色高校，计算机、电子、会计见长，就业率极高。",
+    "majorCategories": [
+      {"category": "工学", "majors": ["计算机科学与技术", "软件工程", "电子信息工程", "通信工程", "自动化"]},
+      {"category": "管理学", "majors": ["会计学", "财务管理", "审计学", "工商管理"]},
+      {"category": "经济学", "majors": ["金融学", "经济学"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 580, "science_admit_min": 595},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 573, "science_admit_min": 588}
+    ],
+    "minScore": 580
+  },
+  {
+    "id": "10126",
+    "name": "大连海事大学",
+    "province": "辽宁",
+    "city": "大连",
+    "type": "理工",
+    "tags": ["211", "双一流", "公办"],
+    "rank_national": 60,
+    "description": "交通运输部直属，海事、海商、航海技术特色鲜明。",
+    "majorCategories": [
+      {"category": "工学", "majors": ["航海技术", "轮机工程", "船舶与海洋工程", "电子信息工程"]},
+      {"category": "管理学", "majors": ["海商法", "物流管理", "交通运输管理"]},
+      {"category": "经济学", "majors": ["国际经济与贸易"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 558, "science_admit_min": 568},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 551, "science_admit_min": 562}
+    ],
+    "minScore": 558
+  },
+  {
+    "id": "10589",
+    "name": "广州医科大学",
+    "province": "广东",
+    "city": "广州",
+    "type": "医药",
+    "tags": ["双一流", "公办"],
+    "rank_national": 65,
+    "description": "呼吸疾病国家重点实验室，临床医学、基础医学见长。",
+    "majorCategories": [
+      {"category": "医学", "majors": ["临床医学", "口腔医学", "预防医学", "护理学", "药学"]},
+      {"category": "理学", "majors": ["生物技术"]},
+      {"category": "管理学", "majors": ["公共事业管理"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 575, "science_admit_min": 590},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 568, "science_admit_min": 583}
+    ],
+    "minScore": 575
+  },
+  {
+    "id": "10327",
+    "name": "南京农业大学",
+    "province": "江苏",
+    "city": "南京",
+    "type": "农林",
+    "tags": ["211", "双一流", "公办"],
+    "rank_national": 50,
+    "description": "农学顶尖，植物保护、农业资源与环境全国第一。",
+    "majorCategories": [
+      {"category": "农学", "majors": ["农学", "园艺学", "植物保护", "农业资源与环境", "动物科学", "草业科学"]},
+      {"category": "工学", "majors": ["食品科学与工程", "农业机械化及其自动化"]},
+      {"category": "管理学", "majors": ["农林经济管理", "土地资源管理"]},
+      {"category": "理学", "majors": ["生物科学", "应用化学"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 560, "science_admit_min": 565},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 553, "science_admit_min": 558}
+    ],
+    "minScore": 560
+  },
+  {
+    "id": "10299",
+    "name": "中国传媒大学",
+    "province": "北京",
+    "city": "北京",
+    "type": "文科",
+    "tags": ["211", "双一流", "公办"],
+    "rank_national": 41,
+    "description": "新闻传播全国第一，广播电视、新媒体、戏剧影视特色鲜明。",
+    "majorCategories": [
+      {"category": "文学", "majors": ["新闻学", "广播电视学", "广告学", "传播学", "汉语言文学"]},
+      {"category": "艺术学", "majors": ["广播电视编导", "播音与主持艺术", "戏剧影视文学", "动画", "数字媒体艺术"]},
+      {"category": "工学", "majors": ["广播电视工程", "数字媒体技术"]},
+      {"category": "管理学", "majors": ["文化产业管理", "公共关系学"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 610, "science_admit_min": 590},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 603, "science_admit_min": 583}
+    ],
+    "minScore": 590
+  },
+  {
+    "id": "10008",
+    "name": "北京电影学院",
+    "province": "北京",
+    "city": "北京",
+    "type": "艺术",
+    "tags": ["公办"],
+    "rank_national": 70,
+    "description": "中国电影教育最高学府，导演、表演、摄影全国第一。",
+    "majorCategories": [
+      {"category": "艺术学", "majors": ["导演", "表演", "摄影", "戏剧影视文学", "广播电视编导", "动画", "数字媒体艺术", "戏剧影视美术设计"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 590, "science_admit_min": 560},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 583, "science_admit_min": 553}
+    ],
+    "minScore": 553
+  },
+  {
+    "id": "10635",
+    "name": "西南政法大学",
+    "province": "重庆",
+    "city": "重庆",
+    "type": "文科",
+    "tags": ["公办"],
+    "rank_national": 68,
+    "description": "新中国最早建立的政法高校，法学教育西南第一。",
+    "majorCategories": [
+      {"category": "法学", "majors": ["法学", "知识产权", "社会学", "思想政治教育"]},
+      {"category": "管理学", "majors": ["公共事业管理", "劳动与社会保障", "行政管理"]},
+      {"category": "经济学", "majors": ["金融学", "经济学"]},
+      {"category": "文学", "majors": ["英语", "新闻学"]}
+    ],
+    "scoreLines": [
+      {"year": 2024, "arts_score": 560, "science_score": 525, "arts_admit_min": 570, "science_admit_min": 548},
+      {"year": 2023, "arts_score": 550, "science_score": 518, "arts_admit_min": 563, "science_admit_min": 541}
+    ],
+    "minScore": 541
+  }
+]

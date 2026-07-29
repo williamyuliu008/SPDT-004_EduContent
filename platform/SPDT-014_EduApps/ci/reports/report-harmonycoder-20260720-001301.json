@@ -1,0 +1,20 @@
+﻿{
+    "summary":  {
+                    "total_unsigned_kb":  0,
+                    "total_signed_kb":  0,
+                    "compiled":  5,
+                    "total":  1,
+                    "signed":  5
+                },
+    "brand":  "harmonycoder",
+    "timestamp":  "2026-07-20 00:13:01",
+    "apps":  [
+                 {
+                     "unsigned_kb":  32.1,
+                     "app":  "harmonycoder-snippets",
+                     "signed_kb":  32.1,
+                     "compiled":  true,
+                     "signed":  true
+                 }
+             ]
+}

@@ -1,0 +1,159 @@
+{
+  "schema_version": "1.0.0",
+  "package_id": "墨骨山河_EP04",
+  "series_title": "墨骨山河",
+  "total_episodes": 1,
+  "produced_by": "PT-VFX",
+  "produced_at": "2026-07-16T18:19:43+08:00",
+  "source_episodes_dir": "D:\\92_products\\SPDT-004_EduContent\\SPDT-KTE\\PT-038\\墨骨山河_ep04_test\\scenes_out",
+  "episodes": [
+    {
+      "ep": 4,
+      "title": "书谱之道",
+      "subtitle": "孙过庭·书法的自我言说",
+      "video_file": "ep04_书谱之道.mp4",
+      "audio_file": "",
+      "duration_seconds": 88.0,
+      "resolution": "720p",
+      "bitrate_kbps": 2000,
+      "chains": [
+        "墨骨山河_ep04"
+      ],
+      "cards_file": "",
+      "scene_timeline": [
+        {
+          "idx": 0,
+          "time": 0.0,
+          "scene_name": "687年，垂拱三年",
+          "scene_type": "concept",
+          "chain_ref": "墨骨山河_ep04",
+          "five_skandha": {
+            "color_base": "垂拱 / 垂拱三 / 垂拱三年 / 孙过",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#书法/唐/初唐书法"
+          }
+        },
+        {
+          "idx": 1,
+          "time": 8.0,
+          "scene_name": "孙过庭放下笔，开始在竹…",
+          "scene_type": "concept",
+          "chain_ref": "墨骨山河_ep04",
+          "five_skandha": {
+            "color_base": "孙过 / 孙过庭 / 孙过庭放 / 孙过庭放下",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#书法/唐/书谱原文"
+          }
+        },
+        {
+          "idx": 2,
+          "time": 16.0,
+          "scene_name": "【历史知识题】以下关于《书…",
+          "scene_type": "steps",
+          "chain_ref": "墨骨山河_ep04",
+          "five_skandha": {
+            "color_base": "【历史 / 【历史知 / 【历史知识 / 【历史知识题",
+            "action_prompt": "判断/选择",
+            "recognition_marker": "#书法/唐/书谱基本常识"
+          }
+        },
+        {
+          "idx": 3,
+          "time": 24.0,
+          "scene_name": "孙过庭在竹简上写道：\n\n'神…",
+          "scene_type": "concept",
+          "chain_ref": "墨骨山河_ep04",
+          "five_skandha": {
+            "color_base": "孙过 / 孙过庭 / 孙过庭在 / 孙过庭在竹",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#书法/唐/五乖五合"
+          }
+        },
+        {
+          "idx": 4,
+          "time": 32.0,
+          "scene_name": "学生：先生，什么叫'神怡务…",
+          "scene_type": "concept",
+          "chain_ref": "墨骨山河_ep04",
+          "five_skandha": {
+            "color_base": "学生 / 学生： / 学生：先 / 学生：先生",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#书法/唐/五乖五合内涵"
+          }
+        },
+        {
+          "idx": 5,
+          "time": 40.0,
+          "scene_name": "【五乖五合·连线匹配题】以…",
+          "scene_type": "steps",
+          "chain_ref": "墨骨山河_ep04",
+          "five_skandha": {
+            "color_base": "【五乖 / 【五乖五 / 【五乖五合 / 【五乖五合·",
+            "action_prompt": "判断/选择",
+            "recognition_marker": "#书法/唐/五乖五合细节"
+          }
+        },
+        {
+          "idx": 6,
+          "time": 48.0,
+          "scene_name": "孙过庭继续写",
+          "scene_type": "quote_highlight",
+          "chain_ref": "墨骨山河_ep04",
+          "five_skandha": {
+            "color_base": "孙过 / 孙过庭 / 孙过庭继 / 孙过庭继续",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#书法/唐/古质今妍"
+          }
+        },
+        {
+          "idx": 7,
+          "time": 56.0,
+          "scene_name": "【书法史论综合题】以下关…",
+          "scene_type": "steps",
+          "chain_ref": "墨骨山河_ep04",
+          "five_skandha": {
+            "color_base": "【书法 / 【书法史 / 【书法史论 / 【书法史论综",
+            "action_prompt": "判断/选择",
+            "recognition_marker": "#书法/唐/书谱综合判断"
+          }
+        },
+        {
+          "idx": 8,
+          "time": 64.0,
+          "scene_name": "画面从长安的书斋收回…",
+          "scene_type": "quote_highlight",
+          "chain_ref": "墨骨山河_ep04",
+          "five_skandha": {
+            "color_base": "画面 / 画面从 / 画面从长 / 画面从长安",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "画面从长安的书斋收回，回到现代"
+          }
+        },
+        {
+          "idx": 9,
+          "time": 72.0,
+          "scene_name": "【书法史论综合题】\n\n请结合…",
+          "scene_type": "timeline",
+          "chain_ref": "墨骨山河_ep04",
+          "five_skandha": {
+            "color_base": "【书法 / 【书法史 / 【书法史论 / 【书法史论综",
+            "action_prompt": "判断/选择",
+            "recognition_marker": "#书法/唐/书谱综合论述"
+          }
+        },
+        {
+          "idx": 10,
+          "time": 80.0,
+          "scene_name": "你合上《书谱》，望向窗外",
+          "scene_type": "quote_highlight",
+          "chain_ref": "墨骨山河_ep04",
+          "five_skandha": {
+            "color_base": "你合 / 你合上 / 你合上《 / 你合上《书",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "你合上《书谱》，望向窗外"
+          }
+        }
+      ]
+    }
+  ]
+}

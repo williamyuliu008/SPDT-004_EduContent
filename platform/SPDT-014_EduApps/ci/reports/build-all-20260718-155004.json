@@ -1,0 +1,310 @@
+{
+  "timestamp": "20260718-155004",
+  "elapsed_s": 26.691208362579346,
+  "total": 30,
+  "pass": 12,
+  "fail": 1,
+  "skip": 17,
+  "apps": [
+    {
+      "name": "craftsman-api-tester",
+      "brand": "craftsman",
+      "status": "skip",
+      "signed": false,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "No signingConfigs (need DevEco Sync)",
+      "duration_s": 0.0
+    },
+    {
+      "name": "craftsman-arkui",
+      "brand": "craftsman",
+      "status": "pass",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 0.15642356872558594,
+      "error": "",
+      "duration_s": 5.069512128829956
+    },
+    {
+      "name": "craftsman-clipboard",
+      "brand": "craftsman",
+      "status": "pass",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 0.05555915832519531,
+      "error": "",
+      "duration_s": 4.913343667984009
+    },
+    {
+      "name": "craftsman-code-editor",
+      "brand": "craftsman",
+      "status": "skip",
+      "signed": false,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "No signingConfigs (need DevEco Sync)",
+      "duration_s": 0.0
+    },
+    {
+      "name": "craftsman-image-tool",
+      "brand": "craftsman",
+      "status": "pass",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 0.05555534362792969,
+      "error": "",
+      "duration_s": 5.025745153427124
+    },
+    {
+      "name": "craftsman-ohpm",
+      "brand": "craftsman",
+      "status": "skip",
+      "signed": false,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "No signingConfigs (need DevEco Sync)",
+      "duration_s": 0.0
+    },
+    {
+      "name": "craftsman-scanner",
+      "brand": "craftsman",
+      "status": "skip",
+      "signed": false,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "No signingConfigs (need DevEco Sync)",
+      "duration_s": 0.0
+    },
+    {
+      "name": "craftsman-translate",
+      "brand": "craftsman",
+      "status": "pass",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 0.05555248260498047,
+      "error": "",
+      "duration_s": 5.27500581741333
+    },
+    {
+      "name": "craftsman-utils",
+      "brand": "craftsman",
+      "status": "skip",
+      "signed": false,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "No signingConfigs (need DevEco Sync)",
+      "duration_s": 0.0
+    },
+    {
+      "name": "craftsman-utils-v2",
+      "brand": "craftsman",
+      "status": "skip",
+      "signed": false,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "No signingConfigs (need DevEco Sync)",
+      "duration_s": 0.0
+    },
+    {
+      "name": "gaokao-agent",
+      "brand": "gaokao",
+      "status": "pass",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 0.4292325973510742,
+      "error": "",
+      "duration_s": 9.528236150741577
+    },
+    {
+      "name": "gaokao-language",
+      "brand": "gaokao",
+      "status": "pass",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 0.055550575256347656,
+      "error": "",
+      "duration_s": 9.715831279754639
+    },
+    {
+      "name": "gaokao-volunteer",
+      "brand": "gaokao",
+      "status": "pass",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 0.05555534362792969,
+      "error": "",
+      "duration_s": 9.530962705612183
+    },
+    {
+      "name": "harmonycoder",
+      "brand": "harmonycoder",
+      "status": "skip",
+      "signed": false,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "No signingConfigs (need DevEco Sync)",
+      "duration_s": 0.0
+    },
+    {
+      "name": "harmonycoder-snippets",
+      "brand": "harmonycoder",
+      "status": "skip",
+      "signed": false,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "No signingConfigs (need DevEco Sync)",
+      "duration_s": 0.0
+    },
+    {
+      "name": "rhythm-habit",
+      "brand": "rhythm",
+      "status": "skip",
+      "signed": false,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "No signingConfigs (need DevEco Sync)",
+      "duration_s": 0.0
+    },
+    {
+      "name": "rhythm-habit-game",
+      "brand": "rhythm",
+      "status": "skip",
+      "signed": false,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "No signingConfigs (need DevEco Sync)",
+      "duration_s": 0.0
+    },
+    {
+      "name": "rhythm-meditation",
+      "brand": "rhythm",
+      "status": "skip",
+      "signed": false,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "No signingConfigs (need DevEco Sync)",
+      "duration_s": 0.0
+    },
+    {
+      "name": "rhythm-nutrition",
+      "brand": "rhythm",
+      "status": "skip",
+      "signed": false,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "No signingConfigs (need DevEco Sync)",
+      "duration_s": 0.0
+    },
+    {
+      "name": "rhythm-pomodoro",
+      "brand": "rhythm",
+      "status": "skip",
+      "signed": false,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "No signingConfigs (need DevEco Sync)",
+      "duration_s": 0.0
+    },
+    {
+      "name": "thinkkit-coach",
+      "brand": "thinkkit",
+      "status": "pass",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 0.26985836029052734,
+      "error": "",
+      "duration_s": 9.973191022872925
+    },
+    {
+      "name": "thinkkit-flashcard",
+      "brand": "thinkkit",
+      "status": "skip",
+      "signed": false,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "No signingConfigs (need DevEco Sync)",
+      "duration_s": 0.0
+    },
+    {
+      "name": "thinkkit-flashcard2",
+      "brand": "thinkkit",
+      "status": "skip",
+      "signed": false,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "No signingConfigs (need DevEco Sync)",
+      "duration_s": 0.0
+    },
+    {
+      "name": "thinkkit-mindmap",
+      "brand": "thinkkit",
+      "status": "pass",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 0.2207784652709961,
+      "error": "",
+      "duration_s": 14.65314769744873
+    },
+    {
+      "name": "thinkkit-note",
+      "brand": "thinkkit",
+      "status": "pass",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 0.05555248260498047,
+      "error": "",
+      "duration_s": 14.65402626991272
+    },
+    {
+      "name": "thinkkit-quiz",
+      "brand": "thinkkit",
+      "status": "pass",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 0.16448688507080078,
+      "error": "",
+      "duration_s": 14.97487735748291
+    },
+    {
+      "name": "thinkkit-reader",
+      "brand": "thinkkit",
+      "status": "pass",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 0.14180946350097656,
+      "error": "",
+      "duration_s": 14.992694854736328
+    },
+    {
+      "name": "thinkkit-rss",
+      "brand": "thinkkit",
+      "status": "skip",
+      "signed": false,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "No signingConfigs (need DevEco Sync)",
+      "duration_s": 0.0
+    },
+    {
+      "name": "thinkkit-zknote",
+      "brand": "thinkkit",
+      "status": "skip",
+      "signed": false,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "No signingConfigs (need DevEco Sync)",
+      "duration_s": 0.0
+    },
+    {
+      "name": "rujing",
+      "brand": "unknown",
+      "status": "fail",
+      "signed": true,
+      "hap_signed": "entry-default-signed.hap",
+      "hap_size_mb": 4.508070945739746,
+      "error": "can only concatenate str (not \"NoneType\") to str",
+      "duration_s": 26.6907799243927
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+﻿{
+    "summary":  {
+                    "total_unsigned_kb":  0,
+                    "total_signed_kb":  0,
+                    "compiled":  5,
+                    "total":  1,
+                    "signed":  5
+                },
+    "brand":  "rujing",
+    "timestamp":  "2026-07-20 00:25:33",
+    "apps":  [
+                 {
+                     "unsigned_kb":  8108.1,
+                     "app":  "rujing",
+                     "signed_kb":  8142,
+                     "compiled":  true,
+                     "signed":  true
+                 }
+             ]
+}

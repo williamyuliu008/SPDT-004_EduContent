@@ -1,0 +1,186 @@
+# ep09 商鞅变法 · ContentSpec.yaml
+# MAS-RUN R1 交付件 · SOP v4.0 M1 对应
+# 生成日期：2026-07-27 · 考点知识库_4_协调
+# 版本：1.0
+
+content_spec:
+  version: "1.0"
+  episode_id: "ep09"
+  episode_title: "南门之木"
+  subtitle: "商鞅变法·战国秩序的诞生"
+  schema_ref: "T2-GEO-004"
+
+  # ─────────────────────────────────────────
+  # M1 六维度 · 内容目标
+  # ─────────────────────────────────────────
+  content_goal:
+    core_message: >
+      商鞅变法是中国历史上最彻底的制度变革。
+      其核心逻辑是：以法治代替人治，以功绩代替出身，以秩序代替混乱。
+      卫鞅以自己的生命为代价，证明了一个悖论：
+      真正伟大的制度，不依赖创立者的生命，而依赖制度本身的生命力。
+    target_audience: "高中艺考/高考历史/书法校考（高二至高三）"
+    audience_level: "high_school_advanced"
+    audience_knowledge_prerequisite: >
+      初中历史基础（战国七雄、秦始皇统一六国）；
+      了解"商鞅变法"这一历史事件名称；
+      书法方面：知道小篆是秦朝统一后的标准字体
+    learning_outcomes:
+      - "能复述商鞅变法的五大主要内容"
+      - "能解释'南门立木'的政治智慧"
+      - "能分析商鞅变法成功的原因"
+      - "能理解小篆'圆/均/对称'特征与法家秩序的内在联系"
+
+  # ─────────────────────────────────────────
+  # M1 六维度 · 体裁约束
+  # ─────────────────────────────────────────
+  genre_constraints:
+    genre: "墨骨山河_ep_series"
+    genre_type: "B5_visual_narrative"        # SOP v4.0 B5 视觉叙事分类
+    recommended_execution_mode: "Mode_C_混合执行"  # 文档=微剧本JSON，本体=历史×书法考点
+    structure:
+      acts: 3
+      scenes_total: 17
+      script_format: "T2-GEO-004 JSON"
+      scene_types:
+        - narrative    # 叙事场景
+        - dialogue     # 对话场景
+        - concept      # 概念讲解
+    length:
+      per_scene_chars: "300-600字"
+      total_script_chars: "约5000字"
+      estimated_duration: "15-20分钟"
+    delivery_format:
+      script: "JSON（T2-GEO-004 schema）"
+      illustrations: "PNG × 6张"
+      app_page: "HistoryGalleryPage.ets"
+      web_viewer: "HTML gallery"
+
+  # ─────────────────────────────────────────
+  # M1 六维度 · 知识来源
+  # ─────────────────────────────────────────
+  knowledge_sources:
+    history_domain:
+      source: "PT-CAFAS_2026 知识库"
+      type: "knowledge_graph"
+      bindings:
+        - id: "HIS-AS-004"
+          name: "春秋战国变革"
+          trust: "E"
+          coverage: "战国形势、变法背景"
+        - id: "HIS-AS-005"
+          name: "诸子百家/法家"
+          trust: "E"
+          coverage: "卫鞅舌战、法家思想"
+        - id: "HIS-AS-006"
+          name: "商鞅变法"
+          trust: "E"
+          coverage: "变法内容/意义/成功原因（核心考点）"
+        - id: "HIS-AS-010"
+          name: "书同文"
+          trust: "E"
+          coverage: "小篆/秦朝文字统一"
+      binding_rate:
+        total_scenes: 17
+        history_bound: 17
+        percentage: "100%"
+    calligraphy_domain:
+      source: "PT-039 书法视觉本体库（待建立）"
+      type: "ontology_v0.1_pending"
+      bindings:
+        - id: "书法史/小篆"
+          name: "小篆书写特征"
+          trust: "D"
+          coverage: "圆转均匀/对称平衡/去个性化"
+        - id: "书法史/秦系文字"
+          name: "秦系文字风格"
+          trust: "D"
+          coverage: "秦权量诏书/刻石体"
+      binding_rate:
+        total_scenes: 17
+        calligraphy_bound: 4
+        percentage: "24%（仅第三幕）"
+        gap_flag: "⚠️ 第一幕/第二幕书法绑定不足"
+    cross_domain_validation:
+      description: "商鞅变法（历史）× 小篆书同文（书法）指向同一历史事件"
+      validation_result: "✅ 合理（秦孝公→商鞅→书同文→小篆为标准字体）"
+      confidence: "高"
+
+  # ─────────────────────────────────────────
+  # M1 六维度 · 质量标准
+  # ─────────────────────────────────────────
+  quality_constraints:
+    factual_accuracy:
+      standard: "HIS-AS 综合评分 ≥ 85"
+      method: "知识图谱交叉验证"
+      gate: "自动"
+    narrative_consistency:
+      standard: "narrative_arc 6 beats 全覆盖"
+      method: "NarrativeSpec 对照检查"
+      gate: "人工"
+    historical_accuracy:
+      standard: "无朝代错误/无人物虚构/无地名虚构"
+      method: "历史专家审核"
+      gate: "人工"
+    calligraphy_correctness:
+      standard: "小篆字形符合六书规范"
+      method: "书法专家审核"
+      gate: "人工"
+      note: "当前依赖隐性质控，正式本体库建立后升级为自动化"
+    ai_illustration_quality:
+      standard: "D1 自动通过，D2-D4 人工通过"
+      method: "见 QualityConstraints.yaml"
+      gate: "人工"
+    sensitivity:
+      standard: "无敏感内容"
+      method: "M4.1 约束引擎检查"
+      gate: "自动"
+
+  # ─────────────────────────────────────────
+  # M1 六维度 · 复用范围
+  # ─────────────────────────────────────────
+  reuse_scope:
+    same_series: "墨骨山河 ep01-ep08 可复用本 ContentSpec 模板"
+    same_genre: "墨骨山河_ep_series 可注册为 CMC 多模态体裁"
+    template_extractable: true
+    template_fields:
+      - content_type
+      - genre_constraints.structure
+      - quality_constraints (部分)
+      - delivery_format
+
+  # ─────────────────────────────────────────
+  # M1 六维度 · 生产频率
+  # ─────────────────────────────────────────
+  production_frequency:
+    current: "batch_per_episode"
+    planned: "batch_per_volume（8集为一个volume）"
+    estimated_capacity: "1集/周（含AI配图+App集成）"
+
+  # ─────────────────────────────────────────
+  # M1 六维度 · 人类检查点
+  # ─────────────────────────────────────────
+  human_checkpoint:
+    required: true
+    checkpoint_G1:
+      trigger: "ContentSpec + NarrativeSpec 完成后"
+      question: "内容目标/受众/知识源/质量标准 是否已完整确认？"
+      status: "🔄 本次执行"
+    checkpoint_G2:
+      trigger: "AI配图生成后"
+      question: "配图是否通过两层质量审核（可视化 + 语义逻辑）？"
+      status: "⏳ 待执行"
+    checkpoint_G3:
+      trigger: "App rawfile 部署到设备后"
+      question: "ContentSpec + NarrativeSpec + App分发 均已满足？"
+      status: "⏳ 待执行"
+
+  # ─────────────────────────────────────────
+  # 追溯信息
+  # ─────────────────────────────────────────
+  provenance:
+    source_document: "scripts/墨骨山河_ep09_商鞅变法.json"
+    generated_from: "T2-GEO-004 schema"
+    created_by: "考点知识库_4_协调"
+    creation_date: "2026-07-27"
+    sop_reference: "MAS-RUN R1 · 内容制造型SOP_v4.0 M1"

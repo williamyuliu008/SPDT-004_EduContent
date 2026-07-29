@@ -1,0 +1,1150 @@
+{
+  "metadata": {
+    "series_title": "变与局",
+    "ep_id": 3,
+    "ep_title": "靖康之变",
+    "source_chain_id": "古史_变与局_ep03",
+    "source_pt": "PT-038",
+    "schema_version": "2.0.0",
+    "_generated_by": "PT038_to_VideoFactory.py v2.0.0",
+    "_generated_at": "2026-07-16T19:22:09+08:00",
+    "_total_scenes": 16
+  },
+  "scenes": [
+    {
+      "scene_id": "古史_变与局_ep03_act1_00",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "宋徽宗赵佶（1082-1135年），是宋神宗…",
+        "body_lines": [
+          "宋徽宗赵佶（1082-1135年），是宋神宗的儿子，宋哲…",
+          "论治国，他是一个彻头彻尾的失败者",
+          "但论艺术，他是中国历史上最杰出的…"
+        ],
+        "keywords": [
+          "宋徽",
+          "宋徽宗",
+          "宋徽宗赵",
+          "宋徽宗赵佶"
+        ]
+      },
+      "page": {
+        "current": 1,
+        "total": 16,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 0,
+        "total": 16,
+        "name": "宋徽宗的艺术与政治：皇帝是艺术家·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#变与局/1127年",
+        "#历史/靖康之变",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_变与局_ep03",
+      "five_skandha": {
+        "color_base": [
+          "宋徽",
+          "宋徽宗",
+          "宋徽宗赵",
+          "宋徽宗赵佶"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "宋徽宗赵佶（1082-1135年），是宋神宗的儿子，宋哲宗的弟弟。论治国，他是一……",
+        "discrimination": "学生能识别「宋徽宗赵佶（1082-1135年），是宋神宗…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#变与局/1127年",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT1-BEAT-00-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「宋徽宗赵佶（1082-1135年），是宋神宗的儿子，宋哲…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_变与局_ep03_act1_01",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "（金兵第一次包围汴京后…",
+        "body_lines": [
+          "（金兵第一次包围汴京后，宋徽宗召开…",
+          "徽宗：",
+          "金兵势大，诸位有何良策？"
+        ],
+        "keywords": [
+          "（金兵",
+          "（金兵第",
+          "（金兵第一",
+          "（金兵第一次"
+        ]
+      },
+      "page": {
+        "current": 2,
+        "total": 16,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 1,
+        "total": 16,
+        "name": "宋徽宗的艺术与政治：皇帝是艺术家·dialogue",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#变与局/1127年",
+        "#历史/靖康之变",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_变与局_ep03",
+      "five_skandha": {
+        "color_base": [
+          "（金兵",
+          "（金兵第",
+          "（金兵第一",
+          "（金兵第一次"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "（金兵第一次包围汴京后，宋徽宗召开御前会议）\n\n徽宗：\n金兵势大，诸位有何良策？……",
+        "discrimination": "学生能识别「（金兵第一次包围汴京后…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#变与局/1127年",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT1-BEAT-01-DIALOGUE",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「（金兵第一次包围汴京后，宋徽宗召开…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_变与局_ep03_act1_02",
+      "scene_type": "action",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "宋徽宗是一个\"生错了时…",
+        "task_description": "宋徽宗是一个\"生错了时代\"的天才艺术家，却坐上了需要最强…"
+      },
+      "page": {
+        "current": 3,
+        "total": 16,
+        "show": false
+      },
+      "scene_info": {
+        "idx": 2,
+        "total": 16,
+        "name": "宋徽宗的艺术与政治：皇帝是艺术家·role_play",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#变与局/1127年",
+        "#历史/靖康之变",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_变与局_ep03",
+      "five_skandha": {
+        "color_base": [
+          "宋徽",
+          "宋徽宗",
+          "宋徽宗是",
+          "宋徽宗是一"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "宋徽宗是一个\"生错了时代\"的天才艺术家，却坐上了需要最强政治家的皇位。他的艺术成……",
+        "discrimination": "宋徽宗是一个\"生错了时代\"的天才艺术家，却坐上了需要最强政治",
+        "action_prompt": "书写/口述",
+        "recognition_marker": "#变与局/1127年",
+        "bottleneck_warn": "none"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT1-BEAT-02-ROLE_PLAY",
+        "visual_element_ref": "CONTENT-ZONE-3",
+        "alignment_note": "旁白「宋徽宗是一个\"生错了时代\"的天才艺…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 2,
+        "load_status": "ACCEPTABLE",
+        "bottleneck_cause": "none",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_hook",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": false
+    },
+    {
+      "scene_id": "古史_变与局_ep03_act1_03",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "《宋史·徽宗本纪》：\"徽宗诸事…",
+        "body_lines": [
+          "《宋史·徽宗本纪》：\"徽宗诸事皆能，独不能…",
+          "\"",
+          "这句评价简短而精准地概括了宋徽…"
+        ],
+        "keywords": [
+          "《宋史",
+          "《宋史·",
+          "《宋史·徽",
+          "《宋史·徽宗"
+        ]
+      },
+      "page": {
+        "current": 4,
+        "total": 16,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 3,
+        "total": 16,
+        "name": "宋徽宗的艺术与政治：皇帝是艺术家·dialogue",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#变与局/1127年",
+        "#历史/靖康之变",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_变与局_ep03",
+      "five_skandha": {
+        "color_base": [
+          "《宋史",
+          "《宋史·",
+          "《宋史·徽",
+          "《宋史·徽宗"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "《宋史·徽宗本纪》：\"徽宗诸事皆能，独不能为君耳。\"\n\n这句评价简短而精准地概括……",
+        "discrimination": "学生能识别「《宋史·徽宗本纪》：\"徽宗诸事…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#变与局/1127年",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT1-BEAT-03-DIALOGUE",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「《宋史·徽宗本纪》：\"徽宗诸事皆能，独不能…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_变与局_ep03_act2_04",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "1115年，完颜阿骨打在东北建…",
+        "body_lines": [
+          "1115年，完颜阿骨打在东北建立金朝，随即…",
+          "金兵的战斗力震惊了整个东亚——短短…",
+          "宋徽宗君臣看到机会：辽国眼看要完…"
+        ],
+        "keywords": [
+          "完颜",
+          "完颜阿",
+          "完颜阿骨",
+          "完颜阿骨打"
+        ]
+      },
+      "page": {
+        "current": 5,
+        "total": 16,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 4,
+        "total": 16,
+        "name": "海上之盟：联金灭辽的致命错误·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#变与局/1127年",
+        "#历史/靖康之变",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_变与局_ep03",
+      "five_skandha": {
+        "color_base": [
+          "完颜",
+          "完颜阿",
+          "完颜阿骨",
+          "完颜阿骨打"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "1115年，完颜阿骨打在东北建立金朝，随即对辽发动猛烈进攻。金兵的战斗力震惊了整……",
+        "discrimination": "学生能识别「1115年，完颜阿骨打在东北建…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#变与局/1127年",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-04-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「1115年，完颜阿骨打在东北建立金朝，随即…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_变与局_ep03_act2_05",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "（宋金谈判桌上）\n\n金使：\n宋主…",
+        "body_lines": [
+          "（宋金谈判桌上）",
+          "金使：",
+          "宋主派来的这几万军队……（忍笑）战力如…"
+        ],
+        "keywords": [
+          "（宋金",
+          "（宋金谈",
+          "（宋金谈判",
+          "（宋金谈判桌"
+        ]
+      },
+      "page": {
+        "current": 6,
+        "total": 16,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 5,
+        "total": 16,
+        "name": "海上之盟：联金灭辽的致命错误·dialogue",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#变与局/1127年",
+        "#历史/靖康之变",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_变与局_ep03",
+      "five_skandha": {
+        "color_base": [
+          "（宋金",
+          "（宋金谈",
+          "（宋金谈判",
+          "（宋金谈判桌"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "（宋金谈判桌上）\n\n金使：\n宋主派来的这几万军队……（忍笑）战力如何，你们自己心……",
+        "discrimination": "学生能识别「（宋金谈判桌上）\n\n金使：\n宋主…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#变与局/1127年",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-05-DIALOGUE",
+        "visual_element_ref": "CONTENT-ZONE-3",
+        "alignment_note": "旁白「（宋金谈判桌上）\n\n金使：\n宋主派来的这几…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_变与局_ep03_act2_06",
+      "scene_type": "action",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "海上之盟的战略错误不…",
+        "task_description": "海上之盟的战略错误不在于\"联金灭辽\"本身，而在于：宋朝既没…"
+      },
+      "page": {
+        "current": 7,
+        "total": 16,
+        "show": false
+      },
+      "scene_info": {
+        "idx": 6,
+        "total": 16,
+        "name": "海上之盟：联金灭辽的致命错误·role_play",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#变与局/1127年",
+        "#历史/靖康之变",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_变与局_ep03",
+      "five_skandha": {
+        "color_base": [
+          "海上",
+          "海上之",
+          "海上之盟",
+          "海上之盟的"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "海上之盟的战略错误不在于\"联金灭辽\"本身，而在于：宋朝既没有足够的军事实力参与灭……",
+        "discrimination": "海上之盟的战略错误不在于\"联金灭辽\"本身，而在于：宋朝既没有",
+        "action_prompt": "书写/口述",
+        "recognition_marker": "#变与局/1127年",
+        "bottleneck_warn": "none"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-06-ROLE_PLAY",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「海上之盟的战略错误不在于\"联金灭…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 2,
+        "load_status": "ACCEPTABLE",
+        "bottleneck_cause": "none",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_hook",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": false
+    },
+    {
+      "scene_id": "古史_变与局_ep03_act2_07",
+      "scene_type": "quote_highlight",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "《三朝北盟会编》卷一：\"朝廷…",
+        "quote": "朝廷命童贯帅兵十五万伐燕，兵大败于白沟。",
+        "attribution": "三朝北盟会编"
+      },
+      "page": {
+        "current": 8,
+        "total": 16,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 7,
+        "total": 16,
+        "name": "海上之盟：联金灭辽的致命错误·dialogue",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#变与局/1127年",
+        "#历史/靖康之变",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_变与局_ep03",
+      "five_skandha": {
+        "color_base": [
+          "《三朝",
+          "《三朝北",
+          "《三朝北盟",
+          "《三朝北盟会"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "《三朝北盟会编》卷一：\"朝廷命童贯帅兵十五万伐燕，兵大败于白沟。\"\n\n童贯是中国……",
+        "discrimination": "学生能引用核心论述解释书法现象",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#变与局/1127年",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-07-DIALOGUE",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「《三朝北盟会编》卷一：\"朝廷命童贯帅兵…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_变与局_ep03_act3_08",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "1126年八月，金兵第二次南下",
+        "body_lines": [
+          "1126年八月，金兵第二次南下",
+          "这次，金太宗派出了完颜宗望和完颜…",
+          "宋钦宗在位还不到一年，面对金兵大…"
+        ],
+        "keywords": [
+          "1126年八",
+          "金兵",
+          "金兵第",
+          "金兵第二"
+        ]
+      },
+      "page": {
+        "current": 9,
+        "total": 16,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 8,
+        "total": 16,
+        "name": "汴京的陷落：靖康之变的经过·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#变与局/1127年",
+        "#历史/靖康之变",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_变与局_ep03",
+      "five_skandha": {
+        "color_base": [
+          "1126年八",
+          "金兵",
+          "金兵第",
+          "金兵第二"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "1126年八月，金兵第二次南下。这次，金太宗派出了完颜宗望和完颜宗翰两路大军，分……",
+        "discrimination": "学生能识别「1126年八月，金兵第二次南下…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#变与局/1127年",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT3-BEAT-08-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-3",
+        "alignment_note": "旁白「1126年八月，金兵第二次南下。这次，金太宗…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_变与局_ep03_act3_09",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "（金兵大帐中）\n\n金将：\n宋主听…",
+        "body_lines": [
+          "（金兵大帐中）",
+          "金将：",
+          "宋主听旨——金五百万两，银五千万两，绢…"
+        ],
+        "keywords": [
+          "（金兵",
+          "（金兵大",
+          "（金兵大帐",
+          "（金兵大帐中"
+        ]
+      },
+      "page": {
+        "current": 10,
+        "total": 16,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 9,
+        "total": 16,
+        "name": "汴京的陷落：靖康之变的经过·dialogue",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#变与局/1127年",
+        "#历史/靖康之变",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_变与局_ep03",
+      "five_skandha": {
+        "color_base": [
+          "（金兵",
+          "（金兵大",
+          "（金兵大帐",
+          "（金兵大帐中"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "（金兵大帐中）\n\n金将：\n宋主听旨——金五百万两，银五千万两，绢一百万匹，十日内……",
+        "discrimination": "学生能识别「（金兵大帐中）\n\n金将：\n宋主听…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#变与局/1127年",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT3-BEAT-09-DIALOGUE",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「（金兵大帐中）\n\n金将：\n宋主听旨——金五百万…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_变与局_ep03_act3_10",
+      "scene_type": "action",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "靖康之变是汉族政权第…",
+        "task_description": "靖康之变是汉族政权第一次被异族彻底灭亡（之前只是偏安…"
+      },
+      "page": {
+        "current": 11,
+        "total": 16,
+        "show": false
+      },
+      "scene_info": {
+        "idx": 10,
+        "total": 16,
+        "name": "汴京的陷落：靖康之变的经过·role_play",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#变与局/1127年",
+        "#历史/靖康之变",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_变与局_ep03",
+      "five_skandha": {
+        "color_base": [
+          "靖康",
+          "靖康之",
+          "靖康之变",
+          "靖康之变是"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "靖康之变是汉族政权第一次被异族彻底灭亡（之前只是偏安南方）。汴京陷落时，宋钦宗的……",
+        "discrimination": "靖康之变是汉族政权第一次被异族彻底灭亡（之前只是偏安南方）。",
+        "action_prompt": "书写/口述",
+        "recognition_marker": "#变与局/1127年",
+        "bottleneck_warn": "none"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT3-BEAT-10-ROLE_PLAY",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「靖康之变是汉族政权第一次被异族…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 3,
+        "load_status": "ACCEPTABLE",
+        "bottleneck_cause": "none",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_hook",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": false
+    },
+    {
+      "scene_id": "古史_变与局_ep03_act3_11",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "《靖康稗史笺证》：\"金人掠吾…",
+        "body_lines": [
+          "《靖康稗史笺证》：\"金人掠吾宗室，发括金…",
+          "道路纷华，锦绣成堆，皆金人所需者",
+          "\""
+        ],
+        "keywords": [
+          "《靖康",
+          "《靖康稗",
+          "《靖康稗史",
+          "《靖康稗史笺"
+        ]
+      },
+      "page": {
+        "current": 12,
+        "total": 16,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 11,
+        "total": 16,
+        "name": "汴京的陷落：靖康之变的经过·dialogue",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#变与局/1127年",
+        "#历史/靖康之变",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_变与局_ep03",
+      "five_skandha": {
+        "color_base": [
+          "《靖康",
+          "《靖康稗",
+          "《靖康稗史",
+          "《靖康稗史笺"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "《靖康稗史笺证》：\"金人掠吾宗室，发括金银，驱掳百官，庶士女，悉辈以北。道路纷华……",
+        "discrimination": "学生能识别「《靖康稗史笺证》：\"金人掠吾…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#变与局/1127年",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT3-BEAT-11-DIALOGUE",
+        "visual_element_ref": "CONTENT-ZONE-3",
+        "alignment_note": "旁白「《靖康稗史笺证》：\"金人掠吾宗室，发括金…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 4,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_变与局_ep03_act4_12",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "1127年五月初一，赵构在南京…",
+        "body_lines": [
+          "1127年五月初一，赵构在南京应天府（今河…",
+          "然而，赵构最关心的事情不是北伐收…",
+          "岳飞的抗金事业，就是在这种政治环…"
+        ],
+        "keywords": [
+          "1127年五",
+          "赵构",
+          "赵构在",
+          "赵构在南"
+        ]
+      },
+      "page": {
+        "current": 13,
+        "total": 16,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 12,
+        "total": 16,
+        "name": "屈辱的代价：南宋的偏安与心理创伤·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#变与局/1127年",
+        "#历史/靖康之变",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_变与局_ep03",
+      "five_skandha": {
+        "color_base": [
+          "1127年五",
+          "赵构",
+          "赵构在",
+          "赵构在南"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "1127年五月初一，赵构在南京应天府（今河南商丘）登基，是为宋高宗，南宋开始。然……",
+        "discrimination": "学生能识别「1127年五月初一，赵构在南京…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#变与局/1127年",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT4-BEAT-12-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「1127年五月初一，赵构在南京应天府（今河…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_变与局_ep03_act4_13",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "岳飞：\n直捣黄龙府，与诸君…",
+        "body_lines": [
+          "岳飞：",
+          "直捣黄龙府，与诸君痛饮耳！",
+          "（然而，就在岳家军节节胜利、朱仙镇大…"
+        ],
+        "keywords": [
+          "岳飞",
+          "岳飞：",
+          "直捣",
+          "直捣黄"
+        ]
+      },
+      "page": {
+        "current": 14,
+        "total": 16,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 13,
+        "total": 16,
+        "name": "屈辱的代价：南宋的偏安与心理创伤·dialogue",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#变与局/1127年",
+        "#历史/靖康之变",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_变与局_ep03",
+      "five_skandha": {
+        "color_base": [
+          "岳飞",
+          "岳飞：",
+          "直捣",
+          "直捣黄"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "岳飞：\n直捣黄龙府，与诸君痛饮耳！\n\n（然而，就在岳家军节节胜利、朱仙镇大捷之际……",
+        "discrimination": "学生能识别「岳飞：\n直捣黄龙府，与诸君…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#变与局/1127年",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT4-BEAT-13-DIALOGUE",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「岳飞：\n直捣黄龙府，与诸君痛饮耳！\n\n（然而…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_变与局_ep03_act4_14",
+      "scene_type": "action",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "靖康之变的最大遗产不…",
+        "task_description": "靖康之变的最大遗产不是领土的丧失，而是心理的创伤。南宋…"
+      },
+      "page": {
+        "current": 15,
+        "total": 16,
+        "show": false
+      },
+      "scene_info": {
+        "idx": 14,
+        "total": 16,
+        "name": "屈辱的代价：南宋的偏安与心理创伤·role_play",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#变与局/1127年",
+        "#历史/靖康之变",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_变与局_ep03",
+      "five_skandha": {
+        "color_base": [
+          "靖康",
+          "靖康之",
+          "靖康之变",
+          "靖康之变的"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "靖康之变的最大遗产不是领土的丧失，而是心理的创伤。南宋的\"偏安\"心态，根源于靖康……",
+        "discrimination": "靖康之变的最大遗产不是领土的丧失，而是心理的创伤。南宋的\"偏",
+        "action_prompt": "书写/口述",
+        "recognition_marker": "#变与局/1127年",
+        "bottleneck_warn": "none"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT4-BEAT-14-ROLE_PLAY",
+        "visual_element_ref": "CONTENT-ZONE-3",
+        "alignment_note": "旁白「靖康之变的最大遗产不是领土的丧…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 3,
+        "load_status": "ACCEPTABLE",
+        "bottleneck_cause": "none",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_hook",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": false
+    },
+    {
+      "scene_id": "古史_变与局_ep03_act4_15",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "文天祥《正气歌》：\"时穷节乃…",
+        "body_lines": [
+          "文天祥《正气歌》：\"时穷节乃见，一一垂丹…",
+          "在齐太史简，在晋董狐笔",
+          "在秦张良椎，在汉苏武节……或为辽东帽…"
+        ],
+        "keywords": [
+          "文天",
+          "文天祥",
+          "文天祥《",
+          "文天祥《正"
+        ]
+      },
+      "page": {
+        "current": 16,
+        "total": 16,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 15,
+        "total": 16,
+        "name": "屈辱的代价：南宋的偏安与心理创伤·dialogue",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#变与局/1127年",
+        "#历史/靖康之变",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_变与局_ep03",
+      "five_skandha": {
+        "color_base": [
+          "文天",
+          "文天祥",
+          "文天祥《",
+          "文天祥《正"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "文天祥《正气歌》：\"时穷节乃见，一一垂丹青。在齐太史简，在晋董狐笔。在秦张良椎，……",
+        "discrimination": "学生能识别「文天祥《正气歌》：\"时穷节乃…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#变与局/1127年",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT4-BEAT-15-DIALOGUE",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「文天祥《正气歌》：\"时穷节乃见，一一垂丹…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    }
+  ]
+}

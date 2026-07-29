@@ -1,0 +1,163 @@
+{
+  "schema_version": "1.0.0",
+  "package_id": "墨骨山河_EP07",
+  "series_title": "墨骨山河",
+  "total_episodes": 1,
+  "produced_by": "PT-VFX",
+  "produced_at": "2026-07-20T00:49:40+08:00",
+  "source_episodes_dir": "D:\\92_products\\SPDT-004_EduContent\\PT-038_TextExperience\\墨骨山河_ep07_test\\scenes",
+  "episodes": [
+    {
+      "ep": 7,
+      "title": "碑学中兴",
+      "subtitle": "阮元与书法的版图重划",
+      "video_file": "墨骨山河_ep07.mp4",
+      "audio_file": "",
+      "duration_seconds": 240.0,
+      "resolution": "1080p",
+      "bitrate_kbps": 2000,
+      "chains": [
+        "墨骨山河_ep07"
+      ],
+      "cards_file": "",
+      "scene_timeline": [
+        {
+          "idx": 0,
+          "time": 0.0,
+          "scene_name": "1790年代，杭州",
+          "scene_type": "concept",
+          "chain_ref": "墨骨山河_ep07",
+          "five_skandha": {
+            "color_base": [
+              "1790年代",
+              "杭州",
+              "阮元",
+              "阮元坐"
+            ],
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#书法/清/碑学背景"
+          }
+        },
+        {
+          "idx": 1,
+          "time": 30.0,
+          "scene_name": "阮元站起来，走到书架前",
+          "scene_type": "concept",
+          "chain_ref": "墨骨山河_ep07",
+          "five_skandha": {
+            "color_base": [
+              "阮元",
+              "阮元站",
+              "阮元站起",
+              "阮元站起来"
+            ],
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#书法/清/碑学兴起原因"
+          }
+        },
+        {
+          "idx": 2,
+          "time": 60.0,
+          "scene_name": "阮元蘸墨，开始写《南北书…",
+          "scene_type": "concept",
+          "chain_ref": "墨骨山河_ep07",
+          "five_skandha": {
+            "color_base": [
+              "阮元",
+              "阮元蘸",
+              "阮元蘸墨",
+              "开始"
+            ],
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#书法/清/南北书派论"
+          }
+        },
+        {
+          "idx": 3,
+          "time": 90.0,
+          "scene_name": "阮元继续写：\n\n'南派书法，源…",
+          "scene_type": "concept",
+          "chain_ref": "墨骨山河_ep07",
+          "five_skandha": {
+            "color_base": [
+              "阮元",
+              "阮元继",
+              "阮元继续",
+              "阮元继续写"
+            ],
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#书法/清/南北书派论内容"
+          }
+        },
+        {
+          "idx": 4,
+          "time": 120.0,
+          "scene_name": "【南北书派论判断题】\n\n以下…",
+          "scene_type": "steps",
+          "chain_ref": "墨骨山河_ep07",
+          "five_skandha": {
+            "color_base": [
+              "【南北",
+              "【南北书",
+              "【南北书派",
+              "【南北书派论"
+            ],
+            "action_prompt": "判断/选择",
+            "recognition_marker": "#书法/清/南北书派论"
+          }
+        },
+        {
+          "idx": 5,
+          "time": 150.0,
+          "scene_name": "【碑帖比较题】\n\n请比较碑学…",
+          "scene_type": "contrast",
+          "chain_ref": "墨骨山河_ep07",
+          "five_skandha": {
+            "color_base": [
+              "【碑帖",
+              "【碑帖比",
+              "【碑帖比较",
+              "【碑帖比较题"
+            ],
+            "action_prompt": "判断/选择",
+            "recognition_marker": "#书法/清/碑帖比较"
+          }
+        },
+        {
+          "idx": 6,
+          "time": 180.0,
+          "scene_name": "【综合论述题】\n\n请结合阮元…",
+          "scene_type": "contrast",
+          "chain_ref": "墨骨山河_ep07",
+          "five_skandha": {
+            "color_base": [
+              "【综合",
+              "【综合论",
+              "【综合论述",
+              "【综合论述题"
+            ],
+            "action_prompt": "判断/选择",
+            "recognition_marker": "#综合/清书法/南北书派论论述"
+          }
+        },
+        {
+          "idx": 7,
+          "time": 210.0,
+          "scene_name": "你合上书，望着窗外",
+          "scene_type": "concept",
+          "chain_ref": "墨骨山河_ep07",
+          "five_skandha": {
+            "color_base": [
+              "你合",
+              "你合上",
+              "你合上书",
+              "望着"
+            ],
+            "action_prompt": "口述/复述",
+            "recognition_marker": "你合上书，望着窗外"
+          }
+        }
+      ]
+    }
+  ]
+}

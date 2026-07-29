@@ -1,0 +1,20 @@
+{
+  "timestamp": "20260719-160231",
+  "elapsed_s": 7.380108594894409,
+  "total": 1,
+  "pass": 0,
+  "fail": 1,
+  "skip": 0,
+  "apps": [
+    {
+      "name": "rujing",
+      "brand": "unknown",
+      "status": "fail",
+      "signed": true,
+      "hap_signed": null,
+      "hap_size_mb": 0.0,
+      "error": "\u001b[31m18 ERROR: \u001b[31m10605038 ArkTS Compiler Error\n\u001b[31m19 ERROR: \u001b[31m10605038 ArkTS Compiler Error\n\u001b[31m20 ERROR: \u001b[31m10605099 ArkTS Compiler Error\n\u001b[31mCOMPILE RESULT:FAIL {ERROR:21 WARN:124}\u001b[39m\n> hvigor \u001b[91mERROR: BUILD FAILED in 6 s 381 ms \u001b[39m",
+      "duration_s": 7.380086898803711
+    }
+  ]
+}

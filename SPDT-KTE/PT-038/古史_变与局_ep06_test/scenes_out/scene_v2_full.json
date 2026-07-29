@@ -1,0 +1,1157 @@
+{
+  "metadata": {
+    "series_title": "变与局",
+    "ep_id": 6,
+    "ep_title": "晚清变局",
+    "source_chain_id": "古史_变与局_ep06",
+    "source_pt": "PT-038",
+    "schema_version": "2.0.0",
+    "_generated_by": "PT038_to_VideoFactory.py v2.0.0",
+    "_generated_at": "2026-07-16T19:22:10+08:00",
+    "_total_scenes": 16
+  },
+  "scenes": [
+    {
+      "scene_id": "古史_变与局_ep06_act1_00",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "1839年6月3日，广东虎门海滩上…",
+        "body_lines": [
+          "1839年6月3日，广东虎门海滩上浓烟滚滚",
+          "林则徐一声令下，两万多箱鸦片被投…",
+          "但林则徐不知道的是，他点起的这把…"
+        ],
+        "keywords": [
+          "广东",
+          "广东虎",
+          "广东虎门",
+          "广东虎门海"
+        ]
+      },
+      "page": {
+        "current": 1,
+        "total": 16,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 0,
+        "total": 16,
+        "name": "鸦片战争·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#变与局/1840-1911年",
+        "#历史/晚清变局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_变与局_ep06",
+      "five_skandha": {
+        "color_base": [
+          "广东",
+          "广东虎",
+          "广东虎门",
+          "广东虎门海"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "1839年6月3日，广东虎门海滩上浓烟滚滚。林则徐一声令下，两万多箱鸦片被投入海……",
+        "discrimination": "学生能识别「1839年6月3日，广东虎门海滩上…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#变与局/1840-1911年",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT1-BEAT-00-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「1839年6月3日，广东虎门海滩上浓烟滚滚。林…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_变与局_ep06_act1_01",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "英军将领（站在甲板上）：清…",
+        "body_lines": [
+          "英军将领（站在甲板上）：清国的海岸炮…",
+          "翻译：将军，清国官员说，我们是\"天朝上…",
+          "英军将领：那就让大英帝国的炮弹，来…"
+        ],
+        "keywords": [
+          "英军",
+          "英军将",
+          "英军将领",
+          "英军将领（"
+        ]
+      },
+      "page": {
+        "current": 2,
+        "total": 16,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 1,
+        "total": 16,
+        "name": "鸦片战争·dialogue",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#变与局/1840-1911年",
+        "#历史/晚清变局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_变与局_ep06",
+      "five_skandha": {
+        "color_base": [
+          "英军",
+          "英军将",
+          "英军将领",
+          "英军将领（"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "英军将领（站在甲板上）：清国的海岸炮台根本不堪一击，我们的炮射程比他们远一倍。\n……",
+        "discrimination": "学生能识别「英军将领（站在甲板上）：清…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#变与局/1840-1911年",
+        "bottleneck_warn": "none"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT1-BEAT-01-DIALOGUE",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「英军将领（站在甲板上）：清国的海岸炮…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 2,
+        "load_status": "ACCEPTABLE",
+        "bottleneck_cause": "none",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_变与局_ep06_act1_02",
+      "scene_type": "action",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "鸦片战争的根本原因不…",
+        "task_description": "鸦片战争的根本原因不是禁烟，而是工业文明对农业文明的…"
+      },
+      "page": {
+        "current": 3,
+        "total": 16,
+        "show": false
+      },
+      "scene_info": {
+        "idx": 2,
+        "total": 16,
+        "name": "鸦片战争·role_play",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#变与局/1840-1911年",
+        "#历史/晚清变局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_变与局_ep06",
+      "five_skandha": {
+        "color_base": [
+          "鸦片",
+          "鸦片战",
+          "鸦片战争",
+          "鸦片战争的"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "鸦片战争的根本原因不是禁烟，而是工业文明对农业文明的降维打击——贸易逆差是导火索……",
+        "discrimination": "鸦片战争的根本原因不是禁烟，而是工业文明对农业文明的降维打击",
+        "action_prompt": "书写/口述",
+        "recognition_marker": "#变与局/1840-1911年",
+        "bottleneck_warn": "none"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT1-BEAT-02-ROLE_PLAY",
+        "visual_element_ref": "CONTENT-ZONE-3",
+        "alignment_note": "旁白「鸦片战争的根本原因不是禁烟，而是…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 1,
+        "load_status": "ACCEPTABLE",
+        "bottleneck_cause": "none",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_hook",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": false
+    },
+    {
+      "scene_id": "古史_变与局_ep06_act1_03",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "1842年《南京条约》：割让香港、开…",
+        "body_lines": [
+          "1842年《南京条约》：割让香港、开放五口通商…",
+          "这是中国近代史上第一个不平等条…",
+          "但更可怕的是，这场战争暴露了清朝…"
+        ],
+        "keywords": [
+          "这是",
+          "这是中",
+          "这是中国",
+          "这是中国近"
+        ]
+      },
+      "page": {
+        "current": 4,
+        "total": 16,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 3,
+        "total": 16,
+        "name": "鸦片战争·dialogue",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#变与局/1840-1911年",
+        "#历史/晚清变局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_变与局_ep06",
+      "five_skandha": {
+        "color_base": [
+          "这是",
+          "这是中",
+          "这是中国",
+          "这是中国近"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "1842年《南京条约》：割让香港、开放五口通商、赔款2100万银元、协定关税。这……",
+        "discrimination": "学生能识别「1842年《南京条约》：割让香港、开…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#变与局/1840-1911年",
+        "bottleneck_warn": "none"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT1-BEAT-03-DIALOGUE",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「1842年《南京条约》：割让香港、开放五口通商…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 3,
+        "load_status": "ACCEPTABLE",
+        "bottleneck_cause": "none",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_变与局_ep06_act2_04",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "两次鸦片战争的惨败，终…",
+        "body_lines": [
+          "两次鸦片战争的惨败，终于让清朝的…",
+          "1861年，恭亲王奕訢和地方官员曾国藩、李…",
+          "洋务派的核心主张是\"中学为体，西学…"
+        ],
+        "keywords": [
+          "两次",
+          "两次鸦",
+          "两次鸦片",
+          "两次鸦片战"
+        ]
+      },
+      "page": {
+        "current": 5,
+        "total": 16,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 4,
+        "total": 16,
+        "name": "洋务运动·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#变与局/1840-1911年",
+        "#历史/晚清变局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_变与局_ep06",
+      "five_skandha": {
+        "color_base": [
+          "两次",
+          "两次鸦",
+          "两次鸦片",
+          "两次鸦片战"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "两次鸦片战争的惨败，终于让清朝的部分官员觉醒了一个事实：西方的坚船利炮，不是\"奇……",
+        "discrimination": "学生能识别「两次鸦片战争的惨败，终…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#变与局/1840-1911年",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-04-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「两次鸦片战争的惨败，终于让清朝的…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_变与局_ep06_act2_05",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "李鸿章：北洋水师已称雄…",
+        "body_lines": [
+          "李鸿章：北洋水师已称雄亚洲，世界第…",
+          "幕僚：大人，但据报日本正在大规模购…",
+          "李鸿章：够了！日本蕞尔小国，敢动我天…"
+        ],
+        "keywords": [
+          "李鸿",
+          "李鸿章",
+          "李鸿章：",
+          "李鸿章：北"
+        ]
+      },
+      "page": {
+        "current": 6,
+        "total": 16,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 5,
+        "total": 16,
+        "name": "洋务运动·dialogue",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#变与局/1840-1911年",
+        "#历史/晚清变局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_变与局_ep06",
+      "five_skandha": {
+        "color_base": [
+          "李鸿",
+          "李鸿章",
+          "李鸿章：",
+          "李鸿章：北"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "李鸿章：北洋水师已称雄亚洲，世界第八的舰队，日本绝不敢轻举妄动。\n幕僚：大人，但……",
+        "discrimination": "学生能识别「李鸿章：北洋水师已称雄…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#变与局/1840-1911年",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-05-DIALOGUE",
+        "visual_element_ref": "CONTENT-ZONE-3",
+        "alignment_note": "旁白「李鸿章：北洋水师已称雄亚洲，世界第…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_变与局_ep06_act2_06",
+      "scene_type": "action",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "甲午战争的教训：GDP世界前…",
+        "task_description": "甲午战争的教训：GDP世界前列、北洋水师世界第八，一战即溃——光有…"
+      },
+      "page": {
+        "current": 7,
+        "total": 16,
+        "show": false
+      },
+      "scene_info": {
+        "idx": 6,
+        "total": 16,
+        "name": "洋务运动·role_play",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#变与局/1840-1911年",
+        "#历史/晚清变局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_变与局_ep06",
+      "five_skandha": {
+        "color_base": [
+          "甲午",
+          "甲午战",
+          "甲午战争",
+          "甲午战争的"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "甲午战争的教训：GDP世界前列、北洋水师世界第八，一战即溃——光有技术不够，需要……",
+        "discrimination": "甲午战争的教训：GDP世界前列、北洋水师世界第八，一战即溃—",
+        "action_prompt": "书写/口述",
+        "recognition_marker": "#变与局/1840-1911年",
+        "bottleneck_warn": "none"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-06-ROLE_PLAY",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「甲午战争的教训：GDP世界前列、北洋水师…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 1,
+        "load_status": "ACCEPTABLE",
+        "bottleneck_cause": "none",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_hook",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": false
+    },
+    {
+      "scene_id": "古史_变与局_ep06_act2_07",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "洋务运动失败的根本原…",
+        "body_lines": [
+          "洋务运动失败的根本原因，不在于技…"
+        ],
+        "keywords": [
+          "洋务",
+          "洋务运",
+          "洋务运动",
+          "洋务运动失"
+        ]
+      },
+      "page": {
+        "current": 8,
+        "total": 16,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 7,
+        "total": 16,
+        "name": "洋务运动·dialogue",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#变与局/1840-1911年",
+        "#历史/晚清变局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_变与局_ep06",
+      "five_skandha": {
+        "color_base": [
+          "洋务",
+          "洋务运",
+          "洋务运动",
+          "洋务运动失"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "洋务运动失败的根本原因，不在于技术学得不够，而在于\"中体西用\"本身就是一个悖论：……",
+        "discrimination": "学生能识别「洋务运动失败的根本原…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#变与局/1840-1911年",
+        "bottleneck_warn": "none"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT2-BEAT-07-DIALOGUE",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「洋务运动失败的根本原因，不在于技…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 1,
+        "load_status": "ACCEPTABLE",
+        "bottleneck_cause": "none",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_变与局_ep06_act3_08",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "甲午战败的屈辱，终于让…",
+        "body_lines": [
+          "甲午战败的屈辱，终于让清朝的精英…",
+          "1898年，康有为、梁启超等人发起了戊戌变…",
+          "光绪皇帝支持变法，在103天里颁布了上…"
+        ],
+        "keywords": [
+          "甲午",
+          "甲午战",
+          "甲午战败",
+          "甲午战败的"
+        ]
+      },
+      "page": {
+        "current": 9,
+        "total": 16,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 8,
+        "total": 16,
+        "name": "戊戌变法·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#变与局/1840-1911年",
+        "#历史/晚清变局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_变与局_ep06",
+      "five_skandha": {
+        "color_base": [
+          "甲午",
+          "甲午战",
+          "甲午战败",
+          "甲午战败的"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "甲午战败的屈辱，终于让清朝的精英阶层意识到：技术救不了中国，只有制度改革才是出路……",
+        "discrimination": "学生能识别「甲午战败的屈辱，终于让…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#变与局/1840-1911年",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT3-BEAT-08-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-3",
+        "alignment_note": "旁白「甲午战败的屈辱，终于让清朝的精英…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_变与局_ep06_act3_09",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "谭嗣同（在狱中）：改革之事…",
+        "body_lines": [
+          "谭嗣同（在狱中）：改革之事，我已经想清…",
+          "梁启超（急迫地）：我们必须离开！只要活…",
+          "谭嗣同：各国变法，无不从流血而成"
+        ],
+        "keywords": [
+          "谭嗣",
+          "谭嗣同",
+          "谭嗣同（",
+          "谭嗣同（在"
+        ]
+      },
+      "page": {
+        "current": 10,
+        "total": 16,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 9,
+        "total": 16,
+        "name": "戊戌变法·dialogue",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#变与局/1840-1911年",
+        "#历史/晚清变局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_变与局_ep06",
+      "five_skandha": {
+        "color_base": [
+          "谭嗣",
+          "谭嗣同",
+          "谭嗣同（",
+          "谭嗣同（在"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "谭嗣同（在狱中）：改革之事，我已经想清楚了，非变法无以救中国，非流血无以救改革。……",
+        "discrimination": "学生能识别「谭嗣同（在狱中）：改革之事…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#变与局/1840-1911年",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT3-BEAT-09-DIALOGUE",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「谭嗣同（在狱中）：改革之事，我已经想清…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_变与局_ep06_act3_10",
+      "scene_type": "action",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "戊戌变法失败的深层原…",
+        "task_description": "戊戌变法失败的深层原因：触动既得利益（官僚体系）是所有改…"
+      },
+      "page": {
+        "current": 11,
+        "total": 16,
+        "show": false
+      },
+      "scene_info": {
+        "idx": 10,
+        "total": 16,
+        "name": "戊戌变法·role_play",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#变与局/1840-1911年",
+        "#历史/晚清变局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_变与局_ep06",
+      "five_skandha": {
+        "color_base": [
+          "戊戌",
+          "戊戌变",
+          "戊戌变法",
+          "戊戌变法失"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "戊戌变法失败的深层原因：触动既得利益（官僚体系）是所有改革的禁区——清朝选择了维……",
+        "discrimination": "戊戌变法失败的深层原因：触动既得利益（官僚体系）是所有改革的",
+        "action_prompt": "书写/口述",
+        "recognition_marker": "#变与局/1840-1911年",
+        "bottleneck_warn": "none"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT3-BEAT-10-ROLE_PLAY",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「戊戌变法失败的深层原因：触动既得…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 1,
+        "load_status": "ACCEPTABLE",
+        "bottleneck_cause": "none",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_hook",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": false
+    },
+    {
+      "scene_id": "古史_变与局_ep06_act3_11",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "戊戌六君子的血，告诉了…",
+        "body_lines": [
+          "戊戌六君子的血，告诉了中国人一个…",
+          "这是制度性失败，不是某个人或某个…",
+          "清朝到了这个地步，已经不是能不能…"
+        ],
+        "keywords": [
+          "戊戌",
+          "戊戌六",
+          "戊戌六君",
+          "戊戌六君子"
+        ]
+      },
+      "page": {
+        "current": 12,
+        "total": 16,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 11,
+        "total": 16,
+        "name": "戊戌变法·dialogue",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#变与局/1840-1911年",
+        "#历史/晚清变局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_变与局_ep06",
+      "five_skandha": {
+        "color_base": [
+          "戊戌",
+          "戊戌六",
+          "戊戌六君",
+          "戊戌六君子"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "戊戌六君子的血，告诉了中国人一个残酷的真理：在清朝的政治逻辑里，权力的自我保存，……",
+        "discrimination": "学生能识别「戊戌六君子的血，告诉了…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#变与局/1840-1911年",
+        "bottleneck_warn": "none"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT3-BEAT-11-DIALOGUE",
+        "visual_element_ref": "CONTENT-ZONE-3",
+        "alignment_note": "旁白「戊戌六君子的血，告诉了中国人一个…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 3,
+        "load_status": "ACCEPTABLE",
+        "bottleneck_cause": "none",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_变与局_ep06_act4_12",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "1901年《辛丑条约》签订后，清朝…",
+        "body_lines": [
+          "1901年《辛丑条约》签订后，清朝实际上已经…",
+          "但慈禧太后还是决定\"新政\"：1901-1911年，清朝推…",
+          "当1908年慈禧去世、1911年清朝宣布\"皇族内阁…"
+        ],
+        "keywords": [
+          "清朝",
+          "清朝实",
+          "清朝实际",
+          "清朝实际上"
+        ]
+      },
+      "page": {
+        "current": 13,
+        "total": 16,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 12,
+        "total": 16,
+        "name": "革命的来临·narrative",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#变与局/1840-1911年",
+        "#历史/晚清变局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_变与局_ep06",
+      "five_skandha": {
+        "color_base": [
+          "清朝",
+          "清朝实",
+          "清朝实际",
+          "清朝实际上"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "1901年《辛丑条约》签订后，清朝实际上已经沦为洋人的朝廷——赔款4.5亿两白银……",
+        "discrimination": "学生能识别「1901年《辛丑条约》签订后，清朝…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#变与局/1840-1911年",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT4-BEAT-12-NARRATIVE",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「1901年《辛丑条约》签订后，清朝实际上已经…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_变与局_ep06_act4_13",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "同盟会会员：武昌首义成…",
+        "body_lines": [
+          "同盟会会员：武昌首义成功，各省响应…",
+          "孙中山（激动地）：这一次，不是农民起义…",
+          "记者：但清朝还有北方还有军队——"
+        ],
+        "keywords": [
+          "同盟",
+          "同盟会",
+          "同盟会会",
+          "同盟会会员"
+        ]
+      },
+      "page": {
+        "current": 14,
+        "total": 16,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 13,
+        "total": 16,
+        "name": "革命的来临·dialogue",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#变与局/1840-1911年",
+        "#历史/晚清变局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_变与局_ep06",
+      "five_skandha": {
+        "color_base": [
+          "同盟",
+          "同盟会",
+          "同盟会会",
+          "同盟会会员"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "同盟会会员：武昌首义成功，各省响应！大清完了！\n孙中山（激动地）：这一次，不是农……",
+        "discrimination": "学生能识别「同盟会会员：武昌首义成…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#变与局/1840-1911年",
+        "bottleneck_warn": "受蕴"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT4-BEAT-13-DIALOGUE",
+        "visual_element_ref": "CONTENT-ZONE-2",
+        "alignment_note": "旁白「同盟会会员：武昌首义成功，各省响应…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 5,
+        "load_status": "WARN",
+        "bottleneck_cause": "受蕴",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    },
+    {
+      "scene_id": "古史_变与局_ep06_act4_14",
+      "scene_type": "action",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "辛亥革命的历史意义：终…",
+        "task_description": "辛亥革命的历史意义：终结两千年帝制——不是农民起义，不是改…"
+      },
+      "page": {
+        "current": 15,
+        "total": 16,
+        "show": false
+      },
+      "scene_info": {
+        "idx": 14,
+        "total": 16,
+        "name": "革命的来临·role_play",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#变与局/1840-1911年",
+        "#历史/晚清变局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_变与局_ep06",
+      "five_skandha": {
+        "color_base": [
+          "辛亥",
+          "辛亥革",
+          "辛亥革命",
+          "辛亥革命的"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "辛亥革命的历史意义：终结两千年帝制——不是农民起义，不是改朝换代，而是现代革命，……",
+        "discrimination": "辛亥革命的历史意义：终结两千年帝制——不是农民起义，不是改朝",
+        "action_prompt": "书写/口述",
+        "recognition_marker": "#变与局/1840-1911年",
+        "bottleneck_warn": "none"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT4-BEAT-14-ROLE_PLAY",
+        "visual_element_ref": "CONTENT-ZONE-3",
+        "alignment_note": "旁白「辛亥革命的历史意义：终结两千年帝…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 1,
+        "load_status": "ACCEPTABLE",
+        "bottleneck_cause": "none",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_hook",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": false
+    },
+    {
+      "scene_id": "古史_变与局_ep06_act4_15",
+      "scene_type": "concept",
+      "knowledge_type": "IV",
+      "content": {
+        "title": "回顾晚清七十年，从洋务…",
+        "body_lines": [
+          "回顾晚清七十年，从洋务运动到戊戌…",
+          "1911年辛亥革命不是历史的偶然，而是历…",
+          "这部晚清改革失败史，是一个帝国在…"
+        ],
+        "keywords": [
+          "回顾",
+          "回顾晚",
+          "回顾晚清",
+          "回顾晚清七"
+        ]
+      },
+      "page": {
+        "current": 16,
+        "total": 16,
+        "show": true
+      },
+      "scene_info": {
+        "idx": 15,
+        "total": 16,
+        "name": "革命的来临·dialogue",
+        "dur": 0.0
+      },
+      "source_knowledge_nodes": [
+        "#变与局/1840-1911年",
+        "#历史/晚清变局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "source_chain_id": "古史_变与局_ep06",
+      "five_skandha": {
+        "color_base": [
+          "回顾",
+          "回顾晚",
+          "回顾晚清",
+          "回顾晚清七"
+        ],
+        "sensation": "none",
+        "sensation_trigger": "回顾晚清七十年，从洋务运动到戊戌变法，从义和团到清末新政，中国尝试了技术救国、制……",
+        "discrimination": "学生能识别「回顾晚清七十年，从洋务…」的核心含义",
+        "action_prompt": "口述/复述",
+        "recognition_marker": "#变与局/1840-1911年",
+        "bottleneck_warn": "none"
+      },
+      "analogy_block": {
+        "applicable": false,
+        "knowledge_type": "IV"
+      },
+      "semantic_alignment": {
+        "audio_segment_ref": "ACT4-BEAT-15-DIALOGUE",
+        "visual_element_ref": "CONTENT-ZONE-1",
+        "alignment_note": "旁白「回顾晚清七十年，从洋务运动到戊戌…」对应视觉区显示",
+        "alignment_confirmed": false
+      },
+      "cognitive_load": {
+        "visual_points": 4,
+        "audio_chunks": 3,
+        "load_status": "ACCEPTABLE",
+        "bottleneck_cause": "none",
+        "split_recommendation": "建议拆分为2个 scene"
+      },
+      "audio": {
+        "tts_template": "voice_explain",
+        "speed_wpm": 170,
+        "pause_after_s": 2.0
+      },
+      "energy_level": "medium",
+      "clip_friendly": true
+    }
+  ]
+}

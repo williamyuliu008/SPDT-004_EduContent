@@ -1,0 +1,8 @@
+{
+  "string": [
+    { "name": "app_name", "value": "thinkkit note" },
+    { "name": "module_desc", "value": "ThinkKit thinkkit note" },
+    { "name": "EntryAbility_desc", "value": "ThinkKit thinkkit note" },
+    { "name": "EntryAbility_label", "value": "thinkkit note" }
+  ]
+}

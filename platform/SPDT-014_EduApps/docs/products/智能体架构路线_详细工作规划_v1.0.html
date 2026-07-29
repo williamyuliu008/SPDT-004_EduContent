@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>智能体架构路线 · 详细工作规划 v1.0</title>
+<style>
+  :root {
+    --primary: #7B2D8E; --accent: #C44536; --green: #5B8C5A;
+    --blue: #3B82B0; --orange: #E87A2A;
+    --bg: #faf9fb; --card: #fff; --text: #1a1a2e; --muted: #6b7280; --border: #e5e7eb;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif; background:var(--bg); color:var(--text); line-height:1.7; padding:40px 20px; }
+  .container { max-width: 1060px; margin:0 auto; }
+
+  .hero { background:linear-gradient(135deg, #1a1a2e 0%, #2d1b4e 50%, #7B2D8E 100%); color:#fff; padding:44px 40px; border-radius:14px; margin-bottom:32px; }
+  .hero h1 { font-size:1.8rem; margin-bottom:6px; }
+  .hero .sub { color:#c4b5d0; font-size:1rem; }
+  .hero .badges { margin-top:16px; display:flex; gap:10px; flex-wrap:wrap; }
+  .hero .badge { background:rgba(255,255,255,0.12); padding:3px 14px; border-radius:16px; font-size:0.82rem; }
+
+  h2 { font-size:1.3rem; margin:36px 0 14px; padding-bottom:6px; border-bottom:2px solid var(--border); }
+  h3 { font-size:1.05rem; margin:22px 0 10px; color:#374151; }
+
+  .card { background:var(--card); border-radius:10px; padding:22px; margin-bottom:18px; box-shadow:0 1px 3px rgba(0,0,0,0.05); border:1px solid var(--border); }
+  .card-title { font-weight:700; font-size:1.02rem; margin-bottom:10px; }
+
+  table { width:100%; border-collapse:collapse; margin:14px 0; font-size:0.9rem; }
+  th { background:#f3f4f6; text-align:left; padding:8px 10px; font-weight:600; border-bottom:2px solid var(--border); }
+  td { padding:8px 10px; border-bottom:1px solid var(--border); vertical-align:top; }
+  tr:hover td { background:#fafbfc; }
+
+  .phase-row { display:flex; gap:0; align-items:stretch; margin:20px 0; overflow-x:auto; }
+  .phase-card { flex:1; min-width:140px; background:var(--card); border:2px solid var(--border); border-radius:10px; padding:14px; text-align:center; }
+  .phase-card.now { border-color:var(--primary); background:#faf5ff; }
+  .phase-card .pnum { font-size:0.75rem; font-weight:700; color:var(--primary); text-transform:uppercase; }
+  .phase-card .ptitle { font-size:0.95rem; font-weight:700; margin:4px 0; }
+  .phase-card .pdate { font-size:0.78rem; color:var(--muted); }
+  .phase-card .pdesc { font-size:0.82rem; color:var(--muted); margin-top:4px; }
+  .phase-arrow { display:flex; align-items:center; padding:0 2px; color:var(--muted); font-size:1.4rem; }
+
+  .metrics { display:grid; grid-template-columns:repeat(auto-fit, minmax(180px,1fr)); gap:14px; margin:18px 0; }
+  .metric { background:var(--card); border-radius:10px; padding:18px; text-align:center; border:1px solid var(--border); }
+  .metric .val { font-size:1.8rem; font-weight:800; color:var(--primary); }
+  .metric .lbl { font-size:0.82rem; color:var(--muted); margin-top:3px; }
+
+  .adr { background:#fefce8; border-left:3px solid #ca8a04; padding:14px 18px; margin:12px 0; border-radius:0 8px 8px 0; font-size:0.9rem; }
+  .adr .adr-id { font-weight:700; color:#92400e; }
+
+  .badge { display:inline-block; padding:2px 8px; border-radius:10px; font-size:0.75rem; font-weight:600; }
+  .b-ok { background:#dcfce7; color:#166534; }
+  .b-warn { background:#fef3c7; color:#92400e; }
+  .b-plan { background:#dbeafe; color:#1e40af; }
+  .b-future { background:#f3e8ff; color:#6b21a8; }
+
+  .risk-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:12px; margin:16px 0; }
+  .risk-card { background:var(--card); border-radius:10px; padding:16px; border:1px solid var(--border); }
+  .risk-card.high { border-left:3px solid var(--accent); }
+  .risk-card.med { border-left:3px solid var(--orange); }
+  .risk-card .r-title { font-weight:700; margin-bottom:4px; }
+  .risk-card .r-detail { font-size:0.85rem; color:var(--muted); }
+
+  footer { text-align:center; color:var(--muted); font-size:0.85rem; margin-top:48px; padding-top:24px; border-top:1px solid var(--border); }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="hero">
+  <h1>🧠 智能体架构路线 · 详细工作规划</h1>
+  <div class="sub">本窗口专属 — 从架构定型 → 旗舰验证 → 模块提炼 → 批量复制</div>
+  <div class="badges">
+    <span class="badge">鸿蒙特使 · agent-e926h</span>
+    <span class="badge">2026-07-18 · v1.0</span>
+    <span class="badge">4 Phase · 9里程碑 · 30+任务</span>
+  </div>
+</div>
+
+<div class="phase-row">
+  <div class="phase-card now">
+    <div class="pnum">Phase 0</div>
+    <div class="ptitle">架构定型</div>
+    <div class="pdate">7/18-7/20</div>
+    <div class="pdesc">API规范 + 数据模型 + AgentCore设计</div>
+  </div>
+  <div class="phase-arrow">→</div>
+  <div class="phase-card">
+    <div class="pnum">Phase 1</div>
+    <div class="ptitle">旗舰验证</div>
+    <div class="pdate">7/20-8/1</div>
+    <div class="pdesc">GaokaoAgent 8维全落地</div>
+  </div>
+  <div class="phase-arrow">→</div>
+  <div class="phase-card">
+    <div class="pnum">Phase 2</div>
+    <div class="ptitle">架构提炼</div>
+    <div class="pdate">8/1-8/15</div>
+    <div class="pdesc">agent-core模块 + 接入SOP</div>
+  </div>
+  <div class="phase-arrow">→</div>
+  <div class="phase-card">
+    <div class="pnum">Phase 3</div>
+    <div class="ptitle">批量复制</div>
+    <div class="pdate">8/15-8/30</div>
+    <div class="pdesc">ThinkKit全系 + 跨APP协作</div>
+  </div>
+  <div class="phase-arrow">→</div>
+  <div class="phase-card">
+    <div class="pnum">Phase 4</div>
+    <div class="ptitle">LLM增强</div>
+    <div class="pdate">远期</div>
+    <div class="pdesc">小龙虾后端升级</div>
+  </div>
+</div>
+
+<h2>Phase 0: 架构定型 <span class="badge b-ok">当前</span></h2>
+
+<div class="card">
+  <div class="card-title">0.1 小龙虾统一API v1.0 正式规范</div>
+  <table>
+    <tr><th>端点</th><th>方法</th><th>用途</th><th>7月形态</th><th>8月形态</th></tr>
+    <tr><td><code>/health</code></td><td>GET</td><td>健康检查</td><td>返回mock</td><td>真实状态</td></tr>
+    <tr><td><code>/task</code></td><td>POST</td><td>通用任务调度</td><td><span class="badge b-warn">规则引擎</span></td><td><span class="badge b-future">LLM驱动</span></td></tr>
+    <tr><td><code>/task/{id}</code></td><td>GET</td><td>异步任务查询</td><td>pending</td><td>真实结果</td></tr>
+    <tr><td><code>/knowledge/query</code></td><td>POST</td><td>知识库查询</td><td>JSON文件</td><td>RAG向量</td></tr>
+    <tr><td><code>/knowledge/import</code></td><td>POST</td><td>知识库导入</td><td>JSON验证</td><td>图谱更新</td></tr>
+    <tr><td><code>/content/import</code></td><td>POST</td><td>内容批量导入</td><td>格式验证</td><td>自动入库</td></tr>
+    <tr><td><code>/content/export</code></td><td>POST</td><td>APP内容导出PC</td><td>数据转储</td><td>全局分析</td></tr>
+    <tr><td><code>/state/write-back</code></td><td>POST</td><td>状态写回PC</td><td>接收存储</td><td>触发分析</td></tr>
+    <tr><td><code>/state/query</code></td><td>POST</td><td>PC查询APP状态</td><td>存根值</td><td>跨APP关联</td></tr>
+    <tr><td><code>/app/register</code></td><td>POST</td><td>APP注册路由</td><td>手动</td><td>自动发现</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <div class="card-title">0.2 Agent Core 公共模块设计</div>
+  <table>
+    <tr><th>模块</th><th>对应维度</th><th>职责</th></tr>
+    <tr><td>AgentProfile.ets</td><td>A 长期记忆</td><td>UserProfile CRUD + Preferences持久化</td></tr>
+    <tr><td>IntentContext.ets</td><td>B 短期记忆</td><td>当前Tab + 操作序列 + 跨会话书签</td></tr>
+    <tr><td>InputAssist.ets</td><td>C 输入辅助</td><td>意图预填 + 冷启动引导 + 推荐问题</td></tr>
+    <tr><td>OutputAction.ets</td><td>D 输出操作</td><td>D1-D4分级 + 风险矩阵 + 确认弹窗</td></tr>
+    <tr><td>ContentPipeline.ets</td><td>E 内容管道</td><td>JSON解析 + 格式验证 + 入库管理</td></tr>
+    <tr><td><strong>LobsterClient.ets</strong></td><td><strong>G 跨端协同</strong></td><td><strong>小龙虾HTTP客户端 + 重试 + 降级</strong></td></tr>
+    <tr><td>EnvAwareness.ets</td><td>H 环境感知</td><td>电池/通知/智能场景</td></tr>
+    <tr><td>UndoManager.ets</td><td>I 撤销</td><td>操作回滚 (3分钟窗口)</td></tr>
+    <tr><td>AgentEngine.ets</td><td>编排层</td><td>生命周期 + 依赖注入 + 事件总线</td></tr>
+  </table>
+</div>
+
+<h2>Phase 1: GaokaoAgent 旗舰验证</h2>
+
+<div class="metrics">
+  <div class="metric"><div class="val">19</div><div class="lbl">任务总数</div></div>
+  <div class="metric"><div class="val">~700</div><div class="lbl">预估代码行数</div></div>
+  <div class="metric"><div class="val">0</div><div class="lbl">LLM依赖</div></div>
+  <div class="metric"><div class="val">3</div><div class="lbl">Git Tag</div></div>
+</div>
+
+<div class="card">
+  <div class="card-title">阶段 1A · v2.1-foundation (7/20-23) — 8维地基</div>
+  <table>
+    <tr><th>#</th><th>维度</th><th>任务</th><th>行数</th></tr>
+    <tr><td>1.1</td><td>G</td><td>小龙虾API规范落地</td><td>文档</td></tr>
+    <tr><td>1.2</td><td>A</td><td>UserProfile CRUD</td><td>~50</td></tr>
+    <tr><td>1.3</td><td>A</td><td>错因归因三维模型</td><td>~30</td></tr>
+    <tr><td>1.4</td><td>B</td><td>IntentContext 上下文</td><td>~35</td></tr>
+    <tr><td>1.5</td><td>B</td><td>跨会话书签恢复</td><td>~40</td></tr>
+    <tr><td>1.6</td><td>C</td><td>刷题Tab智能预选</td><td>~30</td></tr>
+    <tr><td>1.7</td><td>H</td><td>电池感知暂停同步</td><td>~25</td></tr>
+    <tr><td>1.8</td><td>C</td><td>冷启动引导5题</td><td>~55</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <div class="card-title">阶段 1B · v2.1-hands (7/24-28) — 小龙虾接入</div>
+  <table>
+    <tr><th>#</th><th>维度</th><th>任务</th><th>行数</th></tr>
+    <tr><td>1.9</td><td>D1</td><td>学习洞察卡片UI</td><td>~65</td></tr>
+    <tr><td>1.10</td><td>D2</td><td>推荐练习→小龙虾生成</td><td>~45</td></tr>
+    <tr><td>1.11</td><td>D</td><td>D1-D4风险矩阵</td><td>~35</td></tr>
+    <tr><td>1.12</td><td>I</td><td>撤销按钮(3分钟窗口)</td><td>~35</td></tr>
+    <tr><td>1.13</td><td>E</td><td>内容管道解析入库</td><td>~85</td></tr>
+    <tr><td><strong>1.14</strong></td><td><strong>G</strong></td><td><strong>小龙虾 /task 请求出题</strong></td><td><strong>~110</strong></td></tr>
+    <tr><td>1.15</td><td>G</td><td>掌握度状态回写</td><td>~55</td></tr>
+  </table>
+</div>
+
+<h2>Phase 2: 架构提炼 (8/1-15)</h2>
+
+<div class="card">
+  <div class="card-title">从GaokaoAgent提炼 → common/agent-core/ 9模块</div>
+  <table>
+    <tr><th>APP</th><th>task_type</th><th>接入耗时</th><th>验证点</th></tr>
+    <tr><td>thinkkit-coach</td><td>recommend_plan</td><td><span class="badge b-ok">0.5天</span></td><td>基于画像生成学习计划</td></tr>
+    <tr><td>thinkkit-flashcard</td><td>generate_cards</td><td><span class="badge b-ok">0.5天</span></td><td>小龙虾生成闪卡→导入</td></tr>
+    <tr><td>thinkkit-quiz</td><td>generate_quiz</td><td><span class="badge b-ok">0.5天</span></td><td>出题+批改+分析</td></tr>
+  </table>
+</div>
+
+<h2>Phase 3: 批量复制 (8/15-30)</h2>
+
+<div class="card">
+  <div class="card-title">跨APP协作 — 小龙虾作为数据中枢</div>
+  <table>
+    <tr><th>场景</th><th>数据流</th><th>价值</th></tr>
+    <tr><td>gaokao错题→flashcard</td><td>错题ID→小龙虾→闪卡内容</td><td>学习闭环</td></tr>
+    <tr><td>rhythm作息→gaokao</td><td>作息偏好→小龙虾→时段推荐</td><td>个性化</td></tr>
+    <tr><td>coach计划→gaokao</td><td>学习计划→小龙虾→调节出题节奏</td><td>计划执行</td></tr>
+  </table>
+</div>
+
+<h2>架构决策记录 (ADR)</h2>
+
+<div class="adr">
+  <div class="adr-id">ADR-001: APP不做LLM调用，只做消费</div>
+  所有LLM由小龙虾统一发起。APP始终保持可降级运行（规则引擎 fallback）。
+</div>
+<div class="adr">
+  <div class="adr-id">ADR-002: 8维模块独立，AgentEngine编排</div>
+  每个维度是独立ArkTS模块。不同APP按需引入不同维度组合。
+</div>
+<div class="adr">
+  <div class="adr-id">ADR-003: Phase 0-2 零LLM</div>
+  所有智能体行为用规则引擎+本地数据驱动。保证降级路径原生可用。
+</div>
+<div class="adr">
+  <div class="adr-id">ADR-004: 小龙虾API先mock后真实</div>
+  Phase 1用Flask mock验证协议。APP侧不阻塞于后端开发。
+</div>
+
+<h2>风险</h2>
+<div class="risk-grid">
+  <div class="risk-card med">
+    <div class="r-title">🟡 小龙虾API协议反复修改</div>
+    <div class="r-detail">缓解：先mock→冻结v1→只增不减</div>
+  </div>
+  <div class="risk-card">
+    <div class="r-title">🟢 common/agent-core 过度泛型化</div>
+    <div class="r-detail">缓解：第2个APP接入后再提炼</div>
+  </div>
+  <div class="risk-card high">
+    <div class="r-title">🔴 LLM API审批延迟</div>
+    <div class="r-detail">缓解：Phase 0-2零LLM，不受影响</div>
+  </div>
+  <div class="risk-card med">
+    <div class="r-title">🟡 跨APP数据隐私</div>
+    <div class="r-detail">缓解：小龙虾本地运行，数据不出PC</div>
+  </div>
+</div>
+
+<footer>
+  🏗️ 智能体架构路线 v1.0 | 本窗口 Phase 0 即刻启动: 小龙虾API v1 正式规范 + data-models标准化
+</footer>
+
+</div>
+</body>
+</html>

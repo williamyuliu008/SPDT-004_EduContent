@@ -1,0 +1,20 @@
+﻿{
+  "string": [
+    {
+      "name": "app_name",
+      "value": "{{APP_DISPLAY_NAME}}"
+    },
+    {
+      "name": "module_desc",
+      "value": "{{APP_DISPLAY_NAME}}"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "{{APP_DISPLAY_NAME}}"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "{{APP_DISPLAY_NAME}}"
+    }
+  ]
+}

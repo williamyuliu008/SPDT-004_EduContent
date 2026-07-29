@@ -1,0 +1,268 @@
+﻿# SPDT-004 PDT 详细注册表
+# 自动扫描: 每日 08:00 CST
+# 通知: spdt-004-updates → agent-e926h
+
+pdt_list:
+  - pdt_id: PT-030
+    name: GaokaoPrep
+    name_zh: 高考备考内容工厂
+    type: 体制教育
+    client: K12 学生 (高三)
+    content_types: [视频课件, 配套试题, 考点总结]
+    source_project: D:\92_products\GaokaoPrep
+    target_dir: D:\2_products\education\SPDT-004_EduContent\PT-030_GaokaoPrep
+    status: active
+    maturity: 0.6
+    cgm_audit_target: "≥90%"
+    output_volume: "日更 1+ 集 / 学科"
+    registered: 2026-07-10
+
+  - pdt_id: PT-031
+    name: GeneralEdu
+    name_zh: 通识教育内容工厂
+    type: 通识教育
+    client: 终身学习者 / 知识爱好者
+    content_types: [视频课件, 知识图谱]
+    methodology_doc: C:\Users\willi\Desktop\我的视野\_自动化内容设计\0708-全自动内容生产-历史
+    target_dir: D:\2_products\education\SPDT-004_EduContent\PT-031_GeneralEdu
+    status: active
+    maturity: 0.3
+    note: 历史通识 SOP 已验证，待批量化
+    registered: 2026-07-10
+
+  - pdt_id: PT-032
+    name: CollegeCourseware
+    name_zh: 高等课件工厂
+    type: 高等教育
+    client: 大学生 / 研究生
+    content_types: [数学动画课件, 物理仿真, 化学结构]
+    source_project: D:\6_agent_project\projects\math_animation_factory
+    target_dir: D:\2_products\education\SPDT-004_EduContent\PT-032_CollegeCourseware
+    status: active
+    maturity: 0.7
+    cgm_audit_target: "≥90%"
+    registered: 2026-07-10
+
+  - pdt_id: PT-033
+    name: CorpTraining
+    name_zh: 企业培训内容工厂
+    type: 企业培训
+    client: HR/L&D 部门 + 企业员工
+    content_types: [入职培训包, 合规课件, 技能视频, 配套试题]
+    source_project: D:\6_agent_project\projects\cgm_training_factory
+    target_dir: D:\2_products\education\SPDT-004_EduContent\PT-033_CorpTraining
+    status: active
+    maturity: 0.4
+    cgm_audit_target: "≥95%"  # 合规要求更高
+    registered: 2026-07-10
+
+  - pdt_id: PT-034
+    name: CareerEdu
+    name_zh: 职业教育内容工厂
+    type: 职业教育
+    client: 职业转行者 / 技能提升者
+    content_types: [技能视频, 项目实战, 认证备考]
+    target_dir: D:\2_products\education\SPDT-004_EduContent\PT-034_CareerEdu
+    status: planned
+    registered: 2026-07-10
+
+  - pdt_id: PT-035
+    name: LanguageLearning
+    name_zh: 语言学习内容工厂
+    type: 语言教育
+    client: 语言学习者
+    content_types: [单词视频, 语法动画, 听力素材, 口语练习]
+    target_dir: D:\2_products\education\SPDT-004_EduContent\PT-035_LanguageLearning
+    status: planned
+    registered: 2026-07-10
+
+  - pdt_id: PT-036
+    name: ChildEdu
+    name_zh: 儿童教育内容工厂
+    type: 早教/低龄
+    client: 学龄前/小学低年级 儿童
+    content_types: [动画故事, 识字课件, 数学启蒙, 科学启蒙]
+    target_dir: D:\2_products\education\SPDT-004_EduContent\PT-036_ChildEdu
+    status: planned
+    registered: 2026-07-10
+
+  - pdt_id: PT-037
+    name: AdaptivePrepPlatform
+    name_zh: 自适应备考智能体平台
+    type: 平台层
+    client: 高考/校考学生 / 教师 / 家长
+    content_types: [自适应训练引擎, 知识图谱, 错题剧本, 跨包联动]
+    target_dir: D:\2_products\education\SPDT-004_EduContent\products\PT-037_AdaptivePrepPlatform
+    source_project: C:\Users\willi\Desktop\我的视野\0713-基于知识库的高阶备考智能体
+    status: active
+    maturity: 0.1
+    cgm_audit_target: "≥85%"
+    relationship: 平台层（内容消费中枢），与PT-030/031/032为上下游；各PDT提供内容原料，PT-037负责编排消费
+    first_subject_pack: cafa_calligraphy_2026
+    registered: 2026-07-13
+
+shared_assets:
+  - pdt_id: PT-VFX
+    name: VideoFactory
+    name_zh: 视觉渲染引擎
+    type: 渲染工具层
+    client: SPDT-KTE 管线内部工具
+    content_types: [scene_json_v2, pillow_frames, mp4_video]
+    target_dir: D:\2_products\education\SPDT-004_EduContent\shared\video_factory
+    source_projects:
+      - D:\6_agent_project\AI_video_edu
+      - D:\6_agent_project\projects\math_animation_factory\_tools
+    status: active
+    maturity: 0.7
+    spdt_kte:
+      member: true
+      role: 视觉渲染引擎（Visual Rendering Engine）
+      interfaces_produced: [IF-B]
+      interfaces_consumed: [IF-A]
+      junction_path: SPDT-KTE\PT-VFX
+    description: Manim + TTS + ffmpeg 视频生产管线核心。接收PT-038的episode .py，输出scene JSON v2和MP4视频包。
+    converter_doc: D:\2_products\education\SPDT-004_EduContent\shared\video_factory\tools\PT038_converter\converter.py
+    quality_gate: D:\2_products\education\SPDT-004_EduContent\shared\video_factory\tools\scene_quality_gate.py
+    registered: 2026-07-16
+
+  # ── SPDT-KTE Cross-SPDT Dependency ──────────────────────────────
+  # PT-RUJ 已迁移至 SPDT-014_EduApps（2026-07-29），非 SPDT-004 原生物
+  # 作为 SPDT-KTE 的 P3 终端，跨 SPDT 协作，不移动物理文件
+  - pdt_id: PT-RUJ
+    name: Rujing
+    name_zh: "入境" 移动交付终端
+    type: 移动应用 / 终端交付层
+    client: 国美书法校考学生 / 高考历史选考生（手机端）
+    content_types: [audio_playback, video_playback, flashcard_review, learning_log]
+    target_dir: D:\2_products\education\SPDT-004_EduContent\platform\SPDT-014_EduApps\apps\rujing
+    status: active
+    maturity: 0.6
+    spdt_kte:
+      member: true
+      role: 移动交付终端（Mobile Delivery Terminal）
+      interfaces_produced: [IF-D]
+      interfaces_consumed: [IF-B, IF-C]
+      junction_path: SPDT-KTE\PT-RUJ
+      note: 已迁移至SPD-014_EduApps，物理文件不动，通过junction集成
+    description: "入境"——HarmonyOS NEXT 知识传递App。接收PT-038的Flashcard包和PT-VFX的视频包，提供链阅读、卡片复习和视频播放服务。
+    app_id: com.harmonystudio.rujing
+    platform: HarmonyOS NEXT (API 14+)
+    registered: 2026-07-16
+
+
+  - pdt_id: SPDT-014
+    name: EduApps
+    name_zh: 教育类APP开发平台
+    type: 平台层 / 交付终端
+    client: 高考/校考学生 / 教育工具用户
+    content_types: [HarmonyOS APP, HAP安装包, 内容包加载器]
+    target_dir: D:\\2_products\education\SPDT-004_EduContent\platform\SPDT-014_EduApps
+    source_project: D:\\2_products\platform\SPDT-001_Harmony\\apps\（教育类18个APP迁出）
+    status: active
+    maturity: 0.6
+    relationship: 专注教育类APP（rujing/gaokao-*/thinkkit-*/rhythm-*），通用APP（craftsman/harmonycoder）保留于SPD-001_Harmony；通过IRC（SPD-014→D:/3_infra/IRC/）获得认知内核
+    infra_dependency:
+      irc: D:/3_infra/IRC/
+    app_count: 18
+    registered: 2026-07-29
+
+  - asset: quality_gate
+    path: D:\2_products\education\SPDT-004_EduContent\quality
+    source: D:\6_agent_project\projects\content_quality_gate
+    description: CGM 审计规则 + Golden Test 用例
+
+  - asset: agent_templates
+    source: D:\6_agent_project\_templates
+    description: 8 种 Agent 协作模式模板 (T6 内容管线模板优先使用)
+
+  - pdt_id: PT-038
+    name: TextExperience
+    name_zh: 织韵内容工厂（文字缝合与知识链产品）
+    type: 体制教育 / 专项备考
+    client: 国美书法校考学生 / 高考历史选考生
+    content_types: [电子书, 广播剧音频, 知识链卡片包]
+    target_dir: D:\2_products\education\SPDT-004_EduContent\PT-038_TextExperience
+    source_project: C:\Users\willi\Desktop\我的视野\0713-基于知识库的高阶备考智能体
+    status: active
+    maturity: 0.8
+    cgm_audit_target: "≥85%"
+    spdt_kte:
+      member: true
+      role: 内容工厂（Content Factory）
+      interfaces_produced: [IF-A, IF-C]
+      interfaces_consumed: [IF-D]
+      junction_path: SPDT-KTE\PT-038
+    relationship: 与PT-037(自适应备考平台)为内容层上下游；书法史配置包(cafa_calligraphy_2026)为PT-037首个学科包；为SPDT-KTE管线的P1阶段输出
+    content_packages:
+      - pdt_sub_id: PT-038-A
+        name: cafa_calligraphy_2026
+        name_zh: 国美书法配置包
+        subject: 书法史论 / 古汉语 / 书写实践
+        episodes: 8
+        book_title: 墨骨山河
+        status: active
+      - pdt_sub_id: PT-038-B
+        name: ancient_history_v1
+        name_zh: 古代史卷一·革与鼎
+        subject: 先秦→安史之乱
+        episodes: 6
+        knowledge_chains: 12
+        cards: 90张 (节点卡+心法卡+链卡)
+        status: active
+      - pdt_sub_id: PT-038-C
+        name: ancient_history_v2
+        name_zh: 古代史卷二·变与局
+        subject: 宋→晚清
+        episodes: 6
+        knowledge_chains: 12
+        cards: 88张 (节点卡+心法卡+链卡)
+        status: active
+      - pdt_sub_id: PT-038-D
+        name: ancient_history_v3
+        name_zh: 古代史卷三·共和新生
+        subject: 近代史→现代史 (1840-1949)
+        episodes: 4
+        knowledge_chains: 16
+        cards: 129张 (节点卡+心法卡+链卡)
+        status: active
+      - pdt_sub_id: PT-038-E
+        name: world_history_v4
+        name_zh: 世界现代史·世界风云
+        subject: 世界史 (1914-2020)
+        episodes: 6
+        knowledge_chains: 17
+        cards: 133张 (节点卡+心法卡+链卡)
+        status: active
+    audio_spec:
+      voice: male-qn-badao (霸道青年)
+      bgm_weight: 0.15
+      speed: 0.92
+    output_structure:
+      - ebooks/       # 电子书生成物
+      - audio/        # 广播剧音频
+      - cards/        # 知识链卡片包
+      - docs/         # 设计文档
+    registered: 2026-07-14
+
+  - pdt_id: PT-039
+    name: CalligraphyVision
+    name_zh: 书法视觉内容工厂
+    type: 视觉素材层
+    client: 国美书法校考学生 / 教育APP开发
+    content_types: [书法配图, 辨析卡, 视觉本体库]
+    target_dir: D:\2_products\education\SPDT-004_EduContent\products\PT-039_CalligraphyVision
+    source_project: D:\2_products\media\PT-039_AiIllustration
+    status: active
+    maturity: 0.8
+    relationship: 为PT-037(自适应备考平台)和SPDT-014(教育APP)提供书法视觉素材；辨析卡v4存储于D:/4_data/content/calligraphy_cards/
+    content_assets:
+      - 书法视觉本体库/（设计规范/配图规则）
+      - 真实碑帖素材库/（本地资源地图+处理记录）
+      - 草书辨析卡/（旧版rebuilt/）
+    migration_note: 2026-07-29 从 media/ 迁入；辨析卡v4已迁至 D:/4_data/content/calligraphy_cards/
+    registered: 2026-07-21
+
+
+last_updated: 2026-07-29
+  spdt_kte_created: 2026-07-16
+  spdt_kte_root: D:\2_products\education\SPDT-004_EduContent\SPDT-KTE

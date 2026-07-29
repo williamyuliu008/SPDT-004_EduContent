@@ -1,0 +1,826 @@
+{
+  "pack_id": "cafa_calligraphy_2026",
+  "version": "1.1.0",
+  "last_updated": "2026-07-13",
+  "total_scripts": 41,
+  "status": "P0_initial",
+  "scripts": [
+    {
+      "script_id": "ES-001",
+      "error_type": "译篆_一简对多篆",
+      "question_type": "A1_译篆",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_T001",
+      "question": {
+        "text": "请将「斗争」译为《说文解字》标准篆书",
+        "correct_answer": "鬥爭",
+        "wrong_answer_sample": "斗爭（0分）"
+      },
+      "script": {
+        "setup": "公元2026年，你正坐在国美书法校考的考场里。试题要求将「斗争」译为篆书。你毫不犹豫地写下了「斗爭」——毕竟在日常书写中，我们早已习惯了简体字。",
+        "conflict": "但监考老师告诉你：正确答案是「鬥爭」。",
+        "knowledge_gap": "这里涉及一个关键辨析：「斗」字在《说文解字》中对应两个完全不同的篆形——",
+        "explanation": "① 争斗之「斗」，篆作「鬥」（两「十」相对，像两人持械对峙之形，从「鬥」部）；② 量器之「斗」，篆作「斗」（勺形有柄，从「十」从「又」）。题目中「斗争」的「斗」是争斗之意，因此必须取「鬥」。",
+        "logic_chain": "这条辨析规则叫「以义定形」——在篆书中，遇到一字对应多形时，必须根据该字在语境中的含义来选取正确的篆形。",
+        "resolution": "以后遇到类似的题：先问自己——这个字在这里是什么意思？然后在《说文》的540部首中找到对应本义的篆形。",
+        "mnemonic": "记忆口诀：争斗相斗用两口，量米喝酒才用斗。"
+      },
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐⭐",
+        "ability_id": "A1",
+        "priority": "P0"
+      }
+    },
+    {
+      "script_id": "ES-002",
+      "error_type": "译篆_髮与發",
+      "question_type": "A1_译篆",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_T002",
+      "question": {
+        "text": "请将「头发」译为《说文解字》标准篆书",
+        "correct_answer": "頭髮",
+        "wrong_answer_sample": "頭發（扣分）"
+      },
+      "script": {
+        "setup": "你再次坐在考场里，题目是将「头发」译为篆书。你写下了「頭發」。",
+        "conflict": "但「發」字在这里是错的。正确答案是「髮」。",
+        "knowledge_gap": "「发」字在《说文解字》中对应两个完全不同的篆形：",
+        "explanation": "① 头髮之「髮」，从「髟」（长发下垂形），本义是人头上的毛发。② 发射之「發」，从「弓」，本义是射箭。两个字的部首完全不同！",
+        "logic_chain": "记忆口诀：头上长草（髟）是头髮，拉弓射箭才出發。",
+        "resolution": "考场上：看到「发」，先判断——是头发还是发射？头发=髮，发射=發。",
+        "mnemonic": "头髮髮髮髮（强调毛发下垂的形态），发射發發發（强调弓的形态）"
+      },
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐⭐",
+        "ability_id": "A1",
+        "priority": "P0"
+      }
+    },
+    {
+      "script_id": "ES-003",
+      "error_type": "译篆_尘",
+      "question_type": "A1_译篆",
+      "difficulty": "Lv1",
+      "trigger_kb_id": "KB_CAFA_T004",
+      "question": {
+        "text": "请将「灰尘」译为《说文解字》标准篆书",
+        "correct_answer": "塵灰",
+        "wrong_answer_sample": "尘灰（0分）"
+      },
+      "script": {
+        "setup": "题目要求将「灰尘」译为篆书。你想都没想，写下了「尘灰」。",
+        "conflict": "考官看了一眼，直接给了0分。因为《说文解字》里根本没有「尘」这个字形。",
+        "knowledge_gap": "「尘」是现代简体字，在《说文解字》中对应的是「塵」（读音cū）。",
+        "explanation": "《说文解字·麤部》：「塵，鹿行扬土也。从三鹿，从土。」（群鹿奔跑扬起的土粒，即尘土。）「尘」这个简体字是后人俗写的，不是《说文》标准字形。",
+        "logic_chain": "考场原则：凡是《说文解字》后起的简体字，一律不能写。必须写「塵」。",
+        "resolution": "遇到类似「尘」「网」「岳」等字时，要反应：这是不是《说文》后起的简体字？是的话，找对应的古字形。",
+        "mnemonic": "群鹿跑过扬起土，这就是「塵」——三只鹿（麤），不是小土。"
+      },
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐⭐",
+        "ability_id": "A1",
+        "priority": "P0"
+      }
+    },
+    {
+      "script_id": "ES-004",
+      "error_type": "名词解释_宋四家_名单遗漏",
+      "question_type": "A5_名词解释",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_S001",
+      "question": {
+        "text": "名词解释：宋四家",
+        "correct_answer": "北宋四大书法家苏轼、黄庭坚、米芾、蔡襄的合称……",
+        "wrong_answer_sample": "「宋代四大书法家的合称，代表了宋代书法的最高成就。」"
+      },
+      "script": {
+        "setup": "名词解释题：宋四家。你胸有成竹，写道：「宋代四大书法家的合称，代表了宋代书法的最高成就。」",
+        "conflict": "这道题得了一半分，因为你没有写出具体是哪四位书法家。",
+        "knowledge_gap": "宋四家的高频采分点是四人名单：苏轼、黄庭坚、米芾、蔡襄。阅卷老师要看名单！",
+        "explanation": "四人的艺术特征也要分别写：苏轼——丰腴跌宕（《黄州寒食诗帖》，天下第三行书）；黄庭坚——长枪大戟（《松风阁诗帖》）；米芾——八面出锋（《蜀素帖》）；蔡襄——淳淡婉美（《扈从帖》）。",
+        "logic_chain": "答题结构：定性（四人名单+尚意）→展开（各人风格+代表作）→评价（影响）。",
+        "resolution": "宋四家这道题，四人名单是必写项。蔡襄不可写成蔡京（那是另一个书法家，但不在宋四家正统之列）。",
+        "mnemonic": "记忆口诀：苏肥（苏轼丰腴）、黄戟（黄庭坚长枪大戟）、米刷（米芾八面出锋）、蔡淡（蔡襄淳淡婉美）。"
+      },
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P0"
+      }
+    },
+    {
+      "script_id": "ES-005",
+      "error_type": "名词解释_书谱_作者错误",
+      "question_type": "A5_名词解释",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_S003",
+      "question": {
+        "text": "名词解释：《书谱》",
+        "correct_answer": "唐代孙过庭所著……",
+        "wrong_answer_sample": "「《书谱》是王羲之的书法理论著作……」"
+      },
+      "script": {
+        "setup": "名词解释题：《书谱》。你写：「《书谱》是王羲之的书法理论著作，是草书经典。」",
+        "conflict": "一开局就错了，作者是孙过庭，不是王羲之。直接扣6分。",
+        "knowledge_gap": "《书谱》的作者是唐代书法家孙过庭（约646-690年），书于垂拱三年（687年）。王羲之是东晋人（303-361年），《兰亭序》是王羲之写的，不是《书谱》。",
+        "explanation": "《书谱》有两个特别重要的属性必须提到：① 作者是孙过庭（不是王羲之！）；② 它既是理论著作又是草书墨迹——文质彬彬、艺文并重，是书法史上最系统的书学论著之一。",
+        "logic_chain": "《书谱》高频采分词：孙过庭/唐代/草书墨迹/五乖五合/古质今妍/艺文并重。",
+        "resolution": "国美书法史名词解释，作者是必写项。一旦写错，等于否定整个答案。",
+        "mnemonic": "记忆口诀：书谱孙过庭，草书理论并。不是王羲之，那是《兰亭》。"
+      },
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P0"
+      }
+    },
+    {
+      "script_id": "ES-006",
+      "error_type": "句读_情绪词排比不断开",
+      "question_type": "A3_句读",
+      "difficulty": "Lv3",
+      "trigger_kb_id": "KB_CAFA_Q002",
+      "question": {
+        "text": "请将以下古文加上标点……张旭善草书不治他技喜怒窘穷忧悲愉佚怨恨思慕酣醉无聊不平有动于心必于草书焉发之",
+        "correct_answer": "张旭善草书，不治他技。喜怒窘穷，忧悲愉佚，怨恨思慕，酣醉无聊，不平，有动于心，必于草书焉发之。",
+        "wrong_answer_sample": "「张旭善草书不治他技喜怒窘穷忧悲愉佚……」（一气读完不断开）"
+      },
+      "script": {
+        "setup": "你在做句读题，看到张旭这一长串文字——「喜怒窘穷忧悲愉佚怨恨思慕」。你决定一口气读完再断，结果全连在一起了。",
+        "conflict": "这是典型的「排比结构」，每一个词都应该断开！连在一起阅读是错的。",
+        "knowledge_gap": "古人写排比时，往往不在每个词之间加停顿（因为那时候本来就没标点）。但我们在做句读题时，必须主动把排比断开。",
+        "explanation": "韩愈这段文字的逻辑是：张旭的情绪是完整的系列——喜怒窘穷（情绪的低谷），忧悲愉佚（情绪的起伏），怨恨思慕（情感的怀念），酣醉无聊（放纵的状态），不平（心中的不满）。这一系列情绪词，中间都要加顿号或逗号断开。",
+        "logic_chain": "遇到情绪词/物象词的长串并列时——敢于断！古人没有标点，但我们答题时要把它们的独立性标出来。",
+        "resolution": "找标志：排比结构 = 多个并列的名词/形容词，中间要断。张旭这段文字有两大组排比：情绪词组 + 物象词组（山水崖谷鸟兽虫鱼草木之花实日月列星……）。",
+        "mnemonic": "情绪一串珠，每颗都要数；敢于用顿号，不要一气呵成。"
+      },
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐⭐",
+        "ability_id": "A3",
+        "priority": "P0"
+      }
+    },
+    {
+      "script_id": "ES-007",
+      "error_type": "名词解释_颜真卿_三帖混淆",
+      "question_type": "A5_名词解释",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_S002",
+      "question": {
+        "text": "名词解释：颜真卿",
+        "correct_answer": "唐代书法家……代表作《祭侄文稿》（天下第二行书）、《争座位帖》……",
+        "wrong_answer_sample": "「颜真卿是唐代书法家，代表作有《祭侄文稿》等。」"
+      },
+      "script": {
+        "setup": "名词解释题：颜真卿。你写：「唐代书法家，楷书四大家之一，代表作《祭侄文稿》。」你觉得答得不错。",
+        "conflict": "但你遗漏了两个关键点：① 三帖（《祭侄文稿》《自书告身帖》《争座位帖》）的区别和时代背景；② 颜体的核心特征「篆籀气」。",
+        "knowledge_gap": "颜真卿三帖各有不同背景：",
+        "explanation": "①《祭侄文稿》——追祭侄子颜季明，天下第二行书，安史之乱背景，情感最激烈；②《争座位帖》——论官场座次，行书，忠义气概；③《自书告身帖》——楷书墨迹，庄严端正。答题时可以选择其一展开，但必须说清楚是哪一帖。",
+        "logic_chain": "答题结构：定性（唐/楷书四大家/颜体）→代表作（写清哪个帖+时代背景）→风格特征（「篆籀气」必写）→历史影响。",
+        "resolution": "遇到书法家的代表作时，要写清楚是哪件作品、什么书体、什么背景。",
+        "mnemonic": "祭侄（安史之乱激烈），争座（忠义），告身（楷书端正）——三帖各有故事。"
+      },
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P0"
+      }
+    },
+    {
+      "script_id": "ES-008",
+      "error_type": "句读_书名号遗漏",
+      "question_type": "A3_句读",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_Q002",
+      "question": {
+        "text": "请标点并翻译：《诗》《书》往往间出矣",
+        "correct_answer": "《诗》《书》往往间出矣。",
+        "wrong_answer_sample": "「诗书往往间出矣。」（书名号遗漏）"
+      },
+      "script": {
+        "setup": "在做历史类句读题时，你看到了《诗》《书》两个字。你觉得它们只是普通名词，就直接连在句子里写了。",
+        "conflict": "《诗》和《书》是专有名词，指的是《诗经》和《尚书》，必须加书名号。阅卷时，书名号是加分项，没有则扣分。",
+        "knowledge_gap": "古人引书时，有时不加书名号（因为当时没有这个标点符号）。但我们在做句读题时，给书名加书名号是体现学术素养的重要细节。",
+        "explanation": "常见的古代典籍书名有：《诗》（诗经）、《书》（尚书）、《礼》（礼记）、《春秋》、、《左传》等。在句读题中，只要原文出现这些词，几乎都需要加书名号。",
+        "resolution": "做句读题时，扫一遍所有名词：是人名？地名？还是书名？书名要加书名号。",
+        "mnemonic": "诗书礼春秋，左传和孟子——这些都是书，加书名号不会错。"
+      },
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐",
+        "ability_id": "A3",
+        "priority": "P0"
+      }
+    },
+    {
+      "script_id": "ES-009",
+      "error_type": "名词解释_金石学_与考古学混淆",
+      "question_type": "A5_名词解释",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_S004",
+      "question": {
+        "text": "名词解释：金石学",
+        "correct_answer": "……旨在「证经补史」的传统学问……推动了清代碑学书法兴起……",
+        "wrong_answer_sample": "「金石学是中国古代研究古物的学科，对书法有一定影响。」"
+      },
+      "script": {
+        "setup": "名词解释题：金石学。你写：「金石学是研究古代金石文物的学科。」你觉得写得很宽泛，应该没问题。",
+        "conflict": "但这个答案没有体现金石学的核心特征：「证经补史」和「推动碑学」。",
+        "knowledge_gap": "金石学的三个核心特征：",
+        "explanation": "① 研究对象：金（青铜器铭文）+ 石（碑碣石刻）；② 核心目的：证经补史——即通过金石文字来考证经典、补充历史记载；③ 直接影响：推动清代碑学中兴。",
+        "logic_chain": "答题结构：定性（传统学问/肇始于宋/鼎盛于清）→研究对象（金+石）→核心目的（证经补史）→影响（碑学中兴）。",
+        "resolution": "金石学≠考古学（考古学是现代科学）。国美爱考这个区别！",
+        "mnemonic": "金石学，证经补史；推动碑学是它的最大贡献。"
+      },
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P0"
+      }
+    },
+    {
+      "script_id": "ES-010",
+      "error_type": "译篆_复_複与復混淆",
+      "question_type": "A1_译篆",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_T003",
+      "question": {
+        "text": "请将「繁复」译为《说文解字》标准篆书",
+        "correct_answer": "繁複",
+        "wrong_answer_sample": "繁復（扣分）"
+      },
+      "script": {
+        "setup": "你看到题目「繁复」，迅速拆字：「繁」+「复」。你写下了「繁復」。",
+        "conflict": "你写对了一半！「繁」正确，但「复」在这里应该取「複」而不是「復」。",
+        "knowledge_gap": "「复」字在《说文解字》中对应两个篆形：",
+        "explanation": "① 繁複之「複」（衣部），本义是重衣重叠，引申为重复、繁多；② 恢复之「復」（彳部），本义是往来、回来。两个字的意义完全不同。记忆口诀：穿衣重叠是「複」，走路回来是「復」。",
+        "logic_chain": "「繁复」的意思是「繁复多样」，强调的是层层叠叠——这和衣服重叠的意象一致，所以取「複」。",
+        "resolution": "遇到「复」字时，先判断语义：如果是「重叠、重复」，取「複」；如果是「回来、恢复」，取「復」。",
+        "mnemonic": "穿衣重叠是「複」，彳旁走路是「復」；繁复复複不混淆。"
+      },
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐⭐",
+        "ability_id": "A1",
+        "priority": "P0"
+      }
+    },
+    {
+      "script_id": "ES-011",
+      "error_type": "书法史常识错误",
+      "question_type": "选择题",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_S025",
+      "question": {
+        "conflict": {
+          "conflict": "小篆=秦代标准字体=李斯主持整理=笔画均匀对称圆转"
+        }
+      },
+      "script": {},
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P1"
+      }
+    },
+    {
+      "script_id": "ES-012",
+      "error_type": "书法史常识错误",
+      "question_type": "名词解释",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_S007",
+      "question": {
+        "conflict": {
+          "conflict": "六书=象形+指事+会意+形声+转注+假借"
+        }
+      },
+      "script": {},
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P1"
+      }
+    },
+    {
+      "script_id": "ES-016",
+      "error_type": "书法史常识错误",
+      "question_type": "比较题",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_S034",
+      "question": {
+        "conflict": {
+          "conflict": "二王比较：王羲之（内擛=向内收敛=平和蕴藉）vs王献之（外拓=向外展开=奇肆放纵）"
+        }
+      },
+      "script": {},
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P1"
+      }
+    },
+    {
+      "script_id": "ES-017",
+      "error_type": "译篆错误",
+      "question_type": "填空题",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_T035",
+      "question": {
+        "conflict": {
+          "conflict": "谷（山谷）≠穀（五谷）；含义不同"
+        }
+      },
+      "script": {},
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P1"
+      }
+    },
+    {
+      "script_id": "ES-019",
+      "error_type": "译篆错误",
+      "question_type": "填空题",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_T025",
+      "question": {
+        "conflict": {
+          "conflict": "复（复习/答复）≠複（复杂/复核）；含义不同"
+        }
+      },
+      "script": {},
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P1"
+      }
+    },
+    {
+      "script_id": "ES-020",
+      "error_type": "书法史常识错误",
+      "question_type": "选择题",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_S042",
+      "question": {
+        "conflict": {
+          "conflict": "虞世南=圆润内敛=智永传授≠欧阳询的险劲"
+        }
+      },
+      "script": {},
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P1"
+      }
+    },
+    {
+      "script_id": "ES-021",
+      "error_type": "译篆错误",
+      "question_type": "填空题",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_T032",
+      "question": {
+        "conflict": {
+          "conflict": "发（出发）≠髮（头发）"
+        }
+      },
+      "script": {},
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P1"
+      }
+    },
+    {
+      "script_id": "ES-022",
+      "error_type": "书法史常识错误",
+      "question_type": "排序题",
+      "difficulty": "Lv3",
+      "trigger_kb_id": "KB_CAFA_S008",
+      "question": {
+        "conflict": {
+          "conflict": "三大行书排序：兰亭序（第一·353年·王羲之）→祭侄文稿（第二·758年·颜真卿）→寒食帖（第三·1082年·苏轼）"
+        }
+      },
+      "script": {},
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P1"
+      }
+    },
+    {
+      "script_id": "ES-023",
+      "error_type": "译篆错误",
+      "question_type": "填空题",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_T034",
+      "question": {
+        "conflict": {
+          "conflict": "须（必须）≠需（需求）；含义不同"
+        }
+      },
+      "script": {},
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P1"
+      }
+    },
+    {
+      "script_id": "ES-024",
+      "error_type": "书法史常识错误",
+      "question_type": "选择题",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_S027",
+      "question": {
+        "conflict": {
+          "conflict": "张迁碑（方峻雄强）≠曹全碑（秀美流畅）"
+        }
+      },
+      "script": {},
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P1"
+      }
+    },
+    {
+      "script_id": "ES-025",
+      "error_type": "书法史常识错误",
+      "question_type": "名词解释",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_S062",
+      "question": {
+        "conflict": {
+          "conflict": "古质今妍：早期书法重质朴（古），后期书法重妍美（今）；这是历史规律，无优劣之分"
+        }
+      },
+      "script": {},
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P1"
+      }
+    },
+    {
+      "script_id": "ES-026",
+      "error_type": "书法史常识错误",
+      "question_type": "选择题",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_S006",
+      "question": {
+        "conflict": {
+          "conflict": "南北书派论=阮元（清代）=书法分为南北两派≠董其昌的画论南北宗论"
+        }
+      },
+      "script": {},
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P1"
+      }
+    },
+    {
+      "script_id": "ES-028",
+      "error_type": "译篆错误",
+      "question_type": "填空题",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_T033",
+      "question": {
+        "conflict": {
+          "conflict": "干（干涉）≠乾（干燥）≠幹（骨干）"
+        }
+      },
+      "script": {},
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P1"
+      }
+    },
+    {
+      "script_id": "ES-029",
+      "error_type": "书法史常识错误",
+      "question_type": "选择题",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_S051",
+      "question": {
+        "conflict": {
+          "conflict": "赵孟頫=元代书法最高成就=复古=取法二王；非明代书法家"
+        }
+      },
+      "script": {},
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P1"
+      }
+    },
+    {
+      "script_id": "ES-030",
+      "error_type": "书法史常识错误",
+      "question_type": "名词解释",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_S031",
+      "question": {
+        "conflict": {
+          "conflict": "钟繇=三国魏书法家=楷书之祖=钟王并称；非书圣（书圣=王羲之）"
+        }
+      },
+      "script": {},
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P1"
+      }
+    },
+    {
+      "script_id": "ES-031",
+      "error_type": "书法史常识错误",
+      "question_type": "名词解释",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_S112",
+      "question": {
+        "conflict": {
+          "conflict": "碑学=以金石碑刻为学习对象=邓石如/伊秉绶/阮元/康有为=与帖学相对"
+        }
+      },
+      "script": {},
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P1"
+      }
+    },
+    {
+      "script_id": "ES-032",
+      "error_type": "书法史常识错误",
+      "question_type": "选择题",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_S113",
+      "question": {
+        "conflict": {
+          "conflict": "帖学=以法帖（刻帖）为学习对象=二王书法体系=宋代以后主流"
+        }
+      },
+      "script": {},
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P1"
+      }
+    },
+    {
+      "script_id": "ES-033",
+      "error_type": "书法史常识错误",
+      "question_type": "名词解释",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_S117",
+      "question": {
+        "conflict": {
+          "conflict": "六书=象形+指事+会意+形声+转注+假借"
+        }
+      },
+      "script": {},
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P1"
+      }
+    },
+    {
+      "script_id": "ES-034",
+      "error_type": "书法史常识错误",
+      "question_type": "选择题",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_S081",
+      "question": {
+        "conflict": {
+          "conflict": "颜筋柳骨：颜真卿（筋=沉厚宽博）≠柳公权（骨=瘦硬紧结）"
+        }
+      },
+      "script": {},
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P1"
+      }
+    },
+    {
+      "script_id": "ES-035",
+      "error_type": "书法史常识错误",
+      "question_type": "名词解释",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_S089",
+      "question": {
+        "conflict": {
+          "conflict": "宋四家=苏轼（韵）+黄庭坚（势）+米芾（趣）+蔡襄（法）"
+        }
+      },
+      "script": {},
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P1"
+      }
+    },
+    {
+      "script_id": "ES-036",
+      "error_type": "书法史常识错误",
+      "question_type": "选择题",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_S103",
+      "question": {
+        "conflict": {
+          "conflict": "傅山四宁四毋=宁拙毋巧+宁丑毋媚+宁支离毋轻滑+宁直率毋安排"
+        }
+      },
+      "script": {},
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P1"
+      }
+    },
+    {
+      "script_id": "ES-038",
+      "error_type": "书法史常识错误",
+      "question_type": "名词解释",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_S115",
+      "question": {
+        "conflict": {
+          "conflict": "南北书派论=阮元（清代）=北骨南韵=书法史研究框架≠董其昌画论"
+        }
+      },
+      "script": {},
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P1"
+      }
+    },
+    {
+      "script_id": "ES-039",
+      "error_type": "书法史常识错误",
+      "question_type": "选择题",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_S132",
+      "question": {
+        "conflict": {
+          "conflict": "章草=隶书快写=保留波磔=字字独立；今草=章草演变=去掉波磔=纵向连绵"
+        }
+      },
+      "script": {},
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P1"
+      }
+    },
+    {
+      "script_id": "ES-040",
+      "error_type": "书法史常识错误",
+      "question_type": "名词解释",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_S126",
+      "question": {
+        "conflict": {
+          "conflict": "篆书识别三要素：①笔画均匀无粗细变化②结体对称均衡③圆转无方折"
+        }
+      },
+      "script": {},
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P1"
+      }
+    },
+    {
+      "script_id": "ES-041",
+      "error_type": "书法史常识错误",
+      "question_type": "选择题",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_S127",
+      "question": {
+        "conflict": {
+          "conflict": "隶书识别三要素：①横画有波磔（一波三折）②结体扁方③竖画挺直"
+        }
+      },
+      "script": {},
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P1"
+      }
+    },
+    {
+      "script_id": "ES-042",
+      "error_type": "译篆错误",
+      "question_type": "填空题",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_T061",
+      "question": {
+        "conflict": {
+          "conflict": "秋（秋季）≠鞦（鞭鞦）；含义完全不同"
+        }
+      },
+      "script": {},
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P1"
+      }
+    },
+    {
+      "script_id": "ES-043",
+      "error_type": "译篆错误",
+      "question_type": "填空题",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_T063",
+      "question": {
+        "conflict": {
+          "conflict": "梁（桥梁/姓氏）≠樑（屋梁）"
+        }
+      },
+      "script": {},
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P1"
+      }
+    },
+    {
+      "script_id": "ES-044",
+      "error_type": "译篆错误",
+      "question_type": "填空题",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_T072",
+      "question": {
+        "conflict": {
+          "conflict": "曲（弯曲）≠麯（酒曲）"
+        }
+      },
+      "script": {},
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P1"
+      }
+    },
+    {
+      "script_id": "ES-045",
+      "error_type": "译篆错误",
+      "question_type": "填空题",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_T085",
+      "question": {
+        "conflict": {
+          "conflict": "术（白术/药名）≠術（技术）"
+        }
+      },
+      "script": {},
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P1"
+      }
+    },
+    {
+      "script_id": "ES-046",
+      "error_type": "译篆错误",
+      "question_type": "填空题",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_T086",
+      "question": {
+        "conflict": {
+          "conflict": "松（松树）≠鬆（松弛）"
+        }
+      },
+      "script": {},
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P1"
+      }
+    },
+    {
+      "script_id": "ES-048",
+      "error_type": "书法史常识错误",
+      "question_type": "选择题",
+      "difficulty": "Lv2",
+      "trigger_kb_id": "KB_CAFA_S133",
+      "question": {
+        "conflict": {
+          "conflict": "狂草=今草极端=极度连绵简省=张旭/怀素"
+        }
+      },
+      "script": {},
+      "meta": {
+        "frequency_stars": "⭐⭐⭐⭐",
+        "ability_id": "A5",
+        "priority": "P1"
+      }
+    }
+  ]
+}

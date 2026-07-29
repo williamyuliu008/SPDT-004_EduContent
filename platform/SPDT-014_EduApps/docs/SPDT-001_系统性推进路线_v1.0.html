@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPDT-001 鸿蒙生态 · 系统性推进路线 v1.0</title>
+<style>
+  :root {
+    --primary: #3B82B0;
+    --accent: #C44536;
+    --green: #5B8C5A;
+    --orange: #E87A2A;
+    --purple: #7B2D8E;
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --text: #1a1a2e;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --radius: 10px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height:1.7; padding:40px 20px; }
+  .container { max-width: 1000px; margin:0 auto; }
+
+  .hero { background:linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color:#fff; padding:48px 40px; border-radius:16px; margin-bottom:36px; }
+  .hero h1 { font-size:2rem; margin-bottom:8px; }
+  .hero .sub { color:#a0b4c8; font-size:1.05rem; }
+  .hero .badge-row { margin-top:20px; display:flex; gap:12px; flex-wrap:wrap; }
+  .hero .badge { background:rgba(255,255,255,0.12); padding:4px 14px; border-radius:20px; font-size:0.85rem; }
+
+  .dual-pillar { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:36px; }
+  .pillar { padding:28px; border-radius:var(--radius); border-left:5px solid; }
+  .pillar.left { background:#eff6ff; border-color:var(--primary); }
+  .pillar.right { background:#fef2f2; border-color:var(--accent); }
+  .pillar h2 { font-size:1.15rem; margin-bottom:12px; }
+  .pillar ul { list-style:none; }
+  .pillar li { padding:4px 0; font-size:0.92rem; }
+  .pillar li::before { content:'→ '; font-weight:bold; }
+
+  h2 { font-size:1.4rem; margin:40px 0 16px; padding-bottom:8px; border-bottom:2px solid var(--border); }
+  h3 { font-size:1.1rem; margin:24px 0 12px; color:#374151; }
+
+  .card { background:var(--card); border-radius:var(--radius); padding:24px; margin-bottom:20px; box-shadow:0 1px 3px rgba(0,0,0,0.06); border:1px solid var(--border); }
+  .card-title { font-weight:700; font-size:1.05rem; margin-bottom:12px; display:flex; align-items:center; gap:8px; }
+
+  table { width:100%; border-collapse:collapse; margin:16px 0; font-size:0.92rem; }
+  th { background:#f3f4f6; text-align:left; padding:10px 12px; font-weight:600; border-bottom:2px solid var(--border); }
+  td { padding:10px 12px; border-bottom:1px solid var(--border); vertical-align:top; }
+  tr:hover td { background:#fafbfc; }
+
+  .phase-flow { display:flex; align-items:center; gap:0; margin:24px 0; flex-wrap:wrap; }
+  .phase-box { background:var(--card); border:2px solid var(--border); border-radius:var(--radius); padding:16px 20px; text-align:center; min-width:140px; }
+  .phase-box.active { border-color:var(--green); background:#f0faf0; }
+  .phase-box .tag { font-size:0.78rem; font-weight:700; color:var(--green); text-transform:uppercase; }
+  .phase-box .name { font-size:1rem; font-weight:700; margin:6px 0; }
+  .phase-box .desc { font-size:0.82rem; color:var(--muted); }
+  .phase-arrow { font-size:1.5rem; color:var(--muted); padding:0 4px; }
+
+  .metrics { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:16px; margin:20px 0; }
+  .metric { background:var(--card); border-radius:var(--radius); padding:20px; text-align:center; border:1px solid var(--border); }
+  .metric .value { font-size:2rem; font-weight:800; color:var(--primary); }
+  .metric .label { font-size:0.85rem; color:var(--muted); margin-top:4px; }
+
+  .timeline { margin:24px 0; }
+  .step { display:flex; gap:16px; margin-bottom:20px; }
+  .step-marker { width:36px; height:36px; border-radius:50%; background:var(--primary); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:0.85rem; flex-shrink:0; }
+  .step-body { flex:1; background:var(--card); border-radius:var(--radius); padding:18px; border:1px solid var(--border); }
+  .step-title { font-weight:700; margin-bottom:6px; }
+  .step-text { font-size:0.9rem; color:var(--muted); }
+
+  .badge { display:inline-block; padding:2px 10px; border-radius:12px; font-size:0.78rem; font-weight:600; }
+  .badge-ok { background:#dcfce7; color:#166534; }
+  .badge-warn { background:#fef3c7; color:#92400e; }
+  .badge-plan { background:#dbeafe; color:#1e40af; }
+  .badge-future { background:#f3e8ff; color:#6b21a8; }
+
+  .sop-pyramid { display:flex; flex-direction:column; align-items:center; gap:8px; margin:24px 0; }
+  .sop-level { padding:10px 24px; border-radius:8px; text-align:center; font-weight:600; font-size:0.9rem; }
+  .sop-l0 { background:#1a1a2e; color:#fff; width:200px; }
+  .sop-l1 { background:#374151; color:#fff; width:320px; }
+  .sop-l2 { background:#6b7280; color:#fff; width:440px; }
+  .sop-l3 { background:#9ca3af; color:#1a1a2e; width:560px; }
+  .sop-l4 { background:#d1d5db; color:#1a1a2e; width:680px; }
+
+  .compare { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin:20px 0; }
+  .compare-col { background:var(--card); border-radius:var(--radius); padding:20px; border:1px solid var(--border); }
+  .compare-col h4 { margin-bottom:12px; font-size:1rem; }
+  .compare-col ul { list-style:none; font-size:0.9rem; }
+  .compare-col li { padding:3px 0; }
+  .compare-col .check::before { content:'✅ '; }
+  .compare-col .cross::before { content:'❌ '; }
+
+  footer { text-align:center; color:var(--muted); font-size:0.85rem; margin-top:48px; padding-top:24px; border-top:1px solid var(--border); }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="hero">
+    <h1>🛠️ SPDT-001 鸿蒙生态 · 系统性推进路线</h1>
+    <div class="sub">双主轴并行：智能体APP架构深化 × 开发全链路自动化</div>
+    <div class="badge-row">
+      <span class="badge">鸿蒙特使 · agent-e926h</span>
+      <span class="badge">2026-07-18</span>
+      <span class="badge">v1.0</span>
+      <span class="badge">30 APP · 5 品牌</span>
+    </div>
+  </div>
+
+  <div class="dual-pillar">
+    <div class="pillar left">
+      <h2>🎯 主轴一：智能体架构深化</h2>
+      <ul>
+        <li>小龙虾统一API → PC作为APP服务器</li>
+        <li>8维智能体框架 (A-H) 落地</li>
+        <li>GaokaoAgent 旗舰验证</li>
+        <li>ThinkKit/Craftsman 批量复制</li>
+        <li>跨APP协同生态</li>
+        <li>蓝海市场快速占位</li>
+      </ul>
+    </div>
+    <div class="pillar right">
+      <h2>⚙️ 主轴二：全链路自动化</h2>
+      <ul>
+        <li>CLI编译+签名+部署 (已验证)</li>
+        <li>批量构建 → 30 APP一键部署</li>
+        <li>华为Hypium UI自动化测试</li>
+        <li>自研自动化调试工具</li>
+        <li>需求→设计→代码→测试→发布 SOP</li>
+        <li>CI/CD全链条无人值守</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>一、智能体APP推进路线</h2>
+
+  <div class="card">
+    <div class="card-title">🦞 小龙虾统一API — APP的共同服务器</div>
+    <table>
+      <tr><th>端点</th><th>职责</th><th>7月</th><th>8月</th><th>LLM就绪后</th></tr>
+      <tr>
+        <td><code>POST /task</code></td>
+        <td>通用任务调度 (出题/分析/推荐)</td>
+        <td><span class="badge badge-ok">规范定义</span></td>
+        <td><span class="badge badge-warn">mock→真实</span></td>
+        <td><span class="badge badge-future">LLM驱动</span></td>
+      </tr>
+      <tr>
+        <td><code>POST /knowledge/query</code></td>
+        <td>知识库查询 (考纲/知识点)</td>
+        <td><span class="badge badge-ok">Schema定义</span></td>
+        <td><span class="badge badge-warn">RAG接入</span></td>
+        <td><span class="badge badge-future">自动更新</span></td>
+      </tr>
+      <tr>
+        <td><code>POST /content/import</code></td>
+        <td>批量内容导入 (题库/闪卡)</td>
+        <td><span class="badge badge-ok">格式定义</span></td>
+        <td><span class="badge badge-plan">管道打通</span></td>
+        <td><span class="badge badge-future">自动同步</span></td>
+      </tr>
+      <tr>
+        <td><code>POST /state/write-back</code></td>
+        <td>APP状态回写 (掌握度/习惯)</td>
+        <td><span class="badge badge-ok">接口定义</span></td>
+        <td><span class="badge badge-plan">双向协议</span></td>
+        <td><span class="badge badge-future">全局分析</span></td>
+      </tr>
+    </table>
+  </div>
+
+  <h3>GaokaoAgent 旗舰路径</h3>
+  <div class="phase-flow">
+    <div class="phase-box active">
+      <div class="tag">✔ 已完成</div>
+      <div class="name">v1.0</div>
+      <div class="desc">5-tab MVP</div>
+    </div>
+    <div class="phase-arrow">→</div>
+    <div class="phase-box active">
+      <div class="tag">7月</div>
+      <div class="name">v2.1</div>
+      <div class="desc">8维地基</div>
+    </div>
+    <div class="phase-arrow">→</div>
+    <div class="phase-box">
+      <div class="tag">8月</div>
+      <div class="name">v2.1-hands</div>
+      <div class="desc">小龙虾接入</div>
+    </div>
+    <div class="phase-arrow">→</div>
+    <div class="phase-box">
+      <div class="tag">LLM就绪后</div>
+      <div class="name">v3.0</div>
+      <div class="desc">真正智能</div>
+    </div>
+  </div>
+
+  <h3>跨APP协作愿景 (9月+)</h3>
+  <div class="card">
+    <table>
+      <tr><th>协作场景</th><th>数据流</th><th>价值</th></tr>
+      <tr><td>gaokao错题 → flashcard闪卡</td><td>错题ID → 小龙虾 → 闪卡内容</td><td>学习闭环</td></tr>
+      <tr><td>rhythm作息 → gaokao计划</td><td>作息偏好 → 小龙虾 → 时段推荐</td><td>个性化</td></tr>
+      <tr><td>harmonycoder审查 → common内核</td><td>审查报告 → 小龙虾 → 公共模块改进</td><td>质量反哺</td></tr>
+    </table>
+  </div>
+
+  <h2>二、全链路自动化路线</h2>
+
+  <div class="sop-pyramid">
+    <div class="sop-level sop-l0">L0 手工 (已超越)</div>
+    <div class="sop-level sop-l1">L1 半自动 ⬅ 当前：CLI单APP编译+部署 ✔</div>
+    <div class="sop-level sop-l2">L2 全自动 ⬅ 本季度：批量编译+签名+部署+测试</div>
+    <div class="sop-level sop-l3">L3 智能自动 ⬅ 下季度：需求→APP生成+自研调试工具</div>
+    <div class="sop-level sop-l4">L4 自治 (远期)：市场反馈→自动开发→自动发布</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🔧 近期自动化建设清单 (7-8月)</div>
+    <table>
+      <tr><th>链环节</th><th>工具</th><th>状态</th><th>下一步</th></tr>
+      <tr><td>编译</td><td>build_any.py + OHOS_BASE_SDK_HOME</td><td><span class="badge badge-ok">已验证</span></td><td>扩展到30 APP</td></tr>
+      <tr><td>签名</td><td>DevEco 6.1 自动证书 + build-profile.json5</td><td><span class="badge badge-warn">需批量Sync</span></td><td>28 APP证书生成</td></tr>
+      <tr><td>部署</td><td>hdc install + hdc shell aa start</td><td><span class="badge badge-ok">已验证</span></td><td>build-all.py</td></tr>
+      <tr><td>测试</td><td>Hypium (华为官方)</td><td><span class="badge badge-plan">调研中</span></td><td>试点接入</td></tr>
+      <tr><td>调试</td><td>自研工具 (概念)</td><td><span class="badge badge-future">远期</span></td><td>日志采集+崩溃分析</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🤖 自研自动化调试工具 · 概念设计</div>
+    <div class="compare">
+      <div class="compare-col">
+        <h4>华为工具覆盖</h4>
+        <ul>
+          <li class="check">hdc 设备调试</li>
+          <li class="check">hvigor 构建系统</li>
+          <li class="check">Hypium UI测试</li>
+          <li class="check">SmartPerf 性能分析</li>
+          <li class="cross">批量并行构建 (自研)</li>
+          <li class="cross">跨APP回归对比 (自研)</li>
+        </ul>
+      </div>
+      <div class="compare-col">
+        <h4>自研工具补充</h4>
+        <ul>
+          <li class="check">批量30 APP并行构建</li>
+          <li class="check">崩溃日志自动归因</li>
+          <li class="check">UI快照版本对比</li>
+          <li class="check">自动回归测试报告</li>
+          <li class="check">跨版本变更影响分析</li>
+          <li class="check">HTML趋势看板</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h2>三、关键指标</h2>
+
+  <div class="metrics">
+    <div class="metric">
+      <div class="value">1→30</div>
+      <div class="label">CLI一键部署APP数 (7月底)</div>
+    </div>
+    <div class="metric">
+      <div class="value">0→6+</div>
+      <div class="label">接入小龙虾API的APP数 (8月底)</div>
+    </div>
+    <div class="metric">
+      <div class="value">4→6/8</div>
+      <div class="label">智能体维度落地 (A-H) (8月底)</div>
+    </div>
+    <div class="metric">
+      <div class="value">5→12</div>
+      <div class="label">自动化SOP覆盖份数 (8月底)</div>
+    </div>
+  </div>
+
+  <h2>四、SOP体系金字塔</h2>
+
+  <div class="card">
+    <table>
+      <tr><th>层级</th><th>SOP</th><th>状态</th><th>覆盖</th></tr>
+      <tr><td>战略</td><td>系统性推进路线 (本文档)</td><td><span class="badge badge-ok">v1.0</span></td><td>全局</td></tr>
+      <tr><td>架构</td><td>智能体设计框架 v2.0</td><td><span class="badge badge-ok">已完成</span></td><td>A-H 8维框架</td></tr>
+      <tr><td>架构</td><td>小龙虾统一API规范</td><td><span class="badge badge-warn">设计中</span></td><td>5端点协议</td></tr>
+      <tr><td>开发</td><td>Build SOP + CLI规范</td><td><span class="badge badge-ok">已验证</span></td><td>编译+签名+部署</td></tr>
+      <tr><td>开发</td><td>APP设计SOP</td><td><span class="badge badge-plan">待建 P0</span></td><td>需求→设计→任务</td></tr>
+      <tr><td>开发</td><td>智能体接入SOP</td><td><span class="badge badge-plan">待建 P0</span></td><td>新APP→小龙虾</td></tr>
+      <tr><td>测试</td><td>Hypium自动化测试SOP</td><td><span class="badge badge-plan">待建 P1</span></td><td>UI+回归</td></tr>
+      <tr><td>运营</td><td>鸿蒙商店上架SOP</td><td><span class="badge badge-ok">已完成</span></td><td>审核流程</td></tr>
+      <tr><td>运营</td><td>品牌管理 (5份品牌手册)</td><td><span class="badge badge-ok">已完成</span></td><td>品牌规范</td></tr>
+    </table>
+  </div>
+
+  <footer>
+    🏗️ 鸿蒙特使 · agent-e926h · SPDT-001 鸿蒙生态开发<br>
+    双主轴：智能体APP架构深化 × 开发全链路自动化
+  </footer>
+
+</div>
+</body>
+</html>

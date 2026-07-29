@@ -1,0 +1,8 @@
+{
+  "string": [
+    { "name": "app_name", "value": "rhythm meditation" },
+    { "name": "module_desc", "value": "RhythmHabit rhythm meditation" },
+    { "name": "EntryAbility_desc", "value": "RhythmHabit rhythm meditation" },
+    { "name": "EntryAbility_label", "value": "rhythm meditation" }
+  ]
+}

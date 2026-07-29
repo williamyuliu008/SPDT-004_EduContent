@@ -1,0 +1,199 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://spdt-kte/schemas/card_package_schema.schema.json",
+  "title": "SPDT-KTE Interface C · card_package_json",
+  "description": "PT-038 → PT-RUJ 卡片包 JSON 协议 v3.0.0。PT-038 卡片自动生成器输出此格式，PT-RUJ ImportService 消费此 JSON 导入 Flashcard 到本地 RDB。",
+  "version": "3.0.0",
+  "interface_id": "IF-C",
+  "producer": "PT-038",
+  "consumer": "PT-RUJ",
+  "frozen": true,
+  "breaking_change_requires": "major version increment + 2-week compatibility window",
+
+  "type": "object",
+  "required": ["package_id", "schema_version", "generated_at"],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "3.0.0"
+    },
+    "package_id": {
+      "type": "string",
+      "description": "包唯一标识符",
+      "example": "古史_v1_EP01_cards"
+    },
+    "source_series": {
+      "type": "string",
+      "description": "来源系列，如"古史_v1_革与鼎""
+    },
+    "source_ep": {
+      "type": "integer",
+      "description": "来源集数（可选）"
+    },
+    "generated_by": {
+      "type": "string",
+      "const": "PT-038"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "total_cards": {
+      "type": "integer"
+    },
+
+    "node_cards": {
+      "type": "array",
+      "description": "知识节点卡。来源：episode .py 的 key_nodes",
+      "items": { "$ref": "#/definitions/Card" }
+    },
+    "strategy_cards": {
+      "type": "array",
+      "description": "策略卡。来源：episode .py 的 exam_strategies",
+      "items": { "$ref": "#/definitions/Card" }
+    },
+    "chain_cards": {
+      "type": "array",
+      "description": "知识链卡。来源：episode .py 的 knowledge_chains",
+      "items": { "$ref": "#/definitions/Card" }
+    },
+
+    "_compat_v1_v2": {
+      "type": "object",
+      "description": "兼容 v1/v2 扁平格式。PT-RUJ ImportService 向下兼容。"
+    }
+  },
+
+  "definitions": {
+    "Card": {
+      "type": "object",
+      "required": ["card_id", "chain_id", "front", "back_core"],
+      "properties": {
+        "card_id": {
+          "type": "string",
+          "description": "卡片唯一 ID，格式：{chain_id}_C{序号}",
+          "example": "古史_v1_EP01_C001"
+        },
+        "chain_id": {
+          "type": "string",
+          "description": "所属知识链 ID，对应 PT-038 的 chain_id"
+        },
+        "chain_title": {
+          "type": "string",
+          "description": "知识链标题（人类可读）"
+        },
+        "card_type": {
+          "type": "string",
+          "enum": ["node", "strategy", "chain"],
+          "description": "卡片类型"
+        },
+        "chain_role": {
+          "type": "string",
+          "enum": ["process", "concept", "comparison", "fact", "principle"],
+          "description": "知识链角色：过程/概念/对比/事实/原理"
+        },
+        "front": {
+          "type": "string",
+          "maxLength": 200,
+          "description": "卡片正面（问题/提示）。必须为检索式问题，非陈述句。"
+        },
+        "back_core": {
+          "type": "string",
+          "maxLength": 300,
+          "description": "核心答案。须包含对比或反例，不接受纯陈述。"
+        },
+        "back_detail": {
+          "type": "string",
+          "maxLength": 500,
+          "description": "详细解释（可选）"
+        },
+        "analogy_block": {
+          "type": "object",
+          "description": "类比通道标注。若本卡涉及类比桥接，包含此字段。",
+          "properties": {
+            "source_domain": { "type": "string" },
+            "target_domain": { "type": "string" },
+            "difference": { "type": "string" }
+          }
+        },
+        "exam_weight": {
+          "type": "string",
+          "enum": ["★★★", "★★", "★", null],
+          "description": "考试权重标注"
+        },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "memorization_tip": {
+          "type": "string",
+          "description": "记忆口诀，前缀【口诀】"
+        }
+      }
+    }
+  },
+
+  "examples": [
+    {
+      "schema_version": "3.0.0",
+      "package_id": "墨骨山河_EP01_cards",
+      "source_series": "墨骨山河",
+      "source_ep": 1,
+      "generated_by": "PT-038",
+      "generated_at": "2026-07-16T12:00:00+08:00",
+      "total_cards": 20,
+      "node_cards": [
+        {
+          "card_id": "墨骨山河_EP01_C001",
+          "chain_id": "墨骨山河_ep01_主链",
+          "chain_title": "乾元元年·蒲州的墨与血",
+          "card_type": "node",
+          "chain_role": "fact",
+          "front": "安史之乱爆发于哪一年？由谁发动？",
+          "back_core": "755年，安禄山、史思明发动。",
+          "back_detail": "安禄山身兼范阳、平卢、河东三镇节度使，以"奉密旨讨杨国忠"为名起兵。",
+          "analogy_block": {
+            "source_domain": null,
+            "target_domain": null,
+            "difference": null
+          },
+          "exam_weight": "★★★",
+          "tags": ["安史之乱", "颜真卿", "唐代历史"]
+        }
+      ],
+      "strategy_cards": [
+        {
+          "card_id": "墨骨山河_EP01_S001",
+          "chain_id": "墨骨山河_ep01_主链",
+          "chain_title": "乾元元年·蒲州的墨与血",
+          "card_type": "strategy",
+          "chain_role": "principle",
+          "front": "颜真卿书法风格的最大特点是什么？这种风格是如何形成的？",
+          "back_core": "筋骨饱满、气势雄强。形成于蒲州军旅生涯，将战场杀伐之气注入笔端。",
+          "back_detail": "与二王秀美不同，颜体代表了有别于士族书风的军旅审美。",
+          "analogy_block": {
+            "source_domain": "战场杀伐",
+            "target_domain": "颜体书法的力量感",
+            "difference": "刀痕是破坏性的，笔锋是建构性的——笔锋的"力量感"来自提按顿挫的力度控制，而非物理意义上的攻击性。"
+          },
+          "exam_weight": "★★★",
+          "tags": ["颜真卿", "书法审美", "书风分析"]
+        }
+      ],
+      "chain_cards": [
+        {
+          "card_id": "墨骨山河_EP01_L001",
+          "chain_id": "墨骨山河_ep01_主链",
+          "chain_title": "乾元元年·蒲州的墨与血",
+          "card_type": "chain",
+          "chain_role": "process",
+          "front": "请按时间顺序排列：①颜真卿任平原太守 ②安史之乱爆发 ③颜真卿起兵讨贼 ④颜真卿兄长颜杲卿殉国",
+          "back_core": "②①③④",
+          "back_detail": "平原郡在今山东德州，颜真卿以"天雨墙坏"为掩护暗中募兵。③起兵后与哥舒翰遥相呼应，蒲州成为河北抵抗中心。④常山（今石家庄）城破，颜杲卿被俘骂贼而死。",
+          "exam_weight": "★★",
+          "tags": ["时间线", "颜氏家族", "安史之乱经过"]
+        }
+      ]
+    }
+  ]
+}

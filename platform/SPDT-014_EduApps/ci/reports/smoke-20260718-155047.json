@@ -1,0 +1,45 @@
+{
+  "timestamp": "20260718-155047",
+  "device": "7GL0226313016118",
+  "agent_mode": true,
+  "pass": 2,
+  "fail": 1,
+  "skip": 0,
+  "results": [
+    {
+      "app": "gaokao-agent",
+      "status": "FAIL",
+      "build": false,
+      "install": false,
+      "launch": false,
+      "prefs": "",
+      "http": "",
+      "battery": "",
+      "error": "Build: rClient.ets:163:15\n\u001b[39m\n\u001b[39m\n\u001b[31m46 ERROR: \u001b[31m10505001 ArkTS Compiler Error\nError Message: Type"
+    },
+    {
+      "app": "gaokao-language",
+      "status": "PASS",
+      "build": true,
+      "install": true,
+      "launch": true,
+      "prefs": "Storage accessible (no explicit prefs)",
+      "http": "No INTERNET (not required)",
+      "battery": "Battery API: N/A",
+      "error": "",
+      "duration_s": 2.6
+    },
+    {
+      "app": "gaokao-volunteer",
+      "status": "PASS",
+      "build": true,
+      "install": true,
+      "launch": true,
+      "prefs": "Storage accessible (no explicit prefs)",
+      "http": "No INTERNET (not required)",
+      "battery": "Battery API: N/A",
+      "error": "",
+      "duration_s": 2.8
+    }
+  ]
+}

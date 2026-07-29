@@ -1,0 +1,22 @@
+# P01 — T01概念卡片（term_card）
+sample_id: P01
+version: v0.1
+date: 2026-07-04
+source: T01 AI写作工具入门培训视频（cgm_training_factory项目）
+scene_type: concept
+style_guide_function: term_card
+expected_result:
+  G-01: PASS
+  G-02: PASS
+  G-03: PASS
+  G-04: PASS
+  G-05A: PASS
+  G-05B: PASS
+  G-05C: PASS
+test_data:
+  title: "AI写作工具"
+  keywords: ["写邮件", "写报告", "写文案"]
+notes: |
+  这是CGM训练工厂项目生产的第一个培训视频场景。
+  使用term_card函数渲染，标题+3个关键词标签。
+  已验证：G-05C白色文字占比0.33%，非暗像素占比正常。

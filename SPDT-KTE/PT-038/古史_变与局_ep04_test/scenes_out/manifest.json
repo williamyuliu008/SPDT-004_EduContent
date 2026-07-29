@@ -1,0 +1,205 @@
+{
+  "episode_id": "古史_变与局_ep04",
+  "series": "变与局",
+  "title": "蒙古帝国",
+  "total_scenes": 16,
+  "scenes": [
+    {
+      "scene_id": "古史_变与局_ep04_act1_00",
+      "scene_type": "concept",
+      "title": "1162年，蒙古草原上传来一声…",
+      "source_knowledge_nodes": [
+        "#变与局/1206-1279年",
+        "#历史/蒙古帝国",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_变与局_ep04_act1_01",
+      "scene_type": "concept",
+      "title": "将领：成吉思汗陛下，我们…",
+      "source_knowledge_nodes": [
+        "#变与局/1206-1279年",
+        "#历史/蒙古帝国",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_变与局_ep04_act1_02",
+      "scene_type": "action",
+      "title": "蒙古骑兵的核心优势不…",
+      "source_knowledge_nodes": [
+        "#变与局/1206-1279年",
+        "#历史/蒙古帝国",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "ACCEPTABLE"
+    },
+    {
+      "scene_id": "古史_变与局_ep04_act1_03",
+      "scene_type": "concept",
+      "title": "蒙古军队的战术原则：敌…",
+      "source_knowledge_nodes": [
+        "#变与局/1206-1279年",
+        "#历史/蒙古帝国",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_变与局_ep04_act2_04",
+      "scene_type": "concept",
+      "title": "1221年，蒙古军队攻占花剌子…",
+      "source_knowledge_nodes": [
+        "#变与局/1206-1279年",
+        "#历史/蒙古帝国",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_变与局_ep04_act2_05",
+      "scene_type": "concept",
+      "title": "使者（站在城墙上喊话）：城…",
+      "source_knowledge_nodes": [
+        "#变与局/1206-1279年",
+        "#历史/蒙古帝国",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_变与局_ep04_act2_06",
+      "scene_type": "action",
+      "title": "屠城不是野蛮，而是一种…",
+      "source_knowledge_nodes": [
+        "#变与局/1206-1279年",
+        "#历史/蒙古帝国",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "ACCEPTABLE"
+    },
+    {
+      "scene_id": "古史_变与局_ep04_act2_07",
+      "scene_type": "concept",
+      "title": "成吉思汗的战争哲学：最…",
+      "source_knowledge_nodes": [
+        "#变与局/1206-1279年",
+        "#历史/蒙古帝国",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "ACCEPTABLE"
+    },
+    {
+      "scene_id": "古史_变与局_ep04_act3_08",
+      "scene_type": "concept",
+      "title": "成吉思汗死于1227年，留下了…",
+      "source_knowledge_nodes": [
+        "#变与局/1206-1279年",
+        "#历史/蒙古帝国",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_变与局_ep04_act3_09",
+      "scene_type": "concept",
+      "title": "蒙古贵族（面带不满）：大汗…",
+      "source_knowledge_nodes": [
+        "#变与局/1206-1279年",
+        "#历史/蒙古帝国",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_变与局_ep04_act3_10",
+      "scene_type": "action",
+      "title": "元朝的统治困境：文化身…",
+      "source_knowledge_nodes": [
+        "#变与局/1206-1279年",
+        "#历史/蒙古帝国",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "ACCEPTABLE"
+    },
+    {
+      "scene_id": "古史_变与局_ep04_act3_11",
+      "scene_type": "concept",
+      "title": "元朝的四等人制度：蒙古…",
+      "source_knowledge_nodes": [
+        "#变与局/1206-1279年",
+        "#历史/蒙古帝国",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "ACCEPTABLE"
+    },
+    {
+      "scene_id": "古史_变与局_ep04_act4_12",
+      "scene_type": "concept",
+      "title": "1279年崖山之战，南宋最后的…",
+      "source_knowledge_nodes": [
+        "#变与局/1206-1279年",
+        "#历史/蒙古帝国",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_变与局_ep04_act4_13",
+      "scene_type": "quote_highlight",
+      "title": "元顺帝（看着眼前的奏折…",
+      "source_knowledge_nodes": [
+        "#变与局/1206-1279年",
+        "#历史/蒙古帝国",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "ACCEPTABLE"
+    },
+    {
+      "scene_id": "古史_变与局_ep04_act4_14",
+      "scene_type": "action",
+      "title": "元朝速亡的三大根源：民…",
+      "source_knowledge_nodes": [
+        "#变与局/1206-1279年",
+        "#历史/蒙古帝国",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "ACCEPTABLE"
+    },
+    {
+      "scene_id": "古史_变与局_ep04_act4_15",
+      "scene_type": "timeline",
+      "title": "忽必烈建立元朝时，满怀…",
+      "source_knowledge_nodes": [
+        "#变与局/1206-1279年",
+        "#历史/蒙古帝国",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "ACCEPTABLE"
+    }
+  ],
+  "stats": {
+    "total_beats": 16,
+    "total_scenes": 16,
+    "by_scene_type": {
+      "concept": 10,
+      "action": 4,
+      "quote_highlight": 1,
+      "timeline": 1
+    },
+    "by_knowledge_type": {
+      "I": 0,
+      "II": 0,
+      "III": 0,
+      "IV": 16
+    },
+    "cognitive_warnings": 8
+  },
+  "schema_version": "v2",
+  "if_a_path": "D:\\92_products\\SPDT-004_EduContent\\SPDT-KTE\\PT-038\\古史_变与局_ep04_test\\scenes_out\\scene_v2_full.json",
+  "validation_errors": 0,
+  "analogy_warnings": 0
+}

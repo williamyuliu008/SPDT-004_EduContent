@@ -1,0 +1,802 @@
+[
+  {
+    "script_id": "KB_CAFA_E001",
+    "error_type": "书法史常识错误",
+    "question_type": "选择题",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_S025",
+    "question": {
+      "conflict": {
+        "conflict": "小篆=秦代标准字体=李斯主持整理=笔画均匀对称圆转"
+      }
+    },
+    "answer": "小篆是秦代标准字体，笔画均匀对称，以圆转为主。",
+    "logic_chain": "小篆→秦→李斯→书同文→均匀对称圆转",
+    "mnemonic": "小篆均匀对称圆，书同文李斯筹",
+    "tags": [
+      "#学科/书法史",
+      "#模块/秦汉书法",
+      "#考频/⭐⭐⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E002",
+    "error_type": "书法史常识错误",
+    "question_type": "名词解释",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_S007",
+    "question": {
+      "conflict": {
+        "conflict": "六书=象形+指事+会意+形声+转注+假借"
+      }
+    },
+    "answer": "六书：象形、指事、会意、形声、转注、假借——是古人分析汉字造字方法的理论。",
+    "logic_chain": "六书=象形指事会意形声转注假借",
+    "mnemonic": "象形画物指事标，会意合成形声声，转注假借最难懂",
+    "tags": [
+      "#学科/书法史",
+      "#模块/文字学",
+      "#考频/⭐⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E003",
+    "error_type": "书法史常识错误",
+    "question_type": "连线题",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_S002",
+    "question": {
+      "conflict": {
+        "conflict": "颜筋柳骨=颜真卿（筋/沉厚）+柳公权（骨/瘦硬）"
+      }
+    },
+    "answer": "颜筋柳骨：颜真卿书法笔画沉厚有力（筋），柳公权书法笔画瘦硬有骨（骨）。",
+    "logic_chain": "颜筋=沉厚宽博；柳骨=瘦硬紧结",
+    "mnemonic": "颜肥柳瘦，筋骨有别",
+    "tags": [
+      "#学科/书法史",
+      "#模块/隋唐书法",
+      "#考频/⭐⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E004",
+    "error_type": "译篆错误",
+    "question_type": "填空题",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_T001",
+    "question": {
+      "conflict": {
+        "conflict": "斗争（简体）→鬥（繁体），非量器之「斗」"
+      }
+    },
+    "answer": "简体'斗争'的'斗'对应篆书繁体'鬥'，不是量器'斗'字。",
+    "logic_chain": "斗争→鬥（非量器）；量器→斗",
+    "mnemonic": "斗争不是量，鬥字莫认错",
+    "tags": [
+      "#学科/古代汉语",
+      "#模块/译篆",
+      "#考频/⭐⭐⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E005",
+    "error_type": "书法史常识错误",
+    "question_type": "选择题",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_S003",
+    "question": {
+      "conflict": {
+        "conflict": "《书谱》=孙过庭=唐代书法理论专著=草书墨迹=约3700字/前半部存世"
+      }
+    },
+    "answer": "《书谱》是孙过庭的书法理论专著，以草书写成，约3700字，后半部分亡佚。",
+    "logic_chain": "书谱=孙过庭=唐代=第一部书法理论专著=草书墨迹",
+    "mnemonic": "书谱草书写成，唐代理论孙过庭",
+    "tags": [
+      "#学科/书法史",
+      "#模块/书法理论",
+      "#考频/⭐⭐⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E006",
+    "error_type": "书法史常识错误",
+    "question_type": "比较题",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_S034",
+    "question": {
+      "conflict": {
+        "conflict": "二王比较：王羲之（内擛=向内收敛=平和蕴藉）vs王献之（外拓=向外展开=奇肆放纵）"
+      }
+    },
+    "answer": "王羲之内擛（向内收敛，风格平和），王献之外拓（向外展开，风格奇肆）。",
+    "logic_chain": "王羲之内擛，王献之外拓",
+    "mnemonic": "羲之内擛，献之外拓",
+    "tags": [
+      "#学科/书法史",
+      "#模块/魏晋书法",
+      "#考频/⭐⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E007",
+    "error_type": "译篆错误",
+    "question_type": "填空题",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_T035",
+    "question": {
+      "conflict": {
+        "conflict": "谷（山谷）≠穀（五谷）；含义不同"
+      }
+    },
+    "answer": "'山谷'的'谷'和'五谷'的'穀'是完全不同的两个字，不能混淆。",
+    "logic_chain": "山谷=谷；五谷=穀",
+    "mnemonic": "山谷是谷，五谷是穀",
+    "tags": [
+      "#学科/古代汉语",
+      "#模块/译篆",
+      "#考频/⭐⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E008",
+    "error_type": "书法史常识错误",
+    "question_type": "选择题",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_S001",
+    "question": {
+      "conflict": {
+        "conflict": "宋四家=苏轼+黄庭坚+米芾+蔡襄"
+      }
+    },
+    "answer": "宋四家指北宋四大书法家苏轼、黄庭坚、米芾、蔡襄，代表宋代书法最高成就。",
+    "logic_chain": "宋四家=苏黄米蔡",
+    "mnemonic": "宋四家苏黄米蔡",
+    "tags": [
+      "#学科/书法史",
+      "#模块/宋代书法",
+      "#考频/⭐⭐⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E009",
+    "error_type": "译篆错误",
+    "question_type": "填空题",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_T025",
+    "question": {
+      "conflict": {
+        "conflict": "复（复习/答复）≠複（复杂/复核）；含义不同"
+      }
+    },
+    "answer": "'复习''答复'用'复'，'复杂''复核'用'複'。",
+    "logic_chain": "复习=复；复杂=複",
+    "mnemonic": "复习用复，复杂用複",
+    "tags": [
+      "#学科/古代汉语",
+      "#模块/译篆",
+      "#考频/⭐⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E010",
+    "error_type": "书法史常识错误",
+    "question_type": "选择题",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_S042",
+    "question": {
+      "conflict": {
+        "conflict": "虞世南=圆润内敛=智永传授≠欧阳询的险劲"
+      }
+    },
+    "answer": "虞世南书法以圆润内敛著称，得智永传授；欧阳询书法以险劲著称。两者风格不同。",
+    "logic_chain": "虞世南=圆润内敛=智永传授≠欧阳询险劲",
+    "mnemonic": "虞圆润，欧阳险",
+    "tags": [
+      "#学科/书法史",
+      "#模块/隋唐书法",
+      "#考频/⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E011",
+    "error_type": "译篆错误",
+    "question_type": "填空题",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_T032",
+    "question": {
+      "conflict": {
+        "conflict": "发（出发）≠髮（头发）"
+      }
+    },
+    "answer": "'出发''发射'的'发'对应'髪'，'头发''毛发'的'髮'不同。",
+    "logic_chain": "出发=髪；头发=髮",
+    "mnemonic": "出发是髪，头发是髮",
+    "tags": [
+      "#学科/古代汉语",
+      "#模块/译篆",
+      "#考频/⭐⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E012",
+    "error_type": "书法史常识错误",
+    "question_type": "排序题",
+    "difficulty": "Lv3",
+    "trigger_kb_id": "KB_CAFA_S008",
+    "question": {
+      "conflict": {
+        "conflict": "三大行书排序：兰亭序（第一·353年·王羲之）→祭侄文稿（第二·758年·颜真卿）→寒食帖（第三·1082年·苏轼）"
+      }
+    },
+    "answer": "天下三大行书：第一兰亭序（王羲之·353年），第二祭侄文稿（颜真卿·758年），第三寒食帖（苏轼·1082年）。",
+    "logic_chain": "兰亭序→祭侄文稿→寒食帖",
+    "mnemonic": "一兰亭二祭侄三寒食",
+    "tags": [
+      "#学科/书法史",
+      "#模块/书法史综合",
+      "#考频/⭐⭐⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E013",
+    "error_type": "译篆错误",
+    "question_type": "填空题",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_T034",
+    "question": {
+      "conflict": {
+        "conflict": "须（必须）≠需（需求）；含义不同"
+      }
+    },
+    "answer": "'必须''胡须'的'须'和'需求''需要'的'需'含义不同，不能混淆。",
+    "logic_chain": "必须=須；需求=需",
+    "mnemonic": "必须用須，需求用需",
+    "tags": [
+      "#学科/古代汉语",
+      "#模块/译篆",
+      "#考频/⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E014",
+    "error_type": "书法史常识错误",
+    "question_type": "选择题",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_S027",
+    "question": {
+      "conflict": {
+        "conflict": "张迁碑（方峻雄强）≠曹全碑（秀美流畅）"
+      }
+    },
+    "answer": "张迁碑以方峻朴拙、气象雄强著称；曹全碑以秀美流畅、结体舒展著称。两者风格截然不同。",
+    "logic_chain": "张迁碑=方峻雄强；曹全碑=秀美流畅",
+    "mnemonic": "张迁方峻，曹全秀美",
+    "tags": [
+      "#学科/书法史",
+      "#模块/秦汉书法",
+      "#考频/⭐⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E015",
+    "error_type": "书法史常识错误",
+    "question_type": "名词解释",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_S062",
+    "question": {
+      "conflict": {
+        "conflict": "古质今妍：早期书法重质朴（古），后期书法重妍美（今）；这是历史规律，无优劣之分"
+      }
+    },
+    "answer": "'古质今妍'是孙过庭对书法史演变规律的高度概括：早期书法重质朴，后期书法重妍美，是历史趋势，非优劣之分。",
+    "logic_chain": "古质今妍=质朴→妍美=历史规律≠今不如古",
+    "mnemonic": "古质今妍述规律，今不如古是误解",
+    "tags": [
+      "#学科/书法史",
+      "#模块/书法理论",
+      "#考频/⭐⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E016",
+    "error_type": "书法史常识错误",
+    "question_type": "选择题",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_S006",
+    "question": {
+      "conflict": {
+        "conflict": "南北书派论=阮元（清代）=书法分为南北两派≠董其昌的画论南北宗论"
+      }
+    },
+    "answer": "南北书派论是清代阮元提出，将书法分为南北两派；董其昌的'南北宗论'是山水画理论，两者不同。",
+    "logic_chain": "南北书派论=阮元（书法）≠南北宗论=董其昌（画论）",
+    "mnemonic": "阮元书派，南北分；董其昌是画论",
+    "tags": [
+      "#学科/书法史",
+      "#模块/清代书法",
+      "#考频/⭐⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E017",
+    "error_type": "书法史常识错误",
+    "question_type": "名词解释",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_S008",
+    "question": {
+      "conflict": {
+        "conflict": "尚意书风：宋代书法以意为先，苏轼为核心代表；'我书意造本无法'是其宣言"
+      }
+    },
+    "answer": "尚意书风是宋代书法的核心追求，以意在笔先、抒发性情为旗帜，苏轼'我书意造本无法'是其宣言。",
+    "logic_chain": "尚意书风=宋代=意在笔先=苏轼",
+    "mnemonic": "尚意宋代苏轼创，我书法造本无法",
+    "tags": [
+      "#学科/书法史",
+      "#模块/宋代书法",
+      "#考频/⭐⭐⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E018",
+    "error_type": "译篆错误",
+    "question_type": "填空题",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_T033",
+    "question": {
+      "conflict": {
+        "conflict": "干（干涉）≠乾（干燥）≠幹（骨干）"
+      }
+    },
+    "answer": "'干涉''干戈'的'干'、'干净''干燥'的'乾'、'树干''骨干'的'幹'是三个完全不同的字。",
+    "logic_chain": "干戈=干；干燥=乾；骨干=幹",
+    "mnemonic": "干戈是干，干燥是乾，骨干是幹",
+    "tags": [
+      "#学科/古代汉语",
+      "#模块/译篆",
+      "#考频/⭐⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E019",
+    "error_type": "书法史常识错误",
+    "question_type": "选择题",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_S051",
+    "question": {
+      "conflict": {
+        "conflict": "赵孟頫=元代书法最高成就=复古=取法二王；非明代书法家"
+      }
+    },
+    "answer": "赵孟頫是元代书法家（非明代），以复古著称，主张直接取法二王。",
+    "logic_chain": "赵孟頫=元代≠明代；复古=取法二王",
+    "mnemonic": "赵孟頫是元代，复古取法二王",
+    "tags": [
+      "#学科/书法史",
+      "#模块/元代书法",
+      "#考频/⭐⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E020",
+    "error_type": "书法史常识错误",
+    "question_type": "名词解释",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_S031",
+    "question": {
+      "conflict": {
+        "conflict": "钟繇=三国魏书法家=楷书之祖=钟王并称；非书圣（书圣=王羲之）"
+      }
+    },
+    "answer": "钟繇是三国魏书法家，被称为'楷书之祖'，与王羲之并称'钟王'；'书圣'是王羲之。",
+    "logic_chain": "钟繇=楷书之祖=钟王≠书圣（书圣=王羲之）",
+    "mnemonic": "钟繇是楷书祖，书圣是王羲之",
+    "tags": [
+      "#学科/书法史",
+      "#模块/魏晋书法",
+      "#考频/⭐⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E021",
+    "error_type": "书法史常识错误",
+    "question_type": "名词解释",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_S112",
+    "question": {
+      "conflict": {
+        "conflict": "碑学=以金石碑刻为学习对象=邓石如/伊秉绶/阮元/康有为=与帖学相对"
+      }
+    },
+    "answer": "碑学是清代书法流派，以古代金石碑刻（如汉碑、北碑）为学习对象，与以法帖为主的帖学相对。",
+    "logic_chain": "碑学=金石碑刻=邓石如伊秉绶阮元康有为",
+    "mnemonic": "碑学学碑刻，学帖学法帖",
+    "tags": [
+      "#学科/书法史",
+      "#模块/碑学",
+      "#考频/⭐⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E022",
+    "error_type": "书法史常识错误",
+    "question_type": "选择题",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_S113",
+    "question": {
+      "conflict": {
+        "conflict": "帖学=以法帖（刻帖）为学习对象=二王书法体系=宋代以后主流"
+      }
+    },
+    "answer": "帖学是宋代以后以法帖（刻帖）为主要学习对象的书法流派，以二王书法为正宗。",
+    "logic_chain": "帖学=法帖=二王=宋代主流",
+    "mnemonic": "学帖要学二王法帖",
+    "tags": [
+      "#学科/书法史",
+      "#模块/帖学",
+      "#考频/⭐⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E023",
+    "error_type": "书法史常识错误",
+    "question_type": "名词解释",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_S117",
+    "question": {
+      "conflict": {
+        "conflict": "六书=象形+指事+会意+形声+转注+假借"
+      }
+    },
+    "answer": "六书是古人分析汉字造字方法的六种条例：象形、指事、会意、形声、转注、假借。出自《说文解字》。",
+    "logic_chain": "六书=象形指事会意形声转注假借",
+    "mnemonic": "象形画图指事标，会意合成形声找，转注假借最难搞",
+    "tags": [
+      "#学科/书法史",
+      "#模块/六书",
+      "#考频/⭐⭐⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E024",
+    "error_type": "书法史常识错误",
+    "question_type": "选择题",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_S081",
+    "question": {
+      "conflict": {
+        "conflict": "颜筋柳骨：颜真卿（筋=沉厚宽博）≠柳公权（骨=瘦硬紧结）"
+      }
+    },
+    "answer": "颜筋柳骨：颜体笔画沉厚宽博（筋），柳体笔画瘦硬紧结（骨）。",
+    "logic_chain": "颜筋=沉厚宽博；柳骨=瘦硬紧结",
+    "mnemonic": "颜肥柳瘦，筋骨有别",
+    "tags": [
+      "#学科/书法史",
+      "#模块/隋唐书法",
+      "#考频/⭐⭐⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E025",
+    "error_type": "书法史常识错误",
+    "question_type": "名词解释",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_S089",
+    "question": {
+      "conflict": {
+        "conflict": "宋四家=苏轼（韵）+黄庭坚（势）+米芾（趣）+蔡襄（法）"
+      }
+    },
+    "answer": "宋四家指北宋四大书法家：苏轼、黄庭坚、米芾、蔡襄，代表宋代书法最高成就。",
+    "logic_chain": "宋四家=苏黄米蔡",
+    "mnemonic": "宋四家苏黄米蔡，各有特点要记牢",
+    "tags": [
+      "#学科/书法史",
+      "#模块/宋代书法",
+      "#考频/⭐⭐⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E026",
+    "error_type": "书法史常识错误",
+    "question_type": "选择题",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_S103",
+    "question": {
+      "conflict": {
+        "conflict": "傅山四宁四毋=宁拙毋巧+宁丑毋媚+宁支离毋轻滑+宁直率毋安排"
+      }
+    },
+    "answer": "傅山的'四宁四毋'：宁拙毋巧，宁丑毋媚，宁支离毋轻滑，宁直率毋安排。",
+    "logic_chain": "四宁四毋=傅山=宁拙毋巧+宁丑毋媚+宁支离毋轻滑+宁直率毋安排",
+    "mnemonic": "四宁四毋傅山创，宁拙宁丑宁支离",
+    "tags": [
+      "#学科/书法史",
+      "#模块/清代书法",
+      "#考频/⭐⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E027",
+    "error_type": "书法史常识错误",
+    "question_type": "连线题",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_S008",
+    "question": {
+      "conflict": {
+        "conflict": "三大行书=兰亭序（第一·王羲之·353年）→祭侄文稿（第二·颜真卿·758年）→黄州寒食诗帖（第三·苏轼·1082年）"
+      }
+    },
+    "answer": "天下三大行书：第一兰亭序（王羲之·353年），第二祭侄文稿（颜真卿·758年），第三黄州寒食诗帖（苏轼·1082年）。",
+    "logic_chain": "兰亭序→祭侄文稿→黄州寒食诗帖",
+    "mnemonic": "一兰亭二祭侄三寒食",
+    "tags": [
+      "#学科/书法史",
+      "#模块/书法史综合",
+      "#考频/⭐⭐⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E028",
+    "error_type": "书法史常识错误",
+    "question_type": "名词解释",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_S115",
+    "question": {
+      "conflict": {
+        "conflict": "南北书派论=阮元（清代）=北骨南韵=书法史研究框架≠董其昌画论"
+      }
+    },
+    "answer": "南北书派论是清代阮元提出，将书法分为南北两派：北派重骨力，南派重韵味。",
+    "logic_chain": "南北书派论=阮元（清代）=北骨南韵≠董其昌（画论）",
+    "mnemonic": "阮元书派论，南北分骨韵",
+    "tags": [
+      "#学科/书法史",
+      "#模块/清代书法",
+      "#考频/⭐⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E029",
+    "error_type": "书法史常识错误",
+    "question_type": "选择题",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_S132",
+    "question": {
+      "conflict": {
+        "conflict": "章草=隶书快写=保留波磔=字字独立；今草=章草演变=去掉波磔=纵向连绵"
+      }
+    },
+    "answer": "章草是隶书的快写体，保留隶书的波磔特征，字字独立；今草从章草演变而来，去掉波磔，笔画纵向连绵。",
+    "logic_chain": "章草=隶书快写=保留波磔=字字独立；今草=去波磔=纵向连绵",
+    "mnemonic": "章草保波磔，今草纵向连",
+    "tags": [
+      "#学科/书法史",
+      "#模块/书体演变",
+      "#考频/⭐⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E030",
+    "error_type": "书法史常识错误",
+    "question_type": "名词解释",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_S126",
+    "question": {
+      "conflict": {
+        "conflict": "篆书识别三要素：①笔画均匀无粗细变化②结体对称均衡③圆转无方折"
+      }
+    },
+    "answer": "篆书识别的三个要点：①笔画均匀无粗细变化；②结体对称均衡；③圆转为主，无方折。",
+    "logic_chain": "篆书=均匀+对称+圆转",
+    "mnemonic": "篆书均匀对称圆",
+    "tags": [
+      "#学科/书法理论",
+      "#模块/书体辨识",
+      "#考频/⭐⭐⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E031",
+    "error_type": "书法史常识错误",
+    "question_type": "选择题",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_S127",
+    "question": {
+      "conflict": {
+        "conflict": "隶书识别三要素：①横画有波磔（一波三折）②结体扁方③竖画挺直"
+      }
+    },
+    "answer": "隶书识别的三个要点：①横画有波磔（一波三折）；②结体扁方；③竖画挺直无弧。",
+    "logic_chain": "隶书=波磔+扁方+竖直",
+    "mnemonic": "隶书波磔扁方竖直",
+    "tags": [
+      "#学科/书法理论",
+      "#模块/书体辨识",
+      "#考频/⭐⭐⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E032",
+    "error_type": "译篆错误",
+    "question_type": "填空题",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_T061",
+    "question": {
+      "conflict": {
+        "conflict": "秋（秋季）≠鞦（鞭鞦）；含义完全不同"
+      }
+    },
+    "answer": "'秋季'的'秋'和'鞭鞦'的'鞦'是完全不同的两个字。",
+    "logic_chain": "秋季=秋；鞭鞦=鞦",
+    "mnemonic": "秋季是秋，鞭鞦是鞦",
+    "tags": [
+      "#学科/古代汉语",
+      "#模块/译篆",
+      "#考频/⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E033",
+    "error_type": "译篆错误",
+    "question_type": "填空题",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_T063",
+    "question": {
+      "conflict": {
+        "conflict": "梁（桥梁/姓氏）≠樑（屋梁）"
+      }
+    },
+    "answer": "'桥梁'的'梁'和'屋梁'的'樑'在篆书里是两个字，不能混淆。",
+    "logic_chain": "桥梁=梁；屋梁=樑",
+    "mnemonic": "桥是梁，屋是樑",
+    "tags": [
+      "#学科/古代汉语",
+      "#模块/译篆",
+      "#考频/⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E034",
+    "error_type": "译篆错误",
+    "question_type": "填空题",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_T072",
+    "question": {
+      "conflict": {
+        "conflict": "曲（弯曲）≠麯（酒曲）"
+      }
+    },
+    "answer": "'曲折'的'曲'和'酒曲'的'麯'含义完全不同。",
+    "logic_chain": "曲折=曲；酒曲=麯",
+    "mnemonic": "曲折是曲，酒曲是麯",
+    "tags": [
+      "#学科/古代汉语",
+      "#模块/译篆",
+      "#考频/⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E035",
+    "error_type": "译篆错误",
+    "question_type": "填空题",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_T085",
+    "question": {
+      "conflict": {
+        "conflict": "术（白术/药名）≠術（技术）"
+      }
+    },
+    "answer": "'技术'的'术'和'白术'的'术'在篆书里不同。",
+    "logic_chain": "技术=術；白术=术",
+    "mnemonic": "技术是術，白术是术",
+    "tags": [
+      "#学科/古代汉语",
+      "#模块/译篆",
+      "#考频/⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E036",
+    "error_type": "译篆错误",
+    "question_type": "填空题",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_T086",
+    "question": {
+      "conflict": {
+        "conflict": "松（松树）≠鬆（松弛）"
+      }
+    },
+    "answer": "'松树'的'松'和'松弛'的'鬆'在篆书里是两个字。",
+    "logic_chain": "松树=松；松弛=鬆",
+    "mnemonic": "放松用鬆，松树用松",
+    "tags": [
+      "#学科/古代汉语",
+      "#模块/译篆",
+      "#考频/⭐⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E037",
+    "error_type": "译篆错误",
+    "question_type": "填空题",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_T061",
+    "question": {
+      "conflict": {
+        "conflict": "秋≠鞦；秋=秋季；鞦=鞭鞦"
+      }
+    },
+    "answer": "'秋季'写'秋'，'鞭鞦'写'鞦'，两字含义完全不同。",
+    "logic_chain": "秋季=秋；鞭鞦=鞦",
+    "mnemonic": "秋季是秋，鞭鞦是鞦",
+    "tags": [
+      "#学科/古代汉语",
+      "#模块/译篆",
+      "#考频/⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E038",
+    "error_type": "书法史常识错误",
+    "question_type": "选择题",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_S133",
+    "question": {
+      "conflict": {
+        "conflict": "狂草=今草极端=极度连绵简省=张旭/怀素"
+      }
+    },
+    "answer": "狂草是今草的极端发展，笔画极度连绵简省，以张旭、怀素为代表。",
+    "logic_chain": "狂草=今草极端=张旭/怀素",
+    "mnemonic": "颠张醉素是狂草",
+    "tags": [
+      "#学科/书法史",
+      "#模块/书体演变",
+      "#考频/⭐⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E039",
+    "error_type": "书法史常识错误",
+    "question_type": "名词解释",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_S115",
+    "question": {
+      "conflict": {
+        "conflict": "南北书派论≠南北宗论：书派论是阮元（书法），南北宗论是董其昌（山水画）"
+      }
+    },
+    "answer": "南北书派论是阮元提出的书法分派理论；南北宗论是董其昌提出的山水画分派理论。两者不同。",
+    "logic_chain": "南北书派论=阮元（书法）≠南北宗论=董其昌（画）",
+    "mnemonic": "阮元书派，南北分；董其昌是画论",
+    "tags": [
+      "#学科/书法史",
+      "#模块/书法理论",
+      "#考频/⭐⭐⭐⭐"
+    ]
+  },
+  {
+    "script_id": "KB_CAFA_E040",
+    "error_type": "书法史常识错误",
+    "question_type": "选择题",
+    "difficulty": "Lv2",
+    "trigger_kb_id": "KB_CAFA_S117",
+    "question": {
+      "conflict": {
+        "conflict": "六书分类：象形/指事/会意/形声=造字法；转注/假借=用字法"
+      }
+    },
+    "answer": "六书中，象形、指事、会意、形声是造字法，转注、假借是用字法。",
+    "logic_chain": "四体为造字，两法为用字",
+    "mnemonic": "四造二用要记牢",
+    "tags": [
+      "#学科/书法史",
+      "#模块/六书",
+      "#考频/⭐⭐⭐⭐"
+    ]
+  }
+]

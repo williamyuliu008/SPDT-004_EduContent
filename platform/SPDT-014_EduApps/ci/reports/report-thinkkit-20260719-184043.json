@@ -1,0 +1,76 @@
+﻿{
+    "summary":  {
+                    "total_unsigned_kb":  0,
+                    "total_signed_kb":  0,
+                    "compiled":  9,
+                    "total":  9,
+                    "signed":  9
+                },
+    "brand":  "thinkkit",
+    "timestamp":  "2026-07-19 18:40:43",
+    "apps":  [
+                 {
+                     "unsigned_kb":  343.8,
+                     "app":  "thinkkit-coach",
+                     "signed_kb":  384,
+                     "compiled":  true,
+                     "signed":  true
+                 },
+                 {
+                     "unsigned_kb":  427.3,
+                     "app":  "thinkkit-flashcard",
+                     "signed_kb":  427.3,
+                     "compiled":  true,
+                     "signed":  true
+                 },
+                 {
+                     "unsigned_kb":  20.8,
+                     "app":  "thinkkit-flashcard2",
+                     "signed_kb":  20.8,
+                     "compiled":  true,
+                     "signed":  true
+                 },
+                 {
+                     "unsigned_kb":  187.7,
+                     "app":  "thinkkit-mindmap",
+                     "signed_kb":  226.1,
+                     "compiled":  true,
+                     "signed":  true
+                 },
+                 {
+                     "unsigned_kb":  20.8,
+                     "app":  "thinkkit-note",
+                     "signed_kb":  56.9,
+                     "compiled":  true,
+                     "signed":  true
+                 },
+                 {
+                     "unsigned_kb":  135.2,
+                     "app":  "thinkkit-quiz",
+                     "signed_kb":  168.4,
+                     "compiled":  true,
+                     "signed":  true
+                 },
+                 {
+                     "unsigned_kb":  110.8,
+                     "app":  "thinkkit-reader",
+                     "signed_kb":  145.2,
+                     "compiled":  true,
+                     "signed":  true
+                 },
+                 {
+                     "unsigned_kb":  20.8,
+                     "app":  "thinkkit-rss",
+                     "signed_kb":  20.8,
+                     "compiled":  true,
+                     "signed":  true
+                 },
+                 {
+                     "unsigned_kb":  419,
+                     "app":  "thinkkit-zknote",
+                     "signed_kb":  419,
+                     "compiled":  true,
+                     "signed":  true
+                 }
+             ]
+}

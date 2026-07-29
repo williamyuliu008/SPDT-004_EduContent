@@ -1,0 +1,205 @@
+{
+  "episode_id": "古史_变与局_ep01",
+  "series": "变与局",
+  "title": "宋的困局",
+  "total_scenes": 16,
+  "scenes": [
+    {
+      "scene_id": "古史_变与局_ep01_act1_00",
+      "scene_type": "concept",
+      "title": "显德七年（960年）正月初三，后…",
+      "source_knowledge_nodes": [
+        "#变与局/960-1127年",
+        "#历史/宋的困局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_变与局_ep01_act1_01",
+      "scene_type": "concept",
+      "title": "赵普：\n殿下，今日之事，宜早…",
+      "source_knowledge_nodes": [
+        "#变与局/960-1127年",
+        "#历史/宋的困局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_变与局_ep01_act1_02",
+      "scene_type": "causal_chain",
+      "title": "陈桥兵变不是偶然的军…",
+      "source_knowledge_nodes": [
+        "#变与局/960-1127年",
+        "#历史/宋的困局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "ACCEPTABLE"
+    },
+    {
+      "scene_id": "古史_变与局_ep01_act1_03",
+      "scene_type": "causal_chain",
+      "title": "《宋史·太祖本纪》：“陈桥兵变…",
+      "source_knowledge_nodes": [
+        "#变与局/960-1127年",
+        "#历史/宋的困局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "ACCEPTABLE"
+    },
+    {
+      "scene_id": "古史_变与局_ep01_act2_04",
+      "scene_type": "concept",
+      "title": "建隆二年（961年）七月，一个普…",
+      "source_knowledge_nodes": [
+        "#变与局/960-1127年",
+        "#历史/宋的困局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_变与局_ep01_act2_05",
+      "scene_type": "concept",
+      "title": "赵匡胤：\n诸位都是与我出…",
+      "source_knowledge_nodes": [
+        "#变与局/960-1127年",
+        "#历史/宋的困局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_变与局_ep01_act2_06",
+      "scene_type": "action",
+      "title": "杯酒释兵权的政治智慧…",
+      "source_knowledge_nodes": [
+        "#变与局/960-1127年",
+        "#历史/宋的困局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "ACCEPTABLE"
+    },
+    {
+      "scene_id": "古史_变与局_ep01_act2_07",
+      "scene_type": "concept",
+      "title": "《续资治通鉴长编》卷二：“今…",
+      "source_knowledge_nodes": [
+        "#变与局/960-1127年",
+        "#历史/宋的困局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "ACCEPTABLE"
+    },
+    {
+      "scene_id": "古史_变与局_ep01_act3_08",
+      "scene_type": "causal_chain",
+      "title": "杯酒释兵权只是赵匡胤…",
+      "source_knowledge_nodes": [
+        "#变与局/960-1127年",
+        "#历史/宋的困局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_变与局_ep01_act3_09",
+      "scene_type": "concept",
+      "title": "宋太宗：\n国家若无外忧，必…",
+      "source_knowledge_nodes": [
+        "#变与局/960-1127年",
+        "#历史/宋的困局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_变与局_ep01_act3_10",
+      "scene_type": "quote_highlight",
+      "title": "宋太宗的名言“国家若无…",
+      "source_knowledge_nodes": [
+        "#变与局/960-1127年",
+        "#历史/宋的困局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "ACCEPTABLE"
+    },
+    {
+      "scene_id": "古史_变与局_ep01_act3_11",
+      "scene_type": "concept",
+      "title": "陈傅良《历代兵制》卷七：“宋…",
+      "source_knowledge_nodes": [
+        "#变与局/960-1127年",
+        "#历史/宋的困局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "ACCEPTABLE"
+    },
+    {
+      "scene_id": "古史_变与局_ep01_act4_12",
+      "scene_type": "concept",
+      "title": "景德元年（1004年）秋，辽圣宗萧…",
+      "source_knowledge_nodes": [
+        "#变与局/960-1127年",
+        "#历史/宋的困局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_变与局_ep01_act4_13",
+      "scene_type": "concept",
+      "title": "宋真宗（面露惧色）：\n寇准，你…",
+      "source_knowledge_nodes": [
+        "#变与局/960-1127年",
+        "#历史/宋的困局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_变与局_ep01_act4_14",
+      "scene_type": "action",
+      "title": "澶渊之盟：每年三十万两…",
+      "source_knowledge_nodes": [
+        "#变与局/960-1127年",
+        "#历史/宋的困局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "ACCEPTABLE"
+    },
+    {
+      "scene_id": "古史_变与局_ep01_act4_15",
+      "scene_type": "concept",
+      "title": "《宋史·寇准传》：“澶渊之役，准…",
+      "source_knowledge_nodes": [
+        "#变与局/960-1127年",
+        "#历史/宋的困局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    }
+  ],
+  "stats": {
+    "total_beats": 16,
+    "total_scenes": 16,
+    "by_scene_type": {
+      "concept": 10,
+      "causal_chain": 3,
+      "action": 2,
+      "quote_highlight": 1
+    },
+    "by_knowledge_type": {
+      "I": 0,
+      "II": 16,
+      "III": 0,
+      "IV": 0
+    },
+    "cognitive_warnings": 9
+  },
+  "schema_version": "v2",
+  "if_a_path": "D:\\92_products\\SPDT-004_EduContent\\SPDT-KTE\\PT-038\\古史_变与局_ep01_test\\scenes_out\\scene_v2_full.json",
+  "validation_errors": 0,
+  "analogy_warnings": 0
+}

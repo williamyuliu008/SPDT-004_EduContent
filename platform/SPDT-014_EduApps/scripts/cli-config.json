@@ -1,0 +1,37 @@
+﻿{
+    "sdkHome":  "D:\\\\9_infra\\\\DevEco\\\\6.1\\\\sdk",
+    "javaHome":  "D:\\\\9_infra\\\\DevEco\\\\6.1\\\\jbr",
+    "workspace":  "D:\\92_products\\SPDT-001_Harmony",
+    "appsDir":  "D:\\92_products\\SPDT-001_Harmony\\apps",
+    "defaultDevice":  "7GL0226313016118",
+    "buildMode":  "debug",
+    "signConfig":  "auto",
+    "omasRegistry":  "D:\\6_agent_project\\omas\\tools\\registry_checker.py",
+    "brands":  {
+                   "thinkkit":  {
+                                    "prefix":  "thinkkit-",
+                                    "color":  "#5B8C5A",
+                                    "omas":  "HDT-001-TK"
+                                },
+                   "craftsman":  {
+                                     "prefix":  "craftsman-",
+                                     "color":  "#E87A2A",
+                                     "omas":  "HDT-001-CM"
+                                 },
+                   "harmonycoder":  {
+                                        "prefix":  "harmonycoder",
+                                        "color":  "#7B2D8E",
+                                        "omas":  "HDT-001-HC"
+                                    },
+                   "rhythm":  {
+                                  "prefix":  "rhythm-",
+                                  "color":  "#3B82B0",
+                                  "omas":  "HDT-001-RH"
+                              },
+                   "gaokao":  {
+                                  "prefix":  "gaokao-",
+                                  "color":  "#C44536",
+                                  "omas":  "HDT-001-GK"
+                              }
+               }
+}

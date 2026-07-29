@@ -1,0 +1,245 @@
+{
+  "schema_version": "1.0.0",
+  "package_id": "墨骨山河_EP01",
+  "series_title": "墨骨山河",
+  "total_episodes": 1,
+  "produced_by": "PT-VFX",
+  "produced_at": "2026-07-20T01:58:16+08:00",
+  "episodes": [
+    {
+      "ep": 1,
+      "title": "峄山碑前",
+      "subtitle": "李斯·小篆的秩序与第一道名字",
+      "video_file": "墨骨山河_ep01.mp4",
+      "duration_seconds": 162.4,
+      "resolution": "1080p",
+      "bitrate_kbps": 2000,
+      "chains": [
+        "墨骨山河_ep01"
+      ],
+      "scene_timeline": [
+        {
+          "idx": 0,
+          "time": 0.0,
+          "scene_name": "前221年，秦王嬴政，完成了中…",
+          "scene_type": "concept",
+          "chain_ref": "墨骨山河_ep01",
+          "five_skandha": {
+            "color_base": [
+              "前221年",
+              "秦王",
+              "秦王嬴",
+              "秦王嬴政"
+            ],
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#历史/秦/统一"
+          }
+        },
+        {
+          "idx": 1,
+          "time": 13.5,
+          "scene_name": "秦王站在咸阳宫的高台…",
+          "scene_type": "concept",
+          "chain_ref": "墨骨山河_ep01",
+          "five_skandha": {
+            "color_base": [
+              "秦王",
+              "秦王站",
+              "秦王站在",
+              "秦王站在咸"
+            ],
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#书法/背景/六国文字差异"
+          }
+        },
+        {
+          "idx": 2,
+          "time": 28.5,
+          "scene_name": "秦王点头，提笔在竹简上…",
+          "scene_type": "concept",
+          "chain_ref": "墨骨山河_ep01",
+          "five_skandha": {
+            "color_base": [
+              "秦王",
+              "秦王点",
+              "秦王点头",
+              "提笔"
+            ],
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#书法/背景/书同文"
+          }
+        },
+        {
+          "idx": 3,
+          "time": 45.8,
+          "scene_name": "【历史+书法连线题】请将以…",
+          "scene_type": "contrast",
+          "chain_ref": "墨骨山河_ep01",
+          "five_skandha": {
+            "color_base": [
+              "【历史",
+              "【历史+",
+              "【历史+书",
+              "【历史+书法"
+            ],
+            "action_prompt": "判断/选择",
+            "recognition_marker": "#历史/秦/统一措施"
+          }
+        },
+        {
+          "idx": 4,
+          "time": 61.9,
+          "scene_name": "前219年，峄山",
+          "scene_type": "concept",
+          "chain_ref": "墨骨山河_ep01",
+          "five_skandha": {
+            "color_base": [
+              "前219年",
+              "峄山",
+              "工匠",
+              "工匠们"
+            ],
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#书法/秦/峄山刻石"
+          }
+        },
+        {
+          "idx": 5,
+          "time": 76.5,
+          "scene_name": "李斯凝视着石面，开始在…",
+          "scene_type": "concept",
+          "chain_ref": "墨骨山河_ep01",
+          "five_skandha": {
+            "color_base": [
+              "李斯",
+              "李斯凝",
+              "李斯凝视",
+              "李斯凝视着"
+            ],
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#书法/秦/小篆特征"
+          }
+        },
+        {
+          "idx": 6,
+          "time": 89.4,
+          "scene_name": "【小篆特征识别题】以下哪…",
+          "scene_type": "word_evolution",
+          "chain_ref": "墨骨山河_ep01",
+          "five_skandha": {
+            "color_base": [
+              "【小篆",
+              "【小篆特",
+              "【小篆特征",
+              "【小篆特征识"
+            ],
+            "action_prompt": "判断/选择",
+            "recognition_marker": "#书法/秦/小篆特征辨析"
+          }
+        },
+        {
+          "idx": 7,
+          "time": 94.4,
+          "scene_name": "【译篆练习】峄山碑开头的…",
+          "scene_type": "word_evolution",
+          "chain_ref": "墨骨山河_ep01",
+          "five_skandha": {
+            "color_base": [
+              "【译篆",
+              "【译篆练",
+              "【译篆练习",
+              "【译篆练习】"
+            ],
+            "action_prompt": "判断/选择",
+            "recognition_marker": "#古汉语/译篆/小篆字形"
+          }
+        },
+        {
+          "idx": 8,
+          "time": 99.4,
+          "scene_name": "峄山碑刻成",
+          "scene_type": "concept",
+          "chain_ref": "墨骨山河_ep01",
+          "five_skandha": {
+            "color_base": [
+              "峄山",
+              "峄山碑",
+              "峄山碑刻",
+              "峄山碑刻成"
+            ],
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#书法/美学/秩序美"
+          }
+        },
+        {
+          "idx": 9,
+          "time": 111.7,
+          "scene_name": "【六书分类判断】请判断以…",
+          "scene_type": "steps",
+          "chain_ref": "墨骨山河_ep01",
+          "five_skandha": {
+            "color_base": [
+              "【六书",
+              "【六书分",
+              "【六书分类",
+              "【六书分类判"
+            ],
+            "action_prompt": "判断/选择",
+            "recognition_marker": "#古汉语/六书/分类判断"
+          }
+        },
+        {
+          "idx": 10,
+          "time": 147.4,
+          "scene_name": "画面从峄山之巅收回，回…",
+          "scene_type": "contrast",
+          "chain_ref": "墨骨山河_ep01",
+          "five_skandha": {
+            "color_base": [
+              "画面",
+              "画面从",
+              "画面从峄",
+              "画面从峄山"
+            ],
+            "action_prompt": "口述/复述",
+            "recognition_marker": "画面从峄山之巅收回，回到现代"
+          }
+        },
+        {
+          "idx": 11,
+          "time": 152.4,
+          "scene_name": "【综合论述题】\n\n请结合秦代…",
+          "scene_type": "causal_chain",
+          "chain_ref": "墨骨山河_ep01",
+          "five_skandha": {
+            "color_base": [
+              "【综合",
+              "【综合论",
+              "【综合论述",
+              "【综合论述题"
+            ],
+            "action_prompt": "判断/选择",
+            "recognition_marker": "#综合/秦+书法/书同文论述"
+          }
+        },
+        {
+          "idx": 12,
+          "time": 157.4,
+          "scene_name": "你合上字帖，望向窗外",
+          "scene_type": "contrast",
+          "chain_ref": "墨骨山河_ep01",
+          "five_skandha": {
+            "color_base": [
+              "你合",
+              "你合上",
+              "你合上字",
+              "你合上字帖"
+            ],
+            "action_prompt": "口述/复述",
+            "recognition_marker": "你合上字帖，望向窗外"
+          }
+        }
+      ]
+    }
+  ]
+}

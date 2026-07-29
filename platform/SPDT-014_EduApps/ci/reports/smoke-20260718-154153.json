@@ -1,0 +1,67 @@
+{
+  "timestamp": "20260718-154153",
+  "device": "7GL0226313016118",
+  "agent_mode": true,
+  "pass": 2,
+  "fail": 1,
+  "skip": 2,
+  "results": [
+    {
+      "app": "thinkkit-coach",
+      "status": "PASS",
+      "build": true,
+      "install": true,
+      "launch": true,
+      "prefs": "Storage accessible (no explicit prefs)",
+      "http": "No INTERNET (not required)",
+      "battery": "Battery API: N/A",
+      "error": "",
+      "duration_s": 4.8
+    },
+    {
+      "app": "craftsman-arkui",
+      "status": "PASS",
+      "build": true,
+      "install": true,
+      "launch": true,
+      "prefs": "Storage accessible (no explicit prefs)",
+      "http": "No INTERNET (not required)",
+      "battery": "Battery API: N/A",
+      "error": "",
+      "duration_s": 4.9
+    },
+    {
+      "app": "harmonycoder",
+      "status": "SKIP",
+      "build": false,
+      "install": false,
+      "launch": false,
+      "prefs": "",
+      "http": "",
+      "battery": "",
+      "error": "No signing config"
+    },
+    {
+      "app": "rhythm-habit",
+      "status": "SKIP",
+      "build": false,
+      "install": false,
+      "launch": false,
+      "prefs": "",
+      "http": "",
+      "battery": "",
+      "error": "No signing config"
+    },
+    {
+      "app": "gaokao-agent",
+      "status": "FAIL",
+      "build": false,
+      "install": false,
+      "launch": false,
+      "prefs": "",
+      "http": "",
+      "battery": "",
+      "error": "Build: 05038 ArkTS Compiler Error\nError Message: Object literal must correspond to some explicitly declared"
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "schema_version": "1.0.0",
+  "package_id": "革与鼎_EP02",
+  "series_title": "革与鼎",
+  "total_episodes": 1,
+  "produced_by": "PT-VFX",
+  "produced_at": "2026-07-16T19:22:07+08:00",
+  "source_episodes_dir": "D:\\92_products\\SPDT-004_EduContent\\SPDT-KTE\\PT-038\\古史_革与鼎_ep02_test\\scenes_out",
+  "episodes": [
+    {
+      "ep": 2,
+      "title": "百家争鸣",
+      "subtitle": "孔子·老子·墨子",
+      "video_file": "gushi_革与鼎_ep02_百家争鸣.mp4",
+      "audio_file": "",
+      "duration_seconds": 88.0,
+      "resolution": "720p",
+      "bitrate_kbps": 2000,
+      "chains": [
+        "古史_革与鼎_ep02"
+      ],
+      "cards_file": "",
+      "scene_timeline": [
+        {
+          "idx": 0,
+          "time": 0.0,
+          "scene_name": "这个故事出自《左传》，它的…",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep02",
+          "five_skandha": {
+            "color_base": "这个 / 这个故 / 这个故事 / 这个故事出",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/前551-前479年（孔子生平）"
+          }
+        },
+        {
+          "idx": 1,
+          "time": 8.0,
+          "scene_name": "【孔子的困惑】\n\n\n\n孔子对学生…",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep02",
+          "five_skandha": {
+            "color_base": "【孔子 / 【孔子的 / 【孔子的困 / 【孔子的困惑",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/前551-前479年（孔子生平）"
+          }
+        },
+        {
+          "idx": 2,
+          "time": 16.0,
+          "scene_name": "但孔子不只是在'考古'——他…",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep02",
+          "five_skandha": {
+            "color_base": "但孔 / 但孔子 / 但孔子不 / 但孔子不只",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/前551-前479年（孔子生平）"
+          }
+        },
+        {
+          "idx": 3,
+          "time": 24.0,
+          "scene_name": "孔子周游列国失败的深…",
+          "scene_type": "timeline",
+          "chain_ref": "古史_革与鼎_ep02",
+          "five_skandha": {
+            "color_base": "孔子 / 孔子周 / 孔子周游 / 孔子周游列",
+            "action_prompt": "书写/口述",
+            "recognition_marker": "#革与鼎/前551-前479年（孔子生平）"
+          }
+        },
+        {
+          "idx": 4,
+          "time": 32.0,
+          "scene_name": "为什么百家争鸣发生在…",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep02",
+          "five_skandha": {
+            "color_base": "为什 / 为什么百 / 为什么百家 / 为什么百家争",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/前551-前479年（孔子生平）"
+          }
+        },
+        {
+          "idx": 5,
+          "time": 40.0,
+          "scene_name": "儒家的答案是：重建礼乐",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep02",
+          "five_skandha": {
+            "color_base": "儒家 / 儒家的 / 儒家的答 / 儒家的答案",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/前551-前479年（孔子生平）"
+          }
+        },
+        {
+          "idx": 6,
+          "time": 48.0,
+          "scene_name": "道家的答案是：无为",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep02",
+          "five_skandha": {
+            "color_base": "道家 / 道家的 / 道家的答 / 道家的答案",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/前551-前479年（孔子生平）"
+          }
+        },
+        {
+          "idx": 7,
+          "time": 56.0,
+          "scene_name": "百家争鸣的各家，本质上…",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep02",
+          "five_skandha": {
+            "color_base": "百家 / 百家争 / 百家争鸣 / 百家争鸣的",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/前551-前479年（孔子生平）"
+          }
+        },
+        {
+          "idx": 8,
+          "time": 64.0,
+          "scene_name": "道家的'无为而治'，在今天…",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep02",
+          "five_skandha": {
+            "color_base": "道家 / 道家的 / 道家的' / 道家的'无",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/前551-前479年（孔子生平）"
+          }
+        },
+        {
+          "idx": 9,
+          "time": 72.0,
+          "scene_name": "高考考点提示：百家争鸣…",
+          "scene_type": "action",
+          "chain_ref": "古史_革与鼎_ep02",
+          "five_skandha": {
+            "color_base": "高考 / 高考考 / 高考考点 / 高考考点提",
+            "action_prompt": "书写/口述",
+            "recognition_marker": "#革与鼎/前551-前479年（孔子生平）"
+          }
+        },
+        {
+          "idx": 10,
+          "time": 80.0,
+          "scene_name": "最后，说一个可能被忽视…",
+          "scene_type": "concept",
+          "chain_ref": "古史_革与鼎_ep02",
+          "five_skandha": {
+            "color_base": "最后 / 说一 / 说一个 / 说一个可",
+            "action_prompt": "口述/复述",
+            "recognition_marker": "#革与鼎/前551-前479年（孔子生平）"
+          }
+        }
+      ]
+    }
+  ]
+}

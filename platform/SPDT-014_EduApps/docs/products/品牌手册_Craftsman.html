@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Craftsman 品牌手册 — SPDT-001</title>
+<style>
+  :root {
+    --brand: #E87A2A;
+    --brand-light: #FDE3D0;
+    --brand-bg: #FFF8F2;
+    --text: #3E1A00;
+    --text-sec: #8A5A3A;
+    --text-ter: #B88A6A;
+    --card: #FFFFFF;
+    --border: #FDE3D0;
+    --accent: #FF9E4A;
+    --warn: #FF9800;
+    --error: #F44336;
+    --radius: 10px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #F2F5F2; color: var(--text); line-height: 1.7;
+    max-width: 960px; margin: 0 auto; padding: 0 24px 80px;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #964f1b 100%);
+    color: #fff; border-radius: 0 0 20px 20px;
+    margin: 0 -24px 32px; padding: 48px 32px 40px;
+  }
+  .hero h1 { font-size: 2em; font-weight: 700; margin-bottom: 4px; }
+  .hero .subtitle { opacity: .85; font-size: 1.05em; margin-bottom: 16px; }
+  .hero .meta { display: flex; gap: 16px; flex-wrap: wrap; font-size: .88em; opacity: .75; }
+  .hero .meta span { background: rgba(255,255,255,.15); padding: 3px 12px; border-radius: 20px; }
+  .hero .badges { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+  .hero .badge {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: rgba(255,255,255,.2); padding: 5px 14px; border-radius: 20px; font-size: .85em;
+  }
+  .hero .badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #4CAF50; }
+
+  section { margin-bottom: 36px; }
+  h2 {
+    font-size: 1.35em; color: var(--brand); border-bottom: 2px solid var(--brand-light);
+    padding-bottom: 6px; margin-bottom: 16px;
+  }
+  h3 {
+    font-size: 1.1em; color: var(--text); margin: 16px 0 11px;
+    padding-left: 10px; border-left: 3px solid var(--brand);
+  }
+
+  table {
+    width: 100%; border-collapse: collapse; margin: 10px 0 18px;
+    font-size: .88em; border-radius: var(--radius); overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  }
+  th {
+    background: var(--brand); color: #fff; padding: 8px 12px;
+    text-align: left; font-weight: 600; white-space: nowrap;
+  }
+  td {
+    padding: 8px 12px; border-bottom: 1px solid var(--border);
+    background: var(--card); vertical-align: top;
+  }
+  tr:last-child td { border-bottom: none; }
+
+  code {
+    background: var(--brand-bg); color: var(--brand);
+    padding: 2px 6px; border-radius: 4px; font-size: .88em;
+    font-family: "Fira Code", "Cascadia Code", "Source Code Pro", monospace;
+  }
+  pre {
+    background: #1E1E1E; color: #D4D4D4; padding: 14px 18px;
+    border-radius: var(--radius); overflow-x: auto; margin: 8px 0 16px;
+    font-size: .82em; line-height: 1.5;
+  }
+  pre code { background: none; color: inherit; padding: 0; }
+
+  blockquote {
+    border-left: 4px solid var(--brand); background: var(--brand-bg);
+    padding: 10px 16px; margin: 6px 0 12px;
+    border-radius: 0 8px 8px 0; color: var(--text-sec); font-size: .93em;
+  }
+  a { color: var(--brand); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  ul, ol { padding-left: 24px; margin: 4px 0 10px; }
+  li { margin-bottom: 3px; }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+
+  .footer {
+    text-align: center; color: var(--text-ter); font-size: .85em;
+    padding: 20px 0 0; border-top: 1px solid var(--border); margin-top: 32px;
+  }
+
+  img { max-width: 100%; border-radius: var(--radius); }
+
+  @media (max-width: 600px) {
+    body { padding: 0 12px 60px; }
+    .hero { margin: 0 -12px 24px; padding: 32px 20px 28px; }
+    .hero h1 { font-size: 1.5em; }
+    table { font-size: .78em; }
+    th, td { padding: 6px 8px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>Craftsman 品牌手册</h1>
+  <div class="subtitle">工匠工具套件 · 开发者工具矩阵</div>
+  <div class="meta">
+    <span>SPDT-001</span>
+    <span>鸿蒙生态开发</span>
+    <span>v1.1 · 2026-07-17</span>
+  </div>
+  <div class="badges">
+    <div class="badge"><span class="dot"></span> 已部署真机验证（DevEco 6.1 + devecocli）</div>
+    <div class="badge"><span class="dot"></span> CLI 全自动流水线</div>
+  </div>
+</div>
+
+<section>
+<h1>单 APP</h1>
+<p>Push-Location "D:\92_products\SPDT-001_Harmony\apps\craftsman-arkui"
+&amp; "D:\9_infra\DevEco Studio\tools\hvigor\bin\hvigorw.bat" assembleHap
+Pop-Location</p>
+<h1>品牌级批量编译</h1>
+<p>powershell -ExecutionPolicy Bypass -File "D:\92_products\SPDT-001_Harmony\build-all.ps1" -Brand craftsman</p>
+<div class="codehilite"><pre><span></span><code><span class="s s-Atom">###</span> <span class="mf">4.3</span> <span class="s s-Atom">签名策略</span>
+
+<span class="o">-</span> <span class="s s-Atom">**开发阶段**:</span> <span class="s s-Atom">debug</span> <span class="s s-Atom">profile</span> <span class="o">+</span> <span class="s s-Atom">自建</span> <span class="s s-Atom">cert</span> <span class="s s-Atom">chain</span>
+<span class="o">-</span> <span class="s s-Atom">**批量签名**:</span> <span class="err">`</span><span class="s s-Atom">sign</span><span class="o">-</span><span class="s s-Atom">all</span><span class="p">.</span><span class="s s-Atom">ps1</span><span class="err">`</span> <span class="s s-Atom">自动识别</span> <span class="s s-Atom">bundleName</span> <span class="s s-Atom">→</span> <span class="s s-Atom">匹配对应</span> <span class="s s-Atom">profile</span>
+<span class="o">-</span> <span class="s s-Atom">**签名状态**:</span> <span class="mi">10</span><span class="o">/</span><span class="mi">10</span> <span class="s s-Atom">通过</span>
+
+<span class="s s-Atom">###</span> <span class="mf">4.4</span> <span class="nf">公共内核</span> <span class="p">(</span><span class="s s-Atom">common/</span><span class="p">)</span>
+
+<span class="nv">Craftsman</span> <span class="mi">10</span> <span class="s s-Atom">款</span> <span class="nv">APP</span> <span class="s s-Atom">共享同一套</span> <span class="err">`</span><span class="s s-Atom">common/</span><span class="err">`</span> <span class="s s-Atom">内核（22</span> <span class="s s-Atom">个源文件）：</span>
+
+<span class="p">|</span> <span class="s s-Atom">模块</span> <span class="p">|</span> <span class="s s-Atom">文件</span> <span class="p">|</span> <span class="s s-Atom">说明</span> <span class="p">|</span>
+<span class="p">|</span><span class="o">:-</span><span class="s s-Atom">--</span><span class="p">|</span><span class="o">:-</span><span class="s s-Atom">--</span><span class="p">|</span><span class="o">:-</span><span class="s s-Atom">--</span><span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">**组件**</span> <span class="p">(</span><span class="mi">12</span><span class="p">)</span> <span class="p">|</span> <span class="nv">HButton</span><span class="p">,</span> <span class="nv">HCard</span><span class="p">,</span> <span class="nv">HConfirmDialog</span><span class="p">,</span> <span class="nv">HEmptyState</span><span class="p">,</span> <span class="nv">HFAB</span><span class="p">,</span> <span class="nv">HFormItem</span><span class="p">,</span> <span class="nv">HNavBar</span><span class="p">,</span> <span class="nv">HProgressBar</span><span class="p">,</span> <span class="nv">HSearchBar</span><span class="p">,</span> <span class="nv">HTag</span><span class="p">,</span> <span class="nv">HTagGroup</span><span class="p">,</span> <span class="nv">HToast</span> <span class="p">|</span> <span class="nv">UI</span> <span class="s s-Atom">组件库，品牌色</span> <span class="s s-Atom">#</span><span class="nv">E87A2A</span> <span class="s s-Atom">统一注入</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">**存储**</span> <span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">|</span> <span class="s s-Atom">storageService</span><span class="p">.</span><span class="s s-Atom">ts</span><span class="p">,</span> <span class="s s-Atom">keys</span><span class="p">.</span><span class="s s-Atom">ts</span> <span class="p">|</span> <span class="s s-Atom">泛型</span> <span class="nv">CRUD</span><span class="s s-Atom">，Preferences</span> <span class="s s-Atom">封装</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">**主题**</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">|</span> <span class="s s-Atom">tokens</span><span class="p">.</span><span class="s s-Atom">ts</span> <span class="p">|</span> <span class="nv">Design</span> <span class="nv">Token</span><span class="s s-Atom">（品牌级</span> <span class="s s-Atom">#</span><span class="nv">E87A2A</span> <span class="s s-Atom">工匠橙）</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">**工具**</span> <span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="p">|</span> <span class="s s-Atom">date</span><span class="p">.</span><span class="s s-Atom">ts</span><span class="p">,</span> <span class="s s-Atom">debounce</span><span class="p">.</span><span class="s s-Atom">ts</span><span class="p">,</span> <span class="s s-Atom">format</span><span class="p">.</span><span class="s s-Atom">ts</span><span class="p">,</span> <span class="s s-Atom">id</span><span class="p">.</span><span class="s s-Atom">ts</span><span class="p">,</span> <span class="nb">val</span><span class="s s-Atom">idate</span><span class="p">.</span><span class="s s-Atom">ts</span> <span class="p">|</span> <span class="s s-Atom">日期/防抖/格式化</span><span class="o">/</span><span class="nv">ID</span><span class="s s-Atom">/校验</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">**算法**</span> <span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">|</span> <span class="s s-Atom">sm2</span><span class="p">.</span><span class="s s-Atom">ts</span><span class="p">,</span> <span class="s s-Atom">streak</span><span class="p">.</span><span class="s s-Atom">ts</span> <span class="p">|</span> <span class="s s-Atom">通用算法工具（预留扩展）</span> <span class="p">|</span>
+
+<span class="o">&gt;</span> <span class="s s-Atom">与</span> <span class="nv">ThinkKit</span> <span class="s s-Atom">共享</span> <span class="s s-Atom">common</span><span class="o">/</span> <span class="s s-Atom">内核，通过</span> <span class="nv">Design</span> <span class="nv">Token</span> <span class="s s-Atom">切换驱动品牌差异化。</span>
+
+<span class="s s-Atom">###</span> <span class="mf">4.5</span> <span class="nv">PREFLIGHT</span> <span class="s s-Atom">检查项</span>
+
+<span class="nv">Craftsman</span> <span class="s s-Atom">特有</span> <span class="mi">8</span> <span class="s s-Atom">项自动检查，品牌级</span> <span class="err">`</span><span class="o">-</span><span class="nv">BrandPrefix</span> <span class="s2">&quot;craftsman-&quot;</span><span class="err">`</span> <span class="s s-Atom">过滤：</span>
+
+<span class="p">|</span> <span class="s s-Atom">检查项</span> <span class="p">|</span> <span class="s s-Atom">说明</span> <span class="p">|</span>
+<span class="p">|</span><span class="o">:-</span><span class="s s-Atom">--</span><span class="p">|</span><span class="o">:-</span><span class="s s-Atom">--</span><span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">build</span><span class="o">-</span><span class="s s-Atom">profile</span><span class="p">.</span><span class="s s-Atom">json5</span> <span class="p">|</span> <span class="nv">API</span> <span class="mi">24</span> <span class="s s-Atom">兼容</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">oh</span><span class="o">-</span><span class="s s-Atom">package</span><span class="p">.</span><span class="s s-Atom">json5</span> <span class="p">|</span> <span class="s s-Atom">modelVersion</span> <span class="mi">26</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">hvigor</span><span class="o">-</span><span class="s s-Atom">config</span><span class="p">.</span><span class="s s-Atom">json5</span> <span class="p">|</span> <span class="s s-Atom">modelVersion</span> <span class="mi">26</span> <span class="p">|</span>
+<span class="p">|</span> <span class="nv">AppScope</span><span class="o">/</span><span class="s s-Atom">app</span><span class="p">.</span><span class="s s-Atom">json5</span> <span class="p">|</span> <span class="s s-Atom">bundleName</span> <span class="s s-Atom">格式</span> <span class="err">`</span><span class="s s-Atom">com</span><span class="p">.</span><span class="s s-Atom">craftsman</span><span class="p">.</span><span class="s s-Atom">*</span><span class="err">`</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">module</span><span class="p">.</span><span class="s s-Atom">json5</span> <span class="p">|</span> <span class="s s-Atom">存在且格式正确</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">pages</span><span class="o">/</span> <span class="p">|</span> <span class="s s-Atom">至少</span> <span class="mi">1</span> <span class="s s-Atom">个</span> <span class="p">.</span><span class="s s-Atom">ets</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">**品牌色一致性**</span> <span class="p">|</span> <span class="s s-Atom">全局</span> <span class="nv">Design</span> <span class="nv">Token</span> <span class="s s-Atom">强制</span> <span class="s s-Atom">#</span><span class="nv">E87A2A</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">**</span><span class="nv">ThinkKit</span> <span class="s s-Atom">代码污染**</span> <span class="p">|</span> <span class="s s-Atom">禁止引用任何</span> <span class="err">`</span><span class="s s-Atom">thinkkit-*</span><span class="err">`</span> <span class="s s-Atom">bundleName</span> <span class="s s-Atom">或命名空间</span> <span class="p">|</span>
+
+<span class="o">&gt;</span> <span class="s s-Atom">**品牌污染保护**:</span> <span class="nv">PREFLIGHT</span> <span class="s s-Atom">阶段自动扫描全部</span> <span class="p">.</span><span class="s s-Atom">ets/.ts/.json5，拦截跨品牌</span> <span class="err">`</span><span class="s s-Atom">thinkkit-*</span><span class="err">`</span> <span class="s s-Atom">字符串，确保</span> <span class="nv">Craftsman</span> <span class="s s-Atom">代码库纯净独立。</span>
+
+<span class="s s-Atom">###</span> <span class="mf">4.6</span> <span class="s s-Atom">常见编译问题</span>
+
+<span class="p">|</span> <span class="s s-Atom">错误码</span> <span class="p">|</span> <span class="s s-Atom">症状</span> <span class="p">|</span> <span class="s s-Atom">修复</span> <span class="p">|</span>
+<span class="p">|</span><span class="o">:-</span><span class="s s-Atom">--</span><span class="p">|</span><span class="o">:-</span><span class="s s-Atom">--</span><span class="p">|</span><span class="o">:-</span><span class="s s-Atom">--</span><span class="p">|</span>
+<span class="p">|</span> <span class="mi">00303096</span> <span class="p">|</span> <span class="s s-Atom">mock</span><span class="o">-</span><span class="s s-Atom">config</span><span class="p">.</span><span class="s s-Atom">json5</span> <span class="s s-Atom">无效路径</span> <span class="p">|</span> <span class="s s-Atom">重命名</span> <span class="s s-Atom">mock</span> <span class="s s-Atom">→</span> <span class="s s-Atom">mock_disabled</span> <span class="p">|</span>
+<span class="p">|</span> <span class="mi">00303038</span> <span class="p">|</span> <span class="s s-Atom">main_pages</span><span class="p">.</span><span class="s s-Atom">json</span> <span class="s s-Atom">schema</span> <span class="p">|</span> <span class="err">`</span><span class="s2">&quot;pages&quot;</span><span class="err">`</span> <span class="s s-Atom">→</span> <span class="err">`</span><span class="s2">&quot;src&quot;</span><span class="err">`</span> <span class="p">|</span>
+<span class="p">|</span> <span class="mi">00303034</span> <span class="p">|</span> <span class="s s-Atom">compileSdkVersion</span> <span class="s s-Atom">缺失</span> <span class="p">|</span> <span class="s s-Atom">切</span> <span class="nv">HarmonyOS</span> <span class="o">+</span> <span class="s s-Atom">targetSdk</span> <span class="mi">26</span> <span class="p">|</span>
+<span class="p">|</span> <span class="mi">00303027</span> <span class="p">|</span> <span class="s s-Atom">modelVersion</span> <span class="s s-Atom">不一致</span> <span class="p">|</span> <span class="s s-Atom">统一</span> <span class="mf">26.0.0</span> <span class="p">|</span>
+<span class="p">|</span> <span class="mi">11203005</span> <span class="p">|</span> <span class="s s-Atom">float</span><span class="p">.</span><span class="s s-Atom">json</span> <span class="s s-Atom">空节点</span> <span class="p">|</span> <span class="s s-Atom">补占位项</span> <span class="p">|</span>
+<span class="p">|</span> <span class="mi">11211120</span> <span class="p">|</span> <span class="err">$</span><span class="s s-Atom">media</span> <span class="s s-Atom">缺失</span> <span class="p">|</span> <span class="s s-Atom">创建图标资源</span> <span class="p">|</span>
+<span class="p">|</span> <span class="mi">10605071</span><span class="o">/</span><span class="mi">05029</span><span class="o">/</span><span class="mi">05001</span> <span class="p">|</span> <span class="s s-Atom">bracket</span> <span class="s s-Atom">notation</span> <span class="p">|</span> <span class="s s-Atom">class</span> <span class="o">+</span> <span class="s s-Atom">dot</span> <span class="s s-Atom">notation</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">—</span> <span class="p">|</span> <span class="s s-Atom">品牌色不一致</span> <span class="p">|</span> <span class="nv">Design</span> <span class="nv">Token</span> <span class="s s-Atom">未注入</span> <span class="s s-Atom">#</span><span class="nv">E87A2A</span> <span class="p">|</span>
+
+<span class="o">&gt;</span> <span class="s s-Atom">完整手册</span><span class="o">:</span> <span class="p">[</span><span class="s s-Atom">编译问题修复手册</span> <span class="s s-Atom">v2</span><span class="p">](</span><span class="nv">D</span><span class="o">:</span><span class="s s-Atom">\</span><span class="mi">92</span><span class="k">_</span><span class="s s-Atom">products\</span><span class="nv">SPDT</span><span class="o">-</span><span class="mi">001</span><span class="k">_</span><span class="nv">Harmony</span><span class="s s-Atom">\编译问题修复手册</span> <span class="s s-Atom">v2</span><span class="p">.</span><span class="s s-Atom">md</span><span class="p">)</span>
+
+<span class="s s-Atom">---</span>
+
+<span class="s s-Atom">##</span> <span class="s s-Atom">五、运营数据</span>
+
+<span class="o">&gt;</span> <span class="s s-Atom">⚠️</span> <span class="s s-Atom">以下为占位，当前</span> <span class="nv">Craftsman</span> <span class="s s-Atom">尚未上架鸿蒙应用商店。</span>
+
+<span class="p">|</span> <span class="s s-Atom">指标</span> <span class="p">|</span> <span class="s s-Atom">当前值</span> <span class="p">|</span> <span class="nf">目标</span> <span class="p">(</span><span class="nv">Q3</span><span class="p">)</span> <span class="p">|</span>
+<span class="p">|</span><span class="o">:-</span><span class="s s-Atom">--</span><span class="p">|</span><span class="o">:-</span><span class="s s-Atom">--</span><span class="p">|</span><span class="o">:-</span><span class="s s-Atom">--</span><span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">上架数</span> <span class="p">|</span> <span class="mi">0</span><span class="o">/</span><span class="mi">10</span> <span class="p">|</span> <span class="mi">10</span><span class="o">/</span><span class="mi">10</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">下载量</span> <span class="p">|</span> <span class="s s-Atom">—</span> <span class="p">|</span> <span class="mi">8</span><span class="p">,</span><span class="mi">000</span><span class="o">+</span> <span class="p">|</span>
+<span class="p">|</span> <span class="nf">日活用户</span> <span class="p">(</span><span class="nv">DAU</span><span class="p">)</span> <span class="p">|</span> <span class="s s-Atom">—</span> <span class="p">|</span> <span class="mi">800</span><span class="o">+</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">评分</span> <span class="p">|</span> <span class="s s-Atom">—</span> <span class="p">|</span> <span class="mf">4.5</span><span class="o">+</span> <span class="s s-Atom">★</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">月收入</span> <span class="p">|</span> <span class="s s-Atom">—</span> <span class="p">|</span> <span class="s s-Atom">¥</span><span class="mi">3</span><span class="p">,</span><span class="mi">000</span><span class="o">+</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">崩溃率</span> <span class="p">|</span> <span class="s s-Atom">—</span> <span class="p">|</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="c1">% |</span>
+<span class="p">|</span> <span class="s s-Atom">新增</span> <span class="nv">APP</span> <span class="p">|</span> <span class="mi">10</span> <span class="p">|</span> <span class="mi">14</span> <span class="p">(</span><span class="nv">Q3</span> <span class="s s-Atom">目标</span><span class="p">)</span> <span class="p">|</span>
+
+<span class="s s-Atom">---</span>
+
+<span class="s s-Atom">##</span> <span class="s s-Atom">六、发展规划</span>
+
+<span class="s s-Atom">###</span> <span class="mf">6.1</span> <span class="s s-Atom">当前缺口</span>
+
+<span class="p">|</span> <span class="s s-Atom">缺口</span> <span class="p">|</span> <span class="s s-Atom">影响</span> <span class="p">|</span> <span class="s s-Atom">优先级</span> <span class="p">|</span>
+<span class="p">|</span><span class="o">:-</span><span class="s s-Atom">--</span><span class="p">|</span><span class="o">:-</span><span class="s s-Atom">--</span><span class="p">|</span><span class="o">:-</span><span class="s s-Atom">--</span><span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">未上架应用商店</span> <span class="p">|</span> <span class="s s-Atom">无真实开发者反馈</span> <span class="p">|</span> <span class="nv">P0</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">无自动化测试框架</span> <span class="p">|</span> <span class="s s-Atom">回归依赖手工</span> <span class="p">|</span> <span class="nv">P2</span> <span class="p">|</span>
+
+<span class="s s-Atom">###</span> <span class="mf">6.2</span> <span class="mi">10</span> <span class="s s-Atom">款扩展路线图</span>
+
+<span class="s s-Atom">从当前</span> <span class="s2">&quot;查询→包管理→工具集成&quot;</span> <span class="s s-Atom">三层，扩展至开发者全场景：</span>
+</code></pre></div>
+
+<p>当前 4 款                           目标 20 款
+─────────────────────────────────────────────
+🔍 arkui            ──→ +layout-preview（布局预览）+i18n-helper（国际化助手）
+📦 ohpm             ──→ +api-debug（API调试）+db-browser（数据库浏览器）
+🧰 utils            ──→ +snippet-mgr（代码片段管理）+code-review（代码审查助手）
+🚀 utils-v2         ──→ +perf-analyzer（性能分析）+a11y-checker（无障碍检查）
+                      ──→ +arch-viz（架构可视化）+asset-gen（资源生成器）</p>
+<div class="codehilite"><pre><span></span><code><span class="p">|</span> <span class="s s-Atom">批次</span> <span class="p">|</span> <span class="nv">APP</span> <span class="p">|</span> <span class="s s-Atom">功能</span> <span class="p">|</span> <span class="s s-Atom">预计</span> <span class="nv">HAP</span> <span class="p">|</span> <span class="s s-Atom">生成方式</span> <span class="p">|</span>
+<span class="p">|</span><span class="o">:-</span><span class="s s-Atom">--</span><span class="p">|</span><span class="o">:-</span><span class="s s-Atom">--</span><span class="p">|</span><span class="o">:-</span><span class="s s-Atom">--</span><span class="p">|</span><span class="o">:-</span><span class="s s-Atom">--</span><span class="p">|</span><span class="o">:-</span><span class="s s-Atom">--</span><span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">第</span> <span class="mi">1</span> <span class="nf">批</span> <span class="p">(</span><span class="mi">7</span> <span class="s s-Atom">月</span><span class="p">)</span> <span class="p">|</span> <span class="s s-Atom">api</span><span class="o">-</span><span class="s s-Atom">debug</span><span class="p">,</span> <span class="s s-Atom">perf</span><span class="o">-</span><span class="s s-Atom">analyzer</span><span class="p">,</span> <span class="s s-Atom">layout</span><span class="o">-</span><span class="s s-Atom">preview</span> <span class="p">|</span> <span class="nv">API</span> <span class="s s-Atom">调试</span> <span class="o">/</span> <span class="s s-Atom">性能分析</span> <span class="o">/</span> <span class="s s-Atom">布局预览</span> <span class="p">|</span> <span class="s s-Atom">各</span> <span class="o">~</span><span class="mi">80</span><span class="o">-</span><span class="mi">150</span> <span class="nv">KB</span> <span class="p">|</span> <span class="s s-Atom">模板</span> <span class="s s-Atom">fork</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">第</span> <span class="mi">2</span> <span class="nf">批</span> <span class="p">(</span><span class="mi">8</span> <span class="s s-Atom">月</span><span class="p">)</span> <span class="p">|</span> <span class="s s-Atom">i18n</span><span class="o">-</span><span class="s s-Atom">helper</span><span class="p">,</span> <span class="s s-Atom">a11y</span><span class="o">-</span><span class="s s-Atom">checker</span><span class="p">,</span> <span class="s s-Atom">snippet</span><span class="o">-</span><span class="s s-Atom">mgr</span> <span class="p">|</span> <span class="s s-Atom">国际化</span> <span class="o">/</span> <span class="s s-Atom">无障碍检查</span> <span class="o">/</span> <span class="s s-Atom">代码片段</span> <span class="p">|</span> <span class="s s-Atom">各</span> <span class="o">~</span><span class="mi">80</span><span class="o">-</span><span class="mi">150</span> <span class="nv">KB</span> <span class="p">|</span> <span class="s s-Atom">模板</span> <span class="s s-Atom">fork</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">第</span> <span class="mi">3</span> <span class="nf">批</span> <span class="p">(</span><span class="mi">9</span> <span class="s s-Atom">月</span><span class="p">)</span> <span class="p">|</span> <span class="s s-Atom">arch</span><span class="o">-</span><span class="s s-Atom">viz</span><span class="p">,</span> <span class="s s-Atom">code</span><span class="o">-</span><span class="s s-Atom">review</span><span class="p">,</span> <span class="s s-Atom">db</span><span class="o">-</span><span class="s s-Atom">browser</span><span class="p">,</span> <span class="s s-Atom">asset</span><span class="o">-</span><span class="s s-Atom">gen</span> <span class="p">|</span> <span class="s s-Atom">架构可视化</span> <span class="o">/</span> <span class="s s-Atom">代码审查</span> <span class="o">/</span> <span class="s s-Atom">数据库浏览</span> <span class="o">/</span> <span class="s s-Atom">资源生成</span> <span class="p">|</span> <span class="s s-Atom">各</span> <span class="o">~</span><span class="mi">100</span><span class="o">-</span><span class="mi">200</span> <span class="nv">KB</span> <span class="p">|</span> <span class="s s-Atom">模板</span> <span class="s s-Atom">fork</span> <span class="o">+</span> <span class="nv">AI</span> <span class="s s-Atom">补充</span> <span class="p">|</span>
+
+<span class="o">&gt;</span> <span class="s s-Atom">合计</span><span class="o">:</span> <span class="mi">10</span> <span class="s s-Atom">款新增</span> <span class="o">+</span> <span class="mi">10</span> <span class="s s-Atom">款已有</span> <span class="s s-Atom">→</span> <span class="mi">20</span> <span class="s s-Atom">款目标。预计总</span> <span class="nv">HAP</span> <span class="s s-Atom">体积</span> <span class="o">~</span><span class="mi">2</span><span class="p">,</span><span class="mi">500</span> <span class="nv">KB</span><span class="s s-Atom">。</span>
+
+<span class="s s-Atom">###</span> <span class="mf">6.3</span> <span class="s s-Atom">新</span> <span class="nv">APP</span> <span class="s s-Atom">立项评审标准</span>
+
+<span class="p">|</span> <span class="s s-Atom">维度</span> <span class="p">|</span> <span class="s s-Atom">评审问题</span> <span class="p">|</span> <span class="s s-Atom">权重</span> <span class="p">|</span>
+<span class="p">|</span><span class="o">:-</span><span class="s s-Atom">--</span><span class="p">|</span><span class="o">:-</span><span class="s s-Atom">--</span><span class="p">|</span><span class="o">:-</span><span class="s s-Atom">--</span><span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">场景匹配</span> <span class="p">|</span> <span class="s s-Atom">是否填补鸿蒙开发流程中的真实痛点？</span> <span class="p">|</span> <span class="s s-Atom">高</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">内核复用</span> <span class="p">|</span> <span class="s s-Atom">能否用</span> <span class="s s-Atom">common</span><span class="o">/</span> <span class="s s-Atom">现有组件覆盖</span> <span class="mi">80</span><span class="c1">%+ UI？ | 高 |</span>
+<span class="p">|</span> <span class="s s-Atom">竞品缺口</span> <span class="p">|</span> <span class="s s-Atom">鸿蒙生态中是否有同类开发者工具？</span> <span class="p">|</span> <span class="s s-Atom">中</span> <span class="p">|</span>
+<span class="p">|</span> <span class="nv">AI</span> <span class="s s-Atom">可达</span> <span class="p">|</span> <span class="s s-Atom">代码生成率能否达到</span> <span class="mi">85</span><span class="c1">%+？ | 中 |</span>
+<span class="p">|</span> <span class="s s-Atom">开发者痛点</span> <span class="p">|</span> <span class="s s-Atom">是否能真正提升开发效率？</span> <span class="p">|</span> <span class="s s-Atom">高</span> <span class="p">|</span>
+
+<span class="s s-Atom">###</span> <span class="mf">6.4</span> <span class="s s-Atom">版本迭代节奏</span>
+
+<span class="p">|</span> <span class="s s-Atom">阶段</span> <span class="p">|</span> <span class="s s-Atom">周期</span> <span class="p">|</span> <span class="s s-Atom">产出</span> <span class="p">|</span>
+<span class="p">|</span><span class="o">:-</span><span class="s s-Atom">--</span><span class="p">|</span><span class="o">:-</span><span class="s s-Atom">--</span><span class="p">|</span><span class="o">:-</span><span class="s s-Atom">--</span><span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">骨架生成</span> <span class="p">|</span> <span class="mi">1</span> <span class="s s-Atom">天</span> <span class="p">|</span> <span class="s s-Atom">模板</span> <span class="s s-Atom">fork</span> <span class="s s-Atom">→</span> <span class="s s-Atom">配置</span> <span class="s s-Atom">→</span> <span class="s s-Atom">编译通过</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">功能开发</span> <span class="p">|</span> <span class="mi">2</span><span class="o">-</span><span class="mi">3</span> <span class="s s-Atom">天</span> <span class="p">|</span> <span class="nv">UI</span> <span class="s s-Atom">页面</span> <span class="o">+</span> <span class="s s-Atom">核心交互</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">内测</span> <span class="p">|</span> <span class="mi">1</span> <span class="s s-Atom">天</span> <span class="p">|</span> <span class="nv">PREFLIGHT</span> <span class="s s-Atom">→</span> <span class="s s-Atom">编译</span> <span class="s s-Atom">→</span> <span class="s s-Atom">签名</span> <span class="s s-Atom">→</span> <span class="s s-Atom">模拟器</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">真机部署</span> <span class="p">|</span> <span class="mi">1</span> <span class="s s-Atom">天</span> <span class="p">|</span> <span class="s s-Atom">hdc</span> <span class="s s-Atom">install</span> <span class="s s-Atom">→</span> <span class="s s-Atom">截图</span> <span class="s s-Atom">→</span> <span class="s s-Atom">核心路径验收</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">上架准备</span> <span class="p">|</span> <span class="mi">1</span> <span class="s s-Atom">天</span> <span class="p">|</span> <span class="s s-Atom">商店素材</span> <span class="s s-Atom">→</span> <span class="s s-Atom">描述文案</span> <span class="s s-Atom">→</span> <span class="nv">ASO</span> <span class="p">|</span>
+
+<span class="s s-Atom">###</span> <span class="mf">6.5</span> <span class="s s-Atom">里程碑</span>
+
+<span class="p">|</span> <span class="s s-Atom">里程碑</span> <span class="p">|</span> <span class="s s-Atom">目标日期</span> <span class="p">|</span> <span class="s s-Atom">状态</span> <span class="p">|</span> <span class="s s-Atom">关键产出</span> <span class="p">|</span>
+<span class="p">|</span><span class="o">:-</span><span class="s s-Atom">--</span><span class="p">|</span><span class="o">:-</span><span class="s s-Atom">--</span><span class="p">|</span><span class="o">:-</span><span class="s s-Atom">--</span><span class="p">|</span><span class="o">:-</span><span class="s s-Atom">--</span><span class="p">|</span>
+<span class="p">|</span> <span class="nv">M1</span><span class="o">:</span> <span class="s s-Atom">首批</span> <span class="mi">10</span> <span class="s s-Atom">款全通</span> <span class="p">|</span> <span class="mi">2026</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">08</span> <span class="p">|</span> <span class="s s-Atom">✅</span> <span class="s s-Atom">完成</span> <span class="p">|</span> <span class="mi">10</span><span class="o">/</span><span class="mi">10</span> <span class="s s-Atom">编译+签名</span> <span class="p">|</span>
+<span class="p">|</span> <span class="nv">M2</span><span class="o">:</span> <span class="s s-Atom">真机部署验证</span> <span class="p">|</span> <span class="mi">2026</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">12</span> <span class="p">|</span> <span class="s s-Atom">✅</span> <span class="s s-Atom">完成</span> <span class="p">|</span> <span class="mi">10</span><span class="o">/</span><span class="mi">10</span> <span class="s s-Atom">真机安装</span> <span class="o">+</span> <span class="s s-Atom">冷启动</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="s s-Atom">s（DevEco</span> <span class="mf">6.1</span> <span class="o">+</span> <span class="s s-Atom">devecocli</span> <span class="s s-Atom">全自动流水线）</span> <span class="p">|</span>
+<span class="p">|</span> <span class="nv">M3</span><span class="o">:</span> <span class="s s-Atom">扩展第</span> <span class="mi">1</span> <span class="s s-Atom">批启动</span> <span class="p">|</span> <span class="mi">2026</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">20</span> <span class="p">|</span> <span class="s s-Atom">⏳</span> <span class="s s-Atom">规划</span> <span class="p">|</span> <span class="mi">3</span> <span class="s s-Atom">款新</span> <span class="nv">APP</span> <span class="s s-Atom">编译通过</span> <span class="p">|</span>
+<span class="p">|</span> <span class="nv">M4</span><span class="o">:</span> <span class="s s-Atom">应用商店上架</span> <span class="p">|</span> <span class="mi">2026</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">01</span> <span class="p">|</span> <span class="s s-Atom">⏳</span> <span class="s s-Atom">规划</span> <span class="p">|</span> <span class="mi">10</span> <span class="s s-Atom">款提交审核</span> <span class="p">|</span>
+<span class="p">|</span> <span class="nv">M5</span><span class="o">:</span> <span class="s s-Atom">第</span> <span class="mi">2</span> <span class="s s-Atom">批交付</span> <span class="p">|</span> <span class="mi">2026</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">20</span> <span class="p">|</span> <span class="s s-Atom">⏳</span> <span class="s s-Atom">规划</span> <span class="p">|</span> <span class="mi">13</span><span class="o">/</span><span class="mi">13</span> <span class="s s-Atom">编译+签名</span> <span class="p">|</span>
+<span class="p">|</span> <span class="nv">M6</span><span class="o">:</span> <span class="mi">20</span> <span class="s s-Atom">款全部交付</span> <span class="p">|</span> <span class="mi">2026</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">15</span> <span class="p">|</span> <span class="s s-Atom">⏳</span> <span class="s s-Atom">规划</span> <span class="p">|</span> <span class="mi">20</span><span class="o">/</span><span class="mi">20</span> <span class="s s-Atom">编译+签名+上架</span> <span class="p">|</span>
+
+<span class="s s-Atom">---</span>
+
+<span class="s s-Atom">##</span> <span class="s s-Atom">七、营销素材</span>
+
+<span class="s s-Atom">###</span> <span class="mf">6.1</span> <span class="s s-Atom">品牌话术</span>
+
+<span class="s s-Atom">**一句话介绍</span><span class="o">:</span><span class="s s-Atom">**</span>
+<span class="o">&gt;</span> <span class="nv">Craftsman</span> <span class="s s-Atom">——</span> <span class="s s-Atom">为鸿蒙开发者锻造利器，10</span> <span class="s s-Atom">个独立工具覆盖全链路开发辅助。</span>
+
+<span class="s s-Atom">**</span><span class="nf">扩展介绍</span> <span class="p">(</span><span class="mi">100</span> <span class="s s-Atom">字</span><span class="p">)</span><span class="o">:</span><span class="s s-Atom">**</span>
+<span class="o">&gt;</span> <span class="nv">Craftsman</span> <span class="s s-Atom">是鸿蒙生态首套开发者工具矩阵。从</span> <span class="nv">ArkUI</span> <span class="s s-Atom">组件速查到</span> <span class="nv">OHPM</span> <span class="s s-Atom">三方库发现，从代码编辑器到</span> <span class="nv">API</span> <span class="s s-Atom">测试工具——</span><span class="mi">10</span> <span class="s s-Atom">款独立</span> <span class="nv">APP</span> <span class="s s-Atom">各司其职，共享统一内核。本地即时响应，买断制，不订阅不套路。让开发者在手机端也能高效查阅、快速决策。锻造你自己的鸿蒙利器。</span>
+
+<span class="s s-Atom">**品牌故事角度</span><span class="o">:</span><span class="s s-Atom">**</span>
+<span class="o">&gt;</span> <span class="s s-Atom">「好工匠需要好工具。」</span><span class="nv">Craftsman</span> <span class="s s-Atom">的核心理念是：每个开发场景都值得一个专属工具——需要查组件时打开</span> <span class="nv">ArkUI</span> <span class="s s-Atom">速查，需要找三方库时打开</span> <span class="nv">OHPM</span><span class="s s-Atom">，需要效率工具时打开</span> <span class="nv">Utility</span> <span class="nv">Toolbox</span><span class="s s-Atom">。小而专，各司其职，这才是开发者工具该有的样子。</span>
+
+<span class="s s-Atom">###</span> <span class="mf">6.2</span> <span class="s s-Atom">应用商店描述模板</span>
+</code></pre></div>
+
+<h2>概述</h2>
+<p>[APP 中文名] 是 Craftsman 开发者工具系列的一员——[一句话功能]。</p>
+<h2>核心功能</h2>
+<p>• [功能点 1]
+• [功能点 2]
+• [功能点 3]</p>
+<h2>为什么选择我们？</h2>
+<p>✅ 专注单一开发场景，零上下文切换
+✅ 本地数据优先，即时响应无需联网
+✅ 买断制，一次付费永久使用
+✅ 鸿蒙 NEXT 原生，ArkUI Stage 模型</p>
+<h2>Craftsman 系列</h2>
+<p>Craftsman 提供 10 款独立开发者工具：[列出其余 9 款名称]</p>
+<div class="codehilite"><pre><span></span><code><span class="s s-Atom">###</span> <span class="mf">6.3</span> <span class="s s-Atom">截图与图标规范</span>
+
+<span class="p">|</span> <span class="s s-Atom">项目</span> <span class="p">|</span> <span class="s s-Atom">规范</span> <span class="p">|</span>
+<span class="p">|</span><span class="o">:-</span><span class="s s-Atom">--</span><span class="p">|</span><span class="o">:-</span><span class="s s-Atom">--</span><span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">应用图标</span> <span class="p">|</span> <span class="mi">1024</span><span class="s s-Atom">×1024</span> <span class="s s-Atom">px，工匠橙基调，白色工具/扳手图标</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">商店截图</span> <span class="p">|</span> <span class="s s-Atom">鸿蒙设备框架</span> <span class="s s-Atom">×</span> <span class="mi">5</span> <span class="s s-Atom">张（首页</span> <span class="o">/</span> <span class="s s-Atom">核心功能</span> <span class="mi">1</span> <span class="o">/</span> <span class="s s-Atom">核心功能</span> <span class="mi">2</span> <span class="o">/</span> <span class="s s-Atom">结果页</span> <span class="o">/</span> <span class="s s-Atom">设置）</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">宣传横幅</span> <span class="p">|</span> <span class="mi">1242</span><span class="s s-Atom">×2688</span> <span class="nf">px</span> <span class="p">(</span><span class="s s-Atom">竖版</span><span class="p">)</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">品牌</span> <span class="nv">Logo</span> <span class="p">|</span> <span class="s2">&quot;Craftsman&quot;</span> <span class="o">+</span> <span class="s2">&quot;工&quot;</span> <span class="s s-Atom">字形组合，工匠橙</span> <span class="s s-Atom">#</span><span class="nv">E87A2A</span> <span class="p">|</span>
+
+<span class="s s-Atom">###</span> <span class="mf">6.4</span> <span class="nv">ASO</span> <span class="s s-Atom">关键词策略</span>
+
+<span class="p">|</span> <span class="nv">APP</span> <span class="p">|</span> <span class="s s-Atom">核心词</span> <span class="p">|</span> <span class="s s-Atom">长尾词</span> <span class="p">|</span>
+<span class="p">|</span><span class="o">:-</span><span class="s s-Atom">--</span><span class="p">|</span><span class="o">:-</span><span class="s s-Atom">--</span><span class="p">|</span><span class="o">:-</span><span class="s s-Atom">--</span><span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">arkui</span> <span class="p">|</span> <span class="nv">ArkUI组件</span><span class="p">,</span> <span class="s s-Atom">组件速查</span> <span class="p">|</span> <span class="s s-Atom">鸿蒙UI组件示例</span><span class="p">,</span> <span class="nv">ArkTS组件参考</span><span class="p">,</span> <span class="s s-Atom">鸿蒙开发</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">ohpm</span> <span class="p">|</span> <span class="nv">OHPM</span><span class="p">,</span> <span class="s s-Atom">三方库</span> <span class="p">|</span> <span class="s s-Atom">鸿蒙三方库</span><span class="p">,</span> <span class="s s-Atom">openHarmony包管理</span><span class="p">,</span> <span class="s s-Atom">鸿蒙依赖</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">utils</span> <span class="p">|</span> <span class="s s-Atom">开发者工具箱</span><span class="p">,</span> <span class="s s-Atom">工具集</span> <span class="p">|</span> <span class="s s-Atom">鸿蒙开发工具</span><span class="p">,</span> <span class="s s-Atom">鸿蒙NEXT工具箱</span><span class="p">,</span> <span class="nv">ArkTS效率</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">utils</span><span class="o">-</span><span class="s s-Atom">v2</span> <span class="p">|</span> <span class="s s-Atom">开发者工具箱Pro</span><span class="p">,</span> <span class="s s-Atom">多功能工具</span> <span class="p">|</span> <span class="s s-Atom">鸿蒙开发增强</span><span class="p">,</span> <span class="s s-Atom">鸿蒙工具大全</span><span class="p">,</span> <span class="s s-Atom">鸿蒙快捷操作</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">scanner</span> <span class="p">|</span> <span class="s s-Atom">代码扫描</span><span class="p">,</span> <span class="s s-Atom">质量检查</span> <span class="p">|</span> <span class="s s-Atom">鸿蒙代码扫描</span><span class="p">,</span> <span class="nv">ArkTS质量检测</span><span class="p">,</span> <span class="s s-Atom">代码审查</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">translate</span> <span class="p">|</span> <span class="s s-Atom">开发翻译</span><span class="p">,</span> <span class="s s-Atom">技术文档翻译</span> <span class="p">|</span> <span class="s s-Atom">鸿蒙开发翻译</span><span class="p">,</span> <span class="s s-Atom">多语支持</span><span class="p">,</span> <span class="s s-Atom">术语查询</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">clipboard</span> <span class="p">|</span> <span class="s s-Atom">代码剪贴板</span><span class="p">,</span> <span class="s s-Atom">片段管理</span> <span class="p">|</span> <span class="s s-Atom">鸿蒙代码收藏</span><span class="p">,</span> <span class="s s-Atom">快速粘贴</span><span class="p">,</span> <span class="s s-Atom">语法高亮</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">code</span><span class="o">-</span><span class="s s-Atom">editor</span> <span class="p">|</span> <span class="s s-Atom">代码编辑器</span><span class="p">,</span> <span class="nv">AI补全</span> <span class="p">|</span> <span class="s s-Atom">鸿蒙移动IDE</span><span class="p">,</span> <span class="nv">ArkTS编辑</span><span class="p">,</span> <span class="nv">AI代码补全</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">image</span><span class="o">-</span><span class="s s-Atom">tool</span> <span class="p">|</span> <span class="s s-Atom">图片工具</span><span class="p">,</span> <span class="s s-Atom">格式转换</span> <span class="p">|</span> <span class="s s-Atom">开发图片处理</span><span class="p">,</span> <span class="s s-Atom">尺寸调整</span><span class="p">,</span> <span class="s s-Atom">格式转换</span> <span class="p">|</span>
+<span class="p">|</span> <span class="s s-Atom">api</span><span class="o">-</span><span class="s s-Atom">tester</span> <span class="p">|</span> <span class="nv">API测试</span><span class="p">,</span> <span class="s s-Atom">接口调试</span> <span class="p">|</span> <span class="s s-Atom">鸿蒙API调试</span><span class="p">,</span> <span class="nv">REST测试</span><span class="p">,</span> <span class="nv">Mock数据</span> <span class="p">|</span>
+
+<span class="s s-Atom">###</span> <span class="mf">7.5</span> <span class="nf">竞品参考</span> <span class="p">(</span><span class="s s-Atom">鸿蒙生态</span><span class="p">)</span>
+
+<span class="o">&gt;</span> <span class="p">[</span><span class="s s-Atom">待调研</span><span class="p">]</span> <span class="s s-Atom">鸿蒙应用商店同类开发者工具产品清单、定价、评分对比。</span>
+
+<span class="s s-Atom">---</span>
+
+<span class="s s-Atom">##</span> <span class="s s-Atom">八、附录</span>
+
+<span class="s s-Atom">###</span> <span class="mf">8.1</span> <span class="s s-Atom">关键路径速查</span>
+</code></pre></div>
+
+<p>项目根        D:\92_products\SPDT-001_Harmony\
+Craftsman APP D:\92_products\SPDT-001_Harmony\apps\craftsman-<em>
+公共内核      D:\92_products\SPDT-001_Harmony\common\
+CI 流水线     D:\92_products\SPDT-001_Harmony\ci\
+签名证书      D:\92_products\SPDT-001_Harmony\signing\profile-craftsman-</em>
+品牌模板      D:\92_products\SPDT-001_Harmony\templates\base\
+OMAS 注册     D:\6_agent_project\omas\pdt_registry\HDT-001-CM\
+编译手册      D:\92_products\SPDT-001_Harmony\编译问题修复手册 v2.md
+```</p>
+<h3>8.2 OMAS 治理信息</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">字段</th>
+<th style="text-align: left;">值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">SPDT</td>
+<td style="text-align: left;">SPDT-001 鸿蒙生态开发</td>
+</tr>
+<tr>
+<td style="text-align: left;">子PDT ID</td>
+<td style="text-align: left;">HDT-001-CM</td>
+</tr>
+<tr>
+<td style="text-align: left;">品类</td>
+<td style="text-align: left;">开发者工具</td>
+</tr>
+<tr>
+<td style="text-align: left;">负责人</td>
+<td style="text-align: left;">PL-craftsman</td>
+</tr>
+<tr>
+<td style="text-align: left;">质量策略</td>
+<td style="text-align: left;">warnings_policy: no_new</td>
+</tr>
+<tr>
+<td style="text-align: left;">目标总数</td>
+<td style="text-align: left;">20 款 APP</td>
+</tr>
+<tr>
+<td style="text-align: left;">特有 PREFLIGHT</td>
+<td style="text-align: left;">无 ThinkKit 代码污染 + 品牌色一致性检查</td>
+</tr>
+</tbody>
+</table>
+<h3>8.3 关联文档索引</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">文档</th>
+<th style="text-align: left;">路径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">项目 README</td>
+<td style="text-align: left;"><a href="D:\92_products\SPDT-001_Harmony\README.md">D:\92_products\SPDT-001_Harmony\README.md</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">工作交接文档</td>
+<td style="text-align: left;"><a href="D:\92_products\SPDT-001_Harmony\docs\工作交接_鸿蒙专项SPDT-001.md">D:\92_products\SPDT-001_Harmony\docs\工作交接_鸿蒙专项SPDT-001.md</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">编译问题手册 v2</td>
+<td style="text-align: left;"><a href="D:\92_products\SPDT-001_Harmony\编译问题修复手册 v2.md">D:\92_products\SPDT-001_Harmony\编译问题修复手册 v2.md</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">DevEco 操作手册</td>
+<td style="text-align: left;"><a href="D:\92_products\SPDT-001_Harmony\DevEco完整操作手册_v1.md">D:\92_products\SPDT-001_Harmony\DevEco完整操作手册_v1.md</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">CI 流水线配置</td>
+<td style="text-align: left;"><a href="D:\92_products\SPDT-001_Harmony\ci\pipeline.yaml">D:\92_products\SPDT-001_Harmony\ci\pipeline.yaml</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">SPDT 注册</td>
+<td style="text-align: left;"><a href="D:\6_agent_project\omas\spdt_registry\SPDT-001\spdt.yaml">D:\6_agent_project\omas\spdt_registry\SPDT-001\spdt.yaml</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">运营 SOP</td>
+<td style="text-align: left;"><a href="D:\92_products\SPDT-001_Harmony\运营SOP_v1.md">D:\92_products\SPDT-001_Harmony\运营SOP_v1.md</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">ThinkKit 品牌手册</td>
+<td style="text-align: left;"><a href="D:\92_products\SPDT-001_Harmony\docs\品牌手册_ThinkKit.md">D:\92_products\SPDT-001_Harmony\docs\品牌手册_ThinkKit.md</a></td>
+</tr>
+</tbody>
+</table>
+<h3>8.4 更新记录</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">日期</th>
+<th style="text-align: left;">版本</th>
+<th style="text-align: left;">变更</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">2026-07-17</td>
+<td style="text-align: left;">v1.1</td>
+<td style="text-align: left;">扩展至 10 款 APP（新增 scanner/translate/clipboard/code-editor/image-tool/api-tester）；真机部署验证通过（DevEco 6.1 + devecocli）；新增智能体定位章节</td>
+</tr>
+<tr>
+<td style="text-align: left;">2026-07-07</td>
+<td style="text-align: left;">v1.0</td>
+<td style="text-align: left;">初始版本，覆盖 4 款 APP 全貌 + 10 款扩展路线图</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<blockquote>
+<p>🏗️ 鸿蒙特使 · SPDT-001 | Craftsman 品牌手册 v1.1</p>
+</blockquote>
+</section>
+<div class="footer">
+  <p>🏗️ 鸿蒙特使 · SPDT-001 | Craftsman 品牌手册 v1.1 | 2026-07-17</p>
+</div>
+
+</body>
+</html>

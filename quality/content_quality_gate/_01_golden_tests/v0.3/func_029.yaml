@@ -1,0 +1,11 @@
+concept: 正弦型函数y=Asin(ωx+φ)
+passed_v1: true
+sample_id: func_029
+source: VCC v1.0 math animation factory
+tags:
+  D1_process: animated
+  D2_spatial: spatial_2d
+  D3_complexity: medium
+  D4_presentation: relation
+  D5_concept_type: transformation
+  D6_subject: algebra

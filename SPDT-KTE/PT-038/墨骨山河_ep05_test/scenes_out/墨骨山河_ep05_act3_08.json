@@ -1,0 +1,83 @@
+{
+  "scene_id": "墨骨山河_ep05_act3_08",
+  "scene_type": "concept",
+  "knowledge_type": "II",
+  "content": {
+    "title": "画面从长安收回，回到现…",
+    "body_lines": [
+      "画面从长安收回，回到现代",
+      "你坐在书桌前，面前摊开着张旭狂草…",
+      "一千二百年了"
+    ],
+    "keywords": [
+      "画面",
+      "画面从",
+      "画面从长",
+      "画面从长安"
+    ]
+  },
+  "page": {
+    "current": 9,
+    "total": 11,
+    "show": true
+  },
+  "scene_info": {
+    "idx": 8,
+    "total": 11,
+    "name": "狂草之后·contemporary_reflection",
+    "dur": 0.0
+  },
+  "source_knowledge_nodes": [],
+  "source_chain_id": "墨骨山河_ep05",
+  "five_skandha": {
+    "color_base": [
+      "画面",
+      "画面从",
+      "画面从长",
+      "画面从长安"
+    ],
+    "sensation": "none",
+    "sensation_trigger": "画面从长安收回，回到现代。\n\n你坐在书桌前，面前摊开着张旭狂草的字帖。\n\n一千二……",
+    "discrimination": "学生能识别「画面从长安收回，回到现…」的核心含义",
+    "action_prompt": "口述/复述",
+    "recognition_marker": "画面从长安收回，回到现代",
+    "bottleneck_warn": "受蕴"
+  },
+  "analogy_block": {
+    "applicable": true,
+    "knowledge_type": "II",
+    "source_domain": "历史场景/人生经验",
+    "target_domain": "画面从长安收回，回到现代。\n\n你坐在书…",
+    "mapping_table": [
+      {
+        "source": "历史情境",
+        "arrow": "→",
+        "target": "书法技法"
+      }
+    ],
+    "difference_annotations": [
+      "注意历史背景与技法的差异"
+    ],
+    "closure_definition": ""
+  },
+  "semantic_alignment": {
+    "audio_segment_ref": "ACT3-BEAT-08-CONTEMPORARY_REFLECTION",
+    "visual_element_ref": "CONTENT-ZONE-3",
+    "alignment_note": "旁白「画面从长安收回，回到现代。\n\n你坐在书…」对应视觉区显示",
+    "alignment_confirmed": false
+  },
+  "cognitive_load": {
+    "visual_points": 4,
+    "audio_chunks": 5,
+    "load_status": "WARN",
+    "bottleneck_cause": "受蕴",
+    "split_recommendation": "建议拆分为2个 scene"
+  },
+  "audio": {
+    "tts_template": "voice_explain",
+    "speed_wpm": 170,
+    "pause_after_s": 2.0
+  },
+  "energy_level": "medium",
+  "clip_friendly": true
+}

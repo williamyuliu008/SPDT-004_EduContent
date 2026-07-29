@@ -1,0 +1,196 @@
+{
+  "package_id": "GAOKAO_FULL_2026",
+  "package_title": "高考古诗文通关·完整版",
+  "series_title": "高考古诗文训练体系",
+  "schema_version": "v1.0.0",
+  "total_episodes": 12,
+  "total_chains": 41,
+  "total_guwen_cards": 106,
+  "total_poetry_cards": 18,
+  "episodes": [
+    {
+      "ep": 1,
+      "title": "文言初叩·诸子短论",
+      "difficulty": "初阶",
+      "chains": [
+        "GAOKAO_EP01",
+        "CHAIN_句式_判断句_01",
+        "CHAIN_实词_言说_01",
+        "CHAIN_断句_对话标志_01"
+      ],
+      "card_count": 24
+    },
+    {
+      "ep": 2,
+      "title": "寓言智慧·省略与通假",
+      "difficulty": "初阶",
+      "chains": [
+        "GAOKAO_EP02",
+        "CHAIN_句式_省略句_01",
+        "CHAIN_通假_高频30_01",
+        "CHAIN_实词_时间_01"
+      ],
+      "card_count": 17
+    },
+    {
+      "ep": 3,
+      "title": "儒家正脉·论证与活用",
+      "difficulty": "初阶",
+      "chains": [
+        "GAOKAO_EP03",
+        "CHAIN_活用_使动_01",
+        "CHAIN_虚词_之_01",
+        "CHAIN_实词_Top20_01"
+      ],
+      "card_count": 17
+    },
+    {
+      "ep": 4,
+      "title": "史传入门·消独与倒装",
+      "difficulty": "中阶",
+      "chains": [
+        "GAOKAO_EP04",
+        "CHAIN_虚词_之_高级_01",
+        "CHAIN_句式_宾前_01",
+        "CHAIN_句式_定后_01"
+      ],
+      "card_count": 16
+    },
+    {
+      "ep": 5,
+      "title": "说理进阶·虚词而全解",
+      "difficulty": "中阶",
+      "chains": [
+        "GAOKAO_EP05",
+        "CHAIN_虚词_而_01",
+        "CHAIN_活用_意动_01",
+        "CHAIN_主观题_思路_01"
+      ],
+      "card_count": 9
+    },
+    {
+      "ep": 6,
+      "title": "史传进阶·使动与官职",
+      "difficulty": "中阶",
+      "chains": [
+        "GAOKAO_EP06",
+        "CHAIN_句式_被动_01"
+      ],
+      "card_count": 11
+    },
+    {
+      "ep": 7,
+      "title": "虚词以其余·介词连词分化",
+      "difficulty": "中阶",
+      "chains": [
+        "GAOKAO_EP07",
+        "CHAIN_虚词_以_01",
+        "CHAIN_虚词_其_01"
+      ],
+      "card_count": 11
+    },
+    {
+      "ep": 8,
+      "title": "史论纵横·推断六陷阱",
+      "difficulty": "中阶",
+      "chains": [
+        "GAOKAO_EP08",
+        "CHAIN_翻译_3加1_01",
+        "CHAIN_推断_六陷阱_01"
+      ],
+      "card_count": 9
+    },
+    {
+      "ep": 9,
+      "title": "辞赋小品·骈散之美",
+      "difficulty": "高阶",
+      "chains": [
+        "GAOKAO_EP09",
+        "CHAIN_古今异义_高频20_01"
+      ],
+      "card_count": 11
+    },
+    {
+      "ep": 10,
+      "title": "游记小品·细节寄情",
+      "difficulty": "高阶",
+      "chains": [
+        "GAOKAO_EP10",
+        "CHAIN_活用_名作动_01"
+      ],
+      "card_count": 11
+    },
+    {
+      "ep": 11,
+      "title": "古诗意象·天地与人心",
+      "difficulty": "中阶",
+      "chains": [
+        "GAOKAO_EP11",
+        "CHAIN_意象_五大群_01",
+        "CHAIN_情感_三层_01",
+        "CHAIN_手法_五种_01"
+      ],
+      "card_count": 13
+    },
+    {
+      "ep": 12,
+      "title": "古诗互文·同题异心",
+      "difficulty": "高阶",
+      "chains": [
+        "GAOKAO_EP12",
+        "CHAIN_比较鉴赏_模板_01"
+      ],
+      "card_count": 9
+    }
+  ],
+  "four_modules": {
+    "module1_foundation": {
+      "name": "基建层（Hard Memory）",
+      "content": "实词库/虚词库/特殊现象库/固定搭配库",
+      "tags": [
+        "基建层",
+        "实词",
+        "虚词",
+        "活用",
+        "通假",
+        "古今异义",
+        "偏义复词",
+        "句式",
+        "固定搭配"
+      ]
+    },
+    "module2_logic": {
+      "name": "逻辑层（Context Memory）",
+      "content": "官职变动/人物称谓/文化常识",
+      "tags": [
+        "逻辑层",
+        "官职",
+        "称谓",
+        "文化_科举",
+        "文化_历法",
+        "文化_地理"
+      ]
+    },
+    "module3_mapping": {
+      "name": "映射层（Implicit Knowledge）",
+      "content": "断句规则/翻译采分点/推断陷阱/主观题逻辑",
+      "tags": [
+        "映射层",
+        "断句",
+        "翻译_采分点",
+        "推断",
+        "主观题"
+      ]
+    },
+    "module4_index": {
+      "name": "索引层（篇目映射）",
+      "content": "12集课内课外篇目映射",
+      "tags": [
+        "篇目",
+        "来源_课内",
+        "来源_课外",
+        "文体"
+      ]
+    }
+  }
+}

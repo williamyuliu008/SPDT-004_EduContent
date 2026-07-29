@@ -1,0 +1,182 @@
+{
+  "episode_id": "古史_革与鼎_ep06",
+  "series": "革与鼎",
+  "title": "盛唐拐点",
+  "total_scenes": 14,
+  "scenes": [
+    {
+      "scene_id": "古史_革与鼎_ep06_act1_00",
+      "scene_type": "concept",
+      "title": "开元盛世，是唐玄宗前半…",
+      "source_knowledge_nodes": [
+        "#革与鼎/755-763年",
+        "#历史/盛唐拐点",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_革与鼎_ep06_act1_01",
+      "scene_type": "concept",
+      "title": "【安禄山的筹码】\n\n\n\n安禄山是…",
+      "source_knowledge_nodes": [
+        "#革与鼎/755-763年",
+        "#历史/盛唐拐点",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_革与鼎_ep06_act1_02",
+      "scene_type": "concept",
+      "title": "755年十二月，安禄山反了",
+      "source_knowledge_nodes": [
+        "#革与鼎/755-763年",
+        "#历史/盛唐拐点",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_革与鼎_ep06_act1_03",
+      "scene_type": "action",
+      "title": "马嵬驿兵变的本质：不是…",
+      "source_knowledge_nodes": [
+        "#革与鼎/755-763年",
+        "#历史/盛唐拐点",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "ACCEPTABLE"
+    },
+    {
+      "scene_id": "古史_革与鼎_ep06_act2_04",
+      "scene_type": "concept",
+      "title": "安史之乱结束后，唐朝面…",
+      "source_knowledge_nodes": [
+        "#革与鼎/755-763年",
+        "#历史/盛唐拐点",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_革与鼎_ep06_act2_05",
+      "scene_type": "concept",
+      "title": "第三：政治生态恶化",
+      "source_knowledge_nodes": [
+        "#革与鼎/755-763年",
+        "#历史/盛唐拐点",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_革与鼎_ep06_act2_06",
+      "scene_type": "concept",
+      "title": "从更长的历史视角看，安…",
+      "source_knowledge_nodes": [
+        "#革与鼎/755-763年",
+        "#历史/盛唐拐点",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_革与鼎_ep06_act2_07",
+      "scene_type": "action",
+      "title": "安史之乱的历史意义：它…",
+      "source_knowledge_nodes": [
+        "#革与鼎/755-763年",
+        "#历史/盛唐拐点",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "ACCEPTABLE"
+    },
+    {
+      "scene_id": "古史_革与鼎_ep06_act3_08",
+      "scene_type": "concept",
+      "title": "让我们看看唐玄宗的选…",
+      "source_knowledge_nodes": [
+        "#革与鼎/755-763年",
+        "#历史/盛唐拐点",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_革与鼎_ep06_act3_09",
+      "scene_type": "concept",
+      "title": "为什么忽视杨国忠的危…",
+      "source_knowledge_nodes": [
+        "#革与鼎/755-763年",
+        "#历史/盛唐拐点",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_革与鼎_ep06_act3_10",
+      "scene_type": "action",
+      "title": "安史之乱的历史教训：系…",
+      "source_knowledge_nodes": [
+        "#革与鼎/755-763年",
+        "#历史/盛唐拐点",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "ACCEPTABLE"
+    },
+    {
+      "scene_id": "古史_革与鼎_ep06_act4_11",
+      "scene_type": "concept",
+      "title": "历史上有一种现象叫'盛…",
+      "source_knowledge_nodes": [
+        "#革与鼎/755-763年",
+        "#历史/盛唐拐点",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_革与鼎_ep06_act4_12",
+      "scene_type": "concept",
+      "title": "历史不能假设，但我们可…",
+      "source_knowledge_nodes": [
+        "#革与鼎/755-763年",
+        "#历史/盛唐拐点",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_革与鼎_ep06_act4_13",
+      "scene_type": "causal_chain",
+      "title": "高考考点提示：安史之乱…",
+      "source_knowledge_nodes": [
+        "#革与鼎/755-763年",
+        "#历史/盛唐拐点",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    }
+  ],
+  "stats": {
+    "total_beats": 14,
+    "total_scenes": 14,
+    "by_scene_type": {
+      "concept": 10,
+      "action": 3,
+      "causal_chain": 1
+    },
+    "by_knowledge_type": {
+      "I": 0,
+      "II": 14,
+      "III": 0,
+      "IV": 0
+    },
+    "cognitive_warnings": 11
+  },
+  "schema_version": "v2",
+  "if_a_path": "D:\\92_products\\SPDT-004_EduContent\\SPDT-KTE\\PT-038\\古史_革与鼎_ep06_test\\scenes_out\\scene_v2_full.json",
+  "validation_errors": 0,
+  "analogy_warnings": 0
+}

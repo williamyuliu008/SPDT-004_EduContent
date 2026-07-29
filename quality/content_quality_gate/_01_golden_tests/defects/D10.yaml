@@ -1,0 +1,3 @@
+defect: chain_overflow
+rule: each_item_3chars
+sample_id: D10

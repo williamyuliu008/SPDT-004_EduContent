@@ -1,0 +1,80 @@
+{
+  "scene_id": "墨骨山河_ep08_act3_06",
+  "scene_type": "steps",
+  "knowledge_type": "II",
+  "content": {
+    "title": "【综合题】（20分）\n1. 什么是'碑学'？什…",
+    "steps": [
+      "【综合题】（20分）",
+      "1. 什么是'碑学'？什么是'帖学'？两者的主要…",
+      "2. '南北书派论'是谁提出的？其核心论点…",
+      "3. 康有为《广艺舟双楫》的主要论点是什…",
+      "4. 谈谈碑学对当代书法创作的启示",
+      "（5分）"
+    ]
+  },
+  "page": {
+    "current": 7,
+    "total": 8,
+    "show": true
+  },
+  "scene_info": {
+    "idx": 6,
+    "total": 8,
+    "name": "视野的边界·knowledge_check",
+    "dur": 0.0
+  },
+  "source_knowledge_nodes": [],
+  "source_chain_id": "墨骨山河_ep08",
+  "five_skandha": {
+    "color_base": [
+      "【综合",
+      "【综合题",
+      "【综合题】",
+      "【综合题】（"
+    ],
+    "sensation": "none",
+    "sensation_trigger": "【综合题】（20分）\n1. 什么是'碑学'？什么是'帖学'？两者的主要区别是什么……",
+    "discrimination": "【综合题】（20分）\n1. 什么是'碑学'？什么是'帖学'？",
+    "action_prompt": "判断/选择",
+    "recognition_marker": "【综合题】（20分）\n1. 什么是'碑学'？什么是'帖学'？两…",
+    "bottleneck_warn": "想蕴"
+  },
+  "analogy_block": {
+    "applicable": true,
+    "knowledge_type": "II",
+    "source_domain": "历史场景/人生经验",
+    "target_domain": "【综合题】（20分）\n1. 什么是'碑学'？什么是'帖学'？两…",
+    "mapping_table": [
+      {
+        "source": "历史情境",
+        "arrow": "→",
+        "target": "书法技法"
+      }
+    ],
+    "difference_annotations": [
+      "注意历史背景与技法的差异"
+    ],
+    "closure_definition": ""
+  },
+  "semantic_alignment": {
+    "audio_segment_ref": "ACT3-BEAT-06-KNOWLEDGE_CHECK",
+    "visual_element_ref": "CONTENT-ZONE-1",
+    "alignment_note": "旁白「【综合题】（20分）\n1. 什么是'碑学'？什么是'帖学'？两…」对应视觉区显示",
+    "alignment_confirmed": false
+  },
+  "cognitive_load": {
+    "visual_points": 6,
+    "audio_chunks": 5,
+    "load_status": "WARN",
+    "bottleneck_cause": "想蕴",
+    "split_recommendation": "建议拆分为2个 scene"
+  },
+  "audio": {
+    "tts_template": "voice_question",
+    "speed_wpm": 170,
+    "pause_after_s": 2.0
+  },
+  "energy_level": "medium",
+  "clip_friendly": false
+}

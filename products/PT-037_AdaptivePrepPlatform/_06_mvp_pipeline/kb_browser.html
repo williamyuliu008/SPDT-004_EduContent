@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>书法史知识底座 — PT-037</title>
+<style>
+/* ═══════════════════════════════════════════════════════════
+   书法史知识底座 — 基于 PT-030 knowledge_browser 模板
+═══════════════════════════════════════════════════════════ */
+:root{
+  --bg:#f0f4f8;
+  --card:#ffffff;
+  --b2:#f8fafc;
+  --border:#e2e8f0;
+  --tx:#1a202c;
+  --muted:#64748b;
+  --accent:#7c3aed;       /* 紫色 — 古汉语/书法氛围 */
+  --accent2:#059669;       /* 绿色 — 正确/译篆 */
+  --accent3:#d97706;       /* 琥珀 — 句读/古文 */
+  --grn:#059669;
+  --ylw:#d97706;
+  --red:#dc2626;
+  --pink:#db2777;
+  --rad:10px;
+  --aglow:rgba(124,58,237,.08);
+  --aglow2:rgba(5,150,105,.08);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--tx);height:100vh;display:flex;flex-direction:column;font-size:14px;overflow:hidden}
+button{cursor:pointer;font-family:inherit}
+
+/* ── 顶部 ── */
+.top{background:var(--card);padding:10px 24px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);flex-shrink:0}
+.top h1{font-size:16px;font-weight:700;color:var(--accent)}
+.top-sub{font-size:12px;color:var(--muted);margin-left:12px;font-weight:400}
+
+/* ── 布局 ── */
+.layout{flex:1;display:flex;overflow:hidden}
+
+/* ── 侧边栏 ── */
+.side{width:300px;background:var(--card);border-right:1px solid var(--border);overflow-y:auto;flex-shrink:0;display:flex;flex-direction:column}
+.side::-webkit-scrollbar{width:3px}
+.side::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+
+.side-search{
+  padding:12px 14px 8px;
+  flex-shrink:0;
+}
+.side-search input{
+  width:100%;background:var(--b2);border:1px solid var(--border);
+  border-radius:8px;padding:8px 12px;color:var(--tx);font-size:13px;
+  outline:none;font-family:inherit;
+}
+.side-search input:focus{border-color:var(--accent)}
+
+.side-scroll{flex:1;overflow-y:auto;padding:0 10px 14px}
+.side-scroll::-webkit-scrollbar{width:3px}
+.side-scroll::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+
+/* 分类组 */
+.cat-group{margin-bottom:2px}
+.cat-hdr{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:8px 10px;cursor:pointer;border-radius:8px;font-weight:600;font-size:13px;
+  transition:.1s;margin-top:4px;
+}
+.cat-hdr:hover{background:var(--b2)}
+.cat-hdr .cat-icon{margin-right:6px}
+.cat-hdr .badge{
+  font-size:10px;padding:2px 7px;border-radius:4px;font-weight:600;
+  background:var(--accent);color:#fff;
+}
+.cat-hdr .cat-toggle{font-size:11px;color:var(--muted);transition:.2s}
+.cat-hdr.open .cat-toggle{transform:rotate(90deg)}
+
+/* 朝代子分类 */
+.dynasty-group{margin-left:8px;margin-top:2px}
+.dynasty-hdr{
+  display:flex;justify-content:space-between;padding:5px 8px;cursor:pointer;
+  border-radius:6px;font-size:12px;color:var(--muted);font-weight:500;
+}
+.dynasty-hdr:hover{background:var(--b2);color:var(--tx)}
+.dynasty-hdr .badge{font-size:9px;padding:1px 5px;border-radius:3px;font-weight:600}
+.dynasty-hdr.open{color:var(--accent);font-weight:600}
+
+.entries-wrap{display:none;padding-left:8px;margin-bottom:4px}
+.entries-wrap.show{display:block}
+
+.entry-item{
+  padding:6px 10px;cursor:pointer;border-radius:6px;font-size:12px;
+  color:var(--muted);display:flex;align-items:center;gap:6px;
+  transition:.1s;
+}
+.entry-item:hover{background:var(--b2);color:var(--tx)}
+.entry-item.active{background:var(--aglow);color:var(--accent);font-weight:600}
+.entry-item .e-dot{
+  width:6px;height:6px;border-radius:50%;background:var(--border);
+  flex-shrink:0;
+}
+.entry-item.active .e-dot{background:var(--accent)}
+.entry-item .e-name{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.entry-item .e-freq{font-size:9px;color:var(--ylw);flex-shrink:0}
+
+/* ── 主区 ── */
+.main{flex:1;overflow-y:auto;padding:24px}
+.main::-webkit-scrollbar{width:4px}
+.main::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+.main{padding-right:32px}
+
+/* 主区头部 */
+.main-head{margin-bottom:16px}
+.main-head h2{font-size:20px;margin-bottom:6px}
+.main-tags{display:flex;gap:6px;flex-wrap:wrap}
+.main-tags .tg{
+  font-size:11px;padding:3px 10px;border-radius:4px;
+  background:var(--b2);color:var(--muted);
+}
+
+/* 标签栏 */
+.tab-bar{display:flex;gap:4px;margin-bottom:16px;flex-wrap:wrap;border-bottom:1px solid var(--border);padding-bottom:12px}
+.tab{
+  padding:7px 14px;border-radius:6px;font-size:12px;cursor:pointer;
+  border:1px solid transparent;color:var(--muted);background:transparent;
+  font-weight:500;transition:.1s;
+}
+.tab:hover{color:var(--tx);background:var(--b2)}
+.tab.active{
+  background:var(--aglow);color:var(--accent);border-color:var(--accent);font-weight:600;
+}
+.tab.p2{--accent-override:var(--accent2);--aglow-override:rgba(5,150,105,.08)}
+.tab.p2.active{background:var(--aglow2);color:var(--accent2);border-color:var(--accent2)}
+.tab.p3{--accent-override:var(--accent3);--aglow-override:rgba(217,119,6,.08)}
+.tab.p3.active{background:var(--aglow2);color:var(--accent3);border-color:var(--accent3)}
+
+/* 内容区 */
+.content-area{display:flex;flex-direction:column;gap:12px}
+
+.summary-box{
+  background:linear-gradient(135deg,#f5f3ff,#f0fdf4);
+  border:1px solid var(--border);padding:14px 18px;border-radius:10px;
+  font-size:14px;line-height:1.9;
+}
+
+/* 背景延伸 — 可多一些文字 */
+.field-card.extended{
+  background:linear-gradient(135deg,#f8f5ff,#f0fdf4);
+  border-color:rgba(124,58,237,.15);
+}
+
+/* 句读速查 — 古文等宽 */
+.field-card.punct-ref-card{
+  background:#fffef8;
+  border-color:#e8d5a3;
+}
+.field-card.punct-ref-card .fn-dot{
+  background:var(--ylw);
+}
+.field-card.punct-ref-card .punct-ref-line,
+.field-card.punct-ref-card li[class="punct-ref-line"]{
+  font-family:"FangSong","STFangsong","SimSun",serif;
+  background:rgba(245,158,11,.05);
+  padding:4px 10px;
+  border-radius:4px;
+  border-left:3px solid var(--ylw);
+}
+.field-card.punct-ref-card li[class="punct-ref-line"]:first-child{
+  margin-top:0;
+}
+
+/* 错题剧本 — 三要素专用样式 */
+.err-question{
+  background:#f8f7ff;
+  border:1px solid rgba(124,58,237,.2);
+  border-radius:8px;
+  padding:14px 18px;
+  margin-bottom:14px;
+  font-size:14px;
+  line-height:1.9;
+}
+.err-wrong{
+  background:#fff5f5;
+  border:1px solid rgba(220,38,38,.2);
+  border-radius:8px;
+  padding:12px 16px;
+  margin-bottom:10px;
+  font-size:13px;
+  line-height:1.8;
+}
+.err-wrong .err-label{color:var(--red);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.err-correct{
+  background:#f0fdf4;
+  border:1px solid rgba(5,150,105,.25);
+  border-radius:8px;
+  padding:12px 16px;
+  margin-bottom:10px;
+  font-size:13px;
+  line-height:1.8;
+}
+.err-correct .err-label{color:var(--grn);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.err-analysis{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:14px 18px;
+  margin-bottom:10px;
+}
+.err-analysis .err-label{color:var(--accent);font-weight:700;font-size:12px;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.field-card.mnemonic-card{
+  background:linear-gradient(135deg,#fffbeb,#fef9c3);
+  border-color:#fde68a;
+}
+.field-card.mnemonic-card .fn-dot{background:#ca8a04}
+
+/* 字段卡 */
+.field-card{
+  background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:14px 18px;
+}
+.field-card .fn{
+  font-size:12px;font-weight:700;margin-bottom:8px;
+  display:flex;align-items:center;gap:6px;
+}
+.field-card .fn-dot{
+  width:8px;height:8px;border-radius:50%;background:var(--accent);
+}
+.field-card .fd{
+  font-size:13px;color:var(--tx);line-height:1.9;
+  white-space:pre-wrap;max-width:800px;
+}
+
+/* 链接 */
+.link-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:14px 18px;
+}
+.link-item{
+  display:flex;align-items:center;gap:8px;padding:6px 0;
+  font-size:13px;color:var(--accent);border-bottom:1px solid var(--border);
+}
+.link-item:last-child{border-bottom:none}
+.link-item .link-icon{font-size:14px}
+
+/* 空状态 */
+.empty-state{text-align:center;padding:80px 20px;color:var(--muted)}
+.empty-state .icon{font-size:64px;margin-bottom:16px}
+.empty-state h3{font-size:18px;color:var(--tx);margin-bottom:8px}
+.empty-state p{font-size:13px;line-height:1.8}
+.empty-state .stats-row{display:flex;gap:16px;justify-content:center;margin:20px 0}
+.empty-state .stat-chip{
+  background:var(--card);border:1px solid var(--border);border-radius:8px;
+  padding:12px 20px;text-align:center;
+}
+.empty-state .stat-chip .scv{font-size:22px;font-weight:700;color:var(--accent)}
+.empty-state .stat-chip .scl{font-size:11px;color:var(--muted);margin-top:2px}
+
+/* 加载 */
+.loading-state{text-align:center;padding:60px;color:var(--muted);font-size:13px}
+
+/* 应试技巧高亮 */
+.tip-highlight{
+  background:rgba(245,158,11,.08);border-left:3px solid var(--ylw);
+  padding:10px 14px;border-radius:0 8px 8px 0;margin-top:8px;
+}
+.tip-highlight li{margin:4px 0;font-size:13px;color:var(--tx);line-height:1.7}
+
+/* 难度指示 */
+.diff-badge{
+  display:inline-flex;align-items:center;gap:3px;
+  font-size:11px;padding:2px 8px;border-radius:10px;
+  background:rgba(245,158,11,.1);color:var(--ylw);
+}
+.diff-badge.hi{background:rgba(239,68,68,.1);color:var(--red)}
+.diff-badge.mid{background:rgba(59,130,246,.1);color:#3b82f6}
+.diff-badge.lo{background:rgba(34,197,94,.1);color:var(--grn)}
+
+@media(max-width:768px){.side{display:none}.main{padding:14px}}
+</style>
+</head>
+<body>
+
+<!-- 顶部 -->
+<div class="top">
+  <div>
+    <h1>📜 书法史知识底座<span class="top-sub">PT-037 · 国美书法校考</span></h1>
+  </div>
+  <div style="font-size:12px;color:var(--muted)">
+    <span id="total-label">加载中…</span>
+  </div>
+</div>
+
+<!-- 布局 -->
+<div class="layout">
+
+  <!-- 左侧导航 -->
+  <aside class="side">
+    <div class="side-search">
+      <input id="search-input" placeholder="搜索知识点…" oninput="onSearch(this.value)">
+    </div>
+    <div class="side-scroll" id="sidenav">
+      <div class="loading-state">加载知识库…</div>
+    </div>
+  </aside>
+
+  <!-- 右侧主区 -->
+  <main class="main" id="main-area">
+    <div class="empty-state" id="empty-state">
+      <div class="icon">📚</div>
+      <h3>书法史知识底座</h3>
+      <p>从左侧选择一个知识点查看详细讲解<br>涵盖书法史名词解释、译篆对照、句读练习、错题剧本</p>
+      <div class="stats-row" id="stats-row"></div>
+    </div>
+    <div id="detail-area" style="display:none"></div>
+  </main>
+
+</div>
+
+<!-- 内嵌数据（离线时直接使用，不依赖 server） -->
+<script src="kb_all_inline.js"></script>
+
+<script>
+// ─── 全局状态 ─────────────────────────────────────────────
+var DATA = null;           // 全部知识数据
+var currentEntry = null;   // 当前选中条目
+var currentTab = null;      // 当前 Tab key
+var searchValue = "";       // 搜索关键词
+
+var API_BASE = "http://localhost:5188/api";
+
+// ─── 工具 ───────────────────────────────────────────────
+function $(id) { return document.getElementById(id) }
+
+function getDiffClass(tags) {
+  for (var t of (tags||[])) {
+    if (t.indexOf("Lv5")!==-1||t.indexOf("五星")!==-1) return "hi";
+    if (t.indexOf("Lv4")!==-1||t.indexOf("四星")!==-1) return "mid";
+    if (t.indexOf("Lv1")!==-1||t.indexOf("一星")!==-1) return "lo";
+    if (t.indexOf("Lv3")!==-1) return "mid";
+  }
+  return "";
+}
+
+function getFreqLabel(tags) {
+  for (var t of (tags||[])) {
+    var m = t.match(/⭐+/g);
+    if (m) return m[0];
+    m = t.match(/考频\/([^\]]+)/);
+    if (m) return m[1];
+  }
+  return "";
+}
+
+function getCatColor(catName) {
+  if (catName.indexOf("书法史")!==-1) return "#7c3aed";
+  if (catName.indexOf("译篆")!==-1) return "#059669";
+  if (catName.indexOf("句读速查")!==-1) return "#d97706";
+  if (catName.indexOf("句读范本")!==-1) return "#b45309";
+  if (catName.indexOf("错题")!==-1) return "#dc2626";
+  return "#7c3aed";
+}
+
+function tagStyle(tag) {
+  if (tag.indexOf("考频")!==-1) return "background:rgba(245,158,11,.1);color:#d97706";
+  if (tag.indexOf("考点类型")!==-1) return "background:rgba(124,58,237,.1);color:#7c3aed";
+  if (tag.indexOf("模块")!==-1) return "background:rgba(59,130,246,.1);color:#3b82f6";
+  if (tag.indexOf("认知层级")!==-1) return "background:rgba(5,150,105,.1);color:#059669";
+  if (tag.indexOf("难度")!==-1) return "background:rgba(239,68,68,.1);color:#dc2626";
+  return "";
+}
+
+// ─── 初始化：加载数据（优先API，失败则读本地kb_all.json）──
+function init() {
+  var label = $("total-label");
+  var sidenav = $("sidenav");
+
+  function useData(data, source) {
+    DATA = data;
+    buildStatsRow(data);
+    buildSidebar(data.categories);
+    var src = source === "api" ? " \u2014 \u5728\u7ebf\u6a21\u5f0f" : " \u2014 \u79c1\u5bb6\u7248\u672c\uff08\u76f4\u63a5\u6253\u5f00\uff09";
+    label.textContent =
+      "\u4e66\u6cd5\u53f2 " + data.total_kb + " \u6761 \u00b7 \u8bd1\u7bc6 " + data.total_t + " \u7ec4 \u00b7 \u53e5\u8bfb\u901f\u67e5 " + (data.total_punct_ref||0) + " \u8282 \u00b7 \u53e5\u8bfb\u8303\u672c " + data.total_qt + " \u7bc7 \u00b7 \u9519\u9898 " + data.total_es + " \u6761" + src;
+  }
+
+  // 1. 优先从 API 加载（3秒超时）
+  var ctrl = new AbortController();
+  var timeout = setTimeout(function(){ ctrl.abort(); }, 3000);
+
+  fetch(API_BASE + "/kb/all", {signal: ctrl.signal})
+    .then(function(r){ clearTimeout(timeout); return r.json(); })
+    .then(function(data){
+      if (data.ok) { useData(data, "api"); }
+      else { loadEmbedded(); }
+    })
+    .catch(function(){
+      clearTimeout(timeout);
+      loadEmbedded();
+    });
+
+  // 2. 兜底：内嵌数据（直接双击打开 HTML 即可，无需启动任何服务）
+  function loadEmbedded() {
+    if (window.EMBEDDED_DATA && window.EMBEDDED_DATA.ok) {
+      useData(window.EMBEDDED_DATA, "embedded");
+    } else {
+      sidenav.innerHTML = '<div class="loading-state" style="color:var(--red)">\u6570\u636e\u52a0\u8f7d\u5931\u8d25\uff0c\u8bf7\u786e\u4fdd <code>kb_all_inline.js</code> \u4e0e <code>kb_browser.html</code> \u540c\u76ee\u5b58\u653e\uff0c\u7136\u540e\u91cd\u65b0\u6253\u5f00\u672c\u6587\u4ef6\u3002</div>';
+    }
+  }
+}
+
+function buildStatsRow(data) {
+  var html = "";
+  var vals = [data.total_kb, data.total_t, data.total_punct_ref||0, data.total_qt, data.total_es];
+  var names = ["书法史","译篆","句读速查","句读范本","错题"];
+  var colors = ["#7c3aed","#059669","#d97706","#b45309","#dc2626"];
+  for (var i=0; i<5; i++) {
+    html += '<div class="stat-chip"><div class="scv" style="color:'+colors[i]+'">'+vals[i]+'</div><div class="scl">'+names[i]+'</div></div>';
+  }
+  $("stats-row").innerHTML = html;
+}
+
+// ─── 构建侧边栏 ─────────────────────────────────────────
+function buildSidebar(categories) {
+  var html = "";
+  (categories||[]).forEach(function(cat, ci){
+    var color = getCatColor(cat.name);
+    var icon = cat.name.indexOf("书法史")!==-1 ? "📜"
+             : cat.name.indexOf("译篆")!==-1 ? "🔍"
+             : cat.name.indexOf("句读速查")!==-1 ? "📖"
+             : cat.name.indexOf("句读范本")!==-1 ? "📝"
+             : "⚠️";
+    html += '<div class="cat-group">';
+    html += '<div class="cat-hdr open" id="cat-'+ci+'" onclick="toggleCat('+ci+')" style="color:'+color+'">';
+    html += '<span><span class="cat-icon">'+icon+'</span>'+cat.name+'</span>';
+    html += '<span class="badge" style="background:'+color+'">'+cat.count+'</span>';
+    html += '<span class="cat-toggle">▶</span></div>';
+
+    var entriesId = "entries-" + ci;
+    html += '<div class="entries-wrap show" id="'+entriesId+'">';
+
+    // 书法史有朝代子分类
+    if (cat.sub_cats && cat.sub_cats.length) {
+      cat.sub_cats.forEach(function(sub, si){
+        var subId = "sub-" + ci + "-" + si;
+        html += '<div class="dynasty-group">';
+        html += '<div class="dynasty-hdr open" id="'+subId+'-hdr" onclick="toggleDynasty(\''+subId+'\')">';
+        html += '<span>'+sub.dynasty+'</span><span class="badge" style="background:var(--border);color:var(--muted)">'+sub.count+'</span>';
+        html += '</div>';
+        html += '<div class="entries-wrap show" id="'+subId+'">';
+        sub.algos.forEach(function(algo){
+          var freq = getFreqLabel(algo.tags);
+          var search = searchValue.toLowerCase();
+          var visible = !search || algo.name.toLowerCase().indexOf(search)!==-1;
+          html += '<div class="entry-item'+(visible?'':' style="display:none"')+'" ';
+          html += 'id="entry-'+algo.id+'" ';
+          html += 'onclick="selectEntry(\''+algo.id.replace(/'/g,"\\'")+'\')">';
+          html += '<span class="e-dot"></span>';
+          html += '<span class="e-name">'+algo.name+'</span>';
+          if (freq) html += '<span class="e-freq">'+freq+'</span>';
+          html += '</div>';
+        });
+        html += '</div></div>';
+      });
+    } else {
+      // 其他分类直接列出
+      (cat.algos||[]).forEach(function(algo){
+        var search = searchValue.toLowerCase();
+        var visible = !search || algo.name.toLowerCase().indexOf(search)!==-1;
+        html += '<div class="entry-item'+(visible?'':' style="display:none"')+'" ';
+        html += 'id="entry-'+algo.id+'" ';
+        html += 'onclick="selectEntry(\''+algo.id.replace(/'/g,"\\'")+'\')">';
+        html += '<span class="e-dot"></span>';
+        html += '<span class="e-name">'+algo.name+'</span>';
+        html += '</div>';
+      });
+    }
+
+    html += '</div></div>';
+  });
+  $("sidenav").innerHTML = html;
+}
+
+// ─── 分类折叠 ───────────────────────────────────────────
+function toggleCat(ci) {
+  var hdr = $("cat-"+ci);
+  var entries = $("entries-"+ci);
+  if (!hdr || !entries) return;
+  hdr.classList.toggle("open");
+  entries.classList.toggle("show");
+}
+
+function toggleDynasty(subId) {
+  var hdr = $(subId+"-hdr");
+  var wrap = $(subId);
+  if (!hdr || !wrap) return;
+  hdr.classList.toggle("open");
+  wrap.classList.toggle("show");
+}
+
+// ─── 搜索 ───────────────────────────────────────────────
+function onSearch(val) {
+  searchValue = val;
+  if (!DATA) return;
+  buildSidebar(DATA.categories);
+}
+
+// ─── 选中条目 ───────────────────────────────────────────
+function selectEntry(id) {
+  // 高亮
+  document.querySelectorAll(".entry-item").forEach(function(el){ el.classList.remove("active"); });
+  var el = $("entry-"+id);
+  if (el) el.classList.add("active");
+
+  // 找到条目数据
+  var algo = findAlgo(id);
+  if (!algo) return;
+  currentEntry = algo;
+  var keys = Object.keys(algo.tabs || {});
+  currentTab = keys[0] || null;
+  renderDetail(algo);
+}
+
+function findAlgo(id) {
+  if (!DATA || !DATA.categories) return null;
+  for (var cat of DATA.categories) {
+    // 书法史子分类
+    if (cat.sub_cats) {
+      for (var sub of cat.sub_cats) {
+        for (var a of (sub.algos||[])) {
+          if (a.id === id) return a;
+        }
+      }
+    }
+    // 其他分类
+    for (var a of (cat.algos||[])) {
+      if (a.id === id) return a;
+    }
+  }
+  return null;
+}
+
+// ─── 渲染详情 ───────────────────────────────────────────
+function renderDetail(algo) {
+  $("empty-state").style.display = "none";
+  var detail = $("detail-area");
+  detail.style.display = "block";
+
+  var tabs = algo.tabs || {};
+  var tabKeys = Object.keys(tabs);
+
+  // Tags
+  var tagsHtml = (algo.tags||[]).map(function(t){
+    var sty = tagStyle(t);
+    return '<span class="tg" style="'+(sty||'background:var(--b2)')+'">'+t.replace(/#/g,'')+'</span>';
+  }).join("");
+
+  // 判断条目类型
+  var isErrScript = (algo.id && algo.id.indexOf("ES-") !== -1);
+  var isPunctRef = (algo.id && algo.id.indexOf("PunctRef_") !== -1);
+
+  // ── 错题剧本专用布局 ────────────────────────────────────
+  if (isErrScript) {
+    var qText = algo.question_text || "";
+    var qCorrect = algo.correct_answer || "";
+    var qWrong = algo.wrong_answer || "";
+    var qGap = algo.knowledge_gap || "";
+
+    // 三要素前置展示
+    var errTopHtml = '<div class="err-question">';
+    if (qText) errTopHtml += '<div style="font-size:13px;line-height:1.9">'+escapeHtml(qText)+'</div>';
+    errTopHtml += '</div>';
+    if (qWrong) {
+      errTopHtml += '<div class="err-wrong"><div class="err-label">✗ 典型错误答案</div><div style="font-size:13px;line-height:1.8">'+escapeHtml(qWrong)+'</div></div>';
+    }
+    if (qCorrect) {
+      errTopHtml += '<div class="err-correct"><div class="err-label">✓ 正确答案</div><div style="font-size:13px;line-height:1.8">'+escapeHtml(qCorrect)+'</div></div>';
+    }
+
+    // Tab栏：深度解析 + 记忆口诀
+    var tabBarHtml = '<div class="tab-bar">';
+    tabKeys.forEach(function(key, i){
+      var shortLabel = key.replace(/^\d+-/, "").substring(0,8);
+      tabBarHtml += '<div class="tab'+(i===0?' active':'')+'" id="tab-'+i+'" onclick="switchTab('+i+')">'+shortLabel+'</div>';
+    });
+    tabBarHtml += '</div>';
+
+    // 内容区（Tab1=深度解析, Tab2=记忆口诀）
+    var contentHtml = '<div class="content-area">';
+    tabKeys.forEach(function(key, i){
+      var content = (tabs[key]||"").trim();
+      if (!content) return;
+      var shortLabel = key.replace(/^\d+-/, "").replace("Tab/", "").replace("实战/", "").replace("1-", "").replace("2-", "").replace("3-", "");
+      var isMnemonic = key.indexOf("记忆口诀") !== -1;
+      var cardClass = isMnemonic ? "field-card mnemonic-card" : "err-analysis";
+      var labelColor = isMnemonic ? '#ca8a04' : 'var(--accent)';
+      contentHtml += '<div class="'+cardClass+'" id="content-'+i+'" style="display:'+(i===0?'block':'none')+'">';
+      contentHtml += '<div class="err-label" style="color:'+labelColor+';font-size:12px;font-weight:700;margin-bottom:10px">'+shortLabel+'</div>';
+
+      var lines = content.split("\n").filter(function(l){return l.trim();});
+      var isList = lines.length > 2 || content.indexOf("•")!==-1 || content.indexOf("▸")!==-1;
+      if (isList) {
+        contentHtml += '<ul style="margin:0;list-style:none;padding:0">';
+        lines.forEach(function(line){
+          var clean = line.replace(/^[•\-*·▸]\s*/, "").trim();
+          if (!clean) return;
+          var highlighted = clean.replace(/【([^】]+)】/g, '<strong style="color:var(--accent)">【$1】</strong>');
+          contentHtml += '<li style="margin:5px 0;font-size:13px;line-height:1.85;color:var(--tx)">'+highlighted+'</li>';
+        });
+        contentHtml += '</ul>';
+      } else {
+        var highlighted = content.replace(/【([^】]+)】/g, '<strong style="color:var(--accent)">【$1】</strong>');
+        contentHtml += '<div style="font-size:13px;line-height:1.9">'+escapeHtml(highlighted)+'</div>';
+      }
+      contentHtml += '</div>';
+    });
+    contentHtml += '</div>';
+
+    var html = '<div class="main-head"><h2>'+escapeHtml(algo.name)+'</h2>' +
+      '<div class="main-tags">'+tagsHtml+'</div></div>' +
+      errTopHtml +
+      tabBarHtml +
+      '<div style="margin-top:14px">' +
+      contentHtml +
+      '</div>';
+    detail.innerHTML = html;
+    return;
+  }
+
+  // ── 普通条目布局（书法史/译篆/句读速查等）────────────────────
+  var tabBarHtml = '<div class="tab-bar">';
+  tabKeys.forEach(function(key, i){
+    var shortLabel = key.replace(/^\d+-/, "").replace("Tab/", "").replace("实战/", "").substring(0,8);
+    var pClass = key.indexOf("译篆")!==-1 ? "p2" : "";
+    tabBarHtml += '<div class="tab'+(i===0?' active':'')+' '+pClass+'" id="tab-'+i+'" onclick="switchTab('+i+')">'+shortLabel+'</div>';
+  });
+  tabBarHtml += '</div>';
+
+  var contentHtml = '<div class="content-area">';
+  tabKeys.forEach(function(key, i){
+    var content = (tabs[key]||"").trim();
+    if (!content) return;
+    var shortLabel = key.replace(/^\d+-/, "").replace("Tab/", "").replace("实战/", "").replace("1-", "").replace("2-", "").replace("3-", "");
+    var cardClass = key.indexOf("背景延伸")!==-1 ? "field-card extended" : "field-card";
+    if (isPunctRef) cardClass = "field-card punct-ref-card";
+    contentHtml += '<div class="'+cardClass+'" id="content-'+i+'" style="display:'+(i===0?'block':'none')+'">';
+    contentHtml += '<div class="fn"><span class="fn-dot"></span>'+shortLabel+'</div>';
+
+    var lines = content.split("\n").filter(function(l){return l.trim();});
+    var isList = lines.length > 2 || content.indexOf("•")!==-1 || content.indexOf("▸")!==-1;
+    if (isList) {
+      contentHtml += '<ul style="margin:0;list-style:none;padding:0">';
+      lines.forEach(function(line){
+        var clean = line.replace(/^[•\-*·▸]\s*/, "").trim();
+        if (!clean) return;
+        var highlighted = clean.replace(/【([^】]+)】/g, '<strong style="color:var(--accent)">【$1】</strong>');
+        var lineClass = "";
+        if (isPunctRef && (clean.indexOf("原文：")!==-1 || clean.indexOf("断句：")!==-1 || clean.indexOf("考点：")!==-1)) {
+          lineClass = "punct-ref-line";
+        }
+        contentHtml += '<li class="'+lineClass+'" style="margin:5px 0;font-size:13px;line-height:1.9;color:var(--tx)">'+highlighted+'</li>';
+      });
+      contentHtml += '</ul>';
+    } else {
+      var highlighted = content.replace(/【([^】]+)】/g, '<strong style="color:var(--accent)">【$1】</strong>');
+      contentHtml += '<div class="fd">'+escapeHtml(highlighted)+'</div>';
+    }
+    contentHtml += '</div>';
+  });
+  contentHtml += '</div>';
+
+  var html = '<div class="main-head"><h2>'+escapeHtml(algo.name)+'</h2>' +
+    '<div class="main-tags">'+tagsHtml+'</div></div>' +
+    tabBarHtml +
+    '<div style="margin-top:14px">' +
+    contentHtml +
+    '</div>';
+
+  detail.innerHTML = html;
+}
+
+function switchTab(idx) {
+  document.querySelectorAll(".tab").forEach(function(t){ t.classList.remove("active"); });
+  var tabEl = $("tab-"+idx);
+  if (tabEl) tabEl.classList.add("active");
+  document.querySelectorAll(".field-card,.err-analysis").forEach(function(c){ c.style.display = "none"; });
+  var content = $("content-"+idx);
+  if (content) content.style.display = "block";
+}
+
+function escapeHtml(str) {
+  if (typeof str !== 'string') return str;
+  return str.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+}
+
+// ─── 启动 ───────────────────────────────────────────────
+init();
+</script>
+</body>
+</html>

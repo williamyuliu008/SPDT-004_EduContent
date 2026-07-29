@@ -1,0 +1,11 @@
+concept: 三角函数单调性与最值
+passed_v1: true
+sample_id: func_030
+source: VCC v1.0 math animation factory
+tags:
+  D1_process: static
+  D2_spatial: spatial_2d
+  D3_complexity: medium
+  D4_presentation: computation
+  D5_concept_type: processing
+  D6_subject: algebra

@@ -1,0 +1,8 @@
+{
+  "string": [
+    { "name": "app_name", "value": "rhythm pomodoro" },
+    { "name": "module_desc", "value": "RhythmHabit rhythm pomodoro" },
+    { "name": "EntryAbility_desc", "value": "RhythmHabit rhythm pomodoro" },
+    { "name": "EntryAbility_label", "value": "rhythm pomodoro" }
+  ]
+}

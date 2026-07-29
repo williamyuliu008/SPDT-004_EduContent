@@ -1,0 +1,41 @@
+﻿{
+    "summary":  {
+                    "total_unsigned_kb":  0,
+                    "total_signed_kb":  0,
+                    "compiled":  4,
+                    "total":  4,
+                    "signed":  4
+                },
+    "brand":  "craftsman",
+    "timestamp":  "2026-07-06 22:04:28",
+    "apps":  [
+                 {
+                     "unsigned_kb":  120,
+                     "app":  "craftsman-arkui",
+                     "signed_kb":  157.7,
+                     "compiled":  true,
+                     "signed":  true
+                 },
+                 {
+                     "unsigned_kb":  114.7,
+                     "app":  "craftsman-ohpm",
+                     "signed_kb":  152.8,
+                     "compiled":  true,
+                     "signed":  true
+                 },
+                 {
+                     "unsigned_kb":  21.6,
+                     "app":  "craftsman-utils",
+                     "signed_kb":  61.2,
+                     "compiled":  true,
+                     "signed":  true
+                 },
+                 {
+                     "unsigned_kb":  96,
+                     "app":  "craftsman-utils-v2",
+                     "signed_kb":  141.7,
+                     "compiled":  true,
+                     "signed":  true
+                 }
+             ]
+}

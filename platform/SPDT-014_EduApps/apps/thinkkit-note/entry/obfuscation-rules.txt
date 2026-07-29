@@ -1,0 +1,3 @@
+# Obfuscation rules
+-enable-property-obfuscation
+-enable-string-property-obfuscation

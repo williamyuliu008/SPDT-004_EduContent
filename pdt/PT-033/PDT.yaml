@@ -1,0 +1,11 @@
+pdt_id: PT-033
+name: CorpTraining
+name_zh: 企业培训内容工厂
+spdt: SPDT-004
+domain: 企业培训
+subjects: [入职, 合规, 技能, 领导力]
+content_types: [入职培训包, 合规课件, 技能视频, 配套试题]
+source_project: D:\6_agent_project\projects\cgm_training_factory
+status: active
+maturity: 0.4
+created: 2026-07-10

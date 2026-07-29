@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GaokaoAgent 品牌手册 — SPDT-001</title>
+<style>
+  :root {
+    --brand: #C44536;
+    --brand-light: #F5D5D0;
+    --brand-bg: #FCF5F5;
+    --text: #4E0A0A;
+    --text-sec: #9A5A5A;
+    --text-ter: #B88A8A;
+    --card: #FFFFFF;
+    --border: #F5D5D0;
+    --accent: #F87171;
+    --warn: #FF9800;
+    --error: #F44336;
+    --radius: 10px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #F2F5F2; color: var(--text); line-height: 1.7;
+    max-width: 960px; margin: 0 auto; padding: 0 24px 80px;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, var(--brand) 0%, #7f2c23 100%);
+    color: #fff; border-radius: 0 0 20px 20px;
+    margin: 0 -24px 32px; padding: 48px 32px 40px;
+  }
+  .hero h1 { font-size: 2em; font-weight: 700; margin-bottom: 4px; }
+  .hero .subtitle { opacity: .85; font-size: 1.05em; margin-bottom: 16px; }
+  .hero .meta { display: flex; gap: 16px; flex-wrap: wrap; font-size: .88em; opacity: .75; }
+  .hero .meta span { background: rgba(255,255,255,.15); padding: 3px 12px; border-radius: 20px; }
+  .hero .badges { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+  .hero .badge {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: rgba(255,255,255,.2); padding: 5px 14px; border-radius: 20px; font-size: .85em;
+  }
+  .hero .badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #4CAF50; }
+
+  section { margin-bottom: 36px; }
+  h2 {
+    font-size: 1.35em; color: var(--brand); border-bottom: 2px solid var(--brand-light);
+    padding-bottom: 6px; margin-bottom: 16px;
+  }
+  h3 {
+    font-size: 1.1em; color: var(--text); margin: 16px 0 11px;
+    padding-left: 10px; border-left: 3px solid var(--brand);
+  }
+
+  table {
+    width: 100%; border-collapse: collapse; margin: 10px 0 18px;
+    font-size: .88em; border-radius: var(--radius); overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  }
+  th {
+    background: var(--brand); color: #fff; padding: 8px 12px;
+    text-align: left; font-weight: 600; white-space: nowrap;
+  }
+  td {
+    padding: 8px 12px; border-bottom: 1px solid var(--border);
+    background: var(--card); vertical-align: top;
+  }
+  tr:last-child td { border-bottom: none; }
+
+  code {
+    background: var(--brand-bg); color: var(--brand);
+    padding: 2px 6px; border-radius: 4px; font-size: .88em;
+    font-family: "Fira Code", "Cascadia Code", "Source Code Pro", monospace;
+  }
+  pre {
+    background: #1E1E1E; color: #D4D4D4; padding: 14px 18px;
+    border-radius: var(--radius); overflow-x: auto; margin: 8px 0 16px;
+    font-size: .82em; line-height: 1.5;
+  }
+  pre code { background: none; color: inherit; padding: 0; }
+
+  blockquote {
+    border-left: 4px solid var(--brand); background: var(--brand-bg);
+    padding: 10px 16px; margin: 6px 0 12px;
+    border-radius: 0 8px 8px 0; color: var(--text-sec); font-size: .93em;
+  }
+  a { color: var(--brand); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  ul, ol { padding-left: 24px; margin: 4px 0 10px; }
+  li { margin-bottom: 3px; }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+
+  .footer {
+    text-align: center; color: var(--text-ter); font-size: .85em;
+    padding: 20px 0 0; border-top: 1px solid var(--border); margin-top: 32px;
+  }
+
+  img { max-width: 100%; border-radius: var(--radius); }
+
+  @media (max-width: 600px) {
+    body { padding: 0 12px 60px; }
+    .hero { margin: 0 -12px 24px; padding: 32px 20px 28px; }
+    .hero h1 { font-size: 1.5em; }
+    table { font-size: .78em; }
+    th, td { padding: 6px 8px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>GaokaoAgent 品牌手册</h1>
+  <div class="subtitle">高考应试教育工具矩阵 · 六科统一</div>
+  <div class="meta">
+    <span>SPDT-001</span>
+    <span>鸿蒙生态开发</span>
+    <span>v1.1 · 2026-07-17</span>
+  </div>
+  <div class="badges">
+    <div class="badge"><span class="dot"></span> 已部署真机验证（DevEco 6.1 + devecocli）</div>
+    <div class="badge"><span class="dot"></span> CLI 全自动流水线</div>
+  </div>
+</div>
+
+<section>
+<h1>GaokaoAgent 品牌手册</h1>
+<blockquote>
+<p><strong>六科统一，AI 护航高考</strong> — 高考应试教育工具矩阵<br />
+SPDT-001 鸿蒙生态开发 | HDT-001-GK | v1.1 · 2026-07-17</p>
+</blockquote>
+<hr />
+<h2>一、品牌定位</h2>
+<h3>品牌标识</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>品牌名</td>
+<td>GaokaoAgent</td>
+</tr>
+<tr>
+<td>品牌色</td>
+<td><code>#C44536</code> 中国红</td>
+</tr>
+<tr>
+<td>OMAS 编号</td>
+<td>HDT-001-GK</td>
+</tr>
+<tr>
+<td>品类</td>
+<td>高考应试教育</td>
+</tr>
+<tr>
+<td>Slogan</td>
+<td>六科统一，AI 护航高考</td>
+</tr>
+<tr>
+<td>定价模式</td>
+<td>买断制，单款 ¥18–38</td>
+</tr>
+<tr>
+<td>质量策略</td>
+<td>warnings_policy: no_new</td>
+</tr>
+</tbody>
+</table>
+<h3>目标用户</h3>
+<ul>
+<li><strong>核心用户</strong>：高三考生（17–19 岁），面临高考六科复习压力</li>
+<li><strong>扩展用户</strong>：考生家长（关注志愿填报、院校选择）</li>
+<li><strong>潜在用户</strong>：高一高二学生（提前备考）、复读生</li>
+</ul>
+<h3>使用场景</h3>
+<ul>
+<li>六科日常刷题与智能诊断</li>
+<li>AI 一对一辅导与错题讲解</li>
+<li>知识图谱可视化查漏补缺</li>
+<li>学习数据看板追踪进步</li>
+<li>高考后志愿填报辅助</li>
+</ul>
+<h3>品牌主张</h3>
+<blockquote>
+<p>传统教育 APP 要么是「单一学科刷题器」，要么是「臃肿的题库平台」。GaokaoAgent 以六科统一框架为底座，AI Agent 驱动诊断→辅导→图谱→看板的闭环，首版聚焦数学深度打磨，逐步扩展到全科。</p>
+</blockquote>
+<h3>差异化对比</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>GaokaoAgent</th>
+<th>传统题库 APP</th>
+<th>通用 AI 助手</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>产品形态</td>
+<td>AI Agent 驱动闭环</td>
+<td>静态题库浏览</td>
+<td>聊天式问答</td>
+</tr>
+<tr>
+<td>学科覆盖</td>
+<td>六科统一框架</td>
+<td>单科/多科割裂</td>
+<td>无学科深度</td>
+</tr>
+<tr>
+<td>诊断能力</td>
+<td>智能诊断 + 知识图谱</td>
+<td>仅错题统计</td>
+<td>无</td>
+</tr>
+<tr>
+<td>内核复用</td>
+<td>common/ 22 文件共享</td>
+<td>无</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>数据主权</td>
+<td>本地优先 + API</td>
+<td>云端为主</td>
+<td>云端</td>
+</tr>
+<tr>
+<td>定价</td>
+<td>¥18–38 买断</td>
+<td>免费+广告/订阅</td>
+<td>订阅制</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>二、产品矩阵</h2>
+<h3>APP 清单</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>APP ID</th>
+<th>中文名</th>
+<th>功能简介</th>
+<th>编译</th>
+<th>签名</th>
+<th>HAP</th>
+<th>特色能力</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>gaokao-agent</td>
+<td>高考助手</td>
+<td>六科统一的高考 AI 辅导 Agent</td>
+<td>✅</td>
+<td>✅</td>
+<td>288.8 KB</td>
+<td>智能诊断 · AI 辅导 · 知识图谱 · 数据看板 · 六科切换</td>
+</tr>
+<tr>
+<td>2</td>
+<td>gaokao-volunteer</td>
+<td>志愿填报助手</td>
+<td>院校推荐与志愿填报辅助</td>
+<td>✅</td>
+<td>✅</td>
+<td>210.5 KB</td>
+<td>位次分析 · 冲稳保策略 · 录取概率</td>
+</tr>
+<tr>
+<td>3</td>
+<td>gaokao-language</td>
+<td>AI 语言伴侣</td>
+<td>语文/英语 AI 语言辅导</td>
+<td>✅</td>
+<td>✅</td>
+<td>265.2 KB</td>
+<td>AI 对话练习 · 作文批改 · 语法纠错</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>总计</strong>: 3 款 APP，总 HAP 体积 765 KB，编译 + 签名 100% 通过。目标扩展至 10 款。</p>
+</blockquote>
+<h3>功能架构 — 四环学习闭环</h3>
+<div class="codehilite"><pre><span></span><code>                    ┌─────────────────┐
+                    │  六科切换中枢     │
+                    │ enableSubjectSwitch│
+                    └────────┬────────┘
+                             │
+        ┌────────────────────┼────────────────────┐
+        │                    │                    │
+        ▼                    ▼                    ▼
+┌───────────────┐   ┌───────────────┐   ┌───────────────┐
+│  智能诊断      │   │  AI 辅导      │   │  知识图谱      │
+│ enableDiagnostic│  │ enableTutoring│   │enableKnowledgeMap│
+│               │   │               │   │               │
+│ 薄弱点定位     │   │ 一对一讲解     │   │ 知识关联可视化  │
+│ 错因分析       │   │ 针对性练习     │   │ 考点覆盖度     │
+└───────┬───────┘   └───────┬───────┘   └───────┬───────┘
+        │                    │                    │
+        └────────────────────┼────────────────────┘
+                             │
+                             ▼
+                    ┌───────────────┐
+                    │  数据看板      │
+                    │ enableDashboard│
+                    │               │
+                    │ 学习进度总览    │
+                    │ 六科成绩趋势    │
+                    └───────────────┘
+</code></pre></div>
+
+<p><strong>闭环：诊断薄弱 → AI 辅导强化 → 知识图谱验证 → 看板追踪进步 → 再诊断</strong></p>
+<h3>六科统一框架</h3>
+<table>
+<thead>
+<tr>
+<th>学科</th>
+<th>状态</th>
+<th>策略</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数学</td>
+<td>🟢 首版精研</td>
+<td>函数、几何、概率、数列 — AI 诊断+辅导全覆盖</td>
+</tr>
+<tr>
+<td>语文</td>
+<td>🟡 待扩展</td>
+<td>文言文、现代文阅读、作文、基础题</td>
+</tr>
+<tr>
+<td>英语</td>
+<td>🟡 待扩展</td>
+<td>语法、阅读、完型、写作、听力</td>
+</tr>
+<tr>
+<td>物理</td>
+<td>🟡 待扩展</td>
+<td>力学、电学、热学、光学、近代物理</td>
+</tr>
+<tr>
+<td>化学</td>
+<td>🟡 待扩展</td>
+<td>化学反应、有机、结构、实验</td>
+</tr>
+<tr>
+<td>生物</td>
+<td>🟡 待扩展</td>
+<td>细胞、遗传、生态、调节、进化</td>
+</tr>
+</tbody>
+</table>
+<h3>Feature Flag 矩阵</h3>
+<table>
+<thead>
+<tr>
+<th>Feature Flag</th>
+<th style="text-align: center;">gaokao-agent</th>
+<th style="text-align: center;">gaokao-volunteer</th>
+<th style="text-align: center;">gaokao-language</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>enableDiagnostic</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td>智能诊断引擎</td>
+</tr>
+<tr>
+<td>enableTutoring</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✅</td>
+<td>AI 辅导引擎</td>
+</tr>
+<tr>
+<td>enableKnowledgeMap</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td>知识图谱可视化</td>
+</tr>
+<tr>
+<td>enableDashboard</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td>学习数据看板</td>
+</tr>
+<tr>
+<td>enableSubjectSwitch</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td>六科切换中枢</td>
+</tr>
+<tr>
+<td>enableVolunteer</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">—</td>
+<td>志愿填报引擎</td>
+</tr>
+<tr>
+<td>enableLanguage</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✅</td>
+<td>语言伴侣引擎</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>三、智能体定位</h2>
+<blockquote>
+<p>依据《智能体APP设计指南》，GaokaoAgent 以<strong>专家型智能体</strong>为核心，以庄重、结构化的交互风格为考生提供六科 AI 辅导与志愿决策支持。</p>
+</blockquote>
+<h3>3.1 智能体矩阵</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">APP</th>
+<th style="text-align: left;">Agent 优先级</th>
+<th style="text-align: left;">智能体类型</th>
+<th style="text-align: left;">核心能力</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">gaokao-agent</td>
+<td style="text-align: left;"><strong>P0</strong></td>
+<td style="text-align: left;">专家型 · 六科 AI 辅导 Agent</td>
+<td style="text-align: left;">智能诊断 → 薄弱点定位 → 知识图谱可视化 → 针对性练习 → 学习数据看板</td>
+</tr>
+<tr>
+<td style="text-align: left;">gaokao-language</td>
+<td style="text-align: left;"><strong>P0</strong></td>
+<td style="text-align: left;">专家型 · AI 语言伴侣 Agent</td>
+<td style="text-align: left;">语法纠错 → 作文智能批改 → 口语对话练习 → 阅读解析 → 词汇量评估</td>
+</tr>
+<tr>
+<td style="text-align: left;">gaokao-volunteer</td>
+<td style="text-align: left;">P1</td>
+<td style="text-align: left;">分析型 · 志愿推荐 Agent</td>
+<td style="text-align: left;">位次分析 → 冲稳保策略 → 院校匹配 → 录取概率测算</td>
+</tr>
+</tbody>
+</table>
+<h3>3.2 Agent 交互入口</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">属性</th>
+<th style="text-align: left;">规范</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>入口形态</strong></td>
+<td style="text-align: left;">主界面<strong>结构化卡片面板</strong>，以学科/功能分类组织 Agent 入口，庄重有序</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>品牌色</strong></td>
+<td style="text-align: left;">中国红 <code>#C44536</code>，与品牌 Design Token 统一，传递权威与信赖感</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>触发方式</strong></td>
+<td style="text-align: left;">首页学科卡片点击 → 进入对应学科 Agent 辅导界面；志愿填报独立入口</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>可见性规则</strong></td>
+<td style="text-align: left;">agent 和 language 全时启用 Agent 面板；volunteer 仅在高考季（6-8月）激活实时推荐引擎</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>设计原则</strong></td>
+<td style="text-align: left;">庄重 · 结构化 · 数据驱动——让 AI 像资深教师一样辅导备考</td>
+</tr>
+</tbody>
+</table>
+<h3>3.3 智能体设计原则</h3>
+<ol>
+<li><strong>权威感优先</strong>: 界面采用大留白 + 清晰层级 + 数据卡片，避免花哨动画</li>
+<li><strong>学科深度</strong>: 每门学科拥有独立的知识图谱和诊断模型，非通用问答</li>
+<li><strong>数据可视化</strong>: 诊断结果以雷达图/进度条呈现，让进步可度量</li>
+<li><strong>时效性设计</strong>: 志愿填报 Agent 仅在高考季激活，避免全年占用注意力</li>
+</ol>
+<hr />
+<h2>四、技术规格</h2>
+<h3>4.1 开发环境（CLI 全自动流水线）</h3>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>规格</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>语言与框架</td>
+<td>ArkTS strict mode · ArkUI Stage 模型 · Navigation + NavPathStack 路由</td>
+</tr>
+<tr>
+<td>SDK 版本</td>
+<td>compileSdkVersion 26.0.0 · compatibleSdkVersion 6.1.1(24)</td>
+</tr>
+<tr>
+<td>编译工具</td>
+<td>hvigorw.bat v6.26.1 · DevEco Studio 26.0</td>
+</tr>
+<tr>
+<td>PREFLIGHT</td>
+<td>8 项自动检查 · 品牌级 -BrandPrefix 过滤</td>
+</tr>
+<tr>
+<td>API 服务</td>
+<td>baseUrl: <code>http://127.0.0.1:8000</code> · timeout: 15000ms</td>
+</tr>
+</tbody>
+</table>
+<h3>4.2 公共内核 (common/) — 22 个源文件</h3>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>文件数</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>组件库</td>
+<td>12</td>
+<td>HButton, HCard, HConfirmDialog, HEmptyState, HFAB, HFormItem, HNavBar, HProgressBar, HSearchBar, HTag, HTagGroup, HToast</td>
+</tr>
+<tr>
+<td>存储层</td>
+<td>2</td>
+<td>storageService.ts (泛型 CRUD), keys.ts</td>
+</tr>
+<tr>
+<td>主题</td>
+<td>1</td>
+<td>tokens.ts (Design Token, 品牌红色主题)</td>
+</tr>
+<tr>
+<td>工具</td>
+<td>5</td>
+<td>date.ts, debounce.ts, format.ts, id.ts, validate.ts</td>
+</tr>
+<tr>
+<td>算法</td>
+<td>2</td>
+<td>diagnostic.ts (智能诊断算法), knowledgeGraph.ts (知识图谱关联)</td>
+</tr>
+</tbody>
+</table>
+<h3>4.3 常见编译问题速查</h3>
+<table>
+<thead>
+<tr>
+<th>错误码</th>
+<th>症状</th>
+<th>修复</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00303096</td>
+<td>mock 无效路径</td>
+<td>重命名 mock → mock_disabled</td>
+</tr>
+<tr>
+<td>00303038</td>
+<td>main_pages schema 失败</td>
+<td><code>"pages" → "src"</code></td>
+</tr>
+<tr>
+<td>00303027</td>
+<td>modelVersion 不一致</td>
+<td>统一 26.0.0</td>
+</tr>
+<tr>
+<td>11203005</td>
+<td>float.json 空节点</td>
+<td>补占位项</td>
+</tr>
+<tr>
+<td>11211120</td>
+<td>$media 缺失</td>
+<td>创建图标资源</td>
+</tr>
+<tr>
+<td>10605071/29/01</td>
+<td>bracket notation</td>
+<td>class + dot notation</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>五、运营数据（占位）</h2>
+<blockquote>
+<p>GaokaoAgent 首版（数学）已完成编译与签名验证，尚未上架。以下为运营目标。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>当前</th>
+<th>Q3 目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上架数</td>
+<td>0/3</td>
+<td>3/3</td>
+</tr>
+<tr>
+<td>下载量</td>
+<td>—</td>
+<td>5,000+</td>
+</tr>
+<tr>
+<td>日活 (DAU)</td>
+<td>—</td>
+<td>500+</td>
+</tr>
+<tr>
+<td>评分</td>
+<td>—</td>
+<td>4.5+ ★</td>
+</tr>
+<tr>
+<td>月收入</td>
+<td>—</td>
+<td>¥3,000+</td>
+</tr>
+<tr>
+<td>崩溃率</td>
+<td>—</td>
+<td>&lt; 0.5%</td>
+</tr>
+<tr>
+<td>全科覆盖率</td>
+<td>数学 100% · 其他 0%</td>
+<td>数学 100% · 英语 80% · 语文 60%</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>六、发展规划</h2>
+<h3>6.1 里程碑时间线</h3>
+<table>
+<thead>
+<tr>
+<th>里程碑</th>
+<th>目标</th>
+<th>日期</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✅ M1</td>
+<td>首批 3 款编译+签名通过</td>
+<td>2026-07-08 · 已完成</td>
+</tr>
+<tr>
+<td>✅ M2</td>
+<td>真机部署验证 · 冷启动 &lt; 2s（DevEco 6.1 + devecocli 全自动流水线）</td>
+<td>2026-07-12 · 已完成</td>
+</tr>
+<tr>
+<td>📅 M3</td>
+<td>英语科上线 · 双科 AI 辅导</td>
+<td>2026-08-01 · 规划中</td>
+</tr>
+<tr>
+<td>📅 M4</td>
+<td>六科全部上线 · 第一批 3 款新 APP 启动</td>
+<td>2026-09-15 · 规划中</td>
+</tr>
+<tr>
+<td>📅 M5</td>
+<td>10 款 APP 全部交付</td>
+<td>2026-12-31 · 规划中</td>
+</tr>
+</tbody>
+</table>
+<h3>6.2 10 款扩展路线图</h3>
+<h4>📦 第一批 — 核心学习系列 (2026-Q3)</h4>
+<ol>
+<li><strong>gaokao-agent</strong> — 高考助手（✅ 已交付）</li>
+<li><strong>gaokao-volunteer</strong> — 志愿填报助手：院校推荐、位次分析、冲稳保策略</li>
+<li><strong>gaokao-score</strong> — 分数查询工具：历年分数线、一分一段表、录取分数走势</li>
+</ol>
+<h4>📦 第二批 — 学科强化系列 (2026-Q4)</h4>
+<ol>
+<li><strong>gaokao-major</strong> — 专业解读：专业详情、就业前景、学科评估</li>
+<li><strong>gaokao-drill</strong> — 刷题大师：分科/分知识点/分难度智能组卷</li>
+<li><strong>gaokao-pastpaper</strong> — 历年真题：近 10 年真题库 + AI 逐题解析</li>
+</ol>
+<h4>📦 第三批 — 冲刺辅助系列 (2026-Q4~2027-Q1)</h4>
+<ol>
+<li><strong>gaokao-mockexam</strong> — 模拟考试：全真模拟、计时、评分、排名</li>
+<li><strong>gaokao-wrongbook</strong> — 错题本：智能归类、定期重做、遗忘曲线</li>
+<li><strong>gaokao-points</strong> — 知识点拆解：考点树、掌握度、关联图谱</li>
+</ol>
+<h4>📦 第四批 — 决策支持系列 (2027-Q1)</h4>
+<ol>
+<li><strong>gaokao-compare</strong> — 院校对比：多维度对比、录取概率测算、招生计划</li>
+</ol>
+<h3>6.3 新 APP 立项评审（5 维）</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>评审问题</th>
+<th>权重</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>场景匹配</td>
+<td>是否填补「诊断—辅导—图谱—看板—志愿」闭环中的空白？</td>
+<td><strong>高</strong></td>
+</tr>
+<tr>
+<td>内核复用</td>
+<td>能否用 common/ 现有组件覆盖 80%+ UI？</td>
+<td><strong>高</strong></td>
+</tr>
+<tr>
+<td>六科适用</td>
+<td>能否服务六科统一框架，而非仅单科？</td>
+<td><strong>高</strong></td>
+</tr>
+<tr>
+<td>竞品缺口</td>
+<td>鸿蒙生态中是否有同类产品？</td>
+<td>中</td>
+</tr>
+<tr>
+<td>用户痛点</td>
+<td>是否解决高三考生/家长的真实刚需？</td>
+<td><strong>高</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>七、营销素材</h2>
+<h3>品牌标语</h3>
+<blockquote>
+<p><strong>GaokaoAgent — 六科统一，AI 护航高考。诊断→辅导→图谱→看板，四环闭环助你赢在考场。</strong></p>
+</blockquote>
+<h3>视觉规范</h3>
+<table>
+<thead>
+<tr>
+<th>素材</th>
+<th>规格</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>应用图标</td>
+<td>1024×1024 px · #C44536 中国红基调 · 白色主体</td>
+</tr>
+<tr>
+<td>商店截图</td>
+<td>鸿蒙框架 × 5 张 · 首页 / 诊断 / 辅导 / 图谱 / 看板</td>
+</tr>
+<tr>
+<td>宣传横幅</td>
+<td>1242×2688 px 竖版 · 高考冲刺主题</td>
+</tr>
+<tr>
+<td>品牌 Logo</td>
+<td>中英文组合 · #C44536 中国红</td>
+</tr>
+</tbody>
+</table>
+<h3>ASO 关键词</h3>
+<table>
+<thead>
+<tr>
+<th>APP</th>
+<th>核心词</th>
+<th>长尾词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gaokao-agent</td>
+<td>高考助手, AI辅导, 六科</td>
+<td>高考数学辅导, 智能诊断, 知识图谱, 高考AI</td>
+</tr>
+<tr>
+<td>gaokao-volunteer</td>
+<td>志愿填报, 院校推荐</td>
+<td>位次分析, 冲稳保, 录取概率, 高考志愿</td>
+</tr>
+<tr>
+<td>gaokao-language</td>
+<td>AI语言伴侣, 作文批改</td>
+<td>英语口语, 语法纠错, 语文作文, 语言辅导</td>
+</tr>
+</tbody>
+</table>
+<h3>推广渠道</h3>
+<ul>
+<li>鸿蒙应用商店首发</li>
+<li>高考家长社群 / 知乎教育话题</li>
+<li>B 站 / 抖音高考冲刺类内容合作</li>
+<li>在校大学生口碑传播</li>
+</ul>
+<hr />
+<h2>八、附录</h2>
+<h3>8.1 关键路径</h3>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>路径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>项目根</td>
+<td><code>D:\92_products\SPDT-001_Harmony\</code></td>
+</tr>
+<tr>
+<td>APP 目录</td>
+<td><code>apps\gaokao-agent\</code></td>
+</tr>
+<tr>
+<td>公共内核</td>
+<td><code>common\</code></td>
+</tr>
+<tr>
+<td>CI 配置</td>
+<td><code>ci\pipeline.yaml</code></td>
+</tr>
+<tr>
+<td>文档</td>
+<td><code>docs\</code></td>
+</tr>
+</tbody>
+</table>
+<h3>8.2 OMAS 治理</h3>
+<ul>
+<li><strong>SPDT-001</strong> 鸿蒙生态开发</li>
+<li><strong>HDT-001-GK</strong> GaokaoAgent 品牌</li>
+<li><strong>品类</strong>：高考应试教育</li>
+<li><strong>质量策略</strong>：warnings_policy = no_new，不接受新 warning</li>
+<li><strong>API 规范</strong>：baseUrl <code>http://127.0.0.1:8000</code>，timeout 15000ms</li>
+</ul>
+<h3>8.3 关联文档</h3>
+<ul>
+<li>工作交接文档</li>
+<li>编译问题手册 v2</li>
+<li>CI 流水线配置</li>
+<li>common/ 组件使用指南</li>
+</ul>
+<h3>8.4 环境变量</h3>
+<div class="codehilite"><pre><span></span><code><span class="n">OHOS_SDK_HOME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DevEco</span><span class="w"> </span><span class="n">Studio</span>\<span class="n">sdk</span>
+<span class="n">PATH</span><span class="w">           </span><span class="o">+=</span><span class="w"> </span><span class="n">tools</span>\<span class="n">node</span>
+</code></pre></div>
+
+<h3>8.5 更新记录</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">日期</th>
+<th style="text-align: left;">版本</th>
+<th style="text-align: left;">变更</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">2026-07-17</td>
+<td style="text-align: left;">v1.1</td>
+<td style="text-align: left;">扩展至 3 款 APP（新增 gaokao-volunteer 志愿填报助手、gaokao-language AI 语言伴侣）；真机部署验证通过（DevEco 6.1 + devecocli）；新增智能体定位章节</td>
+</tr>
+<tr>
+<td style="text-align: left;">2026-07-07</td>
+<td style="text-align: left;">v1.0</td>
+<td style="text-align: left;">初始版本，首版编译+签名通过（数学单科）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<blockquote>
+<p>🏗️ 鸿蒙特使 · SPDT-001 | GaokaoAgent 品牌手册 v1.1 | 2026-07-17</p>
+</blockquote>
+</section>
+<div class="footer">
+  <p>🏗️ 鸿蒙特使 · SPDT-001 | GaokaoAgent 品牌手册 v1.1 | 2026-07-17</p>
+</div>
+
+</body>
+</html>

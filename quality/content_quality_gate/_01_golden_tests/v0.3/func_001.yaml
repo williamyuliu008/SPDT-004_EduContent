@@ -1,0 +1,11 @@
+concept: 函数概念
+passed_v1: true
+sample_id: func_001
+source: VCC v1.0 math animation factory
+tags:
+  D1_process: static
+  D2_spatial: non_spatial
+  D3_complexity: simple
+  D4_presentation: definition
+  D5_concept_type: storage
+  D6_subject: algebra

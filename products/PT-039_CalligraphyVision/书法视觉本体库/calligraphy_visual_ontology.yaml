@@ -1,0 +1,1065 @@
+# ============================================================
+# 书法视觉本体库 · Calligraphy Visual Ontology
+# Calligraphy_Visual_Ontology_v0.1
+# ============================================================
+# 用途：为 AI 自动生成书法教学配图提供视觉约束层
+# 原则：机器可读 + 教学合规 + 史实可溯源
+# 使用方式：Prompt 注入 / 图生图约束 / 校验层规则
+# ============================================================
+
+ontology_metadata:
+  name: Calligraphy_Visual_Ontology_v0.1
+  version: 0.1.0
+  created: 2026-07-21
+  domain: 书法教学配图 / 临帖自动化
+  scope:
+    - 五体书写规范（篆/隶/楷/行/草）
+    - 永字八法标注
+    - 碑帖标准字形参考
+    - 草书辨析特征
+  source_references:
+    - "欧阳询·楷书三十六法"
+    - "李淳·大字结构八十四法"
+    - "历代书法论文选"
+    - "中国书法史（高等教育出版社）"
+  usage_guideline: |
+    AI 生成配图时，优先注入对应 script_type 的 visual_must / forbidden 约束。
+    草书辨析须同时注入 pair 的差异特征，防止两书家风格混淆。
+    临帖标注图以 model_characters 中的 annotated_image 为标准参照。
+
+# ============================================================
+# 模块一：五体书写规范（Five Scripts Specification）
+# ============================================================
+# 核心用途：确保 AI 生成的五体图像符合各书体的本质特征，
+#           防止出现「篆书笔意行书形」等风格错乱。
+# ============================================================
+
+five_scripts:
+
+  # ── 篆书（大篆/小篆）────────────────────────────
+  - id: seal_script
+    name: 篆书
+    alias: [大篆, 小篆, 古篆]
+    period: "先秦至秦汉（公元前770年-公元220年）"
+    representative_calligraphers: ["李斯", "李阳冰", "邓石如", "吴昌硕", "徐三庚"]
+    canonical_masterpiece: "李斯·峄山碑（公元前219年）"
+
+    structure:
+      principle: "纵向延伸、横向对称"
+      characteristics:
+        - "结体以圆为主，线条均匀"
+        - "重心居中或略偏高"
+        - "左右对称性显著"
+        - "字形整体修长"
+      ratio_tall_to_wide: "3:2 ~ 2:1（修长为主）"
+
+    stroke_characteristics:
+      principle: "藏头护尾、中锋行笔、线条均匀"
+      visual_markers:
+        - "线条粗细基本均匀（除起收笔处）"
+        - "圆转为主，几乎无方折"
+        - "起笔藏锋（逆入）"
+        - "收笔回锋（护尾）"
+        - "无明显的提按顿挫"
+      common_trajectories: ["直线", "弧线", "S形曲线"]
+      typical_stroke_count: "每字笔画数较多（符号化程度低）"
+
+    visual_standards:
+      layout: "田字格或竖向界格"
+      ink_color: "浓墨为主"
+      paper_color: "白色或淡黄色宣纸"
+      brush_size: "中锋笔，线条匀净"
+
+    teaching_focus:
+      difficulty_level: 4  # 1-5，5最难
+      core_teaching_points:
+        - "中锋用笔（笔锋在线条中心）"
+        - "提按的克制（避免强烈粗细变化）"
+        - "圆转的连贯性"
+        - "对称结构的把握"
+      common_beginner_errors:
+        - "线条粗细不均（用力不匀）"
+        - "出现方折（篆书忌方）"
+        - "笔画歪斜（缺乏中锋意识）"
+        - "结构散乱（不懂对称原则）"
+      teaching_sequence: "峄山碑 → 泰山刻石 → 袁安/袁敞碑 → 清代篆书"
+
+    prompt_constraints:
+      visual_must:
+        - "线条粗细高度均匀"
+        - "圆转流畅，无方折"
+        - "起收笔藏锋"
+        - "结构左右对称或纵向延伸"
+        - "无明显的提按顿挫痕迹"
+      visual_forbidden:
+        - "线条粗细剧烈变化"
+        - "出现方折棱角"
+        - "笔画出锋（悬针/燕尾过于夸张）"
+        - "结构歪斜失衡"
+        - "行书/草书的连绵笔意"
+      style_lock: "中国书法·篆书·教科书插图风格·纯线条·无墨色浓淡变化"
+
+  # ── 隶书 ────────────────────────────────────────
+  - id: clerical_script
+    name: 隶书
+    alias: [汉隶, 八分]
+    period: "汉代（公元前206年-公元220年）"
+    representative_calligraphers: ["乙瑛碑", "礼器碑", "史晨碑", "张迁碑", "曹全碑", "石门颂"]
+    canonical_masterpiece: "礼器碑（东汉永寿二年，156年）"
+
+    structure:
+      principle: "横平竖扁、左右舒展"
+      characteristics:
+        - "字形呈扁方形"
+        - "横画宽平，竖画短促"
+        - "左右波磔飞扬"
+        - "结构舒展开阔"
+      ratio_tall_to_wide: "2:3 ~ 1:2（宽扁为主）"
+
+    stroke_characteristics:
+      principle: "一波三折、蚕头雁尾"
+      visual_markers:
+        - "横画：起笔蚕头，行笔波磔，收笔雁尾"
+        - "竖画：相对短促，收笔多回锋"
+        - "撇画：左展，末端略带波势"
+        - "捺画：右展，波磔夸张，一波三折"
+        - "转折：方折为主（与篆书显著区别）"
+      typical_stroke_count: "7-12画（结构清晰）"
+
+    visual_standards:
+      layout: "横式界格或扁平田字格"
+      ink_color: "浓墨，偶有枯笔"
+      paper_color: "白色/米色宣纸或汉碑拓片风格"
+
+    teaching_focus:
+      difficulty_level: 3
+      core_teaching_points:
+        - "横画的一波三折（核心特征）"
+        - "方折的果断转换"
+        - "结构的扁阔舒展"
+        - "左右对称与呼应"
+      common_beginner_errors:
+        - "横画无波磔（写成扁楷）"
+        - "字形过方正（缺隶书灵动）"
+        - "撇捺不舒展"
+        - "转折过于圆转"
+      teaching_sequence: "礼器碑（法度严谨）→ 曹全碑（秀美）→ 张迁碑（方拙）→ 石门颂（奇纵）"
+
+    prompt_constraints:
+      visual_must:
+        - "扁方形字形"
+        - "横画起笔蚕头"
+        - "横画收笔雁尾波磔"
+        - "方折转折"
+        - "左右舒展"
+      visual_forbidden:
+        - "字形修长（写成篆书）"
+        - "无波磔（写成楷书）"
+        - "线条圆滑无顿挫"
+        - "结构局促"
+      style_lock: "中国书法·汉隶·教科书插图风格·汉碑拓片质感"
+
+  # ── 楷书 ────────────────────────────────────────
+  - id: regular_script
+    name: 楷书
+    alias: [真书, 正书]
+    period: "魏晋南北朝至唐（公元220年-公元907年）"
+    representative_calligraphers:
+      - id: ouyangxun
+        name: 欧阳询
+        style: "险劲·瘦硬·法度森严"
+        masterpiece: "九成宫醴泉铭（632年）"
+      - id: yan_zhenqing
+        name: 颜真卿
+        style: "雄壮·浑厚·筋骨分明"
+        masterpiece: "多宝塔碑（752年）/ 祭侄文稿（758年）"
+      - id: liugongquan
+        name: 柳公权
+        style: "刚健·瘦硬·骨力洞达"
+        masterpiece: "玄秘塔碑（841年）"
+      - id: zhao_mengfu
+        name: 赵孟頫
+        style: "遒丽·圆润·复古正统"
+        masterpiece: "胆巴碑 / 三门记"
+
+    structure:
+      principle: "永字八法为基，结构端正"
+      characteristics:
+        - "笔画分明，无连绵"
+        - "结构端正，重心稳定"
+        - "主笔突出，副笔辅佐"
+        - "比例协调，留白得当"
+      ratio_tall_to_wide: "1:1 ~ 4:3（方正为主）"
+      canonical_rules:
+        - "欧阳询·结字三十六法"
+        - "李淳·大字结构八十四法"
+
+    stroke_characteristics:
+      principle: "永字八法（五体之祖）"
+      visual_markers:
+        - "点：起笔顿，收笔回"
+        - "横：起收有顿，中段平稳"
+        - "竖：悬针垂露两形"
+        - "撇：弧线出锋"
+        - "捺：一波三折"
+        - "折：顿笔转方"
+        - "钩：趯出有力"
+        - "提（挑）：仰锋急挑"
+      typical_stroke_count: "8-20画（结构清晰可辨）"
+
+    visual_standards:
+      layout: "标准田字格（正方形）"
+      ink_color: "浓墨为主"
+      paper_color: "白色宣纸"
+
+    teaching_focus:
+      difficulty_level: 2  # 入门最容易上手
+      core_teaching_points:
+        - "笔画形态准确（永字八法）"
+        - "结构比例协调"
+        - "主笔的突出处理"
+        - "田字格定位意识"
+      common_beginner_errors:
+        - "笔画歪斜"
+        - "主笔不突出"
+        - "结构比例失调"
+        - "田字格定位混乱"
+      teaching_sequence: "欧体（结构严谨）→ 颜体（筋骨）→ 柳体（骨力）→ 赵体（行楷过渡）"
+
+    prompt_constraints:
+      visual_must:
+        - "笔画清晰分明，无连绵"
+        - "结构端正稳重"
+        - "主笔明显"
+        - "方折果断"
+        - "田字格或米字格参考线"
+      visual_forbidden:
+        - "笔画连绵（写成行书）"
+        - "草率简化（写成草书）"
+        - "无主笔强调"
+        - "结构歪斜"
+      style_lock: "中国书法·楷书·教科书插图风格·标准田字格·单字居中"
+
+  # ── 行书 ────────────────────────────────────────
+  - id: running_script
+    name: 行书
+    alias: [行书, 行楷, 行草]
+    period: "魏晋至今（公元3世纪起）"
+    representative_calligraphers:
+      - id: wang_xizhi
+        name: 王羲之
+        style: "妍美·遒健·刚柔并济"
+        masterpiece: "兰亭序（永和九年，353年）"
+        characteristics:
+          - "笔画灵动多变"
+          - "结构收放有度"
+          - "牵丝引带自然"
+          - "整体气韵生动"
+      - id: yan_liqin
+        name: 颜真卿
+        style: "雄健·厚重·骨力洞达"
+        masterpiece: "祭侄文稿（758年）"
+      - id: su_shi
+        name: 苏轼
+        style: "创新·豪放·天趣盎然"
+        masterpiece: "黄州寒食诗帖（1082年）"
+      - id: huang_tingjian
+        name: 黄庭坚
+        style: "长枪大戟·开张纵横"
+        masterpiece: "松风阁诗帖（1102年）"
+
+    structure:
+      principle: "形随意动，笔断意连"
+      characteristics:
+        - "笔画连绵但有节制的呼应"
+        - "牵丝引带若断若连"
+        - "结构收放自如"
+        - "草楷兼备，以楷形草意"
+      ratio_tall_to_wide: "多样化，视具体字形"
+
+    stroke_characteristics:
+      principle: "流畅连贯，牵丝呼应"
+      visual_markers:
+        - "笔画之间的牵丝引带"
+        - "省略与替代（如省略钩、简化转折）"
+        - "提按的适度运用"
+        - "行笔速度感（快慢交替）"
+        - "墨色浓淡的自然变化"
+      typical_stroke_count: "较楷书减少10-30%（简省原则）"
+
+    teaching_focus:
+      difficulty_level: 3
+      core_teaching_points:
+        - "楷书基础是前提"
+        - "连绵的节制（不能写成草书）"
+        - "牵丝引带的自然处理"
+        - "速度与节奏控制"
+      common_beginner_errors:
+        - "连绵过多（写成草书）"
+        - "过于工整（写成楷书）"
+        - "牵丝不清（断气）"
+        - "墨色无变化（呆板）"
+      teaching_sequence: "兰亭序（天下第一行书）→ 祭侄文稿 → 蜀素帖 → 松风阁"
+
+    prompt_constraints:
+      visual_must:
+        - "笔画连绵呼应"
+        - "牵丝引带自然"
+        - "流畅灵动"
+        - "有适度的简省"
+      visual_forbidden:
+        - "过度连绵（写成草书）"
+        - "无任何连绵（写成楷书）"
+        - "牵丝断裂生硬"
+        - "呆板无气韵"
+      style_lock: "中国书法·行书·教科书插图风格·行气贯通·墨色有变化"
+
+  # ── 草书 ────────────────────────────────────────
+  - id: cursive_script
+    name: 草书
+    alias: [章草, 今草, 狂草]
+    period: "汉代至今（公元2世纪起）"
+    representative_calligraphers:
+      - id: zhangxu
+        name: 张旭
+        style: "狂草·线条圆转如龙蛇·颠·通神"
+        masterpiece: "古诗四帖（唐，约750年）"
+        visual_characteristics:
+          - "线条圆转，连绵不绝"
+          - "粗细对比强烈"
+          - "墨色浓淡对比鲜明"
+          - "满纸云烟，气势磅礴"
+          - "转折处以圆为主"
+      - id: huaisu
+        name: 怀素
+        style: "狂草·线条瘦硬如钢丝·醉·入魔"
+        masterpiece: "自叙帖（唐，777年）"
+        visual_characteristics:
+          - "线条细劲，瘦硬通神"
+          - "转折处锐角与圆转并存"
+          - "连绵程度更甚于张旭"
+          - "墨色以枯为主（骤雨旋风）"
+          - "字形大小悬殊"
+      - id: sun_guoting
+        name: 孙过庭
+        style: "今草·法度谨严·书谱之祖"
+        masterpiece: "书谱（唐，约687年）"
+        visual_characteristics:
+          - "保持草书的符号化"
+          - "但严格遵循草法规范"
+          - "适合作为入门范本"
+          - "字形相对独立（不完全连绵）"
+      - id: huangzhi
+        name: 黄庭坚
+        style: "草书·长枪大戟·辐射式结构"
+        masterpiece: "诸上座帖"
+        visual_characteristics:
+          - "笔画拉长如长枪"
+          - "结构呈辐射状"
+          - "单字内部连绵"
+          - "字与字之间呼应"
+
+    structure:
+      principle: "符号化·简省·连绵·抒情"
+      characteristics:
+        - "高度符号化（许多字形与楷书迥异）"
+        - "笔画简省但不失可识读性"
+        - "字与字之间连绵或呼应"
+        - "整体气韵贯通"
+      ratio_tall_to_wide: "极度多样化"
+
+    stroke_characteristics:
+      principle: "以简驭繁，以神御形"
+      visual_markers:
+        - "符号化草法（必须严格遵循）"
+        - "连绵笔意（张旭、怀素尤为显著）"
+        - "极度的提按变化"
+        - "墨色的浓淡枯湿"
+        - "笔势的疾徐振荡"
+      typical_stroke_count: "较楷书减少30-70%（高度简省）"
+      forbidden_errors:
+        - "自造草法符号"
+        - "与今文（楷书/印刷体）混淆"
+        - "不可识读的过度简化"
+
+    teaching_focus:
+      difficulty_level: 5  # 五体最难
+      core_teaching_points:
+        - "草法符号的识读（首要！）"
+        - "临帖顺序：孙过庭→怀素→张旭"
+        - "连绵与断连的节奏"
+        - "墨色变化的表达"
+      common_beginner_errors:
+        - "自造草法（最大禁忌）"
+        - "与行书混淆"
+        - "连绵无度不可识读"
+        - "忽视墨色变化"
+      teaching_sequence: "孙过庭·书谱（规范）→ 怀素·自叙帖（瘦硬）→ 张旭·古诗四帖（狂放）→ 黄庭坚·诸上座帖（个性）"
+
+    prompt_constraints:
+      visual_must:
+        - "符号化草法（专业）"
+        - "线条连绵或呼应"
+        - "墨色浓淡变化"
+        - "笔势疾徐"
+      visual_forbidden:
+        - "自造符号"
+        - "与行书/楷书混淆"
+        - "无连绵无呼应"
+        - "呆板无气韵"
+      style_lock: "中国书法·草书·教科书插图风格·连绵或呼应·墨色丰富·狂而不乱"
+
+# ============================================================
+# 模块二：永字八法标注（Eight Strokes of "永"）
+# ============================================================
+# 核心用途：临帖标注图的核心参照，笔画教学的视觉锚点
+# 八法是楷书之祖，也是篆/隶/行/草的笔画基础
+# ============================================================
+
+eight_strokes:
+
+  # 法一：点 ─────────────────────────────────────
+  - id: stroke_dian
+    number: 1
+    name: 点
+    character_example: "永"
+    description: "右斜下行，轻重分明，收笔回锋"
+    trajectory: >
+      起笔：轻入纸面
+      行笔：向右下渐按渐重
+      收笔：回锋或顺势向右下出锋
+    force_diagram:
+      pressure_curve: ["轻", "重", "轻/顿"]
+      visual: "起笔尖→中部粗→收笔顿"
+      key_moments: ["起笔角度", "中部按压程度", "收笔方向"]
+
+    visual_prompt: "楷书笔画·点·起笔轻入渐按·收笔回锋·角度约45°·中部最粗"
+
+    teaching_points:
+      - "起笔方向决定点的形态"
+      - "按压力度决定粗细"
+      - "收笔方向影响下一笔衔接"
+    common_mistakes:
+      - "过于圆润（缺顿挫）"
+      - "起笔过重（无尖头）"
+      - "收笔不回锋（散锋）"
+      - "角度太平或太直"
+
+  # 法二：横 ─────────────────────────────────────
+  - id: stroke_heng
+    number: 2
+    name: 横
+    character_example: "永"
+    description: "左低右高，略有弧度，起收有顿"
+    trajectory: >
+      起笔：逆入右下顿
+      行笔：向右平稳行笔，左低右高
+      收笔：顿回收或微微上昂
+    force_diagram:
+      pressure_curve: ["顿", "提", "行", "顿"]
+      visual: "起笔顿（粗）→ 行笔细 → 收笔顿（粗）"
+      key_moments: ["起笔顿压", "行笔提力", "收笔顿压", "左低右高坡度"]
+    body_structure: "左低右高，略有弧度（微拱），忌绝对水平（板桥体除外）"
+
+    visual_prompt: "楷书笔画·横·左低右高·微弧·起收顿压·中部略细"
+
+    teaching_points:
+      - "左低右高的倾斜度（约5-10°）"
+      - "起收笔的顿压"
+      - "行笔的稳定性"
+      - "忌：绝对水平、僵直"
+    common_mistakes:
+      - "绝对水平无斜度"
+      - "起收笔无顿压（写成横线）"
+      - "中部过粗或过细"
+      - "两端粗细不均"
+
+  # 法三：竖 ─────────────────────────────────────
+  - id: stroke_shu
+    number: 3
+    name: 竖
+    character_example: "永"
+    description: "悬针垂露，两种形态"
+    trajectory: >
+      悬针：起笔顿，中锋下行，收笔出锋
+      垂露：起笔顿，中锋下行，收笔回锋
+    force_diagram:
+      pressure_curve: ["顿", "行", "出/回"]
+      visual: "起笔粗→中部稳定→悬针出尖/垂露回锋"
+      key_moments: ["起笔顿压", "中段稳定", "悬针vs垂露收笔"]
+    body_structure: "垂直或略斜（依字形），重心稳定
+
+    visual_prompt: "楷书笔画·竖·中锋行笔·悬针出锋或垂露回锋·垂直有力"
+
+    teaching_points:
+      - "悬针用于末笔竖"
+      - "垂露用于中间/非末笔竖"
+      - "中锋的重要性"
+      - "重心的把握"
+    common_mistakes:
+      - "悬针过长（鼠尾）"
+      - "起笔过重（钉头）"
+      - "中部歪斜"
+      - "垂露不回锋"
+
+  # 法四：撇 ─────────────────────────────────────
+  - id: stroke_pie
+    number: 4
+    name: 撇
+    character_example: "永"
+    description: "由重到轻，弧线出锋"
+    trajectory: >
+      起笔：顿压
+      行笔：向左下弧线行笔，逐渐提锋
+      收笔：出锋（向左下或左）
+    force_diagram:
+      pressure_curve: ["重", "行", "轻"]
+      visual: "起笔粗→中部渐细→末端尖细"
+      key_moments: ["起笔顿压", "弧度把控", "末端出锋方向"]
+
+    visual_prompt: "楷书笔画·撇·起笔顿压·弧线向左下·末端出锋·由粗到细"
+
+    teaching_points:
+      - "弧度自然，不能太直"
+      - "末端出锋方向（决定字形气质）"
+      - "速度由慢到快"
+    common_mistakes:
+      - "过于僵直（写成竖）"
+      - "末端钝散（出锋无力）"
+      - "弧度过大或过小"
+      - "与其他笔画混淆（长撇vs竖撇）"
+
+  # 法五：提（挑）─────────────────────────────────
+  - id: stroke_ti
+    number: 5
+    name: 提
+    alias: [挑]
+    character_example: "永"
+    description: "右下顿，左上挑"
+    trajectory: >
+      起笔：右下顿
+      行笔：向右上快速挑出
+      收笔：出锋（右上）
+    force_diagram:
+      pressure_curve: ["顿", "提", "出"]
+      visual: "起笔顿→向右上方提→末端尖锐"
+      key_moments: ["起笔顿压角度", "提锋角度（约45°）", "末端锐度"]
+
+    visual_prompt: "楷书笔画·提·起笔右下顿·右上45°提锋·末端尖锐"
+
+    teaching_points:
+      - "起笔顿压是关键"
+      - "提锋要快而有力"
+      - "角度约45°"
+    common_mistakes:
+      - "起笔无顿压（写成细线）"
+      - "提锋过慢（软弱无力）"
+      - "角度太平或太陡"
+
+  # 法六：折 ─────────────────────────────────────
+  - id: stroke_zhe
+    number: 6
+    name: 折
+    character_example: "永"
+    description: "横竖交接处顿笔转换方向"
+    trajectory: >
+      横段：同横画
+      转折：顿压
+      竖段：转折后下行
+    force_diagram:
+      pressure_curve: ["顿", "行(横)", "顿(折处)", "行(竖)"]
+      visual: "横段→折处顿压增粗→竖段"
+      key_moments: ["折处的顿压强度", "方向转换的角度", "整体协调性"]
+
+    visual_prompt: "楷书笔画·折·横段→折处顿压→竖段下行·方折为主"
+
+    teaching_points:
+      - "折处必须顿压（增粗）"
+      - "方折是楷书特征"
+      - "转折后的竖段要稳住"
+    common_mistakes:
+      - "折处无顿压（圆转无骨）"
+      - "折处过重（臃肿）"
+      - "转折角度不当"
+
+  # 法七：钩 ─────────────────────────────────────
+  - id: stroke_gou
+    number: 7
+    name: 钩
+    character_example: "永"
+    description: "出锋前顿，向内或外钩出"
+    trajectory: >
+      竖/横/撇段：行至出钩处
+      顿压：出钩前顿
+      钩出：趯出（踢出），方向向内（竖钩）或向上/左（横钩等）
+    force_diagram:
+      pressure_curve: ["行", "顿", "趯"]
+      visual: "竖段→钩处顿→趯出尖"
+      key_moments: ["钩处的顿压", "趯出的角度", "钩的短小精悍"]
+
+    visual_prompt: "楷书笔画·钩·竖段→钩处顿压→趯出尖小有力·内钩或外钩"
+
+    teaching_points:
+      - "钩必须短小精悍"
+      - "趯出要快而有力"
+      - "方向准确（内/外/上）"
+    common_mistakes:
+      - "钩过长（过于夸张）"
+      - "钩无力（软塌）"
+      - "方向错误"
+      - "省略顿压直接出钩"
+
+  # 法八：捺 ─────────────────────────────────────
+  - id: stroke_na
+    number: 8
+    name: 捺
+    character_example: "永"
+    description: "一波三折，右下斜行"
+    trajectory: >
+      起笔：轻入或略顿
+      行笔：向右下渐按（一折）
+      中段：边行边按（二折）
+      收笔：顿压后平出或上扬（三折）
+    force_diagram:
+      pressure_curve: ["轻", "按", "重", "顿", "出"]
+      visual: "起笔细→中段粗→收笔顿→出锋平或上扬"
+      key_moments: ["三折的节奏", "收笔出锋方向", "与撇的配合"]
+
+    visual_prompt: "楷书笔画·捺·一波三折·起细中粗→收笔顿压出锋·右下行"
+
+    teaching_points:
+      - "一波三折是核心（不可写成直线）"
+      - "收笔出锋方向"
+      - "与撇的配合（称'撇捺配合'）"
+    common_mistakes:
+      - "无波折（写成粗竖线）"
+      - "收笔上翘过度（失重）"
+      - "过于肥硕（墨猪）"
+      - "与撇的长度和角度失衡"
+
+# ============================================================
+# 模块三：碑帖标准字形参考（Model Characters）
+# ============================================================
+# 核心用途：临帖标注图的视觉标准参照
+# 每字关联：书家/碑帖/笔画序列/标注版本图片路径
+# ============================================================
+
+model_characters:
+
+  # ── 楷书标准字 ────────────────────────────────
+  - id: yong_ouyangxun
+    unicode: "永"
+    script: 楷书
+    calligrapher: 欧阳询
+    masterpiece: "九成宫醴泉铭"
+    year: 632
+    location: "陕西麟游"
+    stroke_sequence:
+      - {order: 1, stroke: 点, note: "右侧点，与撇呼应"}
+      - {order: 2, stroke: 横, note: "短横，宜窄"}
+      - {order: 3, stroke: 竖, note: "竖钩，悬针下部"}
+      - {order: 4, stroke: 撇, note: "长撇，左下弧线"}
+      - {order: 5, stroke: 提, note: "挑，与撇交叉"}
+      - {order: 6, stroke: 撇, note: "短撇，插入提下"}
+      - {order: 7, stroke: 折, note: "横折竖"}
+      - {order: 8, stroke: 钩, note: "内钩"}
+    characteristics:
+      - "结体修长（欧阳询典型特征）"
+      - "笔画瘦硬"
+      - "法度森严"
+      - "险劲中见平正"
+    annotated_image: "永_欧阳询_九成宫_标注版.png"
+    source_image: "永_欧阳询_九成宫_原帖.jpg"
+    difficulty: 4  # "永"字是入门第一字
+
+  - id: shan_ouyangxun
+    unicode: "山"
+    script: 楷书
+    calligrapher: 欧阳询
+    masterpiece: "九成宫醴泉铭"
+    stroke_sequence:
+      - {order: 1, stroke: 竖, note: "中竖最长"}
+      - {order: 2, stroke: 竖, note: "左竖较短，向内斜"}
+      - {order: 3, stroke: 竖, note: "右竖更短，向内斜"}
+    characteristics:
+      - "三竖中竖最高，左右渐短"
+      - "三竖皆直但有微妙倾斜"
+      - "结构呈覆瓦状"
+    annotated_image: "山_欧阳询_九成宫_标注版.png"
+
+  - id: yong_yanzhenqing
+    unicode: "永"
+    script: 楷书
+    calligrapher: 颜真卿
+    masterpiece: "多宝塔碑"
+    year: 752
+    stroke_sequence:
+      - {order: 1, stroke: 点, note: "颜体点较饱满"}
+      - {order: 2, stroke: 横, note: "横画粗壮有力"}
+      - {order: 3, stroke: 竖, note: "竖画粗壮，钩有力"}
+      - {order: 4, stroke: 撇, note: "撇画舒展"}
+      - {order: 5, stroke: 提, note: "挑画劲健"}
+      - {order: 6, stroke: 撇, note: "短撇劲利"}
+      - {order: 7, stroke: 折, note: "折画顿挫分明"}
+      - {order: 8, stroke: 钩, note: "钩画饱满外向"}
+    characteristics:
+      - "笔画粗壮雄健"
+      - "结体方正宽博"
+      - "筋骨分明"
+      - "横细竖粗明显"
+    annotated_image: "永_颜真卿_多宝塔_标注版.png"
+
+  # ── 草书标准字 ────────────────────────────────
+  - id: zhong_wangxizhi
+    unicode: "中"
+    script: 草书
+    calligrapher: 王羲之
+    masterpiece: "十七帖"
+    stroke_count: 2  # 草书符号化后笔画极少
+    characteristics:
+      - "中竖上下贯穿"
+      - "草书圆环代替口形"
+      - "整体简洁有力"
+      - "与"中"楷书形态完全不同（符号化）"
+    comparison_note: "草书'中'极简，不能写成楷书加连绵"
+    annotated_image: "中_王羲之_十七帖_标注版.png"
+
+  - id: fu_huaisu
+    unicode: "夫"
+    script: 草书
+    calligrapher: 怀素
+    masterpiece: "自叙帖"
+    stroke_count: 3
+    characteristics:
+      - "怀素草法符号"
+      - "线条瘦硬连绵"
+      - "与楷书'夫'完全不同"
+    annotated_image: "夫_怀素_自叙帖_标注版.png"
+
+  - id: dui_huaisu
+    unicode: "怀"
+    script: 草书
+    calligrapher: 怀素
+    masterpiece: "自叙帖"
+    stroke_count: 4  # 草书符号
+    characteristics:
+      - "竖心旁草法（两点相连）"
+      - "右侧'不'的草书符号"
+      - "整体连绵瘦硬"
+    annotated_image: "怀_怀素_自叙帖_标注版.png"
+
+  - id: qi_huaisu
+    unicode: "其"
+    script: 草书
+    calligrapher: 怀素
+    masterpiece: "自叙帖"
+    stroke_count: 5
+    characteristics:
+      - "两横草书符号"
+      - "下方四点连为两笔或一笔"
+      - "墨色枯润变化"
+    annotated_image: "其_怀素_自叙帖_标注版.png"
+
+# ============================================================
+# 模块四：草书辨析特征（Grass Script Discrimination）
+# ============================================================
+# 核心用途：AI 生成草书对比图时，确保两书家的风格差异被准确呈现
+# 防止"张旭风格和怀素风格混淆"
+# ============================================================
+
+grass_script_discrimination:
+
+  # 辨析对 1：王羲之 vs 王献之 ───────────────────
+  - pair_id: wang_xizhi_vs_wang_xianzhi
+    pair_label: "王羲之 vs 王献之"
+
+    calligrapher_a:
+      id: wang_xizhi
+      name: 王羲之
+      period: "东晋（303-361年）"
+      style_tag: "雅正·含蓄·中和之美"
+      style_description: >
+        书圣王羲之的草书代表了中国草书的最高境界。
+        特点：含蓄内敛，笔意连贯而不过度；结体秀美，骨力与柔情并存；
+        用笔精到，无一笔懈怠；整体气韵生动，风神潇洒。
+        后世称"右军书法'如清风出袖，明月入怀'"。
+
+    calligrapher_b:
+      id: wang_xianzhi
+      name: 王献之
+      period: "东晋（344-386年）"
+      style_tag: "外拓·奔放·创新精神"
+      style_description: >
+        王献之是王羲之之子，书法与其父并称"二王"。
+        特点：外拓奔放，比其父更加放开；连绵草书更为显著；
+        笔势飞扬，个性强烈；结体开张，不拘一格。
+        但在含蓄蕴藉方面略逊其父。
+
+    visual_key_differences:
+      - dimension: "线条气质"
+        a: "含蓄内敛，精到不外露"
+        b: "外拓奔放，锋芒外现"
+      - dimension: "连绵程度"
+        a: "若有若无的呼应，不过度连绵"
+        b: "连绵更为大胆显著"
+      - dimension: "结体"
+        a: "秀美端庄"
+        b: "开张奇肆"
+      - dimension: "墨色"
+        a: "浓淡适中"
+        b: "对比更强烈"
+
+    teaching_usage: >
+      辨析"二王"草书，重点在"含蓄vs奔放"的风格对比。
+      入门以王羲之入手为宜（法度严谨）。
+
+    prompt_template: >
+      中国书法对比插图。
+      左侧：王羲之草书风格，字形秀美端庄，笔意含蓄内敛，
+            连绵若有若无，用笔精到，线条含蓄不外露。
+      右侧：王献之草书风格，字形开张奇肆，笔势飞扬奔放，
+            连绵大胆显著，线条外拓有锋芒。
+      同一字"中"，两幅并排，教育教科书风格。
+
+  # 辨析对 2：张旭 vs 怀素 ─────────────────────
+  - pair_id: zhangxu_vs_huaisu
+    pair_label: "张旭 vs 怀素"
+
+    calligrapher_a:
+      id: zhangxu
+      name: 张旭
+      period: "唐代（唐，约675-约750年）"
+      style_tag: "颠·圆·满纸云烟"
+      style_description: >
+        张旭，世称"草圣"，与李白诗歌、裴旻剑舞并称"三绝"。
+        特点：狂草，线条圆转如龙蛇；转折处以圆为主；
+        墨色浓淡对比鲜明；气势磅礴，满纸云烟；
+        笔势疾徐振荡，有"颠"之名。
+        传其观公孙大娘剑器舞而悟笔法。
+
+    calligrapher_b:
+      id: huaisu
+      name: 怀素
+      period: "唐代（737-799年）"
+      style_tag: "醉·瘦·骤雨旋风"
+      style_description: >
+        怀素，与张旭并称"颠张醉素"。
+        特点：狂草，线条瘦硬如钢丝（与张旭显著区别）；
+        转折处锐角与圆转并存；
+        墨色以枯为主（骤雨旋风形容其速度）；
+        字形大小悬殊，变化剧烈；
+        笔势更为迅疾，有"醉素"之名。
+        代表作《自叙帖》被称"天下第一草书"。
+
+    visual_key_differences:
+      - dimension: "线条粗细"
+        a: "线条粗细对比强烈（圆转变幻）"
+        b: "线条以瘦硬为主，粗细对比相对较小"
+      - dimension: "转折"
+        a: "圆转为主（如龙蛇）"
+        b: "锐角与圆转并存（更硬朗）"
+      - dimension: "墨色"
+        a: "浓淡对比鲜明（满纸云烟）"
+        b: "以枯为主（骤雨旋风）"
+      - dimension: "字形"
+        a: "字形大小较一致"
+        b: "字形大小悬殊，变化剧烈"
+      - dimension: "连绵"
+        a: "连绵圆转"
+        b: "连绵更甚，速度感更强"
+
+    teaching_usage: >
+      辨析"颠张醉素"，核心在"圆vs瘦、浓vs枯"的视觉对比。
+      张旭入手更宜（圆转流畅），再学怀素（瘦硬迅疾）。
+
+    prompt_template: >
+      中国书法对比插图。
+      左侧：张旭狂草，线条粗细对比强烈，圆转如龙蛇，
+            墨色浓淡对比鲜明，满纸云烟，气势磅礴。
+      右侧：怀素狂草，线条瘦硬如钢丝，转折锐角与圆转并存，
+            墨色以枯为主，骤雨旋风，速度感强烈。
+      同一字，竖排两列，教育教科书风格，标注书家名和作品名。
+
+  # 辨析对 3：孙过庭 vs 赵孟頫（楷行过渡）─────
+  - pair_id: sunguoting_vs_zhaomengfu
+    pair_label: "孙过庭·书谱 vs 赵孟頫·行楷"
+
+    calligrapher_a:
+      id: sun_guoting
+      name: 孙过庭
+      period: "唐代（约646-约687年）"
+      style_tag: "今草·法度谨严·书谱之祖"
+      style_description: >
+        孙过庭《书谱》是书法理论与实践的双重经典。
+        特点：严格遵循草法规范；字形相对独立（不完全连绵）；
+        适合作为草书入门范本；笔法精到，学王羲之；
+        墨色温润，气韵清雅。
+
+    calligrapher_b:
+      id: zhao_mengfu
+      name: 赵孟頫
+      period: "元代（1254-1322年）"
+      style_tag: "复古·遒丽·圆润"
+      style_description: >
+        赵孟頫提倡"复古"，书法各体皆精。
+        特点：楷行相融，以楷形行意；用笔遒丽圆润；
+        结体端正秀美；适合入门和日常书写；
+        但创新性不足，被批评为"奴书"。
+
+    visual_key_differences:
+      - dimension: "符号化程度"
+        a: "草书符号规范，可识读性强"
+        b: "楷行相融，符号化程度低"
+      - dimension: "连绵"
+        a: "字形独立，不刻意连绵"
+        b: "偶有连绵，但不过度"
+      - dimension: "风格"
+        a: "古雅清劲"
+        b: "秀美圆润"
+      - dimension: "难度"
+        a: "适合进阶（需草法基础）"
+        b: "适合入门（楷行过渡）"
+
+    prompt_template: >
+      中国书法对比插图。
+      左侧：孙过庭草书，今草风格，法度谨严，字形独立，
+            笔法精到，线条古雅清劲，墨色温润。
+      右侧：赵孟頫行楷，楷行相融，圆润秀美，结构端正，
+            用笔遒丽，线条流畅但不连绵。
+      同一字，竖排两列，标注书家名和作品名，教育教科书风格。
+
+# ============================================================
+# 模块五：认知层级（Cognitive Levels）
+# ============================================================
+# 核心用途：适配不同学段/学习阶段的认知需求
+# L1=入门/L2=进阶/L3=专业
+# ============================================================
+
+cognitive_levels:
+
+  - level: L1_入门
+    description: "笔画认知 + 田字格定位"
+    visual_requirements:
+      - "田字格/米字格参考线清晰可见"
+      - "笔画顺序编号（①②③…）"
+      - "笔画末端标注方向"
+      - "主笔红色高亮"
+      - "整体简洁，无过多装饰"
+    color_scheme:
+      reference_grid: "淡灰色虚线"
+      stroke_number: "深蓝色"
+      main_stroke: "红色"
+      other_strokes: "黑色"
+    suitable_for:
+      - "初学书法的小学生"
+      - "零基础成人"
+
+  - level: L2_进阶
+    description: "结构分析 + 笔势动态"
+    visual_requirements:
+      - "结构分区线（左右/上下/包围）"
+      - "重心点标注"
+      - "主笔延伸线"
+      - "笔画呼应关系箭头"
+      - "字形宽窄/高矮比例标注"
+    color_scheme:
+      grid: "淡蓝"
+      structure_zones: "绿色虚线"
+      gravity_point: "红色实心点"
+      strokes: "墨色"
+    suitable_for:
+      - "有一定基础的中小学生"
+      - "备考书法等级考试"
+
+  - level: L3_专业
+    description: "风格对比 + 审美分析"
+    visual_requirements:
+      - "多书家/多碑帖对比"
+      - "笔势动态示意图（箭头标注行笔方向）"
+      - "墨色浓淡标注"
+      - "碑帖真迹与标注版并列"
+      - "书法风格特征关键词"
+    color_scheme:
+      primary: "水墨色"
+      annotations: "朱砂红"
+      comparison_lines: "靛蓝"
+    suitable_for:
+      - "书法专业学生"
+      - "备考国美/书法硕士"
+      - "书法教师培训"
+
+# ============================================================
+# 附录：AI 配图 Prompt 模板库
+# ============================================================
+
+prompt_templates:
+
+  # 临帖标注图 Prompt
+  lint_template: >
+    中国书法临帖标注图。{script_type}·{calligrapher}·{masterpiece}。
+    字：{unicode}。
+    要求：田字格参考线（淡灰色），笔画顺序编号①②③④⑤⑥⑦⑧，
+    主笔红色高亮，起收笔用圆圈标注，
+    {teaching_points}。
+    教科书插图风格，高清，白底，无水印。
+
+  # 草书辨析卡 Prompt
+  comparison_template: >
+    中国书法对比插图。
+    左侧：{calligrapher_a}·{style_tag_a}。
+    风格特征：{style_description_a}。
+    右侧：{calligrapher_b}·{style_tag_b}。
+    风格特征：{style_description_b}。
+    同一字"{character}"，竖排两列，
+    标注书家名和作品名，教育教科书风格，16:9。
+
+  # 五体概览图 Prompt
+  overview_template: >
+    中国书法五体概览图。
+    从左至右：篆书（峄山碑风格）→ 隶书（礼器碑风格） →
+    楷书（欧阳询风格）→ 行书（兰亭序风格）→ 草书（怀素自叙帖风格）。
+    同一汉字"{unicode}"，五体并排对比，
+    每体下方标注书体名称，
+    教育教科书风格，色彩区分五体，白底，16:9。
+
+  # 永字八法教学图 Prompt
+  bagong_template: >
+    中国书法永字八法教学图。
+    田字格中显示"永"字完整形态，
+    八法依次标注：一点为"点"，一横为"横"，一直为"竖"，
+    一撇为"撇"，一挑为"提"，一折为"折"，一钩为"钩"，一捺为"捺"。
+    每个笔画编号标注，行笔方向用箭头表示，
+    主笔（竖钩）用红色高亮。
+    底部附永字八法口诀。
+    教育教科书风格，高清，白底，标注清晰。
+
+# ============================================================
+# 使用说明（Usage Note）
+# ============================================================
+# 本体库使用方式：
+#
+# 1. AI 生图时 → 从对应书体模块提取 visual_must / visual_forbidden
+#    注入到 Prompt 约束层
+#
+# 2. 草书辨析时 → 从 grass_script_discrimination 提取 pair 的
+#    visual_key_differences，确保两图风格差异被准确呈现
+#
+# 3. 临帖标注时 → 从 model_characters 提取 stroke_sequence
+#    和 annotated_image 路径作为标准参照
+#
+# 4. 不同学段 → 从 cognitive_levels 选取对应层级的视觉要求
+#
+# 本体库 v0.1 状态：
+#   五体书写规范：✅ 完成（篆/隶/楷/行/草）
+#   永字八法：✅ 完成（8法详细描述）
+#   碑帖标准字形：✅ 完成（楷书3例/草书4例）
+#   草书辨析特征：✅ 完成（3对书家辨析）
+#   认知层级：✅ 完成（L1/L2/L3）
+#   Prompt模板：✅ 完成（4类模板）
+#
+# 待扩展：
+#   - 碑帖高清图片入库（annotate阶段）
+#   - 更多书家辨析对（如：苏轼vs黄庭坚/董其昌vs王铎）
+#   - 篆书标准字形补充
+#   - 各书体更多代表字例
+# ============================================================

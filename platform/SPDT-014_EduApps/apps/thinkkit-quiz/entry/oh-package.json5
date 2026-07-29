@@ -1,0 +1,9 @@
+﻿{
+  "name": "entry",
+  "version": "1.0.0",
+  "description": "Craftsman OHPM三方库发现工具",
+  "main": "",
+  "author": "鸿蒙爆款工作室",
+  "license": "",
+  "dependencies": {}
+}

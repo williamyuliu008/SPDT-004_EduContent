@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PT-037 书法备考</title>
+<style>
+:root{
+  --bg:#0a0f1e;--card:#111827;--card2:#1a2538;
+  --border:#1e2d4a;--border2:#2a3d5a;
+  --text:#d4ddef;--muted:#4a5f82;
+  --green:#4ade80;--yellow:#fbbf24;--red:#f87171;
+  --blue:#60a5fa;--purple:#818cf8;
+  --font:"Microsoft YaHei UI","PingFang SC",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--font);font-size:14px;color:var(--text);background:var(--bg);
+      height:100vh;display:flex;flex-direction:column;overflow:hidden}
+button{cursor:pointer;font-family:inherit}
+
+/* ── 顶部 ── */
+.topbar{
+  height:52px;background:var(--card);border-bottom:1px solid var(--border);
+  display:flex;align-items:center;padding:0 20px;gap:16px;flex-shrink:0;
+}
+.topbar-title{font-size:15px;font-weight:700;color:var(--purple);letter-spacing:.5px}
+.topbar span{color:var(--muted);font-weight:400;font-size:12px;margin-left:6px}
+.topbar-spacer{flex:1}
+.topbar-stat{
+  font-size:12px;padding:4px 12px;border-radius:20px;
+  background:var(--card2);border:1px solid var(--border);
+}
+.topbar-stat .v{font-weight:700;color:var(--green);margin-right:4px}
+
+/* ── 主布局 ── */
+.layout{display:flex;flex:1;overflow:hidden}
+
+/* ── 左侧状态栏 ── */
+.sidebar{
+  width:220px;background:var(--card);border-right:1px solid var(--border);
+  padding:16px;flex-shrink:0;display:flex;flex-direction:column;gap:14px;
+}
+
+.stat-block{background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:12px}
+.stat-block .lbl{font-size:11px;color:var(--muted);margin-bottom:6px;letter-spacing:.5px}
+.stat-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0}
+.stat-row .k{font-size:12px;color:var(--muted)}
+.stat-row .v{font-size:13px;font-weight:700}
+
+/* 进度条 */
+.prog-wrap{margin-top:8px}
+.prog-row{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:4px}
+.prog-bar{height:6px;background:var(--card);border-radius:3px;overflow:hidden}
+.prog-fill{height:100%;background:var(--purple);border-radius:3px;transition:width .5s ease}
+
+/* 开始按钮 */
+.start-btn{
+  width:100%;padding:12px;background:var(--purple);border:none;border-radius:8px;
+  font-size:14px;font-weight:700;color:#fff;transition:.15s;margin-top:auto;
+}
+.start-btn:hover{filter:brightness(1.1)}
+.start-btn:disabled{opacity:.4;cursor:not-allowed}
+
+/* ── 右侧答题区 ── */
+.main{flex:1;display:flex;flex-direction:column;padding:24px;gap:16px;overflow:hidden}
+
+/* 题目卡片 */
+.q-card{
+  background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:20px;flex-shrink:0;
+}
+.q-meta{display:flex;gap:8px;align-items:center;margin-bottom:12px}
+.q-tag{
+  font-size:11px;padding:2px 8px;border-radius:8px;
+  background:rgba(129,140,248,.12);color:var(--purple);
+}
+.q-tag.diff{background:rgba(251,191,36,.12);color:var(--yellow)}
+.q-num{font-size:12px;color:var(--muted);margin-left:auto}
+.q-text{font-size:16px;line-height:1.9}
+
+/* 提示区 */
+.hints-box{
+  background:rgba(251,191,36,.06);border:1px solid rgba(251,191,36,.2);
+  border-radius:8px;padding:12px 14px;margin-top:12px;display:none;
+}
+.hints-box.show{display:block}
+.hints-box li{font-size:13px;color:var(--yellow);margin:4px 0 4px 16px;line-height:1.7}
+
+/* 答案区 */
+.a-card{
+  background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:20px;flex-shrink:0;display:flex;flex-direction:column;
+}
+.a-card textarea{
+  flex-shrink:0;background:var(--card2);border:1px solid var(--border2);
+  border-radius:8px;color:var(--text);padding:14px;font-size:14px;
+  resize:none;outline:none;line-height:1.8;min-height:120px;
+}
+.a-card textarea:focus{border-color:var(--purple)}
+.a-card textarea::placeholder{color:var(--muted)}
+.a-btns{display:flex;gap:10px;margin-top:12px}
+.btn{
+  padding:10px 24px;border-radius:8px;font-size:13px;font-weight:600;
+  border:none;transition:.15s;
+}
+.btn-submit{background:var(--purple);color:#fff}
+.btn-submit:hover{filter:brightness(1.1)}
+.btn-submit:disabled{opacity:.4;cursor:not-allowed}
+.btn-hint{background:transparent;border:1px solid var(--border2);color:var(--text)}
+.btn-hint:hover{background:var(--card2)}
+.btn-hint.active{background:rgba(251,191,36,.12);border-color:rgba(251,191,36,.3);color:var(--yellow)}
+.btn-demo{background:transparent;border:1px solid var(--border2);color:var(--muted);font-size:12px;padding:10px 14px}
+.btn-demo:hover{color:var(--text)}
+
+/* 反馈卡 */
+.fb-card{
+  background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:20px;flex-shrink:0;border-left:4px solid;
+}
+.fb-card.correct{border-left-color:var(--green)}
+.fb-card.wrong{border-left-color:var(--red)}
+.fb-header{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.fb-icon{font-size:22px}
+.fb-title{font-size:15px;font-weight:700}
+.fb-score{margin-left:auto;font-size:18px;font-weight:700}
+.fb-card.correct .fb-score{color:var(--green)}
+.fb-card.wrong .fb-score{color:var(--red)}
+.fb-feedback{font-size:13px;color:var(--muted);line-height:1.7}
+
+/* 下一题按钮 */
+.next-btn{
+  width:100%;padding:14px;background:var(--card2);border:1px solid var(--border2);
+  border-radius:10px;font-size:14px;font-weight:600;color:var(--text);
+  transition:.15s;flex-shrink:0;margin-top:12px;
+}
+.next-btn:hover{background:var(--card);border-color:var(--purple);color:var(--purple)}
+
+/* 答题区包装 */
+.qa-wrap{
+  display:none;flex:1;flex-direction:column;gap:14px;
+  overflow-y:auto;min-height:0;
+}
+.qa-wrap.on{display:flex}
+
+/* 欢迎页 */
+.welcome{
+  flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:16px;text-align:center;
+}
+.welcome-icon{font-size:60px}
+.welcome h2{font-size:22px;font-weight:700;color:var(--purple)}
+.welcome p{color:var(--muted);max-width:360px;line-height:1.8}
+.welcome-stats{
+  display:flex;gap:12px;
+}
+.ws{background:var(--card);border:1px solid var(--border);border-radius:8px;
+    padding:12px 20px;text-align:center}
+.ws .wv{font-size:20px;font-weight:700;color:var(--blue)}
+.ws .wl{font-size:11px;color:var(--muted);margin-top:2px}
+.start-large{
+  padding:14px 48px;background:var(--purple);border:none;border-radius:10px;
+  font-size:15px;font-weight:700;color:#fff;transition:.15s;
+}
+.start-large:hover{filter:brightness(1.1)}
+
+/* 等待加载 */
+.loading-msg{
+  text-align:center;padding:20px;font-size:13px;color:var(--muted);
+}
+
+/* 错误提示 */
+.err{color:var(--red);font-size:13px;padding:12px;background:rgba(239,68,68,.06);
+      border:1px solid rgba(239,68,68,.2);border-radius:8px}
+</style>
+</head>
+<body>
+
+<!-- 顶部 -->
+<div class="topbar">
+  <div class="topbar-title">PT-037<span>书法备考智能体</span></div>
+  <div class="topbar-spacer"></div>
+  <div class="topbar-stat">
+    <span class="v" id="round-num">0</span> / <span id="total-num">0</span> 题
+  </div>
+  <div class="topbar-stat" id="llm-stat">LLM: --</div>
+</div>
+
+<!-- 主布局 -->
+<div class="layout">
+
+  <!-- 左侧状态 -->
+  <div class="sidebar">
+    <div class="stat-block">
+      <div class="lbl">学习进度</div>
+      <div class="prog-wrap">
+        <div class="prog-row">
+          <span>正确率</span><span id="acc-pct">--%</span>
+        </div>
+        <div class="prog-bar">
+          <div class="prog-fill" id="acc-bar" style="width:0%"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stat-block">
+      <div class="lbl">掌握度</div>
+      <div class="stat-row"><span class="k">S 掌握</span><span class="v" id="v-S" style="color:var(--green)">50%</span></div>
+      <div class="stat-row"><span class="k">C 负荷</span><span class="v" id="v-C" style="color:var(--yellow)">3.0</span></div>
+      <div class="stat-row"><span class="k">F 疲劳</span><span class="v" id="v-F" style="color:var(--red)">0.3</span></div>
+      <div class="stat-row"><span class="k">I 兴趣</span><span class="v" id="v-I" style="color:var(--blue)">6.0</span></div>
+    </div>
+
+    <div class="stat-block">
+      <div class="lbl">本轮成绩</div>
+      <div class="stat-row"><span class="k">正确</span><span class="v" id="v-correct" style="color:var(--green)">0</span></div>
+      <div class="stat-row"><span class="k">错误</span><span class="v" id="v-wrong" style="color:var(--red)">0</span></div>
+    </div>
+
+    <button class="start-btn" id="btn-start" onclick="startSession()">▶ 开始学习</button>
+  </div>
+
+  <!-- 右侧主区 -->
+  <div class="main" id="main-area">
+
+    <!-- 欢迎页 -->
+    <div class="welcome" id="welcome">
+      <div class="welcome-icon">🎓</div>
+      <h2>PT-037 书法备考</h2>
+      <p>提前准备题目，点击即可作答。掌握度实时更新，出错自动记录薄弱点。</p>
+      <div class="welcome-stats">
+        <div class="ws"><div class="wv" id="ws-kb">--</div><div class="wl">书法史</div></div>
+        <div class="ws"><div class="wv" id="ws-tr">--</div><div class="wl">译篆</div></div>
+        <div class="ws"><div class="wv" id="ws-es">--</div><div class="wl">错题剧本</div></div>
+      </div>
+    </div>
+
+    <!-- 答题区（动态显示） -->
+    <div id="qa-area" class="qa-wrap"></div>
+
+  </div>
+</div>
+
+<script>
+var API = "http://localhost:5188/api";
+var qList = [];        // 预加载的题目列表
+var qIdx = 0;          // 当前题目索引
+var totalCorrect = 0;
+var totalWrong = 0;
+var currentRound = 0;
+
+// ── 工具 ────────────────────────────────────────────────
+function $(id) { return document.getElementById(id) }
+
+function loading(on, text) {
+  var el = $("loading-area");
+  if (on) {
+    var html = '<div class="loading-msg" id="loading-area">' + (text || "加载中…") + '</div>';
+    var qa = $("qa-area");
+    if (qa) qa.innerHTML = '<div class="loading-msg">' + (text || "加载中…") + '</div>';
+  }
+}
+
+function updateStateUI(state) {
+  if (!state) return;
+  $("v-S").textContent = (parseFloat(state.S_score)||0).toFixed(1) + "%";
+  $("v-C").textContent = (parseFloat(state.C_cognitive_load)||0).toFixed(1);
+  $("v-F").textContent = (parseFloat(state.F_fatigue)||0).toFixed(2);
+  $("v-I").textContent = (parseFloat(state.I_interest)||0).toFixed(1);
+}
+
+function updateAccUI() {
+  var total = totalCorrect + totalWrong;
+  var pct = total > 0 ? Math.round(totalCorrect / total * 100) : 0;
+  $("acc-pct").textContent = pct + "%";
+  $("acc-bar").style.width = pct + "%";
+  $("v-correct").textContent = totalCorrect;
+  $("v-wrong").textContent = totalWrong;
+}
+
+// ── 初始化 ─────────────────────────────────────────────
+function init() {
+  fetch(API + "/status").then(function(r){return r.json()}).then(function(data){
+    if (!data.ok) { alert("后端未启动，请先运行 server.py"); return; }
+    var kb = data.kb;
+    $("ws-kb").textContent = kb.total_kb_entries;
+    $("ws-tr").textContent = kb.total_translation_entries;
+    $("ws-es").textContent = kb.total_error_scripts;
+    $("llm-stat").textContent = "LLM: " + (data.llm_mode||"").toUpperCase();
+    if (data.user_state) updateStateUI(data.user_state);
+  }).catch(function(){
+    alert("无法连接后端，请先运行：python server.py");
+  });
+}
+
+// ── 开始学习 ────────────────────────────────────────────
+function startSession() {
+  currentRound++;
+  qIdx = 0;
+  totalCorrect = 0;
+  totalWrong = 0;
+  $("round-num").textContent = "0";
+  $("total-num").textContent = "0";
+  updateAccUI();
+  $("welcome").style.display = "none";
+  $("btn-start").disabled = true;
+  $("btn-start").textContent = "加载题目中…";
+
+  // 一次性生成 10 道题（分批取）
+  fetch(API + "/batch_questions", {
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body: JSON.stringify({count:10, pack_id:"cafa_calligraphy_2026"})
+  }).then(function(r){return r.json()}).then(function(data){
+    if (!data.ok || !data.questions || !data.questions.length) {
+      // 降级：逐题生成
+      loadNextQuestion();
+      return;
+    }
+    qList = data.questions;
+    $("total-num").textContent = qList.length;
+    $("btn-start").disabled = false;
+    $("btn-start").textContent = "▶ 重新开始";
+    showQuestion(0);
+  }).catch(function(){
+    // 网络错误，降级到逐题
+    $("btn-start").disabled = false;
+    $("btn-start").textContent = "▶ 重新开始";
+    loadNextQuestion();
+  });
+}
+
+// 逐题生成（降级方案）
+function loadNextQuestion() {
+  $("btn-start").disabled = false;
+  $("btn-start").textContent = "▶ 重新开始";
+  // 先生成一道
+  fetch(API + "/question", {
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body: JSON.stringify({focus_kb_id:null, difficulty:"Lv3", pack_id:"cafa_calligraphy_2026"})
+  }).then(function(r){return r.json()}).then(function(data){
+    if (data.ok && data.question) {
+      qList = [data.question];
+      $("total-num").textContent = "∞";
+      showQuestion(0);
+    }
+  });
+}
+
+// ── 显示题目 ────────────────────────────────────────────
+function showQuestion(idx) {
+  if (idx >= qList.length) {
+    // 预生成的题已做完，再生成下一批
+    showEndThenReload();
+    return;
+  }
+  qIdx = idx;
+  $("round-num").textContent = idx + 1;
+  var q = qList[idx];
+
+  var hints = q.hints || [];
+  var hintsHtml = "";
+  if (hints.length) {
+    hintsHtml = '<ul class="hints-box" id="hints-box">' +
+      hints.map(function(h){ return '<li>' + h + '</li>'; }).join("") +
+      '</ul>';
+  }
+
+  var html = `
+    <div class="q-card">
+      <div class="q-meta">
+        <span class="q-tag">${q.question_type||""}</span>
+        <span class="q-tag diff">${q.difficulty||""}</span>
+        <span class="q-num">${idx+1} / ${qList.length>0&&qList.length<999?qList.length:"?"}</span>
+      </div>
+      <div class="q-text">${q.text||""}</div>
+      ${hintsHtml}
+    </div>
+    <div class="a-card">
+      <textarea id="user-answer" placeholder="在此输入你的答案…"></textarea>
+      <div class="a-btns">
+        <button class="btn btn-submit" id="btn-submit" onclick="submitAnswer()">✏ 提交</button>
+        ${hints.length ? '<button class="btn btn-hint" id="btn-hint" onclick="toggleHint()">💡 提示</button>' : ''}
+        <button class="btn btn-demo" onclick="fillDemo()">🤖 示例答案</button>
+      </div>
+    </div>`;
+
+  var qa = $("qa-area");
+  qa.classList.add("on");
+  qa.innerHTML = html;
+  setTimeout(function(){ var ta = $("user-answer"); if(ta) ta.focus(); }, 50);
+}
+
+// ── 提交答案 ────────────────────────────────────────────
+function submitAnswer() {
+  var ta = $("user-answer");
+  if (!ta) return;
+  var text = ta.value.trim();
+  if (!text) { alert("请输入答案"); return; }
+
+  var q = qList[qIdx];
+  $("btn-submit").disabled = true;
+
+  fetch(API + "/grade", {
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body: JSON.stringify({
+      question: q,
+      answer: text,
+      duration_minutes: 5
+    })
+  }).then(function(r){return r.json()}).then(function(data){
+    if (!data.ok) { alert("评分失败: " + data.error); $("btn-submit").disabled = false; return; }
+
+    var g = data.grading;
+    var isCorrect = g.correct;
+    if (isCorrect) totalCorrect++; else totalWrong++;
+    updateAccUI();
+    if (data.user_state) updateStateUI(data.user_state);
+
+    var fbIcon = isCorrect ? "✅" : "🔍";
+    var fbTitle = isCorrect ? "正确！" : "有误";
+    var fbCard = document.createElement("div");
+    fbCard.className = "fb-card " + (isCorrect ? "correct" : "wrong");
+    fbCard.innerHTML = `
+      <div class="fb-header">
+        <span class="fb-icon">${fbIcon}</span>
+        <span class="fb-title">${fbTitle}</span>
+        <span class="fb-score">${g.score||0}/${g.max_score||20}</span>
+      </div>
+      <div class="fb-feedback">${g.feedback||""}</div>`;
+
+    var qa = $("qa-area");
+    qa.appendChild(fbCard);
+
+    // 审计（静默）
+    var kbId = (q.kb_id || q.focus_kb_id || "KB_CAFA_S001");
+    fetch(API + "/audit", {
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body: JSON.stringify({kb_id: kbId})
+    });
+
+    // 下一题按钮
+    var nextBtn = document.createElement("button");
+    nextBtn.className = "next-btn";
+    var nextIdx = qIdx + 1;
+    nextBtn.textContent = nextIdx < qList.length
+      ? "下一题 → (" + nextIdx + "/" + qList.length + ")"
+      : "继续加载更多 →";
+    nextBtn.onclick = function() { showQuestion(nextIdx); };
+    qa.appendChild(nextBtn);
+
+    $("user-answer").readOnly = true;
+  });
+}
+
+// ── 填示例答案 ─────────────────────────────────────────
+function fillDemo() {
+  var q = qList[qIdx];
+  if (!q) return;
+  var ta = $("user-answer");
+  if (!ta) return;
+  var demo = q.correct_answer || "";
+  if (q.answer && typeof q.answer === "object") demo = Object.values(q.answer).join("\n");
+  if (demo) { ta.value = demo; ta.style.borderColor = "var(--purple)"; }
+}
+
+// ── 提示 ────────────────────────────────────────────────
+function toggleHint() {
+  var el = $("hints-box");
+  var btn = $("btn-hint");
+  if (!el) return;
+  el.classList.toggle("show");
+  if (btn) btn.classList.toggle("active");
+}
+
+// ── 预生成题用完 ───────────────────────────────────────
+function showEndThenReload() {
+  var qa = $("qa-area");
+  qa.classList.add("on");
+  qa.innerHTML = `
+    <div class="fb-card correct" style="text-align:center;border-left-color:var(--purple)">
+      <div class="fb-header" style="justify-content:center">
+        <span class="fb-icon">🎉</span>
+        <span class="fb-title" style="color:var(--purple)">本轮完成！</span>
+      </div>
+      <div class="fb-feedback">正确率 ${totalCorrect+totalWrong>0?Math.round(totalCorrect/(totalCorrect+totalWrong)*100):0}%，继续加油！</div>
+    </div>
+    <button class="next-btn" onclick="startSession()">🔄 再来一轮</button>`;
+}
+
+// ── 启动 ────────────────────────────────────────────────
+init();
+</script>
+</body>
+</html>

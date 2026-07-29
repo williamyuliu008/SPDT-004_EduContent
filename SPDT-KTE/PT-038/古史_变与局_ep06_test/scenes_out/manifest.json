@@ -1,0 +1,203 @@
+{
+  "episode_id": "古史_变与局_ep06",
+  "series": "变与局",
+  "title": "晚清变局",
+  "total_scenes": 16,
+  "scenes": [
+    {
+      "scene_id": "古史_变与局_ep06_act1_00",
+      "scene_type": "concept",
+      "title": "1839年6月3日，广东虎门海滩上…",
+      "source_knowledge_nodes": [
+        "#变与局/1840-1911年",
+        "#历史/晚清变局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_变与局_ep06_act1_01",
+      "scene_type": "concept",
+      "title": "英军将领（站在甲板上）：清…",
+      "source_knowledge_nodes": [
+        "#变与局/1840-1911年",
+        "#历史/晚清变局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "ACCEPTABLE"
+    },
+    {
+      "scene_id": "古史_变与局_ep06_act1_02",
+      "scene_type": "action",
+      "title": "鸦片战争的根本原因不…",
+      "source_knowledge_nodes": [
+        "#变与局/1840-1911年",
+        "#历史/晚清变局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "ACCEPTABLE"
+    },
+    {
+      "scene_id": "古史_变与局_ep06_act1_03",
+      "scene_type": "concept",
+      "title": "1842年《南京条约》：割让香港、开…",
+      "source_knowledge_nodes": [
+        "#变与局/1840-1911年",
+        "#历史/晚清变局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "ACCEPTABLE"
+    },
+    {
+      "scene_id": "古史_变与局_ep06_act2_04",
+      "scene_type": "concept",
+      "title": "两次鸦片战争的惨败，终…",
+      "source_knowledge_nodes": [
+        "#变与局/1840-1911年",
+        "#历史/晚清变局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_变与局_ep06_act2_05",
+      "scene_type": "concept",
+      "title": "李鸿章：北洋水师已称雄…",
+      "source_knowledge_nodes": [
+        "#变与局/1840-1911年",
+        "#历史/晚清变局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_变与局_ep06_act2_06",
+      "scene_type": "action",
+      "title": "甲午战争的教训：GDP世界前…",
+      "source_knowledge_nodes": [
+        "#变与局/1840-1911年",
+        "#历史/晚清变局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "ACCEPTABLE"
+    },
+    {
+      "scene_id": "古史_变与局_ep06_act2_07",
+      "scene_type": "concept",
+      "title": "洋务运动失败的根本原…",
+      "source_knowledge_nodes": [
+        "#变与局/1840-1911年",
+        "#历史/晚清变局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "ACCEPTABLE"
+    },
+    {
+      "scene_id": "古史_变与局_ep06_act3_08",
+      "scene_type": "concept",
+      "title": "甲午战败的屈辱，终于让…",
+      "source_knowledge_nodes": [
+        "#变与局/1840-1911年",
+        "#历史/晚清变局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_变与局_ep06_act3_09",
+      "scene_type": "concept",
+      "title": "谭嗣同（在狱中）：改革之事…",
+      "source_knowledge_nodes": [
+        "#变与局/1840-1911年",
+        "#历史/晚清变局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_变与局_ep06_act3_10",
+      "scene_type": "action",
+      "title": "戊戌变法失败的深层原…",
+      "source_knowledge_nodes": [
+        "#变与局/1840-1911年",
+        "#历史/晚清变局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "ACCEPTABLE"
+    },
+    {
+      "scene_id": "古史_变与局_ep06_act3_11",
+      "scene_type": "concept",
+      "title": "戊戌六君子的血，告诉了…",
+      "source_knowledge_nodes": [
+        "#变与局/1840-1911年",
+        "#历史/晚清变局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "ACCEPTABLE"
+    },
+    {
+      "scene_id": "古史_变与局_ep06_act4_12",
+      "scene_type": "concept",
+      "title": "1901年《辛丑条约》签订后，清朝…",
+      "source_knowledge_nodes": [
+        "#变与局/1840-1911年",
+        "#历史/晚清变局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_变与局_ep06_act4_13",
+      "scene_type": "concept",
+      "title": "同盟会会员：武昌首义成…",
+      "source_knowledge_nodes": [
+        "#变与局/1840-1911年",
+        "#历史/晚清变局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "古史_变与局_ep06_act4_14",
+      "scene_type": "action",
+      "title": "辛亥革命的历史意义：终…",
+      "source_knowledge_nodes": [
+        "#变与局/1840-1911年",
+        "#历史/晚清变局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "ACCEPTABLE"
+    },
+    {
+      "scene_id": "古史_变与局_ep06_act4_15",
+      "scene_type": "concept",
+      "title": "回顾晚清七十年，从洋务…",
+      "source_knowledge_nodes": [
+        "#变与局/1840-1911年",
+        "#历史/晚清变局",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "ACCEPTABLE"
+    }
+  ],
+  "stats": {
+    "total_beats": 16,
+    "total_scenes": 16,
+    "by_scene_type": {
+      "concept": 12,
+      "action": 4
+    },
+    "by_knowledge_type": {
+      "I": 0,
+      "II": 0,
+      "III": 0,
+      "IV": 16
+    },
+    "cognitive_warnings": 7
+  },
+  "schema_version": "v2",
+  "if_a_path": "D:\\92_products\\SPDT-004_EduContent\\SPDT-KTE\\PT-038\\古史_变与局_ep06_test\\scenes_out\\scene_v2_full.json",
+  "validation_errors": 0,
+  "analogy_warnings": 0
+}

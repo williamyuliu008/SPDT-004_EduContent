@@ -1,0 +1,189 @@
+﻿# SPDT-004: 教育内容制造 (Education Content Manufacturing)
+
+spdt_id: SPDT-004
+spdt_name: 教育内容制造
+spdt_name_en: Education Content Manufacturing
+owner_agent: agent-e926h
+created: 2026-07-10
+version: 1.0
+
+description: |
+  以 CGM 约束型生成方法论为理论内核，构建从知识摄取到成品视频/课件/试题的
+  全自动教育内容制造管线。从高考备考、通识教育到企业培训，覆盖体制教育和
+  职业教育的完整频谱，实现"知识 → 教学成品"的一键转化。
+
+pdt_list:
+  - pdt_id: PT-030
+    name: GaokaoPrep
+    name_zh: 高考备考内容工厂
+    layer: L2 应用
+    role: 六科统一的高考 AI 辅导内容全自动生产
+    directory: PT-030_GaokaoPrep
+    status: active
+    registered: 2026-07-10
+    source: D:\92_products\GaokaoPrep
+
+  - pdt_id: PT-031
+    name: GeneralEdu
+    name_zh: 通识教育内容工厂
+    layer: L2 应用
+    role: 历史/地理/科学等通识类教学视频全自动生产
+    directory: products/PT-031_GeneralEdu
+    status: active
+    registered: 2026-07-10
+    note: 历史通识 SOP 已验证 (2026-0708)
+
+  - pdt_id: PT-032
+    name: CollegeCourseware
+    name_zh: 高等课件工厂
+    layer: L2 应用
+    role: 大学数学/物理/化学等高等课程动画课件自动生产
+    directory: PT-032_CollegeCourseware
+    status: active
+    registered: 2026-07-10
+    source: D:\6_agent_project\projects\math_animation_factory
+
+  - pdt_id: PT-033
+    name: CorpTraining
+    name_zh: 企业培训内容工厂
+    layer: L2 应用
+    role: 入职培训/合规培训/技能培训的 CGM+审计 自动生产
+    directory: products/PT-033_CorpTraining
+    status: active
+    registered: 2026-07-10
+    source: D:\6_agent_project\projects\cgm_training_factory
+
+  - pdt_id: PT-034
+    name: CareerEdu
+    name_zh: 职业教育内容工厂
+    layer: L2 应用
+    role: IT/设计/金融等职业技能培训内容自动生产
+    directory: products/PT-034_CareerEdu
+    status: planned
+    registered: 2026-07-10
+
+  - pdt_id: PT-035
+    name: LanguageLearning
+    name_zh: 语言学习内容工厂
+    layer: L2 应用
+    role: 多语种语言学习视频/课件/练习自动生产
+    directory: products/PT-035_LanguageLearning
+    status: planned
+    registered: 2026-07-10
+
+  - pdt_id: PT-036
+    name: ChildEdu
+    name_zh: 儿童教育内容工厂
+    layer: L2 应用
+    role: 学龄前/小学低年级动画教学内容自动生产
+    directory: products/PT-036_ChildEdu
+    status: planned
+    registered: 2026-07-10
+
+  - pdt_id: PT-037
+    name: AdaptivePrepPlatform
+    name_zh: 自适应备考智能体平台
+    layer: L2 应用
+    role: 通用备考操作系统，平台层（知识图谱+多Agent调度+自适应训练），通过配置包驱动多学科内容消费
+    directory: products/PT-037_AdaptivePrepPlatform
+    status: active
+    registered: 2026-07-13
+    note: BUILD-R+CGM融合，配置包模式，首发国美书法；与PT-030/031/032为上下游关系
+
+
+  - pdt_id: PT-038
+    name: TextExperience
+    name_zh: 文本体验引擎
+    layer: L2 应用
+    role: 剧本杀/电子书/广播剧/辨析卡多形态内容生产
+    directory: PT-038_TextExperience
+    status: active
+    registered: 2026-07-14
+    note: 墨骨山河系列（Ep01-09）+ 古史系列（v1-v4），Git仓库独立管理
+    github: https://github.com/williamyuliu008/PT-038_TextExperience
+
+  - pdt_id: PT-039
+    name: CalligraphyVision
+    name_zh: 书法视觉内容工厂
+    layer: L2 素材
+    role: 书法碑帖视觉素材提取 + 辨析卡生成 + 视觉本体库
+    directory: products/PT-039_CalligraphyVision
+    status: active
+    registered: 2026-07-21
+    note: 书法辨析卡v4存储于D:/4_data/content/calligraphy_cards/
+    migration: 2026-07-29 从 media/ 迁入 products/
+shared_infrastructure:
+  video_factory:
+    name: 教育视频生产引擎
+    role: SPDT-004 内部所有 PDT 共用的 Manim + TTS + ffmpeg 管线
+    directory: shared\video_factory
+    source:
+      - D:\6_agent_project\AI_video_edu
+      - D:\6_agent_project\projects\math_animation_factory\_tools
+
+  knowledge_engine:
+    name: 教育知识引擎
+    role: 知识图谱 / 标签体系 / 知识点依赖关系 / 认知脚手架
+    directory: knowledge
+
+  quality_gate:
+    name: 教育内容质量门禁
+    role: CGM 审计 + 教学效果评估 + Golden Test
+    directory: quality
+    source: D:\6_agent_project\projects\content_quality_gate
+
+  cgm_templates:
+    name: CGM 教育模板库
+    role: 动作模板 / 文风包 / 情绪语音模板 / 场景布局
+    directory: templates
+
+cross_spdt_links:
+  - from: SPDT-002 (专利情报)
+    to: PT-032 (高等课件)
+    data: 最新专利技术 → 自动转化为高等课件
+    status: planned
+
+  - from: SPDT-003 (论文情报)
+    to: PT-032 (高等课件)
+    data: 前沿论文 → 自动转化为大学课程内容
+    status: planned
+
+  - from: SPDT-004
+    to: SPDT-014 (教育APP) / SPDT-001 (通用APP)
+    data: 教育视频/课件 → SPDT-014 EduApps (ThinkKit/GaokaoAgent) 内消费
+    status: planned
+
+  - from: SPDT-004
+    to: autopublish (共享基础设施)
+    data: 所有内容 PDT → 飞书/微信/网站 分发
+    status: active
+
+kpis:
+  - metric: 活跃 PDT 数
+    current: 4
+    target: 7
+  - metric: CGM 审计通过率
+    current: "—"
+    target: "≥95%"
+  - metric: 视频年产量
+    current: "~50 集 (验证)"
+    target: 1000 集
+  - metric: 覆盖学科/领域数
+    current: "~8"
+    target: 20
+  - metric: 全自动比例 (冷启动后)
+    current: "~60%"
+    target: "≥90%"
+
+tech_stack:
+  animation_engine: Manim CE
+  tts: Azure TTS
+  video_compose: ffmpeg
+  knowledge_extract: LLM (GLM series)
+  quality_gate: content_quality_gate + CGM Audit
+  template_engine: YAML-driven + Python Jinja2
+  storage: SQLite (知识库) + JSON (场景/模板)
+
+omas:
+  spdt_registry: D:\6_agent_project\omas\spdt_registry\SPDT-004
+  pdt_registry: D:\6_agent_project\omas\pdt_registry

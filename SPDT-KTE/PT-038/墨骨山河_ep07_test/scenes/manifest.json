@@ -1,0 +1,105 @@
+{
+  "episode_id": "墨骨山河_ep07",
+  "series": "墨骨山河",
+  "title": "碑学中兴",
+  "total_scenes": 8,
+  "scenes": [
+    {
+      "scene_id": "墨骨山河_ep07_act1_00",
+      "scene_type": "concept",
+      "title": "1790年代，杭州",
+      "source_knowledge_nodes": [
+        "#书法/清/碑学背景",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "墨骨山河_ep07_act1_01",
+      "scene_type": "concept",
+      "title": "阮元站起来，走到书架前",
+      "source_knowledge_nodes": [
+        "#书法/清/碑学兴起原因",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "墨骨山河_ep07_act2_02",
+      "scene_type": "concept",
+      "title": "阮元蘸墨，开始写《南北书…",
+      "source_knowledge_nodes": [
+        "#书法/清/南北书派论",
+        "#考频/⭐️⭐⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "墨骨山河_ep07_act2_03",
+      "scene_type": "concept",
+      "title": "阮元继续写：\n\n'南派书法，源…",
+      "source_knowledge_nodes": [
+        "#书法/清/南北书派论内容",
+        "#考频/⭐️⭐⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "墨骨山河_ep07_act2_04",
+      "scene_type": "steps",
+      "title": "【南北书派论判断题】\n\n以下…",
+      "source_knowledge_nodes": [
+        "#书法/清/南北书派论",
+        "#考频/⭐️⭐⭐"
+      ],
+      "cognitive_load": "WARN"
+    },
+    {
+      "scene_id": "墨骨山河_ep07_act2_05",
+      "scene_type": "contrast",
+      "title": "【碑帖比较题】\n\n请比较碑学…",
+      "source_knowledge_nodes": [
+        "#书法/清/碑帖比较",
+        "#考频/⭐️⭐⭐⭐"
+      ],
+      "cognitive_load": "ACCEPTABLE"
+    },
+    {
+      "scene_id": "墨骨山河_ep07_act3_06",
+      "scene_type": "contrast",
+      "title": "【综合论述题】\n\n请结合阮元…",
+      "source_knowledge_nodes": [
+        "#综合/清书法/南北书派论论述",
+        "#考频/⭐️⭐⭐⭐"
+      ],
+      "cognitive_load": "ACCEPTABLE"
+    },
+    {
+      "scene_id": "墨骨山河_ep07_act3_07",
+      "scene_type": "concept",
+      "title": "你合上书，望着窗外",
+      "source_knowledge_nodes": [],
+      "cognitive_load": "WARN"
+    }
+  ],
+  "stats": {
+    "total_beats": 10,
+    "total_scenes": 8,
+    "by_scene_type": {
+      "concept": 5,
+      "steps": 1,
+      "contrast": 2
+    },
+    "by_knowledge_type": {
+      "I": 0,
+      "II": 8,
+      "III": 0,
+      "IV": 0
+    },
+    "cognitive_warnings": 6
+  },
+  "schema_version": "v2",
+  "if_a_path": "D:\\92_products\\SPDT-004_EduContent\\PT-038_TextExperience\\墨骨山河_ep07_test\\scenes\\scene_v2_full.json",
+  "validation_errors": 0,
+  "analogy_warnings": 0
+}
