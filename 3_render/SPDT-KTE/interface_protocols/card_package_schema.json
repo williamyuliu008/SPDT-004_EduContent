@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft-07/schema#",
   "$id": "https://spdt-kte/schemas/card_package_schema.schema.json",
   "title": "SPDT-KTE Interface C · card_package_json",
-  "description": "PT-038 → PT-RUJ 卡片包 JSON 协议 v3.0.0。PT-038 卡片自动生成器输出此格式，PT-RUJ ImportService 消费此 JSON 导入 Flashcard 到本地 RDB。",
+  "description": "PT-038 → PT-RUJ 卡片包 JSON 协议 v3.0.0。PT-038 卡片自动生成器输出此格式，PT-RUJ ImportService 消费此 JSON 导入 Flashcard 到本地 RDB。\n[OMA S MODLIB 同步副本] D:/1_omas/MODLIB/content_manufacturing/interface_protocols/IF-C_card_package.schema.json",
   "version": "3.0.0",
   "interface_id": "IF-C",
   "producer": "PT-038",

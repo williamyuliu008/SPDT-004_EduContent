@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft-07/schema#",
   "$id": "https://spdt-kte/schemas/scene_json_v2.schema.json",
   "title": "SPDT-KTE Interface A · scene_json_v2",
-  "description": "PT-038 → PT-VFX 场景 JSON 协议 v2.0.0。PT-038 的 episode .py 经 PT038_to_VideoFactory.py 转换后输出为此格式，PT-VFX 渲染引擎消费此 JSON 渲染 Pillow 帧。",
+  "description": "PT-038 → PT-VFX 场景 JSON 协议 v2.0.0。PT-038 的 episode .py 经 PT038_to_VideoFactory.py 转换后输出为此格式，PT-VFX 渲染引擎消费此 JSON 渲染 Pillow 帧。\n[OMA S MODLIB 同步副本] D:/1_omas/MODLIB/content_manufacturing/interface_protocols/IF-A_scene_json_v2.schema.json",
   "version": "2.0.0",
   "interface_id": "IF-A",
   "producer": "PT-038",
