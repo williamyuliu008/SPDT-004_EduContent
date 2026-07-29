@@ -7,6 +7,14 @@ PT-030_GaokaoPrep/
 PT-032_CollegeCourseware/
 PT-038_TextExperience/
 
+# ── 嵌套Git仓库（子模块，非本快照追踪范围）────────────────────────────────
+.git/
+**/.git/
+SPDT-KTE/PT-VFX/
+SPDT-KTE/PT-038/
+SPDT-KTE/PT-RUJ/
+shared/video_factory/
+
 # ── 平台子项目（各自独立管理）──────────────────────────────────────────────
 platform/SPDT-001_Harmony/**
 
@@ -38,6 +46,14 @@ desktop.ini
 **/*.pdf
 **/*.docx
 **/*.doc
+
+# ── 大型二进制文件──────────────────────────────────────────────────────────
+**/*.jpg
+**/*.jpeg
+**/*.cer
+**/*.p12
+**/*.p7b
+**/*.db
 
 # ── Python缓存──────────────────────────────────────────────────────────────
 __pycache__/
