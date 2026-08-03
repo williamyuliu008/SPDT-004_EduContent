@@ -1,0 +1,164 @@
+spec_id: political_gaokao_2026
+spec_version: 1.0.0
+spec_generated: '2026-08-02T00:00:00+08:00'
+domain: education
+content_type: B1_deep_content
+
+exam_meta:
+  exam_name: 高考思想政治
+  exam_code: POLI_SHANGHAI_2026
+  subject: 高考思想政治（上海卷）
+  total_duration_min: 120
+  total_score: 100
+  measurement_targets:
+    - id: MT1
+      name: 识记
+      weight: 0.10
+      description: 再现国内外重大时事的基本内容
+    - id: MT2
+      name: 理解
+      weight: 0.35
+      description: 概括基本概念、原理和方法，辨别区别，阐述联系
+    - id: MT3
+      name: 分析
+      weight: 0.35
+      description: 运用知识分析说明社会现象，归纳实质，置疑判断
+    - id: MT4
+      name: 综合
+      weight: 0.10
+      description: 综合运用知识进行全面论述，理论联系实际提出方案
+    - id: MT5
+      name: 评价
+      weight: 0.10
+      description: 作出正确价值判断和评价，选择正确行为态度
+
+question_types:
+  - id: Q_CHOICE
+    name: 选择题
+    weight: 0.40
+    description: 四选一/四选多，考查基础知识与概念
+    key_topics:
+      - 商品的基本属性
+      - 货币的职能
+      - 我国的国家性质
+      - 人民代表大会制度
+      - 矛盾的普遍性与特殊性
+      - 实践与认识的关系
+  - id: Q_SHORT
+    name: 简答题
+    weight: 0.30
+    description: 基本概念/原理简述
+    key_topics:
+      - 生产与消费的辩证关系
+      - 按劳分配为主体的客观必然性
+      - 我国政府的主要职能
+      - 矛盾的同一性与斗争性
+  - id: Q_ESSAY
+    name: 论述题
+    weight: 0.30
+    description: 理论联系实际，综合论述
+    key_topics:
+      - 运用唯物辩证法分析社会热点问题
+      - 结合社会主义市场经济分析宏观调控
+      - 用历史唯物主义观点评价社会现象
+
+modules:
+  - module_id: M1
+    name: 经济生活
+    weight: 0.30
+    topics:
+      - id: E1
+        name: 商品与货币
+        level: A
+        sub_topics: [商品的基本属性, 货币的本质与职能, 纸币与信用, 外汇与汇率]
+      - id: E2
+        name: 生产与消费
+        level: B
+        sub_topics: [生产与消费的辩证关系, 消费类型与消费心理, 树立正确消费观]
+      - id: E3
+        name: 分配与社会保障
+        level: B
+        sub_topics: [按劳分配为主体, 多种分配方式并存, 税收的作用, 社会保障制度]
+      - id: E4
+        name: 社会主义市场经济
+        level: C
+        sub_topics: [市场经济的基本特征, 国家宏观调控, 社会主义市场经济体制]
+      - id: E5
+        name: 经济全球化
+        level: B
+        sub_topics: [经济全球化的表现, 机遇与挑战, 我国的对外开放]
+  - module_id: M2
+    name: 政治生活
+    weight: 0.30
+    topics:
+      - id: P1
+        name: 国家与公民
+        level: B
+        sub_topics: [我国的国家性质, 人民民主专政, 公民的政治权利和义务, 政治参与]
+      - id: P2
+        name: 政党制度
+        level: C
+        sub_topics: [中国共产党的性质, 多党合作制度, 政治协商制度]
+      - id: P3
+        name: 人民代表大会制度
+        level: C
+        sub_topics: [国体与政体, 人民代表大会, 民主集中制, 依法治国]
+      - id: P4
+        name: 国际社会
+        level: B
+        sub_topics: [主权国家, 国际组织, 和平与发展, 独立自主和平外交政策]
+  - module_id: M3
+    name: 哲学常识
+    weight: 0.25
+    topics:
+      - id: X1
+        name: 唯物论
+        level: B
+        sub_topics: [哲学的基本问题, 物质的唯一特性, 意识的能动作用, 一切从实际出发]
+      - id: X2
+        name: 辩证法
+        level: C
+        sub_topics: [联系的普遍性与客观性, 发展的实质, 矛盾的普遍性与特殊性, 量变与质变, 辩证否定]
+      - id: X3
+        name: 认识论
+        level: C
+        sub_topics: [实践的含义与特点, 认识的本质, 真理的客观性, 认识的反复性与无限性]
+      - id: X4
+        name: 历史唯物主义
+        level: C
+        sub_topics: [社会存在与社会意识, 生产方式, 人民群众是历史的创造者, 价值观的导向作用]
+  - module_id: M4
+    name: 法律道德
+    weight: 0.15
+    topics:
+      - id: L1
+        name: 公民权利义务
+        level: A
+        sub_topics: [公民的基本权利, 公民的基本义务, 权利与义务的关系]
+      - id: L2
+        name: 法律基础
+        level: B
+        sub_topics: [法律的本质, 宪法是国家的根本法, 公民与法律, 依法办事]
+
+reference_texts:
+  - 上海高考思想政治课程标准（2004版）
+  - 高中思想政治必修1-4（上海新版教材）
+  - 高中思想政治选择性必修1-3
+
+quality_constraints:
+  factual_accuracy: expert_reviewed
+  cross_check_required: true
+  hallucination_threshold: 0.05
+  political_accuracy: strict
+  description: 政治科目涉及国家政治制度与意识形态，需严格事实核查，所有政治制度表述须与官方表述一致
+
+production_target:
+  knowledge_entries_target: 200
+  ability_count_target: 16
+  coverage_target: 0.85
+
+human_checkpoint:
+  - M1_syllabus_confirmed
+  - M2_factual_accuracy_verified_by_expert
+
+source: generated_from_shanghai_gaokao_syllabus_2026

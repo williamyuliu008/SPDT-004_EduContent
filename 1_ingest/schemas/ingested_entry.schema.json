@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://omas.mavis/MODLIB/content_manufacturing/schemas/ingest_ingested_entry.schema.json",
+  "title": "Ingest · IngestedEntry Schema",
+  "description": "1_ingest M2 阶段产出：经过双Agent质量校准的知识条目。\n是 ingest 的最终输出，直接送入 2_structure。",
+  "version": "1.0.0",
+  "stage": "1_ingest",
+  "producer": "ingest_quality_calibrator",
+  "frozen": false,
+
+  "type": "object",
+  "required": ["ingested_id", "concept", "definition", "trust", "calibration"],
+
+  "properties": {
+    "ingested_id": {
+      "type": "string",
+      "minLength": 10,
+      "description": "格式：ING_{考试代码}_{序号}"
+    },
+    "source_raw_id": {
+      "type": "string",
+      "description": "来源原材料 ID"
+    },
+    "concept": {
+      "type": "string",
+      "description": "知识概念名称"
+    },
+    "definition": {
+      "type": "string",
+      "maxLength": 500
+    },
+    "structured_content": {
+      "type": "object",
+      "description": "结构化内容（键值对形式）"
+    },
+    "trust": {
+      "type": "object",
+      "required": ["level", "source"],
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": ["C", "D", "E"],
+          "description": "C=大众/D=编辑审核/E=专家同行评审"
+        },
+        "source": { "type": "string" },
+        "source_title": { "type": "string" },
+        "cross_checked": { "type": "boolean" },
+        "cross_check_sources": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "exam_tags": {
+      "type": "object",
+      "properties": {
+        "subject": { "type": "string" },
+        "module": { "type": "string" },
+        "question_types": { "type": "array", "items": { "type": "string" } },
+        "frequency": { "type": "string" },
+        "cognitive_level": { "type": "string", "enum": ["记忆", "理解", "应用", "分析"] }
+      }
+    },
+    "calibration": {
+      "type": "object",
+      "properties": {
+        "agent_a_version": { "type": "string" },
+        "challenges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "agent": { "type": "string" },
+              "challenge_type": {
+                "type": "string",
+                "enum": ["fact_accuracy", "definition_conflict", "hallucination_detected", "logic_inconsistency"]
+              },
+              "content": { "type": "string" },
+              "verdict": { "type": "string", "enum": ["accepted", "rejected", "modified"] },
+              "resolution": { "type": "string" }
+            }
+          }
+        },
+        "rejected_entries": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "output_status": {
+      "type": "string",
+      "enum": ["ready_for_2_structure", "pending_review", "rejected"]
+    }
+  }
+}

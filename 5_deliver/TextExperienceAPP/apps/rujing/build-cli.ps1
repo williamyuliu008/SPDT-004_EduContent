@@ -5,10 +5,13 @@ $PROJECT_ROOT = $PSScriptRoot
 $HAP_OUTPUT_DIR = Join-Path $PROJECT_ROOT 'entry\build\default\outputs\default'
 
 # SDK env (flat SDK requires these)
-$env:DEVECO_SDK_HOME = 'D:\9_infra\DevEco\6.1\sdk'
-$env:OHOS_BASE_SDK_HOME = 'D:\9_infra\DevEco\6.1\sdk'
+$env:JAVA_HOME = 'D:\3_infra\DevEco\6.1\jbr'
+$env:PATH = 'D:\3_infra\DevEco\6.1\jbr\bin;' + $env:PATH
+$env:DEVECO_SDK_HOME = 'D:\3_infra\DevEco\6.1\sdk'
+$env:OHOS_BASE_SDK_HOME = 'D:\3_infra\DevEco\6.1\sdk'
 
-$HVIGOR_BAT = 'D:\9_infra\DevEco\6.1\tools\hvigor\bin\hvigorw.bat'
+$HVIGOR_BAT = 'D:\3_infra\DevEco\6.1\tools\hvigor\bin\hvigorw.bat'
+$env:HVIGOR_BAT = $HVIGOR_BAT
 
 Write-Host '=== rujing CLI build ===' -ForegroundColor Cyan
 Write-Host 'Project:' $PROJECT_ROOT

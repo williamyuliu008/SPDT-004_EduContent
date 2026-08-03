@@ -1,0 +1,307 @@
+{
+  "pack_id": "political_gaokao_2026",
+  "pack_name": "高考思想政治系列知识包",
+  "version": "1.0.0",
+  "subject": "高考思想政治",
+  "exam_type": "高考（上海卷/全国卷）",
+  "target": "高三备考学生 · 经济/政治/哲学/法律四模块",
+  "platform_version_required": ">=1.0.0",
+  "author": "Mavis AI Team",
+  "created": "2026-08-02",
+  "dependencies": [],
+  "statistics": {
+    "knowledge_entries": 0,
+    "ability_points": 16,
+    "chain_count": 16,
+    "module_count": 4
+  },
+  "config": {
+    "total_duration_minutes": 120,
+    "question_types": [
+      {
+        "id": "Q_CHOICE",
+        "name": "选择题",
+        "weight": 0.4,
+        "description": "四选一/四选多，考查基础知识与概念"
+      },
+      {
+        "id": "Q_SHORT",
+        "name": "简答题",
+        "weight": 0.3,
+        "description": "基本概念/原理简述"
+      },
+      {
+        "id": "Q_ESSAY",
+        "name": "论述题",
+        "weight": 0.3,
+        "description": "理论联系实际，综合论述"
+      }
+    ],
+    "scoring_weights": {
+      "选择题": 0.4,
+      "简答题": 0.3,
+      "论述题": 0.3
+    },
+    "cognitive_levels": {
+      "Lv1": "识记 / 基本概念和事实",
+      "Lv2": "理解 / 基本原理和方法",
+      "Lv3": "分析 / 社会现象分析",
+      "Lv4": "综合 / 多模块综合论述",
+      "Lv5": "评价 / 价值判断与行为选择"
+    }
+  },
+  "activation": {
+    "default_active": false,
+    "requires_exam_code": "POLI_MANDARIN"
+  },
+  "modules": [
+    {
+      "module_id": "M1",
+      "name": "经济生活",
+      "weight": 0.3,
+      "sub_modules": [
+        "商品与货币",
+        "生产与消费",
+        "分配与社会保障",
+        "社会主义市场经济",
+        "经济全球化"
+      ],
+      "chains": [
+        {
+          "chain_id": "POLI_经济_商品货币",
+          "chain_name": "商品与货币",
+          "causal_logic": "商品基本属性 → 货币职能 → 纸币与信用 → 外汇与汇率",
+          "knowledge_points": 0,
+          "chain_tags": [
+            "商品",
+            "货币",
+            "价值尺度",
+            "流通手段",
+            "纸币",
+            "汇率"
+          ]
+        },
+        {
+          "chain_id": "POLI_经济_生产消费",
+          "chain_name": "生产与消费",
+          "causal_logic": "生产决定消费 → 消费类型 → 消费心理 → 树立正确消费观",
+          "knowledge_points": 0,
+          "chain_tags": [
+            "生产与消费关系",
+            "消费类型",
+            "消费心理",
+            "恩格尔系数"
+          ]
+        },
+        {
+          "chain_id": "POLI_经济_分配保障",
+          "chain_name": "分配与社保",
+          "causal_logic": "按劳分配 → 多种分配方式 → 税收 → 社会保障",
+          "knowledge_points": 0,
+          "chain_tags": [
+            "按劳分配",
+            "按生产要素分配",
+            "个人所得税",
+            "社会保障制度"
+          ]
+        },
+        {
+          "chain_id": "POLI_经济_市场经济",
+          "chain_name": "市场经济",
+          "causal_logic": "市场经济特征 → 资源配置 → 国家宏观调控 → 社会主义市场经济",
+          "knowledge_points": 0,
+          "chain_tags": [
+            "市场经济",
+            "宏观调控",
+            "市场失灵",
+            "社会主义市场经济体制"
+          ]
+        }
+      ]
+    },
+    {
+      "module_id": "M2",
+      "name": "政治生活",
+      "weight": 0.3,
+      "sub_modules": [
+        "国家与公民",
+        "政党制度",
+        "人民代表大会制度",
+        "国际社会"
+      ],
+      "chains": [
+        {
+          "chain_id": "POLI_政治_国家公民",
+          "chain_name": "国家与公民",
+          "causal_logic": "国家性质 → 人民民主专政 → 公民权利义务 → 政治参与",
+          "knowledge_points": 0,
+          "chain_tags": [
+            "国家性质",
+            "人民民主专政",
+            "公民权利",
+            "政治参与"
+          ]
+        },
+        {
+          "chain_id": "POLI_政治_政党制度",
+          "chain_name": "政党制度",
+          "causal_logic": "政党性质 → 多党合作制度 → 政治协商 → 民主党派作用",
+          "knowledge_points": 0,
+          "chain_tags": [
+            "中国共产党",
+            "多党合作",
+            "政治协商",
+            "民主党派"
+          ]
+        },
+        {
+          "chain_id": "POLI_政治_人大制度",
+          "chain_name": "人大制度",
+          "causal_logic": "国体与政体 → 人民代表大会 → 民主集中制 → 法治建设",
+          "knowledge_points": 0,
+          "chain_tags": [
+            "人民代表大会",
+            "国体政体",
+            "民主集中制",
+            "依法治国"
+          ]
+        },
+        {
+          "chain_id": "POLI_政治_国际社会",
+          "chain_name": "国际社会",
+          "causal_logic": "主权国家 → 国际组织 → 时代主题 → 中国的外交政策",
+          "knowledge_points": 0,
+          "chain_tags": [
+            "主权",
+            "国际组织",
+            "和平与发展",
+            "独立自主和平外交"
+          ]
+        }
+      ]
+    },
+    {
+      "module_id": "M3",
+      "name": "哲学常识",
+      "weight": 0.25,
+      "sub_modules": [
+        "唯物论",
+        "辩证法",
+        "认识论",
+        "历史唯物主义"
+      ],
+      "chains": [
+        {
+          "chain_id": "POLI_哲学_唯物论",
+          "chain_name": "唯物论基础",
+          "causal_logic": "物质概念 → 意识的能动作用 → 一切从实际出发",
+          "knowledge_points": 0,
+          "chain_tags": [
+            "物质",
+            "意识",
+            "主观能动性",
+            "一切从实际出发"
+          ]
+        },
+        {
+          "chain_id": "POLI_哲学_唯物辩证",
+          "chain_name": "唯物辩证法",
+          "causal_logic": "联系 → 发展 → 矛盾 → 辩证否定",
+          "knowledge_points": 0,
+          "chain_tags": [
+            "联系",
+            "发展",
+            "矛盾",
+            "辩证否定",
+            "量变质变"
+          ]
+        },
+        {
+          "chain_id": "POLI_哲学_认识实践",
+          "chain_name": "认识与实践",
+          "causal_logic": "实践本质 → 认识发展 → 真理特性 → 认识反作用于实践",
+          "knowledge_points": 0,
+          "chain_tags": [
+            "实践",
+            "认识",
+            "真理",
+            "认识的反复性与无限性"
+          ]
+        },
+        {
+          "chain_id": "POLI_哲学_历史唯物",
+          "chain_name": "历史唯物主义",
+          "causal_logic": "社会存在 → 生产方式 → 人民群众 → 价值观",
+          "knowledge_points": 0,
+          "chain_tags": [
+            "社会存在",
+            "社会意识",
+            "人民群众",
+            "价值观",
+            "人生价值"
+          ]
+        }
+      ]
+    },
+    {
+      "module_id": "M4",
+      "name": "法律道德",
+      "weight": 0.15,
+      "sub_modules": [
+        "公民权利义务",
+        "法律基础",
+        "道德与法治"
+      ],
+      "chains": [
+        {
+          "chain_id": "POLI_法律_公民权利",
+          "chain_name": "公民权利义务",
+          "causal_logic": "公民基本权利 → 公民基本义务 → 权利义务关系 → 依法行使权利",
+          "knowledge_points": 0,
+          "chain_tags": [
+            "人身权",
+            "财产权",
+            "政治权利",
+            "公民义务",
+            "法律面前一律平等"
+          ]
+        },
+        {
+          "chain_id": "POLI_法律_法律基础",
+          "chain_name": "法律基础",
+          "causal_logic": "法律的本质 → 法律体系 → 公民与法律 → 依法办事",
+          "knowledge_points": 0,
+          "chain_tags": [
+            "宪法",
+            "民法",
+            "公民与法律",
+            "依法办事",
+            "程序公正"
+          ]
+        }
+      ]
+    }
+  ],
+  "cross_pack_links": {
+    "history_gaokao": {
+      "relation": "历史唯物主义与历史学科联动（社会形态演进）",
+      "trigger_chain_ids": [
+        "POLI_哲学_历史唯物"
+      ]
+    },
+    "geography_gaokao": {
+      "relation": "经济地理与环境政治联动（可持续发展/生态文明）",
+      "trigger_chain_ids": [
+        "POLI_经济_市场经济",
+        "POLI_政治_国际社会"
+      ]
+    }
+  },
+  "agent_prompt_patch_files": {
+    "agent1": null,
+    "agent2": null,
+    "agent3": null
+  },
+  "status": "v1.0_P0_draft",
+  "last_updated": "2026-08-02"
+}

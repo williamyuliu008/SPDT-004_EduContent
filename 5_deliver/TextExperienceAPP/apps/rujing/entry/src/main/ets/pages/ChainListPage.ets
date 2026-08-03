@@ -5,6 +5,7 @@
  */
 
 import { router } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 import { db } from '../service/DatabaseService';
 import { Chain } from '../model/DataModel';
 
@@ -98,6 +99,15 @@ struct ChainListPage {
 
     this.allChains = await db.getChainsBySubject(this.subject);
 
+    // 诊断：加载后立即打印链列表到 HiLog
+    const msg = '[ChainList] subject=' + this.subject + ' total=' + this.allChains.length;
+    hilog.info(0x0000, 'ChainListPage', '%{public}s', msg);
+    for (let i = 0; i < this.allChains.length; i++) {
+      const c = this.allChains[i];
+      hilog.info(0x0000, 'ChainListPage', '  [%{public}d] id=%{public}s subject=%{public}s',
+        i.toString(), c.chain_id, c.subject);
+    }
+
     if (this.subject === '古诗文') {
       const series: Chain[] = [];
       const remaining: Chain[] = [];
@@ -125,7 +135,33 @@ struct ChainListPage {
 
       this.seriesChains = series;
       this.knowledgeGroups = this.categorizeKnowledgeChains(remaining);
+    } else if (this.subject === '书法' || this.subject === '地理' || this.subject === '政治') {
+      // 书法/地理/政治链：按显示标题的数字前缀排序（1_/2_/.../16_）
+      // getCalligraphyDisplayTitle / getGeographyDisplayTitle / getPoliticsDisplayTitle 已注入序号
+      this.allChains.sort((a, b) => {
+        const na = parseInt(a.title);
+        const nb = parseInt(b.title);
+        if (!isNaN(na) && !isNaN(nb)) {
+          return na - nb;
+        }
+        return a.title.localeCompare(b.title, 'zh-CN');
+      });
     }
+  }
+
+  // 诊断：生成链前缀分布摘要
+  private getSeriesSummary(): string {
+    const summary: Record<string, number> = {};
+    for (const c of this.allChains) {
+      // 取 chain_id 前8字符作为系列标识
+      const prefix = c.chain_id.length >= 8 ? c.chain_id.substring(0, 8) : c.chain_id;
+      summary[prefix] = (summary[prefix] ?? 0) + 1;
+    }
+    const parts: string[] = [];
+    for (const k of Object.keys(summary)) {
+      parts.push(k + 'x' + summary[k]);
+    }
+    return parts.join(' | ');
   }
 
   categorizeKnowledgeChains(chains: Chain[]): ChainGroup[] {
@@ -227,15 +263,22 @@ struct ChainListPage {
         }
         .layoutWeight(1).scrollBar(BarState.Off)
       } else {
-        // 其他学科：普通列表
-        List({ space: 8 }) {
-          ForEach(this.allChains, (chain: Chain) => {
-            ListItem() {
-              this.chainItem(chain, '')
-            }
-          })
+        // 其他学科：普通列表（含诊断：显示链数量）
+        Column() {
+          Text('共 ' + this.allChains.length + ' 条知识链')
+            .fontSize(12).fontColor('#888').margin({ bottom: 8 })
+          // 诊断：列出各 chain_id 前缀的数量
+          Text(this.getSeriesSummary())
+            .fontSize(11).fontColor('#bbb').margin({ bottom: 6 })
+          List({ space: 8 }) {
+            ForEach(this.allChains, (chain: Chain) => {
+              ListItem() {
+                this.chainItem(chain, '')
+              }
+            })
+          }
+          .layoutWeight(1).padding({ left: 16, right: 16 }).scrollBar(BarState.Off)
         }
-        .layoutWeight(1).padding({ left: 16, right: 16 }).scrollBar(BarState.Off)
       }
     }
     .width('100%').height('100%').backgroundColor('#F5F5F5')
@@ -286,7 +329,7 @@ struct ChainListPage {
     Column() {
       // 头部
       Row() {
-        Text(group.icon).fontSize(16).fontSize(18)
+        Text(group.icon).fontSize(18)
         Text(group.label).fontSize(15).fontWeight(600).fontColor('#333').margin({ left: 8 })
         Text(group.chains.length + ' 条').fontSize(11).fontColor('#888')
           .backgroundColor('#f0f0f0').borderRadius(8)
@@ -343,6 +386,9 @@ struct ChainListPage {
             .fontSize(11).fontColor('#999')
           Text(chain.raw_count.toString() + ' 生 · ' + chain.cooked_count.toString() + ' 熟')
             .fontSize(11).fontColor(chain.raw_count > 0 ? '#e67e22' : '#5B8C5A')
+          // DEBUG：显示 chain_id 和 subject
+          Text('[' + chain.chain_id + ']')
+            .fontSize(10).fontColor('#bbb')
         }
         .margin({ top: 4 })
         if (chain.card_count > 0) {

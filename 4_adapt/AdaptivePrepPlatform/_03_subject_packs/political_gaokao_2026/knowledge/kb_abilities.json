@@ -1,0 +1,71 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-08-02",
+  "cognitive_model": "布鲁姆认知层级（上海考纲五级）",
+  "abilities": [
+    {
+      "id": "AB1",
+      "level": "识记",
+      "bloom_level": 1,
+      "description": "再现基本概念、原理和重大时事",
+      "weight": 0.1
+    },
+    {
+      "id": "AB2",
+      "level": "理解",
+      "bloom_level": 2,
+      "description": "概括基本概念，辨别区别，阐述联系",
+      "weight": 0.35
+    },
+    {
+      "id": "AB3",
+      "level": "分析",
+      "bloom_level": 4,
+      "description": "运用知识分析说明社会现象",
+      "weight": 0.35
+    },
+    {
+      "id": "AB4",
+      "level": "综合",
+      "bloom_level": 5,
+      "description": "综合运用知识进行较为全面深入的论述",
+      "weight": 0.1
+    },
+    {
+      "id": "AB5",
+      "level": "评价",
+      "bloom_level": 6,
+      "description": "作出正确价值判断和评价，选择正确行为",
+      "weight": 0.1
+    }
+  ],
+  "cross_module_abilities": [
+    {
+      "id": "CA1",
+      "name": "经济-政治联动分析",
+      "description": "运用政治经济学视角分析社会现象",
+      "requires_modules": [
+        "经济生活",
+        "政治生活"
+      ]
+    },
+    {
+      "id": "CA2",
+      "name": "哲学-时政联动分析",
+      "description": "用唯物辩证法分析时政热点",
+      "requires_modules": [
+        "哲学常识",
+        "时事政治"
+      ]
+    },
+    {
+      "id": "CA3",
+      "name": "法律-政治联动分析",
+      "description": "结合法律知识分析政治参与",
+      "requires_modules": [
+        "法律道德",
+        "政治生活"
+      ]
+    }
+  ]
+}

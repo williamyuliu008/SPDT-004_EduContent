@@ -1,9 +1,0 @@
-pdt_id: PT-034
-name: CareerEdu
-name_zh: 职业教育内容工厂
-spdt: SPDT-004
-domain: 职业教育
-subjects: [IT, 设计, 金融, 工程]
-content_types: [技能视频, 项目实战, 认证备考]
-status: planned
-created: 2026-07-10

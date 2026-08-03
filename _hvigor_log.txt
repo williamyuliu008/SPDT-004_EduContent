@@ -1,0 +1,18 @@
+﻿hvigorw.bat : > hvigor [91mERROR: [31m00303217 Configuration Error
+At line:2 char:244
++ ... ps\rujing'; & 'D:\3_infra\DevEco\6.1\tools\hvigor\bin\hvigorw.bat' -- ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (> hvigor [91mE...iguration Error:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Error Message: Invalid value of 'DEVECO_SDK_HOME' in the system environment path.
+
+* Try the following:
+  > Correct the value, run hvigorw --stop-daemon to stop the daemon process, and then try again.
+[39m
+
+[31m* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --debug option to get more log output.
+[39m
+> hvigor [91mERROR: BUILD FAILED in 26 ms [39m

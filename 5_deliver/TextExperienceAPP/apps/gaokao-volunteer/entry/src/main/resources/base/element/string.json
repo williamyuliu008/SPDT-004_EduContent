@@ -1,8 +1,0 @@
-{
-  "string": [
-    { "name": "app_name", "value": "gaokao volunteer" },
-    { "name": "module_desc", "value": "GaokaoAgent gaokao volunteer" },
-    { "name": "EntryAbility_desc", "value": "GaokaoAgent gaokao volunteer" },
-    { "name": "EntryAbility_label", "value": "gaokao volunteer" }
-  ]
-}

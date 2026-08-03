@@ -1,0 +1,23 @@
+{
+  "audit_id": "AUDIT_geo_shanhe_2026_20260801_023",
+  "spec_id": "geo_shanhe_2026",
+  "timestamp": "2026-07-31T17:22:42.274572+00:00",
+  "total_entries": 23,
+  "total_challenges": 23,
+  "accepted": 23,
+  "rejected": 0,
+  "rejected_reasons": {
+    "fact_inaccuracy": 0,
+    "definition_conflict": 0,
+    "hallucination_detected": 0,
+    "logic_inconsistency": 0
+  },
+  "trust_distribution": {
+    "E": 0,
+    "D": 0,
+    "C": 23
+  },
+  "pass_rate": 1.0,
+  "pass_threshold": 0.8,
+  "overall_verdict": "PASS"
+}

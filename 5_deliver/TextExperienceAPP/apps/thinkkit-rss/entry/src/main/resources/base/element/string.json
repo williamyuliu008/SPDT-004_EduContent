@@ -1,8 +1,0 @@
-{
-  "string": [
-    { "name": "app_name", "value": "thinkkit rss" },
-    { "name": "module_desc", "value": "ThinkKit thinkkit rss" },
-    { "name": "EntryAbility_desc", "value": "ThinkKit thinkkit rss" },
-    { "name": "EntryAbility_label", "value": "thinkkit rss" }
-  ]
-}

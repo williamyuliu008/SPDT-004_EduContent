@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://omas.mavis/MODLIB/content_manufacturing/schemas/ingest_audit_log.schema.json",
+  "title": "Ingest · AuditLog Schema",
+  "description": "1_ingest M2 双Agent校准的审计日志。记录质疑清单、仲裁结果、可信度分布。",
+  "version": "1.0.0",
+  "stage": "1_ingest",
+  "producer": "ingest_quality_calibrator",
+  "frozen": false,
+
+  "type": "object",
+  "required": ["audit_id", "spec_id", "timestamp", "dual_agent", "pass_rate"],
+
+  "properties": {
+    "audit_id": {
+      "type": "string",
+      "minLength": 15,
+      "description": "格式：AUDIT_{考试代码}_{日期8位}_{序号}"
+    },
+    "spec_id": { "type": "string" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "dual_agent": {
+      "type": "object",
+      "properties": {
+        "agent_a": { "type": "string" },
+        "agent_b": { "type": "string" },
+        "total_challenges": { "type": "integer" },
+        "accepted": { "type": "integer" },
+        "rejected": { "type": "integer" },
+        "rejected_reasons": {
+          "type": "object",
+          "properties": {
+            "fact_inaccuracy": { "type": "integer" },
+            "definition_conflict": { "type": "integer" },
+            "hallucination_detected": { "type": "integer" },
+            "logic_inconsistency": { "type": "integer" }
+          }
+        }
+      }
+    },
+    "trust_distribution": {
+      "type": "object",
+      "properties": {
+        "E": { "type": "integer" },
+        "D": { "type": "integer" },
+        "C": { "type": "integer" }
+      }
+    },
+    "pass_rate": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "pass_threshold": {
+      "type": "number",
+      "default": 0.80
+    },
+    "overall_verdict": {
+      "type": "string",
+      "enum": ["PASS", "FAIL", "PENDING_REVIEW"]
+    }
+  }
+}

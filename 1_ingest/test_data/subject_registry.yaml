@@ -1,0 +1,361 @@
+# subject_registry.yaml — 学科注册表
+# ====================================================
+# OMAS MODLIB · 教育管线学科域注册
+# 版本：v1.0.0（Phase 1 端到端测试配套）
+# 对应：SPDT-004 1_ingest/test_data/subject_registry.yaml
+#
+# 用途：
+#   ① 管线启动时加载，验证 subject_domain 合法性
+#   ② 端到端测试按此注册表生成各学科测试用例
+#   ③ 后续 Phase 2/3 扩展新学科时，在此注册
+#
+# 命名规则：
+#   domain_id    = 全大写 + 下划线（HIST_ART / GEO / POL / MATH）
+#   sub_domain   = 小写下划线（hist_history / hist_calligraphy）
+#   inner_format = 学科自治的 inner.data 结构类型
+#   adapter      = MODLIB/content_manufacturing/adapters/ 中的 adapter 名称
+
+---
+version: "1.0.0"
+last_updated: "2026-07-30"
+
+# ─────────────────────────────────────────────────────────────────
+# 学科域注册表
+# ─────────────────────────────────────────────────────────────────
+
+subjects:
+
+  # ── HIST_ART（历史 + 书法）────────────────────────────────────
+  - domain_id: HIST_ART
+    label: "历史·书法"
+    description: "中国通史 + 书法史双轨内容，含墨骨山河沉浸式微剧本系列"
+    phase: 1  # Phase 1 已覆盖
+    sub_domains:
+      - sub_id: hist_history
+        label: "中国通史"
+        description: "中国古代史 / 近现代史，按朝代/事件组织"
+        exam_types: ["高考历史", "艺考史论"]
+        inner_format: "scene_v2"
+        adapter: "education_adapter"
+        scene_genre: "墨骨山河 / 古史知识链"
+        examples:
+          - "墨骨山河_ep01_乾元元年（颜真卿+安史之乱）"
+          - "古史_v4_世界风云（近现代史）"
+        capabilities_map:
+          B1_deep_content: ["needs_narrative", "needs_analogy", "needs_visual"]
+          B2_rapid:        ["needs_visual", "needs_procedure", "needs_interactive"]
+          B3_translation:  ["needs_translation", "needs_comparison", "needs_visual"]
+          B4_argumentation: ["needs_reflection", "needs_comparison", "needs_narrative"]
+        knowledge_types: ["K_CONCEPT", "K_METACOG"]
+
+      - sub_id: hist_calligraphy
+        label: "书法史论"
+        description: "书法技法史 + 书论，含各书体演变、代表书家"
+        exam_types: ["国美书法校考", "书法史论"]
+        inner_format: "scene_v2"
+        adapter: "education_adapter"
+        scene_genre: "墨骨山河书法线"
+        examples:
+          - "颜真卿楷书风格演变"
+          - "王羲之兰亭序书论"
+        capabilities_map:
+          B1_deep_content: ["needs_narrative", "needs_analogy", "needs_visual"]
+          B3_translation:  ["needs_translation", "needs_comparison", "needs_visual"]
+        knowledge_types: ["K_CONCEPT", "K_PROCEDURE"]
+
+    existing_assets:
+      scene_v2_dir: "2_structure/TextExperience/_test_ep01_scenes/"
+      scripts_dir: "2_structure/TextExperience/scripts/"
+      scene_v2_full: "2_structure/TextExperience/_test_ep01_scenes/scene_v2_full.json"
+
+  # ── GEO（地理）────────────────────────────────────────────────
+  - domain_id: GEO
+    label: "地理"
+    description: "自然地理 + 人文地理，按地理要素/区域组织"
+    phase: 1  # Phase 1 端到端测试覆盖
+    sub_domains:
+      - sub_id: geo_natural
+        label: "自然地理"
+        description: "地形/气候/水文/生物/土壤，按自然要素组织"
+        exam_types: ["高考地理"]
+        inner_format: "scene_v2"
+        adapter: "education_adapter"
+        scene_genre: "地理要素系列"
+        examples:
+          - "板块构造与地震带"
+          - "季风气候成因分析"
+        capabilities_map:
+          B1_deep_content: ["needs_narrative", "needs_analogy", "needs_visual"]
+          B2_rapid:        ["needs_visual", "needs_procedure", "needs_interactive"]
+          B3_translation:  ["needs_translation", "needs_comparison", "needs_visual"]
+        knowledge_types: ["K_CONCEPT", "K_PROCEDURE"]
+
+      - sub_id: geo_human
+        label: "人文地理"
+        description: "人口/城市/农业/工业/交通/可持续发展"
+        exam_types: ["高考地理"]
+        inner_format: "scene_v2"
+        adapter: "education_adapter"
+        scene_genre: "人文地理系列"
+        examples:
+          - "城市化进程与城市群"
+          - "产业转移与区域发展"
+        capabilities_map:
+          B1_deep_content: ["needs_narrative", "needs_analogy", "needs_visual"]
+          B3_translation:  ["needs_translation", "needs_comparison", "needs_visual"]
+        knowledge_types: ["K_CONCEPT", "K_METACOG"]
+
+    # GEO 测试 fixture 状态
+    test_fixture: "test_data/geo/"
+    existing_assets:
+      geo_shanhe_2026:
+        meta_json: "test_data/geo_shanhe_2026/meta.json"
+        content_spec: "test_data/geo_shanhe_2026/content_spec.yaml"
+        chain_count: 16
+        chain_list:
+          # 自然地理要素链（8条山河）
+          - "GEO_山河_黄河"
+          - "GEO_山河_长江"
+          - "GEO_山河_淮河"
+          - "GEO_山河_珠江"
+          - "GEO_山河_松花江"
+          - "GEO_山河_塔里木"
+          - "GEO_山河_青藏"
+          - "GEO_山河_天山"
+          # 人文地理链（4条）
+          - "GEO_人地_人口迁移"
+          - "GEO_人地_产业转移"
+          - "GEO_人地_农业地域"
+          - "GEO_人地_可持续发展"
+          # 区域综合链（4条）
+          - "GEO_区域_北方地区"
+          - "GEO_区域_南方地区"
+          - "GEO_区域_西北地区"
+          - "GEO_区域_青藏地区"
+        status: "v1.0_P0_draft"
+        m0_verdict: "applicable"
+        m1_output: "content_spec.yaml 正常生成"
+
+  # ── POL（政治）────────────────────────────────────────────────
+  - domain_id: POL
+    label: "政治"
+    description: "中国特色社会主义 / 经济 / 哲学 / 法律，按模块组织"
+    phase: 1  # Phase 1 端到端测试覆盖
+    sub_domains:
+      - sub_id: pol_socialism
+        label: "中国特色社会主义"
+        description: "中国特色社会主义理论体系 / 重大时政"
+        exam_types: ["高考政治"]
+        inner_format: "scene_v2"
+        adapter: "education_adapter"
+        scene_genre: "政治模块系列"
+        examples:
+          - "新发展理念"
+          - "全过程人民民主"
+        capabilities_map:
+          B1_deep_content: ["needs_narrative", "needs_analogy", "needs_visual"]
+          B2_rapid:        ["needs_visual", "needs_procedure", "needs_interactive"]
+          B3_translation:  ["needs_translation", "needs_comparison", "needs_visual"]
+        knowledge_types: ["K_CONCEPT", "K_METACOG"]
+
+      - sub_id: pol_economy
+        label: "经济与社会"
+        description: "宏观经济 / 微观经济 / 资源配置"
+        exam_types: ["高考政治"]
+        inner_format: "scene_v2"
+        adapter: "education_adapter"
+        scene_genre: "经济系列"
+        examples:
+          - "社会主义市场经济"
+          - "通货膨胀与货币政策"
+        capabilities_map:
+          B1_deep_content: ["needs_narrative", "needs_analogy", "needs_visual"]
+          B3_translation:  ["needs_translation", "needs_comparison", "needs_visual"]
+        knowledge_types: ["K_CONCEPT", "K_PROCEDURE", "K_METACOG"]
+
+      - sub_id: pol_philosophy
+        label: "哲学与文化"
+        description: "马克思主义哲学 / 文化的作用"
+        exam_types: ["高考政治"]
+        inner_format: "scene_v2"
+        adapter: "education_adapter"
+        scene_genre: "哲学系列"
+        examples:
+          - "唯物辩证法三大规律"
+          - "认识的能动作用"
+        capabilities_map:
+          B1_deep_content: ["needs_narrative", "needs_analogy", "needs_visual"]
+          B4_argumentation: ["needs_reflection", "needs_comparison", "needs_narrative"]
+        knowledge_types: ["K_CONCEPT", "K_METACOG"]
+
+  # ── CHINESE（语文）────────────────────────────────────────────
+  - domain_id: CHINESE
+    label: "语文"
+    description: "含文言文 / 现代文 / 作文 / 语言文字运用，子科目多需独立处理"
+    phase: 1_sub  # 子科目拆分测试
+    sub_domains:
+      - sub_id: chinese_classical
+        label: "文言文"
+        description: "古诗文阅读 / 文言知识 / 断句翻译"
+        exam_types: ["高考语文"]
+        inner_format: "scene_v2"
+        adapter: "education_adapter"
+        scene_genre: "文言文系列"
+        examples:
+          - "《师说》韩愈"
+          - "《赤壁赋》苏轼"
+        capabilities_map:
+          B1_deep_content: ["needs_narrative", "needs_translation", "needs_visual"]
+          B3_translation:  ["needs_translation", "needs_comparison", "needs_procedure"]
+        knowledge_types: ["K_CONCEPT", "K_PROCEDURE"]
+
+      - sub_id: chinese_modern
+        label: "现代文"
+        description: "现代文阅读 / 文学类 / 论述类 / 实用类"
+        exam_types: ["高考语文"]
+        inner_format: "scene_v2"
+        adapter: "education_adapter"
+        scene_genre: "现代文系列"
+        examples:
+          - "小说阅读策略"
+          - "散文情感分析"
+        capabilities_map:
+          B1_deep_content: ["needs_narrative", "needs_analogy", "needs_visual"]
+          B3_translation:  ["needs_translation", "needs_comparison", "needs_visual"]
+        knowledge_types: ["K_CONCEPT", "K_METACOG"]
+
+      - sub_id: chinese_writing
+        label: "作文"
+        description: "议论文 / 记叙文 / 说明文写作"
+        exam_types: ["高考语文"]
+        inner_format: "scene_v2"
+        adapter: "education_adapter"
+        scene_genre: "写作系列"
+        examples:
+          - "议论文结构：引-议-联-结"
+          - "素材积累与运用"
+        capabilities_map:
+          B1_deep_content: ["needs_narrative", "needs_analogy", "needs_reflection"]
+          B4_argumentation: ["needs_reflection", "needs_comparison", "needs_narrative"]
+        knowledge_types: ["K_METACOG", "K_PROCEDURE"]
+
+  # ── ENGLISH（英语）────────────────────────────────────────────
+  - domain_id: ENGLISH
+    label: "英语"
+    description: "含阅读 / 写作 / 语法 / 听力，子科目多需独立处理"
+    phase: 1_sub  # 子科目拆分测试
+    sub_domains:
+      - sub_id: english_reading
+        label: "阅读理解"
+        description: "七选五 / 完形填空 / 阅读表达"
+        exam_types: ["高考英语"]
+        inner_format: "scene_v2"
+        adapter: "education_adapter"
+        scene_genre: "阅读系列"
+        examples:
+          - "阅读主旨大意策略"
+          - "长难句分析"
+        capabilities_map:
+          B1_deep_content: ["needs_narrative", "needs_analogy", "needs_visual"]
+          B3_translation:  ["needs_translation", "needs_comparison", "needs_procedure"]
+        knowledge_types: ["K_CONCEPT", "K_PROCEDURE", "K_METACOG"]
+
+      - sub_id: english_writing
+        label: "写作"
+        description: "应用文 / 读后续写 / 概要写作"
+        exam_types: ["高考英语"]
+        inner_format: "scene_v2"
+        adapter: "education_adapter"
+        scene_genre: "写作系列"
+        examples:
+          - "读后续写技巧"
+          - "应用文模板"
+        capabilities_map:
+          B1_deep_content: ["needs_narrative", "needs_analogy", "needs_reflection"]
+          B3_translation:  ["needs_translation", "needs_comparison", "needs_procedure"]
+        knowledge_types: ["K_PROCEDURE", "K_METACOG"]
+
+      - sub_id: english_grammar
+        label: "语法"
+        description: "时态 / 语态 / 从句 / 非谓语 / 虚拟语气"
+        exam_types: ["高考英语"]
+        inner_format: "scene_v2"
+        adapter: "education_adapter"
+        scene_genre: "语法系列"
+        examples:
+          - "虚拟语气全解"
+          - "非谓语动词用法辨析"
+        capabilities_map:
+          B1_deep_content: ["needs_analogy", "needs_comparison", "needs_visual"]
+          B2_rapid:        ["needs_visual", "needs_procedure", "needs_interactive"]
+          B3_translation:  ["needs_translation", "needs_comparison", "needs_visual"]
+        knowledge_types: ["K_CONCEPT", "K_PROCEDURE"]
+
+  # ── MATH（数学）────────────────────────────────────────────────
+  - domain_id: MATH
+    label: "数学"
+    description: "代数 / 几何 / 概率统计 / 导数，内容差异性大，inner format 待定"
+    phase: 2  # Phase 2 单独处理
+    sub_domains:
+      - sub_id: math_algebra
+        label: "代数"
+        description: "函数 / 方程 / 不等式 / 数列 / 复数"
+        exam_types: ["高考数学"]
+        inner_format: "math_v1"  # Phase 2 待定义
+        adapter: "math_adapter"  # Phase 2 待实现
+        planned: true
+      - sub_id: math_geometry
+        label: "几何"
+        description: "立体几何 / 解析几何 / 平面向量"
+        exam_types: ["高考数学"]
+        inner_format: "math_v1"
+        adapter: "math_adapter"
+        planned: true
+      - sub_id: math_calculus
+        label: "导数与积分"
+        description: "导数运算 / 积分运算 / 微积分基本定理"
+        exam_types: ["高考数学"]
+        inner_format: "math_v1"
+        adapter: "math_adapter"
+        planned: true
+      - sub_id: math_probability
+        label: "概率与统计"
+        description: "排列组合 / 概率 / 统计"
+        exam_types: ["高考数学"]
+        inner_format: "math_v1"
+        adapter: "math_adapter"
+        planned: true
+
+# ─────────────────────────────────────────────────────────────────
+# 管线级元数据（跨学科通用）
+# ─────────────────────────────────────────────────────────────────
+
+pipeline_metadata:
+  outer_capabilities_enum:
+    - "needs_narrative"       # 需要叙事/旁白
+    - "needs_analogy"        # 需要类比/打比方
+    - "needs_visual"         # 需要视觉化/图示
+    - "needs_translation"    # 需要翻译/转化
+    - "needs_comparison"     # 需要对比/辨析
+    - "needs_procedure"      # 需要步骤/流程
+    - "needs_interactive"    # 需要互动/练习
+    - "needs_reflection"     # 需要反思/自评
+
+  knowledge_types_enum:
+    - "K_FACT"       # 事实性知识（年代/人物/定义）
+    - "K_CONCEPT"    # 概念性知识（原理/特征/分类）
+    - "K_PROCEDURE" # 程序性知识（步骤/方法/流程）
+    - "K_METACOG"    # 元认知（分析/论证/评价）
+
+  trust_levels_enum:
+    - "A"  # 教科书/官方文件
+    - "B"  # 权威教辅
+    - "C"  # 一般教辅
+    - "D"  # 专家笔记
+    - "E"  # 考纲（最权威）
+
+  b1_b4_content_types:
+    - "B1_deep_content"    # 深度长内容（≥3000字，跨学科）
+    - "B2_rapid"           # 快反内容（≤500字/条，高频考点）
+    - "B3_translation"     # 知识转化（专业→易懂）
+    - "B4_argumentation"    # 创意论证（多角度判断）

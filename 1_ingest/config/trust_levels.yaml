@@ -1,0 +1,100 @@
+# trust_levels.yaml — 可信度等级定义
+# ================================
+# 来源可信度从 A（最高）到 E（专家共识）
+# 对应 SOP v4.0 M2 两级降级策略
+
+trust_levels:
+  A:
+    label: "权威一手"
+    description: "官方原文、原始文献、当事人第一手记录"
+    examples:
+      - "官方考试大纲原文"
+      - "古籍原版（无注释/无断句）"
+      - "当事人日记/书信原件"
+    weight_in_calibration: 1.0
+    cross_check_required: false      # A级无需交叉验证
+    auto_pass: true                   # 直接进入 ingested 池
+
+  B:
+    label: "权威二手"
+    description: "官方认可的权威注释/翻译/解读"
+    examples:
+      - "《说文解字注》（段玉裁）"
+      - "官方教材配套解析"
+      - "学界公认的标准注释本"
+    weight_in_calibration: 0.85
+    cross_check_required: false
+    auto_pass: false
+
+  C:
+    label: "编辑审核"
+    description: "经过编辑/出版机构审核的内容"
+    examples:
+      - "正规出版社出版教材"
+      - "学术期刊同行评审论文"
+      - "官方媒体发布信息"
+    weight_in_calibration: 0.7
+    cross_check_required: true        # 需至少1个同级来源印证
+    auto_pass: false
+
+  D:
+    label: "大众共识"
+    description: "网络公开资料、行业惯例、大众共识"
+    examples:
+      - "维基百科词条（非争议性内容）"
+      - "百度百科权威词条"
+      - "行业标准文件"
+    weight_in_calibration: 0.45
+    cross_check_required: true        # 需至少2个来源印证
+    auto_pass: false
+
+  E:
+    label: "存疑内容"
+    description: "单源、未经审核、网络摘录内容"
+    examples:
+      - "网络论坛帖子"
+      - "匿名博客/非权威网站"
+      - "个人笔记整理"
+    weight_in_calibration: 0.2
+    cross_check_required: true        # 需至少3个来源印证，或人工审核
+    auto_pass: false
+    requires_human_review: true
+
+# 降级规则：来源信息不足时的默认处理
+downgrade_rules:
+  unknown_source:
+    default_level: "E"
+    flag: "SOURCE_UNKNOWN"
+
+  partial_source:
+    default_level: "D"
+    flag: "SOURCE_PARTIAL"
+
+  mixed_sources:
+    # 多源混合时，取最低可信度
+    strategy: "take_lowest"
+    flag: "SOURCE_MIXED"
+
+# 书法备考特定加权
+calligraphy_specific:
+  # 《说文解字》原文 = A级（无注释原版）
+  shuowen_original: "A"
+  # 段玉裁注 = B级（权威二手）
+  shuowen_duan: "B"
+  # 现代文字学教材 = C级
+  modern_linguistics: "C"
+  # 网上说文解读 = D-E级
+  online_shouwen: "D"
+  # 个人笔记 = E级
+  personal_notes: "E"
+
+# 高考历史特定加权
+history_specific:
+  # 《史记》《汉书》等正史原文 = A级
+  official_history_original: "A"
+  # 大学历史教材 = C级
+  university_textbook: "C"
+  # 高考复习资料 = D级
+  gaokao_review: "D"
+  # 网络历史文章 = D-E级
+  online_article: "E"

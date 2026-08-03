@@ -190,21 +190,59 @@ export class DatabaseService {
   // ─── 链 CRUD ────────────────────────────────────
 
   async upsertChain(chain: Chain): Promise<void> {
-    const sql = `
-      INSERT OR REPLACE INTO chains
-        (chain_id, title, subject, chain_type, card_count, raw_count, cooked_count,
-         last_viewed, created_at, updated_at, tags, related_chains)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    `;
-    const tags = JSON.stringify(chain.tags ?? []);
-    const related = JSON.stringify(chain.related_chains ?? []);
-    const now = Date.now();
-    await this.store!.executeSql(sql, [
-      chain.chain_id, chain.title, chain.subject, chain.chain_type,
-      chain.card_count ?? 0, chain.raw_count ?? 0, chain.cooked_count ?? 0,
-      chain.last_viewed ?? 0, chain.created_at ?? now, chain.updated_at ?? now,
-      tags, related
-    ]);
+    // 已有链用 UPDATE（保留 subject/title/chain_type 等已有字段，只更新元数据）
+    // 新链才 INSERT（首次导入时设 subject）
+    // 关键：INSERT OR REPLACE 会覆盖已有 subject，所以必须先查再决定
+    const checkSql = 'SELECT subject FROM chains WHERE chain_id = ?';
+    const r = await this.store!.querySql(checkSql, [chain.chain_id]);
+    if (r.goToFirstRow()) {
+      // 已有链：只更新 title / tags / related_chains / narrative / updated_at，不碰 subject
+      const updSql = `
+        UPDATE chains SET
+          title = ?, tags = ?, related_chains = ?,
+          updated_at = ?
+        WHERE chain_id = ?
+      `;
+      const tags = JSON.stringify(chain.tags ?? []);
+      const related = JSON.stringify(chain.related_chains ?? []);
+      await this.store!.executeSql(updSql, [
+        chain.title,
+        tags,
+        related,
+        Date.now(),
+        chain.chain_id
+      ]);
+    } else {
+      // 新链：INSERT
+      const insSql = `
+        INSERT OR REPLACE INTO chains
+          (chain_id, title, subject, chain_type, card_count, raw_count, cooked_count,
+           last_viewed, created_at, updated_at, tags, related_chains)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      `;
+      const tags = JSON.stringify(chain.tags ?? []);
+      const related = JSON.stringify(chain.related_chains ?? []);
+      const now = Date.now();
+      await this.store!.executeSql(insSql, [
+        chain.chain_id, chain.title, chain.subject, chain.chain_type,
+        chain.card_count ?? 0, chain.raw_count ?? 0, chain.cooked_count ?? 0,
+        chain.last_viewed ?? 0, chain.created_at ?? now, chain.updated_at ?? now,
+        tags, related
+      ]);
+    }
+    r.close();
+  }
+
+  /** 只更新 subject 字段（migration 专用，避免 INSERT OR REPLACE 覆盖已有字段） */
+  async updateChainSubject(chain_id: string, subject: Subject): Promise<void> {
+    const sql = 'UPDATE chains SET subject = ?, updated_at = ? WHERE chain_id = ?';
+    await this.store!.executeSql(sql, [subject, Date.now(), chain_id]);
+  }
+
+  /** 只更新 title 字段（编号前缀专用，避免 INSERT OR REPLACE 覆盖 subject） */
+  async updateChainTitle(chain_id: string, title: string): Promise<void> {
+    const sql = 'UPDATE chains SET title = ?, updated_at = ? WHERE chain_id = ?';
+    await this.store!.executeSql(sql, [title, Date.now(), chain_id]);
   }
 
   async getChainsBySubject(subject: string): Promise<Chain[]> {
@@ -307,7 +345,7 @@ export class DatabaseService {
     const result: Card[] = [];
     while (rs.goToNextRow()) {
       let tags: string[] = [];
-      try { tags = JSON.parse(rs.getString(8)) as string[]; } catch (_) {}
+      try { tags = JSON.parse(rs.getString(9)) as string[]; } catch (_) {}
 
       const card: Card = {
         card_id: rs.getString(0),
@@ -333,20 +371,20 @@ export class DatabaseService {
     while (rs.goToNextRow()) {
       let tags: string[] = [];
       let related: string[] = [];
-      try { tags = JSON.parse(rs.getString(11)) as string[]; } catch (_) {}
-      try { related = JSON.parse(rs.getString(12)) as string[]; } catch (_) {}
+      try { tags = JSON.parse(rs.getString(10)) as string[]; } catch (_) {}
+      try { related = JSON.parse(rs.getString(11)) as string[]; } catch (_) {}
 
       const chain: Chain = {
         chain_id: rs.getString(0),
         title: rs.getString(1),
         subject: rs.getString(2) as Subject,
         chain_type: rs.getString(3) as ChainType,
-        card_count: rs.getLong(5),
-        raw_count: rs.getLong(6),
-        cooked_count: rs.getLong(7),
-        last_viewed: rs.getLong(8),
-        created_at: rs.getLong(9),
-        updated_at: rs.getLong(10),
+        card_count: rs.getLong(4),
+        raw_count: rs.getLong(5),
+        cooked_count: rs.getLong(6),
+        last_viewed: rs.getLong(7),
+        created_at: rs.getLong(8),
+        updated_at: rs.getLong(9),
         tags: tags,
         related_chains: related,
         narrative: '',
@@ -358,65 +396,132 @@ export class DatabaseService {
   }
 
   /**
-   * 数据迁移（2026-07-19）：
-   *   1. GAOKAO_* 链：HISTORY → GUWEN
-   *   2. 墨骨山河_* 链：HISTORY → CALLIGRAPHY
-   *   3. 古诗词知识链：HISTORY → GUWEN
-   *      (CHAIN_炼字_三步法_01 / CHAIN_情感脉络_三层_01 /
-   *       CHAIN_主观题_手法_01 / CHAIN_比较鉴赏_方法论_01)
-   * 注意：CHAIN_近代* 是历史链，不迁移，保持 HISTORY
-   * 解决早期导入时未指定 subject、默认写 HISTORY 的问题
+   * 数据迁移（v6，2026-07-31）：
+   *   ⑤ 无条件迁移：墨骨山河% 链强制设为书法（最优先，防止任何遗留 subject 错误）
+   *   ① GAOKAO_EP* 链：HISTORY → 古诗文
+   *   ② 墨骨山河* / CHAIN_CAFA_Ep* 链：HISTORY → 书法（书法史）
+   *   ③ 其余所有 CHAIN_* 链（文言语法/诗词鉴赏）：HISTORY → 古诗文
+   * 注意：CHAIN_近代* / CHAIN_现代* / CHAIN_全球关联* / CHAIN_现代外交* 是历史链，
+   *       但它们不在 gaokao_guwen_cards 里，不会被误迁。
+   *       真正的近代史链在 history_v3_cards 里，导入时 subject 已是 HISTORY。
    */
   async migrateSubjectOwnership(): Promise<number> {
     const now = Date.now();
-    // 古诗文（GAOKAO_* 前缀）
-    const beforeGuwen = await this.store!.querySql(
-      `SELECT COUNT(*) as c FROM chains WHERE chain_id LIKE 'GAOKAO_%' AND subject = ?`,
+    let migrated = 0;
+    let r: relationalStore.ResultSet;
+
+    // ⑤ 无条件迁移：墨骨山河% 链强制设为书法（最优先，防止任何遗留 subject 错误）
+    // 注意：用 updateChainSubject 而非 upsertChain（后者 INSERT OR REPLACE 会覆盖 subject）
+    r = await this.store!.querySql(
+      `SELECT chain_id FROM chains WHERE chain_id LIKE '墨骨山河%'`
+    );
+    let migCount = 0;
+    while (r.goToNextRow()) {
+      await this.updateChainSubject(r.getString(0), Subject.CALLIGRAPHY);
+      migCount++;
+    }
+    r.close();
+    if (migCount > 0) {
+      migrated += migCount;
+      hilog.info(DOMAIN, TAG, '[migrate] 墨骨山河链: 强制设为书法 %d 条', migCount);
+    }
+
+    // ① 古诗文（GAOKAO_EP* 前缀）
+    r = await this.store!.querySql(
+      `SELECT COUNT(*) FROM chains WHERE chain_id LIKE 'GAOKAO_%' AND subject = ?`,
       [Subject.HISTORY]
     );
-    let guwenCount = 0;
-    if (beforeGuwen.goToFirstRow()) guwenCount = Number(beforeGuwen.getLong(0));
-    if (guwenCount > 0) {
+    if (r.goToFirstRow() && r.getLong(0) > 0) {
       await this.store!.executeSql(
         `UPDATE chains SET subject = ?, updated_at = ? WHERE chain_id LIKE 'GAOKAO_%' AND subject = ?`,
         [Subject.GUWEN, now, Subject.HISTORY]
       );
-      hilog.info(DOMAIN, TAG, 'Guwen GAOKAO migration: %{public}d chains moved to 古诗文', guwenCount);
+      migrated += r.getLong(0);
     }
-    // 书法
-    const beforeCalf = await this.store!.querySql(
-      `SELECT COUNT(*) as c FROM chains WHERE chain_id LIKE '墨骨山河_%' AND subject = ?`,
+
+    // ② 书法史（墨骨山河* 系列）
+    r = await this.store!.querySql(
+      `SELECT COUNT(*) FROM chains WHERE chain_id LIKE '墨骨山河%' AND subject = ?`,
       [Subject.HISTORY]
     );
-    let calfCount = 0;
-    if (beforeCalf.goToFirstRow()) calfCount = Number(beforeCalf.getLong(0));
-    if (calfCount > 0) {
+    if (r.goToFirstRow() && r.getLong(0) > 0) {
       await this.store!.executeSql(
-        `UPDATE chains SET subject = ?, updated_at = ? WHERE chain_id LIKE '墨骨山河_%' AND subject = ?`,
+        `UPDATE chains SET subject = ?, updated_at = ? WHERE chain_id LIKE '墨骨山河%' AND subject = ?`,
         [Subject.CALLIGRAPHY, now, Subject.HISTORY]
       );
-      hilog.info(DOMAIN, TAG, 'Calligraphy migration: %{public}d chains moved to 书法', calfCount);
+      migrated += r.getLong(0);
     }
-    // 古诗词知识链（已在 HISTORY 中的4条）
-    const poetryChains = [
-      'CHAIN_炼字_三步法_01', 'CHAIN_情感脉络_三层_01',
-      'CHAIN_主观题_手法_01', 'CHAIN_比较鉴赏_方法论_01'
+
+    // ③ 古诗文（CAFA 古汉语三链 unconditional：修复 inferSubject 误判 CALLIGRAPHY 的问题）
+    // 无论当前 subject 是什么，都强制设为 GUWEN
+    const guwenCafa = [
+      'CHAIN_CAFA_古汉语基础', 'CHAIN_CAFA_句读标志', 'CHAIN_CAFA_译篆要诀'
     ];
-    let poetryCount = 0;
-    for (const cid of poetryChains) {
-      const r = await this.store!.querySql(
-        `SELECT COUNT(*) as c FROM chains WHERE chain_id = ? AND subject = ?`, [cid, Subject.HISTORY]
+    for (const cid of guwenCafa) {
+      r = await this.store!.querySql(
+        `SELECT COUNT(*) FROM chains WHERE chain_id = ?`, [cid]
       );
       if (r.goToFirstRow() && r.getLong(0) > 0) {
+        const before = r.getLong(0);
         await this.store!.executeSql(
-          `UPDATE chains SET subject = ?, updated_at = ? WHERE chain_id = ? AND subject = ?`,
-          [Subject.GUWEN, now, cid, Subject.HISTORY]
+          `UPDATE chains SET subject = ?, updated_at = ? WHERE chain_id = ?`,
+          [Subject.GUWEN, now, cid]
         );
-        poetryCount++;
-        hilog.info(DOMAIN, TAG, 'Poetry chain %{public}s moved to 古诗文', cid);
+        migrated += before;
       }
     }
-    return guwenCount + calfCount + poetryCount;
+
+    // ④ 书法史（CHAIN_CAFA_Ep* unconditional：墨骨山河 CAFA 版本）
+    // 无论当前 subject，都强制设为 CALLIGRAPHY（泛规则排除 CAFA_Ep% 后需要显式迁）
+    r = await this.store!.querySql(
+      `SELECT COUNT(*) FROM chains WHERE chain_id LIKE 'CHAIN_CAFA_Ep%'`
+    );
+    if (r.goToFirstRow() && r.getLong(0) > 0) {
+      const before = r.getLong(0);
+      await this.store!.executeSql(
+        `UPDATE chains SET subject = ?, updated_at = ? WHERE chain_id LIKE 'CHAIN_CAFA_Ep%'`,
+        [Subject.CALLIGRAPHY, now]
+      );
+      migrated += before;
+    }
+
+    // ⑤ 泛规则：其余所有 CHAIN_* 链（文言语法/诗词/鉴赏）→ 古诗文
+    // 排除近代史/现代史链（NOT (LIKE ...) 修复 _ 下划线通配符 Bug：
+    //   - LIKE 'CHAIN_近代%' 的 % 会匹配 _，导致 'CHAIN_近代探索_01' 被错误捕获
+    //   - 改用 NOT (LIKE ...) 等价于 startsWith 语义：精确排除以 'CHAIN_近代' 开头的链
+    // 排除 CAFA 古汉语/CAFA_Ep 系列（已在步骤③/④单独处理）
+    r = await this.store!.querySql(
+      `SELECT COUNT(*) FROM chains WHERE chain_id LIKE 'CHAIN_%'
+       AND NOT (chain_id LIKE 'CHAIN_近代%')
+       AND NOT (chain_id LIKE 'CHAIN_现代%')
+       AND NOT (chain_id LIKE 'CHAIN_全球关联%')
+       AND NOT (chain_id LIKE 'CHAIN_现代外交%')
+       AND NOT (chain_id LIKE 'CHAIN_CAFA_古汉语基础')
+       AND NOT (chain_id LIKE 'CHAIN_CAFA_句读标志')
+       AND NOT (chain_id LIKE 'CHAIN_CAFA_译篆要诀')
+       AND NOT (chain_id LIKE 'CHAIN_CAFA_Ep%')
+       AND subject = ?`,
+      [Subject.HISTORY]
+    );
+    if (r.goToFirstRow() && r.getLong(0) > 0) {
+      await this.store!.executeSql(
+        `UPDATE chains SET subject = ?, updated_at = ?
+         WHERE chain_id LIKE 'CHAIN_%'
+           AND NOT (chain_id LIKE 'CHAIN_近代%')
+           AND NOT (chain_id LIKE 'CHAIN_现代%')
+           AND NOT (chain_id LIKE 'CHAIN_全球关联%')
+           AND NOT (chain_id LIKE 'CHAIN_现代外交%')
+           AND NOT (chain_id LIKE 'CHAIN_CAFA_古汉语基础')
+           AND NOT (chain_id LIKE 'CHAIN_CAFA_句读标志')
+           AND NOT (chain_id LIKE 'CHAIN_CAFA_译篆要诀')
+           AND NOT (chain_id LIKE 'CHAIN_CAFA_Ep%')
+           AND subject = ?`,
+        [Subject.GUWEN, now, Subject.HISTORY]
+      );
+      migrated += r.getLong(0);
+    }
+
+    return migrated;
   }
 }
 

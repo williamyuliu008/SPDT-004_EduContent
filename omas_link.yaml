@@ -4,6 +4,43 @@ spdt_name: 教育内容产品线
 category: education
 domains: [education, pedagogy]
 
+# ── 五阶段管线声明（SOP v1.0 §5.3）─
+pipeline:
+  sop_family: content_manufacturing
+  sop_version: v4.0
+  execution_spec: "D:/1_omas/governance/内容制造管线执行规范_v1.0.md"
+  modlib_root: "D:/1_omas/MODLIB/content_manufacturing/"
+  stages_active: [1_ingest, 2_structure, 3_render, 5_deliver]
+  stages_planned: [4_adapt]
+  domain: education
+
+  stage_detail:
+    1_ingest:
+      status: active
+      router: ingest_entry_judge
+      modlib: [content_spec, ingested_entry_schema, audit_log_schema]
+      SOP_stage: M0+M1+M2
+    2_structure:
+      status: active
+      genre_engine: scene_v2
+      primary_module: TextExperience
+      SOP_stage: M3
+    3_render:
+      status: active
+      engines: [text, audio, video, cards]
+      quality_gates: [G-AUDIT-A, G-AUDIT-B, G-COGNITION, G-INTERFACE]
+      SOP_stage: M4
+    4_adapt:
+      status: planned
+      scorecard: content_scorecard_v1
+      adaptation: weakness_driven
+      SOP_stage: M5
+    5_deliver:
+      status: active
+      channels: [pc_app, mobile_app]
+      publish: manual
+      SOP_stage: M6
+
 # ── SOP 路由结果 ──
 sop_family: content_manufacturing
 secondary_family: knowledge_creation
@@ -35,6 +72,33 @@ dag_templates: []
 knowledge_bases:
   - collection: education_knowledge
     path_env: SPDT_EDU_ROOT
+
+# ── MODLIB 消费声明 ──
+modlib_consumption:
+  schemas:
+    - schema_id: content_spec_v1
+      path: D:/1_omas/MODLIB/schemas/content_spec/
+      description: "内容规格结构定义（课程/章节/知识点层级）"
+    - schema_id: scene_v2_v2.3
+      path: D:/1_omas/MODLIB/schemas/scene_v2_schema.json
+      description: "场景/体裁 v2.3 路由结构定义"
+  templates:
+    - template_id: content_spec_template
+      path: D:/1_omas/MODLIB/templates/content_spec_template.yaml
+      description: "内容规格填充模板"
+
+# ── 方法论引用 ──
+methodology:
+  - skill_id: dual-agent-calibration
+    name: "6 维双 Agent 内容校准框架"
+    source: D:/1_omas/toolbox/skills/_omas_adapted/dual_agent_calibration.yaml
+    owner_cell: QAC
+    usage: "Writer-Adversary-Synthesizer 三阶段内容质量校准，覆盖 D1-D6 六维度"
+    gate_mapping:
+      G-AUDIT-A: [D1_事实准确性, D5_引用完整性]
+      G-AUDIT-B: [D2_术语一致性]
+      G-COGNITION: [D3_逻辑连贯性, D6_中立性偏见检测]
+      G-FORMAT: [D4_考纲风格对齐]
 
 # ── 反哺记录 ──
 feedback: []

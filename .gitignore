@@ -1,71 +1,21 @@
-# SPDT-004_EduContent 结构快照
-# 追踪：目录结构变化、PDT注册表更新、跨产品协同配置
-# 不追踪：各PT的完整内容（各自独立Git管理）
+# SPDT-004 EduContent
+# 渲染帧和共享素材体积大，排除
 
-# ── 各PT独立Git仓库（排除内容，仅保留路径快照）─────────────────────────────
-PT-030_GaokaoPrep/
-PT-032_CollegeCourseware/
-PT-038_TextExperience/
+3_render/
+shared/products/
+shared/PT-038_TextExperience/
 
-# ── 嵌套Git仓库（子模块，非本快照追踪范围）────────────────────────────────
-.git/
-.gitmodules
-SPDT-KTE/PT-VFX/
-SPDT-KTE/PT-VFX/**
-SPDT-KTE/PT-038/
-SPDT-KTE/PT-RUJ/
-shared/video_factory/
-shared/video_factory/**
-
-# ── 平台子项目（各自独立管理）──────────────────────────────────────────────
-platform/SPDT-001_Harmony/**
-platform/SPDT-014_EduApps/signing/**
-platform/SPDT-014_EduApps/apps/*/entry/build/**
-platform/SPDT-014_EduApps/apps/*/.hvigor/**
-platform/SPDT-014_EduApps/apps/*/.idea/**
-platform/SPDT-014_EduApps/apps/*/AppScope/resources/base/media/
-
-# ── 构建产物与缓存────────────────────────────────────────────────────────────
-**/.hvigor/
-**/.idea/
-**/node_modules/
-**/build/
-**/dist/
-**/.arkts-cache/
-**/*.hap
-**/*.hsp
-**/*.AppScope/**
-**/entry/build/**
-
-# ── 系统文件────────────────────────────────────────────────────────────────
-.DS_Store
-Thumbs.db
-desktop.ini
-*~
-
-# ── 大型媒体资产（已归档至 D:/4_data/content）──────────────────────────────
-**/*.mp3
-**/*.mp4
-**/*.wav
-**/*.flac
-**/*.tif
-**/*.tiff
-**/*.pdf
-**/*.docx
-**/*.doc
-
-# ── 大型二进制文件──────────────────────────────────────────────────────────
-**/*.png
-**/*.jpg
-**/*.jpeg
-**/*.cer
-**/*.p12
-**/*.p7b
-**/*.db
-
-# ── Python缓存──────────────────────────────────────────────────────────────
+# Python
 __pycache__/
 *.pyc
-*.pyo
-*.egg-info/
-.pytest_cache/
+.venv/
+venv/
+
+# Media cache
+*.mp4
+*.mp3
+*.wav
+
+# System
+.DS_Store
+Thumbs.db

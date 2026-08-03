@@ -28,4 +28,39 @@
 
 ## 当前状态
 
-**待建设** — 此目录为 v2.3 新建，当前无内容。
+### ✅ 已实现
+
+| 模块 | 文件 | 说明 |
+|:---|:---|:---|
+| M0 入口判别 | `ingest_entry_judge.py` | 四判据自动评估（C1-C4） |
+| M1 考纲解析 | `ingest_syllabus_parser.py` | ContentSpec YAML 生成 |
+| M2 质量校准 | `ingest_quality_calibrator.py` | 双Agent对抗校准 |
+| schemas | `schemas/*.schema.json` | ContentSpec / IngestedEntry / AuditLog |
+| config | `config/trust_levels.yaml` | A/B/C/D/E 可信度定义 |
+| config | `config/calibration_rules.yaml` | Agent-B 质疑规则配置 |
+
+### 🔄 待实现
+
+| 优先级 | 模块 | 说明 |
+|:---|:---|:---|
+| 🔴 P4 | `ingest_raw_material.py` | OCR + 网络爬取预处理 |
+| 🔴 集成 | 端到端测试 | 完整流水线联调 |
+
+### 使用方法
+
+```python
+from ingest_entry_judge import IngestEntryJudge
+judge = IngestEntryJudge()
+decision = judge.judge({"type": "exam_syllabus", "path": "/path/to/package"})
+# decision.to_json() → 输出判别结果
+```
+
+### 与 cafa_calligraphy_2026 的关系
+
+现有配置包是 ingest 的手工产出物：
+
+| 配置包文件 | ingest 产出对应 |
+|:---|:---|
+| `meta.json` | ContentSpec YAML |
+| `kb_vocab.json` | `*.ingested.json` |
+| `ability_list.json` | 从 ingested entries 派生 |

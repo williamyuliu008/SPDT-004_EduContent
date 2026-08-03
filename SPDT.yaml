@@ -1,13 +1,13 @@
 ﻿# SPDT-004: 自适应备考智能体产品线 (Adaptive Prep Intelligence Platform)
-# 版本：v2.3（2026-07-29 更新）
+# 版本：v2.4（2026-07-30 更新）
 
 spdt_id: SPDT-004
 spdt_name: 自适应备考智能体产品线
 spdt_name_en: Adaptive Prep Intelligence Platform
 owner_agent: agent-e926h
 created: 2026-07-10
-version: 2.3
-last_updated: 2026-07-29
+version: 2.4
+last_updated: 2026-07-30
 
 description: |
   「平台 + 课程」双轨交付模式；
@@ -26,7 +26,7 @@ pipeline:
     - id: 1_ingest
       name: 知识摄入
       description: 从原始素材（考纲/古籍/教材）中识别、筛选、校准高质量知识原料
-      status: planned
+      status: active
 
     - id: 2_structure
       name: 结构化加工
@@ -78,7 +78,7 @@ pdt_list:
     status: active
     registered: 2026-07-14
     maturity: 0.8
-    note: "主力生产模块；Git仓库独立管理；内容分发至 products/courses/；⚠️ Ep01-08 剧本缺失"
+    note: "主力生产模块；Git仓库独立管理；内容分发至 products/courses/；Ep01-08 剧本均已生成"
     content_packages:
       - 书法备考_墨骨山河（Ep01-09剧本）
       - 历史备考_古史知识链（v1-v4，4卷）
@@ -124,13 +124,13 @@ pdt_list:
     name: TextExperienceAPP
     name_zh: 文本体验APP开发平台
     layer: 5_deliver
-    role: 新学习方式交付终端——HarmonyOS APP（rujing/gaokao-*/thinkkit-*）
+    role: 新学习方式交付终端——HarmonyOS APP（单APP：rujing）
     directory: 5_deliver/TextExperienceAPP
     status: active
     registered: 2026-07-29
     maturity: 0.6
-    app_count: 13
-    note: rhythm-* 5个移回 SPDT-001_Harmony（2026-07-29修正）
+    app_count: 1
+    note: "仅承载 rujing（国美书法备考APP）；gaokao-*/thinkkit-* 已迁移至 SPDT-001_Harmony/apps/（2026-07-30）"
 
   - pdt_id: PT-039
     name: CalligraphyVision
@@ -145,26 +145,7 @@ pdt_list:
 
   # ── 独立产品线（不在 SPDT-004 内）──────────────────────────────
 
-  - pdt_id: PT-030
-    name: GaokaoPrep
-    name_zh: 高考备考内容工厂
-    layer: standalone
-    role: AI自学平台（smart_edu Agent集群），与 SPDT-004 流水线不同
-    directory: ../PT-030_GaokaoPrep
-    status: active
-    registered: 2026-07-10
-    note: 独立产品线，已移出 SPDT-004_EduContent
-
-  - pdt_id: PT-032
-    name: CollegeCourseware
-    name_zh: 高等课件工厂
-    layer: standalone
-    role: VCC数学动画工厂（CGM+Audit），与 SPDT-004 流水线不同
-    directory: ../PT-032_CollegeCourseware
-    status: active
-    registered: 2026-07-10
-    note: 独立产品线，已移出 SPDT-004_EduContent
-
+  # 独立产品线 PT-030/PT-032 已移至独立 product 目录（2026-07-30 清理）
 # =============================================================================
 # 跨 SPDT 链接
 # =============================================================================
@@ -192,14 +173,14 @@ kpis:
     current: 2
     target: 4
   - metric: 墨骨山河剧本完成度
-    current: "1/9 集（Ep09完整，Ep01-08缺失）"
+    current: "9/9 集（Ep01-08 规划文档均已生成，Ep09 完整）"
     target: "9/9 集"
   - metric: 流水线完整度
-    current: "2/5 阶段运行中（2_structure + 3_render + 5_deliver）"
+    current: "4/5 阶段运行中（1_ingest + 2_structure + 3_render + 5_deliver；4_adapt 待建设）"
     target: "5/5 阶段全部运行"
   - metric: 1_ingest 建设状态
-    current: "待建设"
-    target: "上线运行"
+    current: "已实现（M0入口判别 + M1考纲解析 + M2质量校准 + 端到端集成测试通过）"
+    target: "上线运行（接真实LLM）"
   - metric: 4_adapt 成熟度
     current: "0.1"
     target: "0.5"
@@ -234,6 +215,14 @@ data_architecture:
 # 重大架构变更记录
 # =============================================================================
 architecture_changes:
+  - date: 2026-07-30
+    change: v2.4 目录结构优化
+    details:
+      - 删除根目录孤儿 junction：PT-030~PT-036, PT-039_CalligraphyVision（junction指向products/PT-039，物理内容保留）
+      - 5_deliver/TextExperienceAPP/apps/ 清理：仅保留 rujing；其余12个app移至 SPDT-001_Harmony/apps/
+      - TextExperienceAPP.app_count: 13 → 1
+      - docs/ 清理：移除 _test_phase1.py.bak、SPDT-005_评估结论_v1.0.md（→ SPDT-005/docs/）、旧规划v1.1
+      - SPDT-004 聚焦：管线五阶段（1_ingest~5_deliver）+ products/ + quality/ + knowledge/
   - date: 2026-07-29
     change: v2.3 流水线重构
     details:

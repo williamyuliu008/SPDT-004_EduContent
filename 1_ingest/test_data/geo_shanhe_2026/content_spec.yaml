@@ -1,0 +1,44 @@
+spec_id: geo_shanhe_2026
+spec_version: 1.0.0
+spec_generated: '2026-07-31T15:28:11.647904+00:00'
+domain: education
+content_type: B1_deep_content
+exam_meta:
+  exam_name: 高考地理
+  exam_code: ''
+  subject: 高考地理
+  total_duration_min: 120
+  total_score: 100
+question_types:
+- id: Q_CHOICE
+  name: 选择题
+  weight: 0.44
+  description: 四选一/四选多，考查基础知识与概念
+  key_topics: []
+- id: Q_FILL
+  name: 填空题
+  weight: 0.08
+  description: 自然地理要素名称/数值填空
+  key_topics: []
+- id: Q_SHORT
+  name: 简答题
+  weight: 0.2
+  description: 要素因果关系简述/判读题
+  key_topics: []
+- id: Q_COMPREHENSIVE
+  name: 综合题
+  weight: 0.28
+  description: 区域地理综合分析，含图文材料
+  key_topics: []
+reference_texts: []
+quality_constraints:
+  factual_accuracy: expert_reviewed
+  cross_check_required: true
+  hallucination_threshold: 0.05
+production_target:
+  knowledge_entries_target: 206
+  ability_count_target: 16
+  coverage_target: 0.85
+human_checkpoint:
+- M1_syllabus_confirmed
+source: generated_from_meta_json

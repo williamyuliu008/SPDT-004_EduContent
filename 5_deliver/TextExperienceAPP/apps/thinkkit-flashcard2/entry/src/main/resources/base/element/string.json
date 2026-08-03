@@ -1,8 +1,0 @@
-{
-  "string": [
-    { "name": "app_name", "value": "thinkkit flashcard2" },
-    { "name": "module_desc", "value": "ThinkKit thinkkit flashcard2" },
-    { "name": "EntryAbility_desc", "value": "ThinkKit thinkkit flashcard2" },
-    { "name": "EntryAbility_label", "value": "thinkkit flashcard2" }
-  ]
-}

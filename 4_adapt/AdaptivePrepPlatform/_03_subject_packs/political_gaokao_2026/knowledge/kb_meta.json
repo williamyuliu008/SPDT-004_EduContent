@@ -1,0 +1,15 @@
+{
+  "subject": "高考思想政治",
+  "target_exam": "高考（上海卷/全国卷）",
+  "difficulty_range": [
+    "初阶",
+    "中阶",
+    "高阶"
+  ],
+  "total_entries_planned": 200,
+  "module_count": 4,
+  "chain_count": 16,
+  "source": "上海高考思想政治考纲（2004课程标准）+ 高中思想政治教材",
+  "created": "2026-08-02",
+  "last_updated": "2026-08-02"
+}

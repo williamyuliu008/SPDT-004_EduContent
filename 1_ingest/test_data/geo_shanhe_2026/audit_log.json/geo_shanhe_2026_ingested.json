@@ -1,0 +1,577 @@
+[
+  {
+    "ingested_id": "ING_geo_shanhe_2026_001",
+    "source_raw_id": "KB_GEO_HH_001",
+    "concept": "模拟概念",
+    "definition": "模拟定义内容（来自 mock LLM）",
+    "structured_content": "接受质疑：该年份需要更精确确认",
+    "trust": {
+      "level": "C",
+      "source": "mock_calibrator"
+    },
+    "exam_tags": {},
+    "calibration": {
+      "challenges": [
+        {
+          "agent": "Resolver",
+          "challenge_type": "fact_accuracy",
+          "content": "该年份需要更精确确认",
+          "verdict": "modified",
+          "resolution": "接受质疑：该年份需要更精确确认"
+        }
+      ],
+      "rejected_entries": []
+    },
+    "output_status": "ready_for_2_structure"
+  },
+  {
+    "ingested_id": "ING_geo_shanhe_2026_002",
+    "source_raw_id": "KB_GEO_HH_002",
+    "concept": "模拟概念",
+    "definition": "模拟定义内容（来自 mock LLM）",
+    "structured_content": "接受质疑：该年份需要更精确确认",
+    "trust": {
+      "level": "C",
+      "source": "mock_calibrator"
+    },
+    "exam_tags": {},
+    "calibration": {
+      "challenges": [
+        {
+          "agent": "Resolver",
+          "challenge_type": "fact_accuracy",
+          "content": "该年份需要更精确确认",
+          "verdict": "modified",
+          "resolution": "接受质疑：该年份需要更精确确认"
+        }
+      ],
+      "rejected_entries": []
+    },
+    "output_status": "ready_for_2_structure"
+  },
+  {
+    "ingested_id": "ING_geo_shanhe_2026_003",
+    "source_raw_id": "KB_GEO_HH_003",
+    "concept": "模拟概念",
+    "definition": "模拟定义内容（来自 mock LLM）",
+    "structured_content": "接受质疑：该年份需要更精确确认",
+    "trust": {
+      "level": "C",
+      "source": "mock_calibrator"
+    },
+    "exam_tags": {},
+    "calibration": {
+      "challenges": [
+        {
+          "agent": "Resolver",
+          "challenge_type": "fact_accuracy",
+          "content": "该年份需要更精确确认",
+          "verdict": "modified",
+          "resolution": "接受质疑：该年份需要更精确确认"
+        }
+      ],
+      "rejected_entries": []
+    },
+    "output_status": "ready_for_2_structure"
+  },
+  {
+    "ingested_id": "ING_geo_shanhe_2026_004",
+    "source_raw_id": "KB_GEO_HH_004",
+    "concept": "模拟概念",
+    "definition": "模拟定义内容（来自 mock LLM）",
+    "structured_content": "接受质疑：该年份需要更精确确认",
+    "trust": {
+      "level": "C",
+      "source": "mock_calibrator"
+    },
+    "exam_tags": {},
+    "calibration": {
+      "challenges": [
+        {
+          "agent": "Resolver",
+          "challenge_type": "fact_accuracy",
+          "content": "该年份需要更精确确认",
+          "verdict": "modified",
+          "resolution": "接受质疑：该年份需要更精确确认"
+        }
+      ],
+      "rejected_entries": []
+    },
+    "output_status": "ready_for_2_structure"
+  },
+  {
+    "ingested_id": "ING_geo_shanhe_2026_005",
+    "source_raw_id": "KB_GEO_HH_005",
+    "concept": "模拟概念",
+    "definition": "模拟定义内容（来自 mock LLM）",
+    "structured_content": "接受质疑：该年份需要更精确确认",
+    "trust": {
+      "level": "C",
+      "source": "mock_calibrator"
+    },
+    "exam_tags": {},
+    "calibration": {
+      "challenges": [
+        {
+          "agent": "Resolver",
+          "challenge_type": "fact_accuracy",
+          "content": "该年份需要更精确确认",
+          "verdict": "modified",
+          "resolution": "接受质疑：该年份需要更精确确认"
+        }
+      ],
+      "rejected_entries": []
+    },
+    "output_status": "ready_for_2_structure"
+  },
+  {
+    "ingested_id": "ING_geo_shanhe_2026_006",
+    "source_raw_id": "KB_GEO_HH_006",
+    "concept": "模拟概念",
+    "definition": "模拟定义内容（来自 mock LLM）",
+    "structured_content": "接受质疑：该年份需要更精确确认",
+    "trust": {
+      "level": "C",
+      "source": "mock_calibrator"
+    },
+    "exam_tags": {},
+    "calibration": {
+      "challenges": [
+        {
+          "agent": "Resolver",
+          "challenge_type": "fact_accuracy",
+          "content": "该年份需要更精确确认",
+          "verdict": "modified",
+          "resolution": "接受质疑：该年份需要更精确确认"
+        }
+      ],
+      "rejected_entries": []
+    },
+    "output_status": "ready_for_2_structure"
+  },
+  {
+    "ingested_id": "ING_geo_shanhe_2026_007",
+    "source_raw_id": "KB_GEO_HH_007",
+    "concept": "模拟概念",
+    "definition": "模拟定义内容（来自 mock LLM）",
+    "structured_content": "接受质疑：该年份需要更精确确认",
+    "trust": {
+      "level": "C",
+      "source": "mock_calibrator"
+    },
+    "exam_tags": {},
+    "calibration": {
+      "challenges": [
+        {
+          "agent": "Resolver",
+          "challenge_type": "fact_accuracy",
+          "content": "该年份需要更精确确认",
+          "verdict": "modified",
+          "resolution": "接受质疑：该年份需要更精确确认"
+        }
+      ],
+      "rejected_entries": []
+    },
+    "output_status": "ready_for_2_structure"
+  },
+  {
+    "ingested_id": "ING_geo_shanhe_2026_008",
+    "source_raw_id": "KB_GEO_HH_008",
+    "concept": "模拟概念",
+    "definition": "模拟定义内容（来自 mock LLM）",
+    "structured_content": "接受质疑：该年份需要更精确确认",
+    "trust": {
+      "level": "C",
+      "source": "mock_calibrator"
+    },
+    "exam_tags": {},
+    "calibration": {
+      "challenges": [
+        {
+          "agent": "Resolver",
+          "challenge_type": "fact_accuracy",
+          "content": "该年份需要更精确确认",
+          "verdict": "modified",
+          "resolution": "接受质疑：该年份需要更精确确认"
+        }
+      ],
+      "rejected_entries": []
+    },
+    "output_status": "ready_for_2_structure"
+  },
+  {
+    "ingested_id": "ING_geo_shanhe_2026_009",
+    "source_raw_id": "KB_GEO_CJ_001",
+    "concept": "模拟概念",
+    "definition": "模拟定义内容（来自 mock LLM）",
+    "structured_content": "接受质疑：该年份需要更精确确认",
+    "trust": {
+      "level": "C",
+      "source": "mock_calibrator"
+    },
+    "exam_tags": {},
+    "calibration": {
+      "challenges": [
+        {
+          "agent": "Resolver",
+          "challenge_type": "fact_accuracy",
+          "content": "该年份需要更精确确认",
+          "verdict": "modified",
+          "resolution": "接受质疑：该年份需要更精确确认"
+        }
+      ],
+      "rejected_entries": []
+    },
+    "output_status": "ready_for_2_structure"
+  },
+  {
+    "ingested_id": "ING_geo_shanhe_2026_010",
+    "source_raw_id": "KB_GEO_CJ_002",
+    "concept": "模拟概念",
+    "definition": "模拟定义内容（来自 mock LLM）",
+    "structured_content": "接受质疑：该年份需要更精确确认",
+    "trust": {
+      "level": "C",
+      "source": "mock_calibrator"
+    },
+    "exam_tags": {},
+    "calibration": {
+      "challenges": [
+        {
+          "agent": "Resolver",
+          "challenge_type": "fact_accuracy",
+          "content": "该年份需要更精确确认",
+          "verdict": "modified",
+          "resolution": "接受质疑：该年份需要更精确确认"
+        }
+      ],
+      "rejected_entries": []
+    },
+    "output_status": "ready_for_2_structure"
+  },
+  {
+    "ingested_id": "ING_geo_shanhe_2026_011",
+    "source_raw_id": "KB_GEO_CJ_003",
+    "concept": "模拟概念",
+    "definition": "模拟定义内容（来自 mock LLM）",
+    "structured_content": "接受质疑：该年份需要更精确确认",
+    "trust": {
+      "level": "C",
+      "source": "mock_calibrator"
+    },
+    "exam_tags": {},
+    "calibration": {
+      "challenges": [
+        {
+          "agent": "Resolver",
+          "challenge_type": "fact_accuracy",
+          "content": "该年份需要更精确确认",
+          "verdict": "modified",
+          "resolution": "接受质疑：该年份需要更精确确认"
+        }
+      ],
+      "rejected_entries": []
+    },
+    "output_status": "ready_for_2_structure"
+  },
+  {
+    "ingested_id": "ING_geo_shanhe_2026_012",
+    "source_raw_id": "KB_GEO_CJ_004",
+    "concept": "模拟概念",
+    "definition": "模拟定义内容（来自 mock LLM）",
+    "structured_content": "接受质疑：该年份需要更精确确认",
+    "trust": {
+      "level": "C",
+      "source": "mock_calibrator"
+    },
+    "exam_tags": {},
+    "calibration": {
+      "challenges": [
+        {
+          "agent": "Resolver",
+          "challenge_type": "fact_accuracy",
+          "content": "该年份需要更精确确认",
+          "verdict": "modified",
+          "resolution": "接受质疑：该年份需要更精确确认"
+        }
+      ],
+      "rejected_entries": []
+    },
+    "output_status": "ready_for_2_structure"
+  },
+  {
+    "ingested_id": "ING_geo_shanhe_2026_013",
+    "source_raw_id": "KB_GEO_QZ_001",
+    "concept": "模拟概念",
+    "definition": "模拟定义内容（来自 mock LLM）",
+    "structured_content": "接受质疑：该年份需要更精确确认",
+    "trust": {
+      "level": "C",
+      "source": "mock_calibrator"
+    },
+    "exam_tags": {},
+    "calibration": {
+      "challenges": [
+        {
+          "agent": "Resolver",
+          "challenge_type": "fact_accuracy",
+          "content": "该年份需要更精确确认",
+          "verdict": "modified",
+          "resolution": "接受质疑：该年份需要更精确确认"
+        }
+      ],
+      "rejected_entries": []
+    },
+    "output_status": "ready_for_2_structure"
+  },
+  {
+    "ingested_id": "ING_geo_shanhe_2026_014",
+    "source_raw_id": "KB_GEO_QZ_002",
+    "concept": "模拟概念",
+    "definition": "模拟定义内容（来自 mock LLM）",
+    "structured_content": "接受质疑：该年份需要更精确确认",
+    "trust": {
+      "level": "C",
+      "source": "mock_calibrator"
+    },
+    "exam_tags": {},
+    "calibration": {
+      "challenges": [
+        {
+          "agent": "Resolver",
+          "challenge_type": "fact_accuracy",
+          "content": "该年份需要更精确确认",
+          "verdict": "modified",
+          "resolution": "接受质疑：该年份需要更精确确认"
+        }
+      ],
+      "rejected_entries": []
+    },
+    "output_status": "ready_for_2_structure"
+  },
+  {
+    "ingested_id": "ING_geo_shanhe_2026_015",
+    "source_raw_id": "KB_GEO_QZ_003",
+    "concept": "模拟概念",
+    "definition": "模拟定义内容（来自 mock LLM）",
+    "structured_content": "接受质疑：该年份需要更精确确认",
+    "trust": {
+      "level": "C",
+      "source": "mock_calibrator"
+    },
+    "exam_tags": {},
+    "calibration": {
+      "challenges": [
+        {
+          "agent": "Resolver",
+          "challenge_type": "fact_accuracy",
+          "content": "该年份需要更精确确认",
+          "verdict": "modified",
+          "resolution": "接受质疑：该年份需要更精确确认"
+        }
+      ],
+      "rejected_entries": []
+    },
+    "output_status": "ready_for_2_structure"
+  },
+  {
+    "ingested_id": "ING_geo_shanhe_2026_016",
+    "source_raw_id": "KB_GEO_TS_001",
+    "concept": "模拟概念",
+    "definition": "模拟定义内容（来自 mock LLM）",
+    "structured_content": "接受质疑：该年份需要更精确确认",
+    "trust": {
+      "level": "C",
+      "source": "mock_calibrator"
+    },
+    "exam_tags": {},
+    "calibration": {
+      "challenges": [
+        {
+          "agent": "Resolver",
+          "challenge_type": "fact_accuracy",
+          "content": "该年份需要更精确确认",
+          "verdict": "modified",
+          "resolution": "接受质疑：该年份需要更精确确认"
+        }
+      ],
+      "rejected_entries": []
+    },
+    "output_status": "ready_for_2_structure"
+  },
+  {
+    "ingested_id": "ING_geo_shanhe_2026_017",
+    "source_raw_id": "KB_GEO_HGH_001",
+    "concept": "模拟概念",
+    "definition": "模拟定义内容（来自 mock LLM）",
+    "structured_content": "接受质疑：该年份需要更精确确认",
+    "trust": {
+      "level": "C",
+      "source": "mock_calibrator"
+    },
+    "exam_tags": {},
+    "calibration": {
+      "challenges": [
+        {
+          "agent": "Resolver",
+          "challenge_type": "fact_accuracy",
+          "content": "该年份需要更精确确认",
+          "verdict": "modified",
+          "resolution": "接受质疑：该年份需要更精确确认"
+        }
+      ],
+      "rejected_entries": []
+    },
+    "output_status": "ready_for_2_structure"
+  },
+  {
+    "ingested_id": "ING_geo_shanhe_2026_018",
+    "source_raw_id": "KB_GEO_PJ_001",
+    "concept": "模拟概念",
+    "definition": "模拟定义内容（来自 mock LLM）",
+    "structured_content": "接受质疑：该年份需要更精确确认",
+    "trust": {
+      "level": "C",
+      "source": "mock_calibrator"
+    },
+    "exam_tags": {},
+    "calibration": {
+      "challenges": [
+        {
+          "agent": "Resolver",
+          "challenge_type": "fact_accuracy",
+          "content": "该年份需要更精确确认",
+          "verdict": "modified",
+          "resolution": "接受质疑：该年份需要更精确确认"
+        }
+      ],
+      "rejected_entries": []
+    },
+    "output_status": "ready_for_2_structure"
+  },
+  {
+    "ingested_id": "ING_geo_shanhe_2026_019",
+    "source_raw_id": "KB_GEO_SHJ_001",
+    "concept": "模拟概念",
+    "definition": "模拟定义内容（来自 mock LLM）",
+    "structured_content": "接受质疑：该年份需要更精确确认",
+    "trust": {
+      "level": "C",
+      "source": "mock_calibrator"
+    },
+    "exam_tags": {},
+    "calibration": {
+      "challenges": [
+        {
+          "agent": "Resolver",
+          "challenge_type": "fact_accuracy",
+          "content": "该年份需要更精确确认",
+          "verdict": "modified",
+          "resolution": "接受质疑：该年份需要更精确确认"
+        }
+      ],
+      "rejected_entries": []
+    },
+    "output_status": "ready_for_2_structure"
+  },
+  {
+    "ingested_id": "ING_geo_shanhe_2026_020",
+    "source_raw_id": "KB_GEO_TLM_001",
+    "concept": "模拟概念",
+    "definition": "模拟定义内容（来自 mock LLM）",
+    "structured_content": "接受质疑：该年份需要更精确确认",
+    "trust": {
+      "level": "C",
+      "source": "mock_calibrator"
+    },
+    "exam_tags": {},
+    "calibration": {
+      "challenges": [
+        {
+          "agent": "Resolver",
+          "challenge_type": "fact_accuracy",
+          "content": "该年份需要更精确确认",
+          "verdict": "modified",
+          "resolution": "接受质疑：该年份需要更精确确认"
+        }
+      ],
+      "rejected_entries": []
+    },
+    "output_status": "ready_for_2_structure"
+  },
+  {
+    "ingested_id": "ING_geo_shanhe_2026_021",
+    "source_raw_id": "KB_GEO_RD_001",
+    "concept": "模拟概念",
+    "definition": "模拟定义内容（来自 mock LLM）",
+    "structured_content": "接受质疑：该年份需要更精确确认",
+    "trust": {
+      "level": "C",
+      "source": "mock_calibrator"
+    },
+    "exam_tags": {},
+    "calibration": {
+      "challenges": [
+        {
+          "agent": "Resolver",
+          "challenge_type": "fact_accuracy",
+          "content": "该年份需要更精确确认",
+          "verdict": "modified",
+          "resolution": "接受质疑：该年份需要更精确确认"
+        }
+      ],
+      "rejected_entries": []
+    },
+    "output_status": "ready_for_2_structure"
+  },
+  {
+    "ingested_id": "ING_geo_shanhe_2026_022",
+    "source_raw_id": "KB_GEO_RD_002",
+    "concept": "模拟概念",
+    "definition": "模拟定义内容（来自 mock LLM）",
+    "structured_content": "接受质疑：该年份需要更精确确认",
+    "trust": {
+      "level": "C",
+      "source": "mock_calibrator"
+    },
+    "exam_tags": {},
+    "calibration": {
+      "challenges": [
+        {
+          "agent": "Resolver",
+          "challenge_type": "fact_accuracy",
+          "content": "该年份需要更精确确认",
+          "verdict": "modified",
+          "resolution": "接受质疑：该年份需要更精确确认"
+        }
+      ],
+      "rejected_entries": []
+    },
+    "output_status": "ready_for_2_structure"
+  },
+  {
+    "ingested_id": "ING_geo_shanhe_2026_023",
+    "source_raw_id": "KB_GEO_REG_001",
+    "concept": "模拟概念",
+    "definition": "模拟定义内容（来自 mock LLM）",
+    "structured_content": "接受质疑：该年份需要更精确确认",
+    "trust": {
+      "level": "C",
+      "source": "mock_calibrator"
+    },
+    "exam_tags": {},
+    "calibration": {
+      "challenges": [
+        {
+          "agent": "Resolver",
+          "challenge_type": "fact_accuracy",
+          "content": "该年份需要更精确确认",
+          "verdict": "modified",
+          "resolution": "接受质疑：该年份需要更精确确认"
+        }
+      ],
+      "rejected_entries": []
+    },
+    "output_status": "ready_for_2_structure"
+  }
+]

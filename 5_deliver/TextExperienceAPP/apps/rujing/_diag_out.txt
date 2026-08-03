@@ -1,0 +1,7 @@
+File size: 24716
+Line count: 361
+Line 13 (index 12):
+  Length: 138
+Char 467: '\n'
+
+All control chars in file:

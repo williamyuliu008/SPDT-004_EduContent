@@ -1,0 +1,83 @@
+# content_type.yaml — B1-B4 内容形态判定规则
+# ====================================================
+# SOP v4.0 M0 入口路由器 · 教育领域内容形态判定规则
+# 对应：SPDT-004 1_ingest/router/content_type.yaml
+
+---
+version: "1.0"
+
+# ── B1-B4 形态判定规则 ─────────────────────────────────────
+
+content_types:
+  B1_deep_content:
+    label: "B1 深度长内容"
+    description: "多轮研究→创作→审查，自动化率 60-75%"
+    examples:
+      - "墨骨山河剧本（书法史+历史双学科融合）"
+      - "深度历史知识链"
+    indicators:
+      keywords: ["历史", "书法史", "书论", "深度", "系列", "跨学科"]
+      content_volume: "≥3000字"
+      cross_domain: true
+    target_modules:
+      - "TextExperience"
+    pipeline_stage: "2_structure"
+    genre: "墨骨山河系列"
+
+  B2_rapid:
+    label: "B2 快反内容"
+    description: "时效性优先，自动化率 >85%"
+    examples:
+      - "古史知识链 v5-v6（按考纲周期更新）"
+      - "高频考点速查"
+    indicators:
+      keywords: ["速查", "考点", "快背", "核心", "要点"]
+      content_volume: "≤500字/条"
+      frequency: "batch | daily"
+    target_modules:
+      - "TextExperience"
+    pipeline_stage: "2_structure"
+    genre: "古史知识链"
+
+  B3_translation:
+    label: "B3 知识转化"
+    description: "核心难点在「翻译」专业知识"
+    examples:
+      - "草书辨析卡（专业术语→易懂内容）"
+      - "古汉语训练（文言→现代汉语）"
+    indicators:
+      keywords: ["辨析", "区分", "解释", "转化", "翻译"]
+      content_volume: "100-500字/条"
+      complexity: "high"
+    target_modules:
+      - "TextExperience"
+      - "AdaptivePrepPlatform"
+    pipeline_stage: "2_structure + 4_adapt"
+    genre: "辨析卡系列"
+
+  B4_argumentation:
+    label: "B4 创意论证"
+    description: "涉及价值判断/多角度论证"
+    examples:
+      - "薄弱点分析报告"
+      - "多路径推荐"
+    indicators:
+      keywords: ["分析", "论证", "判断", "推荐", "薄弱点"]
+      content_volume: "500-2000字"
+      subjectivity: "high"
+    target_modules:
+      - "AdaptivePrepPlatform"
+    pipeline_stage: "4_adapt"
+    genre: "薄弱点分析"
+
+# ── 路由决策逻辑 ───────────────────────────────────────
+
+routing_rules:
+  # 关键词匹配优先
+  keyword_priority: true
+
+  # 缺省路由（无匹配时）
+  default_fallback: "B1_deep_content"
+
+  # 多关键词冲突处理
+  conflict_resolution: "most_specific"    # 最具体的匹配优先

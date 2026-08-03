@@ -1,0 +1,498 @@
+{
+  "interface_version": "3.0",
+  "package_id": "political_gaokao_2026",
+  "package_title": "高考思想政治知识包",
+  "kb_source": {
+    "pack_id": "political_gaokao_2026",
+    "kb_version": "1.0.0",
+    "generated_at": "2026-08-02",
+    "generator": "Mavis AI Team"
+  },
+  "total_chains": 16,
+  "total_cards": 32,
+  "node_cards": [
+    {
+      "card_id": "POLI_N001",
+      "chain_id": "POLI_经济_商品货币",
+      "chain_title": "商品与货币",
+      "card_type": "node",
+      "chain_role": "entry",
+      "front": "商品与货币：核心概念是什么？",
+      "back_core": "商品与货币是高考思想政治的重要模块，考查学生运用基本原理分析社会现象的能力。",
+      "back_detail": "",
+      "tags": [
+        "#经济",
+        "#难度_中阶"
+      ],
+      "difficulty": 2
+    },
+    {
+      "card_id": "POLI_N002",
+      "chain_id": "POLI_经济_生产消费",
+      "chain_title": "生产与消费",
+      "card_type": "node",
+      "chain_role": "entry",
+      "front": "生产与消费：核心概念是什么？",
+      "back_core": "生产与消费是高考思想政治的重要模块，考查学生运用基本原理分析社会现象的能力。",
+      "back_detail": "",
+      "tags": [
+        "#经济",
+        "#难度_中阶"
+      ],
+      "difficulty": 2
+    },
+    {
+      "card_id": "POLI_N003",
+      "chain_id": "POLI_经济_分配保障",
+      "chain_title": "分配与社保",
+      "card_type": "node",
+      "chain_role": "entry",
+      "front": "分配与社保：核心概念是什么？",
+      "back_core": "分配与社保是高考思想政治的重要模块，考查学生运用基本原理分析社会现象的能力。",
+      "back_detail": "",
+      "tags": [
+        "#经济",
+        "#难度_中阶"
+      ],
+      "difficulty": 2
+    },
+    {
+      "card_id": "POLI_N004",
+      "chain_id": "POLI_经济_市场经济",
+      "chain_title": "市场经济",
+      "card_type": "node",
+      "chain_role": "entry",
+      "front": "市场经济：核心概念是什么？",
+      "back_core": "市场经济是高考思想政治的重要模块，考查学生运用基本原理分析社会现象的能力。",
+      "back_detail": "",
+      "tags": [
+        "#经济",
+        "#难度_中阶"
+      ],
+      "difficulty": 2
+    },
+    {
+      "card_id": "POLI_N005",
+      "chain_id": "POLI_政治_国家公民",
+      "chain_title": "国家与公民",
+      "card_type": "node",
+      "chain_role": "entry",
+      "front": "国家与公民：核心概念是什么？",
+      "back_core": "国家与公民是高考思想政治的重要模块，考查学生运用基本原理分析社会现象的能力。",
+      "back_detail": "",
+      "tags": [
+        "#政治",
+        "#难度_中阶"
+      ],
+      "difficulty": 2
+    },
+    {
+      "card_id": "POLI_N006",
+      "chain_id": "POLI_政治_政党制度",
+      "chain_title": "政党制度",
+      "card_type": "node",
+      "chain_role": "entry",
+      "front": "政党制度：核心概念是什么？",
+      "back_core": "政党制度是高考思想政治的重要模块，考查学生运用基本原理分析社会现象的能力。",
+      "back_detail": "",
+      "tags": [
+        "#政治",
+        "#难度_中阶"
+      ],
+      "difficulty": 2
+    },
+    {
+      "card_id": "POLI_N007",
+      "chain_id": "POLI_政治_人大制度",
+      "chain_title": "人大制度",
+      "card_type": "node",
+      "chain_role": "entry",
+      "front": "人大制度：核心概念是什么？",
+      "back_core": "人大制度是高考思想政治的重要模块，考查学生运用基本原理分析社会现象的能力。",
+      "back_detail": "",
+      "tags": [
+        "#政治",
+        "#难度_中阶"
+      ],
+      "difficulty": 2
+    },
+    {
+      "card_id": "POLI_N008",
+      "chain_id": "POLI_政治_国际社会",
+      "chain_title": "国际社会",
+      "card_type": "node",
+      "chain_role": "entry",
+      "front": "国际社会：核心概念是什么？",
+      "back_core": "国际社会是高考思想政治的重要模块，考查学生运用基本原理分析社会现象的能力。",
+      "back_detail": "",
+      "tags": [
+        "#政治",
+        "#难度_中阶"
+      ],
+      "difficulty": 2
+    },
+    {
+      "card_id": "POLI_N009",
+      "chain_id": "POLI_哲学_唯物论",
+      "chain_title": "唯物论基础",
+      "card_type": "node",
+      "chain_role": "entry",
+      "front": "唯物论基础：核心概念是什么？",
+      "back_core": "唯物论基础是高考思想政治的重要模块，考查学生运用基本原理分析社会现象的能力。",
+      "back_detail": "",
+      "tags": [
+        "#哲学",
+        "#难度_中阶"
+      ],
+      "difficulty": 2
+    },
+    {
+      "card_id": "POLI_N010",
+      "chain_id": "POLI_哲学_唯物辩证",
+      "chain_title": "唯物辩证法",
+      "card_type": "node",
+      "chain_role": "entry",
+      "front": "唯物辩证法：核心概念是什么？",
+      "back_core": "唯物辩证法是高考思想政治的重要模块，考查学生运用基本原理分析社会现象的能力。",
+      "back_detail": "",
+      "tags": [
+        "#哲学",
+        "#难度_中阶"
+      ],
+      "difficulty": 2
+    },
+    {
+      "card_id": "POLI_N011",
+      "chain_id": "POLI_哲学_认识实践",
+      "chain_title": "认识与实践",
+      "card_type": "node",
+      "chain_role": "entry",
+      "front": "认识与实践：核心概念是什么？",
+      "back_core": "认识与实践是高考思想政治的重要模块，考查学生运用基本原理分析社会现象的能力。",
+      "back_detail": "",
+      "tags": [
+        "#哲学",
+        "#难度_中阶"
+      ],
+      "difficulty": 2
+    },
+    {
+      "card_id": "POLI_N012",
+      "chain_id": "POLI_哲学_历史唯物",
+      "chain_title": "历史唯物主义",
+      "card_type": "node",
+      "chain_role": "entry",
+      "front": "历史唯物主义：核心概念是什么？",
+      "back_core": "历史唯物主义是高考思想政治的重要模块，考查学生运用基本原理分析社会现象的能力。",
+      "back_detail": "",
+      "tags": [
+        "#哲学",
+        "#难度_中阶"
+      ],
+      "difficulty": 2
+    },
+    {
+      "card_id": "POLI_N013",
+      "chain_id": "POLI_法律_公民权利",
+      "chain_title": "公民权利义务",
+      "card_type": "node",
+      "chain_role": "entry",
+      "front": "公民权利义务：核心概念是什么？",
+      "back_core": "公民权利义务是高考思想政治的重要模块，考查学生运用基本原理分析社会现象的能力。",
+      "back_detail": "",
+      "tags": [
+        "#法律",
+        "#难度_中阶"
+      ],
+      "difficulty": 2
+    },
+    {
+      "card_id": "POLI_N014",
+      "chain_id": "POLI_法律_法律基础",
+      "chain_title": "法律基础",
+      "card_type": "node",
+      "chain_role": "entry",
+      "front": "法律基础：核心概念是什么？",
+      "back_core": "法律基础是高考思想政治的重要模块，考查学生运用基本原理分析社会现象的能力。",
+      "back_detail": "",
+      "tags": [
+        "#法律",
+        "#难度_中阶"
+      ],
+      "difficulty": 2
+    },
+    {
+      "card_id": "POLI_N015",
+      "chain_id": "POLI_时事_国内热点",
+      "chain_title": "国内时政热点",
+      "card_type": "node",
+      "chain_role": "entry",
+      "front": "国内时政热点：核心概念是什么？",
+      "back_core": "国内时政热点是高考思想政治的重要模块，考查学生运用基本原理分析社会现象的能力。",
+      "back_detail": "",
+      "tags": [
+        "#时事",
+        "#难度_中阶"
+      ],
+      "difficulty": 2
+    },
+    {
+      "card_id": "POLI_N016",
+      "chain_id": "POLI_时事_国际热点",
+      "chain_title": "国际时政热点",
+      "card_type": "node",
+      "chain_role": "entry",
+      "front": "国际时政热点：核心概念是什么？",
+      "back_core": "国际时政热点是高考思想政治的重要模块，考查学生运用基本原理分析社会现象的能力。",
+      "back_detail": "",
+      "tags": [
+        "#时事",
+        "#难度_中阶"
+      ],
+      "difficulty": 2
+    }
+  ],
+  "strategy_cards": [
+    {
+      "card_id": "POLI_S001",
+      "chain_id": "POLI_经济_商品货币",
+      "chain_title": "商品与货币",
+      "card_type": "strategy",
+      "chain_role": "method",
+      "front": "解答商品与货币类题目的一般思路是什么？",
+      "back_core": "Step 1: 明确考点所属模块 → Step 2: 提取材料关键词 → Step 3: 调用对应原理 → Step 4: 结合材料分析 → Step 5: 规范表述作答",
+      "back_detail": "",
+      "tags": [
+        "#方法论",
+        "#难度_高阶"
+      ],
+      "difficulty": 3
+    },
+    {
+      "card_id": "POLI_S002",
+      "chain_id": "POLI_经济_生产消费",
+      "chain_title": "生产与消费",
+      "card_type": "strategy",
+      "chain_role": "method",
+      "front": "解答生产与消费类题目的一般思路是什么？",
+      "back_core": "Step 1: 明确考点所属模块 → Step 2: 提取材料关键词 → Step 3: 调用对应原理 → Step 4: 结合材料分析 → Step 5: 规范表述作答",
+      "back_detail": "",
+      "tags": [
+        "#方法论",
+        "#难度_高阶"
+      ],
+      "difficulty": 3
+    },
+    {
+      "card_id": "POLI_S003",
+      "chain_id": "POLI_经济_分配保障",
+      "chain_title": "分配与社保",
+      "card_type": "strategy",
+      "chain_role": "method",
+      "front": "解答分配与社保类题目的一般思路是什么？",
+      "back_core": "Step 1: 明确考点所属模块 → Step 2: 提取材料关键词 → Step 3: 调用对应原理 → Step 4: 结合材料分析 → Step 5: 规范表述作答",
+      "back_detail": "",
+      "tags": [
+        "#方法论",
+        "#难度_高阶"
+      ],
+      "difficulty": 3
+    },
+    {
+      "card_id": "POLI_S004",
+      "chain_id": "POLI_经济_市场经济",
+      "chain_title": "市场经济",
+      "card_type": "strategy",
+      "chain_role": "method",
+      "front": "解答市场经济类题目的一般思路是什么？",
+      "back_core": "Step 1: 明确考点所属模块 → Step 2: 提取材料关键词 → Step 3: 调用对应原理 → Step 4: 结合材料分析 → Step 5: 规范表述作答",
+      "back_detail": "",
+      "tags": [
+        "#方法论",
+        "#难度_高阶"
+      ],
+      "difficulty": 3
+    },
+    {
+      "card_id": "POLI_S005",
+      "chain_id": "POLI_政治_国家公民",
+      "chain_title": "国家与公民",
+      "card_type": "strategy",
+      "chain_role": "method",
+      "front": "解答国家与公民类题目的一般思路是什么？",
+      "back_core": "Step 1: 明确考点所属模块 → Step 2: 提取材料关键词 → Step 3: 调用对应原理 → Step 4: 结合材料分析 → Step 5: 规范表述作答",
+      "back_detail": "",
+      "tags": [
+        "#方法论",
+        "#难度_高阶"
+      ],
+      "difficulty": 3
+    },
+    {
+      "card_id": "POLI_S006",
+      "chain_id": "POLI_政治_政党制度",
+      "chain_title": "政党制度",
+      "card_type": "strategy",
+      "chain_role": "method",
+      "front": "解答政党制度类题目的一般思路是什么？",
+      "back_core": "Step 1: 明确考点所属模块 → Step 2: 提取材料关键词 → Step 3: 调用对应原理 → Step 4: 结合材料分析 → Step 5: 规范表述作答",
+      "back_detail": "",
+      "tags": [
+        "#方法论",
+        "#难度_高阶"
+      ],
+      "difficulty": 3
+    },
+    {
+      "card_id": "POLI_S007",
+      "chain_id": "POLI_政治_人大制度",
+      "chain_title": "人大制度",
+      "card_type": "strategy",
+      "chain_role": "method",
+      "front": "解答人大制度类题目的一般思路是什么？",
+      "back_core": "Step 1: 明确考点所属模块 → Step 2: 提取材料关键词 → Step 3: 调用对应原理 → Step 4: 结合材料分析 → Step 5: 规范表述作答",
+      "back_detail": "",
+      "tags": [
+        "#方法论",
+        "#难度_高阶"
+      ],
+      "difficulty": 3
+    },
+    {
+      "card_id": "POLI_S008",
+      "chain_id": "POLI_政治_国际社会",
+      "chain_title": "国际社会",
+      "card_type": "strategy",
+      "chain_role": "method",
+      "front": "解答国际社会类题目的一般思路是什么？",
+      "back_core": "Step 1: 明确考点所属模块 → Step 2: 提取材料关键词 → Step 3: 调用对应原理 → Step 4: 结合材料分析 → Step 5: 规范表述作答",
+      "back_detail": "",
+      "tags": [
+        "#方法论",
+        "#难度_高阶"
+      ],
+      "difficulty": 3
+    },
+    {
+      "card_id": "POLI_S009",
+      "chain_id": "POLI_哲学_唯物论",
+      "chain_title": "唯物论基础",
+      "card_type": "strategy",
+      "chain_role": "method",
+      "front": "解答唯物论基础类题目的一般思路是什么？",
+      "back_core": "Step 1: 明确考点所属模块 → Step 2: 提取材料关键词 → Step 3: 调用对应原理 → Step 4: 结合材料分析 → Step 5: 规范表述作答",
+      "back_detail": "",
+      "tags": [
+        "#方法论",
+        "#难度_高阶"
+      ],
+      "difficulty": 3
+    },
+    {
+      "card_id": "POLI_S010",
+      "chain_id": "POLI_哲学_唯物辩证",
+      "chain_title": "唯物辩证法",
+      "card_type": "strategy",
+      "chain_role": "method",
+      "front": "解答唯物辩证法类题目的一般思路是什么？",
+      "back_core": "Step 1: 明确考点所属模块 → Step 2: 提取材料关键词 → Step 3: 调用对应原理 → Step 4: 结合材料分析 → Step 5: 规范表述作答",
+      "back_detail": "",
+      "tags": [
+        "#方法论",
+        "#难度_高阶"
+      ],
+      "difficulty": 3
+    },
+    {
+      "card_id": "POLI_S011",
+      "chain_id": "POLI_哲学_认识实践",
+      "chain_title": "认识与实践",
+      "card_type": "strategy",
+      "chain_role": "method",
+      "front": "解答认识与实践类题目的一般思路是什么？",
+      "back_core": "Step 1: 明确考点所属模块 → Step 2: 提取材料关键词 → Step 3: 调用对应原理 → Step 4: 结合材料分析 → Step 5: 规范表述作答",
+      "back_detail": "",
+      "tags": [
+        "#方法论",
+        "#难度_高阶"
+      ],
+      "difficulty": 3
+    },
+    {
+      "card_id": "POLI_S012",
+      "chain_id": "POLI_哲学_历史唯物",
+      "chain_title": "历史唯物主义",
+      "card_type": "strategy",
+      "chain_role": "method",
+      "front": "解答历史唯物主义类题目的一般思路是什么？",
+      "back_core": "Step 1: 明确考点所属模块 → Step 2: 提取材料关键词 → Step 3: 调用对应原理 → Step 4: 结合材料分析 → Step 5: 规范表述作答",
+      "back_detail": "",
+      "tags": [
+        "#方法论",
+        "#难度_高阶"
+      ],
+      "difficulty": 3
+    },
+    {
+      "card_id": "POLI_S013",
+      "chain_id": "POLI_法律_公民权利",
+      "chain_title": "公民权利义务",
+      "card_type": "strategy",
+      "chain_role": "method",
+      "front": "解答公民权利义务类题目的一般思路是什么？",
+      "back_core": "Step 1: 明确考点所属模块 → Step 2: 提取材料关键词 → Step 3: 调用对应原理 → Step 4: 结合材料分析 → Step 5: 规范表述作答",
+      "back_detail": "",
+      "tags": [
+        "#方法论",
+        "#难度_高阶"
+      ],
+      "difficulty": 3
+    },
+    {
+      "card_id": "POLI_S014",
+      "chain_id": "POLI_法律_法律基础",
+      "chain_title": "法律基础",
+      "card_type": "strategy",
+      "chain_role": "method",
+      "front": "解答法律基础类题目的一般思路是什么？",
+      "back_core": "Step 1: 明确考点所属模块 → Step 2: 提取材料关键词 → Step 3: 调用对应原理 → Step 4: 结合材料分析 → Step 5: 规范表述作答",
+      "back_detail": "",
+      "tags": [
+        "#方法论",
+        "#难度_高阶"
+      ],
+      "difficulty": 3
+    },
+    {
+      "card_id": "POLI_S015",
+      "chain_id": "POLI_时事_国内热点",
+      "chain_title": "国内时政热点",
+      "card_type": "strategy",
+      "chain_role": "method",
+      "front": "解答国内时政热点类题目的一般思路是什么？",
+      "back_core": "Step 1: 明确考点所属模块 → Step 2: 提取材料关键词 → Step 3: 调用对应原理 → Step 4: 结合材料分析 → Step 5: 规范表述作答",
+      "back_detail": "",
+      "tags": [
+        "#方法论",
+        "#难度_高阶"
+      ],
+      "difficulty": 3
+    },
+    {
+      "card_id": "POLI_S016",
+      "chain_id": "POLI_时事_国际热点",
+      "chain_title": "国际时政热点",
+      "card_type": "strategy",
+      "chain_role": "method",
+      "front": "解答国际时政热点类题目的一般思路是什么？",
+      "back_core": "Step 1: 明确考点所属模块 → Step 2: 提取材料关键词 → Step 3: 调用对应原理 → Step 4: 结合材料分析 → Step 5: 规范表述作答",
+      "back_detail": "",
+      "tags": [
+        "#方法论",
+        "#难度_高阶"
+      ],
+      "difficulty": 3
+    }
+  ],
+  "chain_cards": []
+}

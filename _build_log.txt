@@ -1,0 +1,17 @@
+﻿=== rujing CLI build ===
+Project: D:\2_products\education\SPDT-004_EduContent\5_deliver\TextExperienceAPP\apps\rujing
+
+[1/3] Running hvigor...
+powershell : hvigorw.bat : > hvigor [31mERROR: 00304004 Not Found[31m
+所在位置 行:1 字符: 107
++ ... ing]::UTF8; powershell -NoProfile -Command "& 'D:\2_products\educatio ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (hvigorw.bat : >... Not Found[31m:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+At D:\2_products\education\SPDT-004_EduContent\5_deliver\TextExperienceAPP\apps\rujing\build-cli.ps1:32 char:11
++ $result = & $hvigorCmd[0] @($hvigorCmd[1..($hvigorCmd.Length-1)]) 2>& ...
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (> hvigor [31mE... Not Found[31m:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 

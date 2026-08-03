@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://omas.mavis/MODLIB/content_manufacturing/schemas/ingest_content_spec.schema.json",
+  "title": "Ingest · ContentSpec Schema",
+  "description": "1_ingest M1 阶段产出：ContentSpec YAML 对应的 JSON Schema。\n用于考纲解析后生成的 ContentSpec 结构化验证。\n教育领域专用（书法备考/历史备考）。",
+  "version": "1.0.0",
+  "stage": "1_ingest",
+  "producer": "ingest_syllabus_parser",
+  "frozen": false,
+
+  "type": "object",
+  "required": ["spec_id", "spec_version", "exam_meta", "question_types"],
+
+  "properties": {
+    "spec_id": {
+      "type": "string",
+      "description": "ContentSpec 唯一标识",
+      "example": "CAFA_书法_复试_2026"
+    },
+    "spec_version": {
+      "type": "string",
+      "minLength": 3,
+      "description": "版本号，格式 X.Y（如 1.0）"
+    },
+    "domain": {
+      "type": "string",
+      "const": "education"
+    },
+    "content_type": {
+      "type": "string",
+      "enum": ["B1_deep_content", "B2_flash_content", "B3_knowledge_transfer", "B4_creative_argument"]
+    },
+    "exam_meta": {
+      "type": "object",
+      "required": ["exam_name", "total_score"],
+      "properties": {
+        "exam_name": { "type": "string" },
+        "exam_code": { "type": "string" },
+        "subject": { "type": "string" },
+        "total_duration_min": { "type": "integer" },
+        "total_score": { "type": "integer" }
+      }
+    },
+    "question_types": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "weight"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "weight": { "type": "number", "minimum": 0, "maximum": 1 },
+          "description": { "type": "string" },
+          "key_topics": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "reference_texts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title", "trust"],
+        "properties": {
+          "title": { "type": "string" },
+          "author": { "type": "string" },
+          "trust": { "type": "string", "enum": ["C", "D", "E"] },
+          "weight_in_syllabus": { "type": ["number", "null"] }
+        }
+      }
+    },
+    "quality_constraints": {
+      "type": "object",
+      "properties": {
+        "factual_accuracy": { "type": "string" },
+        "cross_check_required": { "type": "boolean" },
+        "hallucination_threshold": { "type": "number", "maximum": 0.2 }
+      }
+    },
+    "production_target": {
+      "type": "object",
+      "properties": {
+        "knowledge_entries_target": { "type": "integer" },
+        "ability_count_target": { "type": "integer" },
+        "coverage_target": { "type": "number", "maximum": 1.0 }
+      }
+    },
+    "human_checkpoint": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

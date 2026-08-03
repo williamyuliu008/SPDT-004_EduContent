@@ -1,0 +1,192 @@
+# -*- coding: utf-8 -*-
+"""SPDT-004 1_ingest router 集成测试
+=======================================
+测试：ingest_entry_judge.py + router.py + content_type.yaml 串联
+
+测试场景：
+  T1: CAFA 书法考纲 → 入口判别（APPLICABLE）+ B1_deep_content 路由
+  T2: 草书辨析素材 → 入口判别（APPLICABLE）+ B3_translation 路由
+  T3: 古史知识链 v5 → 入口判别（APPLICABLE）+ B2_rapid 路由
+  T4: 薄弱点分析报告 → 入口判别（NEEDS_HUMAN_REVIEW）+ B4_argumentation 路由
+  T5: 无关素材 → 入口判别（NOT_APPLICABLE）
+"""
+import sys, os, io
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
+from pathlib import Path
+
+# ── 加载模块 ──────────────────────────────────────────────────────
+import sys, os
+sys.path.insert(0, os.path.dirname(__file__))          # 1_ingest/router/ → import router.*
+sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))  # 1_ingest/ → import ingest_*
+
+from ingest_entry_judge import IngestEntryJudge, EntryVerdict
+from router import ContentRouter
+
+
+def t(label, cond):
+    status = "[PASS]" if cond else "[FAIL]"
+    print(f"  {status} {label}")
+    return cond
+
+
+all_pass = True
+
+# ── 初始化 ───────────────────────────────────────────────────────
+judge = IngestEntryJudge()
+router = ContentRouter()
+
+print("=== 模块加载 ===")
+all_pass &= t("IngestEntryJudge loaded", True)
+all_pass &= t("ContentRouter loaded", True)
+all_pass &= t("router content_type.yaml loaded", len(router.content_types) >= 4)
+all_pass &= t("router B1_deep_content exists", "B1_deep_content" in router.content_types)
+all_pass &= t("router B2_rapid exists", "B2_rapid" in router.content_types)
+all_pass &= t("router B3_translation exists", "B3_translation" in router.content_types)
+all_pass &= t("router B4_argumentation exists", "B4_argumentation" in router.content_types)
+
+# ── T1: CAFA 书法考纲 ───────────────────────────────────────────
+print("\n=== T1: CAFA 书法考纲 ===")
+raw_cafa = {
+    "type": "exam_syllabus",
+    "path": "C:/配置包_cafa_calligraphy_2026/",
+    "description": "中国美术学院书法学本科专业复试考纲，包含古汉语译篆、句读、书法史论等科目。",
+    "keywords": ["考纲", "书法史", "书论", "深度", "跨学科"],
+    "question_types": ["译篆", "句读", "名词解释"],
+    "topics": ["小篆", "说文540部首", "六书", "书法史"],
+    "exam_structure": "笔试+面试",
+}
+decision = judge.judge(raw_cafa)
+route = router.route(decision, raw_cafa)
+
+all_pass &= t("CAFA verdict=APPLICABLE", decision.verdict == EntryVerdict.APPLICABLE)
+all_pass &= t("CAFA route=B1_deep_content", route.b1_b4_type == "B1_deep_content")
+all_pass &= t("CAFA genre=墨骨山河系列", "墨骨山河" in route.genre)
+all_pass &= t("CAFA pipeline_stage=2_structure", "2_structure" in route.pipeline_stage)
+all_pass &= t("CAFA confidence>0.5", route.confidence > 0.5)
+all_pass &= t("CAFA matched_keywords not empty", len(route.matched_keywords) > 0)
+all_pass &= t("CAFA target_modules contains TextExperience", "TextExperience" in route.target_modules)
+
+print(f"  [INFO] verdict: {decision.verdict.value}")
+print(f"  [INFO] C1-C4 pass_count: {decision.pass_count}/4")
+print(f"  [INFO] route: {route.b1_b4_type} ({route.label})")
+print(f"  [INFO] confidence: {route.confidence}")
+print(f"  [INFO] matched_keywords: {route.matched_keywords}")
+
+# ── T2: 草书辨析素材 ───────────────────────────────────────────
+print("\n=== T2: 草书辨析素材 ===")
+raw_caoshu = {
+    "type": "textbook",
+    "description": "草书辨析卡：专业术语草书符号与现代汉字对照，含怀素、张旭狂草特征辨析。",
+    "keywords": ["辨析", "区分", "解释", "转化", "翻译", "草书"],
+    "content_volume": "200字/条",
+}
+decision = judge.judge(raw_caoshu)
+route = router.route(decision, raw_caoshu)
+
+all_pass &= t("CAOSHU verdict=APPLICABLE", decision.verdict == EntryVerdict.APPLICABLE)
+all_pass &= t("CAOSHU route=B3_translation", route.b1_b4_type == "B3_translation")
+all_pass &= t("CAOSHU genre=辨析卡系列", "辨析卡" in route.genre)
+print(f"  [INFO] route: {route.b1_b4_type} ({route.label})")
+print(f"  [INFO] matched_keywords: {route.matched_keywords}")
+
+# ── T3: 古史知识链 v5 ─────────────────────────────────────────
+print("\n=== T3: 古史知识链 v5 ===")
+raw_lishi = {
+    "type": "exam_syllabus",
+    "description": "古史知识链 v5，高考历史高频考点速查，包含历代重要历史事件。",
+    "keywords": ["速查", "考点", "要点", "核心"],
+    "content_volume": "200字/条",
+}
+decision = judge.judge(raw_lishi)
+route = router.route(decision, raw_lishi)
+
+all_pass &= t("LISHI verdict=APPLICABLE", decision.verdict == EntryVerdict.APPLICABLE)
+all_pass &= t("LISHI route=B2_rapid", route.b1_b4_type == "B2_rapid")
+all_pass &= t("LISHI genre=古史知识链", "古史知识链" in route.genre)
+print(f"  [INFO] route: {route.b1_b4_type} ({route.label})")
+print(f"  [INFO] matched_keywords: {route.matched_keywords}")
+
+# ── T4: 薄弱点分析报告 ─────────────────────────────────────────
+print("\n=== T4: 薄弱点分析报告 ===")
+raw_analysis = {
+    "type": "expert_notes",
+    "description": "薄弱点分析报告：基于学习者历史错题，分析书法史薄弱环节，给出多路径推荐。",
+    "keywords": ["分析", "论证", "判断", "推荐", "薄弱点"],
+}
+decision = judge.judge(raw_analysis)
+route = router.route(decision, raw_analysis)
+
+all_pass &= t("ANALYSIS verdict=NOT_APPLICABLE (expert_notes C3=0.3 不达标)",
+              decision.verdict == EntryVerdict.NOT_APPLICABLE)
+all_pass &= t("ANALYSIS route=B4_argumentation", route.b1_b4_type == "B4_argumentation")
+all_pass &= t("ANALYSIS genre=薄弱点分析", "薄弱点分析" in route.genre)
+print(f"  [INFO] verdict: {decision.verdict.value}")
+print(f"  [INFO] route: {route.b1_b4_type} ({route.label})")
+
+# ── T5: 无关素材（网页娱乐内容）─────────────────────────────────
+print("\n=== T5: 无关素材（网页娱乐内容）===")
+raw_irrelevant = {
+    "type": "web_scrape",
+    "description": "某明星微博内容网页爬取结果，包含娱乐八卦文本。",
+    "keywords": ["娱乐", "明星", "八卦"],
+    "content_volume": "500字",
+}
+decision = judge.judge(raw_irrelevant)
+# 路由只在 APPLICABLE 时有意义
+if decision.verdict == EntryVerdict.APPLICABLE:
+    route = router.route(decision, raw_irrelevant)
+    all_pass &= t("IRRELEVANT verdict!=APPLICABLE", False)
+else:
+    all_pass &= t("IRRELEVANT verdict=NOT_APPLICABLE",
+                  decision.verdict == EntryVerdict.NOT_APPLICABLE)
+print(f"  [INFO] verdict: {decision.verdict.value}")
+print(f"  [INFO] C1-C4 pass_count: {decision.pass_count}/4")
+
+# ── T6: 路由决策属性完整性 ────────────────────────────────────
+print("\n=== T6: RouteResult to_dict ===")
+raw_test = {
+    "description": "书法史深度内容，涉及历史跨学科融合。",
+    "keywords": ["书法史", "历史", "深度", "跨学科"],
+}
+decision = judge.judge(raw_test)
+route = router.route(decision, raw_test)
+route_dict = route.to_dict()
+
+all_pass &= t("route.to_dict() has b1_b4_type", "b1_b4_type" in route_dict)
+all_pass &= t("route.to_dict() has target_modules", "target_modules" in route_dict)
+all_pass &= t("route.to_dict() has matched_keywords", "matched_keywords" in route_dict)
+all_pass &= t("route.to_dict() has confidence", "confidence" in route_dict)
+all_pass &= t("route.to_dict() has pipeline_stage", "pipeline_stage" in route_dict)
+
+# ── T7: 集成工作流端到端 ───────────────────────────────────────
+print("\n=== T7: 集成工作流端到端 ===")
+raw_e2e = {
+    "type": "exam_syllabus",
+    "description": "国美书法考纲：古汉语译篆（说文解字小篆）+ 句读翻译 + 书法史名词解释。",
+    "keywords": ["书法史", "书论", "深度", "跨学科"],
+    "question_types": ["译篆", "句读", "名词解释"],
+    "topics": ["小篆", "说文540部首", "六书"],
+    "exam_structure": "笔试",
+}
+# Step 1: M0 入口判别
+decision_e2e = judge.judge(raw_e2e)
+# Step 2: B1-B4 路由
+route_e2e = router.route(decision_e2e, raw_e2e)
+
+all_pass &= t("E2E verdict=APPLICABLE", decision_e2e.verdict == EntryVerdict.APPLICABLE)
+all_pass &= t("E2E route=B1_deep_content", route_e2e.b1_b4_type == "B1_deep_content")
+all_pass &= t("E2E genre=墨骨山河系列", route_e2e.genre == "墨骨山河系列")
+all_pass &= t("E2E pipeline_stage=2_structure", route_e2e.pipeline_stage == "2_structure")
+all_pass &= t("E2E TextExperience in target_modules", "TextExperience" in route_e2e.target_modules)
+
+print(f"  [E2E] verdict={decision_e2e.verdict.value}, route={route_e2e.b1_b4_type}")
+print(f"  [E2E] confidence={route_e2e.confidence}, matched={route_e2e.matched_keywords}")
+
+# ── Summary ────────────────────────────────────────────────────
+print()
+if all_pass:
+    print("=== ALL TESTS PASSED ===")
+else:
+    print("=== SOME TESTS FAILED ===")
+    sys.exit(1)

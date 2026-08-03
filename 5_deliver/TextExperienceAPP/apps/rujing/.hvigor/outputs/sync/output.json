@@ -1,0 +1,201 @@
+{
+  "version": 1,
+  "ohos-module-entry": {
+    "SELECT_TARGET": "default",
+    "MODULE_BUILD_DIR": "D:\\2_products\\education\\SPDT-004_EduContent\\5_deliver\\TextExperienceAPP\\apps\\rujing\\entry\\build",
+    "TARGETS": {
+      "default": {
+        "SOURCE_ROOT": "D:\\2_products\\education\\SPDT-004_EduContent\\5_deliver\\TextExperienceAPP\\apps\\rujing\\entry\\src\\main",
+        "RESOURCES_PATH": [
+          "D:\\2_products\\education\\SPDT-004_EduContent\\5_deliver\\TextExperienceAPP\\apps\\rujing\\entry\\src\\main\\resources"
+        ],
+        "BUILD_PATH": {
+          "OUTPUT_PATH": "D:\\2_products\\education\\SPDT-004_EduContent\\5_deliver\\TextExperienceAPP\\apps\\rujing\\entry\\build\\default\\outputs\\default",
+          "INTERMEDIA_PATH": "D:\\2_products\\education\\SPDT-004_EduContent\\5_deliver\\TextExperienceAPP\\apps\\rujing\\entry\\build\\default\\intermediates",
+          "JS_ASSETS_PATH": "D:\\2_products\\education\\SPDT-004_EduContent\\5_deliver\\TextExperienceAPP\\apps\\rujing\\entry\\build\\default\\intermediates\\loader_out\\default",
+          "JS_LITE_ASSETS_PATH": "D:\\2_products\\education\\SPDT-004_EduContent\\5_deliver\\TextExperienceAPP\\apps\\rujing\\entry\\build\\default\\intermediates\\loader_out_lite\\default",
+          "RES_PATH": "D:\\2_products\\education\\SPDT-004_EduContent\\5_deliver\\TextExperienceAPP\\apps\\rujing\\entry\\build\\default\\intermediates\\res\\default",
+          "RES_PROFILE_PATH": "D:\\2_products\\education\\SPDT-004_EduContent\\5_deliver\\TextExperienceAPP\\apps\\rujing\\entry\\build\\default\\intermediates\\res\\default\\resources\\base\\profile",
+          "ETS_SUPER_VISUAL_PATH": "D:\\2_products\\education\\SPDT-004_EduContent\\5_deliver\\TextExperienceAPP\\apps\\rujing\\entry\\build\\default\\cache\\default\\default@CompileArkTS\\esmodule",
+          "JS_SUPER_VISUAL_PATH": "D:\\2_products\\education\\SPDT-004_EduContent\\5_deliver\\TextExperienceAPP\\apps\\rujing\\entry\\build\\default\\cache\\default\\default@CompileJS\\jsbundle",
+          "WORKER_LOADER": "D:\\2_products\\education\\SPDT-004_EduContent\\5_deliver\\TextExperienceAPP\\apps\\rujing\\entry\\build\\default\\intermediates\\loader\\default\\loader.json",
+          "MANIFEST_JSON": "D:\\2_products\\education\\SPDT-004_EduContent\\5_deliver\\TextExperienceAPP\\apps\\rujing\\entry\\build\\default\\intermediates\\manifest\\default",
+          "OUTPUT_METADATA_JSON": "D:\\2_products\\education\\SPDT-004_EduContent\\5_deliver\\TextExperienceAPP\\apps\\rujing\\entry\\build\\default\\intermediates\\hap_metadata\\default\\output_metadata.json",
+          "SOURCE_MAP_DIR": "D:\\2_products\\education\\SPDT-004_EduContent\\5_deliver\\TextExperienceAPP\\apps\\rujing\\entry\\build\\default\\intermediates\\source_map\\default"
+        },
+        "BUILD_OPTION": {
+          "debuggable": true
+        }
+      },
+      "ohosTest": {
+        "SOURCE_ROOT": "D:\\2_products\\education\\SPDT-004_EduContent\\5_deliver\\TextExperienceAPP\\apps\\rujing\\entry\\src\\ohosTest",
+        "RESOURCES_PATH": [
+          "D:\\2_products\\education\\SPDT-004_EduContent\\5_deliver\\TextExperienceAPP\\apps\\rujing\\entry\\src\\ohosTest\\resources"
+        ],
+        "BUILD_PATH": {
+          "OUTPUT_PATH": "D:\\2_products\\education\\SPDT-004_EduContent\\5_deliver\\TextExperienceAPP\\apps\\rujing\\entry\\build\\default\\outputs\\ohosTest",
+          "INTERMEDIA_PATH": "D:\\2_products\\education\\SPDT-004_EduContent\\5_deliver\\TextExperienceAPP\\apps\\rujing\\entry\\build\\default\\intermediates",
+          "JS_ASSETS_PATH": "D:\\2_products\\education\\SPDT-004_EduContent\\5_deliver\\TextExperienceAPP\\apps\\rujing\\entry\\build\\default\\intermediates\\loader_out\\ohosTest",
+          "JS_LITE_ASSETS_PATH": "D:\\2_products\\education\\SPDT-004_EduContent\\5_deliver\\TextExperienceAPP\\apps\\rujing\\entry\\build\\default\\intermediates\\loader_out_lite\\ohosTest",
+          "RES_PATH": "D:\\2_products\\education\\SPDT-004_EduContent\\5_deliver\\TextExperienceAPP\\apps\\rujing\\entry\\build\\default\\intermediates\\res\\ohosTest",
+          "RES_PROFILE_PATH": "D:\\2_products\\education\\SPDT-004_EduContent\\5_deliver\\TextExperienceAPP\\apps\\rujing\\entry\\build\\default\\intermediates\\res\\ohosTest\\resources\\base\\profile",
+          "ETS_SUPER_VISUAL_PATH": "D:\\2_products\\education\\SPDT-004_EduContent\\5_deliver\\TextExperienceAPP\\apps\\rujing\\entry\\build\\default\\cache\\ohosTest\\ohosTest@OhosTestCompileArkTS\\esmodule",
+          "JS_SUPER_VISUAL_PATH": "D:\\2_products\\education\\SPDT-004_EduContent\\5_deliver\\TextExperienceAPP\\apps\\rujing\\entry\\build\\default\\cache\\ohosTest\\ohosTest@OhosTestCompileJS\\jsbundle",
+          "WORKER_LOADER": "D:\\2_products\\education\\SPDT-004_EduContent\\5_deliver\\TextExperienceAPP\\apps\\rujing\\entry\\build\\default\\intermediates\\loader\\ohosTest\\loader.json",
+          "MANIFEST_JSON": "D:\\2_products\\education\\SPDT-004_EduContent\\5_deliver\\TextExperienceAPP\\apps\\rujing\\entry\\build\\default\\intermediates\\manifest\\ohosTest",
+          "OUTPUT_METADATA_JSON": "D:\\2_products\\education\\SPDT-004_EduContent\\5_deliver\\TextExperienceAPP\\apps\\rujing\\entry\\build\\default\\intermediates\\hap_metadata\\ohosTest\\output_metadata.json",
+          "SOURCE_MAP_DIR": "D:\\2_products\\education\\SPDT-004_EduContent\\5_deliver\\TextExperienceAPP\\apps\\rujing\\entry\\build\\default\\intermediates\\source_map\\ohosTest"
+        },
+        "BUILD_OPTION": {
+          "debuggable": true
+        }
+      }
+    },
+    "BUILD_OPTION": {
+      "default-default": {
+        "debuggable": true,
+        "copyFrom": "default",
+        "strictMode": {
+          "caseSensitiveCheck": true,
+          "useNormalizedOHMUrl": true
+        },
+        "resOptions": {
+          "copyCodeResource": {
+            "enable": false
+          }
+        },
+        "name": "debug"
+      }
+    },
+    "BUILD_PROFILE_OPT": {
+      "apiType": "stageMode",
+      "buildOption": {
+        "resOptions": {
+          "copyCodeResource": {
+            "enable": false
+          }
+        }
+      },
+      "buildOptionSet": [
+        {
+          "name": "release",
+          "arkOptions": {
+            "obfuscation": {
+              "ruleOptions": {
+                "enable": false,
+                "files": [
+                  "./obfuscation-rules.txt"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name": "default"
+        },
+        {
+          "name": "debug"
+        }
+      ],
+      "targets": [
+        {
+          "name": "default"
+        },
+        {
+          "name": "ohosTest"
+        }
+      ]
+    },
+    "BUILD_CACHE_DIR": ""
+  },
+  "ohos-project": {
+    "SELECT_PRODUCT_NAME": "default",
+    "MODULE_BUILD_DIR": "D:\\2_products\\education\\SPDT-004_EduContent\\5_deliver\\TextExperienceAPP\\apps\\rujing\\build",
+    "BUNDLE_NAME": "com.harmonystudio.rujing",
+    "VERSION_CODE": 1000000,
+    "VERSION_NAME": "1.0.0",
+    "BUILD_PATH": {
+      "OUTPUT_PATH": "D:\\2_products\\education\\SPDT-004_EduContent\\5_deliver\\TextExperienceAPP\\apps\\rujing\\build\\outputs\\default"
+    },
+    "MODULES": [
+      {
+        "name": "entry",
+        "srcPath": "D:\\2_products\\education\\SPDT-004_EduContent\\5_deliver\\TextExperienceAPP\\apps\\rujing\\entry",
+        "targets": [
+          {
+            "name": "default",
+            "applyToProducts": [
+              "default"
+            ]
+          }
+        ],
+        "belongProjectPath": "D:\\2_products\\education\\SPDT-004_EduContent\\5_deliver\\TextExperienceAPP\\apps\\rujing"
+      }
+    ],
+    "PROFILE_OPT": {
+      "app": {
+        "signingConfigs": [
+          {
+            "name": "default",
+            "type": "HarmonyOS",
+            "material": {
+              "certpath": "C:\\Users\\willi\\.ohos\\config\\default_rujing_Sc8lCK_5Vur2UrhZTyWY4mgZBI5stoRDxzAzsBpFgag=.cer",
+              "keyAlias": "debugKey",
+              "keyPassword": "0000001ADB45F54062026CEEC33AC0DD9DC288E0321F01984168B4B89F22CD5A28EC397C8D7F9894ED74",
+              "profile": "C:\\Users\\willi\\.ohos\\config\\default_rujing_Sc8lCK_5Vur2UrhZTyWY4mgZBI5stoRDxzAzsBpFgag=.p7b",
+              "signAlg": "SHA256withECDSA",
+              "storeFile": "C:\\Users\\willi\\.ohos\\config\\default_rujing_Sc8lCK_5Vur2UrhZTyWY4mgZBI5stoRDxzAzsBpFgag=.p12",
+              "storePassword": "0000001A58C2B5386048F774F892FEF0F02EF3BFC0B7D78EA0301C68160DBA4877F909AEE7B024ADB707"
+            }
+          }
+        ],
+        "products": [
+          {
+            "name": "default",
+            "signingConfig": "default",
+            "compatibleSdkVersion": "6.1.1(24)",
+            "runtimeOS": "HarmonyOS",
+            "buildOption": {
+              "strictMode": {
+                "caseSensitiveCheck": true,
+                "useNormalizedOHMUrl": true
+              }
+            },
+            "targetSdkVersion": "6.1.1(24)"
+          }
+        ],
+        "buildModeSet": [
+          {
+            "name": "debug"
+          },
+          {
+            "name": "release"
+          }
+        ]
+      },
+      "modules": [
+        {
+          "name": "entry",
+          "srcPath": "./entry",
+          "targets": [
+            {
+              "name": "default",
+              "applyToProducts": [
+                "default"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "CONFIG_PROPERTIES": {
+      "enableSignTask": true,
+      "skipNativeIncremental": false,
+      "hvigor.keepDependency": true
+    },
+    "OVERALL_PROJECT_PATHS": [
+      "D:\\2_products\\education\\SPDT-004_EduContent\\5_deliver\\TextExperienceAPP\\apps\\rujing"
+    ],
+    "BUILD_CACHE_DIR": ""
+  }
+}

@@ -1,0 +1,203 @@
+# calibration_rules.yaml — 双Agent质疑规则配置
+# ==============================================
+# 对应 SOP v4.0 M2 双Agent质量校准
+# Agent-B（质疑方）质疑类型定义
+
+challenge_types:
+  # ── 事实准确性 ────────────────────────────────────────────────
+  fact_accuracy:
+    label: "历史事实准确性"
+    description: "质疑年份/地点/人物关系/事件顺序是否准确"
+    severity: "critical"    # critical / major / minor
+    verdict_rules:
+      accept_if:
+        - "多源一致"
+        - "古籍原文支持"
+        - "学界公认"
+      reject_if:
+        - "单源无印证"
+        - "年份偏差超过5年"
+        - "人物关系明显错误"
+    agent_b_prompt_template: |
+      请核查以下知识的「{concept}」历史准确性：
+      内容：{content}
+      来源：{source}
+      质疑点：
+      1. 年份/时间线是否准确？
+      2. 地点/空间信息是否正确？
+      3. 人物关系/事件因果是否自洽？
+      如发现错误，请给出正确信息及来源。
+
+  # ── 书法术语规范性 ────────────────────────────────────────────
+  terminology_accuracy:
+    label: "书法术语规范性"
+    description: "质疑概念的定义是否符合学界共识/书法史常识"
+    severity: "critical"
+    domain_tags: ["书法", "篆刻", "古汉语"]
+    verdict_rules:
+      accept_if:
+        - "符合学界权威定义"
+        - "引自公认原典"
+        - "专业教材一致"
+      reject_if:
+        - "与现代学术定义矛盾"
+        - "混淆不同书体概念"
+        - "术语溯源错误"
+    agent_b_prompt_template: |
+      请核查以下书法/古汉语知识术语「{concept}」的规范性：
+      定义：{definition}
+      请问：
+      1. 该定义是否符合学界共识？
+      2. 是否混淆了不同书体/概念？
+      3. 术语溯源是否正确（原典依据）？
+
+  # ── 逻辑一致性 ────────────────────────────────────────────────
+  logical_consistency:
+    label: "逻辑一致性"
+    description: "质疑因果关系、前后逻辑是否自洽"
+    severity: "major"
+    verdict_rules:
+      accept_if:
+        - "因果链完整"
+        - "无前后矛盾"
+        - "推论有据可查"
+      reject_if:
+        - "因果关系跳跃"
+        - "前后信息矛盾"
+        - "过度推断"
+    agent_b_prompt_template: |
+      请核查以下知识的逻辑一致性：
+      内容：{content}
+      1. 各论点之间是否自洽？
+      2. 因果关系是否有逻辑跳跃？
+      3. 是否有前后矛盾之处？
+
+  # ── 考纲对齐 ────────────────────────────────────────────────
+  syllabus_alignment:
+    label: "考纲对齐"
+    description: "质疑知识点是否在考纲范围内（书法备考专用）"
+    severity: "major"
+    domain_tags: ["书法", "古汉语"]
+    verdict_rules:
+      accept_if:
+        - "考纲明确列出"
+        - "考纲隐含覆盖"
+        - "与考纲考点直接相关"
+      flag_if:
+        - "超出考纲范围（不一定是错误，可能是拓展）"
+    agent_b_prompt_template: |
+      请核查以下知识「{concept}」与考纲的对齐情况：
+      ContentSpec 考纲范围：{syllabus_scope}
+      知识内容：{content}
+      问题：
+      1. 该知识点是否在考纲明确范围内？
+      2. 是否属于超纲但有价值的内容？
+      3. 是否属于超纲且可能误导考生的内容？
+
+  # ── 引用溯源 ────────────────────────────────────────────────
+  citation_accuracy:
+    label: "引用溯源准确性"
+    description: "质疑原文引用是否准确（古籍/书论原文）"
+    severity: "major"
+    domain_tags: ["书法", "古汉语", "历史"]
+    verdict_rules:
+      accept_if:
+        - "原文逐字核对无误"
+        - "有多个版本印证"
+        - "引文格式规范"
+      reject_if:
+        - "原文有明显出入"
+        - "断章取义"
+        - "引文格式错误"
+    agent_b_prompt_template: |
+      请核查以下引用的原文准确性：
+      引文：{quote}
+      出处：{source}
+      请对照原典（若可查）核实：
+      1. 文字是否准确？
+      2. 是否存在断章取义？
+      3. 出处标注是否正确？
+
+  # ── 表述中立性 ────────────────────────────────────────────────
+  neutrality:
+    label: "表述中立性"
+    description: "质疑是否存在偏见/主观判断/商业推销"
+    severity: "minor"
+    verdict_rules:
+      accept_if:
+        - "客观陈述事实"
+        - "有据可查"
+        - "无明显立场倾向"
+      reject_if:
+        - "有明显商业推销"
+        - "情绪化表达"
+        - "个人主观判断未注明"
+
+# 仲裁层（Resolver）规则
+resolver_rules:
+  # 质疑处理策略
+  challenge_handling:
+    accepted_challenge:
+      action: "修正条目"
+      resolution_template: "{original} → {corrected}（依据：{source}）"
+      requires_agent_a_rework: true
+
+    rejected_challenge:
+      action: "保留原条目"
+      reason_required: true
+      counter_evidence_required: true
+
+    partial_challenge:
+      action: "部分修正"
+      resolution_template: "仅修正{affected_part}，其余保留"
+
+  # 通过率门禁
+  pass_gate:
+    min_pass_rate: 0.80          # 通过率 < 80% → 整体失败，回写修正
+    min_trust_e_ratio: 0.30      # E级条目占比 > 70% → 警告，需人工审核
+    min_entry_count: 20          # 最少条目数（KBC fallback 底线）
+
+  # 重复条目处理
+  duplicate_handling:
+    strategy: "merge_keep_highest_trust"
+    merge_fields: ["concept", "definition"]
+    keep_fields: ["trust", "calibration"]
+
+# Agent-B 质疑强度配置
+agent_b_intensity:
+  # 严格模式：所有条目全量质疑
+  strict:
+    min_challenges_per_entry: 3
+    challenge_types: ["fact_accuracy", "terminology_accuracy", "logical_consistency"]
+    cross_check_min_sources: 2
+
+  # 标准模式：关键条目重点质疑
+  standard:
+    min_challenges_per_entry: 2
+    challenge_types: ["fact_accuracy", "terminology_accuracy"]
+    cross_check_min_sources: 1
+
+  # 宽松模式：仅高风险条目质疑
+  lenient:
+    min_challenges_per_entry: 1
+    challenge_types: ["fact_accuracy"]
+    cross_check_min_sources: 0
+
+# 书法备考特定规则
+calligraphy_specific_rules:
+  # 古籍原文 vs 现代解读：优先古籍原文
+  ancient_vs_modern:
+    priority: "ancient"
+    conflict_resolution: "保留两种表述，标注冲突"
+    flag: "CONFLICT_ANCIENT_MODERN"
+
+  # 六书分类争议：保留学界主流+说明其他观点
+  liushu_classification:
+    resolution: "标注主流学界观点+说明其他分类法"
+    flag: "LIUSHU_CONFLICT"
+
+  # 书体年代溯源：以考古实物为准
+  script_dating:
+    primary_source: "考古实物"
+    secondary_source: "文献记载"
+    conflict_resolution: "以考古实物为准，文献记载作为补充"

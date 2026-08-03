@@ -1,9 +1,16 @@
-﻿# SPDT-004 PDT 详细注册表 v2.2
-# 2026-07-29 更新（流水线五阶段重构）
+﻿# SPDT-004 PDT 详细注册表 v2.3
+# 2026-07-30 更新（目录结构优化：移除孤儿PT目录，清理apps）
+#
+# 变更记录：
+#   v2.3: apps/ 仅保留 rujing（其余12个app移至 SPDT-001_Harmony/apps/）；
+#          移除 standalone_products（PT-030/PT-032 已移至独立 product 目录）；
+#          PT-039 junction 已删除，target_dir 修正为 products/PT-039_CalligraphyVision
+#   v2.2: 流水线五阶段重构
+#   v2.1: 初版
 
 pdt_list:
 
-  # ── 流水线阶段（v2.3 新架构）───────────────────────────────────────────────
+  # ── 流水线阶段（五阶段）────────────────────────────────────────────────
 
   - pdt_id: TextExperience
     name: TextExperience
@@ -21,7 +28,7 @@ pdt_list:
     status: active
     maturity: 0.8
     registered: 2026-07-14
-    note: "主力生产模块；内容分发至 products/courses/；⚠️ Ep01-08 剧本缺失"
+    note: "主力生产模块；内容分发至 products/courses/"
 
   - pdt_id: SPDT-KTE
     name: KTE
@@ -80,11 +87,11 @@ pdt_list:
     target_dir: D:\2_products\education\SPDT-004_EduContent\5_deliver\TextExperienceAPP
     status: active
     maturity: 0.6
-    app_count: 13
+    app_count: 1
     infra_dependency:
       irc: D:/3_infra/IRC/
     registered: 2026-07-29
-    note: 新学习方式交付终端；rhythm-* 5个APP移回 SPDT-001
+    note: "单APP交付平台；仅承载 rujing（国美书法备考APP）；gaokao-*/thinkkit-* 已迁移至 SPDT-001_Harmony/apps/"
 
   - pdt_id: PT-039
     name: CalligraphyVision
@@ -100,7 +107,7 @@ pdt_list:
     status: active
     maturity: 0.8
     registered: 2026-07-21
-    note: 辨析卡v4（13张）存储于 products/courses/书法备考_墨骨山河/草书辨析卡/；为 2_structure 和 5_deliver 提供视觉素材
+    note: "辨析卡v4（13张）存储于 products/courses/书法备考_墨骨山河/草书辨析卡/；为 2_structure 和 5_deliver 提供视觉素材"
 
 # ── 共享资产（基础设施层）───────────────────────────────────────────────
 
@@ -127,26 +134,6 @@ shared_assets:
   - asset: knowledge_base
     path: D:\2_products\education\SPDT-004_EduContent\knowledge
 
-# ── 独立产品线（不在 SPDT-004_EduContent 内）────────────────────────────────
-
-standalone_products:
-  - pdt_id: PT-030
-    name: GaokaoPrep
-    name_zh: 高考备考内容工厂
-    target_dir: D:\2_products\education\PT-030_GaokaoPrep
-    pipeline: smart_edu Agent集群（独立流水线）
-    status: active
-    registered: 2026-07-10
-
-  - pdt_id: PT-032
-    name: CollegeCourseware
-    name_zh: 高等课件工厂
-    target_dir: D:\2_products\education\PT-032_CollegeCourseware
-    pipeline: VCC数学动画工厂（CGM+Audit）
-    git: https://github.com/williamyuliu008/math_animation_factory
-    status: active
-    registered: 2026-07-10
-
 # ── Junction 映射（PT间依赖路径）───────────────────────────────────────────
 
 junction_map:
@@ -157,5 +144,13 @@ junction_map:
   "TextExperience\\_source": "products/courses"
 
 metadata:
-  last_updated: "2026-07-29"
-  version: "2.2"
+  last_updated: "2026-07-30"
+  version: "2.3"
+  cleanup_notes: |
+    v2.3（本次）:
+      - 删除根目录孤儿 junction：PT-030~PT-036, PT-039_CalligraphyVision
+      - apps/ 清理：rujing 保留，其余12个app移至 SPDT-001_Harmony/apps/
+      - TextExperienceAPP.app_count: 13 → 1
+      - standalone_products 段落移除（PT-030/PT-032 已在独立 product 目录）
+    v2.2:
+      - 流水线五阶段架构

@@ -1,4 +1,4 @@
-{
+﻿{
   "schema_version": "1.0.0",
   "package_id": "墨骨山河",
   "series_title": "墨骨山河",
@@ -10,7 +10,7 @@
       "ep": 4,
       "title": "孙过庭·书谱之道",
       "subtitle": "孙过庭·书谱之道",
-      "video_file": "墨骨山河_ep04_pipeline.mp4",
+      "video_file": "墨骨山河_ep04.mp4",
       "duration_seconds": 143.6,
       "resolution": "1080p",
       "bitrate_kbps": 2000,

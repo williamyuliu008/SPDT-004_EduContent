@@ -1,0 +1,69 @@
+{
+  "pack_id": "cafa_calligraphy_2026",
+  "pack_name": "中国美术学院书法校考备考包",
+  "pack_name_en": "CAFA Calligraphy Exam Prep Pack",
+  "version": "1.0.0",
+  "subject": "书法与篆刻 / 书法学与教育（共用）",
+  "exam_type": "校考",
+  "target": "中国美术学院书法学本科专业复试",
+  "exam_code": "CAFA_书法_复试",
+  "platform_version_required": ">=1.0.0",
+  "author": "Mavis AI Team",
+  "created_date": "2026-07-13",
+  "dependencies": [],
+  "config": {
+    "total_duration_minutes": 60,
+    "total_score": 100,
+    "question_types": [
+      {
+        "id": "Q_TRANSDUCTION",
+        "name": "译篆",
+        "weight": 0.25,
+        "description": "将简体汉字按《说文解字》标准译为小篆"
+      },
+      {
+        "id": "Q_SCRIPT_READING",
+        "name": "书体释文",
+        "weight": 0.00,
+        "description": "给出草书/篆书/隶书图片，写出楷书释文（部分年份含此题型）"
+      },
+      {
+        "id": "Q_PUNCT_TRANSLATION",
+        "name": "句读与翻译",
+        "weight": 0.35,
+        "description": "无标点文言文断句并翻译为现代汉语"
+      },
+      {
+        "id": "Q_TERM_EXPLAIN",
+        "name": "名词解释",
+        "weight": 0.40,
+        "description": "书法史/书论核心概念的名词解释"
+      }
+    ],
+    "reference_texts": [
+      "许慎《说文解字》",
+      "孙过庭《书谱》",
+      "司马迁《史记》",
+      "《历代书法论文选》"
+    ]
+  },
+  "activation": {
+    "default_active": true,
+    "requires_exam_code": null,
+    "suggested_sequences": [
+      "step1_phonetic_script",
+      "step2_punctuation",
+      "step3_calligraphy_history",
+      "step4_integrated_practice"
+    ]
+  },
+  "statistics": {
+    "knowledge_entries": 47,
+    "star5_entries": 14,
+    "star4_entries": 18,
+    "star3_entries": 13,
+    "ability_points": 8,
+    "answer_templates": 4,
+    "cross_pack_links": 3
+  }
+}

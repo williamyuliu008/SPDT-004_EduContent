@@ -1,0 +1,137 @@
+{
+  "CHAIN_CAFA_古汉语基础": {
+    "chain_id": "CHAIN_CAFA_古汉语基础",
+    "title": "古汉语·文字学基础",
+    "chain_type": "CAUSAL",
+    "tags": [
+      "#书法",
+      "#古汉语",
+      "#文字学"
+    ],
+    "card_ids": [
+      "CAFA_KB_CAFA_001"
+    ],
+    "card_count": 1
+  },
+  "CHAIN_CAFA_译篆要诀": {
+    "chain_id": "CHAIN_CAFA_译篆要诀",
+    "title": "古汉语·译篆要诀",
+    "chain_type": "ELEMENT",
+    "tags": [
+      "#书法",
+      "#古汉语",
+      "#译篆"
+    ],
+    "card_ids": [
+      "CAFA_KB_CAFA_002",
+      "CAFA_KB_CAFA_011",
+      "CAFA_KB_CAFA_012",
+      "CAFA_KB_CAFA_013",
+      "CAFA_KB_CAFA_014",
+      "CAFA_KB_CAFA_015"
+    ],
+    "card_count": 6
+  },
+  "CHAIN_CAFA_Ep06_颜筋柳骨": {
+    "chain_id": "CHAIN_CAFA_Ep06_颜筋柳骨",
+    "title": "墨骨山河·Ep06 颜筋柳骨",
+    "chain_type": "TIMELINE",
+    "tags": [
+      "#书法",
+      "#书法史",
+      "#唐代"
+    ],
+    "card_ids": [
+      "CAFA_KB_CAFA_003"
+    ],
+    "card_count": 1
+  },
+  "CHAIN_CAFA_Ep04_书谱之道": {
+    "chain_id": "CHAIN_CAFA_Ep04_书谱之道",
+    "title": "墨骨山河·Ep04 书谱之道",
+    "chain_type": "TIMELINE",
+    "tags": [
+      "#书法",
+      "#书法史",
+      "#唐代"
+    ],
+    "card_ids": [
+      "CAFA_KB_CAFA_004"
+    ],
+    "card_count": 1
+  },
+  "CHAIN_CAFA_Ep08_碑学中兴": {
+    "chain_id": "CHAIN_CAFA_Ep08_碑学中兴",
+    "title": "墨骨山河·Ep08 碑学中兴",
+    "chain_type": "TIMELINE",
+    "tags": [
+      "#书法",
+      "#书法史",
+      "#清代"
+    ],
+    "card_ids": [
+      "CAFA_KB_CAFA_005",
+      "CAFA_KB_CAFA_006",
+      "CAFA_KB_CAFA_008"
+    ],
+    "card_count": 3
+  },
+  "CHAIN_CAFA_Ep03_兰亭之雅": {
+    "chain_id": "CHAIN_CAFA_Ep03_兰亭之雅",
+    "title": "墨骨山河·Ep03 兰亭之雅",
+    "chain_type": "TIMELINE",
+    "tags": [
+      "#书法",
+      "#书法史",
+      "#魏晋"
+    ],
+    "card_ids": [
+      "CAFA_KB_CAFA_007"
+    ],
+    "card_count": 1
+  },
+  "CHAIN_CAFA_Ep07_黄州突围": {
+    "chain_id": "CHAIN_CAFA_Ep07_黄州突围",
+    "title": "墨骨山河·Ep07 黄州突围",
+    "chain_type": "TIMELINE",
+    "tags": [
+      "#书法",
+      "#书法史",
+      "#宋代"
+    ],
+    "card_ids": [
+      "CAFA_KB_CAFA_009"
+    ],
+    "card_count": 1
+  },
+  "CHAIN_CAFA_Ep05_颠张醉素": {
+    "chain_id": "CHAIN_CAFA_Ep05_颠张醉素",
+    "title": "墨骨山河·Ep05 颠张醉素",
+    "chain_type": "TIMELINE",
+    "tags": [
+      "#书法",
+      "#书法史",
+      "#唐代"
+    ],
+    "card_ids": [
+      "CAFA_KB_CAFA_010"
+    ],
+    "card_count": 1
+  },
+  "CHAIN_CAFA_句读标志": {
+    "chain_id": "CHAIN_CAFA_句读标志",
+    "title": "古汉语·句读标志词",
+    "chain_type": "ELEMENT",
+    "tags": [
+      "#书法",
+      "#古汉语",
+      "#句读"
+    ],
+    "card_ids": [
+      "CAFA_KB_CAFA_016",
+      "CAFA_KB_CAFA_017",
+      "CAFA_KB_CAFA_018"
+    ],
+    "card_count": 3
+  }
+}

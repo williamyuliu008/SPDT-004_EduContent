@@ -127,7 +127,7 @@ struct Index {
             this.subjectEntry('历史', '历史', '#C44536', '历史剧本链')
             this.subjectEntry('古诗文', '古诗文', '#8B4513', '高考古诗文通关')
             this.subjectEntry('书法', '书法', '#2D2D2D', '墨骨山河系列')
-            this.subjectEntry('地理', '地理', '#5B8C5A', '即将上线')
+            this.subjectEntry('地理', '地理', '#5B8C5A', '地理山河系列')
             this.subjectEntry('政治', '政治', '#3B82B0', '即将上线')
 
             // ── 临帖专区 ──────────────────────────────
@@ -228,7 +228,6 @@ struct Index {
             }
             .width('100%')
             .margin({ left: 20, right: 20 })
-            .padding({ left: 8, right: 8 })
             .padding({ left: 20, right: 20 })
           }
         }
