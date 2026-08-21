@@ -1,403 +1,404 @@
-# SPDT-004 产品线目录 v1.0
+# SPDT-004 产品线目录 v2.0
 
-> **版本**：v1.0（2026-08-21）
-> **目的**：把"逐步叠加开发"积累的产物，**结构化、可枚举、可复用**地描述清楚。
-> **依据**：willi 2026-08-21 决策——"先暂停，梳理一下产品线"
+> **版本**：v2.0（2026-08-21）
+> **基于**：v1.0 + willi 决策（精简产品线 / 明确"真产品 vs 中间产物" / 专注教育/备考功能性）
 > **配套**：[LAYERS.md](LAYERS.md) + [WINDOWS.md](WINDOWS.md) + [SPDT.yaml](SPDT.yaml)
-> **状态**：W22 治理梳理首发
+> **状态**：W22 治理精简首发
 
 ---
 
-## 0. 阅读指南
+## 0. 核心变更（vs v1.0）
 
-本文档回答 willi 提出的 6 个问题：
-1. 本管线生产内容是哪几类？
-2. 每类的输入是什么？是否有结构化模板？
-3. 每类产品输入时带什么参数？是否有缺省参数集合？
-4. 每类产品的开发管线复用哪些模块？
-5. 输出分几类，分别是什么？
-6. 各类输出的质量标准是什么？有无核对检验机制？
+v1.0 列出 9 大类产品，**v2.0 精简为 4 个真产品 + 3 个中间产物**：
 
-文档结构：
-- §1：产品大类总览（产品分类树）
-- §2：6 个问题的逐项回答
-- §3：9 个产品（P-001 ~ P-009）的详细规格表
-- §4：产品状态看板（截至 2026-08-21）
-- §5：演化规则（如何新增/弃用/升级产品）
+| 类型 | v1.0 (9 个) | v2.0 (4+3) | 变化 |
+|:---|:---|:---|:---|
+| **真产品** | 9 | **4** | 拿掉 2 + 降级 3 |
+| **中间产物** | 0 | **3** | 显式标"不算产品" |
+| **已废止** | 0 | **2** | 微剧本 + Skill 拿掉 |
+
+**核心原则**（willi 2026-08-21 决策）：
+- **真产品 = 用户直接消费**（4 个）
+- **中间产物 = 服务真产品**（3 个，不算"产品"）
+- **专注功能性**（准确 / 方便 / 体系 / 多平台），不追求"艺术性/感染力"
+- **避免定位漂移**：服务对象是"教育/备考"用户（学生），不是"写作者/创作者"
 
 ---
 
 ## 1. 产品大类总览
 
-SPDT-004 管线目前可生产 **9 大类产品**，按"内容形态"分类：
+### 1.1 真产品（4 个）
 
-| ID | 产品大类 | 已有产物 | 受众 | 主力阶段 |
-|:---|:---|:---|:---|:---|
-| **P-001** | 视频课件（manim + TTS） | 古史 v1-v3 + 墨骨山河 ep01/ep09 | K12 / 通识 | 2_structure → 3_render |
-| **P-002** | 电子书（HTML / EPUB / Markdown） | H-M1/H-M2/G-M1/P-M1 等 4 大模块 | K12 / 终身学习 | 2_structure → ebook_builder |
-| **P-003** | 知识卡片集合（v1.3 JSON） | 1039 张子卡（历史 379 + 地理 294 + 政治 366） | K12 / 复习速查 | 2_structure → KBC.card_maker |
-| **P-004** | 微剧本（micro_dramas.json） | 墨骨山河 ep01-ep09 规划 | K12 / 沉浸式学习 | 2_structure/TextExperience |
-| **P-005** | 知识链（古史知识链） | 古史 v1-v4 共 24+ 链 | K12 / 高考备考 | 2_structure/TextExperience |
-| **P-006** | 配置包（cafa_calligraphy_2026 等） | 3 个（书法 / 地理 / 政治） | 校考 / 高考 | 4_adapt/AdaptivePrepPlatform |
-| **P-007** | Skill 写作方案（5 段式 Markdown） | chain_A 三步骤 + 颜真卿范例 | 创作者 / 学生 | docs/04-Skills |
-| **P-008** | 视觉素材（草书辨析卡 + 碑帖图） | 草书辨析卡 v4（13 张） | 书法学习 | products/PT-039 |
-| **P-009** | 音频（MP3 / 广播剧） | 古史 v3 完整 4 集音频 | 通勤 / 沉浸式 | 3_render + TTS |
+| ID | 产品 | 价值主张 | 已产物 |
+|:---|:---|:---|:---|
+| **P-001** | 视频课件 | 知识可视化的标准载体 | 古史 v1/v3 + 墨骨山河 ep01/ep09 |
+| **P-002** | 知识卡片 | 高频接触的速查形态 | 1039 张子卡（历史/地理/政治） |
+| **P-003** | 电子书 | 完整知识体系的章节化呈现 | H-M1/H-M2/G-M1/P-M1 四大模块 |
+| **P-004** | 音频 | 通勤/沉浸式场景 | 古史 v3 完整 4 集音频 |
 
-```
-P-001 视频课件 ──┐
-P-002 电子书   ──┤
-P-003 知识卡片 ──┤
-P-004 微剧本   ──┼─→ 1_ingest 原材料
-P-005 知识链   ──┤
-P-006 配置包   ──┤   2_structure 剧本/卡片 (TextExperience)
-P-007 Skill   ──┤
-P-008 视觉素材 ──┤   3_render 视频/音频 (SPDT-KTE)
-P-009 音频    ──┘
-                 ↓
-                 4_adapt 编排消费 (AdaptivePrepPlatform)
-                 ↓
-                 5_deliver rujing APP
-```
+### 1.2 中间产物（3 个，不算"产品"）
+
+| ID | 中间产物 | 服务于 | 状态 |
+|:---|:---|:---|:---|
+| **M-001** | 知识链 | P-001 视频 + P-003 电子书的共享骨架 | 古史 v1-v4 |
+| **M-002** | 配置数据 | P-002 知识卡片在 APP 端的学科分组 | 3 个（cafa/geo/political） |
+| **M-003** | 视觉素材 | M-002 cafa 的子模块（草书辨析） | 13 张辨析卡 |
+
+### 1.3 已废止（2 个，v2.0 拿掉）
+
+| v1.0 ID | 产品 | 拿掉理由 | 处理方式 |
+|:---|:---|:---|:---|
+| v1.0-P-004 | 微剧本 | 没有"最终用户消费形态"，本质是 P-001 的输入剧本；8 集规划只生产 2 集，资源浪费 | 合并到 P-001 视频的"剧本子模块" |
+| v1.0-P-007 | Skill 方案 | 服务"写作者"超出"教育/备考"用户群；11 Skill + 3 Chain + 6 StylePack 维护成本高 | 整体拿掉，文档归档到 `docs/archive/` |
+
+### 1.4 ID 对照表（v1.0 → v2.0）
+
+| v1.0 ID | v2.0 ID | 变化 |
+|:---|:---|:---|
+| P-001 视频课件 | **P-001 视频课件** | 保留 |
+| P-002 电子书 | **P-003 电子书** | 重排（让位给高频的 P-002 知识卡片） |
+| P-003 知识卡片 | **P-002 知识卡片** | 重排（按使用频率升至第 2 位） |
+| P-004 微剧本 | ❌ 已废止 | 合并到 P-001 剧本子模块 |
+| P-005 知识链 | **M-001 知识链**（中间产物） | 降级 + 改编号 |
+| P-006 配置包 | **M-002 配置数据**（中间产物） | 降级 + 改名 + 改编号 |
+| P-007 Skill 方案 | ❌ 已废止 | 整体拿掉 |
+| P-008 视觉素材 | **M-003 视觉素材**（中间产物） | 降级 + 改编号 |
+| P-009 音频 | **P-004 音频** | 保留 |
 
 ---
 
-## 2. 6 个问题的回答
+## 2. 回答 willi 6 个问题（v2.0 版）
 
 ### 2.1 本管线生产内容是哪几类？
 
-**9 大类（P-001 ~ P-009）**，分类原则：
+**2 大类（4 真产品 + 3 中间产物）**。
 
-- **按内容形态分**（不是按"产品名"分，因为同一形态可服务多个学科）
-- **按"是否可独立消费"分**（独立可消费 vs 需嵌入其他产品）
-
-| 大类 | 独立消费？ | 依赖其他产品？ |
-|:---|:---:|:---|
-| P-001 视频课件 | ✅ 独立 | 依赖 P-005 知识链作为剧本 |
-| P-002 电子书 | ✅ 独立 | 可选依赖 P-003 卡片 |
-| P-003 知识卡片 | ✅ 独立 | 可独立消费 |
-| P-004 微剧本 | ⚠️ 半独立 | 需配合 P-001 视频或 P-007 Skill |
-| P-005 知识链 | ⚠️ 半独立 | 需配合 P-001 视频 |
-| P-006 配置包 | ✅ 独立 | 嵌入 rujing APP |
-| P-007 Skill | ✅ 独立 | 可独立消费 |
-| P-008 视觉素材 | ✅ 独立 | 可独立消费 |
-| P-009 音频 | ✅ 独立 | 可独立消费 |
+- **真产品** 是用户能直接消费的最终交付物
+- **中间产物** 是支持真产品生成的内部结构 / 数据 / 素材
 
 ### 2.2 每类的输入是什么？是否有结构化模板？
 
-每类产品都有**结构化输入模板**：
+#### 真产品（4 个）
 
-| 产品 | 输入类型 | 模板文件 | 模板状态 |
-|:---|:---|:---|:---:|
-| P-001 视频课件 | scene_v2 JSON 剧本 | `templates/scene_v2.template.json` | ✅ |
-| P-002 电子书 | 章节 Markdown + book_config.yaml | `D:/3_infra/ebook-builder/configs/book_config.template.yaml` | ✅ |
-| P-003 知识卡片 | 文本 / 对话记录 | `docs/04-Skills/card_schema.json` (v1.3) | ✅ |
-| P-004 微剧本 | 人物 + 事件 + 场景 | `2_structure/TextExperience/.../micro_dramas.json` 模板 | ✅ |
-| P-005 知识链 | 考纲 + 元信息 | `2_structure/TextExperience/古史_vX_*/meta.json` | ✅ |
-| P-006 配置包 | 学科 + 题型 + 知识条目 | `_03_subject_packs/<pack>/meta.json` | ✅ |
-| P-007 Skill 方案 | 卡片包 + Skill ID | `docs/04-Skills/SKILL_*.md` 模板 | ✅ |
-| P-008 视觉素材 | 原图 + 标签 | `products/PT-039/草书辨析卡/template.yaml` | ⚠️ 待补 |
-| P-009 音频 | 剧本 + voice_id | `templates/audio_spec.yaml` | ⚠️ 待补 |
+| 产品 | 输入 | 模板 |
+|:---|:---|:---|
+| P-001 视频 | scene_v2 JSON 剧本 | `templates/scene_v2.template.json` |
+| P-002 知识卡片 | 文本 / Q&A | `docs/04-Skills/card_schema.json` (v1.3) |
+| P-003 电子书 | 章节 Markdown + book_config.yaml | `D:/3_infra/ebook-builder/configs/book_config.template.yaml` |
+| P-004 音频 | 剧本旁白 + voice_id | `templates/audio_spec.yaml`（**W22 待补**） |
 
-### 2.3 每类产品输入时带什么参数？是否有缺省参数集合？
+#### 中间产物（3 个）
 
-每类产品定义**必填参数 + 可选参数 + 缺省值**。详细见 §3 各产品表。
+| 中间产物 | 输入 | 模板 |
+|:---|:---|:---|
+| M-001 知识链 | 考纲 + 时代范围 | `2_structure/TextExperience/古史_vX/meta.json` |
+| M-002 配置数据 | 学科 + 题型 + 知识条目 | `_03_subject_packs/<pack>/meta.json` |
+| M-003 视觉素材 | 碑帖图 + 草书片段 | `草书辨析卡/template.yaml`（**W22 待补**） |
 
-**总原则**：
-- 必填参数：缺少则产品无法生产
-- 可选参数：缺省时使用项目默认（每个产品有自己的 `default_config.yaml`）
-- 全局缺省：渲染精度、配色、字体等（用户在 `LAYERS.md §6` 提到 planned 的 rfc 模板中会集中管理）
+### 2.3 每类产品带什么参数？有缺省集合吗？
+
+**有**。每个产品定义**必填参数 + 可选参数 + 缺省值**：
+
+```
+真产品统一参数集（default_config.yaml）:
+  voice_id: "male-qn-qingse"        # TTS 默认音色
+  resolution: "1080P"               # 视频分辨率
+  theme: "serif"                    # 电子书排版
+  cover_path: "auto"                # 封面（自动生成）
+  font: "思源宋体"                  # 字体
+  output_format: "html"             # 电子书输出
+  exam_type: "gaokao"               # 考试类型（高考/校考）
+
+每个产品的特定参数详见 §3。
+```
 
 ### 2.4 每类产品的开发管线复用哪些模块？
 
-**5 阶段流水线 + 横向模块**：
+**v1.0 表格有误，v2.0 修正**——**不是所有产品都走全 5 阶段**。
 
-```
-                     P-001 P-002 P-003 P-004 P-005 P-006 P-007 P-008 P-009
-1_ingest 摄入          ●     ●     ●     ●     ●     ●     -     ●     -
-2_structure 结构化     ●     ●     ●     ●     ●     ●     ●     ●     ●
-3_render 渲染          ●     -     -     -     -     -     -     -     ●
-4_adapt 编排           -     -     -     -     -     ●     -     -     -
-5_deliver 触达         ●     ●     ●     ●     ●     ●     -     -     ●
+| 产品 | 实际走的阶段 | 关键复用 |
+|:---|:---|:---|
+| P-001 视频 | 1 → 2 → 3 → 5 | 知识链（M-001）/ PT-VFX / 3_render / 5_deliver |
+| P-002 知识卡片 | 1 → 2 → KBC → 5 | 1_ingest / knowledge_cards / KBC.card_maker / ru_cardpkg_convert |
+| P-003 电子书 | 1 → 2 → ebook_builder | 1_ingest / 2_structure / CMC.ebook_builder |
+| P-004 音频 | 2 → 3 | 2_structure / 3_render + TTS |
+| M-001 知识链 | 1 → 2 | 1_ingest / 2_structure/TextExperience |
+| M-002 配置数据 | 4 | 4_adapt 直接生成 |
+| M-003 视觉素材 | 3 | 3_render 直接出图 |
 
-横向模块（不依赖阶段）：
-  ● L0 知识卡片工具链（card_auditor / _validate_cards / ru_cardpkg_convert）
-  ● L0 质量审计（card_auditor.py）
-  ● L0 模板基础设施（templates/agent_templates/）
-  ● L1 OMAS Cell 集成（KBC.card_maker / CMC.ebook_builder / KCE.orchestrator）
-  ● L1 autoclaw_kit 协作工具（产线生产）
-  ● L2 Skill 系统（11 个 Skill + 3 Chain + 6 Style Pack）
-```
+**横向模块**（不依赖阶段）：
+- **L0 稳定层**（受 W_low 保护）：1_ingest / knowledge_cards / card_auditor / 模板基础设施
+- **L1 演化层**（默认 W_mid）：2_structure 已产物 / OMAS Cell 集成 / autoclaw_kit
+- **L2 实验层**（仅 W_high）：4_adapt 完整版（未投产）
 
-每个产品**默认走 L0/L1 模块**（受保护的稳定层），**不直接调 L2 实验代码**。
+**默认原则**：真产品走 L0/L1，**不直接调 L2 实验代码**。
 
 ### 2.5 输出分几类，分别是什么？
 
-**3 大类**：
+**3 大类**（同 v1.0）：
 
-#### A. 中间产物（可重建、有版本控制）
-- scene_v2 JSON（视频剧本）
-- 章节 Markdown（电子书）
-- CardPackage JSON（知识卡片）
-- micro_dramas.json（微剧本）
-- chain_meta.json（知识链元信息）
-- 配置包 meta.json
-- Skill 写作方案 Markdown
-- rujing CardPackage（消费端转换产物）
+| 输出类别 | 内容 | 用途 |
+|:---|:---|:---|
+| **A. 中间产物** | scene_v2 JSON / 章节 Markdown / CardPackage JSON / 知识链 meta.json / 配置数据 | 流水线节点产物，有版本控制 |
+| **B. 最终产物** | MP4 / MP3 / HTML / EPUB / CardPackage（含 rujing 上架） | **真产品交付物** |
+| **C. 元数据** | MANIFEST.yaml / audit_report.html / SPDT.yaml / 校考对照表 | 治理 + 审计 |
 
-#### B. 最终产物（交付给用户）
-- MP4 视频 / MP3 音频
-- HTML / EPUB / Markdown 电子书
-- 知识卡片 JSON（可被 rujing APP 消费）
-- micro_dramas 剧本
-- 知识链（带元信息）
-- 配置包 zip（含 meta/scripts/prompts）
-- 草书辨析卡（图片 + 文字描述）
+**B 是面向用户的真产品**，A 和 C 是内部支撑。
 
-#### C. 元数据（用于治理和审计）
-- MANIFEST.yaml（知识卡片全局索引）
-- audit_report.html（卡片质量审计）
-- SPDT.yaml（产品线注册）
-- _index_<日期>.md（项目周报）
-- chain_meta.article / chain_meta.self_test（链级自测）
-- 校考 / 高考 知识点对照表
+### 2.6 各类输出的质量标准？有无核对机制？
 
-### 2.6 各类输出的质量标准是什么？有无核对检验机制？
+#### 4 大质量维度（willi 决策：专注功能性）
 
-#### 已有质量标准（L0 工具支持）
+| 维度 | 含义 | 优先级 |
+|:---|:---|:---:|
+| **准确性** | 知识事实零错误 | 🔴 P0 |
+| **方便性** | 3 步内可消费 | 🟡 P1 |
+| **体系化** | 与上下游知识关联 | 🟡 P1 |
+| **多平台** | ≥2 端可消费 | 🟢 P2 |
 
-| 维度 | 标准 | 工具 | 状态 |
-|:---|:---|:---|:---:|
-| A. 格式合规 | 100% 必填字段 / 类型 / 枚举值 | `card_auditor.py` Layer 1 | ✅ |
-| B. 原子性 | back 字段不含复合因果 | `card_auditor.py` Layer 1 | ✅ |
-| C. 来源可信 | sources[] 非空 + 类型合法 | `card_auditor.py` Layer 2 | ✅ |
-| D. 材料完整 | materials 至少一层非空 | `card_auditor.py` Layer 2 | ✅ |
-| E. 语义可检索 | concepts[] 非空 + 语义相关 | `card_auditor.py` Layer 2 | ✅ |
+> **v1.0 的"帧率 / 字幕对齐 / 渲染时长偏差"是技术指标，不是用户价值指标。v2.0 改用 4 维度功能性指标。**
 
-**认证体系**：GOLD（≥95）/ SILVER（≥85）/ CERTIFIED（≥75）/ FAIL（<75）
+#### 分阶建设计划（willi 决策）
 
-#### 待建立质量标准（W22-W24 推进）
+**Phase A：准确性（W22-W23 优先）**
+- 扩展 `card_auditor.py` 覆盖 4 个真产品
+- 加准确性规则：知识事实校验、术语一致性、数据点交叉验证
+- 工具：`accuracy_auditor.py`（W22 起步）
 
-| 产品 | 待建立标准 | 计划工具 | 计划窗口 |
-|:---|:---|:---|:---:|
-| P-001 视频 | 帧率 / 字幕对齐 / 渲染时长偏差 | `video_qa.py` (planned) | W23 |
-| P-002 电子书 | 章节结构 / 交叉引用 / 排版一致性 | `ebook_qa.py` (planned) | W23 |
-| P-004 微剧本 | 场景完整度 / 人物一致性 / 时代考据 | `drama_qa.py` (planned) | W24 |
-| P-005 知识链 | 链长 / 节点连接 / 跨链引用 | `chain_qa.py` (planned) | W24 |
-| P-006 配置包 | schema 合规 / 题型覆盖 / 知识条目完整 | `pack_qa.py` (planned) | W24 |
-| P-007 Skill 方案 | 模板完整度 / 写作步骤覆盖 / 测试用例 | `skill_qa.py` (planned) | W23 |
-| P-008 视觉素材 | 图像清晰度 / 标签准确度 / 辨析深度 | `asset_qa.py` (planned) | W24 |
-| P-009 音频 | 音量一致性 / 角色音色区分 / 时长 | `audio_qa.py` (planned) | W24 |
+**Phase B：方便性 + 体系化（W24）**
+- 方便性：UX 流程审查 checklist
+- 体系化：跨链 / 跨书 / 跨学科引用校验
+- 工具：`ux_review_checklist.md` + `chain_qa.py`
 
-**核对检验机制**：
-- **L0 模块**：`tools/layer_lint.py` + `tools/layer_doc_sync.py` 自动化（已落地）
-- **L1 模块**：`card_auditor.py` + `ru_cardpkg_convert.py` 自动化（已落地）
-- **L2 模块**：`tools/window_check.py` + ISOLATION.md 人工（已落地）
+**Phase C：多平台（W25+）**
+- 部署清单：≥2 端可消费
+- 工具：`deployment_checklist.md`
+
+#### 现有核对机制（L0 已建）
+
+- `card_auditor.py` — 5 维度评分 + 认证体系（GOLD/SILVER/CERTIFIED）
+- `tools/layer_lint.py` — 跨层依赖检查
+- `tools/layer_doc_sync.py` — 文档与代码一致性
+- `tools/window_check.py` — 窗口与改动层匹配
 
 ---
 
-## 3. 9 个产品的详细规格
+## 3. 4 个真产品的详细规格
 
 ### P-001 · 视频课件
 
 | 项 | 内容 |
 |:---|:---|
-| 定位 | 教材知识 → 视频（manim 渲染 + TTS 配音） |
-| 输入 | scene_v2 JSON 剧本（来自 P-005 知识链） |
+| 定位 | 知识可视化的标准载体 |
+| 输入 | scene_v2 JSON 剧本（来自 M-001 知识链） |
 | 输入模板 | `templates/scene_v2.template.json` |
 | 必填参数 | `title` / `chain_id` / `scenes[]` |
-| 可选参数 | `voice_id` (default: `male-qn-qingse`) / `resolution` (default: `1080P`) / `bgm_path` |
-| 复用模块 | L0: 1_ingest（输入）/ L0: templates（scene_v2 模板）/ L1: 3_render/SPDT-KTE（编排）/ L1: PT-VFX（渲染） |
-| 输出 | MP4 视频 + 字幕 SRT + 场景元信息 |
-| 质量标准 | 帧率 24fps / 字幕 100% 对齐 / 渲染时长偏差 ±5% |
+| 可选参数 | `voice_id` (default: `male-qn-qingse`) / `resolution` (default: `1080P`) |
+| 5 阶段 | 1 → 2 → 3 → 5 |
+| 复用模块 | M-001 知识链 / L0: 模板 / L1: 3_render/SPDT-KTE / L1: PT-VFX |
+| 输出 | MP4 视频 + 字幕 SRT |
+| 质量标准 | 准确性（0 错误）/ 方便性（≤3 步打开）/ 体系化（链可溯）/ 多平台（≥2 端） |
 | 已产物 | 古史 v1（6 集）/ 古史 v3（4 集）/ 墨骨山河 ep01 / 墨骨山河 ep09 |
 
-### P-002 · 电子书
+### P-002 · 知识卡片
 
 | 项 | 内容 |
 |:---|:---|
-| 定位 | 章节 Markdown → HTML / EPUB / Markdown 整书 |
+| 定位 | 高频接触的速查形态 |
+| 输入 | 文本 / Q&A / 任意片段 |
+| 输入模板 | `docs/04-Skills/card_schema.json` (v1.3) |
+| 必填参数 | `card_id` / `title` / `back` / `card_type` / `domain` / `concepts[]` |
+| 可选参数 | `tags[]` / `sources[]` / `materials.*` |
+| 5 阶段 | 1 → 2 → KBC → 5 |
+| 复用模块 | L0: 1_ingest / L0: knowledge_cards / L0: card_auditor / L0: ru_cardpkg_convert / M-002 配置数据 |
+| 输出 | CardPackage JSON + 审计报告 + rujing 上架 |
+| 质量标准 | 准确性（5 维度 ≥75）/ 方便性（单卡 200 字内）/ 体系化（跨链引用）/ 多平台（rujing/Web/纸印） |
+| 已产物 | **1039 张子卡**（历史 379 + 地理 294 + 政治 366） |
+
+### P-003 · 电子书
+
+| 项 | 内容 |
+|:---|:---|
+| 定位 | 完整知识体系的章节化呈现 |
 | 输入 | 章节 Markdown + book_config.yaml |
 | 输入模板 | `D:/3_infra/ebook-builder/configs/book_config.template.yaml` |
 | 必填参数 | `title` / `author` / `chapters[]` |
-| 可选参数 | `format` (HTML/EPUB/MD, default: HTML) / `theme` (default: serif) / `cover_path` |
-| 复用模块 | L0: ebook_builder / L1: OMAS Cell (CMC.ebook_builder) / L1: 2_structure (章节源) |
-| 输出 | 整书 HTML / EPUB / Markdown + 元数据 |
-| 质量标准 | 章节完整 / 交叉引用准确 / 排版一致 |
+| 可选参数 | `format` (default: HTML) / `theme` (default: serif) / `cover_path` |
+| 5 阶段 | 1 → 2 → ebook_builder（**绕开 3/4/5**） |
+| 复用模块 | L0: ebook_builder / L1: OMAS Cell (CMC.ebook_builder) / M-001 知识链（骨架） |
+| 输出 | 整书 HTML / EPUB / Markdown |
+| 质量标准 | 准确性（章节无错）/ 方便性（章节 ≤10）/ 体系化（跨章引用）/ 多平台（HTML/EPUB/MD） |
 | 已产物 | H-M1 千年治乱 / H-M2 食货之道 / G-M1 阶梯山河 / P-M1 道路的选择 |
 
-### P-003 · 知识卡片
+### P-004 · 音频
 
 | 项 | 内容 |
 |:---|:---|
-| 定位 | 文本 / 对话记录 → v1.3 JSON 卡片集合 |
-| 输入 | 任意文本（AI 提炼）或结构化 Q&A |
-| 输入模板 | `docs/04-Skills/card_schema.json` (v1.3) |
-| 必填参数 | `card_id` / `title` / `back` / `card_type` / `domain` / `concepts[]` |
-| 可选参数 | `tags[]` / `sources[]` / `materials.{narrative,data,quotes,argument_framing}` |
-| 复用模块 | L0: 1_ingest（M0-M2）/ L0: knowledge_cards（存储）/ L0: card_auditor / L0: ru_cardpkg_convert |
-| 输出 | CardPackage JSON + 审计报告 HTML + rujing 上架文件 |
-| 质量标准 | 5 维度评分 ≥75（FAIL 0） + 91% SILVER+ |
-| 已产物 | 1039 张子卡（历史 379 + 地理 294 + 政治 366） |
+| 定位 | 通勤 / 沉浸式场景 |
+| 输入 | 剧本旁白 + voice_id 分配 |
+| 输入模板 | `templates/audio_spec.yaml`（**W22 待补**） |
+| 必填参数 | `script_path` / `voice_assignments{}` / `output_format` |
+| 可选参数 | `speed` (default: 1.0) / `volume` (default: 1.0) / `emotion` |
+| 5 阶段 | 2 → 3（**绕开 1/4/5**） |
+| 复用模块 | L0: TTS 工具 / L1: 3_render |
+| 输出 | MP3 音频 + 元数据 |
+| 质量标准 | 准确性（念读无误）/ 方便性（≤3 步播放）/ 体系化（章节标记）/ 多平台（MP3 流/下载） |
+| 已产物 | 古史 v3 共和新生（4 集完整，2 种音色对比） |
 
-### P-004 · 微剧本
+---
 
-| 项 | 内容 |
-|:---|:---|
-| 定位 | 人物 + 事件 + 场景 → 沉浸式微剧本（4 幕结构） |
-| 输入 | 人物档案 + 事件时间线 + 时代背景 |
-| 输入模板 | `micro_dramas.json`（每集一个） |
-| 必填参数 | `episode_id` / `title` / `main_character` / `time_period` / `act1-act4` |
-| 可选参数 | `narrative_style` (default: `popular-ming`) / `voice_assignments{}` |
-| 复用模块 | L0: 1_ingest（人物考据）/ L1: 2_structure/TextExperience（生产） |
-| 输出 | micro_dramas.json + 4 幕 Markdown + 配套音频 |
-| 质量标准 | 场景完整 / 人物一致 / 时代考据准确 |
-| 已产物 | 墨骨山河 ep01 颜真卿（完整）+ ep09 商鞅变法（完整）+ ep02-08 规划 |
+## 4. 3 个中间产物的详细规格
 
-### P-005 · 知识链
+### M-001 · 知识链
 
 | 项 | 内容 |
 |:---|:---|
-| 定位 | 考纲 → 链状知识结构（带元信息） |
-| 输入 | 考纲文件 + 时代范围 + 主题清单 |
+| 定位 | P-001 视频 + P-003 电子书的共享骨架 |
+| 输入 | 考纲 + 时代范围 + 主题清单 |
 | 输入模板 | `2_structure/TextExperience/古史_vX/meta.json` |
 | 必填参数 | `series` / `volume` / `time_span` / `episodes[]` / `main_line` |
 | 可选参数 | `cross_volume_links` / `target_students` / `chain_count_target` |
-| 复用模块 | L0: 1_ingest / L1: 2_structure/TextExperience / L1: 3_render |
+| 5 阶段 | 1 → 2（**不直接走 3/4/5**，作为真产品的输入） |
+| 复用模块 | L0: 1_ingest / L1: 2_structure/TextExperience |
 | 输出 | meta.json + 每集 scene_v2 JSON + 链级元信息 |
-| 质量标准 | 链长 18-25 / 节点连接 / 跨链引用 |
-| 已产物 | 古史 v1 革与鼎（6 集）/ v2 变与局 / v3 共和新生（4 集）/ v4 世界风云（meta 完整，6 集） |
+| 已产物 | 古史 v1 革与鼎（6 集）/ v2 变与局 / v3 共和新生（4 集）/ v4 世界风云（meta 完整） |
 
-### P-006 · 配置包
+### M-002 · 配置数据
 
 | 项 | 内容 |
 |:---|:---|
-| 定位 | 学科 + 题型 + 知识条目 → rujing 平台配置包 |
-| 输入 | 学科范围 + 题型清单 + 知识条目 JSON |
+| 定位 | P-002 知识卡片在 APP 端的学科分组 |
+| 输入 | 学科 + 题型 + 知识条目 |
 | 输入模板 | `_03_subject_packs/<pack>/meta.json` |
-| 必填参数 | `pack_id` / `subject` / `exam_type` / `question_types[]` / `config.total_score` |
-| 可选参数 | `activation.suggested_sequences[]` / `statistics.{knowledge_entries, star5_entries}` |
-| 复用模块 | L0: knowledge_cards（KB 来源）/ L0: ru_cardpkg_convert（转换）/ L1: 4_adapt（嵌入） |
-| 输出 | 配置包目录（含 meta / capability / knowledge / prompts / scripts） |
-| 质量标准 | schema 合规 / 题型覆盖完整 / 知识条目 ≥40 / star5 条目 ≥15 |
-| 已产物 | cafa_calligraphy_2026（书法校考）/ geo_shanhe_2026（地理）/ political_gaokao_2026（政治） |
+| 必填参数 | `pack_id` / `subject` / `exam_type` / `question_types[]` |
+| 可选参数 | `activation.suggested_sequences[]` / `statistics.*` |
+| 5 阶段 | 4（**只在 4_adapt 阶段使用**） |
+| 复用模块 | L0: knowledge_cards / L0: ru_cardpkg_convert / L1: 4_adapt |
+| 输出 | 配置包目录（含 meta/capability/knowledge/prompts/scripts） |
+| 已产物 | cafa_calligraphy_2026 / geo_shanhe_2026 / political_gaokao_2026 |
 
-### P-007 · Skill 写作方案
-
-| 项 | 内容 |
-|:---|:---|
-| 定位 | 卡片包 + Skill ID → 5 段式写作方案 Markdown |
-| 输入 | 卡片包（已分类）+ Skill 选择 |
-| 输入模板 | `docs/04-Skills/SKILL_*.md` (11 个 Skill 模板) + `chain_*.json` (4 条 Chain) |
-| 必填参数 | `skill_id` / `card_package_path` / `target_length` |
-| 可选参数 | `style_pack` (default: `cp-academic-pop`) / `chain_id` (用于 Chain 模式) |
-| 复用模块 | L0: card_auditor / L1: skill_selector.py / L1: skill_bridge.py / L2: Skill 系统（11 个） |
-| 输出 | 5 段式写作方案 Markdown（情境→事件→动机→反思→升华） |
-| 质量标准 | 模板完整 / 写作步骤覆盖 / 测试用例 ≥3 |
-| 已产物 | chain_A 三步骤（ep01_颜真卿 完整验证） |
-
-### P-008 · 视觉素材
+### M-003 · 视觉素材
 
 | 项 | 内容 |
 |:---|:---|
-| 定位 | 草书 / 碑帖 / 文字 → 视觉素材库 + 辨析卡 |
-| 输入 | 碑帖图片 + 草书片段 + 时代信息 |
-| 输入模板 | `草书辨析卡/template.yaml`（待补） |
+| 定位 | M-002 cafa 的子模块（草书辨析） |
+| 输入 | 碑帖图 + 草书片段 + 时代信息 |
+| 输入模板 | `草书辨析卡/template.yaml`（**W22 待补**） |
 | 必填参数 | `image_path` / `character_set[]` / `style_period` |
-| 可选参数 | `annotation_level` (default: `intermediate`) / `comparison_set[]` |
-| 复用模块 | L0: PT-039_CalligraphyVision（视觉库）/ L1: 2_structure（嵌入） |
+| 可选参数 | `annotation_level` (default: intermediate) / `comparison_set[]` |
+| 5 阶段 | 3（**只在 3_render 阶段生产**） |
+| 复用模块 | L0: PT-039_CalligraphyVision |
 | 输出 | 辨析卡 JSON / Markdown + 图像元数据 |
-| 质量标准 | 图像清晰 / 标签准确 / 辨析深度 ≥3 维度 |
 | 已产物 | 草书辨析卡 v4（13 张） |
-
-### P-009 · 音频
-
-| 项 | 内容 |
-|:---|:---|
-| 定位 | 剧本 + voice_id → MP3 音频（旁白 / 角色） |
-| 输入 | 剧本旁白 / 对话文本 + voice_id 分配 |
-| 输入模板 | `templates/audio_spec.yaml`（待补） |
-| 必填参数 | `script_path` / `voice_assignments{}` / `output_format` |
-| 可选参数 | `speed` (default: 1.0) / `volume` (default: 1.0) / `emotion` |
-| 复用模块 | L0: TTS 工具 / L1: 3_render（编排） |
-| 输出 | MP3 音频 + 元数据（时长 / 角色 / 章节） |
-| 质量标准 | 音量一致 / 角色音色区分 / 时长误差 ±3% |
-| 已产物 | 古史 v3 共和新生（4 集完整音频，2 种音色对比） |
 
 ---
 
-## 4. 产品状态看板（截至 2026-08-21）
+## 5. 产品状态看板（截至 2026-08-21）
 
-### 4.1 已成熟产品（≥3 个产物，状态稳定）
+### 5.1 真产品
 
 | 产品 | 状态 | 产物数 | 受众规模 |
 |:---|:---|:---:|:---|
-| P-003 知识卡片 | 🟢 稳定 | 1039 张 | 高考 3 学科 |
-| P-002 电子书 | 🟢 稳定 | 4 大模块 | K12 |
-| P-005 知识链 | 🟢 稳定 | 4 卷（v1-v4） | 高考历史 |
+| P-002 知识卡片 | 🟢 稳定 | 1039 张 | 高考 3 学科 |
+| P-003 电子书 | 🟢 稳定 | 4 大模块 | K12 |
 | P-001 视频课件 | 🟡 演化中 | 4 卷 + 2 集 | 高考 + 校考 |
-| P-009 音频 | 🟡 演化中 | 1 卷 4 集 | 通识 |
+| P-004 音频 | 🟡 演化中 | 1 卷 4 集 | 通识 |
 
-### 4.2 实验中产品（1-2 个产物，规则未冻结）
+### 5.2 中间产物
 
-| 产品 | 状态 | 产物数 | 风险 |
+| 中间产物 | 状态 | 产物数 | 备注 |
 |:---|:---|:---:|:---|
-| P-004 微剧本 | 🟡 实验 | 2 集（ep01/ep09） | 8 集规划未生产 |
-| P-006 配置包 | 🟡 实验 | 3 个（cafa/geo/political） | 校考 1 个跑通 |
-| P-007 Skill 方案 | 🟡 实验 | 1 个完整 chain_A | 10 个 Skill 待补 |
-| P-008 视觉素材 | 🟡 实验 | 13 张 | 待接入主产品 |
+| M-001 知识链 | 🟢 稳定 | 4 卷 | 服务 P-001/P-003 |
+| M-002 配置数据 | 🟡 演化中 | 3 个 | 服务 P-002 |
+| M-003 视觉素材 | 🟡 演化中 | 13 张 | 服务 M-002 cafa |
 
-### 4.3 待启动产品
+### 5.3 已废止
 
-（暂无——9 大类已覆盖当前需求）
+| v1.0 ID | 处理方式 | 时间 |
+|:---|:---|:---|
+| v1.0-P-004 微剧本 | 合并到 P-001 视频的"剧本子模块" | 2026-08-21 |
+| v1.0-P-007 Skill 方案 | 文档归档 `docs/archive/`，git tag `v1.0-final` | 2026-08-21 |
 
 ---
 
-## 5. 演化规则
+## 6. 演化规则
 
-### 5.1 新增产品
+### 6.1 新增真产品
 
-- 必须有：定位 / 输入 / 模板 / 必填参数 / 复用模块 / 输出 / 质量标准
-- 走 RFC 流程（哪怕新增 P-010 也需 willi 拍板）
-- 加入本目录 + SPDT.yaml
+- 必须满足"用户直接消费"
+- 必须有：定位 / 输入 / 模板 / 必填参数 / 复用模块 / 输出 / 质量标准（4 维度）
+- 走 RFC 流程 + willi 拍板
 - 默认 L1 / 实验性
 
-### 5.2 弃用产品
+### 6.2 降级真产品 → 中间产物
 
-- 标记为 `STATUS: deprecated`（保留文档）
+- 触发条件：发现"用户不直接消费，仅服务其他真产品"
+- 流程：v(N+1).0 重新分类 + ID 改名 + 文档迁移
+- 保留可溯源（ID 对照表）
+
+### 6.3 拿掉产品
+
+- 触发条件：长期无产物 / 资源浪费 / 定位漂移
+- 流程：v(N+1).0 标记"已废止" + 文档归档 `docs/archive/` + git tag
 - 6 个月内不复活则正式删除
 
-### 5.3 升级产品
+### 6.4 升级中间产物 → 真产品
 
-- L2 → L1：≥3 次成功 + 接口冻结 + 测试覆盖 ≥70%
-- L1 → L0：持续稳定 ≥3 个月 + willi 拍板
+- 触发条件：发现独立用户群 + 独立消费场景
+- 流程：v(N+1).0 重新分类 + ID 升级
 
-### 5.4 状态变迁
-
-```
-planned → prototype → stable → deprecated
-```
-
----
-
-## 6. 文件索引
+### 6.5 状态变迁
 
 ```
-PRODUCT_LINE.md                                    ← 本文件
-SPDT.yaml                                          ← 产品线注册
-LAYERS.md                                          ← 分层定义
-WINDOWS.md                                         ← 窗口节奏
-docs/governance/分层治理检查清单.md                ← 治理检查
-2_structure/TextExperience/古史_v*/meta.json       ← P-005 知识链输入
-4_adapt/.../_03_subject_packs/                     ← P-006 配置包
-docs/04-Skills/SKILL_*.md                          ← P-007 Skill 模板
-docs/04-Skills/card_schema.json                    ← P-003 卡片 Schema
-D:/4_data/knowledge_cards/00-项目文档/MANIFEST.yaml ← P-003 全局索引
+真产品:
+  prototype → stable → deprecated
+  
+中间产物:
+  draft → active → deprecated
 ```
 
 ---
 
-## 7. 版本历史
+## 7. 质量标准 4 维度（详表）
+
+| 维度 | 含义 | 度量 | 工具（分阶） | 阶段 |
+|:---|:---|:---|:---|:---:|
+| **准确性** | 知识事实零错误 | 5 维度评分 ≥75 | `card_auditor.py` + `accuracy_auditor.py`（待建） | A |
+| **方便性** | 3 步内可消费 | UX 流程审查 | `ux_review_checklist.md`（待建） | B |
+| **体系化** | 跨链/跨书/跨学科引用 | 引用完整度 | `chain_qa.py`（待建） | B |
+| **多平台** | ≥2 端可消费 | 部署清单 | `deployment_checklist.md`（待建） | C |
+
+**Phase A（W22-W23 优先）**：准确性
+**Phase B（W24）**：方便性 + 体系化
+**Phase C（W25+）**：多平台
+
+---
+
+## 8. 文件索引
+
+```
+PRODUCT_LINE.md                              ← 本文件
+SPDT.yaml                                    ← 产品线注册（v3.0）
+LAYERS.md                                    ← 分层定义
+WINDOWS.md                                   ← 窗口节奏
+docs/governance/分层治理检查清单.md          ← 治理检查
+docs/archive/                                ← 已废止产品归档（待建）
+
+P-001 视频：2_structure/TextExperience/古史_v*/
+P-002 卡片：docs/04-Skills/card_schema.json + D:/4_data/knowledge_cards/
+P-003 电子书：D:/3_infra/ebook-builder/
+P-004 音频：2_structure/TextExperience/古史_v3/audio/
+
+M-001 知识链：2_structure/TextExperience/古史_v*/
+M-002 配置数据：4_adapt/.../_03_subject_packs/
+M-003 视觉素材：products/PT-039_CalligraphyVision/草书辨析卡/
+```
+
+---
+
+## 9. 版本历史
 
 | 版本 | 日期 | 核心变更 |
 |:---|:---|:---|
+| v2.0 | 2026-08-21 | 精简：9 → 4 真产品 + 3 中间产物。拿掉 P-004 微剧本 + P-007 Skill。质量标准改为 4 维度功能性。5 阶段管线真实范围修正。新旧 ID 对照。 |
 | v1.0 | 2026-08-21 | 首发：9 大产品 + 6 个问题回答 + 详细规格表 + 状态看板 + 演化规则 |
