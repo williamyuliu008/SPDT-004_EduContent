@@ -1,0 +1,119 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://spdt-004.education/1_ingest/schemas/envelope.schema.json",
+  "title": "SPDT-004 1_ingest Envelope",
+  "description": "知识摄入层入口信封 v1.0（详见 ENVELOPE_SPEC.md）",
+  "type": "object",
+  "version": "1.0",
+  "required": [
+    "envelope_version",
+    "ingest_id",
+    "submitted_at",
+    "submitted_by",
+    "source_type",
+    "source_paths",
+    "priority",
+    "metadata"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "envelope_version": {
+      "type": "string",
+      "const": "1.0",
+      "description": "规范版本，当前固定 1.0"
+    },
+    "ingest_id": {
+      "type": "string",
+      "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+      "description": "全局唯一 UUIDv4"
+    },
+    "submitted_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "提交时间（ISO-8601，带时区）"
+    },
+    "submitted_by": {
+      "type": "string",
+      "enum": ["willi", "Mavis", "autoclaw"],
+      "description": "上游身份（W23+ 扩展 <spdt_id> 形式）"
+    },
+    "source_type": {
+      "type": "string",
+      "enum": [
+        "exam_syllabus",
+        "ancient_text",
+        "web",
+        "expert_notes",
+        "mixed"
+      ],
+      "description": "素材类型（详见 ENVELOPE_SPEC.md §3.3）"
+    },
+    "source_paths": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "description": "相对 envelope 目录的素材路径列表"
+    },
+    "priority": {
+      "type": "string",
+      "enum": ["P0", "P1", "P2", "P3"],
+      "description": "优先级（详见 ENVELOPE_SPEC.md §3.4）"
+    },
+    "metadata": {
+      "type": "object",
+      "required": ["domain", "exam_type"],
+      "additionalProperties": false,
+      "properties": {
+        "domain": {
+          "type": "string",
+          "minLength": 1,
+          "description": "学科领域（如：高考历史、书法校考）"
+        },
+        "exam_type": {
+          "type": "string",
+          "enum": ["gaokao", "cafa", "toefl", "ielts", "other"],
+          "description": "考试类型"
+        },
+        "expected_chains": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "期望生成的知识链（中间产物 M-001）"
+        },
+        "target_products": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "P-001 视频",
+              "P-002 知识卡片",
+              "P-003 电子书",
+              "P-004 音频"
+            ]
+          },
+          "description": "目标真产品（来自 PRODUCT_LINE.md v2.0）"
+        }
+      }
+    },
+    "callback": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "on_complete": {
+          "type": "string",
+          "format": "uri",
+          "description": "完成回调 URI（W23+ 支持）"
+        },
+        "on_failed": {
+          "type": "string",
+          "format": "uri",
+          "description": "失败回调 URI（W23+ 支持）"
+        }
+      }
+    }
+  }
+}

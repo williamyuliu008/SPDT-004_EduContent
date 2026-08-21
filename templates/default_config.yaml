@@ -1,0 +1,280 @@
+# SPDT-004 产品线统一缺省配置 v1.0
+# 详见 PRODUCT_LINE.md v2.0 §2.3
+#
+# 加载顺序:
+#   1. 本文件 (default)
+#   2. 产品级 default_config.yaml (override)
+#   3. 用户提交参数 (override override)
+#
+# 验证: python tools/config_validator.py templates/default_config.yaml
+
+version: 1.0
+last_updated: 2026-08-21
+scope: "所有 4 个真产品 (P-001 视频 / P-002 知识卡片 / P-003 电子书 / P-004 音频)"
+
+# ============================================================
+# 1. 全局参数（4 真产品共用）
+# ============================================================
+global:
+  # 国际化与本地化
+  locale: "zh-CN"
+  timezone: "Asia/Shanghai"
+
+  # 字体（思源宋体优先，平台字体 fallback）
+  font:
+    primary: "思源宋体"
+    fallback: ["思源黑体", "Microsoft YaHei", "PingFang SC", "sans-serif"]
+    mono: "JetBrains Mono"
+
+  # 配色（极简白品牌色）
+  theme:
+    primary: "#1A1A1A"
+    background: "#FAFAFA"
+    accent: "#0066CC"
+    warning: "#FF6600"
+    error: "#CC0000"
+
+  # 考试类型（影响术语和考点）
+  exam_type: "gaokao"  # gaokao | cafa | toefl | ielts | other
+
+  # 输出目录
+  output_root: "D:/4_data/output/deliverables/edu_content/"
+
+  # 日志
+  log_level: "INFO"  # DEBUG | INFO | WARNING | ERROR
+
+# ============================================================
+# 2. TTS 通用参数（视频 / 音频 共享）
+# ============================================================
+tts:
+  # 默认音色
+  default_voice_id: "male-qn-qingse"
+  # 备选音色
+  voice_alternatives:
+    female_young: "female-shaonv"
+    female_mature: "female-yujie"
+    male_young: "male-qn-jingying"
+    male_mature: "male-qn-qingse"
+    neutral: "neutral-calm"
+  # 默认参数
+  speed: 1.0          # [0.5, 2.0]
+  volume: 1.0         # [0.0, 10.0]
+  pitch: 0            # [-12, 12]
+  emotion: "neutral"  # happy | sad | angry | fearful | disgusted | surprised | neutral
+
+# ============================================================
+# 3. 渲染通用参数（视频 / 视觉素材 共享）
+# ============================================================
+render:
+  # 视频渲染
+  video:
+    resolution: "1080P"   # 720P | 1080P | 4K
+    fps: 24
+    codec: "h264"
+    bitrate: "5000k"
+    # 字幕
+    subtitle_format: "srt"
+    subtitle_font_size: 24
+    # BGM
+    bgm_default_volume: 0.3
+
+  # 图像渲染
+  image:
+    format: "png"
+    dpi: 300
+    color_mode: "RGB"
+
+  # 音频渲染
+  audio:
+    format: "mp3"
+    sample_rate: 44100   # 16000 | 24000 | 32000 | 44100
+    bitrate: 128000      # 32000 | 64000 | 128000 | 256000
+    channels: 2          # 1=mono, 2=stereo
+
+# ============================================================
+# 4. P-001 视频课件 特定参数
+# ============================================================
+P-001_视频:
+  # 输入
+  input:
+    chain_required: true           # 必须有 M-001 知识链
+    scene_template: "templates/scene_v2.template.json"
+
+  # 渲染
+  render:
+    manim_quality: "high_quality"  # low_quality | medium_quality | high_quality | 4k_quality
+    background_color: "#1A1A1A"
+    text_color: "#FFFFFF"
+    animation_duration: 1.0         # 默认动画时长（秒）
+
+  # 配音
+  voice:
+    narrator: "male-qn-qingse"
+    characters: []                  # 角色音色映射
+
+  # 输出
+  output:
+    format: "mp4"
+    include_subtitle: true
+    include_metadata: true
+    max_duration_minutes: 30        # 单集上限
+
+  # 质量标准（4 维度）
+  quality:
+    accuracy_required: true         # 0 错误
+    convenience_steps: 3            # 3 步内可消费
+    systematic_required: true       # 链可溯
+    multi_platform_min: 2           # ≥2 端
+
+# ============================================================
+# 5. P-002 知识卡片 特定参数
+# ============================================================
+P-002_知识卡片:
+  # 输入
+  input:
+    schema: "docs/04-Skills/card_schema.json"
+    schema_version: "1.3"
+    # card 长度限制
+    back_max_chars: 200              # 标准卡
+    exam_card_max_chars: 500         # 考试卡
+
+  # 字段必填
+  required_fields:
+    - "card_id"
+    - "title"
+    - "back"
+    - "card_type"
+    - "domain"
+    - "concepts"
+
+  # 字段可选
+  optional_fields:
+    - "tags"
+    - "sources"
+    - "materials"
+
+  # 认证标准（继承 card_auditor.py）
+  certification:
+    gold_min: 95
+    silver_min: 85
+    certified_min: 75
+    fail_max: 74
+
+  # 输出
+  output:
+    format: "json"
+    cardpackage_per_pack: true      # 一套一包
+    rujing_compatible: true         # 兼容 rujing APP
+
+  # 质量标准（4 维度）
+  quality:
+    accuracy_min_score: 75          # 5 维度评分 ≥75
+    convenience_max_chars: 200
+    systematic_min_chain_refs: 1    # 至少 1 个跨链引用
+    multi_platform: ["rujing", "web", "print"]
+
+# ============================================================
+# 6. P-003 电子书 特定参数
+# ============================================================
+P-003_电子书:
+  # 输入
+  input:
+    chapter_max_count: 20           # 单书最多 20 章
+    chapter_min_count: 3            # 最少 3 章
+    chapter_template: "templates/chapter.template.md"
+    book_config: "D:/3_infra/ebook-builder/configs/book_config.template.yaml"
+
+  # 排版
+  typography:
+    body_font: "思源宋体"
+    body_font_size: 14
+    line_height: 1.6
+    margin: "2cm"
+
+  # 输出
+  output:
+    formats: ["html", "epub", "markdown"]
+    default_format: "html"
+    include_cover: true
+    include_toc: true
+    include_index: true
+
+  # 质量标准（4 维度）
+  quality:
+    accuracy_required: true
+    convenience_max_chapters: 10
+    systematic_min_cross_refs: 5    # 至少 5 个跨章引用
+    multi_platform: ["html", "epub", "markdown"]
+
+# ============================================================
+# 7. P-004 音频 特定参数
+# ============================================================
+P-004_音频:
+  # 输入
+  input:
+    script_required: true           # 必须有脚本
+    voice_template: "templates/audio_spec.yaml"
+
+  # 配音
+  voice:
+    narrator: "male-qn-qingse"
+    character_voices: {}            # 角色音色映射
+
+  # 输出
+  output:
+    format: "mp3"
+    include_chapter_marks: true
+    include_metadata: true
+    max_duration_minutes: 60
+
+  # 质量标准（4 维度）
+  quality:
+    accuracy_required: true
+    convenience_max_steps: 3
+    systematic_min_chapter_marks: 1
+    multi_platform: ["mp3_stream", "mp3_download"]
+
+# ============================================================
+# 8. 派生参数（基于全局 + 产品参数计算）
+# ============================================================
+derived:
+  # 4 维度质量标准统一（4 真产品共用）
+  quality_dimensions:
+    accuracy:
+      weight: 0.40
+      min_score: 0.75
+      description: "知识事实零错误"
+    convenience:
+      weight: 0.25
+      max_steps: 3
+      description: "3 步内可消费"
+    systematic:
+      weight: 0.20
+      min_refs: 1
+      description: "与上下游知识关联"
+    multi_platform:
+      weight: 0.15
+      min_platforms: 2
+      description: "≥2 端可消费"
+
+  # 总分计算（4 维度加权）
+  total_score_formula: "accuracy * 0.40 + convenience * 0.25 + systematic * 0.20 + multi_platform * 0.15"
+  pass_threshold: 0.75
+
+# ============================================================
+# 9. 治理
+# ============================================================
+governance:
+  version: "1.0"
+  last_reviewed: "2026-08-21"
+  next_review: "2026-11-21"  # 季度评审
+  owner: "Mavis"
+  approval: "willi"
+
+  # 变更日志
+  changelog:
+    - version: "1.0"
+      date: "2026-08-21"
+      author: "Mavis"
+      change: "首发：4 真产品统一参数集（v2.0 §2.3 兑现）"
+      approved_by: "willi"

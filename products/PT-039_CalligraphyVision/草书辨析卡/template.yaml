@@ -1,0 +1,213 @@
+# SPDT-004 M-003 草书辨析卡 规格模板 v1.0
+# 详见 PRODUCT_LINE.md v2.0 §4 M-003
+#
+# 用法:
+#   1. 复制本文件为 <character>_<style>.yaml
+#   2. 填写必填字段（标 required: true）
+#   3. 验证: python tools/asset_qa.py <character>_<style>.yaml
+
+version: 1.0
+template_id: "grass_script_card"
+template_version: "1.0"
+last_updated: "2026-08-21"
+
+# ============================================================
+# 1. 元信息（必填）
+# ============================================================
+metadata:
+  card_id: ""                        # required: 全局唯一
+  title: ""                          # required: 卡片标题（如：草书"永"字辨析）
+  character: ""                      # required: 汉字（如：永）
+  pinyin: ""                         # required: 拼音
+  radical: ""                        # required: 部首
+  stroke_count: 0                    # required: 总笔画数
+  domain: "书法校考"                 # required
+  exam_type: "cafa"                  # required
+  difficulty: "intermediate"         # required: beginner | intermediate | advanced
+  author: "Mavis"                    # required
+  created_at: "ISO-8601"             # required
+
+# ============================================================
+# 2. 时代与风格（必填）
+# ============================================================
+style_period:
+  dynasty: ""                        # required: 朝代（如：晋/唐/宋/明/清）
+  era_detail: ""                     # optional: 具体时期（如：盛唐）
+  year_range:                        # optional
+    start: 0
+    end: 0
+  calligrapher: ""                   # required: 代表书法家
+  work_title: ""                     # required: 出处作品名
+  script_style: "草书"               # required: 草书 | 行草 | 今草 | 狂草
+
+# ============================================================
+# 3. 视觉资源（必填）
+# ============================================================
+image:
+  primary_image_path: ""             # required: 主图（碑帖扫描或高清照片）
+  comparison_set: []                 # optional: 对比图片列表
+  # 示例:
+  # - image_path: "images/永_王羲之.png"
+  #   calligrapher: "王羲之"
+  #   work_title: "兰亭序"
+  #   annotation: "标准草法"
+
+  # 图像元数据
+  image_metadata:
+    width: 0
+    height: 0
+    dpi: 300
+    color_mode: "RGB"
+
+# ============================================================
+# 4. 文字内容（必填）
+# ============================================================
+content:
+  # 楷书释文（必填）
+  kaishu_form: ""                    # required: 楷书写法
+
+  # 草书形态（必填）
+  caoshu_form: ""                    # required: 草书写法
+
+  # 演变说明
+  evolution_notes: ""                # required: 从篆/隶→楷→草的演变说明
+
+  # 辨析维度（≥3 维度）
+  analysis_dimensions: []            # required: 至少 3 个维度
+  # 示例:
+  # - dimension: "笔画简化"
+  #   description: "省略了原楷书的横、竖、点等次要笔画"
+  #   evidence: "对比永字楷书可见..."
+  # - dimension: "连带关系"
+  #   description: "点与横、横与竖之间形成连带"
+  #   evidence: "..."
+  # - dimension: "笔意连贯"
+  #   description: "上下笔之间气脉相通"
+  #   evidence: "..."
+
+  # 易错点（optional）
+  common_mistakes: []                # optional
+  # 示例:
+  # - mistake: "把草书的'永'误认为简体字'水'"
+  #   correction: "实际为'永'字的草书简写"
+  #   frequency: "高频"  # 高频 | 中频 | 低频
+
+# ============================================================
+# 5. 教学标注（必填）
+# ============================================================
+teaching:
+  # 释义
+  meaning: ""                        # required: 字义
+  etymology: ""                      # optional: 字源
+  usage_examples: []                 # optional: 用法例句
+  # 示例:
+  # - example: "永字八法"
+  #   context: "书法术语"
+  #   translation: "Eight Principles of Yong"
+
+  # 考试要点（针对 cafa）
+  exam_points: []                    # optional
+  # 示例:
+  # - point: "草书'永'与楷书'永'的对应关系"
+  #   question_type: "书体释文"
+  #   frequency: 3  # 1-5 整数
+
+# ============================================================
+# 6. 标签（必填）
+# ============================================================
+tags:
+  # 域标签
+  domain_tags:
+    - "#domain/书法"
+    - "#domain/校考"
+  # 内容标签
+  content_tags:
+    - "#content/草书"
+    - "#content/基础字"
+  # 风格标签
+  style_tags:
+    - "#script/草书"
+    - "#dynasty/晋"
+  # 难度标签
+  difficulty_tags:
+    - "#difficulty/intermediate"
+
+# ============================================================
+# 7. 来源（必填）
+# ============================================================
+sources:
+  # primary_source: 原始碑帖
+  - type: "primary_source"
+    reference: "兰亭序（神龙本）"
+    author: "王羲之"
+    year_range: "353"
+    location: "北京故宫博物院"
+    confidence: "high"               # high | medium | low
+
+  # reference_book: 参考书
+  - type: "reference_book"
+    reference: "《草书辨识》"
+    author: "XXX"
+    publisher: "XXX出版社"
+    year: 2010
+    confidence: "high"
+
+# ============================================================
+# 8. 输出（必填）
+# ============================================================
+output:
+  formats: ["json", "markdown"]
+  default_format: "markdown"
+  include_image: true
+  include_comparison: true
+  # 关联 rujing 配置
+  pack_binding: "cafa_calligraphy_2026"
+
+# ============================================================
+# 9. 质量标准（4 维度，必填）
+# ============================================================
+quality:
+  # 准确性
+  accuracy:
+    required: true
+    check_kaishu_caoshu_mapping: true  # 楷草对应
+    check_calligrapher_attribution: true  # 书法家归属
+    check_dynasty_accuracy: true       # 朝代准确
+    min_score: 0.85                    # 准确性评分 ≥85
+
+  # 方便性
+  convenience:
+    max_steps: 3
+    step1: "查看草书形态"
+    step2: "对比楷书"
+    step3: "读辨析说明"
+
+  # 体系化
+  systematic:
+    required: true
+    min_analysis_dimensions: 3         # 至少 3 个辨析维度
+    include_related_characters: true  # 包含相关字
+
+  # 多平台
+  multi_platform:
+    min_platforms: 2
+    platforms: ["rujing_card", "print_poster", "web_card"]
+    # rujing_card:  rujing APP 内卡片
+    # print_poster: 印刷海报
+    # web_card:     Web 卡片
+
+# ============================================================
+# 10. 治理
+# ============================================================
+governance:
+  version: "1.0"
+  last_reviewed: "2026-08-21"
+  owner: "Mavis"
+  approval: "willi"
+
+  changelog:
+    - version: "1.0"
+      date: "2026-08-21"
+      author: "Mavis"
+      change: "首发：M-003 草书辨析卡规格模板（PRODUCT_LINE.md v2.0 §2.2 兑现）"
+      approved_by: "willi"

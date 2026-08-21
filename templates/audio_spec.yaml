@@ -1,0 +1,149 @@
+# SPDT-004 P-004 音频规格模板 v1.0
+# 详见 PRODUCT_LINE.md v2.0 §3 P-004
+#
+# 用法:
+#   1. 复制本文件为 audio_spec.<project>.yaml
+#   2. 填写必填字段（标 required: true）
+#   3. 可选字段（标 required: false）用全局缺省
+#   4. 验证: python tools/audio_spec_validator.py audio_spec.<project>.yaml
+
+version: 1.0
+template_id: "audio_spec"
+template_version: "1.0"
+last_updated: "2026-08-21"
+
+# ============================================================
+# 1. 元信息（必填）
+# ============================================================
+metadata:
+  title: ""                          # required: 音频标题
+  series: ""                         # required: 系列名（如：古史_v3）
+  episode: 1                         # required: 第几集
+  domain: ""                         # required: 学科领域
+  exam_type: "gaokao"                # required: gaokao | cafa | other
+  description: ""                    # optional: 音频简介
+  author: "Mavis"                    # required
+  created_at: "ISO-8601"             # required
+
+# ============================================================
+# 2. 脚本（必填）
+# ============================================================
+script:
+  source_path: ""                    # required: 旁白脚本路径（Markdown 格式）
+  format: "markdown"                 # required: markdown | plain_text
+  encoding: "utf-8"
+  # 脚本章节标记
+  chapter_markers:
+    - chapter_id: "ep01"             # required
+      title: ""                      # required
+      start_paragraph: 1             # required: 起始段落
+      end_paragraph: 10              # required: 结束段落
+    - chapter_id: "ep02"
+      title: ""
+      start_paragraph: 11
+      end_paragraph: 20
+
+# ============================================================
+# 3. 配音（必填）
+# ============================================================
+voice:
+  # 旁白音色
+  narrator:
+    voice_id: "male-qn-qingse"       # required（详见 default_config.yaml）
+    speed: 1.0                       # [0.5, 2.0]
+    volume: 1.0                      # [0.0, 10.0]
+    pitch: 0                         # [-12, 12]
+    emotion: "neutral"               # happy | sad | angry | fearful | disgusted | surprised | neutral
+
+  # 角色音色映射（可选，用于多角色剧本）
+  characters: []
+  # 示例:
+  # - character_name: "颜真卿"
+  #   voice_id: "male-qn-jingying"
+  #   paragraphs: [5, 6, 7]           # 该角色对应的段落
+  # - character_name: "旁白"
+  #   voice_id: "male-qn-qingse"
+  #   paragraphs: [1, 2, 3, 4, 8, 9, 10]
+
+# ============================================================
+# 4. 音频规格（必填）
+# ============================================================
+audio:
+  format: "mp3"                      # required: mp3 | wav | pcm
+  sample_rate: 44100                 # required: 16000 | 24000 | 32000 | 44100
+  bitrate: 128000                    # required: 32000 | 64000 | 128000 | 256000
+  channels: 2                        # required: 1=mono, 2=stereo
+  max_duration_minutes: 60           # required: 单集上限
+
+  # BGM（可选）
+  bgm:
+    enabled: false
+    file_path: ""                    # BGM 文件路径
+    volume: 0.3                      # BGM 音量（叠加在配音之上）
+
+  # 章节标记（嵌入到音频元数据）
+  embed_chapter_marks: true
+  # ID3 标签
+  id3_tags:
+    title: ""                        # optional
+    artist: "SPDT-004"               # optional
+    album: ""                        # optional
+    genre: "Education"               # optional
+
+# ============================================================
+# 5. 输出（必填）
+# ============================================================
+output:
+  output_path: ""                    # required: 输出文件路径
+  include_metadata_json: true        # required: 是否同时输出元数据 JSON
+  include_chapter_list: true         # required: 是否输出章节列表
+
+# ============================================================
+# 6. 质量标准（4 维度，必填）
+# ============================================================
+quality:
+  # 准确性
+  accuracy:
+    required: true
+    # 校验项
+    check_pronunciation: true        # 念读无误
+    check_terminology: true          # 术语一致
+    min_score: 0.80                  # 准确性评分 ≥80
+
+  # 方便性
+  convenience:
+    max_steps: 3                     # 3 步内可消费
+    # 步骤定义
+    step1: "打开音频文件"
+    step2: "选择章节"
+    step3: "播放"
+
+  # 体系化
+  systematic:
+    required: true
+    min_chapter_marks: 1             # 至少 1 个章节标记
+    include_related_chains: true     # 包含相关知识链引用
+
+  # 多平台
+  multi_platform:
+    min_platforms: 2
+    platforms: ["mp3_stream", "mp3_download"]
+    # mp3_stream:  流式播放
+    # mp3_download: 下载到本地
+
+# ============================================================
+# 7. 治理
+# ============================================================
+governance:
+  version: "1.0"
+  last_reviewed: "2026-08-21"
+  owner: "Mavis"
+  approval: "willi"
+
+  # 变更日志
+  changelog:
+    - version: "1.0"
+      date: "2026-08-21"
+      author: "Mavis"
+      change: "首发：P-004 音频规格模板（PRODUCT_LINE.md v2.0 §2.2 兑现）"
+      approved_by: "willi"
