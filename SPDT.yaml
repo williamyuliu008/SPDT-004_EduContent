@@ -6,8 +6,13 @@ spdt_name: 自适应备考智能体产品线
 spdt_name_en: Adaptive Prep Intelligence Platform
 owner_agent: agent-e926h
 created: 2026-07-10
-version: 2.4
-last_updated: 2026-07-30
+version: 3.0
+last_updated: 2026-08-21
+layer_architecture_version: 1.0
+governance_docs:
+  layers: LAYERS.md
+  windows: WINDOWS.md
+  checklist: docs/governance/分层治理检查清单.md
 
 description: |
   「平台 + 课程」双轨交付模式；
@@ -62,15 +67,97 @@ pipeline:
       maturity: 0.6
 
 # =============================================================================
+# 分层架构（v3.0 核心变更，2026-08-21）
+# 详见 LAYERS.md + WINDOWS.md
+# =============================================================================
+layer_architecture:
+  version: v1.0
+  doc: LAYERS.md
+  window_doc: WINDOWS.md
+  layers:
+    L0_stable:
+      description: 已通过端到端验证、契约稳定、不预期大改
+      windows: [W_low]
+      examples: [1_ingest, knowledge_cards, 转换/推送工具链, 质量审计, templates]
+    L1_evolutionary:
+      description: 日常小迭代的模块，频繁有新内容/配置加入，但接口和契约稳定
+      windows: [W_mid, W_low]
+      examples: [CGM SOP, 2_structure 已产物, Skill 系统, autoclaw_kit, 治理文档]
+    L2_experimental:
+      description: 频繁变、正在搭、未来预期大改的模块
+      windows: [W_high]
+      examples: [4_adapt, 跨包联动, 古史_v4 扩产, 墨骨山河 ep02-08, ebook_builder Stage A, 新 Skill 探索]
+  upgrade_path: "L2 → L1 需 ≥3 次成功 + 接口冻结 + 测试覆盖 ≥70%；L1 → L0 需 willi 拍板 + 持续稳定 ≥3 个月"
+
+# =============================================================================
 # PDT / 内容包注册表
+# 注：每个 pdt 加 layer 字段（L0_stable / L1_evolutionary / L2_experimental）
 # =============================================================================
 pdt_list:
 
-  # ── 流水线阶段 ────────────────────────────────────────────────────────────
+  # ── L0 · 稳定层 ────────────────────────────────────────────────────────────
+
+  - pdt_id: IngestPipeline
+    name: IngestPipeline
+    name_zh: 知识摄入管线
+    layer_arch: L0_stable
+    layer: 1_ingest
+    role: 知识加工流水线入口——M0 入口判别 + M1 考纲解析 + M2 质量校准
+    directory: 1_ingest
+    status: active
+    registered: 2026-07-29
+    maturity: 0.8
+    stability_note: "M0-M2 端到端测试通过；schemas/config 稳定；受 W_low 保护"
+    change_window: W_low
+    note: "已实现 + 端到端测试通过；待接真 LLM"
+
+  - pdt_id: KnowledgeCardsToolchain
+    name: KnowledgeCardsToolchain
+    name_zh: 知识卡片工具链
+    layer_arch: L0_stable
+    layer: products
+    role: 卡片生产+审核+转换+推送工具链（card_auditor + ru_cardpkg_convert + _push_to_rujing）
+    directory: D:/4_data/knowledge_cards/_tools/
+    status: active
+    registered: 2026-08-20
+    maturity: 0.9
+    stability_note: "v6.0 转换工具 + 推送工具；6 链已 ship；受 W_low 保护"
+    change_window: W_low
+    note: "172 链 / 1039 子卡 / MANIFEST 闭环；手机联调在 W_low 进行"
+
+  - pdt_id: CardQualityAuditor
+    name: CardQualityAuditor
+    name_zh: 卡片质量审计
+    layer_arch: L0_stable
+    layer: quality
+    role: card_auditor.py 5 维度评分 + 认证体系（GOLD/SILVER/CERTIFIED）
+    directory: docs/04-Skills/SPDT-004_知识卡片_测试标准设计.md
+    status: active
+    registered: 2026-08-09
+    maturity: 0.9
+    stability_note: "T3 实测完成；均分 89.5/100；0 FAIL；91% SILVER+"
+    change_window: W_low
+    note: "测试标准 v0.4；T4 叙事审计待设计（在 L2）"
+
+  - pdt_id: AgentTemplates
+    name: AgentTemplates
+    name_zh: Agent 模板库
+    layer_arch: L0_stable
+    layer: templates
+    role: T1-T8 + M1 协作模板（早期产物，作为产线模板）
+    directory: templates/agent_templates/
+    status: active
+    registered: 2026-06-03
+    maturity: 0.7
+    stability_note: "早期产物，最近没动；作为产线模板被引用"
+    change_window: W_low
+
+  # ── L1 · 演化层 ────────────────────────────────────────────────────────────
 
   - pdt_id: TextExperience
     name: TextExperience
     name_zh: 文本体验内容生产
+    layer_arch: L1_evolutionary
     layer: 2_structure
     role: 主力生产模块——墨骨山河剧本 + 古史知识链的生产流水线
     directory: 2_structure/TextExperience
@@ -78,20 +165,22 @@ pdt_list:
     status: active
     registered: 2026-07-14
     maturity: 0.8
-    note: "主力生产模块；Git仓库独立管理；内容分发至 products/courses/；Ep01-08 剧本均已生成"
-    content_packages:
-      - 书法备考_墨骨山河（Ep01-09剧本）
-      - 历史备考_古史知识链（v1-v4，4卷）
+    stability_note: "已产物：古史 v1-v3 + 墨骨山河 ep01/ep09；待扩产：v4 + ep02-08（在 L2）"
+    change_window: W_mid
+    note: "通过 L0 (1_ingest) 接口消费；扩产部分走 L2"
 
   - pdt_id: SPDT-KTE
     name: KTE
     name_zh: 跨产品内容管线
+    layer_arch: L1_evolutionary
     layer: 3_render
     role: 剧本→场景→视频/音频/卡片的渲染编排（CGM方法论执行）
     directory: 3_render/SPDT-KTE
     status: active
     registered: 2026-07-16
     maturity: 0.7
+    stability_note: "渲染层外移至 D:/4_data/work/media/renders/；通过 L0 接口消费"
+    change_window: W_mid
     members:
       - TextExperience（内容工厂）
       - PT-VFX（视觉渲染引擎）
@@ -100,16 +189,104 @@ pdt_list:
   - pdt_id: PT-VFX
     name: VideoFactory
     name_zh: 视觉渲染引擎
+    layer_arch: L1_evolutionary
     layer: 3_render
     role: 视频/图像/音频渲染执行
     directory: 3_render/video_factory
     status: active
     registered: 2026-07-16
     maturity: 0.7
+    stability_note: "渲染代码外移，靠 5_deliver 间接验证"
+    change_window: W_mid
+
+  - pdt_id: AutoclawKit
+    name: AutoclawKit
+    name_zh: autoclaw 协作工具包
+    layer_arch: L1_evolutionary
+    layer: products
+    role: autoclaw 生产 AI + Mavis 本机管家的协作工具（5_templates + 6_example + 8_tools）
+    directory: D:/4_data/knowledge_cards/autoclaw_kit/
+    status: active
+    registered: 2026-08-20
+    maturity: 0.6
+    stability_note: "v1.0；产线协作机制还在迭代；MANIFEST.yaml 契约稳定"
+    change_window: W_mid
+
+  - pdt_id: SkillSystem
+    name: SkillSystem
+    name_zh: Skill 系统（叙事模板）
+    layer_arch: L1_evolutionary
+    layer: products
+    role: 11 个 Skill + 3 条 Chain + 6 个 Style Pack；hist-reversal 等 planned 状态在 L2
+    directory: docs/04-Skills/
+    status: active
+    registered: 2026-08-08
+    maturity: 0.6
+    stability_note: "chain_A 端到端验证；stable 1 / prototype 4 / planned 7"
+    change_window: W_mid
+
+  - pdt_id: TextExperienceAPP
+    name: TextExperienceAPP
+    name_zh: 文本体验APP开发平台
+    layer_arch: L1_evolutionary
+    layer: 5_deliver
+    role: 新学习方式交付终端——HarmonyOS APP（单APP：rujing）
+    directory: 5_deliver/TextExperienceAPP
+    status: active
+    registered: 2026-07-29
+    maturity: 0.6
+    app_count: 1
+    stability_note: "仅承载 rujing（国美书法备考APP）；其他 12 个 app 已迁至 SPDT-001_Harmony"
+    change_window: W_mid
+    note: "BUILD-SPDT.yaml v2.4 文档中 app_count 仍标 13，2026-07-30 已迁至 1，待 SPDT.yaml 同步（v3.0 修复）"
+
+  - pdt_id: PT-039
+    name: CalligraphyVision
+    name_zh: 书法视觉素材库
+    layer_arch: L1_evolutionary
+    layer: products
+    role: 书法碑帖素材提取 + 草书辨析卡 + 视觉本体库
+    directory: products/PT-039_CalligraphyVision
+    status: active
+    registered: 2026-07-21
+    maturity: 0.8
+    stability_note: "辨析卡 v4（13张）稳定；为 2_structure 和 5_deliver 提供视觉素材"
+    change_window: W_mid
+    note: "辨析卡v4（13张）存储于 products/courses/书法备考_墨骨山河/草书辨析卡/"
+
+  - pdt_id: CGMPipelineSOP
+    name: CGMPipelineSOP
+    name_zh: CGM 方法论 SOP
+    layer_arch: L1_evolutionary
+    layer: quality
+    role: CGM 约束型生成方法论文档
+    directory: docs/governance/CGMPipeline_CGM_SOP_v1.1.md
+    status: active
+    registered: 2026-07-19
+    maturity: 0.8
+    stability_note: "v1.0 → v1.1 已迭代；下次预计 v1.2"
+    change_window: W_mid
+
+  - pdt_id: OASMCellIntegration
+    name: OASMCellIntegration
+    name_zh: OMAS Cell 集成
+    layer_arch: L1_evolutionary
+    layer: products
+    role: KBC.card_maker + CMC.ebook_builder + KCE.ebook_orchestrator 三段式管线
+    directory: D:/6_agent_project/omas/
+    status: active
+    registered: 2026-08-09
+    maturity: 0.7
+    stability_note: "v1.0 三段式集成；接口在变但已注册"
+    change_window: W_mid
+    note: "ebook_builder Stage 2 端到端实测通过"
+
+  # ── L2 · 开发层（实验性）───────────────────────────────────────────────────
 
   - pdt_id: AdaptivePrepPlatform
     name: AdaptivePrepPlatform
     name_zh: 自适应备考编排平台
+    layer_arch: L2_experimental
     layer: 4_adapt
     role: |
       5 Agent 调度（Analyst/Architect/Visual/Coach/Conductor）
@@ -118,30 +295,93 @@ pdt_list:
     status: active
     registered: 2026-07-13
     maturity: 0.1
+    stability_note: "5 Agent 调度基本空壳；_06_mvp_pipeline 物理隔离；升级到 L1 需 ≥3 次成功"
+    change_window: W_high
     note: "BUILD-R+CGM融合；编排消费 2_structure 和 products/courses/ 内容；数据存储于 D:/4_data/education/AdaptivePrep/"
+    experimental_dependencies: [4_adapt/_06_mvp_pipeline, 4_adapt/_07_gaokao_volunteer, 4_adapt/_08_calligraphy_linting]
+    upgrade_requirements: "≥3 次成功 + 接口冻结 + 测试覆盖 ≥70% + 至少 1 个 L1 模块消费"
 
-  - pdt_id: TextExperienceAPP
-    name: TextExperienceAPP
-    name_zh: 文本体验APP开发平台
-    layer: 5_deliver
-    role: 新学习方式交付终端——HarmonyOS APP（单APP：rujing）
-    directory: 5_deliver/TextExperienceAPP
-    status: active
-    registered: 2026-07-29
-    maturity: 0.6
-    app_count: 1
-    note: "仅承载 rujing（国美书法备考APP）；gaokao-*/thinkkit-* 已迁移至 SPDT-001_Harmony/apps/（2026-07-30）"
+  - pdt_id: CrossPackLinkage
+    name: CrossPackLinkage
+    name_zh: 跨包联动引擎
+    layer_arch: L2_experimental
+    layer: 4_adapt
+    role: 历史/地理/政治 跨包场景（建党/长征 + 长江经济带 + 共同富裕）
+    directory: 4_adapt/AdaptivePrepPlatform/_04_cross_pack/
+    status: planned
+    registered: 2026-08-21
+    maturity: 0.0
+    stability_note: "完全空白，待建"
+    change_window: W_high
 
-  - pdt_id: PT-039
-    name: CalligraphyVision
-    name_zh: 书法视觉素材库
+  - pdt_id: AncientHistoryV4Expansion
+    name: AncientHistoryV4Expansion
+    name_zh: 古史_v4 内容扩产
+    layer_arch: L2_experimental
+    layer: 2_structure
+    role: 古史_v4（1914-2020）18 链扩产（meta.json 完整，待生产）
+    directory: 2_structure/TextExperience/古史_v4_世界风云/
+    status: planned
+    registered: 2026-08-21
+    maturity: 0.0
+    stability_note: "规划完整，缺生产"
+    change_window: W_high
+
+  - pdt_id: MogushanheEp02to08
+    name: MogushanheEp02to08
+    name_zh: 墨骨山河 ep02-08 扩产
+    layer_arch: L2_experimental
+    layer: 2_structure
+    role: 墨骨山河微剧本 ep02-08（王羲之/苏轼/阮元/张旭怀素/李斯/康有为/许慎）
+    directory: 2_structure/TextExperience/
+    status: planned
+    registered: 2026-08-21
+    maturity: 0.0
+    stability_note: "8 集规划完整，缺生产；ep01 模板可复用"
+    change_window: W_high
+
+  - pdt_id: EbookBuilderStageA
+    name: EbookBuilderStageA
+    name_zh: ebook_builder Stage A 改造
+    layer_arch: L2_experimental
     layer: products
-    role: 书法碑帖素材提取 + 草书辨析卡 + 视觉本体库
-    directory: products/PT-039_CalligraphyVision
-    status: active
-    registered: 2026-07-21
-    maturity: 0.8
-    note: 辨析卡v4（13张）存储于 products/courses/书法备考_墨骨山河/草书辨析卡/；为 2_structure 和 5_deliver 提供视觉素材
+    role: Stage A 替换为 card_maker（调用 SOP_知识卡片提炼）
+    directory: D:/3_infra/ebook-builder/
+    status: planned
+    registered: 2026-08-21
+    maturity: 0.0
+    stability_note: "设计完整，缺实施"
+    change_window: W_high
+
+  - pdt_id: SkillT4NarrativeAudit
+    name: SkillT4NarrativeAudit
+    name_zh: Skill T4 叙事审计
+    layer_arch: L2_experimental
+    layer: products
+    role: 叙事潜力 Layer 3 半自动评分（narrative_tag 自动分类已实现）
+    directory: docs/04-Skills/
+    status: in_progress
+    registered: 2026-08-21
+    maturity: 0.3
+    stability_note: "半自动叙事质量评分待设计"
+    change_window: W_high
+
+  - pdt_id: NewSkillExploration
+    name: NewSkillExploration
+    name_zh: 新 Skill 探索
+    layer_arch: L2_experimental
+    layer: products
+    role: hist-civilization-clash / hist-tech-reshapes / hist-idea-birth / hist-forgotten-many / hist-long-duration / hist-polyphonic（planned 状态）
+    directory: docs/04-Skills/
+    status: planned
+    registered: 2026-08-21
+    maturity: 0.0
+    stability_note: "完全规划中，缺 Skill 文档"
+    change_window: W_high
+
+  # ── 已迁移/独立产品线 ───────────────────────────────────────────────────────
+
+  # PT-030/PT-032 已移至独立 product 目录（2026-07-30 清理）
 
   # ── 独立产品线（不在 SPDT-004 内）──────────────────────────────
 
@@ -215,6 +455,17 @@ data_architecture:
 # 重大架构变更记录
 # =============================================================================
 architecture_changes:
+  - date: 2026-08-21
+    change: v3.0 分层架构 + 窗口治理
+    details:
+      - 引入 L0/L1/L2 三层 + W_low/W_mid/W_high 三窗口（详见 LAYERS.md + WINDOWS.md）
+      - 每个 pdt 加 layer_arch（L0_stable / L1_evolutionary / L2_experimental）
+      - 标识受保护的稳定模块（1_ingest / 知识卡片 / 转换推送工具链 / 质量审计 / Agent 模板）
+      - 标识演化层（CGM SOP / Skill 系统 / OMAS Cell 集成 / autoclaw_kit 等）
+      - 隔离开发层（4_adapt / 古史_v4 扩产 / 墨骨山河 ep02-08 / Stage A 改造等）
+      - 新增 L0 模块: IngestPipeline / KnowledgeCardsToolchain / CardQualityAuditor / AgentTemplates
+      - 新增 L2 模块: CrossPackLinkage / AncientHistoryV4Expansion / MogushanheEp02to08 / EbookBuilderStageA / SkillT4NarrativeAudit / NewSkillExploration
+      - 文档：LAYERS.md / WINDOWS.md / docs/governance/分层治理检查清单.md
   - date: 2026-07-30
     change: v2.4 目录结构优化
     details:
