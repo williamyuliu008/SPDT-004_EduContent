@@ -28,29 +28,86 @@
 
 ---
 
-## 2. 文件清单（截至 2026-08-21）
+## 2. 文件清单（截至 2026-08-21，全 29 个 .py）
 
-### 2.1 核心入口
+> 自动维护：`tools/layer_doc_sync.py` 校验本清单与实际目录是否一致
+> 校验通过状态：✅ 0 警告
+
+### 2.1 按类型分组
+
+#### 核心入口（3 个）
 - `main_pipeline.py` — 主流程入口
 - `launcher.py` — 启动器
 - `server.py` — 本地服务器
 
-### 2.2 卡片管理
-- `kb_all.json` — 知识库全集（快照）
-- `enhance_kb.py` / `enhance_quick.py` / `enhance_s010.py` / `enhance_s010_v2.py`
-- `batch_enhance.py` / `batch_enhance_v2.py` / `batch_enhance_v3.py`
-- `enhance_es_questions.py` / `enhance_all.py`
-- `analyze_kb.py` / `inspect_kb.py` / `verify_s010.py`
-- `check_all.py` / `check_enhance.py` / `check_enhanced.py` / `check_json.py` / `check_quotes.py`
-- `full_check.py` / `batch_fill_error_scripts.py`
-- `kb_all_inline.js` / `kb_browser.html` / `card_browser_generator.py`
+#### 卡片管理（18 个）
+- `analyze_kb.py` — 知识库分析
+- `inspect_kb.py` — 知识库检视
+- `verify_s010.py` — S010 验证
+- `enhance_kb.py` — 知识库增强入口
+- `enhance_quick.py` — 快速增强
+- `enhance_all.py` — 全部增强
+- `enhance_s010.py` — S010 专用增强 v1
+- `enhance_s010_v2.py` — S010 专用增强 v2
+- `enhance_es_questions.py` — 错题脚本增强
+- `batch_enhance.py` — 批量增强 v1
+- `batch_enhance_v2.py` — 批量增强 v2
+- `batch_enhance_v3.py` — 批量增强 v3
+- `batch_fill_error_scripts.py` — 批量填充错题脚本
+- `check_all.py` — 全部检查
+- `check_enhance.py` — 增强检查
+- `check_enhanced.py` — 增强后检查
+- `check_json.py` — JSON 检查
+- `check_quotes.py` — 引文检查
+- `full_check.py` — 完整检查
 
-### 2.3 LLM 与 API
-- `test_api.py` / `test_batch.py` / `test_llm.py` / `test_llm_quick.py`
-- `gui.html` / `gui.py`
+#### LLM 与 API（4 个）
+- `test_api.py` — API 测试
+- `test_batch.py` — 批量测试
+- `test_llm.py` — LLM 测试
+- `test_llm_quick.py` — LLM 快速测试
 
-### 2.4 杂项
-- `_temp_check.py` — 临时检查脚本（应清理）
+#### GUI（1 个）
+- `gui.py` — GUI 入口
+
+#### 隔离/治理（1 个）
+- `_experimental_marker.py` — L2 警告 marker（自动生成，**不要删除**）
+
+#### 临时/待清理（1 个）
+- `_temp_check.py` — ⚠️ 临时检查脚本，**计划 W22 清理**
+
+### 2.2 完整清单（28 个，不含 _experimental_marker.py）
+
+> 此节是 `tools/layer_doc_sync.py` 校验依据（正则 `^- \`xxx.py\``），保持完整
+
+- `analyze_kb.py`
+- `batch_enhance.py`
+- `batch_enhance_v2.py`
+- `batch_enhance_v3.py`
+- `batch_fill_error_scripts.py`
+- `check_all.py`
+- `check_enhance.py`
+- `check_enhanced.py`
+- `check_json.py`
+- `check_quotes.py`
+- `enhance_all.py`
+- `enhance_es_questions.py`
+- `enhance_kb.py`
+- `enhance_quick.py`
+- `enhance_s010.py`
+- `enhance_s010_v2.py`
+- `full_check.py`
+- `gui.py`
+- `inspect_kb.py`
+- `launcher.py`
+- `main_pipeline.py`
+- `server.py`
+- `test_api.py`
+- `test_batch.py`
+- `test_llm.py`
+- `test_llm_quick.py`
+- `verify_s010.py`
+- `_temp_check.py`
 
 ---
 
@@ -100,4 +157,5 @@
 
 | 日期 | 变更 | 作者 | 状态 |
 |:---|:---|:---|:---|
+| 2026-08-21 | 完善文件清单（自动验证：29 个 .py 全列） | Mavis | active |
 | 2026-08-21 | 创建本文件，标记 L2 隔离 | Mavis | active |

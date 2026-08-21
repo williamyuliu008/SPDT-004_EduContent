@@ -53,8 +53,10 @@ WINDOW_SCHEDULE = [
 # 分支名 → 强制 WINDOW（覆盖默认）
 BRANCH_WINDOW_OVERRIDE = {
     "main": "W_mid",          # main 分支只接受 W_mid 提交
+    "master": "W_mid",        # master 分支同 main 规则
     "release/*": "W_low",     # 发布分支只接受 W_low
     "experimental/*": "W_high",  # 实验分支允许 W_high
+    "feature/*": "W_high",    # feature 分支允许 W_high
 }
 
 # LAYER 推断（与 layer_lint.py 对齐）
