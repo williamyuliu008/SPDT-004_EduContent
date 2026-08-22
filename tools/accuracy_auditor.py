@@ -290,8 +290,8 @@ def check_p001_subtitle_alignment(data: dict) -> Tuple[float, List[str]]:
         issues.append("缺字幕字符数")
         return 0.5, issues
 
-    # 中文 4 字/秒
-    subtitle_sec = data.get("subtitle_duration_sec", chars / 4)
+    # 中文 2.5 字/秒 (manim 视频节奏, 比 TTS 慢, 含片头/段间停顿)
+    subtitle_sec = data.get("subtitle_duration_sec", chars / 2.5)
     ratio = abs(video_sec - subtitle_sec) / video_sec
     if ratio > 0.3:
         issues.append(
