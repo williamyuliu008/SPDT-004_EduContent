@@ -160,14 +160,61 @@ def check_data_cross_check(content: str) -> Tuple[float, List[str]]:
     return max(0.0, score), issues
 
 
-def check_source_citation(data: dict) -> Tuple[float, List[str]]:
-    """检测关键事实是否有来源"""
+def check_source_citation(data: dict, product: str = "P-002") -> Tuple[float, List[str]]:
+    """检测关键事实是否有来源
+
+    数据结构支持:
+      - 单卡 dict: 直接有 sources[]
+      - rujing CardPackage: 顶层有 node_cards[].sources[] / strategy_cards[].sources[]
+      - 章节 Markdown: 内容标记 [src: ...] 或 sources 列表
+
+    严格度按产品分级（v2.0 §2.6 4 维度）:
+      - P-002 知识卡片: 严（0 错容忍）
+      - P-001 视频: 中
+      - P-003 电子书: 中
+      - P-004 音频: 弱（叙事类，源可省）
+    """
     issues = []
-    sources = data.get("sources", [])
-    if not sources and not data.get("content_markdown"):
-        issues.append("缺少 sources[] 字段")
-    score = 1.0 if sources else 0.5
-    return score, issues
+    strict = product == "P-002"  # P-002 严
+    # 顶层 sources[]
+    top_sources = data.get("sources", [])
+
+    # node_cards / strategy_cards
+    card_sources_total = 0
+    card_sources_present = 0
+    for field in ["node_cards", "strategy_cards"]:
+        cards = data.get(field, [])
+        card_sources_total += len(cards)
+        for c in cards:
+            if c.get("sources") and len(c["sources"]) > 0:
+                card_sources_present += 1
+
+    # 判断
+    if top_sources:
+        return 1.0, []
+    if card_sources_total > 0:
+        if card_sources_present == card_sources_total:
+            return 1.0, []
+        # 部分缺失
+        missing = card_sources_total - card_sources_present
+        issues.append(f"card sources 覆盖率: {card_sources_present}/{card_sources_total}（缺 {missing} 张）")
+        score = card_sources_present / card_sources_total
+        return score, issues
+    # Markdown 内容
+    if data.get("content_markdown"):
+        md = data["content_markdown"]
+        if "[src:" in md or "参考：" in md or "来源：" in md:
+            return 1.0, []
+        if not strict:
+            # P-001/P-003/P-004 叙事/章节类不强求
+            return 1.0, []
+        issues.append("Markdown 内容未标注 [src: ...] 或 参考：/来源：")
+        return 0.5, issues
+    # 都没有
+    if not strict:
+        return 1.0, []
+    issues.append("缺少 sources[] 字段（无顶层 + 无卡片级）")
+    return 0.0, issues
 
 
 def check_fact_verification(data: dict) -> Tuple[float, List[str]]:
@@ -229,7 +276,7 @@ def audit_accuracy(product: str, input_path: Path) -> Dict:
         elif rule_name == "data_cross_check":
             s, issues = check_data_cross_check(content_str)
         elif rule_name == "source_citation":
-            s, issues = check_source_citation(data)
+            s, issues = check_source_citation(data, product=product)
         elif rule_name == "fact_verification":
             s, issues = check_fact_verification(data)
         elif rule_name == "card_atomicity" and product == "P-002":
