@@ -1,0 +1,104 @@
+#!/usr/bin/env python
+"""
+SPDT-004 pre-commit hook v1.0
+============================
+
+接入 L0 治理（详见 LAYERS.md + WINDOWS.md + 分层治理检查清单.md）
+
+运行时机: 每次 git commit 前
+运行工具:
+  - tools/layer_lint.py       (跨层依赖)
+  - tools/layer_doc_sync.py   (文档与代码一致性)
+  - tools/window_check.py     (窗口与改动层匹配)
+
+退出码:
+  0 = 全部通过
+  1 = 有错误（阻断 commit）
+
+使用方法:
+  # 一次性安装
+  python tools/install_hooks.py
+
+  # 或手动
+  git config core.hooksPath .githooks
+  chmod +x .githooks/pre-commit
+"""
+import io
+import subprocess
+import sys
+from pathlib import Path
+
+if sys.platform == "win32":
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
+
+# 仓库根（hooks 目录的上 2 级）
+REPO_ROOT = Path(__file__).resolve().parent.parent
+TOOLS_DIR = REPO_ROOT / "tools"
+
+
+def run_tool(name: str) -> tuple[bool, str]:
+    """跑一个 CI 工具，返回 (是否通过, 输出摘要)"""
+    tool_path = TOOLS_DIR / name
+    if not tool_path.exists():
+        return True, f"[SKIP] {name} 不存在（首次安装？tools 目录未初始化）"
+
+    try:
+        r = subprocess.run(
+            [sys.executable, str(tool_path)],
+            cwd=REPO_ROOT,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            timeout=60,
+        )
+        output = (r.stdout + r.stderr).strip()
+        # 取最后一行的"结果"作为摘要
+        lines = [l for l in output.split("\n") if l.strip()]
+        summary = lines[-1] if lines else "(no output)"
+        return (r.returncode == 0, summary)
+    except subprocess.TimeoutExpired:
+        return False, f"{name} 超时（> 60s）"
+    except Exception as e:
+        return False, f"{name} 错误: {e}"
+
+
+def main():
+    print("=" * 60)
+    print("SPDT-004 pre-commit hook")
+    print("=" * 60)
+    print(f"仓库根: {REPO_ROOT}")
+    print(f"工具: layer_lint / layer_doc_sync / window_check")
+    print()
+
+    tools = [
+        ("layer_lint.py", "跨层依赖检查"),
+        ("layer_doc_sync.py", "文档与代码一致性"),
+        ("window_check.py", "窗口与改动层匹配"),
+    ]
+
+    all_pass = True
+    for tool_name, desc in tools:
+        ok, summary = run_tool(tool_name)
+        mark = "[OK]" if ok else "[FAIL]"
+        print(f"{mark} {tool_name:25s} ({desc})")
+        print(f"    {summary}")
+        if not ok:
+            all_pass = False
+
+    print()
+    if all_pass:
+        print("[PASS] 全部 CI 工具通过，commit 放行")
+        return 0
+    else:
+        print("[BLOCK] CI 工具有错误，commit 被阻断")
+        print()
+        print("处置建议:")
+        print("  1. 看上面 FAIL 的工具，修复后重试")
+        print("  2. 或跑 `git commit --no-verify` 跳过（紧急情况，破窗规则见 WINDOWS.md §5.2）")
+        return 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())
