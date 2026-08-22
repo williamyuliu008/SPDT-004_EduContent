@@ -1,7 +1,11 @@
 # SPDT-004 EduContent
 # 渲染帧和共享素材体积大，排除
 
-3_render/
+# 3_render 历史子项目 (已迁到 D:\4_data\work\media\renders\)
+3_render/SPDT-KTE/
+3_render/video_factory
+
+# 共享数据
 shared/products/
 shared/PT-038_TextExperience/
 
@@ -19,3 +23,7 @@ venv/
 # System
 .DS_Store
 Thumbs.db
+
+# 3_render 渲染中间产物 (manim 输出)
+3_render/**/media/
+3_render/**/media/**
