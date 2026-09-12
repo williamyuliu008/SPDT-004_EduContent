@@ -199,6 +199,8 @@ def parse_docx(docx_path: Path, output_path: Path | None = None) -> dict:
         "total_paragraphs": len(paragraphs),
         "total_chars": len(full_text),
         "questions_detected": len(questions),
+        "text": full_text,  # 给 split_questions_v11 用的全文 (C1→C2 接口兼容)
+        "paragraphs": paragraphs,  # 段落结构
         "questions": results,
         "_v1_caveat": "v1.0 docx 基础解析. docx 文本干净, 选项/题号识别比 PDF 简单. 答案/解析留给 C3 双 LLM.",
         "_created": "2026-09-12 by 宇兄窗口 (PT-030 docx 解析器 v1.0)"
@@ -214,9 +216,13 @@ def parse_docx(docx_path: Path, output_path: Path | None = None) -> dict:
 
 
 def main():
+    # 强制 stdout UTF-8 (避免 gbk 编码失败)
+    import io
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+
     if len(sys.argv) < 2:
         print("用法:")
-        print("  python parse_docx_exam.py <docx_path>")
+        print("  python parse_docx_exam.py <docx_path> [<output_path>]")
         print("  python parse_docx_exam.py --batch <dir_path>")
         return
 
@@ -227,17 +233,24 @@ def main():
         print(f"批量处理: {len(docxs)} 个 docx")
         for docx in docxs:
             try:
-                result = parse_docx(docx)
+                # 写文件到同目录 _raw.json
+                out = docx.parent / f"{docx.stem}_raw.json"
+                result = parse_docx(docx, out)
                 if "error" in result:
                     print(f"  ERROR: {docx.name}: {result['error']}")
                 else:
                     opt_n = sum(1 for q in result["questions"] if q["options"])
-                    print(f"  ✓ {docx.name[:40]}: {result['questions_detected']} 题, {opt_n} 有选项")
+                    print(f"  [OK] {docx.name[:40]}: {result['questions_detected']} 题, {opt_n} 有选项")
             except Exception as e:
                 print(f"  ERROR: {docx.name}: {e}")
     else:
         docx_path = Path(arg)
-        result = parse_docx(docx_path)
+        # 第二个参数是 output_path (可选)
+        if len(sys.argv) >= 3 and not sys.argv[2].startswith("-"):
+            output_path = Path(sys.argv[2])
+        else:
+            output_path = docx_path.parent / f"{docx_path.stem}_raw.json"
+        result = parse_docx(docx_path, output_path)
         if "error" in result:
             print(f"ERROR: {result['error']}")
             sys.exit(1)

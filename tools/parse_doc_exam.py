@@ -173,6 +173,7 @@ def parse_doc(doc_path: Path, output_path: Path | None = None) -> dict:
         "extract_seconds": round(elapsed, 1),
         "total_chars": len(full_text),
         "questions_detected": len(questions),
+        "text": full_text,  # 给 split_questions_v11 用的全文 (C1→C2 接口兼容)
         "questions": results,
         "_v1_caveat": "v1.0 .doc 老试卷解析 (1990-2017 上海高考历史). Word COM 慢 (~3-5s/文件), 但精度高. 答案/解析留给 C3.",
         "_created": "2026-09-12 by 宇兄窗口 (PT-030 .doc 解析器 v1.0)"
@@ -194,7 +195,7 @@ def main():
 
     if len(sys.argv) < 2:
         print("用法:")
-        print("  python parse_doc_exam.py <doc_path>")
+        print("  python parse_doc_exam.py <doc_path> [<output_path>]")
         print("  python parse_doc_exam.py --batch <dir_path>")
         return
 
@@ -205,7 +206,9 @@ def main():
         print(f"批量处理: {len(docs)} 个 .doc")
         for i, doc in enumerate(docs, 1):
             try:
-                result = parse_doc(doc)
+                # 写文件到同目录 _raw.json
+                out = doc.parent / f"{doc.stem}_raw.json"
+                result = parse_doc(doc, out)
                 if "error" in result:
                     print(f"  [{i}/{len(docs)}] ERROR: {doc.name}: {result['error']}")
                 else:
@@ -215,7 +218,12 @@ def main():
                 print(f"  [{i}/{len(docs)}] ERROR: {doc.name}: {e}")
     else:
         doc_path = Path(arg)
-        result = parse_doc(doc_path)
+        # 第二个参数是 output_path (可选)
+        if len(sys.argv) >= 3 and not sys.argv[2].startswith("-"):
+            output_path = Path(sys.argv[2])
+        else:
+            output_path = doc_path.parent / f"{doc_path.stem}_raw.json"
+        result = parse_doc(doc_path, output_path)
         if "error" in result:
             print(f"ERROR: {result['error']}")
             sys.exit(1)

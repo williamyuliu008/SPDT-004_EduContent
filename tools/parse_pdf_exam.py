@@ -124,7 +124,7 @@ def parse_pdf(pdf_path: Path, output_path: Path | None = None) -> dict:
 def main():
     if len(sys.argv) < 2:
         print("用法:")
-        print("  python parse_pdf_exam.py <pdf_path>")
+        print("  python parse_pdf_exam.py <pdf_path> [<output_path>]")
         print("  python parse_pdf_exam.py --batch <dir_path>")
         print("")
         print("示例:")
@@ -138,12 +138,19 @@ def main():
         print(f"批量处理: {len(pdfs)} 个 PDF")
         for pdf in pdfs:
             try:
-                parse_pdf(pdf)
+                # 写文件到同目录 _raw.json
+                out = pdf.parent / f"{pdf.stem}_raw.json"
+                parse_pdf(pdf, out)
             except Exception as e:
                 print(f"  ERROR: {pdf.name}: {e}")
     else:
         pdf_path = Path(arg)
-        result = parse_pdf(pdf_path)
+        # 第二个参数是 output_path (可选)
+        if len(sys.argv) >= 3 and not sys.argv[2].startswith("-"):
+            output_path = Path(sys.argv[2])
+        else:
+            output_path = pdf_path.parent / f"{pdf_path.stem}_raw.json"
+        result = parse_pdf(pdf_path, output_path)
         if "error" in result:
             print(f"ERROR: {result['error']}")
             sys.exit(1)
