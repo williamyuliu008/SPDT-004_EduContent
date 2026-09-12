@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>验收 · {{ concept.title }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="page-header">
+    <a href="/browse?chain={{ concept.chain_id }}" class="back-link">← 返回</a>
+    <h1>✍️ 验收模式</h1>
+    <p class="subtitle">{{ concept.title }}</p>
+  </header>
+
+  <main class="verify-layout">
+    <section class="definition-card">
+      <h2>📖 定义</h2>
+      <p>{{ concept.definition }}</p>
+    </section>
+
+    <section class="explanation-card">
+      <h2>💡 深度解释</h2>
+      <p>{{ concept.deep_explanation }}</p>
+    </section>
+
+    <section class="verify-card">
+      <h2>🎯 填空验证</h2>
+      <p class="prompt">{{ concept.verification.prompt }}</p>
+      <form id="verify-form">
+        <textarea id="user-input" rows="3" placeholder="请填写..."></textarea>
+        <button type="submit">提交</button>
+      </form>
+      <div id="result"></div>
+      <details class="misconception-detail">
+        <summary>⚠️ 易混淆辨析</summary>
+        <p>{{ concept.misconception }}</p>
+      </details>
+      <p class="expected" data-expected="{{ concept.verification.expected }}">参考答案: <code>{{ concept.verification.expected }}</code></p>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>浏览模式 · 4 步法训练系统</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="page-header">
+    <a href="/" class="back-link">← 返回</a>
+    <h1>浏览模式</h1>
+    <p class="subtitle">按 chain 树状浏览 3 库</p>
+  </header>
+
+  <main class="browse-layout">
+    <aside class="sidebar">
+      <h3>Chain 列表</h3>
+      <ul class="chain-list">
+        <li><a href="/browse" {% if not current_chain %}class="active"{% endif %}>全部</a></li>
+        {% for chain in chains %}
+        <li><a href="/browse?chain={{ chain }}" {% if current_chain == chain %}class="active"{% endif %}>{{ chain }}</a></li>
+        {% endfor %}
+      </ul>
+    </aside>
+
+    <section class="main-content">
+      <h2>概念库 ({{ cards.concepts|length }})</h2>
+      <div class="card-grid">
+        {% for c in cards.concepts %}
+          {% if not current_chain or c.chain_id == current_chain %}
+          <a href="/verify?id={{ c.id|urlencode }}" class="info-card">
+            <h4>{{ c.title }}</h4>
+            <p class="meta">{{ c.chain_id }} · {{ c.difficulty }} · {{ c.frequency }}</p>
+            <p class="definition">{{ c.definition[:80] }}{% if c.definition|length > 80 %}...{% endif %}</p>
+          </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <h2>母题库 ({{ cards.parent_problems|length }})</h2>
+      <div class="card-grid">
+        {% for pp in cards.parent_problems %}
+          {% if not current_chain or pp.chain_id == current_chain %}
+          <a href="/learn/{{ pp.id }}" class="info-card highlight">
+            <h4>{{ pp.title }}</h4>
+            <p class="meta">{{ pp.chain_id }} · {{ pp.difficulty }} · {{ pp.frequency }}</p>
+            <p class="method">方法: {{ pp.method_tag }}</p>
+            <p class="goal">求证: {{ pp.goal[:50] }}{% if pp.goal|length > 50 %}...{% endif %}</p>
+          </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <h2>变形库 ({{ cards.variants|length }})</h2>
+      <div class="card-grid">
+        {% for v in cards.variants %}
+          {% if not current_chain or v.chain_id == current_chain %}
+          <div class="info-card subtle">
+            <h4>{{ v.title }}</h4>
+            <p class="meta">{{ v.parent_id }} · {{ v.change_dimension }}</p>
+            <p class="trigger">触发: {{ v.trigger_condition[:60] }}{% if v.trigger_condition|length > 60 %}...{% endif %}</p>
+          </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </section>
+  </main>
+</body>
+</html>

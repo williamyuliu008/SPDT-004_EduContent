@@ -1,0 +1,114 @@
+/* 4 步法训练系统 MVP · 极简白 + 思源宋体 */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", serif;
+  background: #FAFAFA;
+  color: #1a1a1a;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+header.hero, header.page-header {
+  background: #FFFFFF;
+  padding: 48px 24px 32px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+header.page-header { text-align: left; padding: 32px 24px; }
+h1 { font-size: 28px; font-weight: 600; margin-bottom: 8px; }
+.subtitle { color: #666; font-size: 14px; }
+.back-link { color: #999; text-decoration: none; font-size: 14px; display: inline-block; margin-bottom: 12px; }
+.back-link:hover { color: #1a1a1a; }
+
+main { max-width: 1200px; margin: 0 auto; padding: 32px 24px; }
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin: 16px 0 32px;
+}
+
+.feature-card, .info-card, .variant-card {
+  background: #FFFFFF;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 20px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s;
+  display: block;
+}
+.feature-card:hover, .info-card:hover {
+  border-color: #1a1a1a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.feature-icon { font-size: 32px; margin-bottom: 8px; }
+.feature-card h2, .info-card h4 { margin-bottom: 8px; }
+.info-card.highlight { border-left: 4px solid #1a1a1a; }
+.info-card.subtle { background: #F5F5F5; }
+.definition, .goal, .method, .trigger { color: #555; font-size: 14px; margin: 4px 0; }
+.meta { color: #999; font-size: 12px; }
+
+.browse-layout { display: grid; grid-template-columns: 240px 1fr; gap: 24px; }
+@media (max-width: 768px) { .browse-layout { grid-template-columns: 1fr; } }
+.sidebar { background: #fff; border: 1px solid #eee; border-radius: 8px; padding: 20px; height: fit-content; }
+.chain-list { list-style: none; margin-top: 12px; }
+.chain-list li a {
+  display: block; padding: 8px 12px; color: #555; text-decoration: none; border-radius: 4px;
+  font-size: 13px; word-break: break-all;
+}
+.chain-list li a:hover { background: #F5F5F5; }
+.chain-list li a.active { background: #1a1a1a; color: #fff; }
+
+.main-content h2 { margin: 32px 0 16px; font-size: 20px; }
+
+.learn-layout { max-width: 900px; }
+.pp-card, .variant-card, .verify-card, .definition-card, .explanation-card {
+  background: #fff; border: 1px solid #eee; border-radius: 8px; padding: 24px; margin-bottom: 20px;
+}
+.variant-card { border-left: 4px solid #f0f0f0; }
+.goal-box, .method-box {
+  background: #FAFAFA; padding: 12px; border-radius: 4px; margin: 12px 0; font-size: 15px;
+}
+.method-tag {
+  display: inline-block; background: #1a1a1a; color: #fff; padding: 2px 8px;
+  border-radius: 4px; font-size: 12px; margin-left: 8px;
+}
+.meta-row { margin: 16px 0; display: flex; gap: 8px; flex-wrap: wrap; }
+.tag { background: #F5F5F5; padding: 4px 12px; border-radius: 4px; font-size: 12px; color: #666; }
+
+details { margin-top: 12px; }
+details summary {
+  cursor: pointer; padding: 8px 0; color: #1a1a1a; font-weight: 500;
+  list-style: none; user-select: none;
+}
+details summary::before { content: "▶ "; font-size: 10px; }
+details[open] summary::before { content: "▼ "; }
+details ol, details ul { padding-left: 24px; margin: 8px 0; }
+details li { margin: 6px 0; color: #444; }
+
+.verify-card textarea {
+  width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px;
+  font-family: inherit; font-size: 15px; margin: 12px 0; resize: vertical;
+}
+.verify-card button {
+  background: #1a1a1a; color: #fff; padding: 10px 24px; border: none;
+  border-radius: 4px; cursor: pointer; font-family: inherit; font-size: 14px;
+}
+.verify-card button:hover { background: #333; }
+#result { margin-top: 12px; padding: 12px; border-radius: 4px; display: none; }
+#result.correct { background: #f0f9f4; color: #1a7f37; display: block; }
+#result.wrong { background: #fef2f2; color: #b91c1c; display: block; }
+.expected { margin-top: 12px; color: #999; font-size: 13px; }
+.expected code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; color: #333; }
+.change-dim code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 12px; }
+
+.info { background: #fff; border: 1px solid #eee; border-radius: 8px; padding: 24px; margin: 32px 0; }
+.info ul { padding-left: 24px; margin: 12px 0; }
+.info li { margin: 4px 0; }
+.note { color: #999; font-style: italic; margin-top: 12px; font-size: 14px; }
+
+footer { text-align: center; padding: 32px; color: #999; font-size: 12px; }

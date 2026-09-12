@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>学习流 · {{ pp.title }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="page-header">
+    <a href="/browse?chain={{ pp.chain_id }}" class="back-link">← 返回 {{ pp.chain_id }}</a>
+    <h1>{{ pp.title }}</h1>
+    <p class="subtitle">{{ pp.graph_bg }}</p>
+  </header>
+
+  <main class="learn-layout">
+    <section class="pp-card">
+      <h2>📌 母题</h2>
+      <div class="goal-box">
+        <strong>求证：</strong> {{ pp.goal }}
+      </div>
+      <div class="method-box">
+        <strong>核心方法：</strong> {{ pp.core_method }}
+        <span class="method-tag">{{ pp.method_tag }}</span>
+      </div>
+
+      <details class="solution">
+        <summary>📖 显示标准步骤（5-8 步）</summary>
+        <ol>
+          {% for step in pp.standard_steps %}
+          <li>{{ step }}</li>
+          {% endfor %}
+        </ol>
+      </details>
+
+      <div class="meta-row">
+        <span class="tag">难度: {{ pp.difficulty }}</span>
+        <span class="tag">考频: {{ pp.frequency }}</span>
+        <span class="tag">方法: {{ pp.method_tag }}</span>
+      </div>
+
+      <details class="mistakes">
+        <summary>⚠️ {{ pp.common_mistakes|length }} 个常见错误</summary>
+        <ul>
+          {% for m in pp.common_mistakes %}
+          <li>{{ m }}</li>
+          {% endfor %}
+        </ul>
+      </details>
+    </section>
+
+    <section class="variants">
+      <h2>🔀 变形训练（{{ variants|length }} 个）</h2>
+      {% for v in variants %}
+      <div class="variant-card">
+        <h3>{{ v.title }}</h3>
+        <p class="change-dim">变化维度: <code>{{ v.change_dimension }}</code></p>
+        <div class="trigger">
+          <strong>触发条件：</strong> {{ v.trigger_condition }}
+        </div>
+        <details class="hint">
+          <summary>💡 第一步提示（先尝试再展开）</summary>
+          <p>{{ v.first_step_hint }}</p>
+        </details>
+      </div>
+      {% endfor %}
+    </section>
+  </main>
+</body>
+</html>

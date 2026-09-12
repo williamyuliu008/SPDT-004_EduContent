@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4 步法训练系统 · MVP</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="hero">
+    <h1>4 步法训练系统</h1>
+    <p class="subtitle">概念 → 母题 → 变形 → 综合（v1.0 覆盖前 3 步）</p>
+  </header>
+
+  <main class="container">
+    <section class="card-grid">
+      <a href="/browse" class="feature-card">
+        <div class="feature-icon">📚</div>
+        <h2>浏览模式</h2>
+        <p>按 chain 树状浏览 3 库（概念/母题/变形）</p>
+      </a>
+      <a href="/browse?chain=math/M-V3-01-线面平行" class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h2>开始训练</h2>
+        <p>线面平行：5 母题 + 3 变形示范</p>
+      </a>
+      <a href="/verify/concept_立体几何_线面平行判定定理" class="feature-card">
+        <div class="feature-icon">✍️</div>
+        <h2>验收模式</h2>
+        <p>填空验证概念记忆</p>
+      </a>
+    </section>
+
+    <section class="info">
+      <h3>W3 MVP 范围</h3>
+      <ul>
+        <li>✅ 3 库浏览：5 母题 + 21 概念 + 15 变形</li>
+        <li>✅ 1 条学习流：母题 → 3 变形</li>
+        <li>✅ 验收模式：概念填空</li>
+        <li>✅ 5 数学 chain：线面平行/线面垂直/空间角/空间距离/体积</li>
+      </ul>
+      <p class="note">下一轮：W4 内测 + 反馈迭代 + v1.0 发布</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>SPDT-004 4 步法训练 MVP · v1.0 · Flask + 极简 HTML/CSS/JS</p>
+  </footer>
+</body>
+</html>
