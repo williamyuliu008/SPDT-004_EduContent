@@ -102,8 +102,11 @@ def cmd_pipeline(src: Path):
     print(f"\n[math_pipeline] ✅ 完成: {split}")
 
 
-def cmd_batch(dir_path: Path):
-    """批量: 解析目录下所有 docx/doc/pdf"""
+def cmd_batch(dir_path: Path, force: bool = False):
+    """批量: 解析目录下所有 docx/doc/pdf
+    默认跳过已有 split (避免同名不同扩展名覆盖)
+    加 --force 强制重跑
+    """
     if not dir_path.exists():
         print(f"ERROR: 目录不存在 {dir_path}", file=sys.stderr)
         sys.exit(1)
@@ -111,14 +114,42 @@ def cmd_batch(dir_path: Path):
     for ext in ["*.pdf", "*.docx", "*.doc"]:
         files.extend(dir_path.rglob(ext))
     print(f"\n[math_pipeline] 批量: 找到 {len(files)} 个文件 (pdf/docx/doc)")
-    ok, fail = 0, 0
+
+    # 优先 docx/pdf (识别率高), doc 最后
+    priority = {".docx": 0, ".pdf": 1, ".doc": 2}
+    files.sort(key=lambda p: (priority.get(p.suffix.lower(), 9), p.name))
+
+    ok, fail, skip = 0, 0, 0
+    seen_stems = set()  # 同一 stem 只跑一个, 默认 docx 优先
     for f in files:
+        stem = f.stem
+        # 同 stem 已跑过 (docx 优先), 跳过 doc
+        if not force and stem in seen_stems:
+            print(f"\n[math_pipeline] 跳过 (同 stem 已跑): {f.name}")
+            skip += 1
+            continue
+        seen_stems.add(stem)
+
+        # 已有 split 且 total_questions > 0 跳过 (除非 force)
+        if not force:
+            existing_split = SPLIT_DIR / f"{stem}_split_v11.json"
+            if existing_split.exists():
+                try:
+                    import json
+                    d = json.loads(existing_split.read_text(encoding="utf-8"))
+                    if d.get("total_questions", 0) > 0:
+                        print(f"\n[math_pipeline] 跳过 (已有有效 split): {f.name}")
+                        skip += 1
+                        continue
+                except Exception:
+                    pass
+
         try:
             cmd_pipeline(f)
             ok += 1
         except SystemExit:
             fail += 1
-    print(f"\n[math_pipeline] 批量结果: {ok} 成功, {fail} 失败")
+    print(f"\n[math_pipeline] 批量结果: {ok} 成功, {skip} 跳过, {fail} 失败")
 
 
 def main():
@@ -131,7 +162,8 @@ def main():
         if idx + 1 >= len(sys.argv):
             print("ERROR: --batch 缺目录", file=sys.stderr)
             sys.exit(1)
-        cmd_batch(Path(sys.argv[idx + 1]))
+        force = "--force" in sys.argv
+        cmd_batch(Path(sys.argv[idx + 1]), force=force)
     elif "--parse-only" in sys.argv:
         idx = sys.argv.index("--parse-only")
         if idx + 1 >= len(sys.argv):
