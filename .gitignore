@@ -15,6 +15,17 @@ __pycache__/
 .venv/
 venv/
 
+# PT-030 toolkit 本地配置 (含 API key, 不入共同仓)
+# config.yaml.example 入仓, 真实 config.yaml 本地用
+tools/pt030_toolkit/config.yaml
+tools/pt030_toolkit/*.local.yaml
+
+# PT-030 真题解析产物 (raw/split JSON 大, 不入仓, 本地用)
+PT-030/zhenti/*/raw/
+PT-030/zhenti/*/split/
+PT-030/zhenti/*/llm_gen/
+PT-030/zhenti/*/reviewed/
+
 # Media cache
 *.mp4
 *.mp3
