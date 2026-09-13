@@ -1,0 +1,21 @@
+{
+  "card_id": "strategy_math_001",
+  "chain_id": "math_strategy_graphing",
+  "schema_version": "v1.0",
+  "SOP": "1. 把代数式画成图 → 2. 标关键点 (交点/极值/零点) → 3. 从图读答案 → 4. 代数验证",
+  "验收标准": "能独立用数形结合解 3 道二次函数题 (含最值/解集/参数范围)",
+
+  "source_type": "学科方法论",
+  "source_ref": "上海高中数学教材 + 高考 5 年真题 + 王后雄学案",
+  "original_problem_id": "pp_001, pp_006, pp_011",
+  "problem_statement": "求函数 f(x) = -x² + 2x + 3 在 [-1, 4] 上的最大值和最小值",
+  "given_conditions": "适用: 二次函数/分式函数/根式/三角函数/绝对值; 题型: 求最值/解集/参数范围/零点个数",
+  "figure_description": "二次函数抛物线 + 顶点 + 零点 + 区间端点标注",
+  "figure_ref": "D:/4_data/knowledge_cards/数学/4step/figures/pp_001.svg",
+  "figure_type": "svg",
+  "intuition": "图象是代数的'翻译' —— 几何直观比纯代数推导快 3-5 倍, 高考 5 分钟解出",
+  "thinking_path": "1. 画抛物线 (开口朝下) → 2. 求顶点 (-1, 4), 零点 (-1, 3) → 3. 标区间 [-1, 4] → 4. 顶点 y=4, 端点 f(-1)=0, f(4)=-5 → 5. 结论: max=4 (顶点), min=-5 (x=4)",
+  "key_insight": "数形结合 = 把抽象代数变直观几何, 解题路径从'算'变'看'",
+
+  "display_target": ["RUJING", "学习中心"]
+}

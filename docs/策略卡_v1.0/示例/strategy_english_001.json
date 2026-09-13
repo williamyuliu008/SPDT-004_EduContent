@@ -1,0 +1,21 @@
+{
+  "card_id": "strategy_english_001",
+  "chain_id": "english_strategy_reading",
+  "schema_version": "v1.0",
+  "SOP": "1. 扫读题干, 标关键词 (NOT/EXCEPT/infer) → 2. 定位段落 (顺序/同义替换原则) → 3. 排除干扰项 (反向/部分正确) → 4. 选最直接答案",
+  "验收标准": "能独立用本策略解 4 道高考英语阅读理解细节题/推理题 (正确率 85%+)",
+
+  "source_type": "学科方法论",
+  "source_ref": "上海高考英语真题 + 5 年上海卷阅读理解统计 + 高三英语教学经验",
+  "original_problem_id": "english_reading_001, english_reading_002",
+  "problem_statement": "According to the passage, which of the following is TRUE about the 5G network? (NOT/EXCEPT 题: 选错误项)",
+  "given_conditions": "适用: 高考英语阅读 (说明文/议论文); 题型: 细节题/推理题/词义猜测/主旨大意; 题量 4-5 篇 15-20 题",
+  "figure_description": "",
+  "figure_ref": "",
+  "figure_type": "",
+  "intuition": "英语阅读 = 信息定位 + 同义替换 —— 答案不在原文中, 在'同义替换'后的句子里",
+  "thinking_path": "1. 读题干标 NOT/EXCEPT → 2. 找定位词 (人名/数字/专有名词) → 3. 回到原文定位段 → 4. 比对 4 个选项, 排除 3 个含反向/部分正确/未提及的 → 5. 选唯一正确的",
+  "key_insight": "细节题 = 同义替换 (正确) vs 反向/部分/未提及 (干扰); NOT 题 = 选反向/部分的那个",
+
+  "display_target": ["RUJING", "学习中心"]
+}
