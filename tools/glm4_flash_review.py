@@ -94,6 +94,7 @@ def call_glm4_flash(question: dict, subject: str, api_key: str) -> dict:
             messages=[{"role": "user", "content": prompt}],
             temperature=0.3,
             max_tokens=2000,
+            timeout=20,  # 单题 20s 超时 (雪薇端加, 避免某题 LLM 卡死)
         )
         content = response.choices[0].message.content
 
