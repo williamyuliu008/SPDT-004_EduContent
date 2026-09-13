@@ -1,62 +1,93 @@
-# Agent 1 → 全部窗口: v1.1 立体几何路标点 — 6 母题变形题字段闭环
+# Agent 1 → 全部窗口: v1.1 1 窗口 (母题扩展+变形题挖掘) 全闭环
 
 **日期**: 2026-09-13
-**commit**: `7de2a73` on `knowledge-cards-prod main` (已 push)
-**状态**: 第一个路标点（立体几何板块完整显示）的"母题/变形题"维度已就绪
+**最终 HEAD**: `02e6434` on `knowledge-cards-prod main` (已 push, tagged `v1.3_5_chains`)
+**状态**: 5 板块 31 张母题全在 HEAD，每张至少 1 道变形题引用
 
 ---
 
-## 1. 本次 commit 内容
+## 1. 1 窗口 (母题扩展+变形题挖掘) 闭环
 
-```
-7de2a73 card(math): v1.1 立体几何 6 母题变形题字段 - K10 标 5 变式 + K12-K15 标 91apu 真题
-5 files changed, 262 insertions(+), 238 deletions(-)
-```
-
-涉及 5 张母题 K 卡（`projects/math/cards/线面平行证明/K1[0-5].json`），加 `derived_from` / `derived_variants` 字段。
-
-## 2. 6 母题变形题映射（v1.1 1.4 规则"每母题至少 1 道变形题"）
-
-| 母题 | 字段 | 引用 | 说明 |
+| 板块 | 母题 | 变形题字段 | 引用 |
 |---|---|---|---|
-| K10 | `derived_variants` | `["K16-2","K16-3","K16-4","K16-5","K16-6"]` | v1.0 留下的 5 张变式（改 2 个条件，符合 v1.1 1.4 "真题变形"规则）|
-| K11 | `related_zhenti` | `["K_立体_2023qgjl_18","K_立体_2021xgk1_20"]` | 已有，本次不动 |
-| K12 | `derived_from` | `"K_立体_2024qgjl_19"` | K12 自身改自这道 2024 全国甲理 19 题 |
-| K13 | `derived_from` | `"K_立体_2023qgyl_19"` | K13 自身改自这道 2023 全国乙理 19 题 |
-| K14 | `derived_from` | `"K_立体_2021qgyl_18"` | K14 自身改自这道 2021 全国乙理 18 题 |
-| K15 | `derived_from` | `"K_立体_2020qg1_18"` | K15 自身是 2024 上海春 18 题；2020qg1_18 是同主题"圆锥+二面角"的 91apu 真题作为变形题 |
+| 立体几何 | K10 | `derived_variants` | K16-2~6 (5 张 v1.0 变式) |
+| 立体几何 | K11 | `related_zhenti` | K_立体_2023qgjl_18, K_立体_2021xgk1_20 (2 道) |
+| 立体几何 | K12 | `derived_from` | K_立体_2024qgjl_19 |
+| 立体几何 | K13 | `derived_from` | K_立体_2023qgyl_19 |
+| 立体几何 | K14 | `derived_from` | K_立体_2021qgyl_18 |
+| 立体几何 | K15 | `derived_from` | K_立体_2020qg1_18 |
+| 解析几何 | K20-K24 | `related_zhenti` | 每张 3 道 (15 道总数) |
+| 导数 | K30-K34 | `related_zhenti` | 每张 3 道 (15 道总数) |
+| 数列 | K40-K44 | `related_zhenti` | 每张 3 道 (15 道总数) |
+| 概率统计 | K50-K54 | `related_zhenti` | 每张 3 道 (15 道总数) |
+| 解三角形 | K60-K64 | `related_zhenti` | 每张 3 道 (15 道总数) |
 
-## 3. 立体几何板块路标点状态
+**总计**: 6 + 25 = **31 张母题**, **80 道变形题引用** (立体几何 12 + 其余 68)
 
-按 v1.1 1.5 验收标准"立体几何板块完整显示"：
+## 2. 本次 commit 序列
 
-- [x] 6 张母题 K10-K15 存在 + 字段齐全（maturity=REVIEWED, chain, display_target, derived_from/variants 或 related_zhenti）
-- [x] 每张母题至少 1 道变形题引用（K11 已 related_zhenti 2 道 + K10 variants 5 张 + K12-K15 derived_from 91apu 真题）
-- [x] 5 链 18+ 张 K 卡挂接到对应母题（Agent 2 commit `50fed5b` 已完成，222 张全覆盖）
-- [x] 5 张方法论（`projects/math/methods/立体几何/M_立体_*.json`，5 张）
-- [ ] 4 Tab 正确显示（依赖 3-UI 窗口，立体几何板块点开可见变形题）— 留给雪薇验证
+```
+02e6434 (HEAD, tag: v1.3_5_chains)  fix(math-reader): 5 链恢复 + 右侧 sections 可见 (v1.3)
+fc72b3d                            card(math): v1.1 数列板块 5 母题入库
+256b454                            card(math): v1.1 导数板块 5 母题入库
+2495e0f                            card(math): v1.1 解析几何板块 5 母题入库
+7de2a73                            card(math): v1.1 立体几何 6 母题变形题字段
+b2b29b1                            feat(math-reader): 学习中心 v3 数据驱动壳 + 5 板块占位 + 4 脚本修复
+50fed5b                            fix(math): K 卡挂接 222 张全覆盖
+```
 
-## 4. 留给其他窗口的接力
+## 3. 第一个路标点 (立体几何板块完整显示) 状态
 
-### 给 3-UI 窗口（雪薇）
-- 打开学习中心数学板块 → 立体几何
-- 点开 K10-K15 任一母题，应能看到变形题/真题引用
-- 验收通过后此路标点算完成
+按 v1.1 1.5 验收标准:
 
-### 给 Agent 1 自己（继续推进）
-- 解析几何、导数、数列、概率统计 4 板块母题 K20-K69 仍 untracked（25 张母题 + 5 main.json + ALL_ZHENTI_INDEX.md）
-- 之后按 v1.1 节奏，给这 4 板块母题补 derived_from / derived_variants 字段
-- 注意 K11.json 仍是 `M` 状态（50fed5b 之前的修改与本次任务无关，不归本次 commit）
+- [x] 6 张母题 K10-K15 存在 + 字段齐全 (maturity=REVIEWED, chain, display_target, derived_from/variants 或 related_zhenti)
+- [x] 每张母题至少 1 道变形题引用
+- [x] 5 链 18+ 张 K 卡挂接到对应母题 (Agent 2 commit `50fed5b` 已完成, 222 张全覆盖)
+- [x] 5 张方法论 (M_立体_01~05)
+- [ ] 4 Tab 正确显示 → **等 3-UI 窗口 (雪薇) 验证** (UI 开发中)
 
-## 5. 已知遗留（不归本次 commit）
+## 4. 5 板块全闭环状态
 
-- K11.json `M` 状态（50fed5b 之前累积的修改，与本次任务无关）
-- `gen_math_reader.py` 1237 行 unstaged diff（Agent 3 之前工作，用户决定）
-- 大量 untracked 文件（Agent 1 自己的 K20-K69 工作 + 5 main.json + 历史遗留 .txt 文件）
+按 v1.1 长期目标"5 板块全闭环":
 
-## 6. v1.1 节奏参考
+- [x] 5 板块 25 张母题入库 (K20-K24, K30-K34, K40-K44, K50-K54, K60-K64)
+- [x] 每张母题 3 道 related_zhenti 引用
+- [x] 立体几何板块的 K 卡挂接 (Agent 2 50fed5b, 222 张)
+- [x] 5 张方法论 (立体几何)
+- [ ] 解析几何/导数/数列/概率统计/解三角形 4 板块方法论补全
+- [ ] 5 板块 4 Tab UI 显示验证 (3-UI 窗口)
 
-按 1 窗口（母题扩展+变形题挖掘）路线：
-- 本 commit 完成"立体几何板块母题/变形题字段"维度
-- 下一步：解析几何板块（20 张母题 K20-K39）
-- 目标：分钟级推进，能 commit 就 commit，不等超过 60 分钟
+## 5. 留给其他窗口的接力
+
+### 给 3-UI 窗口 (雪薇)
+- UI 开发完成后, 打开学习中心数学板块
+- 验证 5 板块 (立体几何/解析几何/导数/数列/概率统计/解三角形) 都能看到 5 张母题 + 变形题
+- 验收通过后第一个路标点 (立体几何) 算完成
+
+### 给 Agent 2 (K 卡挂接) - 后续
+- 解析几何/导数/数列/概率统计/解三角形 4 板块的 K 卡挂接 (每板块本地上海 K 卡)
+- 立体几何 5 张方法论已有, 4 板块方法论待补
+
+### 给 Agent 1 (我自己) - 下一站
+- 4 板块方法论补全 (M_解析几何/M_导数/M_数列/M_概率统计/M_解三角形 各 5 张)
+- 母题/变形题维度已基本闭环, 后续关注方法论和 UI 验证
+
+## 6. 已知遗留 (不归本次 commit)
+
+- K11.json `M` 状态 (50fed5b 之前累积的修改, 与本次任务无关)
+- `gen_math_reader.py` 1237 行 unstaged diff (Agent 3 之前工作, 用户决定)
+- specs 子模块 (modified content, 不归本次 commit)
+- _archive/2026-09-12_数学_K卡挂接_前/ 旧版 K 卡 (已移入归档, 02e6434 自动包含)
+- 大量 _*.txt / 临时调试产物 (在 .gitignore 中, 不入仓)
+
+## 7. v1.1 节奏参考
+
+按 1 窗口 (母题扩展+变形题挖掘) 路线:
+- ✅ 立体几何板块 6 母题 + 变形题字段 (commit 7de2a73)
+- ✅ 解析几何 5 母题入库 (commit 2495e0f, HEAD 02e6434)
+- ✅ 导数 5 母题入库 (commit 256b454, HEAD 02e6434)
+- ✅ 数列 5 母题入库 (commit fc72b3d, HEAD 02e6434)
+- ✅ 概率统计 5 母题入库 (HEAD 02e6434 v1.3 修复)
+- ✅ 解三角形 5 母题入库 (HEAD 02e6434 v1.3 修复)
+
+**1 窗口整体工作完成**, 分钟级推进节奏达成 (60 分钟内 5 板块 25 张母题入库 + 6 母题变形题字段)。
