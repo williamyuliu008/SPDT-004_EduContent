@@ -1,0 +1,21 @@
+{
+  "card_id": "strategy_math_007",
+  "chain_id": "math_strategy_vector",
+  "schema_version": "v1.0",
+  "SOP": "1. 看到几何 (平行/垂直/夹角) → 想到向量法 → 2. 建坐标系或基底 → 3. 用向量表达 (点/线/面) → 4. 用向量运算求结果 (点积/叉积/模)",
+  "验收标准": "能在 3 道立体几何/解析几何题中, 用向量法替代几何法, 计算量减少 50%+",
+
+  "source_type": "学科方法论",
+  "source_ref": "上海高中数学教材立体几何 + 高考 5 年真题 + 向量法专题",
+  "original_problem_id": "pp_007, pp_012, pp_014",
+  "problem_statement": "求三棱锥 P-ABC 中, 异面直线 PA 与 BC 所成角 (用向量法替代几何法)",
+  "given_conditions": "适用: 立体几何 (垂直/平行/夹角/距离); 解析几何 (直线/圆锥曲线); 题型: 8-12 分大题",
+  "figure_description": "三棱锥 P-ABC 立体图 + 坐标系",
+  "figure_ref": "",
+  "figure_type": "",
+  "intuition": "向量 = 把'几何'翻译成'代数' —— 计算机思维, 不用空间想象",
+  "thinking_path": "1. 建系: A 为原点, AB/AC/AP 为坐标轴 → 2. 写点: A(0,0,0), B(b,0,0), C(c₁,c₂,0), P(0,0,h) → 3. 向量: PA = -AP, BC = C-B → 4. 异面角 = |PA·BC|/(|PA||BC|) = arccos(数值) → 5. 答案: 异面角 = arctan(...)",
+  "key_insight": "向量法 = 把立体几何变代数, 用 |cos θ| = |a·b|/(|a||b|) 替代几何空间想象, 适合'建系快'的题",
+
+  "display_target": ["RUJING", "学习中心"]
+}

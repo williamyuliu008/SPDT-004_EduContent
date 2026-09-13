@@ -1,0 +1,21 @@
+{
+  "card_id": "strategy_math_004",
+  "chain_id": "math_strategy_function_equation",
+  "schema_version": "v1.0",
+  "SOP": "1. 看到'零点/交点/解' → 联想 f(x)=g(x) → 2. 移项 h(x)=f(x)-g(x) → 3. 求 h(x) 的零点/极值 → 4. 回代原问题",
+  "验收标准": "能在 3 道函数零点/交点题中, 正确将'解'转化为'零点', 转化成功率 100%",
+
+  "source_type": "学科方法论",
+  "source_ref": "上海高中数学教材 + 高考函数与方程 5 年真题",
+  "original_problem_id": "pp_004, pp_009, pp_014",
+  "problem_statement": "求函数 f(x) = ln x 与 g(x) = 1/x 交点个数",
+  "given_conditions": "适用: 函数零点/方程解的个数/两函数交点; 题型: 选择/填空/解答",
+  "figure_description": "两函数图象交点图",
+  "figure_ref": "",
+  "figure_type": "",
+  "intuition": "函数零点 = 方程 f(x)=0 的解 = 曲线与 x 轴交点 = 两曲线交点, 4 种表述同一件事",
+  "thinking_path": "1. 识别: 求'交点个数' → 等价于'求 f(x)-g(x) 零点个数' → 2. 移项: h(x) = ln x - 1/x → 3. 分析 h(x): 定义域 x>0, h'(x) = 1/x + 1/x² > 0 单调递增 → 4. h(1) = -1, h(e) = 1 - 1/e > 0 → 5. 唯一零点 x∈(1, e), 1 个交点",
+  "key_insight": "函数与方程 = 4 等价: f(x)=0 解 / f(x) 零点 / f(x) 与 x 轴交点 / f(x)=g(x) 交点",
+
+  "display_target": ["RUJING", "学习中心"]
+}

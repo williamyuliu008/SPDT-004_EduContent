@@ -1,0 +1,21 @@
+{
+  "card_id": "strategy_english_002",
+  "chain_id": "english_strategy_cloze",
+  "schema_version": "v1.0",
+  "SOP": "1. 通览全文 (3-4 段, 1 分钟) → 2. 标已知信息 (代词/反复词) → 3. 跳空先易后难 → 4. 上下文推断 (前后句/段首段尾) → 5. 检查 (复读/逻辑/语法)",
+  "验收标准": "能在 2 篇完形填空 (10 空/篇) 中, 正确率 80%+",
+
+  "source_type": "学科方法论",
+  "source_ref": "上海高考英语 5 年真题 + 完形填空 5 年统计 + 上下文推断技巧",
+  "original_problem_id": "english_cloze_001, english_cloze_002",
+  "problem_statement": "完形填空: 短文讲'一位老师对学生的深远影响', 第 5 空 4 选词 (A. influence B. difference C. confidence D. silence)",
+  "given_conditions": "适用: 完形填空 (15-20 空); 题型: 4 选 1 选词; 难度: 上海卷中等",
+  "figure_description": "",
+  "figure_ref": "",
+  "figure_type": "",
+  "intuition": "完形填空 = 上下文推断, 70% 答案不在本句, 在前后 1-2 句/段首/段尾",
+  "thinking_path": "1. 通览: 老师→学生→深远影响 (主题: influence) → 2. 第 5 空前文: '老师的教诲影响我一生' → 3. 选 influence ✅ → 4. 验证: difference(中性), confidence(自信, 偏题), silence(沉默, 不合文意) → 5. 锁定 A",
+  "key_insight": "完形填空 = 主题词推断: 通览定主题 → 上下文推答案 → 排除干扰, 7 成答案在'前后 1-2 句/段首段尾'",
+
+  "display_target": ["RUJING", "学习中心"]
+}

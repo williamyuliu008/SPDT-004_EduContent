@@ -1,0 +1,21 @@
+{
+  "card_id": "strategy_math_006",
+  "chain_id": "math_strategy_special_value",
+  "schema_version": "v1.0",
+  "SOP": "1. 选特殊值 (0/1/-1/2/π/2) → 2. 代入排除 → 3. 排除到只剩 1 个 → 4. 验证 (再代 1 个特殊值)",
+  "验收标准": "能在 5 道选择题中, 用特殊值 1 分钟内排除 2-3 个选项",
+
+  "source_type": "学科方法论",
+  "source_ref": "上海高中数学 + 高考选择题 5 年统计 + 特殊值法技巧",
+  "original_problem_id": "pp_006, pp_011, pp_012",
+  "problem_statement": "函数 f(x) = (sin x + cos x)² + cos 2x 的最小正周期是 (A) π/2 (B) π (C) 2π (D) 4π",
+  "given_conditions": "适用: 选择题 (三角/数列/函数/不等式/解析几何); 不适用: 证明题/解答题",
+  "figure_description": "f(x) 简化图 f(x) = 1 + sin 2x + cos 2x = 1 + √2 sin(2x+π/4)",
+  "figure_ref": "",
+  "figure_type": "",
+  "intuition": "选择题 = 验证题, 不用从头推导 —— 特殊值=捷径",
+  "thinking_path": "1. 代 x=0: f(0) = (0+1)² + 1 = 2 → 排除 (排除不了) → 2. 代 x=π/2: f(π/2) = (1+0)² + (-1) = 0 → 排除 (0 在 (0,4) 范围, 但 f 周期 = 2π 才是 0 周期) → 3. 代 x=π: f(π) = (-1+0)² + 1 = 2 ≠ 0 → 4. 选 (B) π (因为 f(π/2)=0, f(π)=2, 周期是 π)",
+  "key_insight": "特殊值法 = 选择题提速器: 排除 → 验证 → 锁定, 80% 选择题能用特殊值 1 分钟解",
+
+  "display_target": ["RUJING", "学习中心"]
+}

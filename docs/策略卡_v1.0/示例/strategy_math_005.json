@@ -1,0 +1,21 @@
+{
+  "card_id": "strategy_math_005",
+  "chain_id": "math_strategy_guihua",
+  "schema_version": "v1.0",
+  "SOP": "1. 遇到陌生问题 → 联想'已会的'题型 → 2. 把陌生条件翻译成熟悉条件 → 3. 用熟题型方法 → 4. 验证 (逆向/特例/反例)",
+  "验收标准": "能在 3 道'没见过的'高考题中, 用化归思想 5 分钟内找到突破口",
+
+  "source_type": "学科方法论",
+  "source_ref": "上海高中数学教材 + 高考 5 年压轴题 + 化归思想专题",
+  "original_problem_id": "pp_005, pp_010, pp_015",
+  "problem_statement": "求证: 任意 x>0, ln x ≤ x-1 (高考 5 年 4 次考的经典不等式)",
+  "given_conditions": "适用: 压轴题/新颖题/陌生情境; 题型: 证明/求范围/讨论",
+  "figure_description": "y=ln x 与 y=x-1 切线图 (x=1 处相切)",
+  "figure_ref": "",
+  "figure_type": "",
+  "intuition": "化归 = 把新问题'翻译'成旧问题 —— 数学家的核心思维",
+  "thinking_path": "1. 陌生: 证 ln x ≤ x-1 → 2. 化归: 令 f(x) = x-1-ln x, 证 f(x) ≥ 0 → 3. 熟题型: 用导数证不等式 (高考 3 年都考) → 4. f'(x) = 1 - 1/x, x=1 时 f'(1)=0 极小 → 5. f(1) = 0 是最小值, 故 f(x)≥0 ✅",
+  "key_insight": "化归 = 翻译: 陌生题 → 熟题型 (含参→不含参 / 高维→低维 / 抽象→具体 / 一般→特殊 / 几何→代数)",
+
+  "display_target": ["RUJING", "学习中心"]
+}

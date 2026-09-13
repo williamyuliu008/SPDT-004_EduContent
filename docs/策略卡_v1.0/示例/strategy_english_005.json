@@ -1,0 +1,21 @@
+{
+  "card_id": "strategy_english_005",
+  "chain_id": "english_strategy_long_sentence",
+  "schema_version": "v1.0",
+  "SOP": "1. 找主句主谓 (主语+谓语) → 2. 找从句引导词 (which/that/who/when/where/because) → 3. 切掉从句 → 4. 找非谓语 (doing/done/to do) → 5. 切非谓语 → 6. 看主句核心 → 7. 加回修饰",
+  "验收标准": "能在 3 个高考长难句 (30+ 词) 中, 用 5 步切分法 30 秒内找主句",
+
+  "source_type": "学科方法论",
+  "source_ref": "上海高考英语 5 年真题 + 长难句分析技巧 + 五步切分法",
+  "original_problem_id": "english_long_001, english_long_002",
+  "problem_statement": "分析长难句: 'The book which I bought yesterday, written by a famous author, has become a bestseller.' 主句是?",
+  "given_conditions": "适用: 阅读理解中的长难句; 完形/语法填空中的复杂句; 翻译题 (上海卷 5 分)",
+  "figure_description": "",
+  "figure_ref": "",
+  "figure_type": "",
+  "intuition": "长难句 = 主句 + 修饰 (从句/非谓语/插入语), 核心是'找主谓' —— 5 步切分法",
+  "thinking_path": "1. 找主谓: 'The book ... has become a bestseller' → 主句 = 'The book has become' → 2. 从句: 'which I bought yesterday' → 切掉 → 3. 非谓语: 'written by a famous author' (过去分词作后置定语) → 切掉 → 4. 主句核心: 'The book has become a bestseller' → 5. 翻译: '我昨天买的那本由著名作家写的书成了畅销书'",
+  "key_insight": "长难句 5 步切分: 找主谓 → 切从句 → 切非谓语 → 看主句 → 加回修饰, 80% 长难句 30 秒内能切",
+
+  "display_target": ["RUJING", "学习中心"]
+}
