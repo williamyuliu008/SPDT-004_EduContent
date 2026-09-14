@@ -25,51 +25,52 @@ from typing import Optional
 
 
 # 策略链 → 关键词映射 (基于 method_tag / chain_id 关键词)
+# v1.1: 关键词更细, 避免一词匹配所有题
 STRATEGY_KEYWORDS = {
-    # 数学
-    "math_strategy_graphing": ["数形", "图象", "图", "抛物线", "几何画图"],
-    "math_strategy_discussion": ["分类讨论", "讨论", "分情况", "区间", "绝对值", "分段"],
-    "math_strategy_equation": ["方程", "列方程", "设", "解方程", "应用题"],
-    "math_strategy_function_equation": ["函数零点", "函数与方程", "交点", "零点"],
-    "math_strategy_guihua": ["化归", "转化", "导数", "不等式证明", "压轴"],
-    "math_strategy_special_value": ["特殊值", "排除", "选择题", "代入"],
-    "math_strategy_vector": ["向量", "建系", "立体几何", "异面", "垂直", "夹角"],
-    "math_strategy_parameter": ["参数", "恒成立", "有解", "分离参数", "a 的范围"],
+    # 数学 - 关键词更细, 避免一词匹配所有题
+    "math_strategy_graphing": ["数形结合", "抛物线", "几何画图", "图象交点", "函数图象", "画图法", "顶点在区间内", "端点函数值"],
+    "math_strategy_discussion": ["分类讨论", "分情况", "绝对值", "分段函数", "含参方程", "分区间", "分类型", "讨论轴"],
+    "math_strategy_equation": ["列方程", "设未知数", "应用题", "工程问题", "行程问题", "等量关系", "利润问题"],
+    "math_strategy_function_equation": ["函数零点", "交点个数", "f(x)=g(x)", "零点个数", "函数图象交点"],
+    "math_strategy_guihua": ["化归思想", "导数", "不等式证明", "压轴题", "陌生题", "辅助函数", "构造法"],
+    "math_strategy_special_value": ["特殊值法", "排除法", "选择题", "代入验证", "选项排除"],
+    "math_strategy_vector": ["向量法", "向量", "建系", "空间向量", "异面直线", "异面", "立体几何", "立体几何大题", "法向量", "点面距", "建坐标系", "面面垂直", "线面垂直", "二面角"],
+    "math_strategy_parameter": ["参数分离", "恒成立", "有解", "参数范围", "分离参数法", "a 的取值范围"],
     # 语文
-    "chinese_strategy_poetry": ["古诗", "意象", "意境", "情感", "鉴赏"],
-    "chinese_strategy_classical": ["文言", "断句", "虚词", "对仗"],
-    "chinese_strategy_modern_reading": ["现代文", "阅读", "主旨", "细节", "推断"],
-    "chinese_strategy_essay": ["作文", "议论文", "立意", "结构", "素材"],
-    "chinese_strategy_character": ["字音", "字形", "成语", "病句", "基础"],
+    "chinese_strategy_poetry": ["古诗", "意象", "意境", "情感", "鉴赏", "古诗词", "诗画关系"],
+    "chinese_strategy_classical": ["文言文断句", "虚词", "对仗", "文言实词", "翻译", "词类活用"],
+    "chinese_strategy_modern_reading": ["现代文阅读", "主旨大意", "细节理解", "推断", "词句含义", "作用分析", "说明文议论文记叙文"],
+    "chinese_strategy_essay": ["高考作文", "议论文", "立意", "素材", "引议联结", "审题", "结构模板"],
+    "chinese_strategy_character": ["字音字形", "成语辨析", "病句修改", "基础知识", "形近字", "多音字"],
     # 英语
-    "english_strategy_reading": ["阅读", "主旨", "细节", "推断", "NOT", "EXCEPT"],
-    "english_strategy_cloze": ["完形", "上下文", "推断"],
-    "english_strategy_writing": ["写作", "应用文", "邀请信", "建议信", "模板"],
-    "english_strategy_grammar": ["语法", "时态", "词性", "虚拟"],
-    "english_strategy_long_sentence": ["长难句", "从句", "非谓语"],
+    "english_strategy_reading": ["阅读理解", "主旨", "细节", "推断", "NOT", "EXCEPT", "词义猜测", "同义替换"],
+    "english_strategy_cloze": ["完形填空", "上下文推断", "主题词", "前后呼应"],
+    "english_strategy_writing": ["应用文", "邀请信", "建议信", "通知", "演讲稿", "模板", "高级词汇"],
+    "english_strategy_grammar": ["语法填空", "时态", "词性", "虚拟语气", "非谓语动词", "主谓一致"],
+    "english_strategy_long_sentence": ["长难句", "从句", "非谓语", "主句", "五步切分"],
     # 历史
-    "history_strategy_causality": ["因果", "原因", "多角度", "4 角度"],
-    "history_strategy_timeline": ["时序", "时间线", "阶段", "1840", "转折"],
-    "history_strategy_material": ["材料", "史料", "解读", "信息提取"],
-    "history_strategy_comparison": ["比较", "同", "异", "中英", "中俄", "中日"],
-    "history_strategy_period_feature": ["阶段特征", "5 维", "明清", "唐朝", "宋"],
+    "history_strategy_causality": ["因果分析", "原因", "4 角度", "政治经济思想对外", "唯物史观"],
+    "history_strategy_timeline": ["时序定位", "时间线", "阶段", "1840", "转折", "朝代演变", "5 阶段"],
+    "history_strategy_material": ["史料解读", "材料分析", "一手二手", "信息提取", "一分材料一分结论"],
+    "history_strategy_comparison": ["比较异同", "中英", "中俄", "中日", "同时不同地", "5 维度对比"],
+    "history_strategy_period_feature": ["阶段特征", "明清", "唐朝", "宋", "朝代综述", "5 维度"],
     # 地理
-    "geo_strategy_isopleth": ["等值线", "判读", "等温", "等压", "等高"],
-    "geo_strategy_location": ["经纬", "定位", "5 维"],
-    "geo_strategy_climate": ["气候", "5 因素", "类型"],
-    "geo_strategy_process": ["地理过程", "外力", "地貌", "侵蚀", "堆积"],
-    "geo_strategy_compare_regions": ["区域比较", "南北方", "东西", "5 维"],
+    "geo_strategy_isopleth": ["等值线判读", "等温线", "等压线", "等高线", "密集区", "判读 5 步"],
+    "geo_strategy_location": ["经纬定位", "5 维定位", "海陆位置", "大洲定位"],
+    "geo_strategy_climate": ["气候类型", "5 因素", "纬度海陆", "洋流地形"],
+    "geo_strategy_process": ["地理过程", "外力作用", "地貌形成", "侵蚀堆积", "流水风海冰"],
+    "geo_strategy_compare_regions": ["区域比较", "南北方", "东西", "5 维度区域"],
     # 政治
-    "politics_strategy_subject": ["主体", "国家/企业/个人", "时政"],
-    "politics_strategy_dialectics": ["矛盾", "两点论", "重点论", "绿水青山"],
-    "politics_strategy_value_judgment": ["价值", "核心价值观", "躺平"],
-    "politics_strategy_politics_current": ["政治生活", "党", "政府", "人大", "脱贫"],
-    "politics_strategy_argument": ["小论文", "论据", "中国式现代化"],
+    "politics_strategy_subject": ["主体分析", "国家企业个人", "时政结合", "两会", "十四五"],
+    "politics_strategy_dialectics": ["矛盾分析", "两点论", "重点论", "主次矛盾", "绿水青山", "两山论"],
+    "politics_strategy_value_judgment": ["价值判断", "核心价值观", "躺平", "价值选择"],
+    "politics_strategy_politics_current": ["政治生活", "党的领导", "政府职能", "人大政协", "脱贫攻坚"],
+    "politics_strategy_argument": ["政治小论文", "论据论证", "中国式现代化", "引-本-证-结"],
     # 书法
-    "calligraphy_strategy_script": ["五体", "篆隶楷行草", "辨识"],
-    "calligraphy_strategy_structural": ["结构", "主笔", "比例", "32 法"],
-    "calligraphy_strategy_brush": ["笔法", "永字八法", "中锋", "藏锋"],
-    "calligraphy_strategy_history": ["书法史", "王羲之", "兰亭序", "书圣", "默写"],
+    "calligraphy_strategy_script": ["五体辨识", "篆隶楷行草", "书体特征", "笔法辨识"],
+    "calligraphy_strategy_structural": ["结构 32 法", "主笔", "比例", "颜体", "欧体", "中宫"],
+    "calligraphy_strategy_brush": ["永字八法", "中锋用笔", "藏锋", "提按顿挫", "行笔节奏"],
+    "calligraphy_strategy_history": ["书法史", "王羲之", "兰亭序", "书圣", "颜真卿", "五朝代默写"],
 }
 
 
@@ -111,27 +112,58 @@ def load_all_strategy_cards(root: Path) -> list[dict]:
     return strategies
 
 
+# method_tag 前缀 → 必推荐策略 (v1.1 智能映射)
+METHOD_TAG_RULES = {
+    # 数学 method_tag 前缀 (G-/G1-/G2-/T-/T1-/V-/P-/M-/F-/S-/A-/X-)
+    "G1-": ["math_strategy_vector"],            # 中位线法 → 向量
+    "G2-": ["math_strategy_vector", "math_strategy_graphing"],  # 平行四边形法 → 向量+数形
+    "G-": ["math_strategy_vector", "math_strategy_graphing"],   # 几何方法 → 向量+数形
+    "T1-": ["math_strategy_vector", "math_strategy_graphing"],  # 面面平行升级 → 向量+数形
+    "T-": ["math_strategy_vector", "math_strategy_graphing"],   # 建系/坐标法
+    "V-": ["math_strategy_vector", "math_strategy_graphing"],   # 向量法
+    "M-": ["math_strategy_vector", "math_strategy_guihua"],     # 辅助线 → 向量+化归
+    "F-": ["math_strategy_graphing", "math_strategy_function_equation"],  # 函数法
+    "S-": ["math_strategy_special_value", "math_strategy_discussion"],   # 选择题/特殊值
+    "A-": ["math_strategy_equation", "math_strategy_graphing"],   # 应用题 → 方程
+    "P-": ["math_strategy_parameter", "math_strategy_discussion"],  # 参数问题
+    "X-": ["math_strategy_discussion"],   # 讨论/分类
+    # 历史 method_tag 前缀 (C-/M-/T-/W-)
+    "C-": ["history_strategy_causality", "history_strategy_period_feature"],  # 因果/特征
+    "M-": ["history_strategy_timeline", "history_strategy_period_feature"],   # 时序
+    "T-": ["history_strategy_comparison", "history_strategy_period_feature"],  # 比较
+    "W-": ["history_strategy_material", "history_strategy_timeline"],  # 文字/材料
+    # 地理/政治/语文/英语/书法 method_tag 可后续补
+}
+
+
 def match_strategies_for_problem(p: dict, strategies: list[dict]) -> list[str]:
-    """根据母题 chain_id + method_tag + concepts_used 匹配策略卡"""
+    """v1.1: method_tag 规则优先 + 关键词 fallback"""
     pp_id = p.get("id", "")
     pp_subject = p.get("_subject", "")
     method_tag = p.get("method_tag", "")
     concepts = " ".join(p.get("concepts_used", []))
     text = f"{pp_id} {method_tag} {concepts}".lower()
 
-    matches = []
+    matches = set()
+
+    # 1. method_tag 规则优先 (按前缀)
+    for prefix, rule_strategies in METHOD_TAG_RULES.items():
+        if method_tag.startswith(prefix):
+            for s in strategies:
+                chain = s.get("chain_id", "")
+                if chain in rule_strategies and pp_subject == s.get("_subject_dir", ""):
+                    matches.add(s.get("card_id", Path(s["_file"]).stem))
+
+    # 2. 关键词 fallback (补充)
     for s in strategies:
         chain = s.get("chain_id", "")
-        # 学科匹配
         if pp_subject != s.get("_subject_dir", ""):
             continue
-        # 关键词匹配
         keywords = STRATEGY_KEYWORDS.get(chain, [])
         if any(kw.lower() in text for kw in keywords):
-            # 提取策略卡 ID
-            strategy_id = s.get("card_id", Path(s["_file"]).stem)
-            matches.append(strategy_id)
-    return matches
+            matches.add(s.get("card_id", Path(s["_file"]).stem))
+
+    return list(matches)
 
 
 def crosslink(args) -> int:
@@ -196,6 +228,9 @@ def crosslink(args) -> int:
 
 
 def scan(args) -> int:
+    import io, sys
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+
     root = Path(args.root)
     problems = load_all_mother_problems(root)
     strategies = load_all_strategy_cards(root)
@@ -211,6 +246,9 @@ def scan(args) -> int:
 
 
 def report(args) -> int:
+    import io, sys
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+
     root = Path(args.root)
     problems = load_all_mother_problems(root)
     strategies = load_all_strategy_cards(root)
