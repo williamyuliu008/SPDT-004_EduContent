@@ -40,27 +40,43 @@ def validate(graph: dict, knowledge_root: Path) -> list[str]:
 
     # 4. 母题引用存在
     subj = graph.get("subject", "数学")
-    subj_path = knowledge_root / subj / "4step" / "parent_problems"
-    if not subj_path.exists():
-        errors.append(f"学科目录不存在: {subj_path}")
+    subj_paths = []
+    if subj == "multi":
+        # 多学科图谱: 扫所有学科
+        for s in ["数学", "语文", "英语", "历史", "地理", "政治", "书法"]:
+            p = knowledge_root / s / "4step" / "parent_problems"
+            if p.exists():
+                subj_paths.append(p)
+    else:
+        subj_paths = [knowledge_root / subj / "4step" / "parent_problems"]
+    if not subj_paths:
+        errors.append(f"学科目录不存在: {subj}")
     else:
         def _id(p):
             parts = p.stem.split("_")
             return "_".join(parts[:2]) if len(parts) >= 2 else p.stem
         all_pp = set()
-        for prefix in ["pp_", "hp_", "ch_", "en_", "geo_", "pol_", "cal_"]:
-            for p in subj_path.glob(f"{prefix}*.json"):
-                all_pp.add(_id(p))
+        for subj_path in subj_paths:
+            for prefix in ["pp_", "hp_", "ch_", "en_", "geo_", "pol_", "cal_"]:
+                for p in subj_path.glob(f"{prefix}*.json"):
+                    all_pp.add(_id(p))
         for n in graph.get("nodes", []):
             for pp in n.get("mother_problems", []):
                 if pp not in all_pp:
                     errors.append(f"节点 {n['id']} 引用不存在的母题: {pp}")
 
     # 5. 策略链引用存在 (接受 card_id 或 chain_id)
-    strat_path = knowledge_root / "策略" / subj
-    if strat_path.exists():
-        existing_card_ids = set()
-        existing_chain_ids = set()
+    strat_paths = []
+    if subj == "multi":
+        for s in ["数学", "语文", "英语", "历史", "地理", "政治", "书法"]:
+            p = knowledge_root / "策略" / s
+            if p.exists():
+                strat_paths.append(p)
+    else:
+        strat_paths = [knowledge_root / "策略" / subj]
+    existing_card_ids = set()
+    existing_chain_ids = set()
+    for strat_path in strat_paths:
         for p in strat_path.glob("*.json"):
             try:
                 d = json.loads(p.read_text(encoding="utf-8"))
@@ -68,10 +84,10 @@ def validate(graph: dict, knowledge_root: Path) -> list[str]:
                 existing_chain_ids.add(d.get("chain_id", ""))
             except Exception:
                 pass
-        for n in graph.get("nodes", []):
-            for sc in n.get("strategy_chains", []):
-                if sc not in existing_card_ids and sc not in existing_chain_ids:
-                    errors.append(f"节点 {n['id']} 引用不存在的策略链: {sc}")
+    for n in graph.get("nodes", []):
+        for sc in n.get("strategy_chains", []):
+            if sc not in existing_card_ids and sc not in existing_chain_ids:
+                errors.append(f"节点 {n['id']} 引用不存在的策略链: {sc}")
 
     # 6. 前驱/后继一致性
     for n in graph.get("nodes", []):

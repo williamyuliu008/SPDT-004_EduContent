@@ -1,0 +1,421 @@
+{
+  "schema_version": "v1.0",
+  "graph_id": "multi_subject_kg_v1.0",
+  "subject": "multi",
+  "scope": "SPDT-004 6 学科高考主干概念 (除数学, 5 主科+1 艺术), 30 概念",
+  "previous_version": "math_kg_v1.2 (d9a486d)",
+  "created": "本轮当前",
+  "created_by": "P0-B.3 启动 (宇兄端)",
+  "subjects": ["语文", "英语", "历史", "地理", "政治", "书法"],
+  "node_count": 30,
+  "edge_count": 25,
+  "in_library_mother_problems": 45,
+  "in_library_strategy_chains": 28,
+
+  "nodes": [
+    {
+      "id": "concept_C1", "subject": "语文", "name": "古诗鉴赏",
+      "chain_id": "chinese/Y-M1-古诗鉴赏",
+      "difficulty": "中", "domain": "古诗/意象意境情感",
+      "mother_problems": ["ch_001"],
+      "strategy_chains": ["chinese_strategy_poetry"],
+      "status": "in_library",
+      "prerequisites": [],
+      "successors": ["concept_C5"],
+      "related": []
+    },
+    {
+      "id": "concept_C2", "subject": "语文", "name": "文言文",
+      "chain_id": "chinese/Y-M1-文言文",
+      "difficulty": "中", "domain": "文言/断句+实词",
+      "mother_problems": ["ch_002", "ch_003"],
+      "strategy_chains": ["chinese_strategy_classical"],
+      "status": "in_library",
+      "prerequisites": [],
+      "successors": [],
+      "related": []
+    },
+    {
+      "id": "concept_C3", "subject": "语文", "name": "议论文",
+      "chain_id": "chinese/Y-M1-议论文论据分析",
+      "difficulty": "中", "domain": "议论文/论据分析",
+      "mother_problems": ["ch_004"],
+      "strategy_chains": ["chinese_strategy_essay"],
+      "status": "in_library",
+      "prerequisites": [],
+      "successors": ["concept_C6"],
+      "related": []
+    },
+    {
+      "id": "concept_C4", "subject": "语文", "name": "现代文阅读",
+      "chain_id": "chinese/Y-M1-现代文阅读",
+      "difficulty": "中", "domain": "现代文/主旨+细节",
+      "mother_problems": ["ch_005", "ch_006"],
+      "strategy_chains": ["chinese_strategy_modern_reading"],
+      "status": "in_library",
+      "prerequisites": [],
+      "successors": [],
+      "related": []
+    },
+    {
+      "id": "concept_C5", "subject": "语文", "name": "语言基础",
+      "chain_id": "chinese/Y-M1-语言基础",
+      "difficulty": "中", "domain": "语言/病句+默写",
+      "mother_problems": ["ch_007", "ch_008", "ch_009"],
+      "strategy_chains": ["chinese_strategy_character"],
+      "status": "in_library",
+      "prerequisites": ["concept_C1"],
+      "successors": [],
+      "related": []
+    },
+    {
+      "id": "concept_C6", "subject": "语文", "name": "作文",
+      "chain_id": "chinese/Y-M1-作文审题立意",
+      "difficulty": "难", "domain": "作文/审题立意",
+      "mother_problems": ["ch_010"],
+      "strategy_chains": ["chinese_strategy_essay"],
+      "status": "in_library",
+      "prerequisites": ["concept_C3"],
+      "successors": [],
+      "related": []
+    },
+
+    {
+      "id": "concept_E1", "subject": "英语", "name": "阅读理解",
+      "chain_id": "english/Y-M1-阅读理解",
+      "difficulty": "中", "domain": "阅读/主旨+细节+推断+词义",
+      "mother_problems": ["en_001", "en_002", "en_003", "en_004"],
+      "strategy_chains": ["english_strategy_reading"],
+      "status": "in_library",
+      "prerequisites": [],
+      "successors": ["concept_E2"],
+      "related": ["concept_E4"]
+    },
+    {
+      "id": "concept_E2", "subject": "英语", "name": "语法填空",
+      "chain_id": "english/Y-M1-语法填空",
+      "difficulty": "中", "domain": "语法/时态+非谓语+改错",
+      "mother_problems": ["en_005", "en_006", "en_009"],
+      "strategy_chains": ["english_strategy_grammar"],
+      "status": "in_library",
+      "prerequisites": [],
+      "successors": ["concept_E3"],
+      "related": []
+    },
+    {
+      "id": "concept_E3", "subject": "英语", "name": "应用文写作",
+      "chain_id": "english/Y-M1-应用文写作",
+      "difficulty": "中", "domain": "写作/邀请信+建议信",
+      "mother_problems": ["en_007"],
+      "strategy_chains": ["english_strategy_writing"],
+      "status": "in_library",
+      "prerequisites": ["concept_E2"],
+      "successors": [],
+      "related": []
+    },
+    {
+      "id": "concept_E4", "subject": "英语", "name": "长难句分析",
+      "chain_id": "english/Y-M1-长难句五步切分",
+      "difficulty": "难", "domain": "长难句/从句+非谓语",
+      "mother_problems": ["en_008"],
+      "strategy_chains": ["english_strategy_long_sentence"],
+      "status": "in_library",
+      "prerequisites": [],
+      "successors": [],
+      "related": ["concept_E1"]
+    },
+    {
+      "id": "concept_E5", "subject": "英语", "name": "完形填空",
+      "chain_id": "english/Y-M1-完形填空",
+      "difficulty": "中", "domain": "完形/上下文推断",
+      "mother_problems": [],
+      "strategy_chains": ["english_strategy_cloze"],
+      "status": "virtual",
+      "prerequisites": ["concept_E1"],
+      "successors": [],
+      "related": []
+    },
+
+    {
+      "id": "concept_H1", "subject": "历史", "name": "史料实证",
+      "chain_id": "history/H-M1-史料实证",
+      "difficulty": "中", "domain": "史料/可信度判断",
+      "mother_problems": ["hp_001"],
+      "strategy_chains": ["history_strategy_material"],
+      "status": "in_library",
+      "prerequisites": [],
+      "successors": [],
+      "related": ["concept_H4"]
+    },
+    {
+      "id": "concept_H2", "subject": "历史", "name": "时间轴定位",
+      "chain_id": "history/H-M1-时间轴定位",
+      "difficulty": "中", "domain": "时序/公元换算+五段",
+      "mother_problems": ["hp_002"],
+      "strategy_chains": ["history_strategy_timeline"],
+      "status": "in_library",
+      "prerequisites": [],
+      "successors": [],
+      "related": []
+    },
+    {
+      "id": "concept_H3", "subject": "历史", "name": "工业革命与现代化",
+      "chain_id": "history/H-M2-工业革命",
+      "difficulty": "难", "domain": "经济/工业+主要矛盾",
+      "mother_problems": ["hp_003"],
+      "strategy_chains": ["history_strategy_causality"],
+      "status": "in_library",
+      "prerequisites": ["concept_H2"],
+      "successors": ["concept_H5"],
+      "related": []
+    },
+    {
+      "id": "concept_H4", "subject": "历史", "name": "史料解读",
+      "chain_id": "history/H-M2-史料解读",
+      "difficulty": "中", "domain": "材料/演讲结构提取",
+      "mother_problems": ["hp_004"],
+      "strategy_chains": ["history_strategy_material"],
+      "status": "in_library",
+      "prerequisites": [],
+      "successors": [],
+      "related": ["concept_H1"]
+    },
+    {
+      "id": "concept_H5", "subject": "历史", "name": "经济全球化",
+      "chain_id": "history/H-M4-经济全球化",
+      "difficulty": "中", "domain": "全球/阶段时间轴",
+      "mother_problems": ["hp_005"],
+      "strategy_chains": ["history_strategy_timeline", "history_strategy_period_feature"],
+      "status": "in_library",
+      "prerequisites": ["concept_H3"],
+      "successors": [],
+      "related": []
+    },
+
+    {
+      "id": "concept_G1", "subject": "地理", "name": "经纬定位",
+      "chain_id": "geo/X-M1-经纬定位",
+      "difficulty": "中", "domain": "定位/5 维",
+      "mother_problems": ["geo_001"],
+      "strategy_chains": ["geo_strategy_location"],
+      "status": "in_library",
+      "prerequisites": [],
+      "successors": [],
+      "related": []
+    },
+    {
+      "id": "concept_G2", "subject": "地理", "name": "等值线判读",
+      "chain_id": "geo/X-M1-等值线判读",
+      "difficulty": "中", "domain": "等值线/等温+等压+等高",
+      "mother_problems": ["geo_002"],
+      "strategy_chains": ["geo_strategy_isopleth"],
+      "status": "in_library",
+      "prerequisites": [],
+      "successors": [],
+      "related": []
+    },
+    {
+      "id": "concept_G3", "subject": "地理", "name": "自然地理综合",
+      "chain_id": "geo/X-M1-自然地理综合",
+      "difficulty": "中", "domain": "自然/气候+地貌",
+      "mother_problems": ["geo_003", "geo_004"],
+      "strategy_chains": ["geo_strategy_climate", "geo_strategy_process"],
+      "status": "in_library",
+      "prerequisites": ["concept_G1"],
+      "successors": [],
+      "related": []
+    },
+    {
+      "id": "concept_G4", "subject": "地理", "name": "人地关系",
+      "chain_id": "geo/X-M1-人地关系",
+      "difficulty": "难", "domain": "区域比较+城市化+灾害",
+      "mother_problems": ["geo_005", "geo_006", "geo_007"],
+      "strategy_chains": ["geo_strategy_compare_regions"],
+      "status": "in_library",
+      "prerequisites": ["concept_G3"],
+      "successors": [],
+      "related": []
+    },
+    {
+      "id": "concept_G5", "subject": "地理", "name": "资源分布",
+      "chain_id": "geo/X-M1-资源分布",
+      "difficulty": "中", "domain": "资源/分布+利用",
+      "mother_problems": ["geo_008"],
+      "strategy_chains": ["geo_strategy_compare_regions"],
+      "status": "in_library",
+      "prerequisites": [],
+      "successors": [],
+      "related": []
+    },
+
+    {
+      "id": "concept_P1", "subject": "政治", "name": "主体分析",
+      "chain_id": "politics/M1-主体分析",
+      "difficulty": "中", "domain": "主体/国家+企业+个人",
+      "mother_problems": ["pol_001"],
+      "strategy_chains": ["politics_strategy_subject"],
+      "status": "in_library",
+      "prerequisites": [],
+      "successors": [],
+      "related": []
+    },
+    {
+      "id": "concept_P2", "subject": "政治", "name": "矛盾分析",
+      "chain_id": "politics/P-M1-矛盾分析",
+      "difficulty": "中", "domain": "矛盾/两点论+重点论",
+      "mother_problems": ["pol_002"],
+      "strategy_chains": ["politics_strategy_dialectics"],
+      "status": "in_library",
+      "prerequisites": [],
+      "successors": [],
+      "related": []
+    },
+    {
+      "id": "concept_P3", "subject": "政治", "name": "价值判断",
+      "chain_id": "politics/M1-价值判断",
+      "difficulty": "中", "domain": "价值/核心价值观",
+      "mother_problems": ["pol_003"],
+      "strategy_chains": ["politics_strategy_value_judgment"],
+      "status": "in_library",
+      "prerequisites": [],
+      "successors": [],
+      "related": []
+    },
+    {
+      "id": "concept_P4", "subject": "政治", "name": "生活应用",
+      "chain_id": "politics/P-M1-生活应用",
+      "difficulty": "中", "domain": "时政+政治+经济+文化",
+      "mother_problems": ["pol_004", "pol_005", "pol_006", "pol_007"],
+      "strategy_chains": ["politics_strategy_politics_current", "politics_strategy_argument"],
+      "status": "in_library",
+      "prerequisites": ["concept_P1"],
+      "successors": [],
+      "related": []
+    },
+    {
+      "id": "concept_P5", "subject": "政治", "name": "哲学",
+      "chain_id": "politics/M1-哲学",
+      "difficulty": "难", "domain": "哲学/认识论+实践",
+      "mother_problems": ["pol_008"],
+      "strategy_chains": ["politics_strategy_argument"],
+      "status": "in_library",
+      "prerequisites": [],
+      "successors": [],
+      "related": []
+    },
+
+    {
+      "id": "concept_F1", "subject": "书法", "name": "五体辨识",
+      "chain_id": "calligraphy/Y-M1-五体辨识",
+      "difficulty": "中", "domain": "五体/篆隶楷行草",
+      "mother_problems": ["cal_001"],
+      "strategy_chains": ["calligraphy_strategy_script"],
+      "status": "in_library",
+      "prerequisites": [],
+      "successors": [],
+      "related": []
+    },
+    {
+      "id": "concept_F2", "subject": "书法", "name": "楷书结构",
+      "chain_id": "calligraphy/Y-M1-楷书结构",
+      "difficulty": "中", "domain": "楷书/颜体+欧体",
+      "mother_problems": ["cal_002"],
+      "strategy_chains": ["calligraphy_strategy_structural"],
+      "status": "in_library",
+      "prerequisites": ["concept_F1"],
+      "successors": [],
+      "related": []
+    },
+    {
+      "id": "concept_F3", "subject": "书法", "name": "笔法",
+      "chain_id": "calligraphy/Y-M1-永字八法",
+      "difficulty": "中", "domain": "笔法/中锋+藏锋",
+      "mother_problems": ["cal_003"],
+      "strategy_chains": ["calligraphy_strategy_brush"],
+      "status": "in_library",
+      "prerequisites": [],
+      "successors": [],
+      "related": []
+    },
+    {
+      "id": "concept_F4", "subject": "书法", "name": "书法史",
+      "chain_id": "calligraphy/Y-M1-书法史",
+      "difficulty": "中", "domain": "书法史/王羲之+兰亭序",
+      "mother_problems": ["cal_004"],
+      "strategy_chains": ["calligraphy_strategy_history"],
+      "status": "in_library",
+      "prerequisites": [],
+      "successors": [],
+      "related": []
+    },
+    {
+      "id": "concept_F5", "subject": "书法", "name": "临摹要点",
+      "chain_id": "calligraphy/Y-M1-临摹要点",
+      "difficulty": "中", "domain": "临摹/要点",
+      "mother_problems": ["cal_005"],
+      "strategy_chains": ["calligraphy_strategy_history"],
+      "status": "in_library",
+      "prerequisites": ["concept_F1"],
+      "successors": [],
+      "related": []
+    }
+  ],
+
+  "edges": [
+    {"from": "concept_C1", "to": "concept_C5", "type": "prerequisite", "weight": 0.5},
+    {"from": "concept_C3", "to": "concept_C6", "type": "prerequisite", "weight": 1.0},
+    {"from": "concept_E1", "to": "concept_E2", "type": "prerequisite", "weight": 0.6},
+    {"from": "concept_E2", "to": "concept_E3", "type": "prerequisite", "weight": 1.0},
+    {"from": "concept_E1", "to": "concept_E4", "type": "related", "weight": 0.7},
+    {"from": "concept_E1", "to": "concept_E5", "type": "prerequisite", "weight": 1.0},
+    {"from": "concept_H2", "to": "concept_H3", "type": "prerequisite", "weight": 1.0},
+    {"from": "concept_H3", "to": "concept_H5", "type": "prerequisite", "weight": 1.0},
+    {"from": "concept_H1", "to": "concept_H4", "type": "related", "weight": 0.7},
+    {"from": "concept_G1", "to": "concept_G3", "type": "prerequisite", "weight": 1.0},
+    {"from": "concept_G3", "to": "concept_G4", "type": "prerequisite", "weight": 1.0},
+    {"from": "concept_G1", "to": "concept_G2", "type": "related", "weight": 0.5},
+    {"from": "concept_G3", "to": "concept_G5", "type": "related", "weight": 0.5},
+    {"from": "concept_P1", "to": "concept_P4", "type": "prerequisite", "weight": 1.0},
+    {"from": "concept_P2", "to": "concept_P4", "type": "related", "weight": 0.6},
+    {"from": "concept_P3", "to": "concept_P4", "type": "related", "weight": 0.6},
+    {"from": "concept_F1", "to": "concept_F2", "type": "prerequisite", "weight": 1.0},
+    {"from": "concept_F1", "to": "concept_F5", "type": "prerequisite", "weight": 1.0},
+    {"from": "concept_F3", "to": "concept_F2", "type": "related", "weight": 0.5},
+    {"from": "concept_F4", "to": "concept_F5", "type": "related", "weight": 0.5}
+  ],
+
+  "learning_paths": {
+    "语文古典基础": ["concept_C1", "concept_C5"],
+    "语文现代阅读": ["concept_C4"],
+    "语文写作进阶": ["concept_C3", "concept_C6"],
+    "英语综合": ["concept_E1", "concept_E4", "concept_E2", "concept_E3"],
+    "英语完形专项": ["concept_E1", "concept_E5"],
+    "历史时序链": ["concept_H2", "concept_H3", "concept_H5"],
+    "史料阅读": ["concept_H1", "concept_H4"],
+    "地理自然综合": ["concept_G1", "concept_G2", "concept_G3", "concept_G4"],
+    "政治生活应用": ["concept_P1", "concept_P4"],
+    "哲学思辨": ["concept_P2", "concept_P5"],
+    "书法五体进阶": ["concept_F1", "concept_F3", "concept_F2"],
+    "书法史赏析": ["concept_F4", "concept_F5"]
+  },
+
+  "coverage_report": {
+    "total_concepts": 30,
+    "in_library": 29,
+    "virtual": 1,
+    "in_library_rate": "29/30 (97%)",
+    "remaining_gaps": [
+      "concept_E5 完形填空: 0 张母题 (en_010 七选五失败, 完形虚拟)"
+    ]
+  },
+
+  "change_log": {
+    "from": "math_kg_v1.2 (d9a486d) — 仅数学",
+    "to": "multi_subject_kg_v1.0 — 6 学科 30 概念 (语 6 + 英 5 + 历 5 + 地 5 + 政 5 + 书 5)"
+  },
+
+  "next_steps": {
+    "P0-B.4": "rujing 学习中心 App 集成 knowledge_graph.json + path_finder 工具",
+    "P0-B.5": "path_finder: 给定起点概念 + 已掌握 → 推荐下一步"
+  }
+}
