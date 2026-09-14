@@ -132,7 +132,35 @@ METHOD_TAG_RULES = {
     "M-": ["history_strategy_timeline", "history_strategy_period_feature"],   # 时序
     "T-": ["history_strategy_comparison", "history_strategy_period_feature"],  # 比较
     "W-": ["history_strategy_material", "history_strategy_timeline"],  # 文字/材料
-    # 地理/政治/语文/英语/书法 method_tag 可后续补
+    # 语文 method_tag 前缀 (Y-) → 5 策略链全映射
+    "Y-": [
+        "chinese_strategy_poetry", "chinese_strategy_classical",
+        "chinese_strategy_modern_reading", "chinese_strategy_essay",
+        "chinese_strategy_character",
+    ],
+    # 英语 method_tag 前缀 (E-) → 5 策略链全映射
+    "E-": [
+        "english_strategy_reading", "english_strategy_cloze",
+        "english_strategy_writing", "english_strategy_grammar",
+        "english_strategy_long_sentence",
+    ],
+    # 地理 method_tag 前缀 (D-) → 5 策略链全映射
+    "D-": [
+        "geo_strategy_isopleth", "geo_strategy_location",
+        "geo_strategy_climate", "geo_strategy_process",
+        "geo_strategy_compare_regions",
+    ],
+    # 政治 method_tag 前缀 (P-) → 5 策略链全映射
+    "P-": [
+        "politics_strategy_subject", "politics_strategy_dialectics",
+        "politics_strategy_value_judgment", "politics_strategy_politics_current",
+        "politics_strategy_argument",
+    ],
+    # 书法 method_tag 前缀 (S-) → 4 策略链全映射
+    "S-": [
+        "calligraphy_strategy_script", "calligraphy_strategy_structural",
+        "calligraphy_strategy_brush", "calligraphy_strategy_history",
+    ],
 }
 
 
