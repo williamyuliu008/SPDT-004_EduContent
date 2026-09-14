@@ -1,0 +1,179 @@
+{
+  "schema_version": "v1.0",
+  "graph_id": "math_kg_v1.0",
+  "subject": "数学",
+  "scope": "高考上海卷数学主干概念 (8 核心, 5 实体 + 3 虚拟)",
+  "created": "本轮当前",
+  "created_by": "P0-B 启动 (宇兄端)",
+  "node_count": 8,
+  "edge_count": 14,
+  "in_library_mother_problems": 15,
+  "in_library_strategy_chains": 8,
+
+  "nodes": [
+    {
+      "id": "concept_07",
+      "name": "向量与建系",
+      "chain_id": "math/M-V3-00-向量基础",
+      "difficulty": "中",
+      "domain": "立体几何/向量基础",
+      "mother_problems": [],
+      "strategy_chains": ["math_strategy_vector"],
+      "coverage": "0%",
+      "status": "virtual",
+      "prerequisites": [],
+      "successors": ["concept_01", "concept_02", "concept_03", "concept_04"],
+      "related": ["concept_08"]
+    },
+    {
+      "id": "concept_01",
+      "name": "线面平行",
+      "chain_id": "math/M-V3-01-线面平行",
+      "difficulty": "中",
+      "domain": "立体几何/位置关系",
+      "mother_problems": ["pp_001", "pp_006", "pp_007"],
+      "strategy_chains": ["math_strategy_vector", "math_strategy_graphing"],
+      "coverage": "100%",
+      "status": "in_library",
+      "prerequisites": ["concept_07"],
+      "successors": ["concept_02", "concept_05"],
+      "related": ["concept_03", "concept_04"]
+    },
+    {
+      "id": "concept_02",
+      "name": "线面垂直",
+      "chain_id": "math/M-V3-02-线面垂直",
+      "difficulty": "中",
+      "domain": "立体几何/位置关系",
+      "mother_problems": ["pp_002", "pp_008", "pp_009"],
+      "strategy_chains": ["math_strategy_vector"],
+      "coverage": "100%",
+      "status": "in_library",
+      "prerequisites": ["concept_07", "concept_01"],
+      "successors": ["concept_03", "concept_05"],
+      "related": ["concept_04"]
+    },
+    {
+      "id": "concept_03",
+      "name": "空间角",
+      "chain_id": "math/M-V3-03-空间角",
+      "difficulty": "中",
+      "domain": "立体几何/度量",
+      "mother_problems": ["pp_003", "pp_010", "pp_013"],
+      "strategy_chains": ["math_strategy_vector", "math_strategy_graphing"],
+      "coverage": "100%",
+      "status": "in_library",
+      "prerequisites": ["concept_07", "concept_01", "concept_02"],
+      "successors": ["concept_05"],
+      "related": ["concept_04"]
+    },
+    {
+      "id": "concept_04",
+      "name": "空间距离",
+      "chain_id": "math/M-V3-04-空间距离",
+      "difficulty": "难",
+      "domain": "立体几何/度量",
+      "mother_problems": ["pp_004", "pp_005", "pp_011"],
+      "strategy_chains": ["math_strategy_vector", "math_strategy_equation"],
+      "coverage": "100%",
+      "status": "in_library",
+      "prerequisites": ["concept_07", "concept_01"],
+      "successors": ["concept_05"],
+      "related": ["concept_03"]
+    },
+    {
+      "id": "concept_05",
+      "name": "立体几何综合",
+      "chain_id": "math/M-V3-05-立体几何综合",
+      "difficulty": "难",
+      "domain": "立体几何/综合",
+      "mother_problems": ["pp_012", "pp_014", "pp_015"],
+      "strategy_chains": ["math_strategy_vector", "math_strategy_graphing", "math_strategy_equation"],
+      "coverage": "100%",
+      "status": "in_library",
+      "prerequisites": ["concept_01", "concept_02", "concept_03", "concept_04"],
+      "successors": [],
+      "related": []
+    },
+    {
+      "id": "concept_06",
+      "name": "函数与方程",
+      "chain_id": "math/M-V1-01-函数与方程",
+      "difficulty": "中",
+      "domain": "代数/函数",
+      "mother_problems": [],
+      "strategy_chains": ["math_strategy_function_equation", "math_strategy_graphing"],
+      "coverage": "0%",
+      "status": "virtual",
+      "prerequisites": [],
+      "successors": ["concept_09"],
+      "related": ["concept_07"]
+    },
+    {
+      "id": "concept_08",
+      "name": "解析几何",
+      "chain_id": "math/M-V2-01-解析几何",
+      "difficulty": "难",
+      "domain": "几何/解析",
+      "mother_problems": [],
+      "strategy_chains": ["math_strategy_graphing", "math_strategy_equation", "math_strategy_parameter"],
+      "coverage": "0%",
+      "status": "virtual",
+      "prerequisites": ["concept_07"],
+      "successors": [],
+      "related": ["concept_03", "concept_04"]
+    },
+    {
+      "id": "concept_09",
+      "name": "导数",
+      "chain_id": "math/M-V5-01-导数",
+      "difficulty": "难",
+      "domain": "代数/导数",
+      "mother_problems": [],
+      "strategy_chains": ["math_strategy_guihua", "math_strategy_graphing"],
+      "coverage": "0%",
+      "status": "virtual",
+      "prerequisites": ["concept_06"],
+      "successors": [],
+      "related": []
+    }
+  ],
+
+  "edges": [
+    {"from": "concept_07", "to": "concept_01", "type": "prerequisite", "weight": 1.0},
+    {"from": "concept_07", "to": "concept_02", "type": "prerequisite", "weight": 1.0},
+    {"from": "concept_07", "to": "concept_03", "type": "prerequisite", "weight": 1.0},
+    {"from": "concept_07", "to": "concept_04", "type": "prerequisite", "weight": 1.0},
+    {"from": "concept_01", "to": "concept_02", "type": "prerequisite", "weight": 0.8},
+    {"from": "concept_01", "to": "concept_05", "type": "prerequisite", "weight": 1.0},
+    {"from": "concept_02", "to": "concept_03", "type": "prerequisite", "weight": 0.8},
+    {"from": "concept_02", "to": "concept_05", "type": "prerequisite", "weight": 1.0},
+    {"from": "concept_03", "to": "concept_05", "type": "prerequisite", "weight": 1.0},
+    {"from": "concept_04", "to": "concept_05", "type": "prerequisite", "weight": 1.0},
+    {"from": "concept_06", "to": "concept_09", "type": "prerequisite", "weight": 1.0},
+    {"from": "concept_01", "to": "concept_03", "type": "related", "weight": 0.6},
+    {"from": "concept_01", "to": "concept_04", "type": "related", "weight": 0.6},
+    {"from": "concept_07", "to": "concept_08", "type": "related", "weight": 0.5}
+  ],
+
+  "learning_paths": {
+    "立体几何完整路径": ["concept_07", "concept_01", "concept_02", "concept_03", "concept_04", "concept_05"],
+    "代数入门路径": ["concept_06", "concept_09"],
+    "几何综合路径": ["concept_07", "concept_01", "concept_08"],
+    "高考压轴路径": ["concept_07", "concept_02", "concept_03", "concept_05"]
+  },
+
+  "coverage_report": {
+    "in_library_concepts": 5,
+    "virtual_concepts": 3,
+    "total_concepts": 8,
+    "mother_problem_coverage": "15/15 (100%) 实体概念已覆盖",
+    "strategy_chain_coverage": "8/8 (100%) 策略链已挂载"
+  },
+
+  "next_steps": {
+    "P0-B.2": "补 3 虚拟概念的母题 (函数与方程 / 解析几何 / 导数), 每个 3 张 = 9 张",
+    "P0-B.3": "扩到 7 学科知识图谱 (语/英/历/地/政/书), 各 5-10 概念",
+    "P0-B.4": "rujing 学习中心 App 集成 knowledge_graph.json (自适应学习路径推荐)"
+  }
+}
