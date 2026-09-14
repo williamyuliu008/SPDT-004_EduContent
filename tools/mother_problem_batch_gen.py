@@ -42,6 +42,21 @@ def get_api_key() -> str:
 
 # 5 学科母题选题 (排除物理化学生物)
 SUBJECT_MOTHER_PROBLEMS = {
+    "数学": [
+        # P0-B.2 补 4 虚拟概念 (向量基础 / 函数与方程 / 解析几何 / 导数)
+        "向量加减法",                  # pp_016 (向量基础)
+        "向量共线判定",                # pp_017 (向量基础)
+        "向量数量积",                  # pp_018 (向量基础)
+        "函数零点判定",                # pp_019 (函数与方程)
+        "二次函数最值",                # pp_020 (函数与方程)
+        "函数应用题",                  # pp_021 (函数与方程)
+        "椭圆方程与性质",              # pp_022 (解析几何)
+        "直线与圆位置关系",            # pp_023 (解析几何)
+        "抛物线焦点",                  # pp_024 (解析几何)
+        "导数切线方程",                # pp_025 (导数)
+        "导数极值判定",                # pp_026 (导数)
+        "导数不等式证明",              # pp_027 (导数)
+    ],
     "语文": [
         "古诗意象-意境-情感鉴赏",       # ch_001
         "文言文断句",                  # ch_002
@@ -97,6 +112,7 @@ SUBJECT_MOTHER_PROBLEMS = {
 
 
 SUBJECT_CODE_MAP = {
+    "数学": ("math", "pp"),
     "语文": ("chinese", "ch"),
     "英语": ("english", "en"),
     "地理": ("geo", "geo"),
@@ -180,6 +196,7 @@ def call_glm4_flash(subject: str, theme: str, api_key: str) -> dict:
 
     # chain_id 前缀
     chain_id_map = {
+        "数学": "math",
         "语文": "chinese",
         "英语": "english",
         "地理": "geo",
@@ -188,8 +205,9 @@ def call_glm4_flash(subject: str, theme: str, api_key: str) -> dict:
     }
     chain_id_prefix = chain_id_map.get(subject, subject_en)
 
-    # method_tag 前缀
+    # method_tag 前缀 (与 strategy_crosslink v1.2 规则对齐)
     tag_prefix_map = {
+        "数学": "M",
         "语文": "Y",
         "英语": "E",
         "地理": "D",
@@ -206,23 +224,37 @@ def call_glm4_flash(subject: str, theme: str, api_key: str) -> dict:
     )
 
     client = ZhipuAI(api_key=api_key)
-    try:
-        response = client.chat.completions.create(
-            model="glm-4-flash",
-            messages=[{"role": "user", "content": prompt}],
-            temperature=0.5,
-            max_tokens=3000,
-        )
-        content = response.choices[0].message.content
-        m = re.search(r"\{.*\}", content, re.DOTALL)
-        if not m:
-            print(f"  ERROR: 未返回 JSON, 内容前 200: {content[:200]}", file=sys.stderr)
-            return {}
-        card = json.loads(m.group(0))
-        return card
-    except Exception as e:
-        print(f"ERROR: API 调用失败: {e}", file=sys.stderr)
-        return {}
+    for retry in range(2):
+        try:
+            response = client.chat.completions.create(
+                model="glm-4-flash",
+                messages=[{"role": "user", "content": prompt}],
+                temperature=0.5,
+                max_tokens=3000,
+            )
+            content = response.choices[0].message.content
+            m = re.search(r"\{.*\}", content, re.DOTALL)
+            if not m:
+                print(f"  ERROR: 未返回 JSON, 内容前 200: {content[:200]}", file=sys.stderr)
+                continue
+            try:
+                card = json.loads(m.group(0))
+                return card
+            except json.JSONDecodeError as e:
+                print(f"  WARN: JSON 解析失败 (retry {retry+1}): {e}", file=sys.stderr)
+                # 修复常见转义问题: \\ 替换
+                fixed = m.group(0).replace("\\\\", "\\")
+                try:
+                    card = json.loads(fixed)
+                    print(f"  OK: 修复转义后成功", file=sys.stderr)
+                    return card
+                except Exception as e2:
+                    print(f"  ERROR: 修复后仍失败: {e2}", file=sys.stderr)
+                    continue
+        except Exception as e:
+            print(f"ERROR: API 调用失败 (retry {retry+1}): {e}", file=sys.stderr)
+            time.sleep(2)
+    return {}
 
 
 def gen_one(args) -> int:

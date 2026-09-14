@@ -127,9 +127,9 @@ METHOD_TAG_RULES = {
     "A-": ["math_strategy_equation", "math_strategy_graphing"],   # 应用题 → 方程
     "P-": ["math_strategy_parameter", "math_strategy_discussion"],  # 参数问题
     "X-": ["math_strategy_discussion"],   # 讨论/分类
-    # 历史 method_tag 前缀 (C-/M-/T-/W-)
+    # 历史 method_tag 前缀 (H-/C-/T-/W-)
+    "H-": ["history_strategy_timeline", "history_strategy_period_feature", "history_strategy_causality", "history_strategy_comparison", "history_strategy_material"],  # 历史全映射
     "C-": ["history_strategy_causality", "history_strategy_period_feature"],  # 因果/特征
-    "M-": ["history_strategy_timeline", "history_strategy_period_feature"],   # 时序
     "T-": ["history_strategy_comparison", "history_strategy_period_feature"],  # 比较
     "W-": ["history_strategy_material", "history_strategy_timeline"],  # 文字/材料
     # 语文 method_tag 前缀 (Y-) → 5 策略链全映射
