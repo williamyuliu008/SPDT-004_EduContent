@@ -1,11 +1,12 @@
 """
-4 步法网页版 MVP - Flask 后端
+4 步法网页版 MVP - Flask 后端 + 知识图谱 + path_finder 集成 (P0-B.4 收官)
 ====================================
-W3 网页版骨架 (3 库浏览 + 学习流 + 验收模式)
+W3 网页版骨架 + kg 路由 (/kg, /kg/<id>) + API (/api/path_finder)
 启动: python app.py  → http://127.0.0.1:5050
 """
 
 import json
+import subprocess
 from pathlib import Path
 from flask import Flask, render_template, jsonify, request, abort
 
@@ -15,6 +16,8 @@ KB_ROOTS = {
     "history": Path(r"D:\4_data\knowledge_cards\历史\4step"),
 }
 KB_CARDS = Path(r"D:\4_data\knowledge_cards\数学\cards")  # 数学 chain 根目录 (历史 chain 在历史/cards)
+KG_DIR = Path(r"D:\2_products\education\SPDT-004_EduContent\knowledge_graphs")
+PATH_FINDER_TOOL = Path(r"D:\2_products\education\SPDT-004_EduContent\tools\kg_path_finder.py")
 
 app = Flask(__name__, template_folder=str(APP_ROOT / "templates"), static_folder=str(APP_ROOT / "static"))
 
@@ -129,6 +132,87 @@ def api_variant():
         return jsonify({"error": "missing id"}), 400
     data = _find_across_subjects("variants", var_id)
     return jsonify(data) if data else (jsonify({"error": "not found"}), 404)
+
+
+# ===== P0-B.4: 知识图谱 + path_finder 集成 =====
+
+def _list_kg_graphs() -> list[dict]:
+    """列出所有 kg JSON"""
+    if not KG_DIR.exists():
+        return []
+    out = []
+    for p in sorted(KG_DIR.glob("*.json")):
+        try:
+            d = json.loads(p.read_text(encoding="utf-8"))
+            out.append({
+                "filename": p.name,
+                "graph_id": d.get("graph_id", p.stem),
+                "subject": d.get("subject", "?"),
+                "node_count": len(d.get("nodes", [])),
+                "edge_count": len(d.get("edges", [])),
+                "scope": d.get("scope", "")[:60],
+            })
+        except Exception:
+            continue
+    return out
+
+
+def _load_kg_graph(graph_id: str) -> dict | None:
+    p = KG_DIR / f"{graph_id}.json"
+    if not p.exists():
+        return None
+    try:
+        return json.loads(p.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+
+
+@app.route("/kg")
+def kg_list():
+    """知识图谱列表"""
+    graphs = _list_kg_graphs()
+    return render_template("kg_list.html", graphs=graphs)
+
+
+@app.route("/kg/<graph_id>")
+def kg_view(graph_id):
+    """知识图谱详情"""
+    graph = _load_kg_graph(graph_id)
+    if not graph:
+        abort(404, f"graph not found: {graph_id}")
+    return render_template("kg_view.html", graph=graph)
+
+
+@app.route("/api/path_finder")
+def api_path_finder():
+    """调用 kg_path_finder 工具的 wrapper"""
+    graph_id = request.args.get("graph", "multi_subject_kg_v1.0")
+    mode = request.args.get("mode", "recommend")
+    known = request.args.get("known", "")
+    top = request.args.get("top", "10")
+    fr = request.args.get("from", "")
+    to = request.args.get("to", "")
+
+    cmd = ["python", str(PATH_FINDER_TOOL), mode, "--graph", graph_id]
+    if mode == "recommend":
+        cmd += ["--known", known, "--top", top]
+    elif mode == "path":
+        cmd += ["--from", fr, "--to", to]
+    elif mode == "journey":
+        cmd += ["--known", known]
+
+    try:
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=30,
+                                encoding="utf-8", errors="replace")
+        return jsonify({
+            "stdout": result.stdout,
+            "stderr": result.stderr,
+            "returncode": result.returncode,
+        })
+    except subprocess.TimeoutExpired:
+        return jsonify({"error": "timeout"}), 500
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 
 if __name__ == "__main__":

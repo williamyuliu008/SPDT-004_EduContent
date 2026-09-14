@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ graph.graph_id }} · 知识图谱</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    .concept-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    .concept-table th, .concept-table td { padding: 8px 12px; border: 1px solid #ddd; text-align: left; }
+    .concept-table th { background: #f5f5f5; }
+    .concept-table tr.in_library { background: #f0fdf4; }
+    .concept-table tr.virtual { background: #fef3c7; }
+    .concept-table tr.partially_in_library { background: #dbeafe; }
+    .pf-tool { background: #f9fafb; padding: 20px; border-radius: 8px; margin: 20px 0; }
+    .pf-tool pre { background: #1f2937; color: #f9fafb; padding: 12px; border-radius: 4px; overflow-x: auto; }
+    .pf-tool input, .pf-tool select, .pf-tool button { padding: 8px 12px; margin: 4px; border-radius: 4px; border: 1px solid #ccc; }
+    .pf-tool button { background: #3b82f6; color: white; border: none; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <h1>{{ graph.graph_id }}</h1>
+    <p class="subtitle">{{ graph.scope }}</p>
+    <p>节点: {{ graph.node_count }} | 边: {{ graph.edge_count }}</p>
+  </header>
+
+  <main class="container">
+    <section class="pf-tool">
+      <h2>path_finder 学习路径推荐</h2>
+      <p>输入已掌握概念 IDs (逗号分隔), 推荐下一步学习路径</p>
+      <input type="text" id="known-input" placeholder="如: concept_C1,concept_C2" style="width: 400px;">
+      <select id="mode-select">
+        <option value="recommend">推荐下一步</option>
+        <option value="journey">完整学习路径</option>
+        <option value="path">两点间路径</option>
+      </select>
+      <button onclick="runPathFinder()">运行</button>
+      <pre id="pf-output">点击"运行"启动 path_finder...</pre>
+    </section>
+
+    <section>
+      <h2>概念列表 ({{ graph.nodes|length }} 节点)</h2>
+      <table class="concept-table">
+        <thead>
+          <tr>
+            <th>ID</th><th>状态</th><th>学科</th><th>名称</th><th>难度</th><th>母题</th><th>策略链</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for n in graph.nodes %}
+          <tr class="{{ n.status }}">
+            <td><code>{{ n.id }}</code></td>
+            <td>{{ n.status }}</td>
+            <td>{{ n.subject }}</td>
+            <td>{{ n.name }}</td>
+            <td>{{ n.difficulty }}</td>
+            <td>{{ n.mother_problems|length }}</td>
+            <td>{{ n.strategy_chains|length }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>边 ({{ graph.edges|length }} 条)</h2>
+      <table class="concept-table">
+        <thead><tr><th>From</th><th>To</th><th>类型</th><th>权重</th></tr></thead>
+        <tbody>
+          {% for e in graph.edges %}
+          <tr>
+            <td><code>{{ e.from }}</code></td>
+            <td><code>{{ e.to }}</code></td>
+            <td>{{ e.type }}</td>
+            <td>{{ e.weight }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+
+    <p><a href="/kg">← 返回图谱列表</a> | <a href="/">← 返回首页</a></p>
+  </main>
+
+  <script>
+    function runPathFinder() {
+      const known = document.getElementById('known-input').value;
+      const mode = document.getElementById('mode-select').value;
+      const url = `/api/path_finder?graph={{ graph.graph_id }}&mode=${mode}&known=${encodeURIComponent(known)}`;
+      document.getElementById('pf-output').textContent = '运行中...';
+      fetch(url).then(r => r.json()).then(d => {
+        document.getElementById('pf-output').textContent = d.stdout || d.stderr || JSON.stringify(d);
+      }).catch(e => {
+        document.getElementById('pf-output').textContent = 'ERROR: ' + e;
+      });
+    }
+  </script>
+</body>
+</html>

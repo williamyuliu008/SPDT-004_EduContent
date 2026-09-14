@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>知识图谱列表 · SPDT-004</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="hero">
+    <h1>知识图谱列表 (P0-B.4)</h1>
+    <p class="subtitle">{% raw %}{{ graphs|length }}{% endraw %} 个图谱, 覆盖 SPDT-004 7 学科高考主干</p>
+  </header>
+
+  <main class="container">
+    <section class="card-grid">
+      {% for g in graphs %}
+      <a href="/kg/{{ g.graph_id }}" class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h2>{{ g.graph_id }}</h2>
+        <p>{{ g.scope }}</p>
+        <ul>
+          <li>学科: {{ g.subject }}</li>
+          <li>节点: {{ g.node_count }} | 边: {{ g.edge_count }}</li>
+        </ul>
+      </a>
+      {% endfor %}
+    </section>
+
+    <p><a href="/">← 返回首页</a></p>
+  </main>
+</body>
+</html>
