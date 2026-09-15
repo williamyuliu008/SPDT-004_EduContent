@@ -45,11 +45,25 @@
 
 | 仓库 | 位置 | 状态 |
 |:---|:---|:---|
-| **SPDT-004 主仓** | `D:\2_products\education\SPDT-004_EduContent` | `williamyuliu008/SPDT-004_EduContent` |
-| **`2_structure/TextExperience`** | submodule | 共享剧本 |
-| **`4_adapt/AdaptivePrepPlatform`** | 子目录 | **SPDT-021 独立项目** (应分开) |
-| **`5_deliver/TextExperienceAPP`** | 子目录 | **手机端独立仓库** (应分开) |
-| **`PT-030/`** | 子目录 | **雪薇端独立仓库** (应分开) |
+| **SPDT-004 主仓** | `D:\2_products\education\SPDT-004_EduContent` | `williamyuliu008/SPDT-004_EduContent` (主仓, 仅工具+演示+kg+docs) |
+| **PT-030 雪薇端独立仓** | `D:\2_products\education\PT-030_GaokaoPrep` | ✅ 已独立 |
+| **SPDT-021_IntelligenceBrain** | `D:\2_products\enterprise\SPDT-021_IntelligenceBrain` | ✅ 独立仓 (与 4_adapt/AdaptivePrepPlatform 不同项目) |
+| **5_deliver/TextExperienceAPP** (鸿蒙) | **待建独立仓** | ⏸ 鸿蒙开发独立推进 |
+| **`2_structure/TextExperience`** | submodule | 共享剧本 (git submodule) |
+| **`4_adapt/AdaptivePrepPlatform`** | 子目录 | **应拆为独立仓** (M-3 计划) |
+| **`PT-030/` (本仓内子目录)** | 残留 | ❌ 已迁移到 PT-030_GaokaoPrep, 应清理 |
+
+### 3.1 M-3 拆分计划
+
+**SPDT-004 当前=工具 + 演示 + KG + docs + handoff**
+**待拆 = 4 个子仓到独立 git**
+
+| 子仓 | 目标 | 优先级 | 计划 |
+|:---|:---|:---|:---|
+| **AdaptivePrepPlatform** | 新独立仓 `SPDT-021_Brain` | ⭐⭐⭐ | M-3.1: git init + 复制内容 + README + commit |
+| **TextExperienceAPP** (鸿蒙) | 新独立仓 `rujing-harmonyos` | ⭐⭐ | M-3.2: 鸿蒙开发独立推进 |
+| **PT-030** | 雪薇端独立仓已存在 | ⭐ | M-3.3: 删除本仓 `PT-030/` 子目录残留 |
+| **D:\4_data\\*** | 数据外仓 (永远不进 git) | ✅ 已明确 | 仅文档化 |
 
 ---
 
