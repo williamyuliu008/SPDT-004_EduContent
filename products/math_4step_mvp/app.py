@@ -14,14 +14,20 @@ APP_ROOT = Path(__file__).parent
 KB_ROOTS = {
     "math": Path(r"D:\4_data\knowledge_cards\数学\4step"),
     "history": Path(r"D:\4_data\knowledge_cards\历史\4step"),
+    "语文": Path(r"D:\4_data\knowledge_cards\语文\4step"),
+    "英语": Path(r"D:\4_data\knowledge_cards\英语\4step"),
+    "地理": Path(r"D:\4_data\knowledge_cards\地理\4step"),
+    "政治": Path(r"D:\4_data\knowledge_cards\政治\4step"),
+    "书法": Path(r"D:\4_data\knowledge_cards\书法\4step"),
 }
 KB_CARDS = Path(r"D:\4_data\knowledge_cards\数学\cards")  # 数学 chain 根目录 (历史 chain 在历史/cards)
 STRATEGY_ROOT = Path(r"D:\4_data\knowledge_cards\策略")
 META_ROOT = Path(r"D:\4_data\knowledge_cards\元学习")
 KG_DIR = Path(r"D:\2_products\education\SPDT-004_EduContent\knowledge_graphs")
 PATH_FINDER_TOOL = Path(r"D:\2_products\education\SPDT-004_EduContent\tools\kg_path_finder.py")
-VIDEO_ROOT = Path(r"D:\4_data\work\media\renders\history_k_videos")
-AUDIO_ROOT = VIDEO_ROOT  # mp3 与 mp4 同目录
+VIDEO_ROOT = Path(r"D:\4_data\work\media\renders\history_k_videos")  # 历史 K 卡视频 (P-CGM.1/2)
+AUDIO_ROOT = VIDEO_ROOT
+SUBJECT_VIDEO_ROOT = Path(r"D:\4_data\work\media\renders")  # 5 学科母题视频根 (P-CGM.3)
 
 app = Flask(__name__, template_folder=str(APP_ROOT / "templates"), static_folder=str(APP_ROOT / "static"))
 
@@ -106,59 +112,83 @@ def learn(pp_id: str):
     # P0-D 集成: 元学习推荐
     meta_cards = _find_meta_cards_for_pp(pp)
 
-    # P-CGM: 视频短片 (历史学科 5 张 K 卡)
-    video_path = _find_video_for_pp(pp)
-
-    # P-CGM.4: TTS 音频独立嵌入
-    audio_path = _find_audio_for_pp(pp)
+    # P-CGM.3/4: 母题视频 + 音频 (通用: 历史 K 卡 + 5 学科母题)
+    video_info = _find_video_for_pp(pp)
+    audio_info = _find_audio_for_pp(pp)
 
     return render_template("learn.html", pp=pp, variants=variants,
                            strategies=strategies, concepts=concepts,
-                           meta_cards=meta_cards, video_path=video_path,
-                           audio_path=audio_path)
+                           meta_cards=meta_cards,
+                           video_info=video_info, audio_info=audio_info)
 
 
 def _find_video_for_pp(pp: dict) -> str | None:
-    """根据 pp_id 找历史 K 卡视频 (D:/4_data/work/media/renders/history_k_videos/)
-    返回: 仅文件名, 由 /static/history_videos/<filename> 路由 serve"""
-    if not VIDEO_ROOT.exists():
-        return None
+    """根据 pp_id 找母题视频 (历史 K 卡 或 5 学科母题)
+    返回: (subject, filename) 由 /static/videos/<subject>/<filename> 路由 serve
+    """
     pp_id = pp.get("id", "")
     pp_id_short = "_".join(pp_id.split("_")[:2]) if pp_id else ""
     if not pp_id_short:
         return None
-    for f in VIDEO_ROOT.glob(f"{pp_id_short}_*.mp4"):
-        return f.name  # 仅文件名
+    # 优先历史 K 卡 (P-CGM.1/2)
+    if VIDEO_ROOT.exists():
+        for f in VIDEO_ROOT.glob(f"{pp_id_short}_*.mp4"):
+            return ("history", f.name)
+    # 5 学科母题 (P-CGM.3): 按学科目录找
+    if SUBJECT_VIDEO_ROOT.exists():
+        for subj_dir in SUBJECT_VIDEO_ROOT.glob("*_videos"):
+            if not subj_dir.is_dir():
+                continue
+            for f in subj_dir.glob(f"{pp_id_short}_video.mp4"):
+                subject = subj_dir.name.replace("_videos", "")
+                return (subject, f.name)
     return None
 
 
-@app.route("/static/history_videos/<path:filename>")
-def serve_history_video(filename):
-    """从 D:/4_data/work/media/renders/history_k_videos/ serve 视频"""
-    if not VIDEO_ROOT.exists():
+@app.route("/static/videos/<subject>/<path:filename>")
+def serve_video(subject, filename):
+    """serve 母题视频 (P-CGM.3 通用)"""
+    if subject == "history":
+        root = VIDEO_ROOT
+    else:
+        root = SUBJECT_VIDEO_ROOT / f"{subject}_videos"
+    if not root.exists():
         abort(404)
-    return send_from_directory(VIDEO_ROOT, filename, mimetype="video/mp4")
+    return send_from_directory(root, filename, mimetype="video/mp4")
 
 
-@app.route("/static/history_audio/<path:filename>")
-def serve_history_audio(filename):
-    """serve 独立 TTS 音频 mp3 (P-CGM.4)"""
-    if not AUDIO_ROOT.exists():
+@app.route("/static/audio/<subject>/<path:filename>")
+def serve_audio(subject, filename):
+    """serve 母题音频 (P-CGM.4 通用)"""
+    if subject == "history":
+        root = AUDIO_ROOT
+    else:
+        root = SUBJECT_VIDEO_ROOT / f"{subject}_videos"
+    if not root.exists():
         abort(404)
-    return send_from_directory(AUDIO_ROOT, filename, mimetype="audio/mpeg")
+    return send_from_directory(root, filename, mimetype="audio/mpeg")
 
 
-def _find_audio_for_pp(pp: dict) -> str | None:
-    """根据 pp_id 找历史 K 卡音频"""
-    if not AUDIO_ROOT.exists():
-        return None
+def _find_audio_for_pp(pp: dict) -> tuple | None:
+    """根据 pp_id 找母题音频"""
     pp_id = pp.get("id", "")
     pp_id_short = "_".join(pp_id.split("_")[:2]) if pp_id else ""
     if not pp_id_short:
         return None
-    mp3 = AUDIO_ROOT / f"{pp_id_short}_narration.mp3"
-    if mp3.exists():
-        return f"{pp_id_short}_narration.mp3"
+    # 历史
+    if AUDIO_ROOT.exists():
+        mp3 = AUDIO_ROOT / f"{pp_id_short}_narration.mp3"
+        if mp3.exists():
+            return ("history", f"{pp_id_short}_narration.mp3")
+    # 5 学科
+    if SUBJECT_VIDEO_ROOT.exists():
+        for subj_dir in SUBJECT_VIDEO_ROOT.glob("*_videos"):
+            if not subj_dir.is_dir():
+                continue
+            mp3 = subj_dir / f"{pp_id_short}_narration.mp3"
+            if mp3.exists():
+                subject = subj_dir.name.replace("_videos", "")
+                return (subject, f"{pp_id_short}_narration.mp3")
     return None
 
 

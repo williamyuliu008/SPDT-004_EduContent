@@ -37,7 +37,15 @@
       "successors": [
         "concept_C5"
       ],
-      "related": []
+      "related": [],
+      "video_links": [
+        {
+          "subject": "语文",
+          "title": "ch_001 视频",
+          "filename": "ch_001_video.mp4",
+          "mother_problem": "ch_001"
+        }
+      ]
     },
     {
       "id": "concept_C2",
@@ -56,7 +64,21 @@
       "status": "in_library",
       "prerequisites": [],
       "successors": [],
-      "related": []
+      "related": [],
+      "video_links": [
+        {
+          "subject": "语文",
+          "title": "ch_002 视频",
+          "filename": "ch_002_video.mp4",
+          "mother_problem": "ch_002"
+        },
+        {
+          "subject": "语文",
+          "title": "ch_003 视频",
+          "filename": "ch_003_video.mp4",
+          "mother_problem": "ch_003"
+        }
+      ]
     },
     {
       "id": "concept_C3",
@@ -76,7 +98,15 @@
       "successors": [
         "concept_C6"
       ],
-      "related": []
+      "related": [],
+      "video_links": [
+        {
+          "subject": "语文",
+          "title": "ch_004 视频",
+          "filename": "ch_004_video.mp4",
+          "mother_problem": "ch_004"
+        }
+      ]
     },
     {
       "id": "concept_C4",
@@ -95,7 +125,21 @@
       "status": "in_library",
       "prerequisites": [],
       "successors": [],
-      "related": []
+      "related": [],
+      "video_links": [
+        {
+          "subject": "语文",
+          "title": "ch_005 视频",
+          "filename": "ch_005_video.mp4",
+          "mother_problem": "ch_005"
+        },
+        {
+          "subject": "语文",
+          "title": "ch_006 视频",
+          "filename": "ch_006_video.mp4",
+          "mother_problem": "ch_006"
+        }
+      ]
     },
     {
       "id": "concept_C5",
@@ -117,7 +161,27 @@
         "concept_C1"
       ],
       "successors": [],
-      "related": []
+      "related": [],
+      "video_links": [
+        {
+          "subject": "语文",
+          "title": "ch_007 视频",
+          "filename": "ch_007_video.mp4",
+          "mother_problem": "ch_007"
+        },
+        {
+          "subject": "语文",
+          "title": "ch_008 视频",
+          "filename": "ch_008_video.mp4",
+          "mother_problem": "ch_008"
+        },
+        {
+          "subject": "语文",
+          "title": "ch_009 视频",
+          "filename": "ch_009_video.mp4",
+          "mother_problem": "ch_009"
+        }
+      ]
     },
     {
       "id": "concept_C6",
@@ -137,7 +201,15 @@
         "concept_C3"
       ],
       "successors": [],
-      "related": []
+      "related": [],
+      "video_links": [
+        {
+          "subject": "语文",
+          "title": "ch_010 视频",
+          "filename": "ch_010_video.mp4",
+          "mother_problem": "ch_010"
+        }
+      ]
     },
     {
       "id": "concept_E1",
@@ -162,6 +234,32 @@
       ],
       "related": [
         "concept_E4"
+      ],
+      "video_links": [
+        {
+          "subject": "英语",
+          "title": "en_001 视频",
+          "filename": "en_001_video.mp4",
+          "mother_problem": "en_001"
+        },
+        {
+          "subject": "英语",
+          "title": "en_002 视频",
+          "filename": "en_002_video.mp4",
+          "mother_problem": "en_002"
+        },
+        {
+          "subject": "英语",
+          "title": "en_003 视频",
+          "filename": "en_003_video.mp4",
+          "mother_problem": "en_003"
+        },
+        {
+          "subject": "英语",
+          "title": "en_004 视频",
+          "filename": "en_004_video.mp4",
+          "mother_problem": "en_004"
+        }
       ]
     },
     {
@@ -184,7 +282,27 @@
       "successors": [
         "concept_E3"
       ],
-      "related": []
+      "related": [],
+      "video_links": [
+        {
+          "subject": "英语",
+          "title": "en_005 视频",
+          "filename": "en_005_video.mp4",
+          "mother_problem": "en_005"
+        },
+        {
+          "subject": "英语",
+          "title": "en_006 视频",
+          "filename": "en_006_video.mp4",
+          "mother_problem": "en_006"
+        },
+        {
+          "subject": "英语",
+          "title": "en_009 视频",
+          "filename": "en_009_video.mp4",
+          "mother_problem": "en_009"
+        }
+      ]
     },
     {
       "id": "concept_E3",
@@ -204,7 +322,15 @@
         "concept_E2"
       ],
       "successors": [],
-      "related": []
+      "related": [],
+      "video_links": [
+        {
+          "subject": "英语",
+          "title": "en_007 视频",
+          "filename": "en_007_video.mp4",
+          "mother_problem": "en_007"
+        }
+      ]
     },
     {
       "id": "concept_E4",
@@ -224,6 +350,14 @@
       "successors": [],
       "related": [
         "concept_E1"
+      ],
+      "video_links": [
+        {
+          "subject": "英语",
+          "title": "en_008 视频",
+          "filename": "en_008_video.mp4",
+          "mother_problem": "en_008"
+        }
       ]
     },
     {
@@ -436,7 +570,15 @@
       "status": "in_library",
       "prerequisites": [],
       "successors": [],
-      "related": []
+      "related": [],
+      "video_links": [
+        {
+          "subject": "地理",
+          "title": "geo_001 视频",
+          "filename": "geo_001_video.mp4",
+          "mother_problem": "geo_001"
+        }
+      ]
     },
     {
       "id": "concept_G2",
@@ -454,7 +596,15 @@
       "status": "in_library",
       "prerequisites": [],
       "successors": [],
-      "related": []
+      "related": [],
+      "video_links": [
+        {
+          "subject": "地理",
+          "title": "geo_002 视频",
+          "filename": "geo_002_video.mp4",
+          "mother_problem": "geo_002"
+        }
+      ]
     },
     {
       "id": "concept_G3",
@@ -476,7 +626,21 @@
         "concept_G1"
       ],
       "successors": [],
-      "related": []
+      "related": [],
+      "video_links": [
+        {
+          "subject": "地理",
+          "title": "geo_003 视频",
+          "filename": "geo_003_video.mp4",
+          "mother_problem": "geo_003"
+        },
+        {
+          "subject": "地理",
+          "title": "geo_004 视频",
+          "filename": "geo_004_video.mp4",
+          "mother_problem": "geo_004"
+        }
+      ]
     },
     {
       "id": "concept_G4",
@@ -498,7 +662,27 @@
         "concept_G3"
       ],
       "successors": [],
-      "related": []
+      "related": [],
+      "video_links": [
+        {
+          "subject": "地理",
+          "title": "geo_005 视频",
+          "filename": "geo_005_video.mp4",
+          "mother_problem": "geo_005"
+        },
+        {
+          "subject": "地理",
+          "title": "geo_006 视频",
+          "filename": "geo_006_video.mp4",
+          "mother_problem": "geo_006"
+        },
+        {
+          "subject": "地理",
+          "title": "geo_007 视频",
+          "filename": "geo_007_video.mp4",
+          "mother_problem": "geo_007"
+        }
+      ]
     },
     {
       "id": "concept_G5",
@@ -516,7 +700,15 @@
       "status": "in_library",
       "prerequisites": [],
       "successors": [],
-      "related": []
+      "related": [],
+      "video_links": [
+        {
+          "subject": "地理",
+          "title": "geo_008 视频",
+          "filename": "geo_008_video.mp4",
+          "mother_problem": "geo_008"
+        }
+      ]
     },
     {
       "id": "concept_P1",
@@ -534,7 +726,15 @@
       "status": "in_library",
       "prerequisites": [],
       "successors": [],
-      "related": []
+      "related": [],
+      "video_links": [
+        {
+          "subject": "政治",
+          "title": "pol_001 视频",
+          "filename": "pol_001_video.mp4",
+          "mother_problem": "pol_001"
+        }
+      ]
     },
     {
       "id": "concept_P2",
@@ -552,7 +752,15 @@
       "status": "in_library",
       "prerequisites": [],
       "successors": [],
-      "related": []
+      "related": [],
+      "video_links": [
+        {
+          "subject": "政治",
+          "title": "pol_002 视频",
+          "filename": "pol_002_video.mp4",
+          "mother_problem": "pol_002"
+        }
+      ]
     },
     {
       "id": "concept_P3",
@@ -570,7 +778,15 @@
       "status": "in_library",
       "prerequisites": [],
       "successors": [],
-      "related": []
+      "related": [],
+      "video_links": [
+        {
+          "subject": "政治",
+          "title": "pol_003 视频",
+          "filename": "pol_003_video.mp4",
+          "mother_problem": "pol_003"
+        }
+      ]
     },
     {
       "id": "concept_P4",
@@ -594,7 +810,33 @@
         "concept_P1"
       ],
       "successors": [],
-      "related": []
+      "related": [],
+      "video_links": [
+        {
+          "subject": "政治",
+          "title": "pol_004 视频",
+          "filename": "pol_004_video.mp4",
+          "mother_problem": "pol_004"
+        },
+        {
+          "subject": "政治",
+          "title": "pol_005 视频",
+          "filename": "pol_005_video.mp4",
+          "mother_problem": "pol_005"
+        },
+        {
+          "subject": "政治",
+          "title": "pol_006 视频",
+          "filename": "pol_006_video.mp4",
+          "mother_problem": "pol_006"
+        },
+        {
+          "subject": "政治",
+          "title": "pol_007 视频",
+          "filename": "pol_007_video.mp4",
+          "mother_problem": "pol_007"
+        }
+      ]
     },
     {
       "id": "concept_P5",
@@ -612,7 +854,15 @@
       "status": "in_library",
       "prerequisites": [],
       "successors": [],
-      "related": []
+      "related": [],
+      "video_links": [
+        {
+          "subject": "政治",
+          "title": "pol_008 视频",
+          "filename": "pol_008_video.mp4",
+          "mother_problem": "pol_008"
+        }
+      ]
     },
     {
       "id": "concept_F1",
@@ -630,7 +880,15 @@
       "status": "in_library",
       "prerequisites": [],
       "successors": [],
-      "related": []
+      "related": [],
+      "video_links": [
+        {
+          "subject": "书法",
+          "title": "cal_001 视频",
+          "filename": "cal_001_video.mp4",
+          "mother_problem": "cal_001"
+        }
+      ]
     },
     {
       "id": "concept_F2",
@@ -650,7 +908,15 @@
         "concept_F1"
       ],
       "successors": [],
-      "related": []
+      "related": [],
+      "video_links": [
+        {
+          "subject": "书法",
+          "title": "cal_002 视频",
+          "filename": "cal_002_video.mp4",
+          "mother_problem": "cal_002"
+        }
+      ]
     },
     {
       "id": "concept_F3",
@@ -668,7 +934,15 @@
       "status": "in_library",
       "prerequisites": [],
       "successors": [],
-      "related": []
+      "related": [],
+      "video_links": [
+        {
+          "subject": "书法",
+          "title": "cal_003 视频",
+          "filename": "cal_003_video.mp4",
+          "mother_problem": "cal_003"
+        }
+      ]
     },
     {
       "id": "concept_F4",
@@ -686,7 +960,15 @@
       "status": "in_library",
       "prerequisites": [],
       "successors": [],
-      "related": []
+      "related": [],
+      "video_links": [
+        {
+          "subject": "书法",
+          "title": "cal_004 视频",
+          "filename": "cal_004_video.mp4",
+          "mother_problem": "cal_004"
+        }
+      ]
     },
     {
       "id": "concept_F5",
@@ -706,7 +988,15 @@
         "concept_F1"
       ],
       "successors": [],
-      "related": []
+      "related": [],
+      "video_links": [
+        {
+          "subject": "书法",
+          "title": "cal_005 视频",
+          "filename": "cal_005_video.mp4",
+          "mother_problem": "cal_005"
+        }
+      ]
     }
   ],
   "edges": [

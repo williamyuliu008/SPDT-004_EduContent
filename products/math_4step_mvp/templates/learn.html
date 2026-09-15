@@ -130,30 +130,30 @@
       {% endif %}
     </section>
 
-    <!-- P-CGM: 视频短片 (历史学科 5 张 K 卡) -->
-    {% if video_path %}
+    <!-- P-CGM.3: 母题视频 (通用: 历史 + 5 学科) -->
+    {% if video_info %}
     <section class="section-card">
-      <h2>🎬 视频短片 (30s, P-CGM)</h2>
-      <p style="color: #6b7280;">manim 字幕 + edge-tts 配音 (zh-CN-YunjianNeural 男声)</p>
+      <h2>🎬 视频短片 (30s, P-CGM.3)</h2>
+      <p style="color: #6b7280;">manim 字幕 + edge-tts 配音 (zh-CN-YunjianNeural 男声) | 学科: {{ video_info[0] }}</p>
       <video controls style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" preload="metadata">
-        <source src="/static/history_videos/{{ video_path }}" type="video/mp4">
+        <source src="/static/videos/{{ video_info[0] }}/{{ video_info[1] }}" type="video/mp4">
         您的浏览器不支持视频标签。
       </video>
     </section>
     {% endif %}
 
-    <!-- P-CGM.4: 独立音频 (通勤/睡前听) -->
-    {% if audio_path %}
+    <!-- P-CGM.4: 独立音频 (通用: 历史 + 5 学科) -->
+    {% if audio_info %}
     <section class="section-card">
       <h2>🎧 独立音频 (TTS, P-CGM.4)</h2>
       <p style="color: #6b7280;">仅音频轨道 (mp3, ~100KB), 适合通勤/睡前反复听</p>
       <audio controls preload="metadata" style="width: 100%;">
-        <source src="/static/history_audio/{{ audio_path }}" type="audio/mpeg">
+        <source src="/static/audio/{{ audio_info[0] }}/{{ audio_info[1] }}" type="audio/mpeg">
         您的浏览器不支持音频标签。
       </audio>
       <p style="font-size: 12px; color: #9ca3af; margin-top: 8px;">
-        <a href="/static/history_audio/{{ audio_path }}" download>📥 下载 mp3</a>
-        | 源: edge-tts zh-CN-YunjianNeural (rate -12%)
+        <a href="/static/audio/{{ audio_info[0] }}/{{ audio_info[1] }}" download>📥 下载 mp3</a>
+        | 源: edge-tts zh-CN-YunjianNeural (rate -12%) | 学科: {{ audio_info[0] }}
       </p>
     </section>
     {% endif %}

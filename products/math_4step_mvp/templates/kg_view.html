@@ -110,16 +110,17 @@
         {% for n in graph.nodes %}
           {% if n.video_links %}
             {% for v in n.video_links %}
+            {% set subject = v.subject if v.subject else 'history' %}
             {% set audio_name = v.mother_problem ~ '_narration.mp3' %}
             <div class="video-card" id="video-{{ n.id }}">
               <video controls preload="metadata">
-                <source src="/static/history_videos/{{ v.filename }}" type="video/mp4">
+                <source src="/static/videos/{{ subject }}/{{ v.filename }}" type="video/mp4">
               </video>
-              <span class="concept-tag">{{ n.name }}</span>
+              <span class="concept-tag">{{ n.name }} ({{ subject }})</span>
               <h3>{{ v.title }}</h3>
               <p style="color: #6b7280; font-size: 12px; margin: 4px 0;">
                 母题: <code>{{ v.mother_problem }}</code>
-                | <a href="/static/history_audio/{{ audio_name }}" download>🎧 听 mp3</a>
+                | <a href="/static/audio/{{ subject }}/{{ audio_name }}" download>🎧 听 mp3</a>
               </p>
             </div>
             {% endfor %}
