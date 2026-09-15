@@ -21,6 +21,7 @@ META_ROOT = Path(r"D:\4_data\knowledge_cards\元学习")
 KG_DIR = Path(r"D:\2_products\education\SPDT-004_EduContent\knowledge_graphs")
 PATH_FINDER_TOOL = Path(r"D:\2_products\education\SPDT-004_EduContent\tools\kg_path_finder.py")
 VIDEO_ROOT = Path(r"D:\4_data\work\media\renders\history_k_videos")
+AUDIO_ROOT = VIDEO_ROOT  # mp3 与 mp4 同目录
 
 app = Flask(__name__, template_folder=str(APP_ROOT / "templates"), static_folder=str(APP_ROOT / "static"))
 
@@ -108,9 +109,13 @@ def learn(pp_id: str):
     # P-CGM: 视频短片 (历史学科 5 张 K 卡)
     video_path = _find_video_for_pp(pp)
 
+    # P-CGM.4: TTS 音频独立嵌入
+    audio_path = _find_audio_for_pp(pp)
+
     return render_template("learn.html", pp=pp, variants=variants,
                            strategies=strategies, concepts=concepts,
-                           meta_cards=meta_cards, video_path=video_path)
+                           meta_cards=meta_cards, video_path=video_path,
+                           audio_path=audio_path)
 
 
 def _find_video_for_pp(pp: dict) -> str | None:
@@ -133,6 +138,28 @@ def serve_history_video(filename):
     if not VIDEO_ROOT.exists():
         abort(404)
     return send_from_directory(VIDEO_ROOT, filename, mimetype="video/mp4")
+
+
+@app.route("/static/history_audio/<path:filename>")
+def serve_history_audio(filename):
+    """serve 独立 TTS 音频 mp3 (P-CGM.4)"""
+    if not AUDIO_ROOT.exists():
+        abort(404)
+    return send_from_directory(AUDIO_ROOT, filename, mimetype="audio/mpeg")
+
+
+def _find_audio_for_pp(pp: dict) -> str | None:
+    """根据 pp_id 找历史 K 卡音频"""
+    if not AUDIO_ROOT.exists():
+        return None
+    pp_id = pp.get("id", "")
+    pp_id_short = "_".join(pp_id.split("_")[:2]) if pp_id else ""
+    if not pp_id_short:
+        return None
+    mp3 = AUDIO_ROOT / f"{pp_id_short}_narration.mp3"
+    if mp3.exists():
+        return f"{pp_id_short}_narration.mp3"
+    return None
 
 
 def _find_strategies_for_pp(pp: dict) -> list[dict]:

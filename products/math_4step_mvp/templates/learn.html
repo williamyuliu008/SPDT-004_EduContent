@@ -141,6 +141,22 @@
       </video>
     </section>
     {% endif %}
+
+    <!-- P-CGM.4: 独立音频 (通勤/睡前听) -->
+    {% if audio_path %}
+    <section class="section-card">
+      <h2>🎧 独立音频 (TTS, P-CGM.4)</h2>
+      <p style="color: #6b7280;">仅音频轨道 (mp3, ~100KB), 适合通勤/睡前反复听</p>
+      <audio controls preload="metadata" style="width: 100%;">
+        <source src="/static/history_audio/{{ audio_path }}" type="audio/mpeg">
+        您的浏览器不支持音频标签。
+      </audio>
+      <p style="font-size: 12px; color: #9ca3af; margin-top: 8px;">
+        <a href="/static/history_audio/{{ audio_path }}" download>📥 下载 mp3</a>
+        | 源: edge-tts zh-CN-YunjianNeural (rate -12%)
+      </p>
+    </section>
+    {% endif %}
   </main>
 </body>
 </html>
