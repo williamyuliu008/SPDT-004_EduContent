@@ -15,6 +15,17 @@
     .pf-tool pre { background: #1f2937; color: #f9fafb; padding: 12px; border-radius: 4px; overflow-x: auto; }
     .pf-tool input, .pf-tool select, .pf-tool button { padding: 8px 12px; margin: 4px; border-radius: 4px; border: 1px solid #ccc; }
     .pf-tool button { background: #3b82f6; color: white; border: none; cursor: pointer; }
+    .tab-bar { display: flex; gap: 4px; margin: 20px 0 10px 0; border-bottom: 2px solid #e5e7eb; }
+    .tab-btn { padding: 10px 20px; border: none; background: transparent; cursor: pointer; font-size: 14px; color: #6b7280; border-bottom: 2px solid transparent; margin-bottom: -2px; }
+    .tab-btn.active { color: #3b82f6; border-bottom-color: #3b82f6; font-weight: 600; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin: 16px 0; }
+    .video-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px; transition: box-shadow 0.2s; }
+    .video-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .video-card video { width: 100%; border-radius: 6px; background: #000; }
+    .video-card h3 { margin: 8px 0 4px 0; font-size: 14px; }
+    .video-card .concept-tag { display: inline-block; padding: 2px 8px; background: #dbeafe; color: #1e40af; border-radius: 4px; font-size: 11px; }
   </style>
 </head>
 <body>
@@ -38,12 +49,18 @@
       <pre id="pf-output">点击"运行"启动 path_finder...</pre>
     </section>
 
-    <section>
-      <h2>概念列表 ({{ graph.nodes|length }} 节点)</h2>
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="nodes">📊 节点表格 ({{ graph.nodes|length }})</button>
+      <button class="tab-btn" data-tab="edges">🔗 边 ({{ graph.edges|length }})</button>
+      <button class="tab-btn" data-tab="videos" id="video-tab-btn">🎬 视频</button>
+    </div>
+
+    <div class="tab-content active" data-tab="nodes">
+      <h2>概念列表</h2>
       <table class="concept-table">
         <thead>
           <tr>
-            <th>ID</th><th>状态</th><th>学科</th><th>名称</th><th>难度</th><th>母题</th><th>策略链</th>
+            <th>ID</th><th>状态</th><th>学科</th><th>名称</th><th>难度</th><th>母题</th><th>策略链</th><th>视频</th>
           </tr>
         </thead>
         <tbody>
@@ -56,14 +73,21 @@
             <td>{{ n.difficulty }}</td>
             <td>{{ n.mother_problems|length }}</td>
             <td>{{ n.strategy_chains|length }}</td>
+            <td>
+              {% if n.video_links %}
+                <a href="#video-{{ n.id }}">{{ n.video_links|length }} 个</a>
+              {% else %}
+                —
+              {% endif %}
+            </td>
           </tr>
           {% endfor %}
         </tbody>
       </table>
-    </section>
+    </div>
 
-    <section>
-      <h2>边 ({{ graph.edges|length }} 条)</h2>
+    <div class="tab-content" data-tab="edges">
+      <h2>边</h2>
       <table class="concept-table">
         <thead><tr><th>From</th><th>To</th><th>类型</th><th>权重</th></tr></thead>
         <tbody>
@@ -77,7 +101,35 @@
           {% endfor %}
         </tbody>
       </table>
-    </section>
+    </div>
+
+    <div class="tab-content" data-tab="videos">
+      <h2>🎬 视频库 (CGM)</h2>
+      <p style="color: #6b7280;">manim 字幕 + edge-tts 配音 (zh-CN-YunjianNeural 男声)</p>
+      <div class="video-grid">
+        {% for n in graph.nodes %}
+          {% if n.video_links %}
+            {% for v in n.video_links %}
+            <div class="video-card" id="video-{{ n.id }}">
+              <video controls preload="metadata">
+                <source src="/static/history_videos/{{ v.filename }}" type="video/mp4">
+              </video>
+              <span class="concept-tag">{{ n.name }}</span>
+              <h3>{{ v.title }}</h3>
+              <p style="color: #6b7280; font-size: 12px; margin: 4px 0;">母题: <code>{{ v.mother_problem }}</code></p>
+            </div>
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+        {% set has_video = false %}
+        {% for n in graph.nodes %}
+          {% if n.video_links %}{% set has_video = true %}{% endif %}
+        {% endfor %}
+        {% if not has_video %}
+        <p style="color: #9ca3af;">该图谱暂无视频, 切换其他图谱查看</p>
+        {% endif %}
+      </div>
+    </div>
 
     <p><a href="/kg">← 返回图谱列表</a> | <a href="/">← 返回首页</a></p>
   </main>
@@ -94,6 +146,17 @@
         document.getElementById('pf-output').textContent = 'ERROR: ' + e;
       });
     }
+
+    // Tab 切换
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tab = btn.dataset.tab;
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelector(`.tab-content[data-tab="${tab}"]`).classList.add('active');
+      });
+    });
   </script>
 </body>
 </html>
