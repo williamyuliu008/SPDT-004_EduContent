@@ -4,6 +4,17 @@
   <meta charset="UTF-8">
   <title>学习流 · {{ pp.title }}</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    .section-card { background: #f9fafb; border-radius: 8px; padding: 16px 20px; margin: 20px 0; }
+    .section-card h2 { margin-top: 0; }
+    .strategy-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 6px; padding: 12px; margin: 8px 0; }
+    .strategy-card h3 { margin: 0 0 8px 0; font-size: 16px; }
+    .meta-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 6px; padding: 12px; margin: 8px 0; }
+    .meta-card h3 { margin: 0 0 8px 0; font-size: 16px; }
+    .meta-card .sop { background: #fef3c7; padding: 8px; border-radius: 4px; font-size: 13px; margin: 8px 0; }
+    .concept-link { display: inline-block; padding: 4px 12px; background: #dbeafe; border-radius: 4px; margin: 4px; text-decoration: none; color: #1e40af; }
+    .tab-empty { color: #6b7280; font-style: italic; padding: 8px; }
+  </style>
 </head>
 <body>
   <header class="page-header">
@@ -63,6 +74,60 @@
         </details>
       </div>
       {% endfor %}
+    </section>
+
+    <!-- P0-D: 适用策略 -->
+    <section class="section-card">
+      <h2>🎯 适用策略 ({{ strategies|length }} 张)</h2>
+      {% if strategies %}
+        {% for s in strategies %}
+        <div class="strategy-card">
+          <h3>{{ s.title or s.card_id }}</h3>
+          <p><strong>chain:</strong> <code>{{ s.chain_id }}</code></p>
+          <details>
+            <summary>📖 显示 SOP</summary>
+            <p>{{ s.SOP }}</p>
+            <p><strong>验收:</strong> {{ s.验收标准 }}</p>
+          </details>
+        </div>
+        {% endfor %}
+      {% else %}
+        <p class="tab-empty">暂无关联策略卡</p>
+      {% endif %}
+    </section>
+
+    <!-- P0-D: 适用概念 -->
+    <section class="section-card">
+      <h2>📚 适用概念 ({{ concepts|length }} 个知识图谱节点)</h2>
+      {% if concepts %}
+        {% for c in concepts %}
+        <div>
+          <a href="/kg/{{ c._graph_id }}" class="concept-link">
+            <strong>{{ c.name }}</strong> ({{ c.subject }})
+          </a>
+          <small style="color: #6b7280;">  {{ c._graph_id }} / {{ c.id }}</small>
+        </div>
+        {% endfor %}
+      {% else %}
+        <p class="tab-empty">暂无关联知识图谱节点</p>
+      {% endif %}
+    </section>
+
+    <!-- P0-D: 元学习推荐 -->
+    <section class="section-card">
+      <h2>🧠 元学习推荐 ({{ meta_cards|length }} 张)</h2>
+      {% if meta_cards %}
+        {% for m in meta_cards %}
+        <div class="meta-card">
+          <h3>{{ m.intuition[:60] if m.intuition else m.card_id }}{% if m.intuition and m.intuition|length > 60 %}...{% endif %}</h3>
+          <p><strong>chain:</strong> <code>{{ m.chain_id }}</code> | <strong>card_id:</strong> {{ m.card_id }}</p>
+          <div class="sop"><strong>SOP:</strong> {{ m.SOP }}</div>
+          <p><strong>验收:</strong> {{ m.验收标准 }}</p>
+        </div>
+        {% endfor %}
+      {% else %}
+        <p class="tab-empty">暂无元学习推荐</p>
+      {% endif %}
     </section>
   </main>
 </body>

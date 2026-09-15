@@ -16,6 +16,8 @@ KB_ROOTS = {
     "history": Path(r"D:\4_data\knowledge_cards\历史\4step"),
 }
 KB_CARDS = Path(r"D:\4_data\knowledge_cards\数学\cards")  # 数学 chain 根目录 (历史 chain 在历史/cards)
+STRATEGY_ROOT = Path(r"D:\4_data\knowledge_cards\策略")
+META_ROOT = Path(r"D:\4_data\knowledge_cards\元学习")
 KG_DIR = Path(r"D:\2_products\education\SPDT-004_EduContent\knowledge_graphs")
 PATH_FINDER_TOOL = Path(r"D:\2_products\education\SPDT-004_EduContent\tools\kg_path_finder.py")
 
@@ -84,7 +86,7 @@ def browse():
 
 @app.route("/learn/<pp_id>")
 def learn(pp_id: str):
-    """学习流：母题 → 变形训练 (跨学科: 数学 pp_/历史 hp_)"""
+    """学习流：母题 → 变形训练 + 适用策略 + 适用概念 + 元学习推荐 (P0-D 集成)"""
     pp = _find_across_subjects("parent_problems", pp_id)
     if not pp:
         abort(404)
@@ -92,7 +94,131 @@ def learn(pp_id: str):
     variants = []
     for subject, root in KB_ROOTS.items():
         variants.extend([v for v in _load_json_files(root / "variants") if v.get("parent_id") == pp_id])
-    return render_template("learn.html", pp=pp, variants=variants)
+
+    # P0-D 集成: 适用策略
+    strategies = _find_strategies_for_pp(pp)
+
+    # P0-D 集成: 适用概念 (知识图谱节点)
+    concepts = _find_concepts_for_pp(pp)
+
+    # P0-D 集成: 元学习推荐
+    meta_cards = _find_meta_cards_for_pp(pp)
+
+    return render_template("learn.html", pp=pp, variants=variants,
+                           strategies=strategies, concepts=concepts,
+                           meta_cards=meta_cards)
+
+
+def _find_strategies_for_pp(pp: dict) -> list[dict]:
+    """根据 applicable_strategies 找策略卡 (跨学科)"""
+    ids = pp.get("applicable_strategies", [])
+    if not ids:
+        return []
+    out = []
+    if not STRATEGY_ROOT.exists():
+        return []
+    for subj_dir in STRATEGY_ROOT.iterdir():
+        if not subj_dir.is_dir():
+            continue
+        for f in subj_dir.glob("*.json"):
+            try:
+                d = json.loads(f.read_text(encoding="utf-8"))
+                if d.get("card_id") in ids or d.get("chain_id") in ids or f.stem in ids:
+                    out.append(d)
+            except Exception:
+                continue
+    return out
+
+
+def _find_concepts_for_pp(pp: dict) -> list[dict]:
+    """根据 chain_id 找知识图谱节点 (跨所有 kg)"""
+    chain_id = pp.get("chain_id", "")
+    if not chain_id or not KG_DIR.exists():
+        return []
+    out = []
+    # 母题 ID 短格式: pp_001 (前两段)
+    pp_id_full = pp.get("id", "")
+    pp_id_short = "_".join(pp_id_full.split("_")[:2]) if pp_id_full else ""
+    for gfile in KG_DIR.glob("*.json"):
+        try:
+            g = json.loads(gfile.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        for n in g.get("nodes", []):
+            for mp in n.get("mother_problems", []):
+                if mp == pp_id_full or mp == pp_id_short:
+                    out.append({**n, "_graph_id": g.get("graph_id", gfile.stem)})
+                    break
+    return out
+
+
+def _find_meta_cards_for_pp(pp: dict) -> list[dict]:
+    """根据 method_tag 推荐元学习卡"""
+    method_tag = pp.get("method_tag", "")
+    if not method_tag or not META_ROOT.exists():
+        return []
+    out = []
+    # 启发: 根据母题类型推荐
+    tag_keywords = {
+        "古诗": ["meta_learning_active_recall", "meta_learning_ebbinghaus", "meta_learning_cornell"],
+        "文言": ["meta_learning_active_recall", "meta_learning_ebbinghaus"],
+        "议论文": ["meta_learning_feynman", "meta_learning_mindmap", "meta_learning_cornell"],
+        "现代文": ["meta_learning_sq3r", "meta_learning_active_recall"],
+        "作文": ["meta_learning_growth_mindset", "meta_learning_self_efficacy", "meta_learning_cornell"],
+        "病句": ["meta_learning_error_book", "meta_learning_deliberate_practice"],
+        "成语": ["meta_learning_ebbinghaus", "meta_learning_active_recall"],
+        "阅读理解": ["meta_learning_sq3r", "meta_learning_active_recall"],
+        "完形": ["meta_learning_active_recall", "meta_learning_ebbinghaus"],
+        "语法": ["meta_learning_active_recall", "meta_learning_error_book", "meta_learning_deliberate_practice"],
+        "应用文": ["meta_learning_cornell", "meta_learning_self_efficacy"],
+        "长难句": ["meta_learning_sq3r", "meta_learning_metacognition"],
+        "史料": ["meta_learning_cornell", "meta_learning_active_recall"],
+        "时间轴": ["meta_learning_ebbinghaus", "meta_learning_mindmap"],
+        "因果": ["meta_learning_feynman", "meta_learning_metacognition"],
+        "等值线": ["meta_learning_active_recall", "meta_learning_deliberate_practice"],
+        "气候": ["meta_learning_active_recall", "meta_learning_mindmap"],
+        "过程": ["meta_learning_active_recall", "meta_learning_metacognition"],
+        "区域": ["meta_learning_mindmap", "meta_learning_transfer"],
+        "人地": ["meta_learning_mindmap", "meta_learning_transfer"],
+        "主体": ["meta_learning_feynman", "meta_learning_mindmap"],
+        "矛盾": ["meta_learning_feynman", "meta_learning_metacognition"],
+        "价值": ["meta_learning_growth_mindset", "meta_learning_self_efficacy"],
+        "时政": ["meta_learning_mindmap", "meta_learning_self_efficacy"],
+        "经济": ["meta_learning_mindmap", "meta_learning_active_recall"],
+        "文化": ["meta_learning_mindmap", "meta_learning_growth_mindset"],
+        "哲学": ["meta_learning_feynman", "meta_learning_metacognition"],
+        "五体": ["meta_learning_active_recall", "meta_learning_ebbinghaus"],
+        "结构": ["meta_learning_deliberate_practice", "meta_learning_mindmap"],
+        "笔法": ["meta_learning_deliberate_practice", "meta_learning_metacognition"],
+        "临摹": ["meta_learning_deliberate_practice", "meta_learning_feedback_loop"],
+        "书法史": ["meta_learning_ebbinghaus", "meta_learning_mindmap"],
+        "G-": ["meta_learning_active_recall", "meta_learning_ebbinghaus", "meta_learning_sq3r"],
+        "T-": ["meta_learning_active_recall", "meta_learning_sq3r"],
+        "V-": ["meta_learning_active_recall", "meta_learning_sq3r"],
+        "M-": ["meta_learning_active_recall", "meta_learning_deliberate_practice"],
+        "F-": ["meta_learning_active_recall", "meta_learning_metacognition"],
+        "A-": ["meta_learning_active_recall", "meta_learning_transfer"],
+        "P-": ["meta_learning_active_recall", "meta_learning_metacognition"],
+    }
+    recommend_chains = set()
+    for kw, chains in tag_keywords.items():
+        if kw in method_tag:
+            for c in chains:
+                recommend_chains.add(c)
+    # 兜底: 任何母题都推荐核心 3 张
+    if not recommend_chains:
+        recommend_chains = {"meta_learning_ebbinghaus", "meta_learning_active_recall", "meta_learning_pomodoro"}
+    # 加通用 2 张
+    recommend_chains.update({"meta_learning_feedback_loop", "meta_learning_error_book"})
+
+    for f in META_ROOT.glob("*.json"):
+        try:
+            d = json.loads(f.read_text(encoding="utf-8"))
+            if d.get("chain_id") in recommend_chains:
+                out.append(d)
+        except Exception:
+            continue
+    return out
 
 
 @app.route("/verify")
