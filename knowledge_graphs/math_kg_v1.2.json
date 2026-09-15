@@ -10,7 +10,6 @@
   "edge_count": 14,
   "in_library_mother_problems": 31,
   "in_library_strategy_chains": 8,
-
   "nodes": [
     {
       "id": "concept_07",
@@ -18,13 +17,54 @@
       "chain_id": "math/M-V3-00-向量基础",
       "difficulty": "中",
       "domain": "立体几何/向量基础",
-      "mother_problems": ["pp_016", "pp_017", "pp_021", "pp_022"],
-      "strategy_chains": ["math_strategy_vector", "math_strategy_guihua"],
+      "mother_problems": [
+        "pp_016",
+        "pp_017",
+        "pp_021",
+        "pp_022"
+      ],
+      "strategy_chains": [
+        "math_strategy_vector",
+        "math_strategy_guihua"
+      ],
       "coverage": "100%",
       "status": "in_library",
       "prerequisites": [],
-      "successors": ["concept_01", "concept_02", "concept_03", "concept_04"],
-      "related": ["concept_08"]
+      "successors": [
+        "concept_01",
+        "concept_02",
+        "concept_03",
+        "concept_04"
+      ],
+      "related": [
+        "concept_08"
+      ],
+      "video_links": [
+        {
+          "subject": "数学",
+          "title": "pp_016 视频",
+          "filename": "pp_016_video.mp4",
+          "mother_problem": "pp_016"
+        },
+        {
+          "subject": "数学",
+          "title": "pp_017 视频",
+          "filename": "pp_017_video.mp4",
+          "mother_problem": "pp_017"
+        },
+        {
+          "subject": "数学",
+          "title": "pp_021 视频",
+          "filename": "pp_021_video.mp4",
+          "mother_problem": "pp_021"
+        },
+        {
+          "subject": "数学",
+          "title": "pp_022 视频",
+          "filename": "pp_022_video.mp4",
+          "mother_problem": "pp_022"
+        }
+      ]
     },
     {
       "id": "concept_01",
@@ -32,13 +72,28 @@
       "chain_id": "math/M-V3-01-线面平行",
       "difficulty": "中",
       "domain": "立体几何/位置关系",
-      "mother_problems": ["pp_001", "pp_006", "pp_007"],
-      "strategy_chains": ["math_strategy_vector", "math_strategy_graphing"],
+      "mother_problems": [
+        "pp_001",
+        "pp_006",
+        "pp_007"
+      ],
+      "strategy_chains": [
+        "math_strategy_vector",
+        "math_strategy_graphing"
+      ],
       "coverage": "100%",
       "status": "in_library",
-      "prerequisites": ["concept_07"],
-      "successors": ["concept_02", "concept_05"],
-      "related": ["concept_03", "concept_04"]
+      "prerequisites": [
+        "concept_07"
+      ],
+      "successors": [
+        "concept_02",
+        "concept_05"
+      ],
+      "related": [
+        "concept_03",
+        "concept_04"
+      ]
     },
     {
       "id": "concept_02",
@@ -46,13 +101,27 @@
       "chain_id": "math/M-V3-02-线面垂直",
       "difficulty": "中",
       "domain": "立体几何/位置关系",
-      "mother_problems": ["pp_002", "pp_008", "pp_009"],
-      "strategy_chains": ["math_strategy_vector"],
+      "mother_problems": [
+        "pp_002",
+        "pp_008",
+        "pp_009"
+      ],
+      "strategy_chains": [
+        "math_strategy_vector"
+      ],
       "coverage": "100%",
       "status": "in_library",
-      "prerequisites": ["concept_07", "concept_01"],
-      "successors": ["concept_03", "concept_05"],
-      "related": ["concept_04"]
+      "prerequisites": [
+        "concept_07",
+        "concept_01"
+      ],
+      "successors": [
+        "concept_03",
+        "concept_05"
+      ],
+      "related": [
+        "concept_04"
+      ]
     },
     {
       "id": "concept_03",
@@ -60,13 +129,28 @@
       "chain_id": "math/M-V3-03-空间角",
       "difficulty": "中",
       "domain": "立体几何/度量",
-      "mother_problems": ["pp_003", "pp_010", "pp_013"],
-      "strategy_chains": ["math_strategy_vector", "math_strategy_graphing"],
+      "mother_problems": [
+        "pp_003",
+        "pp_010",
+        "pp_013"
+      ],
+      "strategy_chains": [
+        "math_strategy_vector",
+        "math_strategy_graphing"
+      ],
       "coverage": "100%",
       "status": "in_library",
-      "prerequisites": ["concept_07", "concept_01", "concept_02"],
-      "successors": ["concept_05"],
-      "related": ["concept_04"]
+      "prerequisites": [
+        "concept_07",
+        "concept_01",
+        "concept_02"
+      ],
+      "successors": [
+        "concept_05"
+      ],
+      "related": [
+        "concept_04"
+      ]
     },
     {
       "id": "concept_04",
@@ -74,13 +158,27 @@
       "chain_id": "math/M-V3-04-空间距离",
       "difficulty": "难",
       "domain": "立体几何/度量",
-      "mother_problems": ["pp_004", "pp_005", "pp_011"],
-      "strategy_chains": ["math_strategy_vector", "math_strategy_equation"],
+      "mother_problems": [
+        "pp_004",
+        "pp_005",
+        "pp_011"
+      ],
+      "strategy_chains": [
+        "math_strategy_vector",
+        "math_strategy_equation"
+      ],
       "coverage": "100%",
       "status": "in_library",
-      "prerequisites": ["concept_07", "concept_01"],
-      "successors": ["concept_05"],
-      "related": ["concept_03"]
+      "prerequisites": [
+        "concept_07",
+        "concept_01"
+      ],
+      "successors": [
+        "concept_05"
+      ],
+      "related": [
+        "concept_03"
+      ]
     },
     {
       "id": "concept_05",
@@ -88,11 +186,24 @@
       "chain_id": "math/M-V3-05-立体几何综合",
       "difficulty": "难",
       "domain": "立体几何/综合",
-      "mother_problems": ["pp_012", "pp_014", "pp_015"],
-      "strategy_chains": ["math_strategy_vector", "math_strategy_graphing", "math_strategy_equation"],
+      "mother_problems": [
+        "pp_012",
+        "pp_014",
+        "pp_015"
+      ],
+      "strategy_chains": [
+        "math_strategy_vector",
+        "math_strategy_graphing",
+        "math_strategy_equation"
+      ],
       "coverage": "100%",
       "status": "in_library",
-      "prerequisites": ["concept_01", "concept_02", "concept_03", "concept_04"],
+      "prerequisites": [
+        "concept_01",
+        "concept_02",
+        "concept_03",
+        "concept_04"
+      ],
       "successors": [],
       "related": []
     },
@@ -102,13 +213,53 @@
       "chain_id": "math/M-V1-01-函数与方程",
       "difficulty": "中",
       "domain": "代数/函数",
-      "mother_problems": ["pp_018", "pp_019", "pp_023", "pp_024", "pp_025"],
-      "strategy_chains": ["math_strategy_function_equation", "math_strategy_graphing", "math_strategy_guihua"],
+      "mother_problems": [
+        "pp_018",
+        "pp_019",
+        "pp_023",
+        "pp_024",
+        "pp_025"
+      ],
+      "strategy_chains": [
+        "math_strategy_function_equation",
+        "math_strategy_graphing",
+        "math_strategy_guihua"
+      ],
       "coverage": "166%",
       "status": "in_library",
       "prerequisites": [],
-      "successors": ["concept_09"],
-      "related": ["concept_07"]
+      "successors": [
+        "concept_09"
+      ],
+      "related": [
+        "concept_07"
+      ],
+      "video_links": [
+        {
+          "subject": "数学",
+          "title": "pp_018 视频",
+          "filename": "pp_018_video.mp4",
+          "mother_problem": "pp_018"
+        },
+        {
+          "subject": "数学",
+          "title": "pp_019 视频",
+          "filename": "pp_019_video.mp4",
+          "mother_problem": "pp_019"
+        },
+        {
+          "subject": "数学",
+          "title": "pp_023 视频",
+          "filename": "pp_023_video.mp4",
+          "mother_problem": "pp_023"
+        },
+        {
+          "subject": "数学",
+          "title": "pp_025 视频",
+          "filename": "pp_025_video.mp4",
+          "mother_problem": "pp_025"
+        }
+      ]
     },
     {
       "id": "concept_08",
@@ -116,13 +267,46 @@
       "chain_id": "math/M-V2-01-解析几何",
       "difficulty": "难",
       "domain": "几何/解析",
-      "mother_problems": ["pp_020", "pp_026", "pp_033"],
-      "strategy_chains": ["math_strategy_graphing", "math_strategy_equation", "math_strategy_parameter"],
+      "mother_problems": [
+        "pp_020",
+        "pp_026",
+        "pp_033"
+      ],
+      "strategy_chains": [
+        "math_strategy_graphing",
+        "math_strategy_equation",
+        "math_strategy_parameter"
+      ],
       "coverage": "100% (椭圆+直线与圆+抛物线, 3 张)",
       "status": "in_library",
-      "prerequisites": ["concept_07"],
+      "prerequisites": [
+        "concept_07"
+      ],
       "successors": [],
-      "related": ["concept_03", "concept_04"]
+      "related": [
+        "concept_03",
+        "concept_04"
+      ],
+      "video_links": [
+        {
+          "subject": "数学",
+          "title": "pp_020 视频",
+          "filename": "pp_020_video.mp4",
+          "mother_problem": "pp_020"
+        },
+        {
+          "subject": "数学",
+          "title": "pp_026 视频",
+          "filename": "pp_026_video.mp4",
+          "mother_problem": "pp_026"
+        },
+        {
+          "subject": "数学",
+          "title": "pp_033 视频",
+          "filename": "pp_033_video.mp4",
+          "mother_problem": "pp_033"
+        }
+      ]
     },
     {
       "id": "concept_09",
@@ -130,40 +314,155 @@
       "chain_id": "math/M-V5-01-导数",
       "difficulty": "难",
       "domain": "代数/导数",
-      "mother_problems": ["pp_030", "pp_031", "pp_032"],
-      "strategy_chains": ["math_strategy_guihua", "math_strategy_graphing"],
+      "mother_problems": [
+        "pp_030",
+        "pp_031",
+        "pp_032"
+      ],
+      "strategy_chains": [
+        "math_strategy_guihua",
+        "math_strategy_graphing"
+      ],
       "coverage": "100% (切线/极值/不等式, 3 张, v1.2 重命名后无 ID 冲突)",
       "status": "in_library",
-      "prerequisites": ["concept_06"],
+      "prerequisites": [
+        "concept_06"
+      ],
       "successors": [],
-      "related": []
+      "related": [],
+      "video_links": [
+        {
+          "subject": "数学",
+          "title": "pp_030 视频",
+          "filename": "pp_030_video.mp4",
+          "mother_problem": "pp_030"
+        },
+        {
+          "subject": "数学",
+          "title": "pp_031 视频",
+          "filename": "pp_031_video.mp4",
+          "mother_problem": "pp_031"
+        },
+        {
+          "subject": "数学",
+          "title": "pp_032 视频",
+          "filename": "pp_032_video.mp4",
+          "mother_problem": "pp_032"
+        }
+      ]
     }
   ],
-
   "edges": [
-    {"from": "concept_07", "to": "concept_01", "type": "prerequisite", "weight": 1.0},
-    {"from": "concept_07", "to": "concept_02", "type": "prerequisite", "weight": 1.0},
-    {"from": "concept_07", "to": "concept_03", "type": "prerequisite", "weight": 1.0},
-    {"from": "concept_07", "to": "concept_04", "type": "prerequisite", "weight": 1.0},
-    {"from": "concept_01", "to": "concept_02", "type": "prerequisite", "weight": 0.8},
-    {"from": "concept_01", "to": "concept_05", "type": "prerequisite", "weight": 1.0},
-    {"from": "concept_02", "to": "concept_03", "type": "prerequisite", "weight": 0.8},
-    {"from": "concept_02", "to": "concept_05", "type": "prerequisite", "weight": 1.0},
-    {"from": "concept_03", "to": "concept_05", "type": "prerequisite", "weight": 1.0},
-    {"from": "concept_04", "to": "concept_05", "type": "prerequisite", "weight": 1.0},
-    {"from": "concept_06", "to": "concept_09", "type": "prerequisite", "weight": 1.0},
-    {"from": "concept_01", "to": "concept_03", "type": "related", "weight": 0.6},
-    {"from": "concept_01", "to": "concept_04", "type": "related", "weight": 0.6},
-    {"from": "concept_07", "to": "concept_08", "type": "related", "weight": 0.5}
+    {
+      "from": "concept_07",
+      "to": "concept_01",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "from": "concept_07",
+      "to": "concept_02",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "from": "concept_07",
+      "to": "concept_03",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "from": "concept_07",
+      "to": "concept_04",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "from": "concept_01",
+      "to": "concept_02",
+      "type": "prerequisite",
+      "weight": 0.8
+    },
+    {
+      "from": "concept_01",
+      "to": "concept_05",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "from": "concept_02",
+      "to": "concept_03",
+      "type": "prerequisite",
+      "weight": 0.8
+    },
+    {
+      "from": "concept_02",
+      "to": "concept_05",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "from": "concept_03",
+      "to": "concept_05",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "from": "concept_04",
+      "to": "concept_05",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "from": "concept_06",
+      "to": "concept_09",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "from": "concept_01",
+      "to": "concept_03",
+      "type": "related",
+      "weight": 0.6
+    },
+    {
+      "from": "concept_01",
+      "to": "concept_04",
+      "type": "related",
+      "weight": 0.6
+    },
+    {
+      "from": "concept_07",
+      "to": "concept_08",
+      "type": "related",
+      "weight": 0.5
+    }
   ],
-
   "learning_paths": {
-    "立体几何完整路径": ["concept_07", "concept_01", "concept_02", "concept_03", "concept_04", "concept_05"],
-    "代数入门路径": ["concept_06", "concept_09"],
-    "几何综合路径": ["concept_07", "concept_01", "concept_08"],
-    "高考压轴路径": ["concept_07", "concept_02", "concept_03", "concept_05"]
+    "立体几何完整路径": [
+      "concept_07",
+      "concept_01",
+      "concept_02",
+      "concept_03",
+      "concept_04",
+      "concept_05"
+    ],
+    "代数入门路径": [
+      "concept_06",
+      "concept_09"
+    ],
+    "几何综合路径": [
+      "concept_07",
+      "concept_01",
+      "concept_08"
+    ],
+    "高考压轴路径": [
+      "concept_07",
+      "concept_02",
+      "concept_03",
+      "concept_05"
+    ]
   },
-
   "coverage_report": {
     "in_library_concepts": 9,
     "partially_in_library_concepts": 0,
@@ -173,13 +472,11 @@
     "coverage_rate": "9/9 概念 fully in_library (100%)",
     "remaining_gaps": []
   },
-
   "change_log_v1.1_to_v1.2": {
     "concept_08 解析几何": "partially_in_library → fully in_library (补 pp_033 椭圆, pp_020 直线与圆, pp_026 抛物线, 3 张)",
     "concept_09 导数母题重命名": "pp_022/023/024 冲突 ID 修复, 重命名为 pp_030/031/032 (v1.2 修 ID 冲突)",
     "math_mother_problems": "27 (含冲突) → 31 (含 1 新椭圆 + 3 重命名)"
   },
-
   "next_steps": {
     "P0-B.3": "扩 6 学科知识图谱 (语/英/历/地/政/书), 各 5-8 概念",
     "P0-B.4": "rujing 学习中心 App 集成 knowledge_graph.json + path_finder 工具"
