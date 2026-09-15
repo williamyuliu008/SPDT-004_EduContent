@@ -8,7 +8,7 @@ W3 网页版骨架 + kg 路由 (/kg, /kg/<id>) + API (/api/path_finder)
 import json
 import subprocess
 from pathlib import Path
-from flask import Flask, render_template, jsonify, request, abort
+from flask import Flask, render_template, jsonify, request, abort, send_from_directory
 
 APP_ROOT = Path(__file__).parent
 KB_ROOTS = {
@@ -20,6 +20,7 @@ STRATEGY_ROOT = Path(r"D:\4_data\knowledge_cards\策略")
 META_ROOT = Path(r"D:\4_data\knowledge_cards\元学习")
 KG_DIR = Path(r"D:\2_products\education\SPDT-004_EduContent\knowledge_graphs")
 PATH_FINDER_TOOL = Path(r"D:\2_products\education\SPDT-004_EduContent\tools\kg_path_finder.py")
+VIDEO_ROOT = Path(r"D:\4_data\work\media\renders\history_k_videos")
 
 app = Flask(__name__, template_folder=str(APP_ROOT / "templates"), static_folder=str(APP_ROOT / "static"))
 
@@ -104,9 +105,34 @@ def learn(pp_id: str):
     # P0-D 集成: 元学习推荐
     meta_cards = _find_meta_cards_for_pp(pp)
 
+    # P-CGM: 视频短片 (历史学科 5 张 K 卡)
+    video_path = _find_video_for_pp(pp)
+
     return render_template("learn.html", pp=pp, variants=variants,
                            strategies=strategies, concepts=concepts,
-                           meta_cards=meta_cards)
+                           meta_cards=meta_cards, video_path=video_path)
+
+
+def _find_video_for_pp(pp: dict) -> str | None:
+    """根据 pp_id 找历史 K 卡视频 (D:/4_data/work/media/renders/history_k_videos/)
+    返回: 仅文件名, 由 /static/history_videos/<filename> 路由 serve"""
+    if not VIDEO_ROOT.exists():
+        return None
+    pp_id = pp.get("id", "")
+    pp_id_short = "_".join(pp_id.split("_")[:2]) if pp_id else ""
+    if not pp_id_short:
+        return None
+    for f in VIDEO_ROOT.glob(f"{pp_id_short}_*.mp4"):
+        return f.name  # 仅文件名
+    return None
+
+
+@app.route("/static/history_videos/<path:filename>")
+def serve_history_video(filename):
+    """从 D:/4_data/work/media/renders/history_k_videos/ serve 视频"""
+    if not VIDEO_ROOT.exists():
+        abort(404)
+    return send_from_directory(VIDEO_ROOT, filename, mimetype="video/mp4")
 
 
 def _find_strategies_for_pp(pp: dict) -> list[dict]:
@@ -343,3 +369,5 @@ def api_path_finder():
 
 if __name__ == "__main__":
     app.run(debug=True, port=5050, host="127.0.0.1")
+
+# 让 /learn 视频路径能直接通过 file:// 嵌入（实际生产应该走静态路由）

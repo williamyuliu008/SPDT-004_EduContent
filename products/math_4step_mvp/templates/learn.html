@@ -129,6 +129,18 @@
         <p class="tab-empty">暂无元学习推荐</p>
       {% endif %}
     </section>
+
+    <!-- P-CGM: 视频短片 (历史学科 5 张 K 卡) -->
+    {% if video_path %}
+    <section class="section-card">
+      <h2>🎬 视频短片 (30s, P-CGM)</h2>
+      <p style="color: #6b7280;">manim 字幕 + edge-tts 配音 (zh-CN-YunjianNeural 男声)</p>
+      <video controls style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" preload="metadata">
+        <source src="/static/history_videos/{{ video_path }}" type="video/mp4">
+        您的浏览器不支持视频标签。
+      </video>
+    </section>
+    {% endif %}
   </main>
 </body>
 </html>
